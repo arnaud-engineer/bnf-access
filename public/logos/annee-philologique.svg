@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="238" viewBox="0 0 400 238" role="img" aria-labelledby="title desc">
+  <title id="title">Année philologique</title>
+  <desc id="desc">Logo APh recréé en SVG depuis l'image de référence fournie.</desc>
+  <rect width="400" height="238" fill="#FFFFFF"/>
+  <rect width="240" height="238" fill="#D20D17"/>
+  <rect x="240" width="160" height="129" fill="#050505"/>
+  <path d="M34 238C47 238 56 231 62 214L119 51L126 65L72 211C66 228 57 238 45 238H34Z" fill="#FFFFFF"/>
+  <path d="M114 33L151 0H160L240 238H177L114 33Z" fill="#FFFFFF"/>
+  <path d="M84 137H173L176 145H81L84 137Z" fill="#FFFFFF"/>
+  <text x="250" y="105" fill="#FFFFFF" font-family="Didot, 'Bodoni 72', Georgia, serif" font-size="108" font-weight="400">P</text>
+  <text x="316" y="107" fill="#FFFFFF" font-family="Didot, 'Bodoni 72', Georgia, serif" font-size="104" font-style="italic" font-weight="400">h</text>
+</svg>

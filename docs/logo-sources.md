@@ -13,15 +13,17 @@ Les logos sont stockés localement pour éviter de dépendre de hotlinks externe
 - Grand Robert : fichier `Logo LeRobert.svg`, Wikipédia francophone.
 - Larousse : fichier `Larousse vectoriel.svg`, Wikipédia francophone.
 - Medici.tv : fichier `Medici.tv logo.svg`, Wikimedia Commons.
+- RetroNews : fichier local `partenaire-retronews.svg` fourni pour la maquette.
 - Agricola : logo USDA, fichier `Logo of the United States Department of Agriculture.svg`, Wikimedia Commons ; le guide officiel USDA documente le logo et ses couleurs.
 - Worldcat : pictogramme multicolore extrait du fichier `WorldCat logo.svg`, Wikimedia Commons.
 
-## SVG générés depuis les PNG sources
+## SVG générés depuis les images sources
 
 - MusicMe : vectorisation depuis le PNG local, lui-même issu du site `musicme.com`.
 - Encyclopædia Universalis : vectorisation depuis le PNG local, aucun SVG officiel fiable n'ayant été identifié.
 - Aida : SVG typographique recréé depuis l'image locale `product_pages.jpg`, en privilégiant le bloc "AIDA ONLINE" pour limiter le poids.
 - Bellefaye : SVG recréé depuis le PNG local fourni, avec fond et lettrage éditables.
+- Année philologique : SVG recréé depuis l'image locale `cover_1_m.jpg`, en conservant le format rectangulaire du logo APh.
 - Academic Search Premier : SVG recréé depuis le PNG local `684-6848107_academic-search-premier.png` fourni pour la maquette.
 - ABSEEES : icône typographique SVG créée pour la maquette, en s'appuyant sur l'existence d'une vignette ABSEEES publiée par la Bibliothèque nationale tchèque ; aucun logo officiel autonome identifié.
 - Acta Sanctorum : SVG typographique original, inspiré des pages de titre anciennes fournies en référence ; pas de logo officiel identifié.

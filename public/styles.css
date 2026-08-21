@@ -419,6 +419,7 @@ h1 {
 }
 
 .description {
+  margin: 0 0 10px;
   color: var(--muted);
   font-size: 0.94rem;
 }
@@ -427,7 +428,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin: auto 0 16px;
+  margin: 0;
 }
 
 .badge {

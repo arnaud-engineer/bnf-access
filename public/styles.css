@@ -344,7 +344,7 @@ h1 {
 .card-header {
   display: grid;
   grid-template-columns: 58px minmax(0, 1fr) 38px;
-  align-items: center;
+  align-items: start;
   gap: 12px;
   margin-bottom: 16px;
 }
@@ -404,7 +404,10 @@ h1 {
 }
 
 .card h3 {
+  display: grid;
+  align-items: center;
   min-width: 0;
+  min-height: 58px;
   margin: 0;
   font-size: 1.12rem;
   line-height: 1.2;

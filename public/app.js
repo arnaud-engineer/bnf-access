@@ -249,10 +249,11 @@ function createCard(resource) {
     : `<span>${escapeHtml(getInitials(resource.name))}</span>`;
 
   card.innerHTML = `
-    <div class="media-row">
+    <div class="card-header">
       <div class="logo ${resource.icon_url ? "" : "generated"}">
         ${logo}
       </div>
+      <h3>${escapeHtml(resource.name)}</h3>
       <button
         class="favorite-button"
         type="button"
@@ -263,9 +264,6 @@ function createCard(resource) {
       >
         <span aria-hidden="true">${isFavorite ? "★" : "☆"}</span>
       </button>
-    </div>
-    <div class="card-top">
-      <h3>${escapeHtml(resource.name)}</h3>
     </div>
     <p class="description">${escapeHtml(resource.description)}</p>
     <div class="badges">

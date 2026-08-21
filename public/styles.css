@@ -341,10 +341,10 @@ h1 {
   padding: 18px;
 }
 
-.media-row {
-  display: flex;
+.card-header {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr) 38px;
   align-items: start;
-  justify-content: space-between;
   gap: 12px;
   margin-bottom: 16px;
 }
@@ -403,14 +403,12 @@ h1 {
   outline-offset: 2px;
 }
 
-.card-top {
-  margin-bottom: 12px;
-}
-
 .card h3 {
+  min-width: 0;
   margin: 0;
   font-size: 1.12rem;
   line-height: 1.2;
+  overflow-wrap: anywhere;
 }
 
 .description {

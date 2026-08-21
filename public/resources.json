@@ -6379,6 +6379,8 @@
         "sciences humaines"
       ],
       "notes": "",
+      "icon_url": "./logos/mascarille.webp",
+      "icon_alt": "Logo Mascarille",
       "default_favorite": false,
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",

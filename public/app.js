@@ -4,6 +4,11 @@ const state = {
   favorites: new Set(),
   favoritesReady: false,
   favoritesOnly: false,
+  favoriteOrder: [],
+  favoriteOrderCustom: false,
+  quickLaunchEditing: false,
+  draftFavoriteOrder: [],
+  dragging: null,
   query: "",
 };
 
@@ -14,6 +19,8 @@ const resultCount = document.querySelector("#resultCount");
 const quickLaunch = document.querySelector("#quickLaunch");
 const favoriteStorageKey = "bnf-access:favorites:v1";
 const favoriteStorageReadyKey = "bnf-access:favorites-ready:v1";
+const favoriteOrderStorageKey = "bnf-access:favorite-order:v1";
+const favoriteOrderCustomStorageKey = "bnf-access:favorite-order-custom:v1";
 
 const accessLabels = {
   pass_lecture_culture: "Pass Lecture/Culture",
@@ -27,6 +34,7 @@ async function init() {
   const data = await response.json();
   state.resources = data.resources;
   loadFavorites();
+  loadFavoriteOrder();
   renderFilters();
   render();
 }
@@ -82,33 +90,98 @@ function render() {
 }
 
 function renderQuickLaunch() {
-  const favorites = getFavoriteResources();
+  const favorites = state.quickLaunchEditing ? getResourcesByIds(state.draftFavoriteOrder) : getFavoriteResources();
   quickLaunch.innerHTML = "";
   quickLaunch.hidden = favorites.length === 0;
+  quickLaunch.classList.toggle("is-editing", state.quickLaunchEditing);
 
   if (!favorites.length) {
     return;
   }
 
+  const actions = createQuickLaunchActions(favorites);
+  if (actions.children.length) {
+    quickLaunch.append(actions);
+  }
+
+  const list = document.createElement("div");
+  list.className = "quick-launch-list";
+  list.setAttribute("aria-label", state.quickLaunchEditing ? "Favoris a reorganiser" : "Favoris");
+
   for (const resource of favorites) {
-    const item = document.createElement("a");
+    const item = document.createElement(state.quickLaunchEditing ? "button" : "a");
     item.className = "quick-launch-item";
-    item.href = resource.url;
-    item.target = "_blank";
-    item.rel = "noreferrer";
     item.title = resource.name;
     item.setAttribute("aria-label", resource.name);
+    item.dataset.resourceId = resource.id;
     item.innerHTML = resource.icon_url
       ? `<img src="${escapeAttribute(resource.icon_url)}" alt="" loading="lazy">`
       : `<span>${escapeHtml(getInitials(resource.name))}</span>`;
-    quickLaunch.append(item);
+
+    if (state.quickLaunchEditing) {
+      item.type = "button";
+      item.classList.toggle("is-dragging", state.dragging?.id === resource.id);
+      item.addEventListener("pointerdown", handleQuickLaunchPointerDown);
+      item.addEventListener("keydown", handleQuickLaunchKeyDown);
+    } else {
+      item.href = resource.url;
+      item.target = "_blank";
+      item.rel = "noreferrer";
+    }
+
+    list.append(item);
   }
+
+  quickLaunch.append(list);
+}
+
+function createQuickLaunchActions(favorites) {
+  const actions = document.createElement("div");
+  actions.className = "quick-launch-actions";
+
+  if (state.quickLaunchEditing) {
+    actions.append(
+      createActionButton("Enregistrer", saveQuickLaunchOrder),
+      createActionButton("Annuler", cancelQuickLaunchEdit),
+      createActionButton("Ordre A-Z", resetQuickLaunchOrder),
+    );
+    return actions;
+  }
+
+  if (favorites.length > 1) {
+    actions.append(createActionButton("Modifier", startQuickLaunchEdit));
+  }
+
+  return actions;
+}
+
+function createActionButton(label, onClick) {
+  const button = document.createElement("button");
+  button.className = "quick-launch-action";
+  button.type = "button";
+  button.textContent = label;
+  button.addEventListener("click", onClick);
+  return button;
 }
 
 function getFavoriteResources() {
+  if (state.favoriteOrderCustom) {
+    syncFavoriteOrder();
+    return getResourcesByIds(state.favoriteOrder);
+  }
+
+  return getAlphaFavoriteResources();
+}
+
+function getAlphaFavoriteResources() {
   return state.resources
     .filter((resource) => state.favorites.has(resource.id))
     .sort((a, b) => a.name.localeCompare(b.name, "fr"));
+}
+
+function getResourcesByIds(ids) {
+  const byId = new Map(state.resources.map((resource) => [resource.id, resource]));
+  return ids.map((id) => byId.get(id)).filter(Boolean);
 }
 
 function getFilteredResources() {
@@ -203,19 +276,198 @@ function loadFavorites() {
   saveFavorites();
 }
 
+function loadFavoriteOrder() {
+  state.favoriteOrderCustom = readStoredValue(favoriteOrderCustomStorageKey) === "true";
+
+  if (!state.favoriteOrderCustom) {
+    state.favoriteOrder = [];
+    return;
+  }
+
+  try {
+    state.favoriteOrder = JSON.parse(readStoredValue(favoriteOrderStorageKey) ?? "[]");
+  } catch {
+    state.favoriteOrder = [];
+  }
+
+  syncFavoriteOrder();
+}
+
+function syncFavoriteOrder() {
+  if (!state.favoriteOrderCustom) {
+    return;
+  }
+
+  const previous = state.favoriteOrder.join("|");
+  const favoriteIds = new Set(state.favorites);
+  const ordered = state.favoriteOrder.filter((id) => favoriteIds.has(id));
+  const knownIds = new Set(ordered);
+  const missing = getAlphaFavoriteResources()
+    .map((resource) => resource.id)
+    .filter((id) => !knownIds.has(id));
+
+  state.favoriteOrder = [...ordered, ...missing];
+
+  if (state.favoriteOrder.join("|") !== previous) {
+    saveFavoriteOrder();
+  }
+}
+
 function saveFavorites() {
   writeStoredValue(favoriteStorageKey, JSON.stringify([...state.favorites]));
   writeStoredValue(favoriteStorageReadyKey, "true");
 }
 
+function saveFavoriteOrder() {
+  writeStoredValue(favoriteOrderStorageKey, JSON.stringify(state.favoriteOrder));
+  writeStoredValue(favoriteOrderCustomStorageKey, String(state.favoriteOrderCustom));
+}
+
 function toggleFavorite(resourceId) {
-  if (state.favorites.has(resourceId)) {
+  const isFavorite = state.favorites.has(resourceId);
+
+  if (isFavorite) {
     state.favorites.delete(resourceId);
+    state.favoriteOrder = state.favoriteOrder.filter((id) => id !== resourceId);
+    state.draftFavoriteOrder = state.draftFavoriteOrder.filter((id) => id !== resourceId);
   } else {
     state.favorites.add(resourceId);
+    if (state.favoriteOrderCustom && !state.favoriteOrder.includes(resourceId)) {
+      state.favoriteOrder.push(resourceId);
+    }
+    if (state.quickLaunchEditing && !state.draftFavoriteOrder.includes(resourceId)) {
+      state.draftFavoriteOrder.push(resourceId);
+    }
   }
+
   saveFavorites();
+  if (state.favoriteOrderCustom) {
+    saveFavoriteOrder();
+  }
   render();
+}
+
+function startQuickLaunchEdit() {
+  state.quickLaunchEditing = true;
+  state.draftFavoriteOrder = getFavoriteResources().map((resource) => resource.id);
+  render();
+}
+
+function saveQuickLaunchOrder() {
+  state.favoriteOrder = state.draftFavoriteOrder.filter((id) => state.favorites.has(id));
+  state.favoriteOrderCustom = true;
+  state.quickLaunchEditing = false;
+  state.draftFavoriteOrder = [];
+  saveFavoriteOrder();
+  render();
+}
+
+function cancelQuickLaunchEdit() {
+  state.quickLaunchEditing = false;
+  state.draftFavoriteOrder = [];
+  state.dragging = null;
+  render();
+}
+
+function resetQuickLaunchOrder() {
+  state.favoriteOrder = [];
+  state.favoriteOrderCustom = false;
+  state.quickLaunchEditing = false;
+  state.draftFavoriteOrder = [];
+  state.dragging = null;
+  saveFavoriteOrder();
+  render();
+}
+
+function handleQuickLaunchPointerDown(event) {
+  if (!state.quickLaunchEditing || event.button > 0) {
+    return;
+  }
+
+  event.preventDefault();
+  state.dragging = {
+    id: event.currentTarget.dataset.resourceId,
+    pointerId: event.pointerId,
+    startX: event.clientX,
+    startY: event.clientY,
+    active: false,
+  };
+
+  window.addEventListener("pointermove", handleQuickLaunchPointerMove, { passive: false });
+  window.addEventListener("pointerup", handleQuickLaunchPointerUp);
+  window.addEventListener("pointercancel", handleQuickLaunchPointerUp);
+}
+
+function handleQuickLaunchPointerMove(event) {
+  if (!state.dragging) {
+    return;
+  }
+
+  event.preventDefault();
+
+  const distance = Math.abs(event.clientX - state.dragging.startX) + Math.abs(event.clientY - state.dragging.startY);
+  state.dragging.active = state.dragging.active || distance > 4;
+
+  const target = document.elementFromPoint(event.clientX, event.clientY)?.closest(".quick-launch-item");
+  const overId = target?.dataset.resourceId;
+
+  if (overId && overId !== state.dragging.id && state.draftFavoriteOrder.includes(overId)) {
+    moveDraftFavorite(state.dragging.id, overId);
+    renderQuickLaunch();
+  }
+}
+
+function handleQuickLaunchPointerUp() {
+  window.removeEventListener("pointermove", handleQuickLaunchPointerMove);
+  window.removeEventListener("pointerup", handleQuickLaunchPointerUp);
+  window.removeEventListener("pointercancel", handleQuickLaunchPointerUp);
+  state.dragging = null;
+  renderQuickLaunch();
+}
+
+function handleQuickLaunchKeyDown(event) {
+  if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) {
+    return;
+  }
+
+  event.preventDefault();
+  const resourceId = event.currentTarget.dataset.resourceId;
+  const currentIndex = state.draftFavoriteOrder.indexOf(resourceId);
+  let nextIndex = currentIndex;
+
+  if (event.key === "ArrowLeft") {
+    nextIndex = Math.max(0, currentIndex - 1);
+  }
+  if (event.key === "ArrowRight") {
+    nextIndex = Math.min(state.draftFavoriteOrder.length - 1, currentIndex + 1);
+  }
+  if (event.key === "Home") {
+    nextIndex = 0;
+  }
+  if (event.key === "End") {
+    nextIndex = state.draftFavoriteOrder.length - 1;
+  }
+
+  if (nextIndex !== currentIndex) {
+    state.draftFavoriteOrder.splice(currentIndex, 1);
+    state.draftFavoriteOrder.splice(nextIndex, 0, resourceId);
+    renderQuickLaunch();
+    [...quickLaunch.querySelectorAll(".quick-launch-item")]
+      .find((item) => item.dataset.resourceId === resourceId)
+      ?.focus();
+  }
+}
+
+function moveDraftFavorite(movedId, targetId) {
+  const currentIndex = state.draftFavoriteOrder.indexOf(movedId);
+  const targetIndex = state.draftFavoriteOrder.indexOf(targetId);
+
+  if (currentIndex === -1 || targetIndex === -1 || currentIndex === targetIndex) {
+    return;
+  }
+
+  state.draftFavoriteOrder.splice(currentIndex, 1);
+  state.draftFavoriteOrder.splice(targetIndex, 0, movedId);
 }
 
 function readStoredValue(key) {

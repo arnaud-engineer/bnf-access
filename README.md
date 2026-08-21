@@ -44,7 +44,7 @@ http://localhost:5173
 - Import initial de 245 ressources depuis les traces publiques EasyBNF.
 - Logos locaux affiches quand une trace publique exploitable existe ; sinon l'interface genere des initiales.
 - Favoris sauvegardes localement dans le navigateur, initialises avec les ressources grand public.
-- Barre de lancement rapide alimentee par les favoris.
+- Barre de lancement rapide alimentee par les favoris, avec ordre manuel optionnel.
 - Descriptions courtes et originales, plutot que copie integrale de contenus tiers.
 - Licence a choisir avant toute publication publique.
 

@@ -81,6 +81,8 @@ Ce fonctionnement evite tout compte utilisateur et toute collecte d'identifiants
 
 Les favoris alimentent aussi une barre de lancement rapide en haut de page. Cette barre n'affiche que l'icone ou les initiales de chaque ressource favorite, et ouvre directement la ressource.
 
+Par defaut, cette barre reste triee alphabetiquement. Si l'utilisateur passe en mode modification et enregistre un ordre manuel, cet ordre est stocke localement. Les favoris ajoutes ensuite sont places en fin de liste. Le bouton `Ordre A-Z` supprime l'ordre manuel et revient au tri alphabetique.
+
 ## Points a verifier
 
 - Validite actuelle de chaque lien BnF.

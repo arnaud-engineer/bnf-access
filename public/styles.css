@@ -104,9 +104,36 @@ h1 {
 }
 
 .quick-launch {
+  margin: 18px 0 28px;
+}
+
+.quick-launch-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.quick-launch-action {
+  min-height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0 12px;
+  background: var(--panel);
+  color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.quick-launch-action:hover {
+  border-color: var(--accent);
+}
+
+.quick-launch-list {
   display: flex;
   gap: 10px;
-  margin: 18px 0 28px;
   overflow-x: auto;
   padding: 4px 2px 10px;
   scrollbar-width: thin;
@@ -129,6 +156,22 @@ h1 {
   font-weight: 800;
   text-decoration: none;
   overflow: hidden;
+}
+
+.is-editing .quick-launch-item {
+  cursor: grab;
+  touch-action: none;
+}
+
+.is-editing .quick-launch-item.is-dragging {
+  border-color: var(--accent);
+  box-shadow: 0 8px 18px #0000001a;
+  cursor: grabbing;
+  opacity: 0.72;
+}
+
+.is-editing button.quick-launch-item {
+  cursor: grab;
 }
 
 .quick-launch-item img {
@@ -285,6 +328,7 @@ h1 {
 .favorite-button:focus-visible,
 .filter-button:focus-visible,
 .card-link:focus-visible,
+.quick-launch-action:focus-visible,
 .quick-launch-item:focus-visible,
 .source-link:focus-visible,
 .official-link:focus-visible {

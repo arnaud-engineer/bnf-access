@@ -19,7 +19,7 @@ Les logos sont stockés localement pour éviter de dépendre de hotlinks externe
 
 ## SVG générés depuis les images sources
 
-- MusicMe : vectorisation depuis le PNG local, lui-même issu du site `musicme.com`.
+- MusicMe : fichier local `musicme.svg` fourni pour remplacer la vectorisation initiale depuis PNG.
 - Encyclopædia Universalis : vectorisation depuis le PNG local, aucun SVG officiel fiable n'ayant été identifié.
 - Aida : SVG typographique recréé depuis l'image locale `product_pages.jpg`, en privilégiant le bloc "AIDA ONLINE" pour limiter le poids.
 - Bellefaye : SVG recréé depuis le PNG local fourni, avec fond et lettrage éditables.

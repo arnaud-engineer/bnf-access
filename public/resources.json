@@ -509,6 +509,8 @@
         "search"
       ],
       "notes": "",
+      "icon_url": "./logos/academic-search-premier.svg",
+      "icon_alt": "Logo Academic Search Premier",
       "fallback_label": "ASP",
       "default_favorite": false,
       "bnf_official": {

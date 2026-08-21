@@ -19,3 +19,4 @@ Les logos sont stockés localement pour éviter de dépendre de hotlinks externe
 - MusicMe : vectorisation depuis le PNG local, lui-même issu du site `musicme.com`.
 - Encyclopædia Universalis : vectorisation depuis le PNG local, aucun SVG officiel fiable n'ayant été identifié.
 - Bellefaye : SVG recréé depuis le PNG local fourni, avec fond et lettrage éditables.
+- Academic Search Premier : SVG recréé depuis le PNG local `684-6848107_academic-search-premier.png` fourni pour la maquette.

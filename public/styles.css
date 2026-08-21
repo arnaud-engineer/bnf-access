@@ -202,6 +202,8 @@ h1 {
 }
 
 .quick-launch-item {
+  appearance: none;
+  box-sizing: border-box;
   display: grid;
   place-items: center;
   flex: 0 0 auto;
@@ -209,8 +211,11 @@ h1 {
   aspect-ratio: 1;
   border: 1px solid var(--line);
   border-radius: 8px;
+  padding: 0;
   background: var(--panel);
   color: var(--accent);
+  cursor: pointer;
+  font: inherit;
   font-weight: 800;
   text-decoration: none;
   overflow: hidden;

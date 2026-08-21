@@ -164,10 +164,9 @@ function renderQuickLaunch() {
 
 function createQuickLaunchHeader(favorites) {
   const header = document.createElement("div");
-  header.className = "quick-launch-header";
+  header.className = "section-heading quick-launch-header";
 
   const title = document.createElement("h2");
-  title.className = "quick-launch-title";
   title.textContent = "Favoris";
   header.append(title);
 

@@ -142,17 +142,7 @@ h1 {
 }
 
 .quick-launch-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
   margin-bottom: 10px;
-}
-
-.quick-launch-title {
-  margin: 0;
-  font-size: 1.02rem;
-  line-height: 1.2;
 }
 
 .quick-launch-actions {
@@ -201,10 +191,10 @@ h1 {
 
 .quick-launch-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 115px);
+  grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
   gap: 12px;
   justify-content: start;
-  padding: 4px 2px 10px;
+  padding: 4px 0 10px;
 }
 
 .quick-launch[hidden] {
@@ -215,8 +205,8 @@ h1 {
   display: grid;
   place-items: center;
   flex: 0 0 auto;
-  width: 115px;
-  height: 115px;
+  width: 100%;
+  aspect-ratio: 1;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--panel);
@@ -276,8 +266,8 @@ h1 {
 
 .quick-launch-item img {
   display: block;
-  max-width: 86px;
-  max-height: 86px;
+  max-width: 72%;
+  max-height: 72%;
   object-fit: contain;
 }
 

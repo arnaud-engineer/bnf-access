@@ -167,8 +167,8 @@ h1 {
 
 .quick-launch-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 64px);
-  gap: 10px;
+  grid-template-columns: repeat(auto-fill, 115px);
+  gap: 12px;
   justify-content: start;
   padding: 4px 2px 10px;
 }
@@ -181,8 +181,8 @@ h1 {
   display: grid;
   place-items: center;
   flex: 0 0 auto;
-  width: 64px;
-  height: 64px;
+  width: 115px;
+  height: 115px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--panel);
@@ -210,8 +210,8 @@ h1 {
 
 .quick-launch-item img {
   display: block;
-  max-width: 48px;
-  max-height: 48px;
+  max-width: 86px;
+  max-height: 86px;
   object-fit: contain;
 }
 

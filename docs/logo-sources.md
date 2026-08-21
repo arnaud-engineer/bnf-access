@@ -2,7 +2,7 @@
 
 Les logos sont stockés localement pour éviter de dépendre de hotlinks externes. Ils restent des marques de leurs ayants droit respectifs ; avant une publication publique large, il faudra refaire une passe de validation juridique et remplacer les fichiers douteux par des assets officiels quand ils existent.
 
-## SVG intégrés
+## SVG intégrés depuis des sources publiques
 
 - PressReader : fichier `PressReader horizontal logo.svg`, Wikipédia anglophone.
 - Europresse : fichier `Logo Europresse.svg`, Wikimedia Commons.
@@ -14,7 +14,7 @@ Les logos sont stockés localement pour éviter de dépendre de hotlinks externe
 - Larousse : fichier `Larousse vectoriel.svg`, Wikipédia francophone.
 - Medici.tv : fichier `Medici.tv logo.svg`, Wikimedia Commons.
 
-## Bitmaps conservés
+## SVG générés depuis les PNG sources
 
-- MusicMe : seul un logo PNG officiel a été trouvé sur le site `musicme.com`.
-- Encyclopædia Universalis : aucun SVG fiable n'a été identifié ; le logo reste en PNG.
+- MusicMe : vectorisation depuis le PNG local, lui-même issu du site `musicme.com`.
+- Encyclopædia Universalis : vectorisation depuis le PNG local, aucun SVG officiel fiable n'ayant été identifié.

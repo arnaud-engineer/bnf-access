@@ -189,7 +189,7 @@
         "universalis"
       ],
       "notes": "",
-      "icon_url": "./logos/universalis.png",
+      "icon_url": "./logos/universalis.svg",
       "icon_alt": "Logo Encyclopædia Universalis",
       "default_favorite": true
     },
@@ -209,7 +209,7 @@
         "musique et vidéo"
       ],
       "notes": "",
-      "icon_url": "./logos/musicme.png",
+      "icon_url": "./logos/musicme.svg",
       "icon_alt": "Logo MusicMe",
       "default_favorite": true
     },

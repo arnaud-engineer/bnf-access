@@ -89,7 +89,7 @@ Ce fonctionnement évite tout compte utilisateur et toute collecte d'identifiant
 
 Les favoris alimentent aussi une barre de lancement rapide en haut de page. Cette barre n'affiche que l'icone ou les initiales de chaque ressource favorite, et ouvre directement la ressource.
 
-Par défaut, cette barre reste triée alphabétiquement. Si l'utilisateur passe en mode modification et enregistre un ordre manuel, cet ordre est stocké localement. Les favoris ajoutés ensuite sont placés en fin de liste. Le bouton `Tri alphabétique` supprime l'ordre manuel et revient au tri alphabétique.
+Par défaut, cette barre reste triée alphabétiquement. Si l'utilisateur passe en mode modification et enregistre un ordre réellement différent du tri alphabétique, cet ordre est stocké localement. Les favoris ajoutés ensuite sont placés en fin de liste. Le bouton `Tri alphabétique` supprime l'ordre manuel et revient au tri alphabétique.
 
 ## Filtres de profil
 

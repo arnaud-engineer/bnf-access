@@ -542,6 +542,7 @@ function loadFavoriteOrder() {
   }
 
   syncFavoriteOrder();
+  normalizeFavoriteOrderMode();
 }
 
 function loadProfileFilters() {
@@ -583,6 +584,30 @@ function syncFavoriteOrder() {
   if (state.favoriteOrder.join("|") !== previous) {
     saveFavoriteOrder();
   }
+}
+
+function normalizeFavoriteOrderMode() {
+  if (!state.favoriteOrderCustom) {
+    return;
+  }
+
+  const alphaOrder = getAlphaFavoriteIds();
+
+  if (!sameOrder(state.favoriteOrder, alphaOrder)) {
+    return;
+  }
+
+  state.favoriteOrder = [];
+  state.favoriteOrderCustom = false;
+  saveFavoriteOrder();
+}
+
+function getAlphaFavoriteIds() {
+  return getAlphaFavoriteResources().map((resource) => resource.id);
+}
+
+function sameOrder(left, right) {
+  return left.length === right.length && left.every((id, index) => id === right[index]);
 }
 
 function saveFavorites() {
@@ -646,9 +671,17 @@ function enterQuickLaunchEdit() {
 
 function saveQuickLaunchOrder() {
   leaveQuickLaunchEdit(() => {
-    state.favoriteOrder = state.draftFavoriteOrder.filter((id) => state.favorites.has(id));
-    state.favorites = new Set(state.favoriteOrder);
-    state.favoriteOrderCustom = true;
+    const savedOrder = state.draftFavoriteOrder.filter((id) => state.favorites.has(id));
+    state.favorites = new Set(savedOrder);
+
+    if (sameOrder(savedOrder, getAlphaFavoriteIds())) {
+      state.favoriteOrder = [];
+      state.favoriteOrderCustom = false;
+    } else {
+      state.favoriteOrder = savedOrder;
+      state.favoriteOrderCustom = true;
+    }
+
     saveFavorites();
     saveFavoriteOrder();
   });

@@ -398,7 +398,6 @@ h1 {
 .quick-launch-action:focus-visible,
 .quick-launch-item:focus-visible,
 .profile-filters select:focus-visible,
-.source-link:focus-visible,
 .official-link:focus-visible {
   outline: 3px solid #d8a31d;
   outline-offset: 2px;
@@ -462,13 +461,8 @@ h1 {
 .card-actions {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 12px;
-}
-
-.source-link {
-  color: var(--muted);
-  font-size: 0.82rem;
 }
 
 .empty {

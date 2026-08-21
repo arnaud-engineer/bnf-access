@@ -275,7 +275,6 @@ function createCard(resource) {
     </div>
     <div class="card-actions">
       <a class="card-link" href="${escapeAttribute(resource.url)}" target="_blank" rel="noreferrer">Ouvrir</a>
-      <a class="source-link" href="${escapeAttribute(resource.source)}" target="_blank" rel="noreferrer">Source</a>
     </div>
   `;
 

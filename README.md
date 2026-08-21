@@ -40,11 +40,11 @@ http://localhost:5173
 - Projet non officiel, non affilié à la BnF.
 - Pas de collecte d'identifiants, pas de compte utilisateur, pas de backend.
 - Données versionnées dans un fichier lisible.
-- Liens sources conserves pour chaque ressource.
+- Sources communes conservées au niveau global du JSON.
 - Import initial de 245 ressources depuis les traces publiques EasyBNF.
 - Logos locaux affichés quand une trace publique exploitable existe ; sinon l'interface génère des initiales.
-- Favoris sauvegardes localement dans le navigateur, initialises avec les ressources grand public.
-- Barre de lancement rapide alimentee par les favoris, avec ordre manuel optionnel.
+- Favoris sauvegardés localement dans le navigateur, initialisés avec les ressources grand public.
+- Barre de lancement rapide alimentée par les favoris, avec ordre manuel optionnel.
 - Filtres locaux persistants par type de Pass et accès distance/sur place.
 - Descriptions courtes et originales, plutot que copie integrale de contenus tiers.
 - Licence à choisir avant toute publication publique.

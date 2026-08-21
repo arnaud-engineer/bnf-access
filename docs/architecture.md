@@ -51,21 +51,21 @@ Pour le JSON, on privilegie pour l'instant la forme explicite `login?url=...`, p
 
 ## Structure des ressources
 
-Chaque entree de `resources.json` contient :
+Chaque entrée de `resources.json` contient :
 
 - `id` : identifiant stable.
-- `name` : nom affiche.
+- `name` : nom affiché.
 - `category` : catégorie d'affichage.
 - `description` : courte description originale.
-- `url` : lien a ouvrir.
+- `url` : lien à ouvrir.
 - `remote` : accès distant possible ou non.
 - `access` : conditions d'accès connues.
 - `tags` : tags pour la recherche.
-- `source` : page source ou référence utile.
-- `source_archive` : trace publique archivée utilisée pour l'import initial.
 - `icon_url` : logo public optionnel, quand il existe dans les traces archivées.
 - `default_favorite` : favori proposé à la première ouverture, avant personnalisation locale.
-- `notes` : details pratiques, si necessaire.
+- `notes` : détails pratiques, si nécessaire.
+
+Les sources communes sont conservées au niveau racine du JSON, dans `sources`, plutôt que répétées dans chaque ressource.
 
 ## Import initial
 

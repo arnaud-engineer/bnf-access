@@ -21,6 +21,7 @@ Les logos sont stockés localement pour éviter de dépendre de hotlinks externe
 - Bellefaye : SVG recréé depuis le PNG local fourni, avec fond et lettrage éditables.
 - Academic Search Premier : SVG recréé depuis le PNG local `684-6848107_academic-search-premier.png` fourni pour la maquette.
 - Acta Sanctorum : SVG typographique original, inspiré des pages de titre anciennes fournies en référence ; pas de logo officiel identifié.
+- AFP Forum : SVG `Agence France-Presse Logo.svg`, Wikimedia Commons ; la notice indique une source originale AFP aujourd'hui indisponible à l'URL historique.
 
 ## Images détourées et optimisées
 

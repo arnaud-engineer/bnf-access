@@ -588,6 +588,8 @@
         "presse"
       ],
       "notes": "Accès sur place indiqué dans les traces EasyBNF.",
+      "icon_url": "./logos/afp-forum.svg",
+      "icon_alt": "Logo AFP Forum",
       "default_favorite": false,
       "access_mode": "onsite",
       "access_label": "Sur place uniquement",

@@ -1663,6 +1663,8 @@
         "généralistes et référence"
       ],
       "notes": "",
+      "icon_url": "./logos/bellefaye.svg",
+      "icon_alt": "Logo Bellefaye",
       "default_favorite": false,
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",

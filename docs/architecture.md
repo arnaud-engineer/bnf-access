@@ -64,6 +64,7 @@ Chaque entree de `resources.json` contient :
 - `source` : page source ou reference utile.
 - `source_archive` : trace publique archivee utilisee pour l'import initial.
 - `icon_url` : logo public optionnel, quand il existe dans les traces archivees.
+- `default_favorite` : favori propose a la premiere ouverture, avant personnalisation locale.
 - `notes` : details pratiques, si necessaire.
 
 ## Import initial
@@ -71,6 +72,12 @@ Chaque entree de `resources.json` contient :
 L'import initial couvre les 245 ressources presentes dans l'archive EasyBNF du 29 juillet 2026. Les descriptions affichees sont courtes et propres au projet ; les textes longs d'origine ne sont pas recopies dans l'interface.
 
 Onze logos ont pu etre rapatries localement depuis les traces archivees. Les autres ressources utilisent un bloc d'initiales genere par l'interface.
+
+## Favoris locaux
+
+Les favoris sont stockes dans `localStorage`, sous une cle versionnee. A la premiere ouverture, l'application initialise cette liste avec les ressources marquees `default_favorite` dans le JSON. Ensuite, les choix de l'utilisateur priment sur les valeurs par defaut.
+
+Ce fonctionnement evite tout compte utilisateur et toute collecte d'identifiants, tout en donnant une page d'accueil plus utile.
 
 ## Points a verifier
 

@@ -154,6 +154,10 @@ h1 {
   color: var(--accent-ink);
 }
 
+.favorite-filter {
+  border-color: #e1c66f;
+}
+
 .section-heading {
   display: flex;
   align-items: baseline;
@@ -188,12 +192,19 @@ h1 {
   padding: 18px;
 }
 
+.media-row {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
 .logo {
   display: grid;
   place-items: center;
   width: 58px;
   height: 58px;
-  margin-bottom: 16px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: #fafaf8;
@@ -211,6 +222,34 @@ h1 {
   background: #f2eee7;
   color: var(--accent);
   font-weight: 800;
+}
+
+.favorite-button {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  color: #9a7613;
+  cursor: pointer;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.favorite-button[aria-pressed="true"] {
+  border-color: #e1c66f;
+  background: #fff7d7;
+}
+
+.favorite-button:focus-visible,
+.filter-button:focus-visible,
+.card-link:focus-visible,
+.source-link:focus-visible,
+.official-link:focus-visible {
+  outline: 3px solid #d8a31d;
+  outline-offset: 2px;
 }
 
 .card-top {

@@ -26,7 +26,8 @@
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
       "notes": "",
       "icon_url": "./logos/pressreader.png",
-      "icon_alt": "Logo PressReader"
+      "icon_alt": "Logo PressReader",
+      "default_favorite": true
     },
     {
       "id": "europresse",
@@ -47,7 +48,8 @@
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
       "notes": "",
       "icon_url": "./logos/europresse.png",
-      "icon_alt": "Logo Europresse"
+      "icon_alt": "Logo Europresse",
+      "default_favorite": true
     },
     {
       "id": "arretsurimages-net",
@@ -68,7 +70,8 @@
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
       "notes": "",
       "icon_url": "./logos/arretsurimages.png",
-      "icon_alt": "Logo Arretsurimages.net"
+      "icon_alt": "Logo Arretsurimages.net",
+      "default_favorite": true
     },
     {
       "id": "mediapart",
@@ -89,7 +92,8 @@
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
       "notes": "",
       "icon_url": "./logos/mediapart.png",
-      "icon_alt": "Logo Mediapart"
+      "icon_alt": "Logo Mediapart",
+      "default_favorite": true
     },
     {
       "id": "new-york-times",
@@ -111,7 +115,8 @@
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
       "notes": "",
       "icon_url": "./logos/nyt.png",
-      "icon_alt": "Logo New York Times"
+      "icon_alt": "Logo New York Times",
+      "default_favorite": true
     },
     {
       "id": "alternatives-economiques",
@@ -133,7 +138,8 @@
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
       "notes": "",
       "icon_url": "./logos/altereco.jpg",
-      "icon_alt": "Logo Alternatives \u00e9conomiques"
+      "icon_alt": "Logo Alternatives \u00e9conomiques",
+      "default_favorite": true
     },
     {
       "id": "grand-robert",
@@ -155,7 +161,8 @@
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
       "notes": "",
       "icon_url": "./logos/le_grand_robert.png",
-      "icon_alt": "Logo Grand Robert"
+      "icon_alt": "Logo Grand Robert",
+      "default_favorite": true
     },
     {
       "id": "larousse-grand-dictionnaire-universel-du-xixe-siecle",
@@ -179,7 +186,8 @@
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
       "notes": "",
       "icon_url": "./logos/larousse_19e.png",
-      "icon_alt": "Logo Larousse - Grand Dictionnaire universel du XIXe si\u00e8cle"
+      "icon_alt": "Logo Larousse - Grand Dictionnaire universel du XIXe si\u00e8cle",
+      "default_favorite": true
     },
     {
       "id": "encyclop-dia-universalis",
@@ -200,7 +208,8 @@
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
       "notes": "",
       "icon_url": "./logos/universalis.png",
-      "icon_alt": "Logo Encyclop\u00e6dia Universalis"
+      "icon_alt": "Logo Encyclop\u00e6dia Universalis",
+      "default_favorite": true
     },
     {
       "id": "musicme",
@@ -221,7 +230,8 @@
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
       "notes": "",
       "icon_url": "./logos/musicme.png",
-      "icon_alt": "Logo MusicMe"
+      "icon_alt": "Logo MusicMe",
+      "default_favorite": true
     },
     {
       "id": "medici-tv",
@@ -242,7 +252,8 @@
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
       "notes": "",
       "icon_url": "./logos/medici_tv.png",
-      "icon_alt": "Logo Medici.tv"
+      "icon_alt": "Logo Medici.tv",
+      "default_favorite": true
     },
     {
       "id": "philharmonie-a-la-demande",
@@ -259,7 +270,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "academic-search-premier",
@@ -280,7 +292,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "acta-sanctorum",
@@ -300,7 +313,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "afp-forum",
@@ -316,7 +330,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "agricola",
@@ -332,7 +347,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "agris",
@@ -348,7 +364,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "aida",
@@ -367,7 +384,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "alice-catalogo-dei-libri-in-commercio-in-italia",
@@ -386,7 +404,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "allgemeines-kunstlerlexikon-akl",
@@ -406,7 +425,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "american-bibliography-of-slavic-and-east-european-studies-absees",
@@ -428,7 +448,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "american-national-biography",
@@ -449,7 +470,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "amicus",
@@ -465,7 +487,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "annee-philologique",
@@ -485,7 +508,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "anthropological-index",
@@ -502,7 +526,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "anthropology-resource-library",
@@ -523,7 +548,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "anthrosource",
@@ -542,7 +568,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "antique-map-price",
@@ -559,7 +586,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "archive-of-celtic-latin-literature",
@@ -581,7 +609,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "archives-biographiques",
@@ -601,7 +630,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "aristoteles-latinus-database",
@@ -622,7 +652,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "art-full-text",
@@ -642,7 +673,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "art-index-retrospective",
@@ -662,7 +694,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "art-sales-catalogues-online",
@@ -683,7 +716,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "art-design-architecture-collection",
@@ -704,7 +738,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "artbibliographies-modern-abm",
@@ -724,7 +759,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "arts-humanities-database",
@@ -745,7 +781,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "artstor-digital-library",
@@ -766,7 +803,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "astrophysics-data-system",
@@ -784,7 +822,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "atla-religion-database",
@@ -805,7 +844,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "avery-index-to-architectural-periodicals",
@@ -827,7 +867,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "babelscores",
@@ -846,7 +887,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "base-du-gerflint",
@@ -863,7 +905,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "bellefaye",
@@ -879,7 +922,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "benezit",
@@ -898,7 +942,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "bibliografia-nacional-espanola",
@@ -916,7 +961,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "bibliographie-d-histoire-de-l-art-bha-et-raa",
@@ -933,7 +979,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "bibliographie-de-civilisation-medievale",
@@ -954,7 +1001,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "bibliographie-de-la-litterature-francaise",
@@ -975,7 +1023,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "bibliographie-der-deutschen-sprach-und-literaturwissenschaft",
@@ -994,7 +1043,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "bibliographie-internationale-de-l-humanisme-et-de-la-renaissance",
@@ -1016,7 +1066,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "bibliography-of-british-irish-history",
@@ -1038,7 +1089,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "bibliography-of-the-history-of-art-bha-1990-2007-et-rila-1975-1989",
@@ -1057,7 +1109,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "bibliorecit",
@@ -1073,7 +1126,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "bibliotheca-teubneriana-latina-btl",
@@ -1094,7 +1148,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "bibliotheque-des-lettres",
@@ -1114,7 +1169,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "biographisch-bibliographisches-kirchenlexikon-bbkl",
@@ -1133,7 +1189,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "biosis-previews-1926",
@@ -1151,7 +1208,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "biosis-previews-1989-2007",
@@ -1170,7 +1228,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "biotechnology-abstracts-1982",
@@ -1188,7 +1247,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "bloomsbury-design-library",
@@ -1209,7 +1269,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "book-history-online",
@@ -1230,7 +1291,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "bulletin-analytique-d-histoire-romaine-1990",
@@ -1249,7 +1311,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "business-source-complete",
@@ -1270,7 +1333,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "cab-abstracts",
@@ -1286,7 +1350,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "cairn",
@@ -1302,7 +1367,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "cairn-sciences",
@@ -1319,7 +1385,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "capfi",
@@ -1335,7 +1402,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "cartomundi-outil-de-valorisation-en-ligne-du-patrimoine-cartographique",
@@ -1354,7 +1422,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "cedram-centre-de-diffusion-de-revues-academiques-mathematiques",
@@ -1373,7 +1442,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "chemical-abstracts",
@@ -1390,7 +1460,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "churchill-archive",
@@ -1410,7 +1481,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "classiques-garnier-livres-et-revues-numeriques",
@@ -1432,7 +1504,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "cobaz-afnor",
@@ -1449,7 +1522,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "compendex",
@@ -1465,7 +1539,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "congressional-publications",
@@ -1485,7 +1560,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "dafsaliens",
@@ -1501,7 +1577,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "dalloz",
@@ -1519,7 +1596,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "dalloz-bibliotheque-bibliotheque-numerique-dalloz",
@@ -1539,7 +1617,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "database-of-latin-dictionaries",
@@ -1560,7 +1639,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "dblp-computer-science-bibliography",
@@ -1579,7 +1659,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "delphes-1997",
@@ -1599,7 +1680,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "design-and-applied-arts-index-daai",
@@ -1621,7 +1703,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "dictionnaire-biographique-du-mouvement-ouvrier-francais",
@@ -1643,7 +1726,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "dictionnaire-d-histoire-et-de-geographie-ecclesiastiques",
@@ -1665,7 +1749,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "dictionnaire-universel-des-creatrices",
@@ -1686,7 +1771,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "doctrinal-plus",
@@ -1705,7 +1791,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "droits-antiques",
@@ -1722,7 +1809,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "early-english-books-online-eebo",
@@ -1744,7 +1832,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "early-european-books",
@@ -1765,7 +1854,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "early-modern-books",
@@ -1786,7 +1876,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "econlit",
@@ -1805,7 +1896,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "education-research-complete",
@@ -1826,7 +1918,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "eighteenth-century-collections-online-ii-ecco-ii",
@@ -1848,7 +1941,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "electre",
@@ -1864,7 +1958,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "electronic-enlightenment",
@@ -1884,7 +1979,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "ellipro",
@@ -1900,7 +1996,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "elnet",
@@ -1918,7 +2015,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "em-premium",
@@ -1937,7 +2035,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "emerald-management-first-120",
@@ -1958,7 +2057,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "encyclopaedia-judaica",
@@ -1978,7 +2078,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "encyclopedie-d-yverdon",
@@ -1998,7 +2099,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "encyclopedie-de-diderot-et-d-alembert",
@@ -2016,7 +2118,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "encyclopedie-de-l-islam",
@@ -2036,7 +2139,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "eni-bibliotheque-numerique",
@@ -2056,7 +2160,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "eric",
@@ -2075,7 +2180,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "ethnologue-languages-of-the-world",
@@ -2093,7 +2199,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "euromonitor-s-global-market-information-database",
@@ -2112,7 +2219,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "europa-sacra",
@@ -2132,7 +2240,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "europa-world-of-learning",
@@ -2153,7 +2262,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "factiva",
@@ -2169,7 +2279,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "food-science-and-technology-abstracts-fsta",
@@ -2188,7 +2299,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "francis",
@@ -2204,7 +2316,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "frantext",
@@ -2223,7 +2336,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "frost-sullivan",
@@ -2240,7 +2354,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "gale-general-research",
@@ -2261,7 +2376,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "gale-literature",
@@ -2281,7 +2397,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "gale-primary-sources",
@@ -2302,7 +2419,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "gale-reference-complete",
@@ -2323,7 +2441,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "gazettes-europeennes-du-18e-siecle",
@@ -2341,7 +2460,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "gbv-ikar-landkartendrucke-vor-1850",
@@ -2359,7 +2479,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "generalis",
@@ -2378,7 +2499,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "global-books-in-print",
@@ -2396,7 +2518,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "grand-corpus-des-dictionnaires-du-9e-au-20e-siecle",
@@ -2418,7 +2541,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "grand-corpus-des-grammaires-francaises-des-remarques-et-des-traites-sur-la-langue-xive-xviie-siecles",
@@ -2440,7 +2564,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "grand-corpus-des-litteratures-francaises-et-francophones-du-moyen-age-au-20e-siecle",
@@ -2462,7 +2587,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "grand-ricci-online",
@@ -2483,7 +2609,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "greenfile",
@@ -2499,7 +2626,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "hansard",
@@ -2515,7 +2643,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "helveticat",
@@ -2531,7 +2660,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "heritage-printed-book",
@@ -2552,7 +2682,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "hispanic-american-periodicals-index",
@@ -2571,7 +2702,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "historical-abstracts",
@@ -2591,7 +2723,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "history-of-science-technology-and-medicine-1975",
@@ -2613,7 +2746,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "hoovers",
@@ -2629,7 +2763,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "ibz-internationale-bibliographie-der-zeitschriftenliteratur-1983",
@@ -2651,7 +2786,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "ijbox",
@@ -2667,7 +2803,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "in-principio",
@@ -2686,7 +2823,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "index-islamicus",
@@ -2706,7 +2844,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "index-of-medieval-art",
@@ -2723,7 +2862,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "index-religiosus",
@@ -2743,7 +2883,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "index-translationum",
@@ -2760,7 +2901,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "indexpresse-etudes",
@@ -2780,7 +2922,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "inspec",
@@ -2796,7 +2939,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "intelex-pastmasters",
@@ -2813,7 +2957,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "international-bibliography-of-art",
@@ -2833,7 +2978,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "international-bibliography-of-the-social-sciences",
@@ -2855,7 +3001,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "international-bibliography-of-theatre-and-dance",
@@ -2877,7 +3024,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "international-directory-of-company-histories",
@@ -2899,7 +3047,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "international-directory-of-medievalists",
@@ -2920,7 +3069,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "international-encyclopedia-for-the-middle-ages",
@@ -2942,7 +3092,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "international-medieval-bibliography",
@@ -2963,7 +3114,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "issn",
@@ -2979,7 +3131,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "jstor",
@@ -2998,7 +3151,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "klapp-online",
@@ -3015,7 +3169,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "kompass",
@@ -3031,7 +3186,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "kritisches-lexikon-zur-deutschsprachigen-literatur-klg",
@@ -3050,7 +3206,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "kurschners-deutscher-gelehrten-kalender",
@@ -3072,7 +3229,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "lamyline",
@@ -3090,7 +3248,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "lexbase",
@@ -3108,7 +3267,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "lexikon-des-mittelalters-online",
@@ -3129,7 +3289,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "lexis-360",
@@ -3145,7 +3306,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "lextenso",
@@ -3163,7 +3325,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "library-of-congress-online-catalog",
@@ -3182,7 +3345,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "library-of-latin-texts",
@@ -3203,7 +3367,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "library-information-science-technology-abstracts",
@@ -3222,7 +3387,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "linguistics-and-language-behavior-abstracts",
@@ -3244,7 +3410,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "lisa-library-and-information-science-abstracts",
@@ -3266,7 +3433,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "littre",
@@ -3282,7 +3450,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "loeb-classical-library",
@@ -3303,7 +3472,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "mapping-the-world-maps-and-travel-literature",
@@ -3325,7 +3495,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "mascarille",
@@ -3344,7 +3515,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "middle-english-compendium",
@@ -3362,7 +3534,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "mirabile",
@@ -3378,7 +3551,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "mla-international-bibliography",
@@ -3398,7 +3572,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "monumenta-germaniae-historica-emgh",
@@ -3420,7 +3595,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "motif-index-of-folk-literature",
@@ -3439,7 +3615,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "music-periodicals-database",
@@ -3457,7 +3634,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "musik-in-geschichte-und-gegenwart-mgg",
@@ -3478,7 +3656,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "naima",
@@ -3497,7 +3676,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "navis",
@@ -3515,7 +3695,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "naxos-music-library",
@@ -3536,7 +3717,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "new-pauly",
@@ -3555,7 +3737,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "oecd-ilibrary",
@@ -3572,7 +3755,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "online-egyptological-bibliography",
@@ -3590,7 +3774,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "openedition-books",
@@ -3610,7 +3795,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "oxford-art-online",
@@ -3630,7 +3816,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "oxford-dictionary-of-national-biography",
@@ -3652,7 +3839,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "oxford-english-dictionary",
@@ -3673,7 +3861,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "oxford-music-online",
@@ -3694,7 +3883,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "oxford-reference",
@@ -3714,7 +3904,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "pascal",
@@ -3730,7 +3921,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "patrologia-latina-database",
@@ -3751,7 +3943,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "performing-arts-periodicals-database",
@@ -3773,7 +3966,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "periodicals-archive-online",
@@ -3794,7 +3988,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "peter-lang-livres-numeriques",
@@ -3816,7 +4011,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "philosopher-s-index",
@@ -3836,7 +4032,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "photography-the-world-through-the-lens",
@@ -3858,7 +4055,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "portail-suisse-des-periodiques-psp",
@@ -3876,7 +4074,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "primmus",
@@ -3892,7 +4091,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "proquest-dissertations-theses",
@@ -3910,7 +4110,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "proquest-one-literature",
@@ -3930,7 +4131,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "psycextra",
@@ -3949,7 +4151,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "psycinfo-1887",
@@ -3969,7 +4172,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "rambi-the-index-of-articles-on-jewish-studies",
@@ -3988,7 +4192,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "reef-classique",
@@ -4005,7 +4210,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "repertoire-bibliographique-de-la-philosophie-international-philosophical-bibliography",
@@ -4024,7 +4230,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "repertoire-des-arts-du-spectacle",
@@ -4042,7 +4249,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "repertoire-d-art-et-d-archeologie-raa",
@@ -4059,7 +4267,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "repertoire-international-de-la-presse-musicale-ripm-1800-1950-full-text",
@@ -4080,7 +4289,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "repertoire-international-des-sources-musicales-rism",
@@ -4099,7 +4309,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "retronews-un-site-media-pour-explorer-trois-siecles-de-presse",
@@ -4118,7 +4329,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "revue-d-histoire-ecclesiastique-bibliographie-1993-2013",
@@ -4140,7 +4352,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "rilm-abstracts-of-music-literature",
@@ -4162,7 +4375,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "romanische-bibliographie-online",
@@ -4183,7 +4397,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "rsc-publishing",
@@ -4202,7 +4417,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "scholarvox-cyberlibris",
@@ -4221,7 +4437,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "science-citation-index",
@@ -4239,7 +4456,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "sciencedirect",
@@ -4257,7 +4475,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "sciences-au-fil-du-temps",
@@ -4274,7 +4493,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "sciences-en-ligne-dictionnaire-interactif-des-sciences-et-techniques",
@@ -4296,7 +4516,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "scipio-catalogues-de-ventes-d-oeuvres-d-art-et-de-livres-rares",
@@ -4318,7 +4539,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "screen-studies-collection",
@@ -4339,7 +4561,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "socindex-with-full-text",
@@ -4361,7 +4584,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "sociological-abstracts",
@@ -4381,7 +4605,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "sociology-database",
@@ -4401,7 +4626,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "springerlink",
@@ -4420,7 +4646,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "sudoc",
@@ -4436,7 +4663,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "supplementum-epigraphicum-graecum-online",
@@ -4458,7 +4686,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "techniques-de-l-ingenieur",
@@ -4478,7 +4707,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "thesaurus-linguae-graecae",
@@ -4496,7 +4726,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "thesaurus-linguae-latinae-tll",
@@ -4517,7 +4748,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "times-digital-archives-1785-2014",
@@ -4539,7 +4771,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "twentieth-century-religious-thought-library-christianity",
@@ -4561,7 +4794,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "ulrich-s",
@@ -4577,7 +4811,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "un-ilibrary-bibliotheque-numerique-des-nations-unies",
@@ -4596,7 +4831,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "ut-per-litteras-apostolicas",
@@ -4616,7 +4852,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "vidal",
@@ -4632,7 +4869,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "waterloo-directory-of-english-newspapers-and-periodicals-series-2",
@@ -4651,7 +4889,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "wiley-digital-archives-british-association-for-the-advancement-of-science-collections-on-the-history-of-science-1830-1970",
@@ -4670,7 +4909,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "wiley-online-library",
@@ -4690,7 +4930,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "worldcat",
@@ -4709,7 +4950,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "xerfi-secteurs-7000",
@@ -4727,7 +4969,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": "Acces sur place indique dans les traces EasyBNF."
+      "notes": "Acces sur place indique dans les traces EasyBNF.",
+      "default_favorite": false
     },
     {
       "id": "yearbook-of-international-organizations",
@@ -4748,7 +4991,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     },
     {
       "id": "zeitschriften-datenbank",
@@ -4765,7 +5009,8 @@
       ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
       "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
-      "notes": ""
+      "notes": "",
+      "default_favorite": false
     }
   ]
 }

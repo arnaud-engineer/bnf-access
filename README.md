@@ -43,6 +43,7 @@ http://localhost:5173
 - Liens sources conserves pour chaque ressource.
 - Import initial de 245 ressources depuis les traces publiques EasyBNF.
 - Logos locaux affiches quand une trace publique exploitable existe ; sinon l'interface genere des initiales.
+- Favoris sauvegardes localement dans le navigateur, initialises avec les ressources grand public.
 - Descriptions courtes et originales, plutot que copie integrale de contenus tiers.
 - Licence a choisir avant toute publication publique.
 

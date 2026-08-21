@@ -116,12 +116,18 @@ function renderQuickLaunch() {
   for (const resource of favorites) {
     const item = document.createElement(state.quickLaunchEditing ? "button" : "a");
     item.className = "quick-launch-item";
+    item.classList.toggle("generated", !resource.icon_url);
     item.title = resource.name;
     item.setAttribute("aria-label", resource.name);
     item.dataset.resourceId = resource.id;
     item.innerHTML = resource.icon_url
       ? `<img src="${escapeAttribute(resource.icon_url)}" alt="" loading="lazy">`
-      : `<span>${escapeHtml(getFallbackLabel(resource))}</span>`;
+      : `
+        <span class="quick-launch-fallback">
+          <strong>${escapeHtml(getFallbackLabel(resource))}</strong>
+          <small>${escapeHtml(resource.name)}</small>
+        </span>
+      `;
 
     if (state.quickLaunchEditing) {
       item.type = "button";

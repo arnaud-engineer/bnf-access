@@ -191,6 +191,38 @@ h1 {
   overflow: hidden;
 }
 
+.quick-launch-item.generated {
+  padding: 8px;
+}
+
+.quick-launch-fallback {
+  display: grid;
+  place-items: center;
+  gap: 6px;
+  width: 100%;
+  min-width: 0;
+  text-align: center;
+}
+
+.quick-launch-fallback strong {
+  color: var(--accent);
+  font-size: 1.9rem;
+  line-height: 1;
+}
+
+.quick-launch-fallback small {
+  display: -webkit-box;
+  max-width: 100%;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1.08;
+  overflow-wrap: anywhere;
+}
+
 .is-editing .quick-launch-item {
   cursor: grab;
   touch-action: none;

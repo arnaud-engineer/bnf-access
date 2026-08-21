@@ -236,7 +236,7 @@ h1 {
 .quick-launch-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
-  gap: 12px;
+  gap: 16px 12px;
   justify-content: start;
   padding: 4px 0 10px;
 }
@@ -250,51 +250,65 @@ h1 {
   box-sizing: border-box;
   position: relative;
   display: grid;
-  place-items: center;
+  grid-template-rows: auto 1.55rem;
+  align-content: start;
+  justify-items: center;
+  gap: 6px;
   flex: 0 0 auto;
   width: 100%;
-  aspect-ratio: 1;
-  border: 1px solid var(--line);
-  border-radius: 8px;
   padding: 0;
-  background: var(--panel);
+  border: 0;
+  background: transparent;
   color: var(--accent);
   cursor: pointer;
   font: inherit;
   font-weight: 800;
   text-decoration: none;
+  overflow: visible;
+}
+
+.quick-launch-tile {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 1;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
   overflow: hidden;
 }
 
-.quick-launch-item.generated {
-  padding: 8px;
+.quick-launch-tile img {
+  display: block;
+  max-width: 72%;
+  max-height: 72%;
+  min-height: 0;
+  object-fit: contain;
 }
 
-.quick-launch-fallback {
-  display: grid;
-  place-items: center;
-  gap: 6px;
-  width: 100%;
-  min-width: 0;
-  text-align: center;
+.quick-launch-tile.generated {
+  background: #f2eee7;
 }
 
-.quick-launch-fallback strong {
+.quick-launch-tile strong {
   color: var(--accent);
   font-size: 1.9rem;
   line-height: 1;
 }
 
-.quick-launch-fallback small {
+.quick-launch-label {
   display: -webkit-box;
   max-width: 100%;
+  max-height: 1.55rem;
   overflow: hidden;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   color: var(--muted);
   font-size: 0.68rem;
   font-weight: 700;
   line-height: 1.08;
+  text-align: center;
   overflow-wrap: anywhere;
 }
 
@@ -318,18 +332,14 @@ h1 {
 
 .is-editing .quick-launch-item.is-dragging {
   animation: none;
-  border-color: var(--accent);
   box-shadow: 0 8px 18px #0000001a;
   cursor: grabbing;
   opacity: 0.72;
   transform: scale(0.98);
 }
 
-.quick-launch-item img {
-  display: block;
-  max-width: 72%;
-  max-height: 72%;
-  object-fit: contain;
+.is-editing .quick-launch-item.is-dragging .quick-launch-tile {
+  border-color: var(--accent);
 }
 
 .quick-launch-remove {
@@ -363,7 +373,7 @@ h1 {
   background: #761d29;
 }
 
-.quick-launch-item:hover {
+.quick-launch-item:hover .quick-launch-tile {
   border-color: var(--accent);
 }
 

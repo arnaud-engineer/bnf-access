@@ -165,13 +165,19 @@ function renderQuickLaunch() {
     item.title = resource.name;
     item.setAttribute("aria-label", state.quickLaunchEditing ? `Déplacer ${resource.name}` : resource.name);
     item.dataset.resourceId = resource.id;
+    const quickLaunchLabel = `<small class="quick-launch-label">${escapeHtml(resource.name)}</small>`;
     item.innerHTML = resource.icon_url
-      ? `<img src="${escapeAttribute(resource.icon_url)}" alt="" loading="lazy">`
-      : `
-        <span class="quick-launch-fallback">
-          <strong>${escapeHtml(getFallbackLabel(resource))}</strong>
-          <small>${escapeHtml(resource.name)}</small>
+      ? `
+        <span class="quick-launch-tile">
+          <img src="${escapeAttribute(resource.icon_url)}" alt="" loading="lazy">
         </span>
+        ${quickLaunchLabel}
+      `
+      : `
+        <span class="quick-launch-tile generated">
+          <strong>${escapeHtml(getFallbackLabel(resource))}</strong>
+        </span>
+        ${quickLaunchLabel}
       `;
 
     if (state.quickLaunchEditing) {

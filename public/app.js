@@ -9,6 +9,11 @@ const state = {
   favoriteOrder: [],
   favoriteOrderCustom: false,
   quickLaunchEditing: false,
+  quickLaunchTransitioning: false,
+  quickLaunchActionsEntering: false,
+  quickLaunchActionsExiting: false,
+  quickLaunchModifierEntering: false,
+  quickLaunchPendingExitAction: null,
   draftFavoriteOrder: [],
   dragging: null,
   expandedDescriptions: new Set(),
@@ -134,10 +139,12 @@ function renderQuickLaunch() {
   quickLaunch.classList.toggle("is-editing", state.quickLaunchEditing);
 
   if (!state.quickLaunchEditing && !favorites.length) {
+    state.quickLaunchModifierEntering = false;
     return;
   }
 
   quickLaunch.append(createQuickLaunchHeader(favorites));
+  resetQuickLaunchActionAnimationFlag();
 
   if (!favorites.length) {
     const empty = document.createElement("p");
@@ -189,6 +196,9 @@ function renderQuickLaunch() {
 function createQuickLaunchHeader(favorites) {
   const header = document.createElement("div");
   header.className = "section-heading quick-launch-header";
+  header.classList.toggle("actions-entering", state.quickLaunchActionsEntering);
+  header.classList.toggle("actions-exiting", state.quickLaunchActionsExiting);
+  header.classList.toggle("modifier-entering", state.quickLaunchModifierEntering);
 
   const title = document.createElement("h2");
   title.textContent = "Favoris";
@@ -219,6 +229,7 @@ function createActionButton(label, onClick, tone = "neutral") {
   const button = document.createElement("button");
   button.className = `quick-launch-action ${tone}`;
   button.type = "button";
+  button.disabled = state.quickLaunchActionsExiting;
   button.textContent = label;
   button.addEventListener("click", onClick);
   return button;
@@ -608,42 +619,82 @@ function toggleFavorite(resourceId) {
   render();
 }
 
-function startQuickLaunchEdit() {
+function startQuickLaunchEdit(event) {
+  if (state.quickLaunchEditing || state.quickLaunchTransitioning) {
+    return;
+  }
+
+  const button = event?.currentTarget;
+  if (button && !prefersReducedMotion()) {
+    state.quickLaunchTransitioning = true;
+    button.disabled = true;
+    button.classList.add("is-exiting");
+    window.setTimeout(enterQuickLaunchEdit, 170);
+    return;
+  }
+
+  enterQuickLaunchEdit();
+}
+
+function enterQuickLaunchEdit() {
+  state.quickLaunchTransitioning = false;
   state.quickLaunchEditing = true;
+  state.quickLaunchActionsEntering = !prefersReducedMotion();
   state.draftFavoriteOrder = getFavoriteResources().map((resource) => resource.id);
   render();
 }
 
 function saveQuickLaunchOrder() {
-  state.favoriteOrder = state.draftFavoriteOrder.filter((id) => state.favorites.has(id));
-  state.favorites = new Set(state.favoriteOrder);
-  state.favoriteOrderCustom = true;
-  state.quickLaunchEditing = false;
-  state.draftFavoriteOrder = [];
-  saveFavorites();
-  saveFavoriteOrder();
-  render();
+  leaveQuickLaunchEdit(() => {
+    state.favoriteOrder = state.draftFavoriteOrder.filter((id) => state.favorites.has(id));
+    state.favorites = new Set(state.favoriteOrder);
+    state.favoriteOrderCustom = true;
+    saveFavorites();
+    saveFavoriteOrder();
+  });
 }
 
 function cancelQuickLaunchEdit() {
-  state.quickLaunchEditing = false;
-  state.draftFavoriteOrder = [];
-  state.dragging = null;
-  render();
+  leaveQuickLaunchEdit();
 }
 
 function resetQuickLaunchOrder() {
-  if (state.quickLaunchEditing) {
+  leaveQuickLaunchEdit(() => {
     state.favorites = new Set(state.draftFavoriteOrder.filter((id) => state.favorites.has(id)));
+    state.favoriteOrder = [];
+    state.favoriteOrderCustom = false;
     saveFavorites();
+    saveFavoriteOrder();
+  });
+}
+
+function leaveQuickLaunchEdit(applyExitAction = null) {
+  if (!state.quickLaunchEditing || state.quickLaunchTransitioning) {
+    return;
   }
 
-  state.favoriteOrder = [];
-  state.favoriteOrderCustom = false;
+  state.quickLaunchPendingExitAction = applyExitAction;
+
+  if (prefersReducedMotion()) {
+    finishQuickLaunchExit();
+    return;
+  }
+
+  state.quickLaunchTransitioning = true;
+  state.quickLaunchActionsExiting = true;
+  render();
+  window.setTimeout(finishQuickLaunchExit, 210);
+}
+
+function finishQuickLaunchExit() {
+  state.quickLaunchPendingExitAction?.();
+  state.quickLaunchPendingExitAction = null;
+  state.quickLaunchTransitioning = false;
+  state.quickLaunchActionsExiting = false;
   state.quickLaunchEditing = false;
+  state.quickLaunchModifierEntering = !prefersReducedMotion();
   state.draftFavoriteOrder = [];
   state.dragging = null;
-  saveFavoriteOrder();
   render();
 }
 
@@ -658,6 +709,21 @@ function handleQuickLaunchRemove(event) {
 
 function stopQuickLaunchRemoveEvent(event) {
   event.stopPropagation();
+}
+
+function resetQuickLaunchActionAnimationFlag() {
+  if (!state.quickLaunchActionsEntering && !state.quickLaunchModifierEntering) {
+    return;
+  }
+
+  requestAnimationFrame(() => {
+    state.quickLaunchActionsEntering = false;
+    state.quickLaunchModifierEntering = false;
+  });
+}
+
+function prefersReducedMotion() {
+  return window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
 }
 
 function handleQuickLaunchPointerDown(event) {

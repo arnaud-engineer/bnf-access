@@ -62,7 +62,15 @@ Chaque entree de `resources.json` contient :
 - `access` : conditions d'acces connues.
 - `tags` : tags pour la recherche.
 - `source` : page source ou reference utile.
+- `source_archive` : trace publique archivee utilisee pour l'import initial.
+- `icon_url` : logo public optionnel, quand il existe dans les traces archivees.
 - `notes` : details pratiques, si necessaire.
+
+## Import initial
+
+L'import initial couvre les 245 ressources presentes dans l'archive EasyBNF du 29 juillet 2026. Les descriptions affichees sont courtes et propres au projet ; les textes longs d'origine ne sont pas recopies dans l'interface.
+
+Onze logos ont pu etre rapatries localement depuis les traces archivees. Les autres ressources utilisent un bloc d'initiales genere par l'interface.
 
 ## Points a verifier
 
@@ -71,4 +79,3 @@ Chaque entree de `resources.json` contient :
 - Ressources qui ne sont accessibles que sur place.
 - Ressources dont l'acces distant a change depuis les captures EasyBNF.
 - Cas speciaux comme New York Times, PressReader ou Europresse.
-

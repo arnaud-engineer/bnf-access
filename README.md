@@ -17,7 +17,7 @@ Le projet est volontairement statique :
 - `public/index.html` : coquille de l'application.
 - `public/styles.css` : styles de l'interface.
 - `public/app.js` : lecture du JSON, recherche, filtres et rendu des cartes.
-- `public/resources.json` : liste des ressources, liens, conditions d'acces et sources.
+- `public/resources.json` : liste des ressources, liens, conditions d'acces, logos connus et sources.
 - `docs/architecture.md` : notes techniques sur la logique des liens.
 - `docs/research-notes.md` : resume des constats autour d'EasyBNF.
 
@@ -41,6 +41,8 @@ http://localhost:5173
 - Pas de collecte d'identifiants, pas de compte utilisateur, pas de backend.
 - Donnees versionnees dans un fichier lisible.
 - Liens sources conserves pour chaque ressource.
+- Import initial de 245 ressources depuis les traces publiques EasyBNF.
+- Logos locaux affiches quand une trace publique exploitable existe ; sinon l'interface genere des initiales.
 - Descriptions courtes et originales, plutot que copie integrale de contenus tiers.
 - Licence a choisir avant toute publication publique.
 
@@ -50,4 +52,3 @@ http://localhost:5173
 - Archive EasyBNF : https://web.archive.org/web/20260731093816/https://easybnf.fr/
 - Ressources archivees EasyBNF : https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json
 - Documentation OCLC EZproxy : https://help.oclc.org/Library_Management/EZproxy/EZproxy_configuration/Starting_point_URLs_and_config_txt
-

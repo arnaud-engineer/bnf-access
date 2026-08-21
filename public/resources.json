@@ -1,6 +1,7 @@
 {
   "name": "BNF Access resources",
   "last_verified_at": null,
+  "source_last_update_at": "2023-02-25 01:54:32",
   "sources": [
     "https://bdl.bnf.fr/bases-de-donnees-par-titre",
     "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json"
@@ -13,10 +14,19 @@
       "description": "Kiosque numerique international pour consulter des journaux et magazines.",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.pressreader.com/",
       "remote": true,
-      "access": ["pass_lecture_culture", "pass_recherche_illimite"],
-      "tags": ["presse", "journaux", "magazines"],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "presse",
+        "pressreader"
+      ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
-      "notes": "Conditions d'acces distant a verifier, car elles ont evolue."
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "",
+      "icon_url": "./logos/pressreader.png",
+      "icon_alt": "Logo PressReader"
     },
     {
       "id": "europresse",
@@ -25,10 +35,40 @@
       "description": "Base de presse en texte integral avec archives et recherche par titre.",
       "url": "https://bnf.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=D000067U_1",
       "remote": true,
-      "access": ["pass_lecture_culture", "pass_recherche_illimite"],
-      "tags": ["presse", "archives", "quotidiens"],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "europresse",
+        "presse"
+      ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
-      "notes": ""
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "",
+      "icon_url": "./logos/europresse.png",
+      "icon_alt": "Logo Europresse"
+    },
+    {
+      "id": "arretsurimages-net",
+      "name": "Arretsurimages.net",
+      "category": "Presse",
+      "description": "Ressource de presse referencee pour un acces via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://www.arretsurimages.net/autologin.php",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "arretsurimages",
+        "presse"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "",
+      "icon_url": "./logos/arretsurimages.png",
+      "icon_alt": "Logo Arretsurimages.net"
     },
     {
       "id": "mediapart",
@@ -37,34 +77,19 @@
       "description": "Journal en ligne d'enquete et d'actualite.",
       "url": "https://bnf.idm.oclc.org/login?url=http://www.mediapart.fr/licence",
       "remote": true,
-      "access": ["pass_lecture_culture", "pass_recherche_illimite"],
-      "tags": ["presse", "actualite", "enquete"],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "mediapart",
+        "presse"
+      ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
-      "notes": ""
-    },
-    {
-      "id": "arretsurimages",
-      "name": "Arret sur images",
-      "category": "Presse",
-      "description": "Analyse critique des medias, articles et emissions.",
-      "url": "https://bnf.idm.oclc.org/login?url=http://www.arretsurimages.net/autologin.php",
-      "remote": true,
-      "access": ["pass_lecture_culture", "pass_recherche_illimite"],
-      "tags": ["presse", "medias", "analyse"],
-      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
-      "notes": ""
-    },
-    {
-      "id": "alternatives-economiques",
-      "name": "Alternatives economiques",
-      "category": "Presse",
-      "description": "Articles et dossiers d'economie et de societe.",
-      "url": "https://bnf.idm.oclc.org/login?url=https://www.alternatives-economiques.fr",
-      "remote": true,
-      "access": ["pass_lecture_culture", "pass_recherche_illimite"],
-      "tags": ["economie", "presse", "societe"],
-      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
-      "notes": ""
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "",
+      "icon_url": "./logos/mediapart.png",
+      "icon_alt": "Logo Mediapart"
     },
     {
       "id": "new-york-times",
@@ -73,83 +98,4674 @@
       "description": "Acces au quotidien americain et a ses archives selon les conditions BnF.",
       "url": "http://nytimes.com/subscription/promotions/lp3FURL.html?campaignId=79WJK&gift_code=4ad4ae1ee1542f2b",
       "remote": true,
-      "access": ["pass_lecture_culture", "pass_recherche_illimite"],
-      "tags": ["presse", "international", "archives"],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "presse",
+        "times",
+        "york"
+      ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
-      "notes": "Cas special : creation d'un pass temporaire NYT a verifier."
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "",
+      "icon_url": "./logos/nyt.png",
+      "icon_alt": "Logo New York Times"
+    },
+    {
+      "id": "alternatives-economiques",
+      "name": "Alternatives \u00e9conomiques",
+      "category": "Presse",
+      "description": "Ressource de presse referencee pour un acces via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.alternatives-economiques.fr",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "alternatives",
+        "economiques",
+        "presse"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "",
+      "icon_url": "./logos/altereco.jpg",
+      "icon_alt": "Logo Alternatives \u00e9conomiques"
     },
     {
       "id": "grand-robert",
       "name": "Grand Robert",
-      "category": "Langue",
+      "category": "Presse",
       "description": "Dictionnaire de reference pour la langue francaise.",
       "url": "https://bnf.idm.oclc.org/login?url=https://grandrobert.lerobert.com",
       "remote": true,
-      "access": ["pass_lecture_culture", "pass_recherche_illimite"],
-      "tags": ["dictionnaire", "langue", "francais"],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "grand",
+        "presse",
+        "robert"
+      ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
-      "notes": ""
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "",
+      "icon_url": "./logos/le_grand_robert.png",
+      "icon_alt": "Logo Grand Robert"
     },
     {
-      "id": "universalis",
-      "name": "Universalis",
-      "category": "Reference",
-      "description": "Encyclopedie generale et ressources de reference.",
-      "url": "https://bnf.idm.oclc.org/login?url=http://www.universalis-edu.com",
-      "remote": true,
-      "access": ["pass_lecture_culture", "pass_recherche_illimite"],
-      "tags": ["encyclopedie", "reference"],
-      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
-      "notes": ""
-    },
-    {
-      "id": "larousse-xixe",
-      "name": "Larousse - Grand dictionnaire universel du XIXe",
-      "category": "Langue",
-      "description": "Edition numerique du dictionnaire de Pierre Larousse.",
+      "id": "larousse-grand-dictionnaire-universel-du-xixe-siecle",
+      "name": "Larousse - Grand Dictionnaire universel du XIXe si\u00e8cle",
+      "category": "Langue et dictionnaires",
+      "description": "Ressource de langue, dictionnaire ou corpus referencee par la BnF.",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.classiques-garnier.com/numerique-bases/index.php?module=App&action=FrameMain&colname=ColLarousse",
       "remote": true,
-      "access": ["pass_lecture_culture", "pass_recherche_illimite"],
-      "tags": ["dictionnaire", "larousse", "xixe"],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "dictionnaire",
+        "grand",
+        "langue et dictionnaires",
+        "larousse",
+        "universel"
+      ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
-      "notes": ""
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "",
+      "icon_url": "./logos/larousse_19e.png",
+      "icon_alt": "Logo Larousse - Grand Dictionnaire universel du XIXe si\u00e8cle"
+    },
+    {
+      "id": "encyclop-dia-universalis",
+      "name": "Encyclop\u00e6dia Universalis",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://bnf.idm.oclc.org/login?url=http://www.universalis-edu.com",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture"
+      ],
+      "tags": [
+        "art et images",
+        "encyclop",
+        "universalis"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "",
+      "icon_url": "./logos/universalis.png",
+      "icon_alt": "Logo Encyclop\u00e6dia Universalis"
     },
     {
       "id": "musicme",
       "name": "MusicMe",
-      "category": "Musique",
+      "category": "Musique et video",
       "description": "Plateforme d'ecoute musicale accessible via la BnF.",
       "url": "https://bnf.idm.oclc.org/login?url=https://bnf.mt.musicme.com",
       "remote": true,
-      "access": ["pass_lecture_culture", "pass_recherche_illimite"],
-      "tags": ["musique", "streaming"],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "musicme",
+        "musique et video"
+      ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
-      "notes": ""
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "",
+      "icon_url": "./logos/musicme.png",
+      "icon_alt": "Logo MusicMe"
     },
     {
       "id": "medici-tv",
       "name": "Medici.tv",
-      "category": "Musique",
+      "category": "Musique et video",
       "description": "Concerts, operas, ballets et contenus video autour de la musique classique.",
       "url": "https://bnf.idm.oclc.org/login?url=https://edu.medici.tv",
       "remote": true,
-      "access": ["pass_lecture_culture", "pass_recherche_illimite"],
-      "tags": ["musique", "video", "classique"],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "medici",
+        "musique et video"
+      ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "",
+      "icon_url": "./logos/medici_tv.png",
+      "icon_alt": "Logo Medici.tv"
+    },
+    {
+      "id": "philharmonie-a-la-demande",
+      "name": "Philharmonie \u00e0 la demande",
+      "category": "Musique et video",
+      "description": "Ressource audiovisuelle ou musicale referencee pour un acces via la BnF.",
+      "url": "https://admin-pad.philharmoniedeparis.fr/75-paris-bnf-surplace",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "demande",
+        "musique et video",
+        "philharmonie"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "academic-search-premier",
+      "name": "Academic Search Premier",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=ehost&defaultdb=aph",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "academic",
+        "art et images",
+        "premier",
+        "search"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
       "notes": ""
     },
     {
-      "id": "philharmonie",
-      "name": "Philharmonie de Paris",
-      "category": "Musique",
-      "description": "Ressource musicale indiquee comme acces sur place dans les traces EasyBNF.",
-      "url": "https://admin-pad.philharmoniedeparis.fr/75-paris-bnf-surplace",
-      "remote": false,
-      "access": ["pass_recherche_illimite"],
-      "tags": ["musique", "sur place"],
+      "id": "acta-sanctorum",
+      "name": "Acta sanctorum",
+      "category": "Generalistes et reference",
+      "description": "Ressource numerique referencee dans les acces BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.proquest.com/actasanctorum",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "acta",
+        "generalistes et reference",
+        "sanctorum"
+      ],
       "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
-      "notes": "Acces sur place a verifier."
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "afp-forum",
+      "name": "AFP Forum",
+      "category": "Presse",
+      "description": "Ressource de presse referencee pour un acces via la BnF.",
+      "url": "",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "forum",
+        "presse"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "agricola",
+      "name": "Agricola",
+      "category": "Sciences et techniques",
+      "description": "Ressource scientifique ou technique referencee par la BnF.",
+      "url": "http://agricola.nal.usda.gov",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "agricola",
+        "sciences et techniques"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "agris",
+      "name": "Agris",
+      "category": "Sciences et techniques",
+      "description": "Ressource scientifique ou technique referencee par la BnF.",
+      "url": "http://www.fao.org/agris/",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "agris",
+        "sciences et techniques"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "aida",
+      "name": "Aida",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://db.degruyter.com/databasecontent?dbid=aida&dbsource=%2Fdb%2Faida",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "aida",
+        "sciences humaines"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "alice-catalogo-dei-libri-in-commercio-in-italia",
+      "name": "Alice : catalogo dei libri in commercio in italia",
+      "category": "Bibliographies et catalogues",
+      "description": "Base bibliographique, catalogue ou outil de recherche documentaire.",
+      "url": "http://alicebib.ibuk.it",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "alice",
+        "bibliographies et catalogues",
+        "catalogo",
+        "commercio",
+        "libri"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "allgemeines-kunstlerlexikon-akl",
+      "name": "Allgemeines K\u00fcnstlerlexikon (AKL)",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://db.degruyter.com/databasecontent?dbid=akl&dbsource=%2Fdb%2Fakl",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "allgemeines",
+        "art et images",
+        "kunstlerlexikon"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "american-bibliography-of-slavic-and-east-european-studies-absees",
+      "name": "American Bibliography of Slavic and East European Studies (ABSEES)",
+      "category": "Droit et economie",
+      "description": "Ressource specialisee en droit, economie ou information professionnelle.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=ehost&defaultdb=sbh",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "american",
+        "bibliography",
+        "droit et economie",
+        "east",
+        "slavic"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "american-national-biography",
+      "name": "American National Biography",
+      "category": "Langue et dictionnaires",
+      "description": "Ressource de langue, dictionnaire ou corpus referencee par la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.anb.org",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "american",
+        "biography",
+        "langue et dictionnaires",
+        "national"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "amicus",
+      "name": "Amicus",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "http://www.collectionscanada.gc.ca/amicus/index-f.html",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "amicus",
+        "art et images"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "annee-philologique",
+      "name": "Ann\u00e9e philologique",
+      "category": "Langue et dictionnaires",
+      "description": "Ressource de langue, dictionnaire ou corpus referencee par la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://www.brepolis.net",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "annee",
+        "langue et dictionnaires",
+        "philologique"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "anthropological-index",
+      "name": "Anthropological index",
+      "category": "Musique et video",
+      "description": "Ressource audiovisuelle ou musicale referencee pour un acces via la BnF.",
+      "url": "https://aio.therai.org.uk/",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "anthropological",
+        "index",
+        "musique et video"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "anthropology-resource-library",
+      "name": "Anthropology Resource Library",
+      "category": "Musique et video",
+      "description": "Ressource audiovisuelle ou musicale referencee pour un acces via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://search.alexanderstreet.com/anthropology",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "anthropology",
+        "library",
+        "musique et video",
+        "resource"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "anthrosource",
+      "name": "Anthrosource",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://anthrosource.onlinelibrary.wiley.com/",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "anthrosource",
+        "art et images"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "antique-map-price",
+      "name": "Antique map price",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "http://www.oldmaps.com/map-search.asp",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "antique",
+        "art et images",
+        "price"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "archive-of-celtic-latin-literature",
+      "name": "Archive of Celtic-Latin Literature",
+      "category": "Langue et dictionnaires",
+      "description": "Ressource de langue, dictionnaire ou corpus referencee par la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://www.brepolis.net/",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "archive",
+        "celtic",
+        "langue et dictionnaires",
+        "latin",
+        "literature"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "archives-biographiques",
+      "name": "Archives biographiques",
+      "category": "Droit et economie",
+      "description": "Ressource specialisee en droit, economie ou information professionnelle.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://wbis.degruyter.com/basic-search",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "archives",
+        "biographiques",
+        "droit et economie"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "aristoteles-latinus-database",
+      "name": "Aristoteles Latinus Database",
+      "category": "Langue et dictionnaires",
+      "description": "Ressource de langue, dictionnaire ou corpus referencee par la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://www.brepolis.net/",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "aristoteles",
+        "database",
+        "langue et dictionnaires",
+        "latinus"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "art-full-text",
+      "name": "Art Full Text",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=ehost&defaultdb=aft",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "art et images",
+        "full",
+        "text"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "art-index-retrospective",
+      "name": "Art Index Retrospective",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=ehost&defaultdb=air",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "art et images",
+        "index",
+        "retrospective"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "art-sales-catalogues-online",
+      "name": "Art Sales Catalogues Online",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://primarysources.brillonline.com/browse/art-sales-catalogues-online",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "art et images",
+        "catalogues",
+        "online",
+        "sales"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "art-design-architecture-collection",
+      "name": "Art, Design & Architecture Collection",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.proquest.com/adac/arts/fromDatabasesLayer?accountid=9641",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "architecture",
+        "collection",
+        "design",
+        "sciences humaines"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "artbibliographies-modern-abm",
+      "name": "ARTBibliographies Modern (ABM)",
+      "category": "Musique et video",
+      "description": "Ressource audiovisuelle ou musicale referencee pour un acces via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.proquest.com/artbibliographies/arts/fromDatabasesLayer?accountid=9641",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "artbibliographies",
+        "modern",
+        "musique et video"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "arts-humanities-database",
+      "name": "Arts & Humanities Database",
+      "category": "Musique et video",
+      "description": "Ressource audiovisuelle ou musicale referencee pour un acces via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.proquest.com/artshumanities/arts/fromDatabasesLayer?accountid=9641",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "arts",
+        "database",
+        "humanities",
+        "musique et video"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "artstor-digital-library",
+      "name": "Artstor Digital library",
+      "category": "Sciences et techniques",
+      "description": "Ressource scientifique ou technique referencee par la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://library.artstor.org/",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "artstor",
+        "digital",
+        "library",
+        "sciences et techniques"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "astrophysics-data-system",
+      "name": "Astrophysics Data System",
+      "category": "Sciences et techniques",
+      "description": "Ressource scientifique ou technique referencee par la BnF.",
+      "url": "http://cdsads.u-strasbg.fr/",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "astrophysics",
+        "data",
+        "sciences et techniques",
+        "system"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "atla-religion-database",
+      "name": "ATLA Religion Database",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=ehost&defaultdb=rfh",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "atla",
+        "database",
+        "religion",
+        "sciences humaines"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "avery-index-to-architectural-periodicals",
+      "name": "Avery Index to Architectural Periodicals",
+      "category": "Presse",
+      "description": "Ressource de presse referencee pour un acces via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://search.ebscohost.com/Login.aspx?lauthtype=ip,uid&profile=ehost&defaultdb=bvh",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "architectural",
+        "avery",
+        "index",
+        "periodicals",
+        "presse"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "babelscores",
+      "name": "BabelScores",
+      "category": "Musique et video",
+      "description": "Ressource audiovisuelle ou musicale referencee pour un acces via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://www.babelscores.com/fr",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "babelscores",
+        "musique et video"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "base-du-gerflint",
+      "name": "Base du GERFLINT",
+      "category": "Sciences et techniques",
+      "description": "Ressource scientifique ou technique referencee par la BnF.",
+      "url": "http://gerflint.fr/Base/base.html",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "base",
+        "gerflint",
+        "sciences et techniques"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "bellefaye",
+      "name": "Bellefaye",
+      "category": "Generalistes et reference",
+      "description": "Ressource numerique referencee dans les acces BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.bellefaye.com",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "bellefaye",
+        "generalistes et reference"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "benezit",
+      "name": "Benezit",
+      "category": "Langue et dictionnaires",
+      "description": "Ressource de langue, dictionnaire ou corpus referencee par la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.oxfordartonline.com/benezit",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "benezit",
+        "langue et dictionnaires"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "bibliografia-nacional-espanola",
+      "name": "Bibliografia nacional espa\u00f1ola",
+      "category": "Generalistes et reference",
+      "description": "Ressource numerique referencee dans les acces BnF.",
+      "url": "http://www2.bne.es/BEL_publico/index.jsp",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "bibliografia",
+        "espanola",
+        "generalistes et reference",
+        "nacional"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "bibliographie-d-histoire-de-l-art-bha-et-raa",
+      "name": "Bibliographie d'Histoire de l'Art (BHA) et RAA",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "http://www.openbibart.fr/",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "bibliographie",
+        "histoire",
+        "sciences humaines"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "bibliographie-de-civilisation-medievale",
+      "name": "Bibliographie de civilisation m\u00e9di\u00e9vale",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://www.brepolis.net",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "bibliographie",
+        "civilisation",
+        "medievale",
+        "sciences humaines"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "bibliographie-de-la-litterature-francaise",
+      "name": "Bibliographie de la litt\u00e9rature fran\u00e7aise",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.classiques-garnier.com/numerique-bases/blf",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "bibliographie",
+        "francaise",
+        "litterature",
+        "sciences humaines"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "bibliographie-der-deutschen-sprach-und-literaturwissenschaft",
+      "name": "Bibliographie der deutschen Sprach- und Literaturwissenschaft",
+      "category": "Presse",
+      "description": "Ressource de presse referencee pour un acces via la BnF.",
+      "url": "http://www.bdsl-online.de",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "bibliographie",
+        "deutschen",
+        "literaturwissenschaft",
+        "presse",
+        "sprach"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "bibliographie-internationale-de-l-humanisme-et-de-la-renaissance",
+      "name": "Bibliographie internationale de l'humanisme et de la renaissance",
+      "category": "Droit et economie",
+      "description": "Ressource specialisee en droit, economie ou information professionnelle.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://www.brepolis.net",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "bibliographie",
+        "droit et economie",
+        "humanisme",
+        "internationale",
+        "renaissance"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "bibliography-of-british-irish-history",
+      "name": "Bibliography of British & Irish History",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://www.brepolis.net",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "bibliography",
+        "british",
+        "history",
+        "irish",
+        "sciences humaines"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "bibliography-of-the-history-of-art-bha-1990-2007-et-rila-1975-1989",
+      "name": "Bibliography of the history of art (BHA) (1990-2007) et RILA (1975-1989)",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "http://primo.getty.edu/primo_library/libweb/action/search.do?vid=BHA",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "1990",
+        "2007",
+        "bibliography",
+        "history",
+        "sciences humaines"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "bibliorecit",
+      "name": "Biblior\u00e9cit",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://bibliorecitbnf.fr",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "bibliorecit",
+        "sciences humaines"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "bibliotheca-teubneriana-latina-btl",
+      "name": "Bibliotheca Teubneriana Latina (BTL)",
+      "category": "Langue et dictionnaires",
+      "description": "Ressource de langue, dictionnaire ou corpus referencee par la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://db.degruyter.com/databasecontent?dbid=btl&dbsource=%2Fdb%2Fbtl",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "bibliotheca",
+        "langue et dictionnaires",
+        "latina",
+        "teubneriana"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "bibliotheque-des-lettres",
+      "name": "Biblioth\u00e8que des Lettres",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.classiques-garnier.com/numerique-bases/index.php?module=App&action=FrameMain&colname=ColBdl",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "bibliotheque",
+        "lettres",
+        "sciences humaines"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "biographisch-bibliographisches-kirchenlexikon-bbkl",
+      "name": "Biographisch-Bibliographisches Kirchenlexikon (BBKL)",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "https://www.bbkl.de/",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "art et images",
+        "bbkl",
+        "bibliographisches",
+        "biographisch",
+        "kirchenlexikon"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "biosis-previews-1926",
+      "name": "Biosis Previews (1926- )",
+      "category": "Sciences et techniques",
+      "description": "Ressource scientifique ou technique referencee par la BnF.",
+      "url": "https://stneasy.fiz-karlsruhe.de/intranet",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "1926",
+        "biosis",
+        "previews",
+        "sciences et techniques"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "biosis-previews-1989-2007",
+      "name": "Biosis Previews (1989-2007)",
+      "category": "Sciences et techniques",
+      "description": "Ressource scientifique ou technique referencee par la BnF.",
+      "url": "http://isiknowledge.com/biosis",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "1989",
+        "2007",
+        "biosis",
+        "previews",
+        "sciences et techniques"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "biotechnology-abstracts-1982",
+      "name": "Biotechnology Abstracts (1982- )",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "https://stneasy.fiz-karlsruhe.de/intranet",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "1982",
+        "abstracts",
+        "art et images",
+        "biotechnology"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "bloomsbury-design-library",
+      "name": "Bloomsbury design library",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.bloomsburydesignlibrary.com/",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "art et images",
+        "bloomsbury",
+        "design",
+        "library"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "book-history-online",
+      "name": "Book History Online",
+      "category": "Presse",
+      "description": "Ressource de presse referencee pour un acces via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://bibliographies.brillonline.com/browse/book-history-online",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "book",
+        "history",
+        "online",
+        "presse"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "bulletin-analytique-d-histoire-romaine-1990",
+      "name": "Bulletin analytique d'histoire romaine (1990- )",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "http://www2.misha.fr/flora/jsp/index.jsp",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "analytique",
+        "art et images",
+        "bulletin",
+        "histoire",
+        "romaine"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "business-source-complete",
+      "name": "Business Source Complete",
+      "category": "Droit et economie",
+      "description": "Ressource specialisee en droit, economie ou information professionnelle.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=ehost&defaultdb=bth",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "business",
+        "complete",
+        "droit et economie",
+        "source"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "cab-abstracts",
+      "name": "CAB Abstracts",
+      "category": "Bibliographies et catalogues",
+      "description": "Base bibliographique, catalogue ou outil de recherche documentaire.",
+      "url": "https://stneasy.fiz-karlsruhe.de/intranet",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "abstracts",
+        "bibliographies et catalogues"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "cairn",
+      "name": "CAIRN",
+      "category": "Sciences et techniques",
+      "description": "Ressource scientifique ou technique referencee par la BnF.",
+      "url": "http://www.cairn.info/",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "cairn",
+        "sciences et techniques"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "cairn-sciences",
+      "name": "CAIRN Sciences",
+      "category": "Sciences et techniques",
+      "description": "Ressource scientifique ou technique referencee par la BnF.",
+      "url": "https://www.cairn-sciences.info/",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "cairn",
+        "sciences",
+        "sciences et techniques"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "capfi",
+      "name": "Capfi",
+      "category": "Generalistes et reference",
+      "description": "Ressource numerique referencee dans les acces BnF.",
+      "url": "https://app.capfinancials.com",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "capfi",
+        "generalistes et reference"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "cartomundi-outil-de-valorisation-en-ligne-du-patrimoine-cartographique",
+      "name": "CartoMundi \u2013 Outil de valorisation en ligne du patrimoine cartographique",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "http://www.cartomundi.fr/site/",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "art et images",
+        "cartomundi",
+        "ligne",
+        "outil",
+        "valorisation"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "cedram-centre-de-diffusion-de-revues-academiques-mathematiques",
+      "name": "CEDRAM (Centre de diffusion de revues acad\u00e9miques math\u00e9matiques)",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "http://www.cedram.org/",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "art et images",
+        "cedram",
+        "centre",
+        "diffusion",
+        "revues"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "chemical-abstracts",
+      "name": "Chemical Abstracts",
+      "category": "Sciences et techniques",
+      "description": "Ressource scientifique ou technique referencee par la BnF.",
+      "url": "https://stneasy.fiz-karlsruhe.de/intranet",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "abstracts",
+        "chemical",
+        "sciences et techniques"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "churchill-archive",
+      "name": "Churchill Archive",
+      "category": "Generalistes et reference",
+      "description": "Ressource numerique referencee dans les acces BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://www.churchillarchive.com",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "archive",
+        "churchill",
+        "generalistes et reference"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "classiques-garnier-livres-et-revues-numeriques",
+      "name": "Classiques Garnier: livres et revues num\u00e9riques",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.classiques-garnier.com/numerique-bases/index.php?module=App&action=FrameMain&colname=ColGarnier",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "classiques",
+        "garnier",
+        "livres",
+        "revues",
+        "sciences humaines"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "cobaz-afnor",
+      "name": "CObaz (AFNOR)",
+      "category": "Bibliographies et catalogues",
+      "description": "Base bibliographique, catalogue ou outil de recherche documentaire.",
+      "url": "https://cobaz.afnor.org",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "afnor",
+        "bibliographies et catalogues",
+        "cobaz"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "compendex",
+      "name": "Compendex",
+      "category": "Sciences et techniques",
+      "description": "Ressource scientifique ou technique referencee par la BnF.",
+      "url": "https://stneasy.fiz-karlsruhe.de/intranet",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "compendex",
+        "sciences et techniques"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "congressional-publications",
+      "name": "Congressional Publications",
+      "category": "Droit et economie",
+      "description": "Ressource specialisee en droit, economie ou information professionnelle.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://search.proquest.com/congressional/?accountid=9641",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "congressional",
+        "droit et economie",
+        "publications"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "dafsaliens",
+      "name": "Dafsaliens",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "http://www.dafsaliens.fr/recherche.vsp",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "art et images",
+        "dafsaliens"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "dalloz",
+      "name": "Dalloz",
+      "category": "Droit et economie",
+      "description": "Ressource specialisee en droit, economie ou information professionnelle.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.dalloz.fr/",
+      "remote": true,
+      "access": [
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "dalloz",
+        "droit et economie"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "dalloz-bibliotheque-bibliotheque-numerique-dalloz",
+      "name": "Dalloz Biblioth\u00e8que (Biblioth\u00e8que num\u00e9rique Dalloz)",
+      "category": "Presse",
+      "description": "Ressource de presse referencee pour un acces via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://www.dalloz-bibliotheque.fr/secure/",
+      "remote": true,
+      "access": [
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "bibliotheque",
+        "dalloz",
+        "numerique",
+        "presse"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "database-of-latin-dictionaries",
+      "name": "Database of Latin Dictionaries",
+      "category": "Langue et dictionnaires",
+      "description": "Ressource de langue, dictionnaire ou corpus referencee par la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://www.brepolis.net/",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "database",
+        "dictionaries",
+        "langue et dictionnaires",
+        "latin"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "dblp-computer-science-bibliography",
+      "name": "DBLP Computer science bibliography",
+      "category": "Sciences et techniques",
+      "description": "Ressource scientifique ou technique referencee par la BnF.",
+      "url": "http://dblp.uni-trier.de/",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "bibliography",
+        "computer",
+        "dblp",
+        "science",
+        "sciences et techniques"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "delphes-1997",
+      "name": "Delphes (1997- )",
+      "category": "Presse",
+      "description": "Ressource de presse referencee pour un acces via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.indexpresse-delphes.fr/node/1886",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "1997",
+        "delphes",
+        "presse"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "design-and-applied-arts-index-daai",
+      "name": "Design and Applied Arts Index (DAAI)",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.proquest.com/daai/arts/fromDatabasesLayer?accountid=9641",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "applied",
+        "art et images",
+        "arts",
+        "design",
+        "index"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "dictionnaire-biographique-du-mouvement-ouvrier-francais",
+      "name": "Dictionnaire biographique du mouvement ouvrier fran\u00e7ais",
+      "category": "Langue et dictionnaires",
+      "description": "Ressource de langue, dictionnaire ou corpus referencee par la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://maitron-en-ligne.univ-paris1.fr/",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "biographique",
+        "dictionnaire",
+        "langue et dictionnaires",
+        "mouvement",
+        "ouvrier"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "dictionnaire-d-histoire-et-de-geographie-ecclesiastiques",
+      "name": "Dictionnaire d'histoire et de g\u00e9ographie eccl\u00e9siastiques",
+      "category": "Langue et dictionnaires",
+      "description": "Ressource de langue, dictionnaire ou corpus referencee par la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://www.brepolis.net/",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "dictionnaire",
+        "ecclesiastiques",
+        "geographie",
+        "histoire",
+        "langue et dictionnaires"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "dictionnaire-universel-des-creatrices",
+      "name": "Dictionnaire universel des cr\u00e9atrices",
+      "category": "Langue et dictionnaires",
+      "description": "Ressource de langue, dictionnaire ou corpus referencee par la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.dictionnaire-creatrices.com/",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "creatrices",
+        "dictionnaire",
+        "langue et dictionnaires",
+        "universel"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "doctrinal-plus",
+      "name": "Doctrinal Plus",
+      "category": "Droit et economie",
+      "description": "Ressource specialisee en droit, economie ou information professionnelle.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://newip.doctrinalplus.fr.",
+      "remote": true,
+      "access": [
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "doctrinal",
+        "droit et economie",
+        "plus"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "droits-antiques",
+      "name": "Droits antiques",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "http://www2.misha.fr/flora/jsp/index.jsp",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "antiques",
+        "droits",
+        "sciences humaines"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "early-english-books-online-eebo",
+      "name": "Early English Books Online (EEBO)",
+      "category": "Presse",
+      "description": "Ressource de presse referencee pour un acces via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.proquest.com/eebo/literature/fromDatabasesLayer?accountid=9641",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "books",
+        "early",
+        "english",
+        "online",
+        "presse"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "early-european-books",
+      "name": "Early European Books",
+      "category": "Generalistes et reference",
+      "description": "Ressource numerique referencee dans les acces BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.proquest.com/eeb/literature/fromDatabasesLayer?accountid=9641",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "books",
+        "early",
+        "european",
+        "generalistes et reference"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "early-modern-books",
+      "name": "Early Modern Books",
+      "category": "Generalistes et reference",
+      "description": "Ressource numerique referencee dans les acces BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www-proquest-com.bnf.idm.oclc.org/emb?accountid=9641",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "books",
+        "early",
+        "generalistes et reference",
+        "modern"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "econlit",
+      "name": "Econlit",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=ehost&defaultdb=ecn",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "econlit",
+        "sciences humaines"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "education-research-complete",
+      "name": "Education Research Complete",
+      "category": "Sciences et techniques",
+      "description": "Ressource scientifique ou technique referencee par la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=ehost&defaultdb=ehh",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "complete",
+        "education",
+        "research",
+        "sciences et techniques"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "eighteenth-century-collections-online-ii-ecco-ii",
+      "name": "Eighteenth Century Collections Online II (ECCO II)",
+      "category": "Langue et dictionnaires",
+      "description": "Ressource de langue, dictionnaire ou corpus referencee par la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://go.gale.com/ps/dispBasicSearch.do?userGroupName=natfra&prodId=ECCO",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "century",
+        "collections",
+        "eighteenth",
+        "langue et dictionnaires",
+        "online"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "electre",
+      "name": "Electre",
+      "category": "Generalistes et reference",
+      "description": "Ressource numerique referencee dans les acces BnF.",
+      "url": "http://www.electre.com/Register.asp?ShowPage=Login&Continue=Home.asp&Login.x=1&LoginName=bnfpub&Password=bnfpub",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "electre",
+        "generalistes et reference"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "electronic-enlightenment",
+      "name": "Electronic Enlightenment",
+      "category": "Musique et video",
+      "description": "Ressource audiovisuelle ou musicale referencee pour un acces via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://www.e-enlightenment.com/",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "electronic",
+        "enlightenment",
+        "musique et video"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "ellipro",
+      "name": "Ellipro",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "https://www.ellipro.fr/VcNom-web/ExtIpLogging/c/28011",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "ellipro",
+        "sciences humaines"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "elnet",
+      "name": "ELnet",
+      "category": "Langue et dictionnaires",
+      "description": "Ressource de langue, dictionnaire ou corpus referencee par la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://www.elnet.fr/GA/Login",
+      "remote": true,
+      "access": [
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "elnet",
+        "langue et dictionnaires"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "em-premium",
+      "name": "EM Premium",
+      "category": "Sciences et techniques",
+      "description": "Ressource scientifique ou technique referencee par la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://www.em-premium.com",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "premium",
+        "sciences et techniques"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "emerald-management-first-120",
+      "name": "Emerald Management First 120",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.emerald.com/insight",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "art et images",
+        "emerald",
+        "first",
+        "management"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "encyclopaedia-judaica",
+      "name": "Encyclopaedia judaica",
+      "category": "Generalistes et reference",
+      "description": "Ressource numerique referencee dans les acces BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://go.galegroup.com/ps/i.do?id=GALE|9780028660974&v=2.1&u=natfra&it=aboutBook&p=GVRL&sw=w",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "encyclopaedia",
+        "generalistes et reference",
+        "judaica"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "encyclopedie-d-yverdon",
+      "name": "Encyclop\u00e9die d'Yverdon",
+      "category": "Langue et dictionnaires",
+      "description": "Ressource de langue, dictionnaire ou corpus referencee par la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.classiques-garnier.com/numerique-bases/index.php?module=App&action=FrameMain&colname=ColYverdon",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "encyclopedie",
+        "langue et dictionnaires",
+        "yverdon"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "encyclopedie-de-diderot-et-d-alembert",
+      "name": "Encyclop\u00e9die de Diderot et d'Alembert",
+      "category": "Generalistes et reference",
+      "description": "Ressource numerique referencee dans les acces BnF.",
+      "url": "http://portail.atilf.fr/encyclopedie/Formulaire-de-recherche.htm",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "alembert",
+        "diderot",
+        "encyclopedie",
+        "generalistes et reference"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "encyclopedie-de-l-islam",
+      "name": "Encyclop\u00e9die de l'Islam",
+      "category": "Generalistes et reference",
+      "description": "Ressource numerique referencee dans les acces BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://referenceworks.brillonline.com/cluster/Encyclopaedia%20of%20Islam",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "encyclopedie",
+        "generalistes et reference",
+        "islam"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "eni-bibliotheque-numerique",
+      "name": "ENI Biblioth\u00e8que Num\u00e9rique",
+      "category": "Musique et video",
+      "description": "Ressource audiovisuelle ou musicale referencee pour un acces via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://www.eni-training.com/cs/bnf",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "bibliotheque",
+        "musique et video",
+        "numerique"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "eric",
+      "name": "Eric",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?lauthtype=ip,uid&profile=ehost&defaultdb=eric",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "art et images",
+        "eric"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "ethnologue-languages-of-the-world",
+      "name": "Ethnologue : languages of the world",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "https://www.ethnologue.com/",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "art et images",
+        "ethnologue",
+        "languages",
+        "world"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "euromonitor-s-global-market-information-database",
+      "name": "Euromonitor's Global Market Information Database",
+      "category": "Droit et economie",
+      "description": "Ressource specialisee en droit, economie ou information professionnelle.",
+      "url": "https://www.portal.euromonitor.com",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "droit et economie",
+        "euromonitor",
+        "global",
+        "information",
+        "market"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "europa-sacra",
+      "name": "Europa sacra",
+      "category": "Generalistes et reference",
+      "description": "Ressource numerique referencee dans les acces BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://www.brepolis.net/",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "europa",
+        "generalistes et reference",
+        "sacra"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "europa-world-of-learning",
+      "name": "Europa World of Learning",
+      "category": "Musique et video",
+      "description": "Ressource audiovisuelle ou musicale referencee pour un acces via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://www.worldoflearning.com",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "europa",
+        "learning",
+        "musique et video",
+        "world"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "factiva",
+      "name": "Factiva",
+      "category": "Presse",
+      "description": "Ressource de presse referencee pour un acces via la BnF.",
+      "url": "https://global.factiva.com/en/sess/login.asp?xsid=S00YcvcZWva5DEs5DEqNDYmMp6pNT3yMHn0YqYvMq382rbRQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQQAA",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "factiva",
+        "presse"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "food-science-and-technology-abstracts-fsta",
+      "name": "Food Science and Technology Abstracts (FSTA)",
+      "category": "Sciences et techniques",
+      "description": "Ressource scientifique ou technique referencee par la BnF.",
+      "url": "https://stneasy.fiz-karlsruhe.de/intranet",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "abstracts",
+        "food",
+        "science",
+        "sciences et techniques",
+        "technology"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "francis",
+      "name": "Francis",
+      "category": "Droit et economie",
+      "description": "Ressource specialisee en droit, economie ou information professionnelle.",
+      "url": "http://pascal-francis.inist.fr",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "droit et economie",
+        "francis"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "frantext",
+      "name": "Frantext",
+      "category": "Langue et dictionnaires",
+      "description": "Ressource de langue, dictionnaire ou corpus referencee par la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://www.frantext.fr",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "frantext",
+        "langue et dictionnaires"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "frost-sullivan",
+      "name": "Frost & sullivan",
+      "category": "Generalistes et reference",
+      "description": "Ressource numerique referencee dans les acces BnF.",
+      "url": "http://member.frost.com",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "frost",
+        "generalistes et reference",
+        "sullivan"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "gale-general-research",
+      "name": "Gale General Research",
+      "category": "Presse",
+      "description": "Ressource de presse referencee pour un acces via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://link.gale.com/apps/GPS?u=natfra",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "gale",
+        "general",
+        "presse",
+        "research"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "gale-literature",
+      "name": "Gale Literature",
+      "category": "Langue et dictionnaires",
+      "description": "Ressource de langue, dictionnaire ou corpus referencee par la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://link.gale.com/apps/GLS?u=natfra",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "gale",
+        "langue et dictionnaires",
+        "literature"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "gale-primary-sources",
+      "name": "Gale Primary Sources",
+      "category": "Presse",
+      "description": "Ressource de presse referencee pour un acces via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://link.gale.com/apps/GDSC?u=natfra",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "gale",
+        "presse",
+        "primary",
+        "sources"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "gale-reference-complete",
+      "name": "Gale Reference Complete",
+      "category": "Presse",
+      "description": "Ressource de presse referencee pour un acces via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://link.gale.com/apps/menu/grc?u=natfra",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "complete",
+        "gale",
+        "presse",
+        "reference"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "gazettes-europeennes-du-18e-siecle",
+      "name": "Gazettes europ\u00e9ennes du 18e si\u00e8cle",
+      "category": "Presse",
+      "description": "Ressource de presse referencee pour un acces via la BnF.",
+      "url": "http://www.gazettes18e.fr/",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "europeennes",
+        "gazettes",
+        "presse",
+        "siecle"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "gbv-ikar-landkartendrucke-vor-1850",
+      "name": "GBV - IKAR Landkartendrucke vor 1850",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "http://gso.gbv.de/xslt/DB=1.68/LNG=EN/",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "1850",
+        "art et images",
+        "ikar",
+        "landkartendrucke"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "generalis",
+      "name": "G\u00e9n\u00e9ralis",
+      "category": "Presse",
+      "description": "Ressource de presse referencee pour un acces via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.indexpresse-generalis.fr/node/133",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "generalis",
+        "presse"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "global-books-in-print",
+      "name": "Global Books in Print",
+      "category": "Generalistes et reference",
+      "description": "Ressource numerique referencee dans les acces BnF.",
+      "url": "http://www.booksinprint.com/Home/Index",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "books",
+        "generalistes et reference",
+        "global",
+        "print"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "grand-corpus-des-dictionnaires-du-9e-au-20e-siecle",
+      "name": "Grand corpus des dictionnaires [du 9e au 20e siecle]",
+      "category": "Langue et dictionnaires",
+      "description": "Ressource de langue, dictionnaire ou corpus referencee par la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://bnf.idm.oclc.org/login?url=https://www.classiques-garnier.com/numerique-bases/index.php?module=App&action=FrameMain&colname=ColCorpusDictionnaires",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "corpus",
+        "dictionnaires",
+        "grand",
+        "langue et dictionnaires",
+        "siecle"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "grand-corpus-des-grammaires-francaises-des-remarques-et-des-traites-sur-la-langue-xive-xviie-siecles",
+      "name": "Grand Corpus des grammaires fran\u00e7aises, des remarques et des trait\u00e9s sur la langue XIVe-XVIIe si\u00e8cles",
+      "category": "Generalistes et reference",
+      "description": "Ressource numerique referencee dans les acces BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.classiques-garnier.com/numerique-bases/index.php?module=App&action=FrameMain&colname=ColGrammaires",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "corpus",
+        "francaises",
+        "generalistes et reference",
+        "grammaires",
+        "grand"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "grand-corpus-des-litteratures-francaises-et-francophones-du-moyen-age-au-20e-siecle",
+      "name": "Grand corpus des litt\u00e9ratures fran\u00e7aises et francophones, du Moyen-\u00c2ge au 20e si\u00e8cle",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.classiques-garnier.com/numerique-bases/index.php?module=App&action=FrameMain&colname=ColCorpusLitteraire",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "corpus",
+        "francaises",
+        "grand",
+        "litteratures",
+        "sciences humaines"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "grand-ricci-online",
+      "name": "Grand Ricci Online",
+      "category": "Presse",
+      "description": "Ressource de presse referencee pour un acces via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://chinesereferenceshelf.brillonline.com/grand-ricci/",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "grand",
+        "online",
+        "presse",
+        "ricci"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "greenfile",
+      "name": "Greenfile",
+      "category": "Generalistes et reference",
+      "description": "Ressource numerique referencee dans les acces BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=ehost&defaultdb=8gh",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "generalistes et reference",
+        "greenfile"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "hansard",
+      "name": "Hansard",
+      "category": "Bibliographies et catalogues",
+      "description": "Base bibliographique, catalogue ou outil de recherche documentaire.",
+      "url": "http://www.parliament.uk/business/publications/hansard/",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "bibliographies et catalogues",
+        "hansard"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "helveticat",
+      "name": "Helveticat",
+      "category": "Presse",
+      "description": "Ressource de presse referencee pour un acces via la BnF.",
+      "url": "http://helveticat.nb.admin.ch/livresuisse",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "helveticat",
+        "presse"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "heritage-printed-book",
+      "name": "Heritage Printed Book",
+      "category": "Bibliographies et catalogues",
+      "description": "Base bibliographique, catalogue ou outil de recherche documentaire.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://hpb.cerl.org",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "bibliographies et catalogues",
+        "book",
+        "heritage",
+        "printed"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "hispanic-american-periodicals-index",
+      "name": "Hispanic American Periodicals Index",
+      "category": "Presse",
+      "description": "Ressource de presse referencee pour un acces via la BnF.",
+      "url": "http://hapi.ucla.edu",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "american",
+        "hispanic",
+        "index",
+        "periodicals",
+        "presse"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "historical-abstracts",
+      "name": "Historical Abstracts",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=ehost&defaultdb=hia",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "abstracts",
+        "historical",
+        "sciences humaines"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "history-of-science-technology-and-medicine-1975",
+      "name": "History of Science, Technology and Medicine (1975- )",
+      "category": "Musique et video",
+      "description": "Ressource audiovisuelle ou musicale referencee pour un acces via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=ehost&defaultdb=htm",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "history",
+        "medicine",
+        "musique et video",
+        "science",
+        "technology"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "hoovers",
+      "name": "Hoovers",
+      "category": "Generalistes et reference",
+      "description": "Ressource numerique referencee dans les acces BnF.",
+      "url": "https://signon.onesource.com/?LogonUserID=RollingUserID",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "generalistes et reference",
+        "hoovers"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "ibz-internationale-bibliographie-der-zeitschriftenliteratur-1983",
+      "name": "IBZ (Internationale Bibliographie der Zeitschriftenliteratur) (1983- )",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://db.degruyter.com/databasecontent?dbid=ibz&dbsource=%2Fdb%2Fibz",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "1983",
+        "bibliographie",
+        "internationale",
+        "sciences humaines",
+        "zeitschriftenliteratur"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "ijbox",
+      "name": "IJbox",
+      "category": "Generalistes et reference",
+      "description": "Ressource numerique referencee dans les acces BnF.",
+      "url": "https://www.ijbox.fr/cas/login?service=http%3A//www.ijbox.fr/casservice%3Fdestination%3D/user/login%253Fdestination%253D%25252Faccueil",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "generalistes et reference",
+        "ijbox"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "in-principio",
+      "name": "In Principio",
+      "category": "Langue et dictionnaires",
+      "description": "Ressource de langue, dictionnaire ou corpus referencee par la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://www.brepolis.net/",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "langue et dictionnaires",
+        "principio"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "index-islamicus",
+      "name": "Index Islamicus",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://bibliographies.brillonline.com/browse/index-islamicus",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "art et images",
+        "index",
+        "islamicus"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "index-of-medieval-art",
+      "name": "Index of medieval art",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "https://theindex.princeton.edu/",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "art et images",
+        "index",
+        "medieval"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "index-religiosus",
+      "name": "Index Religiosus",
+      "category": "Bibliographies et catalogues",
+      "description": "Base bibliographique, catalogue ou outil de recherche documentaire.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://www.brepolis.net",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "bibliographies et catalogues",
+        "index",
+        "religiosus"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "index-translationum",
+      "name": "Index translationum",
+      "category": "Bibliographies et catalogues",
+      "description": "Base bibliographique, catalogue ou outil de recherche documentaire.",
+      "url": "http://databases.unesco.org/xtrans/xtra-form.html",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "bibliographies et catalogues",
+        "index",
+        "translationum"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "indexpresse-etudes",
+      "name": "Indexpresse Etudes",
+      "category": "Presse",
+      "description": "Ressource de presse referencee pour un acces via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.indexpresse-etudes.fr/content/etudes",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "etudes",
+        "indexpresse",
+        "presse"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "inspec",
+      "name": "INSPEC",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "https://stneasy.fiz-karlsruhe.de/intranet",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "art et images",
+        "inspec"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "intelex-pastmasters",
+      "name": "Intelex Pastmasters",
+      "category": "Presse",
+      "description": "Ressource de presse referencee pour un acces via la BnF.",
+      "url": "http://pm.nlx.com",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "intelex",
+        "pastmasters",
+        "presse"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "international-bibliography-of-art",
+      "name": "International Bibliography of Art",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.proquest.com/iba/arts/fromDatabasesLayer?accountid=9641",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "bibliography",
+        "international",
+        "sciences humaines"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "international-bibliography-of-the-social-sciences",
+      "name": "International Bibliography of the Social Sciences",
+      "category": "Droit et economie",
+      "description": "Ressource specialisee en droit, economie ou information professionnelle.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.proquest.com/ibss/socialsciences/fromDatabasesLayer?accountid=9641",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "bibliography",
+        "droit et economie",
+        "international",
+        "sciences",
+        "social"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "international-bibliography-of-theatre-and-dance",
+      "name": "International Bibliography of Theatre and Dance",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?lauthtype=ip,uid&profile=ehost&defaultdb=ibh",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "bibliography",
+        "dance",
+        "international",
+        "sciences humaines",
+        "theatre"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "international-directory-of-company-histories",
+      "name": "International Directory of Company Histories",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://go.galegroup.com/ps/aboutSeries.do?userGroupName=natfra&inPS=true&prodId=GVRL&seriesId=0IAD",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "company",
+        "directory",
+        "histories",
+        "international",
+        "sciences humaines"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "international-directory-of-medievalists",
+      "name": "International Directory of Medievalists",
+      "category": "Generalistes et reference",
+      "description": "Ressource numerique referencee dans les acces BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://www.brepolis.net",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "directory",
+        "generalistes et reference",
+        "international",
+        "medievalists"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "international-encyclopedia-for-the-middle-ages",
+      "name": "International Encyclopedia for the Middle Ages",
+      "category": "Generalistes et reference",
+      "description": "Ressource numerique referencee dans les acces BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://www.brepolis.net",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "ages",
+        "encyclopedia",
+        "generalistes et reference",
+        "international",
+        "middle"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "international-medieval-bibliography",
+      "name": "International Medieval Bibliography",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://www.brepolis.net",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "art et images",
+        "bibliography",
+        "international",
+        "medieval"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "issn",
+      "name": "ISSN",
+      "category": "Generalistes et reference",
+      "description": "Ressource numerique referencee dans les acces BnF.",
+      "url": "https://portal.issn.org/user/login_by_ip",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "generalistes et reference",
+        "issn"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "jstor",
+      "name": "JSTOR",
+      "category": "Generalistes et reference",
+      "description": "Ressource numerique referencee dans les acces BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.jstor.org/",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "generalistes et reference",
+        "jstor"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "klapp-online",
+      "name": "Klapp-online",
+      "category": "Bibliographies et catalogues",
+      "description": "Base bibliographique, catalogue ou outil de recherche documentaire.",
+      "url": "http://klapp-online.de",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "bibliographies et catalogues",
+        "klapp",
+        "online"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "kompass",
+      "name": "Kompass",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "http://fr.kompass.com/ebol/ip",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "art et images",
+        "kompass"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "kritisches-lexikon-zur-deutschsprachigen-literatur-klg",
+      "name": "Kritisches Lexikon zur deutschsprachigen Literatur (KLG)",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "http://www.nachschlage.net/search/query?query.id=query-16",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "deutschsprachigen",
+        "kritisches",
+        "lexikon",
+        "literatur",
+        "sciences humaines"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "kurschners-deutscher-gelehrten-kalender",
+      "name": "K\u00fcrschners Deutscher Gelehrten-Kalender",
+      "category": "Bibliographies et catalogues",
+      "description": "Base bibliographique, catalogue ou outil de recherche documentaire.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www-degruyter-com.bnf.idm.oclc.org/database/KDGO/html",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "bibliographies et catalogues",
+        "deutscher",
+        "gelehrten",
+        "kalender",
+        "kurschners"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "lamyline",
+      "name": "Lamyline",
+      "category": "Droit et economie",
+      "description": "Ressource specialisee en droit, economie ou information professionnelle.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.lamyline.fr/Content/Search.aspx?DATA=t3xYZGJ3rprbmIABJzwNyn",
+      "remote": true,
+      "access": [
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "droit et economie",
+        "lamyline"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "lexbase",
+      "name": "Lexbase",
+      "category": "Droit et economie",
+      "description": "Ressource specialisee en droit, economie ou information professionnelle.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.lexbase.fr",
+      "remote": true,
+      "access": [
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "droit et economie",
+        "lexbase"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "lexikon-des-mittelalters-online",
+      "name": "Lexikon des Mittelalters online",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://www.brepolis.net",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "art et images",
+        "lexikon",
+        "mittelalters",
+        "online"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "lexis-360",
+      "name": "Lexis 360",
+      "category": "Droit et economie",
+      "description": "Ressource specialisee en droit, economie ou information professionnelle.",
+      "url": "http://www.lexis360.fr",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "droit et economie",
+        "lexis"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "lextenso",
+      "name": "Lextenso",
+      "category": "Droit et economie",
+      "description": "Ressource specialisee en droit, economie ou information professionnelle.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.labase-lextenso.fr/",
+      "remote": true,
+      "access": [
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "droit et economie",
+        "lextenso"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "library-of-congress-online-catalog",
+      "name": "Library of Congress Online Catalog",
+      "category": "Bibliographies et catalogues",
+      "description": "Base bibliographique, catalogue ou outil de recherche documentaire.",
+      "url": "http://catalog.loc.gov",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "bibliographies et catalogues",
+        "catalog",
+        "congress",
+        "library",
+        "online"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "library-of-latin-texts",
+      "name": "Library of Latin Texts",
+      "category": "Langue et dictionnaires",
+      "description": "Ressource de langue, dictionnaire ou corpus referencee par la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://www.brepolis.net/",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "langue et dictionnaires",
+        "latin",
+        "library",
+        "texts"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "library-information-science-technology-abstracts",
+      "name": "Library, Information Science & Technology Abstracts",
+      "category": "Droit et economie",
+      "description": "Ressource specialisee en droit, economie ou information professionnelle.",
+      "url": "http://www.libraryresearch.com",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "droit et economie",
+        "information",
+        "library",
+        "science",
+        "technology"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "linguistics-and-language-behavior-abstracts",
+      "name": "Linguistics and Language Behavior Abstracts",
+      "category": "Langue et dictionnaires",
+      "description": "Ressource de langue, dictionnaire ou corpus referencee par la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.proquest.com/llba/socialsciences/fromDatabasesLayer?accountid=9641",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "abstracts",
+        "behavior",
+        "language",
+        "langue et dictionnaires",
+        "linguistics"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "lisa-library-and-information-science-abstracts",
+      "name": "LISA (Library and Information Science Abstracts)",
+      "category": "Droit et economie",
+      "description": "Ressource specialisee en droit, economie ou information professionnelle.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.proquest.com/lisa/socialsciences/fromDatabasesLayer?accountid=9641",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "droit et economie",
+        "information",
+        "library",
+        "lisa",
+        "science"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "littre",
+      "name": "Littr\u00e9",
+      "category": "Langue et dictionnaires",
+      "description": "Ressource de langue, dictionnaire ou corpus referencee par la BnF.",
+      "url": "http://www.littre.org",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "langue et dictionnaires",
+        "littre"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "loeb-classical-library",
+      "name": "Loeb Classical Library",
+      "category": "Presse",
+      "description": "Ressource de presse referencee pour un acces via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.loebclassics.com/",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "classical",
+        "library",
+        "loeb",
+        "presse"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "mapping-the-world-maps-and-travel-literature",
+      "name": "Mapping the World : Maps and Travel Literature",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://go.gale.com/ps/dispBasicSearch.do?userGroupName=natfra&prodId=NCCO",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "mapping",
+        "maps",
+        "sciences humaines",
+        "travel",
+        "world"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "mascarille",
+      "name": "Mascarille",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.mascarille.fr",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "mascarille",
+        "sciences humaines"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "middle-english-compendium",
+      "name": "Middle English Compendium",
+      "category": "Langue et dictionnaires",
+      "description": "Ressource de langue, dictionnaire ou corpus referencee par la BnF.",
+      "url": "http://ets.umdl.umich.edu/m/mec/",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "compendium",
+        "english",
+        "langue et dictionnaires",
+        "middle"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "mirabile",
+      "name": "Mirabile",
+      "category": "Langue et dictionnaires",
+      "description": "Ressource de langue, dictionnaire ou corpus referencee par la BnF.",
+      "url": "http://sip.mirabileweb.it/",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "langue et dictionnaires",
+        "mirabile"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "mla-international-bibliography",
+      "name": "MLA International Bibliography",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://search.ebscohost.com/login.aspx?profile=ehost&defaultdb=mzh&authtype=ip&custid=s1149613",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "bibliography",
+        "international",
+        "sciences humaines"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "monumenta-germaniae-historica-emgh",
+      "name": "Monumenta Germaniae Historica (eMGH)",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://www.brepolis.net",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "emgh",
+        "germaniae",
+        "historica",
+        "monumenta",
+        "sciences humaines"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "motif-index-of-folk-literature",
+      "name": "Motif-Index of Folk-Literature",
+      "category": "Presse",
+      "description": "Ressource de presse referencee pour un acces via la BnF.",
+      "url": "http://pm.nlx.com/xtf/view?docId=motif/motif.00.xml;chunk.id=div.motif.pmpreface.1;toc.depth=2;toc.id=div.motif.pmpreface.1;hit.rank=0;brand=default",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "folk",
+        "index",
+        "literature",
+        "motif",
+        "presse"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "music-periodicals-database",
+      "name": "Music Periodicals Database",
+      "category": "Presse",
+      "description": "Ressource de presse referencee pour un acces via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.proquest.com/iimpft/arts/fromDatabasesLayer?accountid=9641",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "database",
+        "music",
+        "periodicals",
+        "presse"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "musik-in-geschichte-und-gegenwart-mgg",
+      "name": "Musik in Geschichte und Gegenwart (MGG)",
+      "category": "Musique et video",
+      "description": "Ressource audiovisuelle ou musicale referencee pour un acces via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.mgg-online.com",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "gegenwart",
+        "geschichte",
+        "musik",
+        "musique et video"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "naima",
+      "name": "Na\u00efma",
+      "category": "Musique et video",
+      "description": "Ressource audiovisuelle ou musicale referencee pour un acces via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.naimaunlimited.com/",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "musique et video",
+        "naima"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "navis",
+      "name": "Navis",
+      "category": "Presse",
+      "description": "Ressource de presse referencee pour un acces via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://abonnes.efl.fr",
+      "remote": true,
+      "access": [
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "navis",
+        "presse"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "naxos-music-library",
+      "name": "Naxos Music Library",
+      "category": "Musique et video",
+      "description": "Ressource audiovisuelle ou musicale referencee pour un acces via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://bnf.naxosmusiclibrary.com",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "library",
+        "music",
+        "musique et video",
+        "naxos"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "new-pauly",
+      "name": "New Pauly",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://referenceworks.brillonline.com/cluster/New%20Pauly%20Online?s.num=0",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "art et images",
+        "pauly"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "oecd-ilibrary",
+      "name": "OECD iLibrary",
+      "category": "Droit et economie",
+      "description": "Ressource specialisee en droit, economie ou information professionnelle.",
+      "url": "http://www.oecd-ilibrary.org/fr",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "droit et economie",
+        "ilibrary",
+        "oecd"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "online-egyptological-bibliography",
+      "name": "Online Egyptological Bibliography",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "http://oeb.griffith.ox.ac.uk/",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "bibliography",
+        "egyptological",
+        "online",
+        "sciences humaines"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "openedition-books",
+      "name": "OpenEdition Books",
+      "category": "Generalistes et reference",
+      "description": "Ressource numerique referencee dans les acces BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://books.openedition.org/editionsbnf/",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "books",
+        "generalistes et reference",
+        "openedition"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "oxford-art-online",
+      "name": "Oxford Art Online",
+      "category": "Langue et dictionnaires",
+      "description": "Ressource de langue, dictionnaire ou corpus referencee par la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.oxfordartonline.com",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "langue et dictionnaires",
+        "online",
+        "oxford"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "oxford-dictionary-of-national-biography",
+      "name": "Oxford Dictionary of National Biography",
+      "category": "Langue et dictionnaires",
+      "description": "Ressource de langue, dictionnaire ou corpus referencee par la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.oxforddnb.com/",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "biography",
+        "dictionary",
+        "langue et dictionnaires",
+        "national",
+        "oxford"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "oxford-english-dictionary",
+      "name": "Oxford English Dictionary",
+      "category": "Langue et dictionnaires",
+      "description": "Ressource de langue, dictionnaire ou corpus referencee par la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://oed.com",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "dictionary",
+        "english",
+        "langue et dictionnaires",
+        "oxford"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "oxford-music-online",
+      "name": "Oxford Music Online",
+      "category": "Musique et video",
+      "description": "Ressource audiovisuelle ou musicale referencee pour un acces via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.oxfordmusiconline.com",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "music",
+        "musique et video",
+        "online",
+        "oxford"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "oxford-reference",
+      "name": "Oxford Reference",
+      "category": "Presse",
+      "description": "Ressource de presse referencee pour un acces via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.oxfordreference.com/",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "oxford",
+        "presse",
+        "reference"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "pascal",
+      "name": "Pascal",
+      "category": "Sciences et techniques",
+      "description": "Ressource scientifique ou technique referencee par la BnF.",
+      "url": "http://pascal-francis.inist.fr",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "pascal",
+        "sciences et techniques"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "patrologia-latina-database",
+      "name": "Patrologia Latina Database",
+      "category": "Langue et dictionnaires",
+      "description": "Ressource de langue, dictionnaire ou corpus referencee par la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.proquest.com/patrologialatina",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "database",
+        "langue et dictionnaires",
+        "latina",
+        "patrologia"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "performing-arts-periodicals-database",
+      "name": "Performing Arts Periodicals Database",
+      "category": "Presse",
+      "description": "Ressource de presse referencee pour un acces via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.proquest.com/iipaft/arts/fromDatabasesLayer?accountid=9641",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "arts",
+        "database",
+        "performing",
+        "periodicals",
+        "presse"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "periodicals-archive-online",
+      "name": "Periodicals Archive Online",
+      "category": "Presse",
+      "description": "Ressource de presse referencee pour un acces via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.proquest.com/pao/socialsciences/fromDatabasesLayer?accountid=9641",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "archive",
+        "online",
+        "periodicals",
+        "presse"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "peter-lang-livres-numeriques",
+      "name": "Peter Lang: livres num\u00e9riques",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.peterlang.com/browse?access=user&level=parent&pageSize=10&sort=datedescending",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "lang",
+        "livres",
+        "numeriques",
+        "peter",
+        "sciences humaines"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "philosopher-s-index",
+      "name": "Philosopher's Index",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=ehost&defaultdb=phl",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "index",
+        "philosopher",
+        "sciences humaines"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "photography-the-world-through-the-lens",
+      "name": "Photography: The World through the Lens",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://go.gale.com/ps/dispBasicSearch.do?userGroupName=natfra&prodId=NCCO",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "lens",
+        "photography",
+        "sciences humaines",
+        "through",
+        "world"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "portail-suisse-des-periodiques-psp",
+      "name": "Portail suisse des p\u00e9riodiques (PSP)",
+      "category": "Presse",
+      "description": "Ressource de presse referencee pour un acces via la BnF.",
+      "url": "http://ead.nb.admin.ch/web/swiss-serials/psp_fr.html",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "periodiques",
+        "portail",
+        "presse",
+        "suisse"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "primmus",
+      "name": "Primmus",
+      "category": "Musique et video",
+      "description": "Ressource audiovisuelle ou musicale referencee pour un acces via la BnF.",
+      "url": "http://renet/cederom/jsp/lancer.jsp?appli=PRIMMUS&titre=PRIMMUS&test=OUI&serveur=TORRI",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "musique et video",
+        "primmus"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "proquest-dissertations-theses",
+      "name": "Proquest Dissertations & theses",
+      "category": "Droit et economie",
+      "description": "Ressource specialisee en droit, economie ou information professionnelle.",
+      "url": "https://www.proquest.com/pqdtglobal/dissertations/fromDatabasesLayer?accountid=9641",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "dissertations",
+        "droit et economie",
+        "proquest",
+        "theses"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "proquest-one-literature",
+      "name": "ProQuest One Literature",
+      "category": "Presse",
+      "description": "Ressource de presse referencee pour un acces via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.proquest.com/pq1lit/literature/fromDatabasesLayer?accountid=9641",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "literature",
+        "presse",
+        "proquest"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "psycextra",
+      "name": "PsycExtra",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://search.ebscohost.com/login.aspx?authtype=ip,uid&custid=s1149613&groupid=main&profile=ehost&defaultdb=pxh",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "psycextra",
+        "sciences humaines"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "psycinfo-1887",
+      "name": "PsycINFO (1887- )",
+      "category": "Bibliographies et catalogues",
+      "description": "Base bibliographique, catalogue ou outil de recherche documentaire.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://search.ebscohost.com/login.aspx?profile=ehost&groupid=main&defaultdb=psyh&authtype=ip,uid&custid=s1149613",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "1887",
+        "bibliographies et catalogues",
+        "psycinfo"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "rambi-the-index-of-articles-on-jewish-studies",
+      "name": "RAMBI - The Index of Articles on Jewish Studies",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "https://web.nli.org.il/sites/nli/english/infochannels/catalogs/bibliographic-databases/rambi/pages/rambi.aspx",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "art et images",
+        "articles",
+        "index",
+        "jewish",
+        "rambi"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "reef-classique",
+      "name": "Reef Classique",
+      "category": "Sciences et techniques",
+      "description": "Ressource scientifique ou technique referencee par la BnF.",
+      "url": "http://www.batipedia.com/accueil.html",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "classique",
+        "reef",
+        "sciences et techniques"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "repertoire-bibliographique-de-la-philosophie-international-philosophical-bibliography",
+      "name": "R\u00e9pertoire bibliographique de la philosophie = International philosophical bibliography",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "http://pob.peeters-leuven.be/",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "art et images",
+        "bibliographique",
+        "international",
+        "philosophie",
+        "repertoire"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "repertoire-des-arts-du-spectacle",
+      "name": "R\u00e9pertoire des arts du spectacle",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "http://rasp.culture.fr/sdx/rasp/",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "arts",
+        "repertoire",
+        "sciences humaines",
+        "spectacle"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "repertoire-d-art-et-d-archeologie-raa",
+      "name": "R\u00e9pertoire d\u2019Art et d\u2019Arch\u00e9ologie (RAA)",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "https://www.inha.fr/fr/ressources/outils-documentaires/repertoire-d-art-et-d-archeologie-raa.html",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "archeologie",
+        "repertoire",
+        "sciences humaines"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "repertoire-international-de-la-presse-musicale-ripm-1800-1950-full-text",
+      "name": "R\u00e9pertoire international de la presse musicale (RIPM) (1800-1950) + Full Text",
+      "category": "Presse",
+      "description": "Ressource de presse referencee pour un acces via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=ehost&defaultdb=rip",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "international",
+        "musicale",
+        "presse",
+        "repertoire"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "repertoire-international-des-sources-musicales-rism",
+      "name": "R\u00e9pertoire international des sources musicales (RISM)",
+      "category": "Musique et video",
+      "description": "Ressource audiovisuelle ou musicale referencee pour un acces via la BnF.",
+      "url": "https://rism.info/index.html",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "international",
+        "musicales",
+        "musique et video",
+        "repertoire",
+        "sources"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "retronews-un-site-media-pour-explorer-trois-siecles-de-presse",
+      "name": "RetroNews, un site m\u00e9dia pour explorer trois si\u00e8cles de presse",
+      "category": "Presse",
+      "description": "Ressource de presse referencee pour un acces via la BnF.",
+      "url": "http://www.retronews.fr/",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "media",
+        "pour",
+        "presse",
+        "retronews",
+        "site"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "revue-d-histoire-ecclesiastique-bibliographie-1993-2013",
+      "name": "Revue d'histoire eccl\u00e9siastique- bibliographie (1993-2013 )",
+      "category": "Langue et dictionnaires",
+      "description": "Ressource de langue, dictionnaire ou corpus referencee par la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://www.brepolis.net/",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "bibliographie",
+        "ecclesiastique",
+        "histoire",
+        "langue et dictionnaires",
+        "revue"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "rilm-abstracts-of-music-literature",
+      "name": "RILM Abstracts of Music Literature",
+      "category": "Musique et video",
+      "description": "Ressource audiovisuelle ou musicale referencee pour un acces via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://search.ebscohost.com/login.aspx?authtype=ip,uid&profid=ehost&custid=s1149613&groupid=main&defaultdb=ram",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "abstracts",
+        "literature",
+        "music",
+        "musique et video",
+        "rilm"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "romanische-bibliographie-online",
+      "name": "Romanische Bibliographie Online",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://db.degruyter.com/databasecontent?dbid=rom&dbsource=%2Fdb%2From",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "bibliographie",
+        "online",
+        "romanische",
+        "sciences humaines"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "rsc-publishing",
+      "name": "RSC Publishing",
+      "category": "Generalistes et reference",
+      "description": "Ressource numerique referencee dans les acces BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://pubs.rsc.org/",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "generalistes et reference",
+        "publishing"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "scholarvox-cyberlibris",
+      "name": "Scholarvox (Cyberlibris)",
+      "category": "Sciences et techniques",
+      "description": "Ressource scientifique ou technique referencee par la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://univ.scholarvox.com/",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture"
+      ],
+      "tags": [
+        "cyberlibris",
+        "scholarvox",
+        "sciences et techniques"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "science-citation-index",
+      "name": "Science Citation Index",
+      "category": "Sciences et techniques",
+      "description": "Ressource scientifique ou technique referencee par la BnF.",
+      "url": "https://stneasy.fiz-karlsruhe.de/intranet",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "citation",
+        "index",
+        "science",
+        "sciences et techniques"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "sciencedirect",
+      "name": "ScienceDirect",
+      "category": "Sciences et techniques",
+      "description": "Ressource scientifique ou technique referencee par la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.sciencedirect.com",
+      "remote": true,
+      "access": [
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "sciencedirect",
+        "sciences et techniques"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "sciences-au-fil-du-temps",
+      "name": "Sciences au fil du temps",
+      "category": "Sciences et techniques",
+      "description": "Ressource scientifique ou technique referencee par la BnF.",
+      "url": "http://sciences.amisbnf.org/",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "sciences",
+        "sciences et techniques",
+        "temps"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "sciences-en-ligne-dictionnaire-interactif-des-sciences-et-techniques",
+      "name": "Sciences en ligne : dictionnaire interactif des sciences et techniques",
+      "category": "Langue et dictionnaires",
+      "description": "Ressource de langue, dictionnaire ou corpus referencee par la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://sciences-en-ligne.net/connectors/referer.php",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "dictionnaire",
+        "interactif",
+        "langue et dictionnaires",
+        "ligne",
+        "sciences"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "scipio-catalogues-de-ventes-d-oeuvres-d-art-et-de-livres-rares",
+      "name": "Scipio : Catalogues de ventes d'oeuvres d'art et de livres rares",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://firstsearch.oclc.org/FSIP:language=fr:dbname=SCIPIO",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "art et images",
+        "catalogues",
+        "oeuvres",
+        "scipio",
+        "ventes"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "screen-studies-collection",
+      "name": "Screen Studies Collection",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://search.proquest.com/screenstudies/arts/fromDatabasesLayer?accountid=9641",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "art et images",
+        "collection",
+        "screen",
+        "studies"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "socindex-with-full-text",
+      "name": "SocIndex with Full Text",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?lauthtype=ip,uid&profile=ehost&defaultdb=sih",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "art et images",
+        "full",
+        "socindex",
+        "text",
+        "with"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "sociological-abstracts",
+      "name": "Sociological Abstracts",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.proquest.com/sociologicalabstracts/socialsciences/fromDatabasesLayer?accountid=9641",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "abstracts",
+        "art et images",
+        "sociological"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "sociology-database",
+      "name": "Sociology Database",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.proquest.com/sociology/socialsciences/fromDatabasesLayer?accountid=9641",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "database",
+        "sciences humaines",
+        "sociology"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "springerlink",
+      "name": "SpringerLink",
+      "category": "Sciences et techniques",
+      "description": "Ressource scientifique ou technique referencee par la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://link.springer.com/",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "sciences et techniques",
+        "springerlink"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "sudoc",
+      "name": "Sudoc",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "http://corail.sudoc.abes.fr",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "art et images",
+        "sudoc"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "supplementum-epigraphicum-graecum-online",
+      "name": "Supplementum Epigraphicum Graecum Online",
+      "category": "Langue et dictionnaires",
+      "description": "Ressource de langue, dictionnaire ou corpus referencee par la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://scholarlyeditions.brill.com/sego/search/",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "epigraphicum",
+        "graecum",
+        "langue et dictionnaires",
+        "online",
+        "supplementum"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "techniques-de-l-ingenieur",
+      "name": "Techniques de l'ing\u00e9nieur",
+      "category": "Sciences et techniques",
+      "description": "Ressource scientifique ou technique referencee par la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://www.techniques-ingenieur.fr",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "ingenieur",
+        "sciences et techniques",
+        "techniques"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "thesaurus-linguae-graecae",
+      "name": "Thesaurus Linguae Graecae",
+      "category": "Langue et dictionnaires",
+      "description": "Ressource de langue, dictionnaire ou corpus referencee par la BnF.",
+      "url": "http://stephanus.tlg.uci.edu/",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "graecae",
+        "langue et dictionnaires",
+        "linguae",
+        "thesaurus"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "thesaurus-linguae-latinae-tll",
+      "name": "Thesaurus Linguae Latinae (TLL)",
+      "category": "Langue et dictionnaires",
+      "description": "Ressource de langue, dictionnaire ou corpus referencee par la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://tll.degruyter.com/",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "langue et dictionnaires",
+        "latinae",
+        "linguae",
+        "thesaurus"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "times-digital-archives-1785-2014",
+      "name": "Times Digital Archives (1785-2014)",
+      "category": "Presse",
+      "description": "Ressource de presse referencee pour un acces via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://go.gale.com/ps/dispBasicSearch.do?userGroupName=natfra&prodId=TTDA",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "1785",
+        "archives",
+        "digital",
+        "presse",
+        "times"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "twentieth-century-religious-thought-library-christianity",
+      "name": "Twentieth Century Religious Thought Library \u2013 Christianity",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://search.alexanderstreet.com/tcrb",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "century",
+        "religious",
+        "sciences humaines",
+        "thought",
+        "twentieth"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "ulrich-s",
+      "name": "Ulrich's",
+      "category": "Bibliographies et catalogues",
+      "description": "Base bibliographique, catalogue ou outil de recherche documentaire.",
+      "url": "http://www.ulrichsweb.com/",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "bibliographies et catalogues",
+        "ulrich"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "un-ilibrary-bibliotheque-numerique-des-nations-unies",
+      "name": "UN-iLibrary (Biblioth\u00e8que num\u00e9rique des Nations Unies)",
+      "category": "Presse",
+      "description": "Ressource de presse referencee pour un acces via la BnF.",
+      "url": "http://www.un-ilibrary.org/",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "bibliotheque",
+        "ilibrary",
+        "nations",
+        "numerique",
+        "presse"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "ut-per-litteras-apostolicas",
+      "name": "Ut per litteras apostolicas...",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://www.brepolis.net/",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "apostolicas",
+        "art et images",
+        "litteras"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "vidal",
+      "name": "Vidal",
+      "category": "Langue et dictionnaires",
+      "description": "Ressource de langue, dictionnaire ou corpus referencee par la BnF.",
+      "url": "https://evidal.vidal.fr/?token=-NBGGBd6DQPYrLe9eWlNwhhOOM4qNjKryF1JNy37Nwv1gXas2GJwn-V_a5OYoN4-",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "langue et dictionnaires",
+        "vidal"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "waterloo-directory-of-english-newspapers-and-periodicals-series-2",
+      "name": "Waterloo directory of english newspapers and periodicals (series 2)",
+      "category": "Presse",
+      "description": "Ressource de presse referencee pour un acces via la BnF.",
+      "url": "http://www.victorianperiodicals.com/series2",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "directory",
+        "english",
+        "newspapers",
+        "presse",
+        "waterloo"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "wiley-digital-archives-british-association-for-the-advancement-of-science-collections-on-the-history-of-science-1830-1970",
+      "name": "Wiley Digital Archives: British Association for the Advancement of Science (Collections on the History of Science: 1830 \u2014 1970)",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://app.wileydigitalarchives.com/baas",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "archives",
+        "british",
+        "digital",
+        "sciences humaines",
+        "wiley"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "wiley-online-library",
+      "name": "Wiley Online Library",
+      "category": "Sciences et techniques",
+      "description": "Ressource scientifique ou technique referencee par la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://onlinelibrary.wiley.com/",
+      "remote": true,
+      "access": [
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "library",
+        "online",
+        "sciences et techniques",
+        "wiley"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "worldcat",
+      "name": "Worldcat",
+      "category": "Art et images",
+      "description": "Ressource consacree aux arts, aux images ou au patrimoine visuel.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://firstsearch.oclc.org/FSIP:language=fr:dbname=WorldCat",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "art et images",
+        "worldcat"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "xerfi-secteurs-7000",
+      "name": "Xerfi - Secteurs 7000",
+      "category": "Droit et economie",
+      "description": "Ressource specialisee en droit, economie ou information professionnelle.",
+      "url": "https://www.xerfiknowledge.com/xerfifrance/loginclient/200493/xerfi/BNF",
+      "remote": false,
+      "access": [],
+      "tags": [
+        "7000",
+        "droit et economie",
+        "secteurs",
+        "xerfi"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": "Acces sur place indique dans les traces EasyBNF."
+    },
+    {
+      "id": "yearbook-of-international-organizations",
+      "name": "Yearbook of International Organizations",
+      "category": "Sciences humaines",
+      "description": "Ressource de recherche en lettres, histoire ou sciences humaines.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://ybio.brillonline.com/ybio/",
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "tags": [
+        "international",
+        "organizations",
+        "sciences humaines",
+        "yearbook"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
+    },
+    {
+      "id": "zeitschriften-datenbank",
+      "name": "Zeitschriften Datenbank",
+      "category": "Generalistes et reference",
+      "description": "Ressource numerique referencee dans les acces BnF.",
+      "url": "https://zdb-katalog.de/index.xhtml",
+      "remote": true,
+      "access": [],
+      "tags": [
+        "datenbank",
+        "generalistes et reference",
+        "zeitschriften"
+      ],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "source_archive": "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json",
+      "notes": ""
     }
   ]
 }
-

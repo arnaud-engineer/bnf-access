@@ -181,11 +181,36 @@ h1 {
 .card {
   display: flex;
   flex-direction: column;
-  min-height: 260px;
+  min-height: 292px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--panel);
   padding: 18px;
+}
+
+.logo {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fafaf8;
+  overflow: hidden;
+}
+
+.logo img {
+  display: block;
+  max-width: 44px;
+  max-height: 44px;
+  object-fit: contain;
+}
+
+.logo.generated {
+  background: #f2eee7;
+  color: var(--accent);
+  font-weight: 800;
 }
 
 .card-top {
@@ -285,4 +310,3 @@ footer {
     width: fit-content;
   }
 }
-

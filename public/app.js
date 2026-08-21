@@ -81,8 +81,14 @@ function createCard(resource) {
 
   const access = (resource.access ?? []).map((item) => accessLabels[item] ?? item);
   const remoteLabel = resource.remote ? "Acces distant" : "Sur place ou a verifier";
+  const logo = resource.icon_url
+    ? `<img src="${escapeAttribute(resource.icon_url)}" alt="${escapeAttribute(resource.icon_alt ?? "")}" loading="lazy">`
+    : `<span>${escapeHtml(getInitials(resource.name))}</span>`;
 
   card.innerHTML = `
+    <div class="logo ${resource.icon_url ? "" : "generated"}">
+      ${logo}
+    </div>
     <div class="card-top">
       <h3>${escapeHtml(resource.name)}</h3>
       <span class="category">${escapeHtml(resource.category)}</span>
@@ -99,6 +105,16 @@ function createCard(resource) {
   `;
 
   return card;
+}
+
+function getInitials(name) {
+  return name
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0])
+    .join("")
+    .toUpperCase();
 }
 
 function normalize(value) {
@@ -130,4 +146,3 @@ init().catch((error) => {
   grid.innerHTML = `<p class="empty">Impossible de charger les ressources.</p>`;
   console.error(error);
 });
-

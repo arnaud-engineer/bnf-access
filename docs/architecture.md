@@ -71,7 +71,7 @@ Les sources communes sont conservées au niveau racine du JSON, dans `sources`, 
 
 L'import initial couvre les 245 ressources presentes dans l'archive EasyBNF du 29 juillet 2026. Les descriptions affichees sont courtes et propres au projet ; les textes longs d'origine ne sont pas recopies dans l'interface.
 
-Onze logos ont pu être rapatriés localement depuis les traces archivées. Les autres ressources utilisent un bloc d'initiales genere par l'interface.
+Onze logos ont pu être rapatriés localement depuis les traces archivées ou des sources publiques. Neuf sont désormais servis en SVG local ; MusicMe et Encyclopædia Universalis restent en bitmap faute de SVG fiable identifié. Les autres ressources utilisent un bloc d'initiales généré par l'interface.
 
 ## Favoris locaux
 

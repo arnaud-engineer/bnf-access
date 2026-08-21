@@ -23,7 +23,7 @@
         "pressreader"
       ],
       "notes": "",
-      "icon_url": "./logos/pressreader.png",
+      "icon_url": "./logos/pressreader.svg",
       "icon_alt": "Logo PressReader",
       "default_favorite": true
     },
@@ -43,7 +43,7 @@
         "presse"
       ],
       "notes": "",
-      "icon_url": "./logos/europresse.png",
+      "icon_url": "./logos/europresse.svg",
       "icon_alt": "Logo Europresse",
       "default_favorite": true
     },
@@ -63,7 +63,7 @@
         "presse"
       ],
       "notes": "",
-      "icon_url": "./logos/arretsurimages.png",
+      "icon_url": "./logos/arretsurimages.svg",
       "icon_alt": "Logo Arrêt sur images",
       "default_favorite": true
     },
@@ -83,7 +83,7 @@
         "presse"
       ],
       "notes": "",
-      "icon_url": "./logos/mediapart.png",
+      "icon_url": "./logos/mediapart.svg",
       "icon_alt": "Logo Mediapart",
       "default_favorite": true
     },
@@ -104,7 +104,7 @@
         "york"
       ],
       "notes": "",
-      "icon_url": "./logos/nyt.png",
+      "icon_url": "./logos/nyt.svg",
       "icon_alt": "Logo New York Times",
       "default_favorite": true
     },
@@ -125,7 +125,7 @@
         "presse"
       ],
       "notes": "",
-      "icon_url": "./logos/altereco.jpg",
+      "icon_url": "./logos/altereco.svg",
       "icon_alt": "Logo Alternatives économiques",
       "default_favorite": true
     },
@@ -146,7 +146,7 @@
         "robert"
       ],
       "notes": "",
-      "icon_url": "./logos/le_grand_robert.png",
+      "icon_url": "./logos/le_grand_robert.svg",
       "icon_alt": "Logo Grand Robert",
       "default_favorite": true
     },
@@ -169,7 +169,7 @@
         "universel"
       ],
       "notes": "",
-      "icon_url": "./logos/larousse_19e.png",
+      "icon_url": "./logos/larousse.svg",
       "icon_alt": "Logo Larousse - Grand Dictionnaire universel du XIXe siècle",
       "default_favorite": true
     },
@@ -229,7 +229,7 @@
         "musique et vidéo"
       ],
       "notes": "",
-      "icon_url": "./logos/medici_tv.png",
+      "icon_url": "./logos/medici_tv.svg",
       "icon_alt": "Logo Medici.tv",
       "default_favorite": true
     },

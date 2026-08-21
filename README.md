@@ -19,6 +19,7 @@ Le projet est volontairement statique :
 - `public/app.js` : lecture du JSON, recherche, filtres et rendu des cartes.
 - `public/resources.json` : liste des ressources, liens, conditions d'accès, logos connus et sources.
 - `docs/architecture.md` : notes techniques sur la logique des liens.
+- `docs/logo-sources.md` : provenance des logos locaux.
 - `docs/research-notes.md` : resume des constats autour d'EasyBNF.
 
 ## Lancer en local

@@ -6292,6 +6292,11 @@
           }
         ]
       },
+      "icon_url": "./logos/littre.svg",
+      "icon_alt": "Icône typographique Littré",
+      "icon_source_url": "https://gallica.bnf.fr/ark:/12148/bpt6k5406710m",
+      "icon_source_kind": "svg_recreation",
+      "icon_review_status": "local_mockup",
       "access_mode": "free",
       "access_label": "Accès libre",
       "access_source": "bnf_official"

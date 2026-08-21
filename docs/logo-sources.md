@@ -25,6 +25,7 @@ Les logos sont stockés localement pour éviter de dépendre de hotlinks externe
 - Academic Search Premier : SVG recréé depuis le PNG local `684-6848107_academic-search-premier.png` fourni pour la maquette.
 - ABSEEES : icône typographique SVG créée pour la maquette, en s'appuyant sur l'existence d'une vignette ABSEEES publiée par la Bibliothèque nationale tchèque ; aucun logo officiel autonome identifié.
 - Acta Sanctorum : SVG typographique original, inspiré des pages de titre anciennes fournies en référence ; pas de logo officiel identifié.
+- Littré : icône typographique originale inspirée des pages de titre anciennes du `Dictionnaire de la langue française` consultables sur Gallica ; aucun logo officiel identifié.
 - AFP Forum : SVG `Agence France-Presse Logo.svg`, Wikimedia Commons ; la notice indique une source originale AFP aujourd'hui indisponible à l'URL historique.
 
 ## Images détourées et optimisées

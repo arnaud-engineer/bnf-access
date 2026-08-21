@@ -6962,11 +6962,11 @@
           }
         ]
       },
-      "icon_url": "./logos/audit/openedition-books.png",
+      "icon_url": "./logos/openedition-books.svg",
       "icon_alt": "Logo OpenEdition Books",
-      "icon_source_url": "https://books.openedition.org/.within.website/x/cmd/anubis/static/img/oe-logo.png",
-      "icon_source_kind": "png",
-      "icon_review_status": "to_review",
+      "icon_source_file": "icon.svg",
+      "icon_source_kind": "svg",
+      "icon_review_status": "local_provided",
       "access_mode": "remote",
       "access_label": "Accès distant",
       "access_source": "bnf_official",

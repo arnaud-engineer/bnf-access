@@ -13,6 +13,7 @@ Les logos sont stockés localement pour éviter de dépendre de hotlinks externe
 - Grand Robert : fichier `Logo LeRobert.svg`, Wikipédia francophone.
 - Larousse : fichier `Larousse vectoriel.svg`, Wikipédia francophone.
 - Medici.tv : fichier `Medici.tv logo.svg`, Wikimedia Commons.
+- OpenEdition Books : fichier local `icon.svg` fourni pour remplacer le PNG d'audit initial.
 - RetroNews : fichier local `partenaire-retronews.svg` fourni pour la maquette.
 - Agricola : logo USDA, fichier `Logo of the United States Department of Agriculture.svg`, Wikimedia Commons ; le guide officiel USDA documente le logo et ses couleurs.
 - Worldcat : pictogramme multicolore extrait du fichier `WorldCat logo.svg`, Wikimedia Commons.

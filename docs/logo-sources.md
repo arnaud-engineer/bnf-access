@@ -8,7 +8,7 @@ Les logos sont stockés localement pour éviter de dépendre de hotlinks externe
 - Europresse : fichier `Logo Europresse.svg`, Wikimedia Commons.
 - Arrêt sur images : fichier `LOGO @SI FINAL.svg`, Wikipédia francophone.
 - Mediapart : fichier `Mediapart wordmark.svg`, Wikimedia Commons.
-- New York Times : fichier `NewYorkTimes.svg`, Wikimedia Commons.
+- New York Times : fichier local `nyt-safari-pinned-tab.svg` fourni pour améliorer la lisibilité dans la maquette.
 - Alternatives économiques : fichier `Alternatives Economiques logo.svg`, Wikimedia Commons.
 - Grand Robert : fichier `Logo LeRobert.svg`, Wikipédia francophone.
 - Larousse : fichier `Larousse vectoriel.svg`, Wikipédia francophone.

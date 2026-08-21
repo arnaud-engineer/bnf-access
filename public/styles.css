@@ -344,7 +344,7 @@ h1 {
 .card-header {
   display: grid;
   grid-template-columns: 58px minmax(0, 1fr) 38px;
-  align-items: start;
+  align-items: center;
   gap: 12px;
   margin-bottom: 16px;
 }

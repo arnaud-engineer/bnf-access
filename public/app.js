@@ -22,6 +22,9 @@ const passFilter = document.querySelector("#passFilter");
 const remoteFilter = document.querySelector("#remoteFilter");
 const resultCount = document.querySelector("#resultCount");
 const quickLaunch = document.querySelector("#quickLaunch");
+const privacyNotice = document.querySelector("#privacyNotice");
+const dismissNotice = document.querySelector("#dismissNotice");
+const privacyNoticeDismissedKey = "bnf-access:privacy-notice-dismissed:v1";
 const favoriteStorageKey = "bnf-access:favorites:v1";
 const favoriteStorageReadyKey = "bnf-access:favorites-ready:v1";
 const favoriteOrderStorageKey = "bnf-access:favorite-order:v1";
@@ -37,6 +40,7 @@ const accessLabels = {
 };
 
 async function init() {
+  setupPrivacyNotice();
   const response = await fetch("./resources.json");
   const data = await response.json();
   state.resources = data.resources;
@@ -45,6 +49,18 @@ async function init() {
   loadProfileFilters();
   renderFilters();
   render();
+}
+
+function setupPrivacyNotice() {
+  if (readStoredValue(privacyNoticeDismissedKey) === "true") {
+    privacyNotice.hidden = true;
+    return;
+  }
+
+  dismissNotice.addEventListener("click", () => {
+    privacyNotice.hidden = true;
+    writeStoredValue(privacyNoticeDismissedKey, "true");
+  });
 }
 
 function renderFilters() {

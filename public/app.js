@@ -130,25 +130,33 @@ function render() {
 function renderQuickLaunch() {
   const favorites = state.quickLaunchEditing ? getResourcesByIds(state.draftFavoriteOrder) : getFavoriteResources();
   quickLaunch.innerHTML = "";
-  quickLaunch.hidden = favorites.length === 0;
+  quickLaunch.hidden = !state.quickLaunchEditing && favorites.length === 0;
   quickLaunch.classList.toggle("is-editing", state.quickLaunchEditing);
 
-  if (!favorites.length) {
+  if (!state.quickLaunchEditing && !favorites.length) {
     return;
   }
 
   quickLaunch.append(createQuickLaunchHeader(favorites));
+
+  if (!favorites.length) {
+    const empty = document.createElement("p");
+    empty.className = "quick-launch-empty";
+    empty.textContent = "Aucun favori.";
+    quickLaunch.append(empty);
+    return;
+  }
 
   const list = document.createElement("div");
   list.className = "quick-launch-list";
   list.setAttribute("aria-label", state.quickLaunchEditing ? "Favoris a reorganiser" : "Favoris");
 
   for (const resource of favorites) {
-    const item = document.createElement(state.quickLaunchEditing ? "button" : "a");
+    const item = document.createElement(state.quickLaunchEditing ? "div" : "a");
     item.className = "quick-launch-item";
     item.classList.toggle("generated", !resource.icon_url);
     item.title = resource.name;
-    item.setAttribute("aria-label", resource.name);
+    item.setAttribute("aria-label", state.quickLaunchEditing ? `Déplacer ${resource.name}` : resource.name);
     item.dataset.resourceId = resource.id;
     item.innerHTML = resource.icon_url
       ? `<img src="${escapeAttribute(resource.icon_url)}" alt="" loading="lazy">`
@@ -160,8 +168,10 @@ function renderQuickLaunch() {
       `;
 
     if (state.quickLaunchEditing) {
-      item.type = "button";
+      item.tabIndex = 0;
+      item.setAttribute("role", "button");
       item.classList.toggle("is-dragging", state.dragging?.id === resource.id);
+      item.append(createQuickLaunchRemoveButton(resource));
       item.addEventListener("pointerdown", handleQuickLaunchPointerDown);
       item.addEventListener("keydown", handleQuickLaunchKeyDown);
     } else {
@@ -197,7 +207,7 @@ function createQuickLaunchHeader(favorites) {
     return header;
   }
 
-  if (favorites.length > 1) {
+  if (favorites.length > 0) {
     actions.append(createActionButton("Modifier", startQuickLaunchEdit, "neutral"));
   }
 
@@ -211,6 +221,20 @@ function createActionButton(label, onClick, tone = "neutral") {
   button.type = "button";
   button.textContent = label;
   button.addEventListener("click", onClick);
+  return button;
+}
+
+function createQuickLaunchRemoveButton(resource) {
+  const button = document.createElement("button");
+  button.className = "quick-launch-remove";
+  button.type = "button";
+  button.setAttribute("aria-label", `Retirer ${resource.name} des favoris`);
+  button.title = `Retirer ${resource.name} des favoris`;
+  button.dataset.resourceId = resource.id;
+  button.addEventListener("click", handleQuickLaunchRemove);
+  button.addEventListener("pointerdown", stopQuickLaunchRemoveEvent);
+  button.addEventListener("keydown", stopQuickLaunchRemoveEvent);
+  button.addEventListener("keyup", stopQuickLaunchRemoveEvent);
   return button;
 }
 
@@ -592,9 +616,11 @@ function startQuickLaunchEdit() {
 
 function saveQuickLaunchOrder() {
   state.favoriteOrder = state.draftFavoriteOrder.filter((id) => state.favorites.has(id));
+  state.favorites = new Set(state.favoriteOrder);
   state.favoriteOrderCustom = true;
   state.quickLaunchEditing = false;
   state.draftFavoriteOrder = [];
+  saveFavorites();
   saveFavoriteOrder();
   render();
 }
@@ -607,6 +633,11 @@ function cancelQuickLaunchEdit() {
 }
 
 function resetQuickLaunchOrder() {
+  if (state.quickLaunchEditing) {
+    state.favorites = new Set(state.draftFavoriteOrder.filter((id) => state.favorites.has(id)));
+    saveFavorites();
+  }
+
   state.favoriteOrder = [];
   state.favoriteOrderCustom = false;
   state.quickLaunchEditing = false;
@@ -614,6 +645,19 @@ function resetQuickLaunchOrder() {
   state.dragging = null;
   saveFavoriteOrder();
   render();
+}
+
+function handleQuickLaunchRemove(event) {
+  event.preventDefault();
+  event.stopPropagation();
+  const resourceId = event.currentTarget.dataset.resourceId;
+  state.draftFavoriteOrder = state.draftFavoriteOrder.filter((id) => id !== resourceId);
+  state.dragging = null;
+  render();
+}
+
+function stopQuickLaunchRemoveEvent(event) {
+  event.stopPropagation();
 }
 
 function handleQuickLaunchPointerDown(event) {

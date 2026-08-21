@@ -204,6 +204,7 @@ h1 {
 .quick-launch-item {
   appearance: none;
   box-sizing: border-box;
+  position: relative;
   display: grid;
   place-items: center;
   flex: 0 0 auto;
@@ -265,15 +266,41 @@ h1 {
   opacity: 0.72;
 }
 
-.is-editing button.quick-launch-item {
-  cursor: grab;
-}
-
 .quick-launch-item img {
   display: block;
   max-width: 72%;
   max-height: 72%;
   object-fit: contain;
+}
+
+.quick-launch-remove {
+  appearance: none;
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--panel);
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  cursor: pointer;
+  font: inherit;
+  box-shadow: 0 3px 8px #00000026;
+}
+
+.quick-launch-remove::before {
+  content: "";
+  width: 13px;
+  height: 4px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.quick-launch-remove:hover {
+  background: #761d29;
 }
 
 .quick-launch-item:hover {
@@ -464,6 +491,7 @@ h1 {
 .filter-button:focus-visible,
 .card:focus-visible,
 .quick-launch-action:focus-visible,
+.quick-launch-remove:focus-visible,
 .quick-launch-item:focus-visible,
 .profile-filters select:focus-visible,
 .official-link:focus-visible {

@@ -266,10 +266,10 @@ function createCard(resource) {
     </div>
     <div class="card-top">
       <h3>${escapeHtml(resource.name)}</h3>
-      <span class="category">${escapeHtml(resource.category)}</span>
     </div>
     <p class="description">${escapeHtml(resource.description)}</p>
     <div class="badges">
+      <span class="badge category">${escapeHtml(resource.category)}</span>
       <span class="badge ${resource.remote ? "remote" : "onsite"}">${remoteLabel}</span>
       ${access.map((label) => `<span class="badge">${escapeHtml(label)}</span>`).join("")}
     </div>

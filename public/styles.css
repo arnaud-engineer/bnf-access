@@ -404,10 +404,6 @@ h1 {
 }
 
 .card-top {
-  display: flex;
-  align-items: start;
-  justify-content: space-between;
-  gap: 12px;
   margin-bottom: 12px;
 }
 
@@ -415,16 +411,6 @@ h1 {
   margin: 0;
   font-size: 1.12rem;
   line-height: 1.2;
-}
-
-.category {
-  border-radius: 999px;
-  background: #eff1ed;
-  padding: 4px 9px;
-  color: var(--muted);
-  font-size: 0.74rem;
-  font-weight: 700;
-  white-space: nowrap;
 }
 
 .description {
@@ -446,6 +432,12 @@ h1 {
   color: var(--muted);
   font-size: 0.75rem;
   font-weight: 700;
+}
+
+.badge.category {
+  border-color: #d4d9d1;
+  background: #eff1ed;
+  color: var(--ink);
 }
 
 .badge.remote {

@@ -31,8 +31,8 @@ const remoteFilterStorageKey = "bnf-access:remote-filter:v1";
 const accessLabels = {
   pass_lecture_culture: "Pass Lecture/Culture",
   pass_recherche: "Pass Recherche",
-  pass_recherche_illimite: "Pass Recherche illimite",
-  public: "Acces libre",
+  pass_recherche_illimite: "Pass Recherche illimité",
+  public: "Accès libre",
 };
 
 async function init() {
@@ -86,7 +86,7 @@ function render() {
   if (!resources.length) {
     const empty = document.createElement("p");
     empty.className = "empty";
-    empty.textContent = "Aucune ressource ne correspond a cette recherche.";
+    empty.textContent = "Aucune ressource ne correspond à cette recherche.";
     grid.append(empty);
     return;
   }
@@ -155,7 +155,7 @@ function createQuickLaunchHeader(favorites) {
     actions.append(
       createActionButton("Enregistrer", saveQuickLaunchOrder, "save"),
       createActionButton("Annuler", cancelQuickLaunchEdit, "discard"),
-      createActionButton("Tri alphabetique", resetQuickLaunchOrder, "discard"),
+      createActionButton("Tri alphabétique", resetQuickLaunchOrder, "discard"),
     );
     header.append(actions);
     return header;
@@ -242,7 +242,7 @@ function createCard(resource) {
   card.className = "card";
 
   const access = (resource.access ?? []).map((item) => accessLabels[item] ?? item);
-  const remoteLabel = resource.remote ? "Acces distant" : "Sur place ou a verifier";
+  const remoteLabel = resource.remote ? "Accès distant" : "Sur place ou à vérifier";
   const isFavorite = state.favorites.has(resource.id);
   const logo = resource.icon_url
     ? `<img src="${escapeAttribute(resource.icon_url)}" alt="${escapeAttribute(resource.icon_alt ?? "")}" loading="lazy">`

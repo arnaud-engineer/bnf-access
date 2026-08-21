@@ -13,7 +13,7 @@ public/styles.css
 public/resources.json
 ```
 
-## Acces BnF via EZproxy
+## Accès BnF via EZproxy
 
 La plupart des liens distants utilisent EZproxy/OCLC, sous cette forme :
 
@@ -30,7 +30,7 @@ https://bnf.idm.oclc.org/login?url=http://www.mediapart.fr/licence
 Comportement attendu :
 
 1. L'utilisateur clique sur le lien.
-2. EZproxy verifie si une session BnF existe.
+2. EZproxy vérifié si une session BnF existe.
 3. Si la session n'existe pas, EZproxy declenche l'authentification BnF via SAML/Shibboleth.
 4. Apres connexion, EZproxy renvoie vers la ressource demandee.
 5. Le fournisseur voit une connexion autorisee via l'environnement BnF.
@@ -45,7 +45,7 @@ https://www-arretsurimages-net.bnf.idm.oclc.org/
 https://www-pressreader-com.bnf.idm.oclc.org/
 ```
 
-Cette forme renvoie elle aussi vers le login BnF si l'utilisateur n'est pas deja authentifie.
+Cette forme renvoie elle aussi vers le login BnF si l'utilisateur n'est pas déjà authentifié.
 
 Pour le JSON, on privilegie pour l'instant la forme explicite `login?url=...`, plus lisible et proche des liens observes dans EasyBNF.
 
@@ -55,52 +55,52 @@ Chaque entree de `resources.json` contient :
 
 - `id` : identifiant stable.
 - `name` : nom affiche.
-- `category` : categorie d'affichage.
+- `category` : catégorie d'affichage.
 - `description` : courte description originale.
 - `url` : lien a ouvrir.
-- `remote` : acces distant possible ou non.
-- `access` : conditions d'acces connues.
+- `remote` : accès distant possible ou non.
+- `access` : conditions d'accès connues.
 - `tags` : tags pour la recherche.
-- `source` : page source ou reference utile.
-- `source_archive` : trace publique archivee utilisee pour l'import initial.
-- `icon_url` : logo public optionnel, quand il existe dans les traces archivees.
-- `default_favorite` : favori propose a la premiere ouverture, avant personnalisation locale.
+- `source` : page source ou référence utile.
+- `source_archive` : trace publique archivée utilisée pour l'import initial.
+- `icon_url` : logo public optionnel, quand il existe dans les traces archivées.
+- `default_favorite` : favori proposé à la première ouverture, avant personnalisation locale.
 - `notes` : details pratiques, si necessaire.
 
 ## Import initial
 
 L'import initial couvre les 245 ressources presentes dans l'archive EasyBNF du 29 juillet 2026. Les descriptions affichees sont courtes et propres au projet ; les textes longs d'origine ne sont pas recopies dans l'interface.
 
-Onze logos ont pu etre rapatries localement depuis les traces archivees. Les autres ressources utilisent un bloc d'initiales genere par l'interface.
+Onze logos ont pu être rapatriés localement depuis les traces archivées. Les autres ressources utilisent un bloc d'initiales genere par l'interface.
 
 ## Favoris locaux
 
-Les favoris sont stockes dans `localStorage`, sous une cle versionnee. A la premiere ouverture, l'application initialise cette liste avec les ressources marquees `default_favorite` dans le JSON. Ensuite, les choix de l'utilisateur priment sur les valeurs par defaut.
+Les favoris sont stockés dans `localStorage`, sous une clé versionnée. À la première ouverture, l'application initialise cette liste avec les ressources marquées `default_favorite` dans le JSON. Ensuite, les choix de l'utilisateur priment sur les valeurs par défaut.
 
-Ce fonctionnement evite tout compte utilisateur et toute collecte d'identifiants, tout en donnant une page d'accueil plus utile.
+Ce fonctionnement évite tout compte utilisateur et toute collecte d'identifiants, tout en donnant une page d'accueil plus utile.
 
 Les favoris alimentent aussi une barre de lancement rapide en haut de page. Cette barre n'affiche que l'icone ou les initiales de chaque ressource favorite, et ouvre directement la ressource.
 
-Par defaut, cette barre reste triee alphabetiquement. Si l'utilisateur passe en mode modification et enregistre un ordre manuel, cet ordre est stocke localement. Les favoris ajoutes ensuite sont places en fin de liste. Le bouton `Tri alphabetique` supprime l'ordre manuel et revient au tri alphabetique.
+Par défaut, cette barre reste triée alphabétiquement. Si l'utilisateur passe en mode modification et enregistre un ordre manuel, cet ordre est stocké localement. Les favoris ajoutés ensuite sont placés en fin de liste. Le bouton `Tri alphabétique` supprime l'ordre manuel et revient au tri alphabétique.
 
 ## Filtres de profil
 
-L'utilisateur peut filtrer les ressources selon son Pass et selon le mode d'acces :
+L'utilisateur peut filtrer les ressources selon son Pass et selon le mode d'accès :
 
 - tous les Pass ;
 - Pass Lecture/Culture ;
-- Pass Recherche illimite ;
-- acces a distance ;
-- acces sur place.
+- Pass Recherche illimité ;
+- accès a distance ;
+- accès sur place.
 
-Ces choix sont stockes dans `localStorage`. Les ressources sans etiquette de Pass explicite sont masquees lorsqu'un Pass precis est selectionne, pour eviter de promettre un acces non verifie.
+Ces choix sont stockés dans `localStorage`. Les ressources sans étiquette de Pass explicite sont masquées lorsqu'un Pass précis est sélectionné, pour éviter de promettre un accès non vérifié.
 
-Exception : lorsqu'un utilisateur filtre explicitement sur les ressources `sur place`, les ressources sur place sans etiquette de Pass restent visibles. Dans l'archive source, beaucoup de ressources sur place ne portent pas de metadata de Pass exploitable.
+Exception : lorsqu'un utilisateur filtre explicitement sur les ressources `sur place`, les ressources sur place sans étiquette de Pass restent visibles. Dans l'archive source, beaucoup de ressources sur place ne portent pas de métadonnée de Pass exploitable.
 
-## Points a verifier
+## Points a vérifiér
 
 - Validite actuelle de chaque lien BnF.
-- Conditions d'acces exactes selon les Pass.
+- Conditions d'accès exactes selon les Pass.
 - Ressources qui ne sont accessibles que sur place.
-- Ressources dont l'acces distant a change depuis les captures EasyBNF.
+- Ressources dont l'accès distant a changé depuis les captures EasyBNF.
 - Cas speciaux comme New York Times, PressReader ou Europresse.

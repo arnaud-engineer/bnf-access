@@ -396,6 +396,7 @@ h1 {
 }
 
 .favorite-button:focus-visible,
+.description-toggle:focus-visible,
 .filter-button:focus-visible,
 .card:focus-visible,
 .quick-launch-action:focus-visible,
@@ -418,9 +419,24 @@ h1 {
 }
 
 .description {
+  white-space: pre-line;
   margin: 0 0 14px;
   color: var(--muted);
   font-size: 0.94rem;
+}
+
+.description-toggle {
+  border: 0;
+  padding: 0 0 0 4px;
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+}
+
+.description-toggle:hover {
+  text-decoration: underline;
 }
 
 .badges {

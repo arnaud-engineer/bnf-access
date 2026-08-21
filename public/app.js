@@ -11,6 +11,7 @@ const state = {
   quickLaunchEditing: false,
   draftFavoriteOrder: [],
   dragging: null,
+  expandedDescriptions: new Set(),
   query: "",
 };
 
@@ -247,6 +248,20 @@ function createCard(resource) {
   const access = (resource.access ?? []).map((item) => accessLabels[item] ?? item);
   const remoteLabel = resource.remote ? "Accès distant" : "Sur place ou à vérifier";
   const isFavorite = state.favorites.has(resource.id);
+  const longDescription = getOfficialDescription(resource);
+  const hasLongDescription = Boolean(longDescription);
+  const isExpanded = state.expandedDescriptions.has(resource.id) && hasLongDescription;
+  const description = isExpanded ? longDescription : resource.description;
+  const descriptionToggle = hasLongDescription
+    ? ` <button
+        class="description-toggle"
+        type="button"
+        aria-expanded="${String(isExpanded)}"
+        aria-label="${isExpanded ? "Afficher la description courte" : "Afficher la description longue"}"
+        title="${isExpanded ? "Afficher la description courte" : "Afficher la description longue"}"
+        data-resource-id="${escapeAttribute(resource.id)}"
+      >${isExpanded ? "[-]" : "[+]"}</button>`
+    : "";
   const logo = resource.icon_url
     ? `<img src="${escapeAttribute(resource.icon_url)}" alt="${escapeAttribute(resource.icon_alt ?? "")}" loading="lazy">`
     : `<span>${escapeHtml(getInitials(resource.name))}</span>`;
@@ -268,7 +283,7 @@ function createCard(resource) {
         <span aria-hidden="true">${isFavorite ? "★" : "☆"}</span>
       </button>
     </div>
-    <p class="description">${escapeHtml(resource.description)}</p>
+    <p class="description">${escapeHtml(description)}${descriptionToggle}</p>
     <div class="badges">
       <span class="badge category">${escapeHtml(resource.category)}</span>
       <span class="badge ${resource.remote ? "remote" : "onsite"}">${remoteLabel}</span>
@@ -300,7 +315,60 @@ function createCard(resource) {
     event.stopPropagation();
   });
 
+  const descriptionButton = card.querySelector(".description-toggle");
+  if (descriptionButton) {
+    descriptionButton.addEventListener("click", (event) => {
+      event.stopPropagation();
+      toggleDescription(resource.id);
+    });
+
+    descriptionButton.addEventListener("keydown", (event) => {
+      event.stopPropagation();
+    });
+
+    descriptionButton.addEventListener("keyup", (event) => {
+      event.stopPropagation();
+    });
+  }
+
   return card;
+}
+
+function getOfficialDescription(resource) {
+  const entries = resource.bnf_official?.entries ?? [];
+  const descriptions = entries
+    .map((entry) => entry.description?.trim())
+    .filter(Boolean);
+
+  if (descriptions.length === 0) {
+    return "";
+  }
+
+  if (descriptions.length === 1) {
+    return descriptions[0];
+  }
+
+  return entries
+    .map((entry) => {
+      const description = entry.description?.trim();
+      if (!description) {
+        return "";
+      }
+
+      return `${entry.title} : ${description}`;
+    })
+    .filter(Boolean)
+    .join("\n\n");
+}
+
+function toggleDescription(resourceId) {
+  if (state.expandedDescriptions.has(resourceId)) {
+    state.expandedDescriptions.delete(resourceId);
+  } else {
+    state.expandedDescriptions.add(resourceId);
+  }
+
+  render();
 }
 
 function openResource(url) {

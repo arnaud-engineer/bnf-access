@@ -96,6 +96,9 @@ h1 {
 }
 
 .notice {
+  animation:
+    notice-appear 360ms cubic-bezier(0.2, 1.35, 0.45, 1) both,
+    notice-attention 10s ease-in-out 2s infinite;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -104,6 +107,8 @@ h1 {
   border-color: var(--danger-line);
   background: var(--danger-soft);
   color: var(--muted);
+  transform-origin: 50% 50%;
+  will-change: transform;
 }
 
 .notice[hidden] {
@@ -412,15 +417,54 @@ h1 {
   }
 }
 
+@keyframes notice-appear {
+  0% {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+
+  70% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes notice-attention {
+  0%,
+  8%,
+  100% {
+    transform: scale(1);
+  }
+
+  2% {
+    transform: scale(1.012);
+  }
+
+  4% {
+    transform: scale(0.996);
+  }
+
+  6% {
+    transform: scale(1.006);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .is-editing .quick-launch-item,
   .quick-launch-remove,
   .quick-launch-action.is-exiting,
   .quick-launch-header.actions-entering .quick-launch-action,
   .quick-launch-header.actions-exiting .quick-launch-action,
-  .quick-launch-header.modifier-entering .quick-launch-action {
+  .quick-launch-header.modifier-entering .quick-launch-action,
+  .notice {
     animation: none;
     transform: none;
+    will-change: auto;
   }
 }
 

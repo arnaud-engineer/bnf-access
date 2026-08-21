@@ -4,7 +4,7 @@ Les logos sont stockés localement pour éviter de dépendre de hotlinks externe
 
 ## SVG intégrés depuis des sources publiques
 
-- PressReader : fichier `PressReader horizontal logo.svg`, Wikipédia anglophone.
+- PressReader : pictogramme bulle extrait du fichier `PressReader horizontal logo.svg`, Wikipédia anglophone.
 - Europresse : fichier `Logo Europresse.svg`, Wikimedia Commons.
 - Arrêt sur images : fichier `LOGO @SI FINAL.svg`, Wikipédia francophone.
 - Mediapart : fichier `Mediapart wordmark.svg`, Wikimedia Commons.

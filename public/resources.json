@@ -709,11 +709,11 @@
           }
         ]
       },
-      "icon_url": "./logos/audit/aida.png",
+      "icon_url": "./logos/aida.svg",
       "icon_alt": "Logo Aida",
-      "icon_source_url": "https://www.degruyterbrill.com/assets/images/4c2669143186c1ecfda2f251c5bebf10-dgbrill-og-logo.png",
-      "icon_source_kind": "png",
-      "icon_review_status": "to_review",
+      "icon_source_file": "product_pages.jpg",
+      "icon_source_kind": "svg_recreation",
+      "icon_review_status": "local_mockup",
       "access_mode": "remote",
       "access_label": "Accès distant",
       "access_source": "bnf_official",

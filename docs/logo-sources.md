@@ -19,6 +19,7 @@ Les logos sont stockés localement pour éviter de dépendre de hotlinks externe
 
 - MusicMe : vectorisation depuis le PNG local, lui-même issu du site `musicme.com`.
 - Encyclopædia Universalis : vectorisation depuis le PNG local, aucun SVG officiel fiable n'ayant été identifié.
+- Aida : SVG typographique recréé depuis l'image locale `product_pages.jpg`, en privilégiant le bloc "AIDA ONLINE" pour limiter le poids.
 - Bellefaye : SVG recréé depuis le PNG local fourni, avec fond et lettrage éditables.
 - Academic Search Premier : SVG recréé depuis le PNG local `684-6848107_academic-search-premier.png` fourni pour la maquette.
 - Acta Sanctorum : SVG typographique original, inspiré des pages de titre anciennes fournies en référence ; pas de logo officiel identifié.

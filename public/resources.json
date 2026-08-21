@@ -844,6 +844,8 @@
         "national"
       ],
       "notes": "",
+      "icon_url": "./logos/american-national-biography.webp",
+      "icon_alt": "Logo American National Biography",
       "default_favorite": false,
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",

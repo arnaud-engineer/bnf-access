@@ -27,3 +27,4 @@ Les logos sont stockés localement pour éviter de dépendre de hotlinks externe
 ## Images détourées et optimisées
 
 - Mascarille : WebP transparent optimisé depuis la capture locale `Screenshot_2026-08-21 16.28.15_futURX.png`; pas de SVG fiable retenu pour éviter une vectorisation trop approximative du lettrage manuscrit.
+- American National Biography : WebP transparent optimisé depuis l'image locale `9780195118452.jpg`; le SVG manuel a été écarté au profit des formes réelles du visuel source.

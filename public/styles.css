@@ -524,9 +524,21 @@ h1 {
   color: var(--green);
 }
 
+.badge.conditional {
+  border-color: #e2c36b;
+  background: #fff8df;
+  color: #8a5a00;
+}
+
 .badge.onsite {
   border-color: #e4cf9e;
   color: var(--amber);
+}
+
+.badge.free {
+  border-color: #b7d7e8;
+  background: #eef8fc;
+  color: #28637f;
 }
 
 .empty {

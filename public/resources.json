@@ -41,7 +41,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote_conditional",
+      "access_label": "Accès distant sous condition",
+      "access_source": "bnf_official_manual_override",
+      "access_note": "Accès distant possible via une procédure spécifique web, mobile ou tablette."
     },
     {
       "id": "europresse",
@@ -77,7 +81,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture."
     },
     {
       "id": "arretsurimages-net",
@@ -113,7 +121,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "mediapart",
@@ -149,7 +161,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "new-york-times",
@@ -186,7 +202,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote_conditional",
+      "access_label": "Accès distant sous condition",
+      "access_source": "bnf_official_manual_override",
+      "access_note": "Accès distant via un pass New York Times 72 h à renouveler."
     },
     {
       "id": "alternatives-economiques",
@@ -223,7 +243,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture."
     },
     {
       "id": "grand-robert",
@@ -244,7 +268,11 @@
       "notes": "",
       "icon_url": "./logos/le_grand_robert.svg",
       "icon_alt": "Logo Grand Robert",
-      "default_favorite": true
+      "default_favorite": true,
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis le lien BnF/OCLC ou les Pass indiqués, faute de correspondance officielle."
     },
     {
       "id": "larousse-grand-dictionnaire-universel-du-xixe-siecle",
@@ -283,7 +311,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "encyclop-dia-universalis",
@@ -319,7 +351,11 @@
             "match_score": 0.939
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance uniquement pour les détenteurs d’un Pass BnF Recherche illimité ou d'un Pass BnF Lecture/Culture."
     },
     {
       "id": "musicme",
@@ -355,7 +391,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est accessible à la BnF (site François Mitterrand) sur les postes audiovisuels et le Sonic Chair à l'entrée de la salle A. Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "medici-tv",
@@ -391,7 +431,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "À la BnF, cette base est consultable sur les postes audiovisuels. Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "philharmonie-a-la-demande",
@@ -423,7 +467,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "academic-search-premier",
@@ -460,7 +508,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "acta-sanctorum",
@@ -495,7 +547,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "afp-forum",
@@ -510,7 +566,11 @@
         "presse"
       ],
       "notes": "Accès sur place indiqué dans les traces EasyBNF.",
-      "default_favorite": false
+      "default_favorite": false,
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis l'ancien jeu de données, faute de correspondance officielle."
     },
     {
       "id": "agricola",
@@ -519,7 +579,9 @@
       "description": "Catalogue et bibliographie agricole de la National Agricultural Library américaine.",
       "url": "http://agricola.nal.usda.gov",
       "remote": true,
-      "access": [],
+      "access": [
+        "public"
+      ],
       "tags": [
         "agricola",
         "sciences et techniques"
@@ -541,7 +603,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "free",
+      "access_label": "Accès libre",
+      "access_source": "bnf_official",
+      "access_note": "Cette ressource n’est pas interrogée par les autres modes de recherche proposés en page d’accueil Ressources électroniques."
     },
     {
       "id": "agris",
@@ -550,7 +616,9 @@
       "description": "Références internationales en agriculture, agronomie, foresterie et médecine vétérinaire.",
       "url": "http://www.fao.org/agris/",
       "remote": true,
-      "access": [],
+      "access": [
+        "public"
+      ],
       "tags": [
         "agris",
         "sciences et techniques"
@@ -577,7 +645,10 @@
       "icon_alt": "Logo Agris",
       "icon_source_url": "https://www.fao.org/images/corporatelibraries/logos/fao-logo-archive/fao-logo-blue-2lines-en.svg?sfvrsn=90d67aef_14",
       "icon_source_kind": "svg",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "free",
+      "access_label": "Accès libre",
+      "access_source": "bnf_official"
     },
     {
       "id": "aida",
@@ -616,7 +687,11 @@
       "icon_alt": "Logo Aida",
       "icon_source_url": "https://www.degruyterbrill.com/assets/images/4c2669143186c1ecfda2f251c5bebf10-dgbrill-og-logo.png",
       "icon_source_kind": "png",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "alice-catalogo-dei-libri-in-commercio-in-italia",
@@ -650,7 +725,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "allgemeines-kunstlerlexikon-akl",
@@ -690,7 +769,11 @@
       "icon_alt": "Logo Allgemeines Künstlerlexikon (AKL)",
       "icon_source_url": "https://www.degruyterbrill.com/assets/images/4c2669143186c1ecfda2f251c5bebf10-dgbrill-og-logo.png",
       "icon_source_kind": "png",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "american-bibliography-of-slavic-and-east-european-studies-absees",
@@ -711,7 +794,11 @@
         "slavic"
       ],
       "notes": "",
-      "default_favorite": false
+      "default_favorite": false,
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis le lien BnF/OCLC ou les Pass indiqués, faute de correspondance officielle."
     },
     {
       "id": "american-national-biography",
@@ -747,7 +834,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "amicus",
@@ -756,7 +847,9 @@
       "description": "Catalogue collectif canadien (livres, périodiques, cartes et plans, enregistrements sonores et audiovisuels, etc.).",
       "url": "http://www.collectionscanada.gc.ca/amicus/index-f.html",
       "remote": true,
-      "access": [],
+      "access": [
+        "public"
+      ],
       "tags": [
         "amicus",
         "art et images"
@@ -778,7 +871,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "free",
+      "access_label": "Accès libre",
+      "access_source": "bnf_official",
+      "access_note": "Cette ressource n’est pas interrogée par les autres modes de recherche proposés en page d’accueil Ressources électroniques."
     },
     {
       "id": "annee-philologique",
@@ -813,7 +910,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "anthropological-index",
@@ -850,7 +951,11 @@
       "icon_alt": "Logo Anthropological index",
       "icon_source_url": "https://aio.therai.org.uk/images/railogo.png",
       "icon_source_kind": "png",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "anthropology-resource-library",
@@ -891,7 +996,11 @@
       "icon_alt": "Logo Anthropology Resource Library",
       "icon_source_url": "https://search.alexanderstreet.com/sites/search.alexanderstreet.com/themes/custom/as_lazr/images/beam/Clarivate_as_black.png",
       "icon_source_kind": "png",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "anthrosource",
@@ -925,7 +1034,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "antique-map-price",
@@ -941,7 +1054,11 @@
         "price"
       ],
       "notes": "Accès sur place indiqué dans les traces EasyBNF.",
-      "default_favorite": false
+      "default_favorite": false,
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis l'ancien jeu de données, faute de correspondance officielle."
     },
     {
       "id": "archive-of-celtic-latin-literature",
@@ -978,7 +1095,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "archives-biographiques",
@@ -1013,7 +1134,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "aristoteles-latinus-database",
@@ -1049,7 +1174,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "art-full-text",
@@ -1084,7 +1213,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "art-index-retrospective",
@@ -1119,7 +1252,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "art-sales-catalogues-online",
@@ -1155,7 +1292,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "art-design-architecture-collection",
@@ -1180,7 +1321,11 @@
       "icon_alt": "Logo Art, Design & Architecture Collection",
       "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
       "icon_source_kind": "svg",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis le lien BnF/OCLC ou les Pass indiqués, faute de correspondance officielle."
     },
     {
       "id": "artbibliographies-modern-abm",
@@ -1204,7 +1349,11 @@
       "icon_alt": "Logo ARTBibliographies Modern (ABM)",
       "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
       "icon_source_kind": "svg",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis le lien BnF/OCLC ou les Pass indiqués, faute de correspondance officielle."
     },
     {
       "id": "arts-humanities-database",
@@ -1245,7 +1394,11 @@
       "icon_alt": "Logo Arts & Humanities Database",
       "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
       "icon_source_kind": "svg",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "artstor-digital-library",
@@ -1281,7 +1434,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "astrophysics-data-system",
@@ -1290,7 +1447,9 @@
       "description": "Articles et périodiques : Couvre l'astronomie et l'astrophysique, l'instrumentation astronomique et l'astronautique, la physique et la géophysique, et offre.",
       "url": "http://cdsads.u-strasbg.fr/",
       "remote": true,
-      "access": [],
+      "access": [
+        "public"
+      ],
       "tags": [
         "astrophysics",
         "data",
@@ -1314,7 +1473,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "free",
+      "access_label": "Accès libre",
+      "access_source": "bnf_official",
+      "access_note": "Cette ressource n’est pas interrogée par les autres modes de recherche proposés en page d’accueil Ressources électroniques."
     },
     {
       "id": "atla-religion-database",
@@ -1350,7 +1513,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "avery-index-to-architectural-periodicals",
@@ -1371,7 +1538,11 @@
         "presse"
       ],
       "notes": "",
-      "default_favorite": false
+      "default_favorite": false,
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis le lien BnF/OCLC ou les Pass indiqués, faute de correspondance officielle."
     },
     {
       "id": "babelscores",
@@ -1410,7 +1581,11 @@
       "icon_alt": "Logo BabelScores",
       "icon_source_url": "https://babelscores.com/wp-content/themes/babelscores-child/images/logobabelsvg.svg",
       "icon_source_kind": "svg",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "base-du-gerflint",
@@ -1419,7 +1594,9 @@
       "description": "Revues et essais francophones en sciences humaines et sociales.",
       "url": "http://gerflint.fr/Base/base.html",
       "remote": true,
-      "access": [],
+      "access": [
+        "public"
+      ],
       "tags": [
         "base",
         "gerflint",
@@ -1447,7 +1624,10 @@
       "icon_alt": "Logo Base du GERFLINT",
       "icon_source_url": "http://gerflint.fr/Base/logoGerflint4.png",
       "icon_source_kind": "png",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "free",
+      "access_label": "Accès libre",
+      "access_source": "bnf_official"
     },
     {
       "id": "bellefaye",
@@ -1456,7 +1636,10 @@
       "description": "Annuaire des professionnels du cinéma et de l'audiovisuel.",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.bellefaye.com",
       "remote": true,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "bellefaye",
         "généralistes et référence"
@@ -1478,7 +1661,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "benezit",
@@ -1512,16 +1699,22 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "bibliografia-nacional-espanola",
       "name": "Bibliografia nacional española",
       "category": "Généralistes et référence",
       "description": "Recense les livres entrés par dépôt légal à la Biblioteca nacional de España depuis 2007.",
-      "url": "http://www2.bne.es/BEL_publico/index.jsp",
+      "url": "https://www.bne.es/es/servicios/informacion-bibliografica/bibliografia-espanola",
       "remote": true,
-      "access": [],
+      "access": [
+        "public"
+      ],
       "tags": [
         "bibliografia",
         "espanola",
@@ -1545,16 +1738,21 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "free",
+      "access_label": "Accès libre",
+      "access_source": "bnf_official"
     },
     {
       "id": "bibliographie-d-histoire-de-l-art-bha-et-raa",
       "name": "Bibliographie d'Histoire de l'Art (BHA) et RAA",
       "category": "Sciences humaines",
       "description": "Bibliographie internationale d’histoire de l’art et d’archéologie.",
-      "url": "http://www.openbibart.fr/",
+      "url": "https://www.openbibart.fr/",
       "remote": true,
-      "access": [],
+      "access": [
+        "public"
+      ],
       "tags": [
         "bibliographie",
         "histoire",
@@ -1566,7 +1764,27 @@
       "icon_alt": "Logo Bibliographie d'Histoire de l'Art (BHA) et RAA",
       "icon_source_url": "https://openbibart.fr/wp-content/themes/inha/images/logo-inha.png",
       "icon_source_kind": "png",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "bnf_official": {
+        "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+        "retrieved_at": "2026-08-21",
+        "entries": [
+          {
+            "title": "OpenBibArt (1910-2007)",
+            "url": "https://www.openbibart.fr/",
+            "access_mode": "libre_internet",
+            "access_class": "acces-libre",
+            "access_note": "",
+            "description": "OpenBibArt est une base de données bibliographique de référence qui donne accès à un siècle de littérature occidentale dans les domaines de l’histoire de l'art et de la recherche archéologique : 1,2 million de notices d'articles de périodiques, de livres, de catalogues d'expositions, de catalogues de ventes…, publiés entre 1910 et 2007. Elle propose des liens vers le texte intégral quand celui-ci est disponible. Fruit de la collaboration entre l’Institut National d'Histoire de l'Art (INHA), l’Institut de l'Information Scientifique et Technique du CNRS (Inist-CNRS) et le Getty Research Institute (GRI), elle permet, depuis 2022, d’interroger simultanément les diverses bases et répertoires bibliographiques de référence suivants, parus pour trois d'entre eux, initialement sous forme imprimée : - Le Répertoire d’art et d’archéologie-RAA (1910-1990) - Le Répertoire international de la littérature de l’art / International repertory of the literature of art-RILA (1975-1990) - La Bibliographie d’histoire de l’art / Bibliography of the history of art-BHA (1990-2007) Voir aussi : International Bibliography of Art IBA (2008- ) qui prend la suite.",
+            "alert": "",
+            "match_score": 0.95,
+            "match_note": "Correspondance manuelle ajoutée pendant le reclassement des accès."
+          }
+        ]
+      },
+      "access_mode": "free",
+      "access_label": "Accès libre",
+      "access_source": "bnf_official"
     },
     {
       "id": "bibliographie-de-civilisation-medievale",
@@ -1602,7 +1820,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "bibliographie-de-la-litterature-francaise",
@@ -1638,7 +1860,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "bibliographie-der-deutschen-sprach-und-literaturwissenschaft",
@@ -1672,7 +1898,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "bibliographie-internationale-de-l-humanisme-et-de-la-renaissance",
@@ -1709,7 +1939,11 @@
             "match_score": 0.971
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "bibliography-of-british-irish-history",
@@ -1730,16 +1964,22 @@
         "sciences humaines"
       ],
       "notes": "",
-      "default_favorite": false
+      "default_favorite": false,
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis le lien BnF/OCLC ou les Pass indiqués, faute de correspondance officielle."
     },
     {
       "id": "bibliography-of-the-history-of-art-bha-1990-2007-et-rila-1975-1989",
       "name": "Bibliography of the history of art (BHA) (1990-2007) et RILA (1975-1989)",
       "category": "Sciences humaines",
       "description": "Archives bibliographiques sur l’histoire de l’art de 1975 à 2007.",
-      "url": "http://primo.getty.edu/primo_library/libweb/action/search.do?vid=BHA",
+      "url": "https://www.openbibart.fr/",
       "remote": true,
-      "access": [],
+      "access": [
+        "public"
+      ],
       "tags": [
         "1990",
         "2007",
@@ -1748,7 +1988,27 @@
         "sciences humaines"
       ],
       "notes": "",
-      "default_favorite": false
+      "default_favorite": false,
+      "bnf_official": {
+        "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+        "retrieved_at": "2026-08-21",
+        "entries": [
+          {
+            "title": "OpenBibArt (1910-2007)",
+            "url": "https://www.openbibart.fr/",
+            "access_mode": "libre_internet",
+            "access_class": "acces-libre",
+            "access_note": "",
+            "description": "OpenBibArt est une base de données bibliographique de référence qui donne accès à un siècle de littérature occidentale dans les domaines de l’histoire de l'art et de la recherche archéologique : 1,2 million de notices d'articles de périodiques, de livres, de catalogues d'expositions, de catalogues de ventes…, publiés entre 1910 et 2007. Elle propose des liens vers le texte intégral quand celui-ci est disponible. Fruit de la collaboration entre l’Institut National d'Histoire de l'Art (INHA), l’Institut de l'Information Scientifique et Technique du CNRS (Inist-CNRS) et le Getty Research Institute (GRI), elle permet, depuis 2022, d’interroger simultanément les diverses bases et répertoires bibliographiques de référence suivants, parus pour trois d'entre eux, initialement sous forme imprimée : - Le Répertoire d’art et d’archéologie-RAA (1910-1990) - Le Répertoire international de la littérature de l’art / International repertory of the literature of art-RILA (1975-1990) - La Bibliographie d’histoire de l’art / Bibliography of the history of art-BHA (1990-2007) Voir aussi : International Bibliography of Art IBA (2008- ) qui prend la suite.",
+            "alert": "",
+            "match_score": 0.95,
+            "match_note": "Correspondance manuelle ajoutée pendant le reclassement des accès."
+          }
+        ]
+      },
+      "access_mode": "free",
+      "access_label": "Accès libre",
+      "access_source": "bnf_official"
     },
     {
       "id": "bibliorecit",
@@ -1779,7 +2039,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "bibliotheca-teubneriana-latina-btl",
@@ -1799,7 +2063,11 @@
         "teubneriana"
       ],
       "notes": "",
-      "default_favorite": false
+      "default_favorite": false,
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis le lien BnF/OCLC ou les Pass indiqués, faute de correspondance officielle."
     },
     {
       "id": "bibliotheque-des-lettres",
@@ -1834,7 +2102,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "biographisch-bibliographisches-kirchenlexikon-bbkl",
@@ -1873,7 +2145,11 @@
       "icon_alt": "Logo Biographisch-Bibliographisches Kirchenlexikon (BBKL)",
       "icon_source_url": "https://www.bbkl.de/img/logo.png",
       "icon_source_kind": "png",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "biosis-previews-1926",
@@ -1890,7 +2166,11 @@
         "sciences et techniques"
       ],
       "notes": "Accès sur place indiqué dans les traces EasyBNF.",
-      "default_favorite": false
+      "default_favorite": false,
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis l'ancien jeu de données, faute de correspondance officielle."
     },
     {
       "id": "biosis-previews-1989-2007",
@@ -1924,7 +2204,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "biotechnology-abstracts-1982",
@@ -1957,7 +2241,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "bloomsbury-design-library",
@@ -1998,7 +2286,11 @@
       "icon_alt": "Logo Bloomsbury design library",
       "icon_source_url": "https://res.cloudinary.com/bloomsbury-publishing-public/image/upload/v1742544720/00_Supplementary%20materials/Visual%20Arts/BVA%20-%20Bloomsbury%20Visual%20Arts/CMS/BV_LJ_logo.png",
       "icon_source_kind": "png",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "book-history-online",
@@ -2039,7 +2331,11 @@
       "icon_alt": "Logo Book History Online",
       "icon_source_url": "https://bibliographies.brill.com/static/brill-logo-large.15e7d3a27d14.png",
       "icon_source_kind": "png",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "bulletin-analytique-d-histoire-romaine-1990",
@@ -2048,7 +2344,9 @@
       "description": "Dépouille et indexe les articles de quelques neuf-cents périodiques d'histoire et d'archéologie romaines.",
       "url": "http://www2.misha.fr/flora/jsp/index.jsp",
       "remote": true,
-      "access": [],
+      "access": [
+        "public"
+      ],
       "tags": [
         "analytique",
         "art et images",
@@ -2073,7 +2371,10 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "free",
+      "access_label": "Accès libre",
+      "access_source": "bnf_official"
     },
     {
       "id": "business-source-complete",
@@ -2109,7 +2410,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "cab-abstracts",
@@ -2140,7 +2445,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "cairn",
@@ -2171,7 +2480,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "cairn-sciences",
@@ -2213,7 +2526,11 @@
             "match_score": 0.93
           }
         ]
-      }
+      },
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "capfi",
@@ -2244,16 +2561,22 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF"
     },
     {
       "id": "cartomundi-outil-de-valorisation-en-ligne-du-patrimoine-cartographique",
       "name": "CartoMundi – Outil de valorisation en ligne du patrimoine cartographique",
       "category": "Art et images",
       "description": "Catalogue : CartoMundi est un catalogue collectif, une base de données et une interface cartographique qui référence les documents.",
-      "url": "http://www.cartomundi.fr/site/",
+      "url": "https://www.cartomundi.fr/searchMap",
       "remote": true,
-      "access": [],
+      "access": [
+        "public"
+      ],
       "tags": [
         "art et images",
         "cartomundi",
@@ -2278,16 +2601,21 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "free",
+      "access_label": "Accès libre",
+      "access_source": "bnf_official"
     },
     {
       "id": "cedram-centre-de-diffusion-de-revues-academiques-mathematiques",
       "name": "CEDRAM (Centre de diffusion de revues académiques mathématiques)",
       "category": "Art et images",
       "description": "Plateforme de revues académiques françaises en mathématiques.",
-      "url": "http://www.cedram.org/",
+      "url": "https://www.centre-mersenne.org/",
       "remote": true,
-      "access": [],
+      "access": [
+        "public"
+      ],
       "tags": [
         "art et images",
         "cedram",
@@ -2296,7 +2624,27 @@
         "revues"
       ],
       "notes": "",
-      "default_favorite": false
+      "default_favorite": false,
+      "bnf_official": {
+        "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+        "retrieved_at": "2026-08-21",
+        "entries": [
+          {
+            "title": "Centre Mersenne (Anciennement CEDRAM)",
+            "url": "https://www.centre-mersenne.org/",
+            "access_mode": "libre_internet",
+            "access_class": "acces-libre",
+            "access_note": "",
+            "description": "Le centre Mersenne est une plateforme d'édition scientifique en libre accès diamant dédiée aux publications scientifiques (mathématiques, physique, statistiques, informatique…). Elle est développée par Mathdoc, une unité d'appui et de recherche affiliée au CNRS et à l'Université Grenoble Alpes. Le centre Mersenne fournit l’ensemble des outils et services d’édition qui permettent aux équipes éditoriales de gérer, produire et diffuser leurs publications. Les revues, livres, actes ou séminaires disponibles sont issus de toutes disciplines scientifiques, composés en LaTeX et diffusés en accès libre.",
+            "alert": "",
+            "match_score": 0.95,
+            "match_note": "Correspondance manuelle ajoutée pendant le reclassement des accès."
+          }
+        ]
+      },
+      "access_mode": "free",
+      "access_label": "Accès libre",
+      "access_source": "bnf_official"
     },
     {
       "id": "chemical-abstracts",
@@ -2328,7 +2676,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "churchill-archive",
@@ -2363,7 +2715,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "classiques-garnier-livres-et-revues-numeriques",
@@ -2400,7 +2756,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "cobaz-afnor",
@@ -2432,7 +2792,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "compendex",
@@ -2463,7 +2827,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "congressional-publications",
@@ -2498,7 +2866,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "dafsaliens",
@@ -2513,7 +2885,11 @@
         "dafsaliens"
       ],
       "notes": "Accès sur place indiqué dans les traces EasyBNF.",
-      "default_favorite": false
+      "default_favorite": false,
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis l'ancien jeu de données, faute de correspondance officielle."
     },
     {
       "id": "dalloz",
@@ -2546,7 +2922,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité"
     },
     {
       "id": "dalloz-bibliotheque-bibliotheque-numerique-dalloz",
@@ -2581,7 +2961,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité"
     },
     {
       "id": "database-of-latin-dictionaries",
@@ -2617,7 +3001,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "dblp-computer-science-bibliography",
@@ -2626,7 +3014,9 @@
       "description": "Base bibliographique en informatique, hébergée par l'Université de Trèves (Allemagne) mais dont la couverture est internationale.",
       "url": "http://dblp.uni-trier.de/",
       "remote": true,
-      "access": [],
+      "access": [
+        "public"
+      ],
       "tags": [
         "bibliography",
         "computer",
@@ -2651,7 +3041,10 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "free",
+      "access_label": "Accès libre",
+      "access_source": "bnf_official"
     },
     {
       "id": "delphes-1997",
@@ -2670,7 +3063,11 @@
         "presse"
       ],
       "notes": "",
-      "default_favorite": false
+      "default_favorite": false,
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis le lien BnF/OCLC ou les Pass indiqués, faute de correspondance officielle."
     },
     {
       "id": "design-and-applied-arts-index-daai",
@@ -2696,18 +3093,21 @@
       "icon_alt": "Logo Design and Applied Arts Index (DAAI)",
       "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
       "icon_source_kind": "svg",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis le lien BnF/OCLC ou les Pass indiqués, faute de correspondance officielle."
     },
     {
       "id": "dictionnaire-biographique-du-mouvement-ouvrier-francais",
       "name": "Dictionnaire biographique du mouvement ouvrier français",
       "category": "Langue et dictionnaires",
       "description": "Notices biographiques du Maitron sur les mouvements ouvriers et sociaux.",
-      "url": "https://bnf.idm.oclc.org/login?url=http://maitron-en-ligne.univ-paris1.fr/",
+      "url": "http://maitron-en-ligne.univ-paris1.fr/",
       "remote": true,
       "access": [
-        "pass_lecture_culture",
-        "pass_recherche_illimite"
+        "public"
       ],
       "tags": [
         "biographique",
@@ -2738,7 +3138,10 @@
       "icon_alt": "Logo Dictionnaire biographique du mouvement ouvrier français",
       "icon_source_url": "https://maitron.fr/wp-content/themes/themeMaitron/img/logo-maitron.png",
       "icon_source_kind": "png",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "free",
+      "access_label": "Accès libre",
+      "access_source": "bnf_official"
     },
     {
       "id": "dictionnaire-d-histoire-et-de-geographie-ecclesiastiques",
@@ -2775,7 +3178,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "dictionnaire-universel-des-creatrices",
@@ -2816,7 +3223,11 @@
       "icon_alt": "Logo Dictionnaire universel des créatrices",
       "icon_source_url": "https://www.dictionnaire-creatrices.com/static/img/des-femmes-logo-footer.png",
       "icon_source_kind": "png",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "doctrinal-plus",
@@ -2855,7 +3266,11 @@
       "icon_alt": "Logo Doctrinal Plus",
       "icon_source_url": "https://www.doctrinal.fr/images/doctrinal/Logo_LeDoctrinal.png?v=20260728-1",
       "icon_source_kind": "png",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité."
     },
     {
       "id": "droits-antiques",
@@ -2864,7 +3279,9 @@
       "description": "Articles et périodiques : Elaborée par le Centre de Documentation des Droits de l'Antiquité, les 52.000 références bibliographiques de.",
       "url": "http://www2.misha.fr/flora/jsp/index.jsp",
       "remote": true,
-      "access": [],
+      "access": [
+        "public"
+      ],
       "tags": [
         "antiques",
         "droits",
@@ -2887,7 +3304,10 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "free",
+      "access_label": "Accès libre",
+      "access_source": "bnf_official"
     },
     {
       "id": "early-english-books-online-eebo",
@@ -2929,7 +3349,11 @@
       "icon_alt": "Logo Early English Books Online (EEBO)",
       "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
       "icon_source_kind": "svg",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "early-european-books",
@@ -2970,7 +3394,11 @@
       "icon_alt": "Logo Early European Books",
       "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
       "icon_source_kind": "svg",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "early-modern-books",
@@ -3006,7 +3434,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "econlit",
@@ -3040,7 +3472,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "education-research-complete",
@@ -3076,7 +3512,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "eighteenth-century-collections-online-ii-ecco-ii",
@@ -3113,7 +3553,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "electre",
@@ -3149,7 +3593,11 @@
       "icon_alt": "Logo Electre",
       "icon_source_url": "https://dataservices.electre.com/wp-content/uploads/2024/10/electreFichier-12.svg",
       "icon_source_kind": "svg",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "electronic-enlightenment",
@@ -3189,7 +3637,11 @@
       "icon_alt": "Logo Electronic Enlightenment",
       "icon_source_url": "http://www.e-enlightenment.com/dist/svg/electronic-enlightenment-logo.svg",
       "icon_source_kind": "svg",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "ellipro",
@@ -3204,7 +3656,11 @@
         "sciences humaines"
       ],
       "notes": "Accès sur place indiqué dans les traces EasyBNF.",
-      "default_favorite": false
+      "default_favorite": false,
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis l'ancien jeu de données, faute de correspondance officielle."
     },
     {
       "id": "elnet",
@@ -3237,7 +3693,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité."
     },
     {
       "id": "em-premium",
@@ -3271,7 +3731,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "emerald-management-first-120",
@@ -3291,7 +3755,11 @@
         "management"
       ],
       "notes": "",
-      "default_favorite": false
+      "default_favorite": false,
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis le lien BnF/OCLC ou les Pass indiqués, faute de correspondance officielle."
     },
     {
       "id": "encyclopaedia-judaica",
@@ -3326,7 +3794,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "encyclopedie-d-yverdon",
@@ -3361,7 +3833,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "encyclopedie-de-diderot-et-d-alembert",
@@ -3394,7 +3870,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "encyclopedie-de-l-islam",
@@ -3429,7 +3909,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "eni-bibliotheque-numerique",
@@ -3464,7 +3948,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "eric",
@@ -3498,7 +3986,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "ethnologue-languages-of-the-world",
@@ -3536,7 +4028,11 @@
       "icon_alt": "Logo Ethnologue : languages of the world",
       "icon_source_url": "https://www.ethnologue.com/img/logo-horizontal-color.svg",
       "icon_source_kind": "svg",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "euromonitor-s-global-market-information-database",
@@ -3575,7 +4071,11 @@
       "icon_alt": "Logo Euromonitor's Global Market Information Database",
       "icon_source_url": "https://emi-lv-identity-we-endp1.azureedge.net/logos/emi-newlogo.svg",
       "icon_source_kind": "svg",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "europa-sacra",
@@ -3594,7 +4094,11 @@
         "sacra"
       ],
       "notes": "",
-      "default_favorite": false
+      "default_favorite": false,
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis le lien BnF/OCLC ou les Pass indiqués, faute de correspondance officielle."
     },
     {
       "id": "europa-world-of-learning",
@@ -3630,7 +4134,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture."
     },
     {
       "id": "factiva",
@@ -3661,7 +4169,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "food-science-and-technology-abstracts-fsta",
@@ -3695,7 +4207,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "francis",
@@ -3704,7 +4220,9 @@
       "description": "Références bibliographiques en sciences humaines, sociales et économiques.",
       "url": "http://pascal-francis.inist.fr",
       "remote": true,
-      "access": [],
+      "access": [
+        "public"
+      ],
       "tags": [
         "droit et économie",
         "francis"
@@ -3731,7 +4249,11 @@
       "icon_alt": "Logo Francis",
       "icon_source_url": "https://pascal-francis.inist.fr/wp-content/themes/pascalfrancis/images/logo-openpf.png",
       "icon_source_kind": "png",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "free",
+      "access_label": "Accès libre",
+      "access_source": "bnf_official",
+      "access_note": "Attention, cette base n'est plus mise à jour depuis 2015."
     },
     {
       "id": "frantext",
@@ -3765,7 +4287,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "frost-sullivan",
@@ -3781,7 +4307,11 @@
         "sullivan"
       ],
       "notes": "Accès sur place indiqué dans les traces EasyBNF.",
-      "default_favorite": false
+      "default_favorite": false,
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis l'ancien jeu de données, faute de correspondance officielle."
     },
     {
       "id": "gale-general-research",
@@ -3817,7 +4347,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "gale-literature",
@@ -3852,7 +4386,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "gale-primary-sources",
@@ -3888,7 +4426,11 @@
             "match_score": 0.93
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "gale-reference-complete",
@@ -3924,7 +4466,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "gazettes-europeennes-du-18e-siecle",
@@ -3933,7 +4479,9 @@
       "description": "Presse européenne francophone du XVIIIe siècle en édition numérique.",
       "url": "http://www.gazettes18e.fr/",
       "remote": true,
-      "access": [],
+      "access": [
+        "public"
+      ],
       "tags": [
         "europeennes",
         "gazettes",
@@ -3962,16 +4510,21 @@
       "icon_alt": "Logo Gazettes européennes du 18e siècle",
       "icon_source_url": "https://www.gazettes18e.fr/sites/all/files/logo-ihrim.png",
       "icon_source_kind": "png",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "free",
+      "access_label": "Accès libre",
+      "access_source": "bnf_official"
     },
     {
       "id": "gbv-ikar-landkartendrucke-vor-1850",
       "name": "GBV - IKAR Landkartendrucke vor 1850",
       "category": "Art et images",
       "description": "Catalogue collectif de globes, cartes et atlas imprimés avant 1850 et conservés dans vingt bibliothèques allemandes.",
-      "url": "http://gso.gbv.de/xslt/DB=1.68/LNG=EN/",
+      "url": "https://ikar.k10plus.de/",
       "remote": true,
-      "access": [],
+      "access": [
+        "public"
+      ],
       "tags": [
         "1850",
         "art et images",
@@ -3995,7 +4548,10 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "free",
+      "access_label": "Accès libre",
+      "access_source": "bnf_official"
     },
     {
       "id": "generalis",
@@ -4029,7 +4585,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "global-books-in-print",
@@ -4067,7 +4627,11 @@
       "icon_alt": "Logo Global Books in Print",
       "icon_source_url": "https://www.booksinprint.com:443/Images/PQ_logo_footer.png",
       "icon_source_kind": "png",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "grand-corpus-des-dictionnaires-du-9e-au-20e-siecle",
@@ -4104,7 +4668,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "grand-corpus-des-grammaires-francaises-des-remarques-et-des-traites-sur-la-langue-xive-xviie-siecles",
@@ -4141,7 +4709,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "grand-corpus-des-litteratures-francaises-et-francophones-du-moyen-age-au-20e-siecle",
@@ -4178,7 +4750,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "grand-ricci-online",
@@ -4214,7 +4790,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "greenfile",
@@ -4245,7 +4825,10 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official"
     },
     {
       "id": "hansard",
@@ -4254,7 +4837,9 @@
       "description": "Archives des débats parlementaires britanniques.",
       "url": "http://www.parliament.uk/business/publications/hansard/",
       "remote": true,
-      "access": [],
+      "access": [
+        "public"
+      ],
       "tags": [
         "bibliographies et catalogues",
         "hansard"
@@ -4276,7 +4861,10 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "free",
+      "access_label": "Accès libre",
+      "access_source": "bnf_official"
     },
     {
       "id": "helveticat",
@@ -4285,7 +4873,9 @@
       "description": "Catalogue : Ce catalogue signale les monographies, les partitions musicales, les microformes, les documents multimédia, les cartes et les.",
       "url": "http://helveticat.nb.admin.ch/livresuisse",
       "remote": true,
-      "access": [],
+      "access": [
+        "public"
+      ],
       "tags": [
         "helveticat",
         "presse"
@@ -4307,7 +4897,10 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "free",
+      "access_label": "Accès libre",
+      "access_source": "bnf_official"
     },
     {
       "id": "heritage-printed-book",
@@ -4343,7 +4936,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "hispanic-american-periodicals-index",
@@ -4382,7 +4979,11 @@
       "icon_alt": "Logo Hispanic American Periodicals Index",
       "icon_source_url": "https://hapi.ucla.edu/images/logo.png",
       "icon_source_kind": "png",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "historical-abstracts",
@@ -4401,7 +5002,11 @@
         "sciences humaines"
       ],
       "notes": "",
-      "default_favorite": false
+      "default_favorite": false,
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis le lien BnF/OCLC ou les Pass indiqués, faute de correspondance officielle."
     },
     {
       "id": "history-of-science-technology-and-medicine-1975",
@@ -4422,7 +5027,11 @@
         "technology"
       ],
       "notes": "",
-      "default_favorite": false
+      "default_favorite": false,
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis le lien BnF/OCLC ou les Pass indiqués, faute de correspondance officielle."
     },
     {
       "id": "hoovers",
@@ -4453,7 +5062,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "ibz-internationale-bibliographie-der-zeitschriftenliteratur-1983",
@@ -4474,7 +5087,11 @@
         "zeitschriftenliteratur"
       ],
       "notes": "",
-      "default_favorite": false
+      "default_favorite": false,
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis le lien BnF/OCLC ou les Pass indiqués, faute de correspondance officielle."
     },
     {
       "id": "ijbox",
@@ -4510,7 +5127,11 @@
       "icon_alt": "Logo IJbox",
       "icon_source_url": "https://www.ijbox.fr/themes/custom/ijbox/logo.svg",
       "icon_source_kind": "svg",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "in-principio",
@@ -4544,7 +5165,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "index-islamicus",
@@ -4568,7 +5193,11 @@
       "icon_alt": "Logo Index Islamicus",
       "icon_source_url": "https://bibliographies.brill.com/static/brill-logo-large.15e7d3a27d14.png",
       "icon_source_kind": "png",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis le lien BnF/OCLC ou les Pass indiqués, faute de correspondance officielle."
     },
     {
       "id": "index-of-medieval-art",
@@ -4576,8 +5205,10 @@
       "category": "Art et images",
       "description": "Base d’iconographie de référence sur l’art médiéval éditée par l’université de Princeton.",
       "url": "https://theindex.princeton.edu/",
-      "remote": false,
-      "access": [],
+      "remote": true,
+      "access": [
+        "public"
+      ],
       "tags": [
         "art et images",
         "index",
@@ -4600,7 +5231,10 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "free",
+      "access_label": "Accès libre",
+      "access_source": "bnf_official"
     },
     {
       "id": "index-religiosus",
@@ -4635,16 +5269,22 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "index-translationum",
       "name": "Index translationum",
       "category": "Bibliographies et catalogues",
       "description": "Bibliographie internationale de traductions.",
-      "url": "http://databases.unesco.org/xtrans/xtra-form.html",
+      "url": "https://www.unesco.org/xtrans/bsform.aspx?lg=1",
       "remote": true,
-      "access": [],
+      "access": [
+        "public"
+      ],
       "tags": [
         "bibliographies et catalogues",
         "index",
@@ -4667,7 +5307,10 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "free",
+      "access_label": "Accès libre",
+      "access_source": "bnf_official"
     },
     {
       "id": "indexpresse-etudes",
@@ -4686,7 +5329,11 @@
         "presse"
       ],
       "notes": "",
-      "default_favorite": false
+      "default_favorite": false,
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis le lien BnF/OCLC ou les Pass indiqués, faute de correspondance officielle."
     },
     {
       "id": "inspec",
@@ -4717,7 +5364,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "intelex-pastmasters",
@@ -4749,7 +5400,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "international-bibliography-of-art",
@@ -4773,7 +5428,11 @@
       "icon_alt": "Logo International Bibliography of Art",
       "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
       "icon_source_kind": "svg",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis le lien BnF/OCLC ou les Pass indiqués, faute de correspondance officielle."
     },
     {
       "id": "international-bibliography-of-the-social-sciences",
@@ -4799,7 +5458,11 @@
       "icon_alt": "Logo International Bibliography of the Social Sciences",
       "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
       "icon_source_kind": "svg",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis le lien BnF/OCLC ou les Pass indiqués, faute de correspondance officielle."
     },
     {
       "id": "international-bibliography-of-theatre-and-dance",
@@ -4820,7 +5483,11 @@
         "theatre"
       ],
       "notes": "",
-      "default_favorite": false
+      "default_favorite": false,
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis le lien BnF/OCLC ou les Pass indiqués, faute de correspondance officielle."
     },
     {
       "id": "international-directory-of-company-histories",
@@ -4857,7 +5524,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "international-directory-of-medievalists",
@@ -4893,7 +5564,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "international-encyclopedia-for-the-middle-ages",
@@ -4914,7 +5589,11 @@
         "middle"
       ],
       "notes": "",
-      "default_favorite": false
+      "default_favorite": false,
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis le lien BnF/OCLC ou les Pass indiqués, faute de correspondance officielle."
     },
     {
       "id": "international-medieval-bibliography",
@@ -4950,7 +5629,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "issn",
@@ -4986,7 +5669,11 @@
       "icon_alt": "Logo ISSN",
       "icon_source_url": "https://portal.issn.org/static/logo.png",
       "icon_source_kind": "png",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "jstor",
@@ -5020,7 +5707,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "klapp-online",
@@ -5057,7 +5748,11 @@
       "icon_alt": "Logo Klapp-online",
       "icon_source_url": "https://klapp-online.de/logo_klostermann.png",
       "icon_source_kind": "png",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "kompass",
@@ -5088,7 +5783,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "kritisches-lexikon-zur-deutschsprachigen-literatur-klg",
@@ -5106,7 +5805,11 @@
         "sciences humaines"
       ],
       "notes": "Accès sur place indiqué dans les traces EasyBNF.",
-      "default_favorite": false
+      "default_favorite": false,
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis l'ancien jeu de données, faute de correspondance officielle."
     },
     {
       "id": "kurschners-deutscher-gelehrten-kalender",
@@ -5143,7 +5846,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "lamyline",
@@ -5181,7 +5888,11 @@
       "icon_alt": "Logo Lamyline",
       "icon_source_url": "https://www.lamyline.fr/Img/LogoLamylineNew.svg",
       "icon_source_kind": "svg",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité."
     },
     {
       "id": "lexbase",
@@ -5219,7 +5930,11 @@
       "icon_alt": "Logo Lexbase",
       "icon_source_url": "https://www.lexbase.fr/images/Lexbase_white.png?v=20260728-1",
       "icon_source_kind": "png",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité."
     },
     {
       "id": "lexikon-des-mittelalters-online",
@@ -5239,7 +5954,11 @@
         "online"
       ],
       "notes": "",
-      "default_favorite": false
+      "default_favorite": false,
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis le lien BnF/OCLC ou les Pass indiqués, faute de correspondance officielle."
     },
     {
       "id": "lexis-360",
@@ -5270,7 +5989,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "lextenso",
@@ -5278,10 +6001,8 @@
       "category": "Droit et économie",
       "description": "Revues juridiques françaises en texte intégral et actualités doctrinales.",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.labase-lextenso.fr/",
-      "remote": true,
-      "access": [
-        "pass_recherche_illimite"
-      ],
+      "remote": false,
+      "access": [],
       "tags": [
         "droit et économie",
         "lextenso"
@@ -5303,7 +6024,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "library-of-congress-online-catalog",
@@ -5312,7 +6037,9 @@
       "description": "Catalogue en ligne de la Bibliothèque du Congrès.",
       "url": "http://catalog.loc.gov",
       "remote": true,
-      "access": [],
+      "access": [
+        "public"
+      ],
       "tags": [
         "bibliographies et catalogues",
         "catalog",
@@ -5337,7 +6064,10 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "free",
+      "access_label": "Accès libre",
+      "access_source": "bnf_official"
     },
     {
       "id": "library-of-latin-texts",
@@ -5373,7 +6103,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "library-information-science-technology-abstracts",
@@ -5382,7 +6116,9 @@
       "description": "Bibliographie en sciences de l’information, bibliothéconomie et technologies documentaires.",
       "url": "http://www.libraryresearch.com",
       "remote": true,
-      "access": [],
+      "access": [
+        "public"
+      ],
       "tags": [
         "droit et économie",
         "information",
@@ -5407,7 +6143,10 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "free",
+      "access_label": "Accès libre",
+      "access_source": "bnf_official"
     },
     {
       "id": "linguistics-and-language-behavior-abstracts",
@@ -5433,7 +6172,11 @@
       "icon_alt": "Logo Linguistics and Language Behavior Abstracts",
       "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
       "icon_source_kind": "svg",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis le lien BnF/OCLC ou les Pass indiqués, faute de correspondance officielle."
     },
     {
       "id": "lisa-library-and-information-science-abstracts",
@@ -5475,7 +6218,11 @@
       "icon_alt": "Logo LISA (Library and Information Science Abstracts)",
       "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
       "icon_source_kind": "svg",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "littre",
@@ -5484,7 +6231,9 @@
       "description": "Recherche dans le Dictionnaire de la langue française d’Émile Littré.",
       "url": "http://www.littre.org",
       "remote": true,
-      "access": [],
+      "access": [
+        "public"
+      ],
       "tags": [
         "langue et dictionnaires",
         "littre"
@@ -5506,7 +6255,10 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "free",
+      "access_label": "Accès libre",
+      "access_source": "bnf_official"
     },
     {
       "id": "loeb-classical-library",
@@ -5542,7 +6294,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "mapping-the-world-maps-and-travel-literature",
@@ -5579,7 +6335,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "mascarille",
@@ -5613,7 +6373,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "middle-english-compendium",
@@ -5622,7 +6386,9 @@
       "description": "Dictionnaire, bibliographie et corpus autour de la langue anglaise médiévale.",
       "url": "http://ets.umdl.umich.edu/m/mec/",
       "remote": true,
-      "access": [],
+      "access": [
+        "public"
+      ],
       "tags": [
         "compendium",
         "english",
@@ -5646,7 +6412,10 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "free",
+      "access_label": "Accès libre",
+      "access_source": "bnf_official"
     },
     {
       "id": "mirabile",
@@ -5661,7 +6430,11 @@
         "mirabile"
       ],
       "notes": "Accès sur place indiqué dans les traces EasyBNF.",
-      "default_favorite": false
+      "default_favorite": false,
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis l'ancien jeu de données, faute de correspondance officielle."
     },
     {
       "id": "mla-international-bibliography",
@@ -5696,7 +6469,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "monumenta-germaniae-historica-emgh",
@@ -5733,7 +6510,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "motif-index-of-folk-literature",
@@ -5767,7 +6548,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "music-periodicals-database",
@@ -5776,7 +6561,10 @@
       "description": "Bibliographie consacrée à la musique dans plus de 20 pays, avec plus de 140 revues en texte intégral.",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.proquest.com/iimpft/arts/fromDatabasesLayer?accountid=9641",
       "remote": true,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "database",
         "music",
@@ -5805,7 +6593,11 @@
       "icon_alt": "Logo Music Periodicals Database",
       "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
       "icon_source_kind": "svg",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "musik-in-geschichte-und-gegenwart-mgg",
@@ -5846,7 +6638,11 @@
       "icon_alt": "Logo Musik in Geschichte und Gegenwart (MGG)",
       "icon_source_url": "https://www.mgg-online.com/images/assets/MGG/site_logo.svg",
       "icon_source_kind": "svg",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "naima",
@@ -5885,7 +6681,11 @@
       "icon_alt": "Logo Naïma",
       "icon_source_url": "https://www.naimaeditions.com/wp-content/uploads/2019/09/NAIMA-2.png",
       "icon_source_kind": "png",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "navis",
@@ -5918,7 +6718,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité"
     },
     {
       "id": "naxos-music-library",
@@ -5954,7 +6758,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "A la BnF, cette base est consultable sur les postes audiovisuels. Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "new-pauly",
@@ -5993,7 +6801,11 @@
       "icon_alt": "Logo New Pauly",
       "icon_source_url": "https://referenceworks.brill.com/fileasset//fileasset/downloads_static/logo-brill-300x100-transparent-mobile.png",
       "icon_source_kind": "png",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "oecd-ilibrary",
@@ -6025,7 +6837,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "online-egyptological-bibliography",
@@ -6058,7 +6874,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "openedition-books",
@@ -6098,7 +6918,11 @@
       "icon_alt": "Logo OpenEdition Books",
       "icon_source_url": "https://books.openedition.org/.within.website/x/cmd/anubis/static/img/oe-logo.png",
       "icon_source_kind": "png",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "oxford-art-online",
@@ -6133,7 +6957,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture."
     },
     {
       "id": "oxford-dictionary-of-national-biography",
@@ -6175,7 +7003,11 @@
       "icon_alt": "Logo Oxford Dictionary of National Biography",
       "icon_source_url": "https://www.oxforddnb.com/fileasset/logo-x.svg",
       "icon_source_kind": "svg",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "oxford-english-dictionary",
@@ -6216,7 +7048,11 @@
       "icon_alt": "Logo Oxford English Dictionary",
       "icon_source_url": "https://www.oed.com/images/logo3.svg",
       "icon_source_kind": "svg",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "oxford-music-online",
@@ -6252,7 +7088,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "oxford-reference",
@@ -6287,7 +7127,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "pascal",
@@ -6296,7 +7140,9 @@
       "description": "Références bibliographiques internationales en sciences, technologie et médecine.",
       "url": "http://pascal-francis.inist.fr",
       "remote": true,
-      "access": [],
+      "access": [
+        "public"
+      ],
       "tags": [
         "pascal",
         "sciences et techniques"
@@ -6323,7 +7169,11 @@
       "icon_alt": "Logo Pascal",
       "icon_source_url": "https://pascal-francis.inist.fr/wp-content/themes/pascalfrancis/images/logo-openpf.png",
       "icon_source_kind": "png",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "free",
+      "access_label": "Accès libre",
+      "access_source": "bnf_official",
+      "access_note": "Attention, cette base n'est plus mise à jour depuis 2015"
     },
     {
       "id": "patrologia-latina-database",
@@ -6359,7 +7209,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "performing-arts-periodicals-database",
@@ -6401,7 +7255,11 @@
       "icon_alt": "Logo Performing Arts Periodicals Database",
       "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
       "icon_source_kind": "svg",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "periodicals-archive-online",
@@ -6442,7 +7300,11 @@
       "icon_alt": "Logo Periodicals Archive Online",
       "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
       "icon_source_kind": "svg",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "peter-lang-livres-numeriques",
@@ -6484,7 +7346,11 @@
       "icon_alt": "Logo Peter Lang: livres numériques",
       "icon_source_url": "https://www.peterlang.com/app/uploads/2021/07/Group-5-1.svg",
       "icon_source_kind": "svg",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "philosopher-s-index",
@@ -6519,7 +7385,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "photography-the-world-through-the-lens",
@@ -6556,7 +7426,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "portail-suisse-des-periodiques-psp",
@@ -6565,7 +7439,9 @@
       "description": "Catalogue collectif des périodiques conservés dans les bibliothèques suisses.",
       "url": "http://ead.nb.admin.ch/web/swiss-serials/psp_fr.html",
       "remote": true,
-      "access": [],
+      "access": [
+        "public"
+      ],
       "tags": [
         "periodiques",
         "portail",
@@ -6589,7 +7465,10 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "free",
+      "access_label": "Accès libre",
+      "access_source": "bnf_official"
     },
     {
       "id": "primmus",
@@ -6597,14 +7476,18 @@
       "category": "Musique et vidéo",
       "description": "Catalogue et outil de recherche musical spécialisé.",
       "url": "http://renet/cederom/jsp/lancer.jsp?appli=PRIMMUS&titre=PRIMMUS&test=OUI&serveur=TORRI",
-      "remote": true,
+      "remote": false,
       "access": [],
       "tags": [
         "musique et vidéo",
         "primmus"
       ],
       "notes": "",
-      "default_favorite": false
+      "default_favorite": false,
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis l'ancien jeu de données, faute de correspondance officielle."
     },
     {
       "id": "proquest-dissertations-theses",
@@ -6642,7 +7525,11 @@
       "icon_alt": "Logo Proquest Dissertations & theses",
       "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
       "icon_source_kind": "svg",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "proquest-one-literature",
@@ -6682,7 +7569,11 @@
       "icon_alt": "Logo ProQuest One Literature",
       "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
       "icon_source_kind": "svg",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "psycextra",
@@ -6700,7 +7591,11 @@
         "sciences humaines"
       ],
       "notes": "",
-      "default_favorite": false
+      "default_favorite": false,
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis le lien BnF/OCLC ou les Pass indiqués, faute de correspondance officielle."
     },
     {
       "id": "psycinfo-1887",
@@ -6735,7 +7630,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "rambi-the-index-of-articles-on-jewish-studies",
@@ -6744,7 +7643,9 @@
       "description": "Bibliographie d’articles et mélanges spécialisés en études juives.",
       "url": "https://web.nli.org.il/sites/nli/english/infochannels/catalogs/bibliographic-databases/rambi/pages/rambi.aspx",
       "remote": true,
-      "access": [],
+      "access": [
+        "public"
+      ],
       "tags": [
         "art et images",
         "articles",
@@ -6769,7 +7670,10 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "free",
+      "access_label": "Accès libre",
+      "access_source": "bnf_official"
     },
     {
       "id": "reef-classique",
@@ -6806,7 +7710,11 @@
       "icon_alt": "Logo Reef Classique",
       "icon_source_url": "https://www.batipedia.com/img/bandeau/logo_portail.png",
       "icon_source_kind": "png",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "repertoire-bibliographique-de-la-philosophie-international-philosophical-bibliography",
@@ -6814,8 +7722,11 @@
       "category": "Art et images",
       "description": "Bibliographie des travaux (livres, articles, comptes rendus) dans le domaine de la philosophie.",
       "url": "http://pob.peeters-leuven.be/",
-      "remote": false,
-      "access": [],
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "art et images",
         "bibliographique",
@@ -6845,7 +7756,11 @@
       "icon_alt": "Logo Répertoire bibliographique de la philosophie = International philosophical bibliography",
       "icon_source_url": "https://ipb.uclouvain.be/consult/images/logo-ipb.png",
       "icon_source_kind": "png",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "repertoire-des-arts-du-spectacle",
@@ -6854,7 +7769,9 @@
       "description": "Répertoire documentaire consacré aux arts du spectacle.",
       "url": "http://rasp.culture.fr/sdx/rasp/",
       "remote": true,
-      "access": [],
+      "access": [
+        "public"
+      ],
       "tags": [
         "arts",
         "repertoire",
@@ -6862,16 +7779,22 @@
         "spectacle"
       ],
       "notes": "",
-      "default_favorite": false
+      "default_favorite": false,
+      "access_mode": "free",
+      "access_label": "Accès libre",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis un lien public direct, faute de correspondance officielle."
     },
     {
       "id": "repertoire-d-art-et-d-archeologie-raa",
       "name": "Répertoire d’Art et d’Archéologie (RAA)",
       "category": "Sciences humaines",
       "description": "Bibliographie rétrospective française sur l’art et l’archéologie.",
-      "url": "https://www.inha.fr/fr/ressources/outils-documentaires/repertoire-d-art-et-d-archeologie-raa.html",
+      "url": "https://www.openbibart.fr/",
       "remote": true,
-      "access": [],
+      "access": [
+        "public"
+      ],
       "tags": [
         "archeologie",
         "repertoire",
@@ -6883,7 +7806,27 @@
       "icon_alt": "Logo Répertoire d’Art et d’Archéologie (RAA)",
       "icon_source_url": "https://www.inha.fr//app/uploads/2024/07/inha-logo.svg",
       "icon_source_kind": "svg",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "bnf_official": {
+        "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+        "retrieved_at": "2026-08-21",
+        "entries": [
+          {
+            "title": "OpenBibArt (1910-2007)",
+            "url": "https://www.openbibart.fr/",
+            "access_mode": "libre_internet",
+            "access_class": "acces-libre",
+            "access_note": "",
+            "description": "OpenBibArt est une base de données bibliographique de référence qui donne accès à un siècle de littérature occidentale dans les domaines de l’histoire de l'art et de la recherche archéologique : 1,2 million de notices d'articles de périodiques, de livres, de catalogues d'expositions, de catalogues de ventes…, publiés entre 1910 et 2007. Elle propose des liens vers le texte intégral quand celui-ci est disponible. Fruit de la collaboration entre l’Institut National d'Histoire de l'Art (INHA), l’Institut de l'Information Scientifique et Technique du CNRS (Inist-CNRS) et le Getty Research Institute (GRI), elle permet, depuis 2022, d’interroger simultanément les diverses bases et répertoires bibliographiques de référence suivants, parus pour trois d'entre eux, initialement sous forme imprimée : - Le Répertoire d’art et d’archéologie-RAA (1910-1990) - Le Répertoire international de la littérature de l’art / International repertory of the literature of art-RILA (1975-1990) - La Bibliographie d’histoire de l’art / Bibliography of the history of art-BHA (1990-2007) Voir aussi : International Bibliography of Art IBA (2008- ) qui prend la suite.",
+            "alert": "",
+            "match_score": 0.95,
+            "match_note": "Correspondance manuelle ajoutée pendant le reclassement des accès."
+          }
+        ]
+      },
+      "access_mode": "free",
+      "access_label": "Accès libre",
+      "access_source": "bnf_official"
     },
     {
       "id": "repertoire-international-de-la-presse-musicale-ripm-1800-1950-full-text",
@@ -6919,7 +7862,11 @@
             "match_score": 0.938
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "repertoire-international-des-sources-musicales-rism",
@@ -6928,7 +7875,9 @@
       "description": "Catalogue international de manuscrits et sources musicales depuis 1600.",
       "url": "https://rism.info/index.html",
       "remote": true,
-      "access": [],
+      "access": [
+        "public"
+      ],
       "tags": [
         "international",
         "musicales",
@@ -6958,7 +7907,10 @@
       "icon_alt": "Logo Répertoire international des sources musicales (RISM)",
       "icon_source_url": "https://rism.info/images/logo-large.png",
       "icon_source_kind": "png",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "free",
+      "access_label": "Accès libre",
+      "access_source": "bnf_official"
     },
     {
       "id": "retronews-un-site-media-pour-explorer-trois-siecles-de-presse",
@@ -6992,7 +7944,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "revue-d-histoire-ecclesiastique-bibliographie-1993-2013",
@@ -7029,7 +7985,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "rilm-abstracts-of-music-literature",
@@ -7066,7 +8026,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "romanische-bibliographie-online",
@@ -7107,7 +8071,11 @@
       "icon_alt": "Logo Romanische Bibliographie Online",
       "icon_source_url": "https://www.degruyterbrill.com/assets/images/4c2669143186c1ecfda2f251c5bebf10-dgbrill-og-logo.png",
       "icon_source_kind": "png",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "rsc-publishing",
@@ -7141,7 +8109,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "scholarvox-cyberlibris",
@@ -7180,7 +8152,11 @@
       "icon_alt": "Logo Scholarvox (Cyberlibris)",
       "icon_source_url": "https://univ.scholarvox.com/images/mainLogo_h.png",
       "icon_source_kind": "png",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance uniquement pour les détenteurs d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "science-citation-index",
@@ -7213,7 +8189,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "sciencedirect",
@@ -7246,16 +8226,22 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance uniquement pour les détenteurs d’un Pass Recherche illimité"
     },
     {
       "id": "sciences-au-fil-du-temps",
       "name": "Sciences au fil du temps",
       "category": "Sciences et techniques",
       "description": "Livres scientifiques majeurs, du XVe siècle à la découverte de l’ADN.",
-      "url": "http://sciences.amisbnf.org/",
+      "url": "https://gallica.bnf.fr/html/und/sciences/les-sciences-au-fil-du-temps-bibliographie-selective-par-philippe-zoummeroff",
       "remote": true,
-      "access": [],
+      "access": [
+        "public"
+      ],
       "tags": [
         "sciences",
         "sciences et techniques",
@@ -7283,7 +8269,10 @@
       "icon_alt": "Logo Sciences au fil du temps",
       "icon_source_url": "https://gallica.bnf.fr/accueil/sites/default/files/logo_bnf.png",
       "icon_source_kind": "png",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "free",
+      "access_label": "Accès libre",
+      "access_source": "bnf_official"
     },
     {
       "id": "sciences-en-ligne-dictionnaire-interactif-des-sciences-et-techniques",
@@ -7304,7 +8293,11 @@
         "sciences"
       ],
       "notes": "",
-      "default_favorite": false
+      "default_favorite": false,
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis le lien BnF/OCLC ou les Pass indiqués, faute de correspondance officielle."
     },
     {
       "id": "scipio-catalogues-de-ventes-d-oeuvres-d-art-et-de-livres-rares",
@@ -7341,7 +8334,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "screen-studies-collection",
@@ -7366,7 +8363,11 @@
       "icon_alt": "Logo Screen Studies Collection",
       "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
       "icon_source_kind": "svg",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis le lien BnF/OCLC ou les Pass indiqués, faute de correspondance officielle."
     },
     {
       "id": "socindex-with-full-text",
@@ -7403,7 +8404,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "sociological-abstracts",
@@ -7443,7 +8448,11 @@
       "icon_alt": "Logo Sociological Abstracts",
       "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
       "icon_source_kind": "svg",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "sociology-database",
@@ -7483,7 +8492,11 @@
       "icon_alt": "Logo Sociology Database",
       "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
       "icon_source_kind": "svg",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "springerlink",
@@ -7517,16 +8530,22 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "sudoc",
       "name": "Sudoc",
       "category": "Art et images",
       "description": "Catalogue collectif des bibliothèques universitaires françaises.",
-      "url": "http://corail.sudoc.abes.fr",
+      "url": "https://www.sudoc.abes.fr/cbs/",
       "remote": true,
-      "access": [],
+      "access": [
+        "public"
+      ],
       "tags": [
         "art et images",
         "sudoc"
@@ -7548,7 +8567,10 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "free",
+      "access_label": "Accès libre",
+      "access_source": "bnf_official"
     },
     {
       "id": "supplementum-epigraphicum-graecum-online",
@@ -7590,7 +8612,11 @@
       "icon_alt": "Logo Supplementum Epigraphicum Graecum Online",
       "icon_source_url": "https://scholarlyeditions.brill.com/site_media/static/images/logo-brill-300x100-transparent-desktop.png",
       "icon_source_kind": "png",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "techniques-de-l-ingenieur",
@@ -7630,7 +8656,11 @@
       "icon_alt": "Logo Techniques de l'ingénieur",
       "icon_source_url": "https://cdn.techniques-ingenieur.fr/lucy/ti/cdn.prod.v5.2.54/images/logos-ti/logo-techniques-ingenieur.svg",
       "icon_source_kind": "svg",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "thesaurus-linguae-graecae",
@@ -7663,7 +8693,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "thesaurus-linguae-latinae-tll",
@@ -7704,7 +8738,11 @@
       "icon_alt": "Logo Thesaurus Linguae Latinae (TLL)",
       "icon_source_url": "https://tll.degruyter.com/images/logo-black.png",
       "icon_source_kind": "png",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "times-digital-archives-1785-2014",
@@ -7741,7 +8779,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "twentieth-century-religious-thought-library-christianity",
@@ -7783,7 +8825,11 @@
       "icon_alt": "Logo Twentieth Century Religious Thought Library – Christianity",
       "icon_source_url": "https://search.alexanderstreet.com/sites/search.alexanderstreet.com/themes/custom/as_lazr/images/beam/Clarivate_as_black.png",
       "icon_source_kind": "png",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "ulrich-s",
@@ -7814,7 +8860,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "un-ilibrary-bibliotheque-numerique-des-nations-unies",
@@ -7848,7 +8898,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "ut-per-litteras-apostolicas",
@@ -7883,7 +8937,11 @@
             "match_score": 0.93
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "vidal",
@@ -7919,7 +8977,11 @@
       "icon_alt": "Logo Vidal",
       "icon_source_url": "https://evidal.vidal.fr/themes/main/evidal/front/img/beta-vidalEvidalLogoNew.png",
       "icon_source_kind": "png",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "waterloo-directory-of-english-newspapers-and-periodicals-series-2",
@@ -7953,7 +9015,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "wiley-digital-archives-british-association-for-the-advancement-of-science-collections-on-the-history-of-science-1830-1970",
@@ -7987,7 +9053,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "wiley-online-library",
@@ -8022,7 +9092,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance uniquement pour les détenteurs d’un Pass Recherche illimité"
     },
     {
       "id": "worldcat",
@@ -8056,7 +9130,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "bnf_official",
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
     },
     {
       "id": "xerfi-secteurs-7000",
@@ -8089,7 +9167,11 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "onsite",
+      "access_label": "Sur place uniquement",
+      "access_source": "bnf_official",
+      "access_note": "Cette base est uniquement accessible à la BnF."
     },
     {
       "id": "yearbook-of-international-organizations",
@@ -8114,7 +9196,11 @@
       "icon_alt": "Logo Yearbook of International Organizations",
       "icon_source_url": "https://ybio.brillonline.com/sites/all/themes/Brill2014/images/design/uia_logo_brill.png",
       "icon_source_kind": "png",
-      "icon_review_status": "to_review"
+      "icon_review_status": "to_review",
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_source": "local_inference",
+      "access_note": "Classement inféré depuis le lien BnF/OCLC ou les Pass indiqués, faute de correspondance officielle."
     },
     {
       "id": "zeitschriften-datenbank",
@@ -8123,7 +9209,9 @@
       "description": "Catalogue allemand de périodiques et journaux.",
       "url": "https://zdb-katalog.de/index.xhtml",
       "remote": true,
-      "access": [],
+      "access": [
+        "public"
+      ],
       "tags": [
         "datenbank",
         "généralistes et référence",
@@ -8146,7 +9234,10 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "access_mode": "free",
+      "access_label": "Accès libre",
+      "access_source": "bnf_official"
     }
   ]
 }

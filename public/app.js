@@ -36,7 +36,21 @@ const accessLabels = {
   pass_lecture_culture: "Pass Lecture/Culture",
   pass_recherche: "Pass Recherche",
   pass_recherche_illimite: "Pass Recherche illimité",
-  public: "Accès libre",
+  public: "Sans Pass BnF",
+};
+
+const accessModeLabels = {
+  remote: "Accès distant",
+  remote_conditional: "Accès distant sous condition",
+  onsite: "Sur place uniquement",
+  free: "Accès libre",
+};
+
+const accessModeClasses = {
+  remote: "remote",
+  remote_conditional: "conditional",
+  onsite: "onsite",
+  free: "free",
 };
 
 async function init() {
@@ -224,17 +238,17 @@ function getFilteredResources() {
   const query = normalize(state.query);
   return state.resources
     .filter((resource) => {
+      const accessMode = getAccessMode(resource);
       const matchesCategory = state.category === "Toutes" || resource.category === state.category;
       const matchesFavorite = !state.favoritesOnly || state.favorites.has(resource.id);
       const matchesPass = matchesPassFilter(resource);
-      const matchesRemote =
-        state.remoteFilter === "all" ||
-        (state.remoteFilter === "remote" && resource.remote) ||
-        (state.remoteFilter === "onsite" && !resource.remote);
+      const matchesRemote = state.remoteFilter === "all" || state.remoteFilter === accessMode;
       const haystack = normalize([
         resource.name,
         resource.category,
         resource.description,
+        getAccessModeLabel(resource),
+        resource.access_note,
         ...(resource.tags ?? []),
       ].join(" "));
       return matchesCategory && matchesFavorite && matchesPass && matchesRemote && (!query || haystack.includes(query));
@@ -252,11 +266,15 @@ function matchesPassFilter(resource) {
 
   const access = resource.access ?? [];
 
+  if (access.includes("public")) {
+    return true;
+  }
+
   if (access.includes(state.passFilter)) {
     return true;
   }
 
-  return state.remoteFilter === "onsite" && !resource.remote && access.length === 0;
+  return state.remoteFilter === "onsite" && getAccessMode(resource) === "onsite" && access.length === 0;
 }
 
 function createCard(resource) {
@@ -267,7 +285,9 @@ function createCard(resource) {
   card.setAttribute("aria-label", `Ouvrir ${resource.name}`);
 
   const access = (resource.access ?? []).map((item) => accessLabels[item] ?? item);
-  const remoteLabel = resource.remote ? "Accès distant" : "Sur place ou à vérifier";
+  const accessMode = getAccessMode(resource);
+  const accessModeLabel = getAccessModeLabel(resource);
+  const accessModeClass = accessModeClasses[accessMode] ?? "onsite";
   const isFavorite = state.favorites.has(resource.id);
   const longDescription = getOfficialDescription(resource);
   const hasLongDescription = Boolean(longDescription);
@@ -307,7 +327,7 @@ function createCard(resource) {
     <p class="description">${escapeHtml(description)}${descriptionToggle}</p>
     <div class="badges">
       <span class="badge category">${escapeHtml(resource.category)}</span>
-      <span class="badge ${resource.remote ? "remote" : "onsite"}">${remoteLabel}</span>
+      <span class="badge ${accessModeClass}">${escapeHtml(accessModeLabel)}</span>
       ${access.map((label) => `<span class="badge">${escapeHtml(label)}</span>`).join("")}
     </div>
   `;
@@ -353,6 +373,18 @@ function createCard(resource) {
   }
 
   return card;
+}
+
+function getAccessMode(resource) {
+  if (resource.access_mode && accessModeLabels[resource.access_mode]) {
+    return resource.access_mode;
+  }
+
+  return resource.remote ? "remote" : "onsite";
+}
+
+function getAccessModeLabel(resource) {
+  return resource.access_label || accessModeLabels[getAccessMode(resource)] || accessModeLabels.onsite;
 }
 
 function getOfficialDescription(resource) {

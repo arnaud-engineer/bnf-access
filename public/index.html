@@ -36,9 +36,9 @@
           <div id="categoryFilters" class="filters" aria-label="Catégories"></div>
           <div class="profile-filters" aria-label="Profil d'accès">
             <label>
-              <span>Pass</span>
+              <span>Profil</span>
               <select id="passFilter">
-                <option value="all">Tous les Pass</option>
+                <option value="all">Tous les profils</option>
                 <option value="pass_lecture_culture">Pass Lecture/Culture</option>
                 <option value="pass_recherche_illimite">Pass Recherche illimité</option>
               </select>
@@ -46,9 +46,11 @@
             <label>
               <span>Accès</span>
               <select id="remoteFilter">
-                <option value="all">Distance et sur place</option>
+                <option value="all">Tous les accès</option>
                 <option value="remote">À distance</option>
-                <option value="onsite">Sur place</option>
+                <option value="remote_conditional">À distance sous condition</option>
+                <option value="onsite">Sur place uniquement</option>
+                <option value="free">Accès libre</option>
               </select>
             </label>
           </div>
@@ -65,7 +67,7 @@
     </main>
 
     <footer>
-      <p>Données à vérifier progressivement depuis les sources BnF officielles et les traces publiques archivées.</p>
+      <p>Données recoupées progressivement depuis les sources BnF officielles et les traces publiques archivées.</p>
     </footer>
 
     <script src="./app.js" type="module"></script>

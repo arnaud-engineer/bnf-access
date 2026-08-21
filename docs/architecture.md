@@ -58,8 +58,12 @@ Chaque entrée de `resources.json` contient :
 - `category` : catégorie d'affichage.
 - `description` : courte description originale.
 - `url` : lien à ouvrir.
-- `remote` : accès distant possible ou non.
-- `access` : conditions d'accès connues.
+- `access_mode` : mode d'accès normalisé pour l'interface (`remote`, `remote_conditional`, `onsite`, `free`).
+- `access_label` : libellé affichable du mode d'accès.
+- `access_source` : origine du classement (`bnf_official`, `bnf_official_manual_override` ou `local_inference`).
+- `access_note` : précision courte, surtout pour les accès sous condition ou les classements inférés.
+- `remote` : booléen dérivé conservé pour compatibilité interne.
+- `access` : conditions de profil connues (`pass_lecture_culture`, `pass_recherche_illimite`, `public`, etc.).
 - `tags` : tags pour la recherche.
 - `icon_url` : logo public optionnel, quand il existe dans les traces archivées.
 - `fallback_label` : abréviation optionnelle à afficher quand aucun `icon_url` n'est disponible.
@@ -90,17 +94,21 @@ Par défaut, cette barre reste triée alphabétiquement. Si l'utilisateur passe 
 
 L'utilisateur peut filtrer les ressources selon son Pass et selon le mode d'accès :
 
-- tous les Pass ;
+- tous les profils ;
 - Pass Lecture/Culture ;
 - Pass Recherche illimité ;
-- accès a distance ;
-- accès sur place.
+- accès à distance ;
+- accès à distance sous condition ;
+- accès sur place uniquement ;
+- accès libre.
 
 Ces choix sont stockés dans `localStorage`. Les ressources sans étiquette de Pass explicite sont masquées lorsqu'un Pass précis est sélectionné, pour éviter de promettre un accès non vérifié.
 
+Les ressources en accès libre restent visibles quel que soit le Pass sélectionné, puisqu'elles ne dépendent pas d'un droit BnF particulier.
+
 Exception : lorsqu'un utilisateur filtre explicitement sur les ressources `sur place`, les ressources sur place sans étiquette de Pass restent visibles. Dans l'archive source, beaucoup de ressources sur place ne portent pas de métadonnée de Pass exploitable.
 
-## Points a vérifiér
+## Points de contrôle
 
 - Validite actuelle de chaque lien BnF.
 - Conditions d'accès exactes selon les Pass.

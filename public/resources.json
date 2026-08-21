@@ -45,7 +45,16 @@
       "access_mode": "remote_conditional",
       "access_label": "Accès distant sous condition",
       "access_source": "bnf_official_manual_override",
-      "access_note": "Accès distant possible via une procédure spécifique web, mobile ou tablette."
+      "access_note": "Accès distant possible via une procédure spécifique web, mobile ou tablette.",
+      "access_instruction": {
+        "text": "Téléchargez vos titres depuis un établissement abonné, puis lisez-les à distance pendant 7 jours.",
+        "links": [
+          {
+            "label": "Procédure BnF",
+            "url": "https://bdl.bnf.fr/pressreader-evolution-de-lacces-distant-partir-du-1er-decembre-2025"
+          }
+        ]
+      }
     },
     {
       "id": "europresse",
@@ -172,7 +181,7 @@
       "name": "New York Times",
       "category": "Presse",
       "description": "Accès au quotidien américain et à ses archives selon les conditions BnF.",
-      "url": "http://nytimes.com/subscription/promotions/lp3FURL.html?campaignId=79WJK&gift_code=4ad4ae1ee1542f2b",
+      "url": "https://www.nytimes.com/subscription/redeem?campaignId=8RHXJ&gift_code=8df078f005d2b885",
       "remote": true,
       "access": [
         "pass_lecture_culture",
@@ -206,7 +215,16 @@
       "access_mode": "remote_conditional",
       "access_label": "Accès distant sous condition",
       "access_source": "bnf_official_manual_override",
-      "access_note": "Accès distant via un pass New York Times 72 h à renouveler."
+      "access_note": "Accès distant via un pass New York Times 72 h à renouveler.",
+      "access_instruction": {
+        "text": "Créez un pass New York Times 72 h, cliquez sur REDEEM, puis connectez ou créez votre compte.",
+        "links": [
+          {
+            "label": "Activer le pass",
+            "url": "https://www.nytimes.com/subscription/redeem?campaignId=8RHXJ&gift_code=8df078f005d2b885"
+          }
+        ]
+      }
     },
     {
       "id": "alternatives-economiques",

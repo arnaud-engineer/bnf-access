@@ -249,6 +249,7 @@ function getFilteredResources() {
         resource.description,
         getAccessModeLabel(resource),
         resource.access_note,
+        resource.access_instruction?.text,
         ...(resource.tags ?? []),
       ].join(" "));
       return matchesCategory && matchesFavorite && matchesPass && matchesRemote && (!query || haystack.includes(query));
@@ -306,6 +307,7 @@ function createCard(resource) {
   const logo = resource.icon_url
     ? `<img src="${escapeAttribute(resource.icon_url)}" alt="${escapeAttribute(resource.icon_alt ?? "")}" loading="lazy">`
     : `<span>${escapeHtml(getFallbackLabel(resource))}</span>`;
+  const accessInstruction = renderAccessInstruction(resource);
 
   card.innerHTML = `
     <div class="card-header">
@@ -325,6 +327,7 @@ function createCard(resource) {
       </button>
     </div>
     <p class="description">${escapeHtml(description)}${descriptionToggle}</p>
+    ${accessInstruction}
     <div class="badges">
       <span class="badge category">${escapeHtml(resource.category)}</span>
       <span class="badge ${accessModeClass}">${escapeHtml(accessModeLabel)}</span>
@@ -372,7 +375,45 @@ function createCard(resource) {
     });
   }
 
+  card.querySelectorAll(".access-instruction a").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.stopPropagation();
+    });
+
+    link.addEventListener("keydown", (event) => {
+      event.stopPropagation();
+    });
+
+    link.addEventListener("keyup", (event) => {
+      event.stopPropagation();
+    });
+  });
+
   return card;
+}
+
+function renderAccessInstruction(resource) {
+  const instruction = resource.access_instruction;
+  if (!instruction?.text) {
+    return "";
+  }
+
+  const links = (instruction.links ?? [])
+    .map((link) => {
+      if (!link?.url || !link?.label) {
+        return "";
+      }
+
+      return `<a href="${escapeAttribute(link.url)}" target="_blank" rel="noreferrer">${escapeHtml(link.label)}</a>`;
+    })
+    .filter(Boolean)
+    .join(" ");
+
+  return `
+    <p class="access-instruction">
+      <strong>Accès :</strong> ${escapeHtml(instruction.text)}${links ? ` ${links}` : ""}
+    </p>
+  `;
 }
 
 function getAccessMode(resource) {

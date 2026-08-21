@@ -62,6 +62,7 @@ Chaque entrée de `resources.json` contient :
 - `access_label` : libellé affichable du mode d'accès.
 - `access_source` : origine du classement (`bnf_official`, `bnf_official_manual_override` ou `local_inference`).
 - `access_note` : précision courte, surtout pour les accès sous condition ou les classements inférés.
+- `access_instruction` : consigne courte affichée sous la description quand une procédure particulière est nécessaire. Elle peut contenir un tableau `links` avec `label` et `url`.
 - `remote` : booléen dérivé conservé pour compatibilité interne.
 - `access` : conditions de profil connues (`pass_lecture_culture`, `pass_recherche_illimite`, `public`, etc.).
 - `tags` : tags pour la recherche.

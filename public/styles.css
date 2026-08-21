@@ -454,6 +454,7 @@ h1 {
 
 .favorite-button:focus-visible,
 .description-toggle:focus-visible,
+.access-instruction a:focus-visible,
 .notice-action:focus-visible,
 .filter-button:focus-visible,
 .card:focus-visible,
@@ -494,6 +495,29 @@ h1 {
 }
 
 .description-toggle:hover {
+  text-decoration: underline;
+}
+
+.access-instruction {
+  border-left: 3px solid #e2c36b;
+  margin: -2px 0 14px;
+  padding: 0 0 0 10px;
+  color: #60481a;
+  font-size: 0.86rem;
+  line-height: 1.38;
+}
+
+.access-instruction strong {
+  color: var(--ink);
+}
+
+.access-instruction a {
+  color: var(--accent);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.access-instruction a:hover {
   text-decoration: underline;
 }
 

@@ -131,6 +131,26 @@ h1 {
   border-color: var(--accent);
 }
 
+.quick-launch-action.save {
+  border-color: #9ccdbc;
+  background: #eaf6f1;
+  color: #195f4b;
+}
+
+.quick-launch-action.save:hover {
+  border-color: #256f5b;
+}
+
+.quick-launch-action.discard {
+  border-color: #e8c184;
+  background: #fff3dd;
+  color: #7a4d09;
+}
+
+.quick-launch-action.discard:hover {
+  border-color: #bd7b12;
+}
+
 .quick-launch-list {
   display: flex;
   gap: 10px;

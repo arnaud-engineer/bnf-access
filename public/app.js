@@ -141,23 +141,23 @@ function createQuickLaunchActions(favorites) {
 
   if (state.quickLaunchEditing) {
     actions.append(
-      createActionButton("Enregistrer", saveQuickLaunchOrder),
-      createActionButton("Annuler", cancelQuickLaunchEdit),
-      createActionButton("Ordre A-Z", resetQuickLaunchOrder),
+      createActionButton("Enregistrer", saveQuickLaunchOrder, "save"),
+      createActionButton("Annuler", cancelQuickLaunchEdit, "discard"),
+      createActionButton("Tri alphabetique", resetQuickLaunchOrder, "discard"),
     );
     return actions;
   }
 
   if (favorites.length > 1) {
-    actions.append(createActionButton("Modifier", startQuickLaunchEdit));
+    actions.append(createActionButton("Modifier", startQuickLaunchEdit, "neutral"));
   }
 
   return actions;
 }
 
-function createActionButton(label, onClick) {
+function createActionButton(label, onClick, tone = "neutral") {
   const button = document.createElement("button");
-  button.className = "quick-launch-action";
+  button.className = `quick-launch-action ${tone}`;
   button.type = "button";
   button.textContent = label;
   button.addEventListener("click", onClick);

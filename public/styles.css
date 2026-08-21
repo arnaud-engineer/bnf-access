@@ -255,15 +255,30 @@ h1 {
 }
 
 .is-editing .quick-launch-item {
+  animation: quick-launch-wiggle 380ms ease-in-out infinite alternate;
   cursor: grab;
   touch-action: none;
+  transform-origin: 50% 85%;
+  will-change: transform;
+}
+
+.is-editing .quick-launch-item:nth-child(2n) {
+  animation-delay: -130ms;
+  animation-duration: 420ms;
+}
+
+.is-editing .quick-launch-item:nth-child(3n) {
+  animation-delay: -260ms;
+  animation-duration: 360ms;
 }
 
 .is-editing .quick-launch-item.is-dragging {
+  animation: none;
   border-color: var(--accent);
   box-shadow: 0 8px 18px #0000001a;
   cursor: grabbing;
   opacity: 0.72;
+  transform: scale(0.98);
 }
 
 .quick-launch-item img {
@@ -278,6 +293,7 @@ h1 {
   position: absolute;
   top: 7px;
   right: 7px;
+  animation: quick-launch-remove-pop 180ms cubic-bezier(0.2, 1.45, 0.45, 1) both;
   display: grid;
   place-items: center;
   width: 28px;
@@ -305,6 +321,41 @@ h1 {
 
 .quick-launch-item:hover {
   border-color: var(--accent);
+}
+
+@keyframes quick-launch-wiggle {
+  0% {
+    transform: rotate(-0.7deg) translateY(0.4px);
+  }
+
+  100% {
+    transform: rotate(0.7deg) translateY(-0.4px);
+  }
+}
+
+@keyframes quick-launch-remove-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.35);
+  }
+
+  70% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .is-editing .quick-launch-item,
+  .quick-launch-remove {
+    animation: none;
+    transform: none;
+  }
 }
 
 .controls {

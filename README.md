@@ -53,6 +53,7 @@ http://localhost:5173
 ## Sources de depart
 
 - Annuaire officiel BnF : https://bdl.bnf.fr/bases-de-donnees-par-titre
+- Tarifs et Pass BnF : https://www.bnf.fr/fr/tarifs-dacces-aux-bibliotheques-et-loffre-culturelle
 - Archive EasyBNF : https://web.archive.org/web/20260731093816/https://easybnf.fr/
 - Ressources archivées EasyBNF : https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json
 - Documentation OCLC EZproxy : https://help.oclc.org/Library_Management/EZproxy/EZproxy_configuration/Starting_point_URLs_and_config_txt

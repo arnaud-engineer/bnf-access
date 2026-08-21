@@ -74,6 +74,13 @@ h1 {
   font-size: 1.04rem;
 }
 
+.topbar-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
 .official-link {
   display: inline-flex;
   align-items: center;
@@ -86,6 +93,12 @@ h1 {
   font-weight: 700;
   text-decoration: none;
   white-space: nowrap;
+}
+
+.official-link.secondary {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
 }
 
 .notice,
@@ -796,6 +809,10 @@ footer {
 
   .notice-action {
     width: fit-content;
+  }
+
+  .topbar-links {
+    justify-content: flex-start;
   }
 
   .official-link {

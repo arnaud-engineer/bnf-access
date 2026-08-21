@@ -333,7 +333,6 @@ h1 {
 .card {
   display: flex;
   flex-direction: column;
-  min-height: 292px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--panel);
@@ -419,7 +418,7 @@ h1 {
 }
 
 .description {
-  margin: 0 0 10px;
+  margin: 0 0 14px;
   color: var(--muted);
   font-size: 0.94rem;
 }
@@ -428,7 +427,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin: 0;
+  margin: auto 0 0;
 }
 
 .badge {

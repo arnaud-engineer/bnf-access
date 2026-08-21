@@ -7,7 +7,7 @@ Les logos sont stockés localement pour éviter de dépendre de hotlinks externe
 - PressReader : pictogramme bulle extrait du fichier `PressReader horizontal logo.svg`, Wikipédia anglophone.
 - Europresse : fichier `Logo Europresse.svg`, Wikimedia Commons.
 - Arrêt sur images : fichier `LOGO @SI FINAL.svg`, Wikipédia francophone.
-- Mediapart : fichier `Mediapart wordmark.svg`, Wikimedia Commons.
+- Mediapart : fichier local `20240401184459!Mediapart_logo.svg` fourni pour améliorer la lisibilité dans la maquette.
 - New York Times : fichier local `nyt-safari-pinned-tab.svg` fourni pour améliorer la lisibilité dans la maquette.
 - Alternatives économiques : fichier `Alternatives Economiques logo.svg`, Wikimedia Commons.
 - Grand Robert : fichier `Logo LeRobert.svg`, Wikipédia francophone.

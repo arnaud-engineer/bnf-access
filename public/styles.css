@@ -72,8 +72,7 @@ h1 {
   font-size: 1.04rem;
 }
 
-.official-link,
-.card-link {
+.official-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -338,7 +337,12 @@ h1 {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--panel);
+  cursor: pointer;
   padding: 18px;
+}
+
+.card:hover {
+  border-color: var(--accent);
 }
 
 .card-header {
@@ -394,7 +398,7 @@ h1 {
 
 .favorite-button:focus-visible,
 .filter-button:focus-visible,
-.card-link:focus-visible,
+.card:focus-visible,
 .quick-launch-action:focus-visible,
 .quick-launch-item:focus-visible,
 .profile-filters select:focus-visible,
@@ -449,13 +453,6 @@ h1 {
 .badge.onsite {
   border-color: #e4cf9e;
   color: var(--amber);
-}
-
-.card-actions {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 12px;
 }
 
 .empty {

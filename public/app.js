@@ -240,6 +240,9 @@ function matchesPassFilter(resource) {
 function createCard(resource) {
   const card = document.createElement("article");
   card.className = "card";
+  card.tabIndex = 0;
+  card.setAttribute("role", "link");
+  card.setAttribute("aria-label", `Ouvrir ${resource.name}`);
 
   const access = (resource.access ?? []).map((item) => accessLabels[item] ?? item);
   const remoteLabel = resource.remote ? "Accès distant" : "Sur place ou à vérifier";
@@ -271,16 +274,37 @@ function createCard(resource) {
       <span class="badge ${resource.remote ? "remote" : "onsite"}">${remoteLabel}</span>
       ${access.map((label) => `<span class="badge">${escapeHtml(label)}</span>`).join("")}
     </div>
-    <div class="card-actions">
-      <a class="card-link" href="${escapeAttribute(resource.url)}" target="_blank" rel="noreferrer">Ouvrir</a>
-    </div>
   `;
 
-  card.querySelector(".favorite-button").addEventListener("click", () => {
+  card.addEventListener("click", () => {
+    openResource(resource.url);
+  });
+
+  card.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      openResource(resource.url);
+    }
+  });
+
+  card.querySelector(".favorite-button").addEventListener("click", (event) => {
+    event.stopPropagation();
     toggleFavorite(resource.id);
   });
 
+  card.querySelector(".favorite-button").addEventListener("keydown", (event) => {
+    event.stopPropagation();
+  });
+
+  card.querySelector(".favorite-button").addEventListener("keyup", (event) => {
+    event.stopPropagation();
+  });
+
   return card;
+}
+
+function openResource(url) {
+  window.open(url, "_blank", "noreferrer");
 }
 
 function loadFavorites() {

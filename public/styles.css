@@ -107,11 +107,25 @@ h1 {
   margin: 18px 0 28px;
 }
 
+.quick-launch-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.quick-launch-title {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.2;
+}
+
 .quick-launch-actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   justify-content: flex-end;
-  margin-bottom: 10px;
 }
 
 .quick-launch-action {

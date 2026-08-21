@@ -106,10 +106,7 @@ function renderQuickLaunch() {
     return;
   }
 
-  const actions = createQuickLaunchActions(favorites);
-  if (actions.children.length) {
-    quickLaunch.append(actions);
-  }
+  quickLaunch.append(createQuickLaunchHeader(favorites));
 
   const list = document.createElement("div");
   list.className = "quick-launch-list";
@@ -142,7 +139,15 @@ function renderQuickLaunch() {
   quickLaunch.append(list);
 }
 
-function createQuickLaunchActions(favorites) {
+function createQuickLaunchHeader(favorites) {
+  const header = document.createElement("div");
+  header.className = "quick-launch-header";
+
+  const title = document.createElement("h2");
+  title.className = "quick-launch-title";
+  title.textContent = "Favoris";
+  header.append(title);
+
   const actions = document.createElement("div");
   actions.className = "quick-launch-actions";
 
@@ -152,14 +157,16 @@ function createQuickLaunchActions(favorites) {
       createActionButton("Annuler", cancelQuickLaunchEdit, "discard"),
       createActionButton("Tri alphabetique", resetQuickLaunchOrder, "discard"),
     );
-    return actions;
+    header.append(actions);
+    return header;
   }
 
   if (favorites.length > 1) {
     actions.append(createActionButton("Modifier", startQuickLaunchEdit, "neutral"));
   }
 
-  return actions;
+  header.append(actions);
+  return header;
 }
 
 function createActionButton(label, onClick, tone = "neutral") {

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BNF Access</title>
+    <meta name="description" content="Page non officielle pour retrouver les ressources numeriques accessibles via la BnF.">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Prototype non officiel</p>
+        <h1>BNF Access</h1>
+        <p class="intro">Raccourcis vers les ressources numeriques accessibles avec un Pass BnF.</p>
+      </div>
+      <a class="official-link" href="https://bdl.bnf.fr/bases-de-donnees-par-titre" target="_blank" rel="noreferrer">Annuaire BnF</a>
+    </header>
+
+    <main>
+      <section class="notice">
+        <strong>Important.</strong> Cette page n'est pas affiliee a la BnF. Elle ne collecte aucun identifiant : les connexions se font uniquement sur les pages BnF/OCLC.
+      </section>
+
+      <section class="controls" aria-label="Filtres">
+        <label class="search">
+          <span>Rechercher</span>
+          <input id="searchInput" type="search" placeholder="Mediapart, presse, dictionnaire..." autocomplete="off">
+        </label>
+        <div id="categoryFilters" class="filters" aria-label="Categories"></div>
+      </section>
+
+      <section>
+        <div class="section-heading">
+          <h2>Ressources</h2>
+          <p id="resultCount"></p>
+        </div>
+        <div id="resourceGrid" class="grid"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Donnees a verifier progressivement depuis les sources BnF officielles et les traces publiques archivees.</p>
+    </footer>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>
+

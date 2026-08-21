@@ -1,0 +1,155 @@
+{
+  "name": "BNF Access resources",
+  "last_verified_at": null,
+  "sources": [
+    "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+    "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json"
+  ],
+  "resources": [
+    {
+      "id": "pressreader",
+      "name": "PressReader",
+      "category": "Presse",
+      "description": "Kiosque numerique international pour consulter des journaux et magazines.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.pressreader.com/",
+      "remote": true,
+      "access": ["pass_lecture_culture", "pass_recherche_illimite"],
+      "tags": ["presse", "journaux", "magazines"],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "notes": "Conditions d'acces distant a verifier, car elles ont evolue."
+    },
+    {
+      "id": "europresse",
+      "name": "Europresse",
+      "category": "Presse",
+      "description": "Base de presse en texte integral avec archives et recherche par titre.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=D000067U_1",
+      "remote": true,
+      "access": ["pass_lecture_culture", "pass_recherche_illimite"],
+      "tags": ["presse", "archives", "quotidiens"],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "notes": ""
+    },
+    {
+      "id": "mediapart",
+      "name": "Mediapart",
+      "category": "Presse",
+      "description": "Journal en ligne d'enquete et d'actualite.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://www.mediapart.fr/licence",
+      "remote": true,
+      "access": ["pass_lecture_culture", "pass_recherche_illimite"],
+      "tags": ["presse", "actualite", "enquete"],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "notes": ""
+    },
+    {
+      "id": "arretsurimages",
+      "name": "Arret sur images",
+      "category": "Presse",
+      "description": "Analyse critique des medias, articles et emissions.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://www.arretsurimages.net/autologin.php",
+      "remote": true,
+      "access": ["pass_lecture_culture", "pass_recherche_illimite"],
+      "tags": ["presse", "medias", "analyse"],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "notes": ""
+    },
+    {
+      "id": "alternatives-economiques",
+      "name": "Alternatives economiques",
+      "category": "Presse",
+      "description": "Articles et dossiers d'economie et de societe.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.alternatives-economiques.fr",
+      "remote": true,
+      "access": ["pass_lecture_culture", "pass_recherche_illimite"],
+      "tags": ["economie", "presse", "societe"],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "notes": ""
+    },
+    {
+      "id": "new-york-times",
+      "name": "New York Times",
+      "category": "Presse",
+      "description": "Acces au quotidien americain et a ses archives selon les conditions BnF.",
+      "url": "http://nytimes.com/subscription/promotions/lp3FURL.html?campaignId=79WJK&gift_code=4ad4ae1ee1542f2b",
+      "remote": true,
+      "access": ["pass_lecture_culture", "pass_recherche_illimite"],
+      "tags": ["presse", "international", "archives"],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "notes": "Cas special : creation d'un pass temporaire NYT a verifier."
+    },
+    {
+      "id": "grand-robert",
+      "name": "Grand Robert",
+      "category": "Langue",
+      "description": "Dictionnaire de reference pour la langue francaise.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://grandrobert.lerobert.com",
+      "remote": true,
+      "access": ["pass_lecture_culture", "pass_recherche_illimite"],
+      "tags": ["dictionnaire", "langue", "francais"],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "notes": ""
+    },
+    {
+      "id": "universalis",
+      "name": "Universalis",
+      "category": "Reference",
+      "description": "Encyclopedie generale et ressources de reference.",
+      "url": "https://bnf.idm.oclc.org/login?url=http://www.universalis-edu.com",
+      "remote": true,
+      "access": ["pass_lecture_culture", "pass_recherche_illimite"],
+      "tags": ["encyclopedie", "reference"],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "notes": ""
+    },
+    {
+      "id": "larousse-xixe",
+      "name": "Larousse - Grand dictionnaire universel du XIXe",
+      "category": "Langue",
+      "description": "Edition numerique du dictionnaire de Pierre Larousse.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://www.classiques-garnier.com/numerique-bases/index.php?module=App&action=FrameMain&colname=ColLarousse",
+      "remote": true,
+      "access": ["pass_lecture_culture", "pass_recherche_illimite"],
+      "tags": ["dictionnaire", "larousse", "xixe"],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "notes": ""
+    },
+    {
+      "id": "musicme",
+      "name": "MusicMe",
+      "category": "Musique",
+      "description": "Plateforme d'ecoute musicale accessible via la BnF.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://bnf.mt.musicme.com",
+      "remote": true,
+      "access": ["pass_lecture_culture", "pass_recherche_illimite"],
+      "tags": ["musique", "streaming"],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "notes": ""
+    },
+    {
+      "id": "medici-tv",
+      "name": "Medici.tv",
+      "category": "Musique",
+      "description": "Concerts, operas, ballets et contenus video autour de la musique classique.",
+      "url": "https://bnf.idm.oclc.org/login?url=https://edu.medici.tv",
+      "remote": true,
+      "access": ["pass_lecture_culture", "pass_recherche_illimite"],
+      "tags": ["musique", "video", "classique"],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "notes": ""
+    },
+    {
+      "id": "philharmonie",
+      "name": "Philharmonie de Paris",
+      "category": "Musique",
+      "description": "Ressource musicale indiquee comme acces sur place dans les traces EasyBNF.",
+      "url": "https://admin-pad.philharmoniedeparis.fr/75-paris-bnf-surplace",
+      "remote": false,
+      "access": ["pass_recherche_illimite"],
+      "tags": ["musique", "sur place"],
+      "source": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
+      "notes": "Acces sur place a verifier."
+    }
+  ]
+}
+

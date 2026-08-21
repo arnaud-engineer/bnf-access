@@ -83,6 +83,20 @@ Les favoris alimentent aussi une barre de lancement rapide en haut de page. Cett
 
 Par defaut, cette barre reste triee alphabetiquement. Si l'utilisateur passe en mode modification et enregistre un ordre manuel, cet ordre est stocke localement. Les favoris ajoutes ensuite sont places en fin de liste. Le bouton `Tri alphabetique` supprime l'ordre manuel et revient au tri alphabetique.
 
+## Filtres de profil
+
+L'utilisateur peut filtrer les ressources selon son Pass et selon le mode d'acces :
+
+- tous les Pass ;
+- Pass Lecture/Culture ;
+- Pass Recherche illimite ;
+- acces a distance ;
+- acces sur place.
+
+Ces choix sont stockes dans `localStorage`. Les ressources sans etiquette de Pass explicite sont masquees lorsqu'un Pass precis est selectionne, pour eviter de promettre un acces non verifie.
+
+Exception : lorsqu'un utilisateur filtre explicitement sur les ressources `sur place`, les ressources sur place sans etiquette de Pass restent visibles. Dans l'archive source, beaucoup de ressources sur place ne portent pas de metadata de Pass exploitable.
+
 ## Points a verifier
 
 - Validite actuelle de chaque lien BnF.

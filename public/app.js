@@ -4,6 +4,8 @@ const state = {
   favorites: new Set(),
   favoritesReady: false,
   favoritesOnly: false,
+  passFilter: "all",
+  remoteFilter: "all",
   favoriteOrder: [],
   favoriteOrderCustom: false,
   quickLaunchEditing: false,
@@ -15,12 +17,16 @@ const state = {
 const grid = document.querySelector("#resourceGrid");
 const filters = document.querySelector("#categoryFilters");
 const searchInput = document.querySelector("#searchInput");
+const passFilter = document.querySelector("#passFilter");
+const remoteFilter = document.querySelector("#remoteFilter");
 const resultCount = document.querySelector("#resultCount");
 const quickLaunch = document.querySelector("#quickLaunch");
 const favoriteStorageKey = "bnf-access:favorites:v1";
 const favoriteStorageReadyKey = "bnf-access:favorites-ready:v1";
 const favoriteOrderStorageKey = "bnf-access:favorite-order:v1";
 const favoriteOrderCustomStorageKey = "bnf-access:favorite-order-custom:v1";
+const passFilterStorageKey = "bnf-access:pass-filter:v1";
+const remoteFilterStorageKey = "bnf-access:remote-filter:v1";
 
 const accessLabels = {
   pass_lecture_culture: "Pass Lecture/Culture",
@@ -35,6 +41,7 @@ async function init() {
   state.resources = data.resources;
   loadFavorites();
   loadFavoriteOrder();
+  loadProfileFilters();
   renderFilters();
   render();
 }
@@ -190,18 +197,37 @@ function getFilteredResources() {
     .filter((resource) => {
       const matchesCategory = state.category === "Toutes" || resource.category === state.category;
       const matchesFavorite = !state.favoritesOnly || state.favorites.has(resource.id);
+      const matchesPass = matchesPassFilter(resource);
+      const matchesRemote =
+        state.remoteFilter === "all" ||
+        (state.remoteFilter === "remote" && resource.remote) ||
+        (state.remoteFilter === "onsite" && !resource.remote);
       const haystack = normalize([
         resource.name,
         resource.category,
         resource.description,
         ...(resource.tags ?? []),
       ].join(" "));
-      return matchesCategory && matchesFavorite && (!query || haystack.includes(query));
+      return matchesCategory && matchesFavorite && matchesPass && matchesRemote && (!query || haystack.includes(query));
     })
     .sort((a, b) => {
       const favoriteDelta = Number(state.favorites.has(b.id)) - Number(state.favorites.has(a.id));
       return favoriteDelta || a.name.localeCompare(b.name, "fr");
     });
+}
+
+function matchesPassFilter(resource) {
+  if (state.passFilter === "all") {
+    return true;
+  }
+
+  const access = resource.access ?? [];
+
+  if (access.includes(state.passFilter)) {
+    return true;
+  }
+
+  return state.remoteFilter === "onsite" && !resource.remote && access.length === 0;
 }
 
 function createCard(resource) {
@@ -291,6 +317,27 @@ function loadFavoriteOrder() {
   }
 
   syncFavoriteOrder();
+}
+
+function loadProfileFilters() {
+  const storedPass = readStoredValue(passFilterStorageKey);
+  const storedRemote = readStoredValue(remoteFilterStorageKey);
+
+  if ([...passFilter.options].some((option) => option.value === storedPass)) {
+    state.passFilter = storedPass;
+  }
+
+  if ([...remoteFilter.options].some((option) => option.value === storedRemote)) {
+    state.remoteFilter = storedRemote;
+  }
+
+  passFilter.value = state.passFilter;
+  remoteFilter.value = state.remoteFilter;
+}
+
+function saveProfileFilters() {
+  writeStoredValue(passFilterStorageKey, state.passFilter);
+  writeStoredValue(remoteFilterStorageKey, state.remoteFilter);
 }
 
 function syncFavoriteOrder() {
@@ -518,6 +565,18 @@ function escapeAttribute(value) {
 
 searchInput.addEventListener("input", (event) => {
   state.query = event.target.value;
+  render();
+});
+
+passFilter.addEventListener("change", (event) => {
+  state.passFilter = event.target.value;
+  saveProfileFilters();
+  render();
+});
+
+remoteFilter.addEventListener("change", (event) => {
+  state.remoteFilter = event.target.value;
+  saveProfileFilters();
   render();
 });
 

@@ -213,6 +213,11 @@ h1 {
   padding: 16px;
 }
 
+.filter-groups {
+  display: grid;
+  gap: 14px;
+}
+
 .search span {
   display: block;
   margin-bottom: 6px;
@@ -227,6 +232,34 @@ h1 {
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 0 12px;
+  color: var(--ink);
+  font: inherit;
+}
+
+.profile-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.profile-filters label {
+  display: grid;
+  gap: 6px;
+  min-width: 190px;
+}
+
+.profile-filters span {
+  color: var(--muted);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.profile-filters select {
+  min-height: 40px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0 10px;
+  background: #ffffff;
   color: var(--ink);
   font: inherit;
 }
@@ -350,6 +383,7 @@ h1 {
 .card-link:focus-visible,
 .quick-launch-action:focus-visible,
 .quick-launch-item:focus-visible,
+.profile-filters select:focus-visible,
 .source-link:focus-visible,
 .official-link:focus-visible {
   outline: 3px solid #d8a31d;
@@ -447,6 +481,10 @@ footer {
   .controls,
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .profile-filters label {
+    min-width: min(100%, 240px);
   }
 
   .official-link {

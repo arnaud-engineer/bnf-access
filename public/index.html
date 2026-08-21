@@ -29,7 +29,27 @@
           <span>Rechercher</span>
           <input id="searchInput" type="search" placeholder="Mediapart, presse, dictionnaire..." autocomplete="off">
         </label>
-        <div id="categoryFilters" class="filters" aria-label="Categories"></div>
+        <div class="filter-groups">
+          <div id="categoryFilters" class="filters" aria-label="Categories"></div>
+          <div class="profile-filters" aria-label="Profil d'acces">
+            <label>
+              <span>Pass</span>
+              <select id="passFilter">
+                <option value="all">Tous les Pass</option>
+                <option value="pass_lecture_culture">Pass Lecture/Culture</option>
+                <option value="pass_recherche_illimite">Pass Recherche illimite</option>
+              </select>
+            </label>
+            <label>
+              <span>Acces</span>
+              <select id="remoteFilter">
+                <option value="all">Distance et sur place</option>
+                <option value="remote">A distance</option>
+                <option value="onsite">Sur place</option>
+              </select>
+            </label>
+          </div>
+        </div>
       </section>
 
       <section>

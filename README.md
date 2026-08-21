@@ -45,6 +45,7 @@ http://localhost:5173
 - Logos locaux affiches quand une trace publique exploitable existe ; sinon l'interface genere des initiales.
 - Favoris sauvegardes localement dans le navigateur, initialises avec les ressources grand public.
 - Barre de lancement rapide alimentee par les favoris, avec ordre manuel optionnel.
+- Filtres locaux persistants par type de Pass et acces distance/sur place.
 - Descriptions courtes et originales, plutot que copie integrale de contenus tiers.
 - Licence a choisir avant toute publication publique.
 

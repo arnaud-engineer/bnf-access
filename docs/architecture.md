@@ -62,6 +62,7 @@ Chaque entrée de `resources.json` contient :
 - `access` : conditions d'accès connues.
 - `tags` : tags pour la recherche.
 - `icon_url` : logo public optionnel, quand il existe dans les traces archivées.
+- `fallback_label` : abréviation optionnelle à afficher quand aucun `icon_url` n'est disponible.
 - `default_favorite` : favori proposé à la première ouverture, avant personnalisation locale.
 - `notes` : détails pratiques, si nécessaire.
 
@@ -72,6 +73,8 @@ Les sources communes sont conservées au niveau racine du JSON, dans `sources`, 
 L'import initial couvre les 245 ressources presentes dans l'archive EasyBNF du 29 juillet 2026. Les descriptions affichees sont courtes et propres au projet ; les textes longs d'origine ne sont pas recopies dans l'interface.
 
 Onze logos ont pu être rapatriés localement depuis les traces archivées ou des sources publiques. Tous sont désormais servis en SVG local ; MusicMe et Encyclopædia Universalis utilisent des vectorisations générées depuis les PNG sources, faute de SVG officiel fiable identifié. Les autres ressources utilisent un bloc d'initiales généré par l'interface.
+
+Si une ressource n'a pas de logo mais nécessite une abréviation plus lisible que les initiales automatiques, elle peut définir `fallback_label`. Exemple : `Academic Search Premier` utilise `fallback_label: "ASP"` au lieu du `AS` généré depuis les deux premiers mots.
 
 ## Favoris locaux
 

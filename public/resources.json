@@ -443,6 +443,7 @@
         "search"
       ],
       "notes": "",
+      "fallback_label": "ASP",
       "default_favorite": false,
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
@@ -571,7 +572,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/agris.svg",
+      "icon_alt": "Logo Agris",
+      "icon_source_url": "https://www.fao.org/images/corporatelibraries/logos/fao-logo-archive/fao-logo-blue-2lines-en.svg?sfvrsn=90d67aef_14",
+      "icon_source_kind": "svg",
+      "icon_review_status": "to_review"
     },
     {
       "id": "aida",
@@ -605,7 +611,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/aida.png",
+      "icon_alt": "Logo Aida",
+      "icon_source_url": "https://www.degruyterbrill.com/assets/images/4c2669143186c1ecfda2f251c5bebf10-dgbrill-og-logo.png",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "alice-catalogo-dei-libri-in-commercio-in-italia",
@@ -674,7 +685,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/allgemeines-kunstlerlexikon-akl.png",
+      "icon_alt": "Logo Allgemeines Künstlerlexikon (AKL)",
+      "icon_source_url": "https://www.degruyterbrill.com/assets/images/4c2669143186c1ecfda2f251c5bebf10-dgbrill-og-logo.png",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "american-bibliography-of-slavic-and-east-european-studies-absees",
@@ -829,7 +845,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/anthropological-index.png",
+      "icon_alt": "Logo Anthropological index",
+      "icon_source_url": "https://aio.therai.org.uk/images/railogo.png",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "anthropology-resource-library",
@@ -865,7 +886,12 @@
             "match_score": 0.93
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/anthropology-resource-library.png",
+      "icon_alt": "Logo Anthropology Resource Library",
+      "icon_source_url": "https://search.alexanderstreet.com/sites/search.alexanderstreet.com/themes/custom/as_lazr/images/beam/Clarivate_as_black.png",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "anthrosource",
@@ -1149,7 +1175,12 @@
         "sciences humaines"
       ],
       "notes": "",
-      "default_favorite": false
+      "default_favorite": false,
+      "icon_url": "./logos/audit/art-design-architecture-collection.svg",
+      "icon_alt": "Logo Art, Design & Architecture Collection",
+      "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
+      "icon_source_kind": "svg",
+      "icon_review_status": "to_review"
     },
     {
       "id": "artbibliographies-modern-abm",
@@ -1168,7 +1199,12 @@
         "musique et vidéo"
       ],
       "notes": "",
-      "default_favorite": false
+      "default_favorite": false,
+      "icon_url": "./logos/audit/artbibliographies-modern-abm.svg",
+      "icon_alt": "Logo ARTBibliographies Modern (ABM)",
+      "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
+      "icon_source_kind": "svg",
+      "icon_review_status": "to_review"
     },
     {
       "id": "arts-humanities-database",
@@ -1204,7 +1240,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/arts-humanities-database.svg",
+      "icon_alt": "Logo Arts & Humanities Database",
+      "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
+      "icon_source_kind": "svg",
+      "icon_review_status": "to_review"
     },
     {
       "id": "artstor-digital-library",
@@ -1364,7 +1405,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/babelscores.svg",
+      "icon_alt": "Logo BabelScores",
+      "icon_source_url": "https://babelscores.com/wp-content/themes/babelscores-child/images/logobabelsvg.svg",
+      "icon_source_kind": "svg",
+      "icon_review_status": "to_review"
     },
     {
       "id": "base-du-gerflint",
@@ -1396,7 +1442,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/base-du-gerflint.png",
+      "icon_alt": "Logo Base du GERFLINT",
+      "icon_source_url": "http://gerflint.fr/Base/logoGerflint4.png",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "bellefaye",
@@ -1510,7 +1561,12 @@
         "sciences humaines"
       ],
       "notes": "",
-      "default_favorite": false
+      "default_favorite": false,
+      "icon_url": "./logos/audit/bibliographie-d-histoire-de-l-art-bha-et-raa.png",
+      "icon_alt": "Logo Bibliographie d'Histoire de l'Art (BHA) et RAA",
+      "icon_source_url": "https://openbibart.fr/wp-content/themes/inha/images/logo-inha.png",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "bibliographie-de-civilisation-medievale",
@@ -1812,7 +1868,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/biographisch-bibliographisches-kirchenlexikon-bbkl.png",
+      "icon_alt": "Logo Biographisch-Bibliographisches Kirchenlexikon (BBKL)",
+      "icon_source_url": "https://www.bbkl.de/img/logo.png",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "biosis-previews-1926",
@@ -1932,7 +1993,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/bloomsbury-design-library.png",
+      "icon_alt": "Logo Bloomsbury design library",
+      "icon_source_url": "https://res.cloudinary.com/bloomsbury-publishing-public/image/upload/v1742544720/00_Supplementary%20materials/Visual%20Arts/BVA%20-%20Bloomsbury%20Visual%20Arts/CMS/BV_LJ_logo.png",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "book-history-online",
@@ -1968,7 +2034,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/book-history-online.png",
+      "icon_alt": "Logo Book History Online",
+      "icon_source_url": "https://bibliographies.brill.com/static/brill-logo-large.15e7d3a27d14.png",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "bulletin-analytique-d-histoire-romaine-1990",
@@ -2620,7 +2691,12 @@
         "index"
       ],
       "notes": "",
-      "default_favorite": false
+      "default_favorite": false,
+      "icon_url": "./logos/audit/design-and-applied-arts-index-daai.svg",
+      "icon_alt": "Logo Design and Applied Arts Index (DAAI)",
+      "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
+      "icon_source_kind": "svg",
+      "icon_review_status": "to_review"
     },
     {
       "id": "dictionnaire-biographique-du-mouvement-ouvrier-francais",
@@ -2657,7 +2733,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/dictionnaire-biographique-du-mouvement-ouvrier-francais.png",
+      "icon_alt": "Logo Dictionnaire biographique du mouvement ouvrier français",
+      "icon_source_url": "https://maitron.fr/wp-content/themes/themeMaitron/img/logo-maitron.png",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "dictionnaire-d-histoire-et-de-geographie-ecclesiastiques",
@@ -2730,7 +2811,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/dictionnaire-universel-des-creatrices.png",
+      "icon_alt": "Logo Dictionnaire universel des créatrices",
+      "icon_source_url": "https://www.dictionnaire-creatrices.com/static/img/des-femmes-logo-footer.png",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "doctrinal-plus",
@@ -2764,7 +2850,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/doctrinal-plus.png",
+      "icon_alt": "Logo Doctrinal Plus",
+      "icon_source_url": "https://www.doctrinal.fr/images/doctrinal/Logo_LeDoctrinal.png?v=20260728-1",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "droits-antiques",
@@ -2833,7 +2924,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/early-english-books-online-eebo.svg",
+      "icon_alt": "Logo Early English Books Online (EEBO)",
+      "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
+      "icon_source_kind": "svg",
+      "icon_review_status": "to_review"
     },
     {
       "id": "early-european-books",
@@ -2869,7 +2965,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/early-european-books.svg",
+      "icon_alt": "Logo Early European Books",
+      "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
+      "icon_source_kind": "svg",
+      "icon_review_status": "to_review"
     },
     {
       "id": "early-modern-books",
@@ -3043,7 +3144,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/electre.svg",
+      "icon_alt": "Logo Electre",
+      "icon_source_url": "https://dataservices.electre.com/wp-content/uploads/2024/10/electreFichier-12.svg",
+      "icon_source_kind": "svg",
+      "icon_review_status": "to_review"
     },
     {
       "id": "electronic-enlightenment",
@@ -3078,7 +3184,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/electronic-enlightenment.svg",
+      "icon_alt": "Logo Electronic Enlightenment",
+      "icon_source_url": "http://www.e-enlightenment.com/dist/svg/electronic-enlightenment-logo.svg",
+      "icon_source_kind": "svg",
+      "icon_review_status": "to_review"
     },
     {
       "id": "ellipro",
@@ -3420,7 +3531,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/ethnologue-languages-of-the-world.svg",
+      "icon_alt": "Logo Ethnologue : languages of the world",
+      "icon_source_url": "https://www.ethnologue.com/img/logo-horizontal-color.svg",
+      "icon_source_kind": "svg",
+      "icon_review_status": "to_review"
     },
     {
       "id": "euromonitor-s-global-market-information-database",
@@ -3454,7 +3570,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/euromonitor-s-global-market-information-database.svg",
+      "icon_alt": "Logo Euromonitor's Global Market Information Database",
+      "icon_source_url": "https://emi-lv-identity-we-endp1.azureedge.net/logos/emi-newlogo.svg",
+      "icon_source_kind": "svg",
+      "icon_review_status": "to_review"
     },
     {
       "id": "europa-sacra",
@@ -3605,7 +3726,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/francis.png",
+      "icon_alt": "Logo Francis",
+      "icon_source_url": "https://pascal-francis.inist.fr/wp-content/themes/pascalfrancis/images/logo-openpf.png",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "frantext",
@@ -3831,7 +3957,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/gazettes-europeennes-du-18e-siecle.png",
+      "icon_alt": "Logo Gazettes européennes du 18e siècle",
+      "icon_source_url": "https://www.gazettes18e.fr/sites/all/files/logo-ihrim.png",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "gbv-ikar-landkartendrucke-vor-1850",
@@ -3931,7 +4062,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/global-books-in-print.png",
+      "icon_alt": "Logo Global Books in Print",
+      "icon_source_url": "https://www.booksinprint.com:443/Images/PQ_logo_footer.png",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "grand-corpus-des-dictionnaires-du-9e-au-20e-siecle",
@@ -4241,7 +4377,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/hispanic-american-periodicals-index.png",
+      "icon_alt": "Logo Hispanic American Periodicals Index",
+      "icon_source_url": "https://hapi.ucla.edu/images/logo.png",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "historical-abstracts",
@@ -4364,7 +4505,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/ijbox.svg",
+      "icon_alt": "Logo IJbox",
+      "icon_source_url": "https://www.ijbox.fr/themes/custom/ijbox/logo.svg",
+      "icon_source_kind": "svg",
+      "icon_review_status": "to_review"
     },
     {
       "id": "in-principio",
@@ -4417,7 +4563,12 @@
         "islamicus"
       ],
       "notes": "",
-      "default_favorite": false
+      "default_favorite": false,
+      "icon_url": "./logos/audit/index-islamicus.png",
+      "icon_alt": "Logo Index Islamicus",
+      "icon_source_url": "https://bibliographies.brill.com/static/brill-logo-large.15e7d3a27d14.png",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "index-of-medieval-art",
@@ -4617,7 +4768,12 @@
         "sciences humaines"
       ],
       "notes": "",
-      "default_favorite": false
+      "default_favorite": false,
+      "icon_url": "./logos/audit/international-bibliography-of-art.svg",
+      "icon_alt": "Logo International Bibliography of Art",
+      "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
+      "icon_source_kind": "svg",
+      "icon_review_status": "to_review"
     },
     {
       "id": "international-bibliography-of-the-social-sciences",
@@ -4638,7 +4794,12 @@
         "social"
       ],
       "notes": "",
-      "default_favorite": false
+      "default_favorite": false,
+      "icon_url": "./logos/audit/international-bibliography-of-the-social-sciences.svg",
+      "icon_alt": "Logo International Bibliography of the Social Sciences",
+      "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
+      "icon_source_kind": "svg",
+      "icon_review_status": "to_review"
     },
     {
       "id": "international-bibliography-of-theatre-and-dance",
@@ -4820,7 +4981,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/issn.png",
+      "icon_alt": "Logo ISSN",
+      "icon_source_url": "https://portal.issn.org/static/logo.png",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "jstor",
@@ -4886,7 +5052,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/klapp-online.png",
+      "icon_alt": "Logo Klapp-online",
+      "icon_source_url": "https://klapp-online.de/logo_klostermann.png",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "kompass",
@@ -5005,7 +5176,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/lamyline.svg",
+      "icon_alt": "Logo Lamyline",
+      "icon_source_url": "https://www.lamyline.fr/Img/LogoLamylineNew.svg",
+      "icon_source_kind": "svg",
+      "icon_review_status": "to_review"
     },
     {
       "id": "lexbase",
@@ -5038,7 +5214,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/lexbase.png",
+      "icon_alt": "Logo Lexbase",
+      "icon_source_url": "https://www.lexbase.fr/images/Lexbase_white.png?v=20260728-1",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "lexikon-des-mittelalters-online",
@@ -5247,7 +5428,12 @@
         "linguistics"
       ],
       "notes": "",
-      "default_favorite": false
+      "default_favorite": false,
+      "icon_url": "./logos/audit/linguistics-and-language-behavior-abstracts.svg",
+      "icon_alt": "Logo Linguistics and Language Behavior Abstracts",
+      "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
+      "icon_source_kind": "svg",
+      "icon_review_status": "to_review"
     },
     {
       "id": "lisa-library-and-information-science-abstracts",
@@ -5284,7 +5470,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/lisa-library-and-information-science-abstracts.svg",
+      "icon_alt": "Logo LISA (Library and Information Science Abstracts)",
+      "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
+      "icon_source_kind": "svg",
+      "icon_review_status": "to_review"
     },
     {
       "id": "littre",
@@ -5609,7 +5800,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/music-periodicals-database.svg",
+      "icon_alt": "Logo Music Periodicals Database",
+      "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
+      "icon_source_kind": "svg",
+      "icon_review_status": "to_review"
     },
     {
       "id": "musik-in-geschichte-und-gegenwart-mgg",
@@ -5645,7 +5841,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/musik-in-geschichte-und-gegenwart-mgg.svg",
+      "icon_alt": "Logo Musik in Geschichte und Gegenwart (MGG)",
+      "icon_source_url": "https://www.mgg-online.com/images/assets/MGG/site_logo.svg",
+      "icon_source_kind": "svg",
+      "icon_review_status": "to_review"
     },
     {
       "id": "naima",
@@ -5679,7 +5880,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/naima.png",
+      "icon_alt": "Logo Naïma",
+      "icon_source_url": "https://www.naimaeditions.com/wp-content/uploads/2019/09/NAIMA-2.png",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "navis",
@@ -5782,7 +5988,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/new-pauly.png",
+      "icon_alt": "Logo New Pauly",
+      "icon_source_url": "https://referenceworks.brill.com/fileasset//fileasset/downloads_static/logo-brill-300x100-transparent-mobile.png",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "oecd-ilibrary",
@@ -5882,7 +6093,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/openedition-books.png",
+      "icon_alt": "Logo OpenEdition Books",
+      "icon_source_url": "https://books.openedition.org/.within.website/x/cmd/anubis/static/img/oe-logo.png",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "oxford-art-online",
@@ -5954,7 +6170,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/oxford-dictionary-of-national-biography.svg",
+      "icon_alt": "Logo Oxford Dictionary of National Biography",
+      "icon_source_url": "https://www.oxforddnb.com/fileasset/logo-x.svg",
+      "icon_source_kind": "svg",
+      "icon_review_status": "to_review"
     },
     {
       "id": "oxford-english-dictionary",
@@ -5990,7 +6211,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/oxford-english-dictionary.svg",
+      "icon_alt": "Logo Oxford English Dictionary",
+      "icon_source_url": "https://www.oed.com/images/logo3.svg",
+      "icon_source_kind": "svg",
+      "icon_review_status": "to_review"
     },
     {
       "id": "oxford-music-online",
@@ -6092,7 +6318,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/pascal.png",
+      "icon_alt": "Logo Pascal",
+      "icon_source_url": "https://pascal-francis.inist.fr/wp-content/themes/pascalfrancis/images/logo-openpf.png",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "patrologia-latina-database",
@@ -6165,7 +6396,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/performing-arts-periodicals-database.svg",
+      "icon_alt": "Logo Performing Arts Periodicals Database",
+      "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
+      "icon_source_kind": "svg",
+      "icon_review_status": "to_review"
     },
     {
       "id": "periodicals-archive-online",
@@ -6201,7 +6437,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/periodicals-archive-online.svg",
+      "icon_alt": "Logo Periodicals Archive Online",
+      "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
+      "icon_source_kind": "svg",
+      "icon_review_status": "to_review"
     },
     {
       "id": "peter-lang-livres-numeriques",
@@ -6238,7 +6479,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/peter-lang-livres-numeriques.svg",
+      "icon_alt": "Logo Peter Lang: livres numériques",
+      "icon_source_url": "https://www.peterlang.com/app/uploads/2021/07/Group-5-1.svg",
+      "icon_source_kind": "svg",
+      "icon_review_status": "to_review"
     },
     {
       "id": "philosopher-s-index",
@@ -6391,7 +6637,12 @@
             "match_score": 0.93
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/proquest-dissertations-theses.svg",
+      "icon_alt": "Logo Proquest Dissertations & theses",
+      "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
+      "icon_source_kind": "svg",
+      "icon_review_status": "to_review"
     },
     {
       "id": "proquest-one-literature",
@@ -6426,7 +6677,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/proquest-one-literature.svg",
+      "icon_alt": "Logo ProQuest One Literature",
+      "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
+      "icon_source_kind": "svg",
+      "icon_review_status": "to_review"
     },
     {
       "id": "psycextra",
@@ -6545,7 +6801,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/reef-classique.png",
+      "icon_alt": "Logo Reef Classique",
+      "icon_source_url": "https://www.batipedia.com/img/bandeau/logo_portail.png",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "repertoire-bibliographique-de-la-philosophie-international-philosophical-bibliography",
@@ -6579,7 +6840,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/repertoire-bibliographique-de-la-philosophie-international-philosophical-bibliography.png",
+      "icon_alt": "Logo Répertoire bibliographique de la philosophie = International philosophical bibliography",
+      "icon_source_url": "https://ipb.uclouvain.be/consult/images/logo-ipb.png",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "repertoire-des-arts-du-spectacle",
@@ -6612,7 +6878,12 @@
         "sciences humaines"
       ],
       "notes": "",
-      "default_favorite": false
+      "default_favorite": false,
+      "icon_url": "./logos/audit/repertoire-d-art-et-d-archeologie-raa.svg",
+      "icon_alt": "Logo Répertoire d’Art et d’Archéologie (RAA)",
+      "icon_source_url": "https://www.inha.fr//app/uploads/2024/07/inha-logo.svg",
+      "icon_source_kind": "svg",
+      "icon_review_status": "to_review"
     },
     {
       "id": "repertoire-international-de-la-presse-musicale-ripm-1800-1950-full-text",
@@ -6682,7 +6953,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/repertoire-international-des-sources-musicales-rism.png",
+      "icon_alt": "Logo Répertoire international des sources musicales (RISM)",
+      "icon_source_url": "https://rism.info/images/logo-large.png",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "retronews-un-site-media-pour-explorer-trois-siecles-de-presse",
@@ -6826,7 +7102,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/romanische-bibliographie-online.png",
+      "icon_alt": "Logo Romanische Bibliographie Online",
+      "icon_source_url": "https://www.degruyterbrill.com/assets/images/4c2669143186c1ecfda2f251c5bebf10-dgbrill-og-logo.png",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "rsc-publishing",
@@ -6894,7 +7175,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/scholarvox-cyberlibris.png",
+      "icon_alt": "Logo Scholarvox (Cyberlibris)",
+      "icon_source_url": "https://univ.scholarvox.com/images/mainLogo_h.png",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "science-citation-index",
@@ -6992,7 +7278,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/sciences-au-fil-du-temps.png",
+      "icon_alt": "Logo Sciences au fil du temps",
+      "icon_source_url": "https://gallica.bnf.fr/accueil/sites/default/files/logo_bnf.png",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "sciences-en-ligne-dictionnaire-interactif-des-sciences-et-techniques",
@@ -7070,7 +7361,12 @@
         "studies"
       ],
       "notes": "",
-      "default_favorite": false
+      "default_favorite": false,
+      "icon_url": "./logos/audit/screen-studies-collection.svg",
+      "icon_alt": "Logo Screen Studies Collection",
+      "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
+      "icon_source_kind": "svg",
+      "icon_review_status": "to_review"
     },
     {
       "id": "socindex-with-full-text",
@@ -7142,7 +7438,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/sociological-abstracts.svg",
+      "icon_alt": "Logo Sociological Abstracts",
+      "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
+      "icon_source_kind": "svg",
+      "icon_review_status": "to_review"
     },
     {
       "id": "sociology-database",
@@ -7177,7 +7478,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/sociology-database.svg",
+      "icon_alt": "Logo Sociology Database",
+      "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
+      "icon_source_kind": "svg",
+      "icon_review_status": "to_review"
     },
     {
       "id": "springerlink",
@@ -7279,7 +7585,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/supplementum-epigraphicum-graecum-online.png",
+      "icon_alt": "Logo Supplementum Epigraphicum Graecum Online",
+      "icon_source_url": "https://scholarlyeditions.brill.com/site_media/static/images/logo-brill-300x100-transparent-desktop.png",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "techniques-de-l-ingenieur",
@@ -7314,7 +7625,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/techniques-de-l-ingenieur.svg",
+      "icon_alt": "Logo Techniques de l'ingénieur",
+      "icon_source_url": "https://cdn.techniques-ingenieur.fr/lucy/ti/cdn.prod.v5.2.54/images/logos-ti/logo-techniques-ingenieur.svg",
+      "icon_source_kind": "svg",
+      "icon_review_status": "to_review"
     },
     {
       "id": "thesaurus-linguae-graecae",
@@ -7383,7 +7699,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/thesaurus-linguae-latinae-tll.png",
+      "icon_alt": "Logo Thesaurus Linguae Latinae (TLL)",
+      "icon_source_url": "https://tll.degruyter.com/images/logo-black.png",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "times-digital-archives-1785-2014",
@@ -7457,7 +7778,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/twentieth-century-religious-thought-library-christianity.png",
+      "icon_alt": "Logo Twentieth Century Religious Thought Library – Christianity",
+      "icon_source_url": "https://search.alexanderstreet.com/sites/search.alexanderstreet.com/themes/custom/as_lazr/images/beam/Clarivate_as_black.png",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "ulrich-s",
@@ -7588,7 +7914,12 @@
             "match_score": 1.0
           }
         ]
-      }
+      },
+      "icon_url": "./logos/audit/vidal.png",
+      "icon_alt": "Logo Vidal",
+      "icon_source_url": "https://evidal.vidal.fr/themes/main/evidal/front/img/beta-vidalEvidalLogoNew.png",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "waterloo-directory-of-english-newspapers-and-periodicals-series-2",
@@ -7778,7 +8109,12 @@
         "yearbook"
       ],
       "notes": "",
-      "default_favorite": false
+      "default_favorite": false,
+      "icon_url": "./logos/audit/yearbook-of-international-organizations.png",
+      "icon_alt": "Logo Yearbook of International Organizations",
+      "icon_source_url": "https://ybio.brillonline.com/sites/all/themes/Brill2014/images/design/uia_logo_brill.png",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "zeitschriften-datenbank",

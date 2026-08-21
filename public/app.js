@@ -121,7 +121,7 @@ function renderQuickLaunch() {
     item.dataset.resourceId = resource.id;
     item.innerHTML = resource.icon_url
       ? `<img src="${escapeAttribute(resource.icon_url)}" alt="" loading="lazy">`
-      : `<span>${escapeHtml(getInitials(resource.name))}</span>`;
+      : `<span>${escapeHtml(getFallbackLabel(resource))}</span>`;
 
     if (state.quickLaunchEditing) {
       item.type = "button";
@@ -264,7 +264,7 @@ function createCard(resource) {
     : "";
   const logo = resource.icon_url
     ? `<img src="${escapeAttribute(resource.icon_url)}" alt="${escapeAttribute(resource.icon_alt ?? "")}" loading="lazy">`
-    : `<span>${escapeHtml(getInitials(resource.name))}</span>`;
+    : `<span>${escapeHtml(getFallbackLabel(resource))}</span>`;
 
   card.innerHTML = `
     <div class="card-header">
@@ -627,6 +627,10 @@ function writeStoredValue(key, value) {
   } catch {
     // Favoris non persistants si le navigateur bloque le stockage local.
   }
+}
+
+function getFallbackLabel(resource) {
+  return resource.fallback_label || getInitials(resource.name);
 }
 
 function getInitials(name) {

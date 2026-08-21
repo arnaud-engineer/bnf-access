@@ -79,6 +79,8 @@ Les favoris sont stockes dans `localStorage`, sous une cle versionnee. A la prem
 
 Ce fonctionnement evite tout compte utilisateur et toute collecte d'identifiants, tout en donnant une page d'accueil plus utile.
 
+Les favoris alimentent aussi une barre de lancement rapide en haut de page. Cette barre n'affiche que l'icone ou les initiales de chaque ressource favorite, et ouvre directement la ressource.
+
 ## Points a verifier
 
 - Validite actuelle de chaque lien BnF.

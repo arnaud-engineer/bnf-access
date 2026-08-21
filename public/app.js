@@ -11,6 +11,7 @@ const grid = document.querySelector("#resourceGrid");
 const filters = document.querySelector("#categoryFilters");
 const searchInput = document.querySelector("#searchInput");
 const resultCount = document.querySelector("#resultCount");
+const quickLaunch = document.querySelector("#quickLaunch");
 const favoriteStorageKey = "bnf-access:favorites:v1";
 const favoriteStorageReadyKey = "bnf-access:favorites-ready:v1";
 
@@ -62,6 +63,7 @@ function renderFilters() {
 }
 
 function render() {
+  renderQuickLaunch();
   const resources = getFilteredResources();
   resultCount.textContent = `${resources.length} ressource${resources.length > 1 ? "s" : ""}`;
   grid.innerHTML = "";
@@ -77,6 +79,36 @@ function render() {
   for (const resource of resources) {
     grid.append(createCard(resource));
   }
+}
+
+function renderQuickLaunch() {
+  const favorites = getFavoriteResources();
+  quickLaunch.innerHTML = "";
+  quickLaunch.hidden = favorites.length === 0;
+
+  if (!favorites.length) {
+    return;
+  }
+
+  for (const resource of favorites) {
+    const item = document.createElement("a");
+    item.className = "quick-launch-item";
+    item.href = resource.url;
+    item.target = "_blank";
+    item.rel = "noreferrer";
+    item.title = resource.name;
+    item.setAttribute("aria-label", resource.name);
+    item.innerHTML = resource.icon_url
+      ? `<img src="${escapeAttribute(resource.icon_url)}" alt="" loading="lazy">`
+      : `<span>${escapeHtml(getInitials(resource.name))}</span>`;
+    quickLaunch.append(item);
+  }
+}
+
+function getFavoriteResources() {
+  return state.resources
+    .filter((resource) => state.favorites.has(resource.id))
+    .sort((a, b) => a.name.localeCompare(b.name, "fr"));
 }
 
 function getFilteredResources() {

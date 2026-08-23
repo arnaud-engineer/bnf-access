@@ -1319,7 +1319,8 @@
       "access_mode": "remote",
       "access_label": "Accès distant",
       "access_source": "bnf_official",
-      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture",
+      "icon_background_color": "#9B3F78"
     },
     {
       "id": "art-index-retrospective",
@@ -1360,7 +1361,8 @@
       "access_mode": "remote",
       "access_label": "Accès distant",
       "access_source": "bnf_official",
-      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture",
+      "icon_background_color": "#6B5CA5"
     },
     {
       "id": "art-sales-catalogues-online",
@@ -1573,7 +1575,8 @@
       "access_mode": "remote",
       "access_label": "Accès distant",
       "access_source": "bnf_official",
-      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture",
+      "icon_background_color": "#6B4E2E"
     },
     {
       "id": "babelscores",
@@ -2287,7 +2290,8 @@
       "access_mode": "onsite",
       "access_label": "Sur place uniquement",
       "access_source": "bnf_official",
-      "access_note": "Cette base est uniquement accessible à la BnF."
+      "access_note": "Cette base est uniquement accessible à la BnF.",
+      "icon_background_color": "#2F7D4E"
     },
     {
       "id": "biotechnology-abstracts-1982",
@@ -2524,7 +2528,8 @@
       "access_mode": "remote",
       "access_label": "Accès distant",
       "access_source": "bnf_official",
-      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture",
+      "icon_background_color": "#245B74"
     },
     {
       "id": "cab-abstracts",
@@ -3755,7 +3760,8 @@
       "access_mode": "remote",
       "access_label": "Accès distant",
       "access_source": "bnf_official",
-      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture",
+      "icon_background_color": "#7A5732"
     },
     {
       "id": "education-research-complete",
@@ -3797,7 +3803,8 @@
       "access_mode": "remote",
       "access_label": "Accès distant",
       "access_source": "bnf_official",
-      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture",
+      "icon_background_color": "#3F6F5A"
     },
     {
       "id": "eighteenth-century-collections-online-ii-ecco-ii",
@@ -4259,8 +4266,8 @@
       ],
       "notes": "",
       "default_favorite": false,
-      "icon_url": "./logos/ebsco.svg",
-      "icon_alt": "Logo EBSCO",
+      "icon_url": "./logos/eric.png",
+      "icon_alt": "Logo ERIC",
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
         "retrieved_at": "2026-08-21",
@@ -5164,7 +5171,8 @@
       },
       "access_mode": "remote",
       "access_label": "Accès distant",
-      "access_source": "bnf_official"
+      "access_source": "bnf_official",
+      "icon_background_color": "#4E7445"
     },
     {
       "id": "hansard",
@@ -5639,7 +5647,8 @@
       "access_mode": "onsite",
       "access_label": "Sur place uniquement",
       "access_source": "bnf_official",
-      "access_note": "Cette base est uniquement accessible à la BnF."
+      "access_note": "Cette base est uniquement accessible à la BnF.",
+      "icon_background_color": "#315F8C"
     },
     {
       "id": "intelex-pastmasters",
@@ -6309,7 +6318,8 @@
       },
       "access_mode": "free",
       "access_label": "Accès libre",
-      "access_source": "bnf_official"
+      "access_source": "bnf_official",
+      "icon_background_color": "#4B6378"
     },
     {
       "id": "lisa-library-and-information-science-abstracts",
@@ -6582,8 +6592,8 @@
       ],
       "notes": "",
       "default_favorite": false,
-      "icon_url": "./logos/ebsco.svg",
-      "icon_alt": "Logo EBSCO",
+      "icon_url": "./logos/mla-international-bibliography.svg",
+      "icon_alt": "Logo MLA",
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
         "retrieved_at": "2026-08-21",
@@ -7554,7 +7564,8 @@
       "access_mode": "remote",
       "access_label": "Accès distant",
       "access_source": "bnf_official",
-      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture",
+      "icon_background_color": "#5A3E74"
     },
     {
       "id": "photography-the-world-through-the-lens",
@@ -7750,7 +7761,8 @@
       "access_mode": "remote",
       "access_label": "Accès distant",
       "access_source": "local_inference",
-      "access_note": "Classement inféré depuis le lien BnF/OCLC ou les Pass indiqués, faute de correspondance officielle."
+      "access_note": "Classement inféré depuis le lien BnF/OCLC ou les Pass indiqués, faute de correspondance officielle.",
+      "icon_background_color": "#7A4D69"
     },
     {
       "id": "psy-src",
@@ -7774,7 +7786,8 @@
       "access_mode": "remote",
       "access_label": "Accès distant",
       "access_source": "local_inference",
-      "access_note": "Classement inféré depuis le lien BnF/OCLC ou les Pass indiqués, faute de correspondance officielle."
+      "access_note": "Classement inféré depuis le lien BnF/OCLC ou les Pass indiqués, faute de correspondance officielle.",
+      "icon_background_color": "#85556B"
     },
     {
       "id": "psycinfo-1887",
@@ -7815,7 +7828,8 @@
       "access_mode": "remote",
       "access_label": "Accès distant",
       "access_source": "bnf_official",
-      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture",
+      "icon_background_color": "#6A4C93"
     },
     {
       "id": "rambi-the-index-of-articles-on-jewish-studies",
@@ -8014,8 +8028,8 @@
       ],
       "notes": "",
       "default_favorite": false,
-      "icon_url": "./logos/ebsco.svg",
-      "icon_alt": "Logo EBSCO",
+      "icon_url": "./logos/ripm.svg",
+      "icon_alt": "Logo RIPM",
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
         "retrieved_at": "2026-08-21",
@@ -8147,8 +8161,8 @@
       ],
       "notes": "",
       "default_favorite": false,
-      "icon_url": "./logos/ebsco.svg",
-      "icon_alt": "Logo EBSCO",
+      "icon_url": "./logos/rilm.svg",
+      "icon_alt": "Logo RILM",
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
         "retrieved_at": "2026-08-21",
@@ -8532,7 +8546,8 @@
       "access_mode": "remote",
       "access_label": "Accès distant",
       "access_source": "bnf_official",
-      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture",
+      "icon_background_color": "#087582"
     },
     {
       "id": "sociological-abstracts",

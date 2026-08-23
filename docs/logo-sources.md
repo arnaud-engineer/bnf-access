@@ -34,6 +34,14 @@ Les logos sont stockés localement pour éviter de dépendre de hotlinks externe
 - RAMBI : icône typographique SVG locale inspirée du visuel RAMBI publié sur le site officiel de la Bibliothèque nationale d'Israël ; le JPEG officiel n'a pas été intégré directement.
 - ProQuest - Dissertations & theses : logo PNG officiel `ProQuest Dissertations & Theses Global`, récupéré depuis le kit marketing ProQuest.
 - ProQuest - Literature : logo PNG officiel `ProQuest One Literature`, récupéré depuis le kit marketing ProQuest Digital Collections.
+- ERIC : logo PNG récupéré depuis le site officiel ERIC.
+- MLA International Bibliography : logo SVG de la Modern Language Association, récupéré depuis la page officielle de la bibliographie.
+- RILM - Abstracts of Music Literature : pictogramme SVG RILM récupéré depuis le site officiel RILM.
+- Répertoire international de la presse musicale : logo SVG RIPM extrait du site officiel RIPM.
+
+## Logos génériques recolorés
+
+- Les autres bases EBSCO sans logo autonome validé conservent `ebsco.svg` avec une couleur dédiée via `icon_background_color`. Cette solution distingue visuellement les ressources sans multiplier les fichiers quasi identiques.
 
 ## Images détourées et optimisées
 

@@ -123,6 +123,18 @@ h1 {
   letter-spacing: 0;
 }
 
+.brand-heading {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(10px, 1.8vw, 16px);
+}
+
+.brand-heading-logo {
+  width: clamp(42px, 0.84em, 64px);
+  height: clamp(42px, 0.84em, 64px);
+  flex: 0 0 auto;
+}
+
 .intro {
   max-width: 680px;
   margin-bottom: 0;

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">BnF Access</title>
+  <desc id="desc">Carré noir avec une flèche blanche inspirée de la touche Entrée.</desc>
+  <rect width="512" height="512" fill="#171b20"/>
+  <path fill="#fff" d="M362 64h64v302h-140v70l-86-102 86-102v70h76z"/>
+</svg>

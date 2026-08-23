@@ -34,6 +34,7 @@ const privacyNotice = document.querySelector("#privacyNotice");
 const dismissNotice = document.querySelector("#dismissNotice");
 const startupImageTimeoutMs = 1800;
 const startupAssetUrls = [
+  "./bnf-access-icon.svg",
   "./logos/arnaud-cool.svg",
   "./logos/kofi.svg",
 ];

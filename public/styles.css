@@ -268,6 +268,7 @@ h1 {
 }
 
 .quick-launch-tile {
+  position: relative;
   display: grid;
   place-items: center;
   width: 100%;
@@ -277,6 +278,24 @@ h1 {
   border-radius: 8px;
   background: var(--panel);
   overflow: hidden;
+}
+
+.quick-launch-access-warning {
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--panel);
+  border-radius: 999px;
+  background: #f5c542;
+  color: #4e3400;
+  font-size: 0.82rem;
+  font-weight: 900;
+  line-height: 1;
+  box-shadow: 0 2px 6px #00000024;
 }
 
 .quick-launch-tile img {

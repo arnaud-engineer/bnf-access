@@ -167,19 +167,28 @@ function renderQuickLaunch() {
     item.className = "quick-launch-item";
     item.classList.toggle("generated", !resource.icon_url);
     item.title = resource.name;
-    item.setAttribute("aria-label", state.quickLaunchEditing ? `Déplacer ${resource.name}` : resource.name);
+    const accessWarning = getQuickLaunchAccessWarning(resource);
+    const quickLaunchAriaLabel = accessWarning
+      ? `${resource.name} - ${accessWarning}`
+      : resource.name;
+    item.setAttribute("aria-label", state.quickLaunchEditing ? `Déplacer ${quickLaunchAriaLabel}` : quickLaunchAriaLabel);
     item.dataset.resourceId = resource.id;
     const quickLaunchLabel = `<small class="quick-launch-label">${escapeHtml(resource.name)}</small>`;
+    const warningBadge = accessWarning
+      ? `<span class="quick-launch-access-warning" aria-hidden="true" title="${escapeAttribute(accessWarning)}">!</span>`
+      : "";
     item.innerHTML = resource.icon_url
       ? `
         <span class="quick-launch-tile">
           <img src="${escapeAttribute(resource.icon_url)}" alt="" loading="lazy">
+          ${warningBadge}
         </span>
         ${quickLaunchLabel}
       `
       : `
         <span class="quick-launch-tile generated">
           <strong>${escapeHtml(getFallbackLabel(resource))}</strong>
+          ${warningBadge}
         </span>
         ${quickLaunchLabel}
       `;
@@ -201,6 +210,20 @@ function renderQuickLaunch() {
   }
 
   quickLaunch.append(list);
+}
+
+function getQuickLaunchAccessWarning(resource) {
+  const accessMode = getAccessMode(resource);
+
+  if (accessMode === "onsite") {
+    return "Sur place uniquement";
+  }
+
+  if (accessMode === "remote_conditional") {
+    return "Accès distant sous condition";
+  }
+
+  return "";
 }
 
 function createQuickLaunchHeader(favorites) {

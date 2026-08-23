@@ -220,6 +220,8 @@ function renderQuickLaunch() {
       item.classList.toggle("is-dragging", state.dragging?.id === resource.id);
       item.append(createQuickLaunchRemoveButton(resource));
       item.addEventListener("pointerdown", handleQuickLaunchPointerDown);
+      item.addEventListener("contextmenu", preventQuickLaunchEditContextMenu);
+      item.addEventListener("dragstart", preventQuickLaunchEditContextMenu);
       item.addEventListener("keydown", handleQuickLaunchKeyDown);
     } else {
       item.href = resource.url;
@@ -855,6 +857,14 @@ function handleQuickLaunchPointerDown(event) {
   window.addEventListener("pointermove", handleQuickLaunchPointerMove, { passive: false });
   window.addEventListener("pointerup", handleQuickLaunchPointerUp);
   window.addEventListener("pointercancel", handleQuickLaunchPointerUp);
+}
+
+function preventQuickLaunchEditContextMenu(event) {
+  if (!state.quickLaunchEditing) {
+    return;
+  }
+
+  event.preventDefault();
 }
 
 function handleQuickLaunchPointerMove(event) {

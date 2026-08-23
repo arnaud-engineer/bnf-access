@@ -333,11 +333,20 @@ h1 {
 }
 
 .is-editing .quick-launch-item {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
   animation: quick-launch-wiggle 380ms ease-in-out infinite alternate;
   cursor: grab;
   touch-action: none;
+  user-select: none;
   transform-origin: 50% 85%;
   will-change: transform;
+}
+
+.is-editing .quick-launch-item img {
+  -webkit-user-drag: none;
+  pointer-events: none;
+  user-select: none;
 }
 
 .is-editing .quick-launch-item:nth-child(2n) {

@@ -3343,7 +3343,7 @@
         "presse"
       ],
       "notes": "",
-      "default_favorite": false,
+      "default_favorite": true,
       "icon_url": "./logos/indexpresse.svg",
       "icon_alt": "Logo de Index Presse Business",
       "access_mode": "remote",
@@ -4901,7 +4901,7 @@
         "presse"
       ],
       "notes": "",
-      "default_favorite": false,
+      "default_favorite": true,
       "icon_url": "./logos/indexpresse.svg",
       "icon_alt": "Logo de Index Presse Generalis",
       "bnf_official": {
@@ -8296,7 +8296,7 @@
         "sciences et techniques"
       ],
       "notes": "",
-      "default_favorite": false,
+      "default_favorite": true,
       "icon_url": "./logos/scholarvox.jpg",
       "icon_alt": "Logo ScholarVox",
       "bnf_official": {

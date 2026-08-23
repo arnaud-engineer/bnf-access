@@ -17,11 +17,6 @@ Le projet est volontairement statique :
 - `public/app.js` : lecture du JSON, recherche, filtres et rendu des cartes.
 - `public/resources.json` : catalogue versionné des ressources, liens, conditions d'accès, logos connus et sources.
 - `public/bnf-network.json` : plages reseau BnF candidates pour une future detection sur site.
-- `scripts/audit_bnf_directory.py` : comparaison locale entre le catalogue et l'annuaire officiel BnF.
-- `docs/architecture.md` : notes techniques sur la logique des liens.
-- `docs/backlog.md` : pistes produit et notes de backlog.
-- `docs/logo-sources.md` : provenance des logos locaux.
-- `docs/research-notes.md` : resume des constats autour d'EasyBNF.
 
 ## Lancer en local
 
@@ -36,16 +31,6 @@ Puis ouvrir :
 ```text
 http://localhost:5173
 ```
-
-## Auditer l'annuaire BnF
-
-Pour comparer le catalogue local avec l'annuaire officiel BnF :
-
-```bash
-python3 scripts/audit_bnf_directory.py --write-report
-```
-
-Le rapport est écrit dans `docs/audits/bnf-directory-audit.md`.
 
 ## Principes
 

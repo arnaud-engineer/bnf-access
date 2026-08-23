@@ -1,14 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 196" role="img" aria-labelledby="title desc">
-  <title id="title">Acta Sanctorum</title>
-  <desc id="desc">Marque typographique inspiree des pages de titre anciennes des Acta Sanctorum.</desc>
-  <defs>
-    <filter id="ink-soften" x="-2%" y="-4%" width="104%" height="108%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="17" result="grain"/>
-      <feDisplacementMap in="SourceGraphic" in2="grain" scale="0.45" xChannelSelector="R" yChannelSelector="G"/>
-    </filter>
-  </defs>
-  <g fill="#2e2a30" filter="url(#ink-soften)" font-family="Georgia, 'Times New Roman', serif">
-    <text x="180" y="68" text-anchor="middle" font-size="42" font-weight="400" letter-spacing="24" textLength="220" lengthAdjust="spacing">ACTA</text>
-    <text x="180" y="150" text-anchor="middle" font-size="54" font-weight="600" letter-spacing="1.8" textLength="328" lengthAdjust="spacingAndGlyphs">SANCTORUM</text>
-  </g>
-</svg>
+<svg viewBox="0 0 360 196" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><filter id="a" height="108%" width="104%" x="-2%" y="-4%"><feTurbulence baseFrequency=".85" numOctaves="2" result="grain" seed="17" type="fractalNoise"/><feDisplacementMap in="SourceGraphic" in2="grain" scale="0.45" xChannelSelector="R" yChannelSelector="G"/></filter><g fill="#2e2a30" filter="url(#a)" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle"><text font-size="42" font-weight="400" lengthAdjust="spacing" letter-spacing="24" textLength="220" x="180" y="68">ACTA</text><text font-size="54" font-weight="600" lengthAdjust="spacingAndGlyphs" letter-spacing="1.8" textLength="328" x="180" y="150">SANCTORUM</text></g></svg>

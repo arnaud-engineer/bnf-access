@@ -21,7 +21,7 @@ Les logos sont stockés localement pour éviter de dépendre de hotlinks externe
 ## SVG générés depuis les images sources
 
 - MusicMe : fichier local `musicme.svg` fourni pour remplacer la vectorisation initiale depuis PNG.
-- Encyclopædia Universalis : vectorisation depuis le PNG local, aucun SVG officiel fiable n'ayant été identifié.
+- Encyclopædia Universalis : image locale `universalis.jpg` fournie, conservée en raster pour préserver la fidélité du logo.
 - Aida : SVG typographique recréé depuis l'image locale `product_pages.jpg`, en privilégiant le bloc "AIDA ONLINE" pour limiter le poids.
 - Bellefaye : SVG recréé depuis le PNG local fourni, avec fond et lettrage éditables.
 - Année philologique : SVG recréé depuis l'image locale `cover_1_m.jpg`, en conservant le format rectangulaire du logo APh.

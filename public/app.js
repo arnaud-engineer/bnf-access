@@ -332,7 +332,7 @@ function getFilteredResources() {
       const matchesCategory = state.category === "Toutes" || resourceCategories.includes(state.category);
       const matchesFavorite = !state.favoritesOnly || state.favorites.has(resource.id);
       const matchesPass = matchesPassFilter(resource);
-      const matchesRemote = state.remoteFilter === "all" || state.remoteFilter === accessMode;
+      const matchesRemote = matchesRemoteFilter(accessMode);
       const haystack = normalize([
         resource.name,
         ...resourceCategories,
@@ -348,6 +348,18 @@ function getFilteredResources() {
       const favoriteDelta = Number(state.favorites.has(b.id)) - Number(state.favorites.has(a.id));
       return favoriteDelta || a.name.localeCompare(b.name, "fr");
     });
+}
+
+function matchesRemoteFilter(accessMode) {
+  if (state.remoteFilter === "all") {
+    return true;
+  }
+
+  if (state.remoteFilter === "remote") {
+    return accessMode === "remote" || accessMode === "remote_conditional" || accessMode === "free";
+  }
+
+  return accessMode === state.remoteFilter;
 }
 
 function matchesPassFilter(resource) {
@@ -613,6 +625,8 @@ function loadProfileFilters() {
 
   if ([...remoteFilter.options].some((option) => option.value === storedRemote)) {
     state.remoteFilter = storedRemote;
+  } else if (storedRemote === "remote_conditional" || storedRemote === "free") {
+    state.remoteFilter = "remote";
   }
 
   passFilter.value = state.passFilter;

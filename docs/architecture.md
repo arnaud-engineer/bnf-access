@@ -125,9 +125,7 @@ L'utilisateur peut filtrer les ressources selon son Pass et selon le mode d'acc�
 - Pass Recherche illimité ;
 - sans Pass BnF ;
 - accès à distance ;
-- accès à distance sous condition ;
-- accès sur place uniquement ;
-- accès libre.
+- accès sur place uniquement.
 
 Ces choix sont stockés dans `localStorage`. Chaque ressource déclare explicitement son profil d'accès dans `access` :
 
@@ -140,6 +138,8 @@ Les ressources en accès libre restent visibles quel que soit le Pass sélection
 Le profil `Sans Pass BnF` isole uniquement les ressources déclarées `public`.
 
 Pour les ressources uniquement consultables sur place, l'annuaire BnF indique l'accès à la BnF sans distinguer les droits par type de Pass. Elles sont donc taguées avec les deux Pass annuels lorsque l'annuaire ne précise pas de restriction plus fine.
+
+Le filtre d'accès `À distance` regroupe les ressources `remote`, `remote_conditional` et `free`. Les cartes continuent d'afficher le mode précis avec leur badge : accès distant, accès distant sous condition ou accès libre.
 
 ## Detection reseau BnF
 

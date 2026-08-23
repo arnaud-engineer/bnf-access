@@ -10,7 +10,7 @@
     {
       "id": "pressreader",
       "name": "PressReader",
-      "category": "Presse et médias",
+      "category": "Presse",
       "description": "Kiosque numérique international pour consulter des journaux et magazines",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.pressreader.com/",
       "remote": true,
@@ -59,7 +59,7 @@
     {
       "id": "europresse",
       "name": "Europresse",
-      "category": "Presse et médias",
+      "category": "Presse",
       "description": "Base de presse française et internationale très complète avec articles intégrals et archives",
       "url": "https://bnf.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=D000067U_1",
       "remote": true,
@@ -99,7 +99,7 @@
     {
       "id": "arretsurimages-net",
       "name": "Arrêt sur images",
-      "category": "Presse et médias",
+      "category": "Presse",
       "description": "Site d’analyse critique des médias fondé par Daniel Schneidermann",
       "url": "https://bnf.idm.oclc.org/login?url=http://www.arretsurimages.net/autologin.php",
       "remote": true,
@@ -139,7 +139,7 @@
     {
       "id": "mediapart",
       "name": "Mediapart",
-      "category": "Presse et médias",
+      "category": "Presse",
       "description": "Journal d'enquête et d'actualité",
       "url": "https://bnf.idm.oclc.org/login?url=http://www.mediapart.fr/licence",
       "remote": true,
@@ -179,7 +179,7 @@
     {
       "id": "new-york-times",
       "name": "New York Times",
-      "category": "Presse et médias",
+      "category": "Presse",
       "description": "Accès au quotidien américain et à ses archives selon les conditions BnF",
       "url": "https://www.nytimes.com/subscription/redeem?campaignId=8RHXJ&gift_code=8df078f005d2b885",
       "remote": true,
@@ -229,7 +229,7 @@
     {
       "id": "alternatives-economiques",
       "name": "Alternatives économiques",
-      "category": "Presse et médias",
+      "category": "Presse",
       "description": "Périodique traitant de questions économiques et sociales. Accès au site et aux archives",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.alternatives-economiques.fr",
       "remote": true,
@@ -270,7 +270,7 @@
     {
       "id": "grand-robert",
       "name": "Grand Robert",
-      "category": "Dictionnaires et encyclopédies",
+      "category": "Dicos / Encyclopédies",
       "description": "Dictionnaire de référence pour la langue française",
       "url": "https://bnf.idm.oclc.org/login?url=https://grandrobert.lerobert.com",
       "remote": true,
@@ -295,7 +295,7 @@
     {
       "id": "larousse-grand-dictionnaire-universel-du-xixe-siecle",
       "name": "Larousse (1878)",
-      "category": "Dictionnaires et encyclopédies",
+      "category": "Dicos / Encyclopédies",
       "description": "Grand Dictionnaire universel de Pierre Larousse, édition 1878",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.classiques-garnier.com/numerique-bases/index.php?module=App&action=FrameMain&colname=ColLarousse",
       "remote": true,
@@ -338,7 +338,7 @@
     {
       "id": "encyclop-dia-universalis",
       "name": "Encyclopædia Universalis",
-      "category": "Dictionnaires et encyclopédies",
+      "category": "Dicos / Encyclopédies",
       "description": "Encyclopédie généraliste française de 30000 articles rédigés par des spécialistes, 17000 médias et un atlas",
       "url": "https://bnf.idm.oclc.org/login?url=https://bnf.idm.oclc.org/login?url=http://www.universalis-edu.com",
       "remote": true,
@@ -378,7 +378,7 @@
     {
       "id": "musicme",
       "name": "MusicMe",
-      "category": "Musique, cinéma et spectacle",
+      "category": "Musique / Cinéma / Spectacle",
       "description": "Service de streaming musical (en contrat avec les quatre majors de l'industrie du disque et 760 labels)",
       "url": "https://bnf.idm.oclc.org/login?url=https://bnf.mt.musicme.com",
       "remote": true,
@@ -418,7 +418,7 @@
     {
       "id": "medici-tv",
       "name": "Medici.tv",
-      "category": "Musique, cinéma et spectacle",
+      "category": "Musique / Cinéma / Spectacle",
       "description": "Concerts, opéras, ballets et vidéos sur la musique classique",
       "url": "https://bnf.idm.oclc.org/login?url=https://edu.medici.tv",
       "remote": true,
@@ -458,7 +458,7 @@
     {
       "id": "philharmonie-a-la-demande",
       "name": "Philharmonie à la demande",
-      "category": "Musique, cinéma et spectacle",
+      "category": "Musique / Cinéma / Spectacle",
       "description": "Concerts, conférences et ressources de la Philharmonie de Paris",
       "url": "https://admin-pad.philharmoniedeparis.fr/75-paris-bnf-surplace",
       "remote": false,
@@ -496,7 +496,7 @@
     {
       "id": "academic-search-premier",
       "name": "Academic Search Premier",
-      "category": "Ressources pluridisciplinaires",
+      "category": "Pluridisciplinaires",
       "description": "Base multidisciplinaire d’articles académiques, avec textes intégraux et collection d’images",
       "url": "https://bnf.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=ehost&defaultdb=aph",
       "remote": true,
@@ -539,7 +539,7 @@
     {
       "id": "acta-sanctorum",
       "name": "Acta sanctorum",
-      "category": "Histoire, religion et sources anciennes",
+      "category": "Histoire / Géo",
       "description": "Édition électronique de textes consacrés à la vie des saints",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.proquest.com/actasanctorum",
       "remote": true,
@@ -580,7 +580,7 @@
     {
       "id": "agricola",
       "name": "Agricola",
-      "category": "Sciences, santé et techniques",
+      "category": "Sciences / Santé",
       "description": "Catalogue et bibliographie agricole de la National Agricultural Library américaine",
       "url": "http://agricola.nal.usda.gov",
       "remote": true,
@@ -619,7 +619,7 @@
     {
       "id": "agris",
       "name": "Agris",
-      "category": "Sciences, santé et techniques",
+      "category": "Sciences / Santé",
       "description": "Bibliographie internationale multilingue en agriculture, agronomie, foresterie et médecine vétérinaire",
       "url": "http://www.fao.org/agris/",
       "remote": true,
@@ -660,7 +660,7 @@
     {
       "id": "aida",
       "name": "Aida",
-      "category": "Langues et littératures",
+      "category": "Langues / Lettres",
       "description": "1400 titres de périodiques italiens, en littérature, histoire, sciences humaines et sociales contemporains",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.degruyterbrill.com/database/aida/html",
       "remote": true,
@@ -703,7 +703,7 @@
     {
       "id": "alice-catalogo-dei-libri-in-commercio-in-italia",
       "name": "Alice",
-      "category": "Catalogues et annuaires",
+      "category": "Catalogues / Annuaires",
       "description": "Catalogue des livres disponibles dans le commerce en Italie",
       "url": "http://alicebib.ibuk.it",
       "remote": false,
@@ -743,7 +743,7 @@
     {
       "id": "allgemeines-kunstlerlexikon-akl",
       "name": "Allgemeines Künstlerlexikon",
-      "category": "Arts, images et patrimoine",
+      "category": "Arts / Images",
       "description": "AKL - Dictionnaire biographique d’artistes, toutes périodes et disciplines",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.degruyter.com/database/akl/html",
       "remote": true,
@@ -796,7 +796,7 @@
     {
       "id": "aow",
       "name": "Artists of the World",
-      "category": "Arts, images et patrimoine",
+      "category": "Arts / Images",
       "description": "AOW - Dictionnaire biographique d’artistes, toutes périodes et disciplines (suite de AKL)",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.degruyter.com/database/AOW/html",
       "remote": true,
@@ -840,7 +840,7 @@
     {
       "id": "american-bibliography-of-slavic-and-east-european-studies-absees",
       "name": "American Bibliography of Slavic, East European, and Eurasian Studies",
-      "category": "Sciences humaines et sociales",
+      "category": "Sciences Humaines / Sociales",
       "description": "ABSEEES - Bibliographie de référence sur les études slaves et est-européennes",
       "url": "https://bnf.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=ehost&defaultdb=sbh",
       "remote": true,
@@ -871,7 +871,7 @@
     {
       "id": "american-national-biography",
       "name": "American National Biography",
-      "category": "Dictionnaires et encyclopédies",
+      "category": "Dicos / Encyclopédies",
       "description": "Dictionnaire biographique multi-domaines des grands personnages de l'histoire des USA",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.anb.org",
       "remote": true,
@@ -913,7 +913,7 @@
     {
       "id": "amicus",
       "name": "Voilà",
-      "category": "Catalogues et annuaires",
+      "category": "Catalogues / Annuaires",
       "description": "Catalogue des notices bibliographiques et localisation des ouvrages conservés dans les bibliothèques du Canada (ex-Amicus)",
       "url": "https://canada.on.worldcat.org/discovery",
       "remote": true,
@@ -952,7 +952,7 @@
     {
       "id": "annee-philologique",
       "name": "Année philologique",
-      "category": "Histoire, religion et sources anciennes",
+      "category": "Histoire / Géo",
       "description": "Bibliographie des études sur l’Antiquité grecque et romaine depuis 1924",
       "url": "https://bnf.idm.oclc.org/login?url=http://www.brepolis.net",
       "remote": true,
@@ -996,7 +996,7 @@
     {
       "id": "anthropological-index",
       "name": "Anthropological index",
-      "category": "Sciences humaines et sociales",
+      "category": "Sciences Humaines / Sociales",
       "description": "Index de périodiques en archéologie, anthropologie, ethnologie et linguistique",
       "url": "https://aio.therai.org.uk/",
       "remote": false,
@@ -1037,7 +1037,7 @@
     {
       "id": "anthropology-resource-library",
       "name": "Anthropology Resource Library",
-      "category": "Sciences humaines et sociales",
+      "category": "Sciences Humaines / Sociales",
       "description": "Sources textuelles, audios et vidéos pour la recherche en anthropologie",
       "url": "https://bnf.idm.oclc.org/login?url=https://search.alexanderstreet.com/anthropology",
       "remote": true,
@@ -1082,7 +1082,7 @@
     {
       "id": "anthrosource",
       "name": "Anthrosource",
-      "category": "Sciences humaines et sociales",
+      "category": "Sciences Humaines / Sociales",
       "description": "Revues et articles (en intégral) de l’American Anthropological Association",
       "url": "https://bnf.idm.oclc.org/login?url=https://anthrosource.onlinelibrary.wiley.com/",
       "remote": true,
@@ -1122,7 +1122,7 @@
     {
       "id": "aoc",
       "name": "Analyse Opinion Critique",
-      "category": "Presse et médias",
+      "category": "Presse",
       "description": "Quotidien publiant chaque jour une analyse, une opinion et une critique culturelle",
       "url": "https://aoc.media/",
       "fallback_label": "AOC",
@@ -1144,7 +1144,7 @@
     {
       "id": "archive-of-celtic-latin-literature",
       "name": "Archive of Celtic-Latin Literature",
-      "category": "Langues et littératures",
+      "category": "Langues / Lettres",
       "description": "Corpus latin médiéval d’auteurs issus du monde celtique européen",
       "url": "https://bnf.idm.oclc.org/login?url=http://www.brepolis.net/",
       "remote": true,
@@ -1187,7 +1187,7 @@
     {
       "id": "archives-biographiques",
       "name": "World Biographical Information System",
-      "category": "Dictionnaires et encyclopédies",
+      "category": "Dicos / Encyclopédies",
       "description": "WBIS - Articles biographiques de référence, publiés entre le XVIe et le XXIe siècle",
       "url": "https://bnf.idm.oclc.org/login?url=https://wbis.degruyter.com/basic-search",
       "remote": true,
@@ -1228,7 +1228,7 @@
     {
       "id": "aristoteles-latinus-database",
       "name": "Aristoteles Latinus Database",
-      "category": "Langues et littératures",
+      "category": "Langues / Lettres",
       "description": "Traductions médiévales des œuvres d'Aristote",
       "url": "https://bnf.idm.oclc.org/login?url=http://www.brepolis.net/",
       "remote": true,
@@ -1270,7 +1270,7 @@
     {
       "id": "art-full-text",
       "name": "Art Full Text",
-      "category": "Arts, images et patrimoine",
+      "category": "Arts / Images",
       "description": "Bibliographie sur le Monde de l'Art (essentiellement anglo-américaine). Articles issus de plus de 300 périodiques depuis 1985",
       "url": "https://bnf.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=ehost&defaultdb=aft",
       "remote": true,
@@ -1311,7 +1311,7 @@
     {
       "id": "art-index-retrospective",
       "name": "Art Index Retrospective",
-      "category": "Arts, images et patrimoine",
+      "category": "Arts / Images",
       "description": "Bibliographie sur l'Art, l'Architecture et les Arts Décoratifs de 1929 à 1984 (essentiellement anglo-américaine)",
       "url": "https://bnf.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=ehost&defaultdb=air",
       "remote": true,
@@ -1352,7 +1352,7 @@
     {
       "id": "art-sales-catalogues-online",
       "name": "Art Sales Catalogues Online",
-      "category": "Arts, images et patrimoine",
+      "category": "Arts / Images",
       "description": "Répertoire des catalogues de ventes publiques intéressant l'art ou la curiosité, de 1600 à 1900, de Frits Lugt",
       "url": "https://bnf.idm.oclc.org/login?url=https://primarysources.brillonline.com/browse/art-sales-catalogues-online",
       "remote": true,
@@ -1394,7 +1394,7 @@
     {
       "id": "arts-humanities-database",
       "name": "Arts & Humanities Database",
-      "category": "Sciences humaines et sociales",
+      "category": "Sciences Humaines / Sociales",
       "description": "Bibliographie comprenant des articles et périodiques artistiques multidisciplinaires (art, architecture, design, cinéma, lettres, langues, mode) à partir de 1923",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.proquest.com/artshumanities/arts/fromDatabasesLayer?accountid=170408",
       "remote": true,
@@ -1439,7 +1439,7 @@
     {
       "id": "artstor-digital-library",
       "name": "Artstor Digital library",
-      "category": "Arts, images et patrimoine",
+      "category": "Arts / Images",
       "description": "Bibliothèque iconographique de plus de 2 millions d'images dans les domaines de l'art, de l'architecture et des sciences",
       "url": "https://bnf.idm.oclc.org/login?url=https://library.artstor.org/",
       "remote": true,
@@ -1481,7 +1481,7 @@
     {
       "id": "astrophysics-data-system",
       "name": "Astrophysics Data System",
-      "category": "Sciences, santé et techniques",
+      "category": "Sciences / Santé",
       "description": "Articles et périodiques en astronomie, astrophysique, instrumentation astronomique et astronautique, physique et géophysique",
       "url": "https://ui.adsabs.harvard.edu/",
       "remote": true,
@@ -1522,7 +1522,7 @@
     {
       "id": "atla-religion-database",
       "name": "ATLA - Religion Database",
-      "category": "Histoire, religion et sources anciennes",
+      "category": "Histoire / Géo",
       "description": "Articles et périodiques sur les sciences religieuses, surtout dans le domaine anglo-saxon, depuis 1949",
       "url": "https://bnf.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=ehost&defaultdb=rfh",
       "remote": true,
@@ -1564,7 +1564,7 @@
     {
       "id": "babelscores",
       "name": "BabelScores",
-      "category": "Musique, cinéma et spectacle",
+      "category": "Musique / Cinéma / Spectacle",
       "description": "Partitions, enregistrements et vidéos consacrés à la musique classique contemporaine",
       "url": "https://bnf.idm.oclc.org/login?url=http://www.babelscores.com/fr",
       "remote": true,
@@ -1607,7 +1607,7 @@
     {
       "id": "base-du-gerflint",
       "name": "Base du GERFLINT",
-      "category": "Sciences humaines et sociales",
+      "category": "Sciences Humaines / Sociales",
       "description": "Revues et essais francophones en sciences humaines et sociales",
       "url": "http://gerflint.fr/Base/base.html",
       "remote": true,
@@ -1649,9 +1649,9 @@
     {
       "id": "bellefaye",
       "name": "Bellefaye",
-      "category": "Musique, cinéma et spectacle",
+      "category": "Musique / Cinéma / Spectacle",
       "secondary_categories": [
-        "Catalogues et annuaires"
+        "Catalogues / Annuaires"
       ],
       "description": "Annuaire des professionnels du cinéma et de l'audiovisuel",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.bellefaye.com",
@@ -1695,7 +1695,7 @@
     {
       "id": "benezit",
       "name": "Benezit",
-      "category": "Arts, images et patrimoine",
+      "category": "Arts / Images",
       "description": "Dictionnaire biographique d’artistes, avec historiques d’expositions",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.oxfordartonline.com/benezit",
       "remote": true,
@@ -1735,7 +1735,7 @@
     {
       "id": "bibliografia-nacional-espanola",
       "name": "Bibliografia Nacional Española",
-      "category": "Catalogues et annuaires",
+      "category": "Catalogues / Annuaires",
       "description": "Recensement des livres entrés par dépôt légal à la Biblioteca nacional de España depuis 2007",
       "url": "https://www.bne.es/es/servicios/informacion-bibliografica/bibliografia-espanola",
       "remote": true,
@@ -1775,7 +1775,7 @@
     {
       "id": "bibliographia-franciscana",
       "name": "Bibliographia Franciscana",
-      "category": "Histoire, religion et sources anciennes",
+      "category": "Histoire / Géo",
       "description": "Revue bibliographique sur le franciscanisme",
       "url": "http://cpps.brepolis.net/bf/search.cfm?",
       "remote": true,
@@ -1813,7 +1813,7 @@
     {
       "id": "bis",
       "name": "Bibliographia Internationalis Spiritualitatis",
-      "category": "Histoire, religion et sources anciennes",
+      "category": "Histoire / Géo",
       "description": "BIS - Bibliographie en théologie spirituelle, études carmélitaines et anthropologie théologique",
       "url": "http://cpps.brepolis.net/bis/search.cfm",
       "remote": true,
@@ -1851,7 +1851,7 @@
     {
       "id": "bamat",
       "name": "Bibliographie Annuelle du Moyen Âge Tardif",
-      "category": "Histoire, religion et sources anciennes",
+      "category": "Histoire / Géo",
       "description": "BAMAT - Base de données bibliographique des auteurs et textes latins de la fin du Moyen Âge (du XIIIe au XVe siècle)",
       "url": "https://bnf.idm.oclc.org/login?url=http://apps.brepolis.net/bamat/search",
       "remote": true,
@@ -1894,7 +1894,7 @@
     {
       "id": "bibliographie-de-civilisation-medievale",
       "name": "Bibliographie de civilisation médiévale",
-      "category": "Histoire, religion et sources anciennes",
+      "category": "Histoire / Géo",
       "description": "Bibliographie internationale sur les civilisations médiévales occidentales, byzantines et arabes",
       "url": "https://bnf.idm.oclc.org/login?url=http://www.brepolis.net",
       "remote": true,
@@ -1936,7 +1936,7 @@
     {
       "id": "bibliographie-de-la-litterature-francaise",
       "name": "Bibliographie de la littérature française",
-      "category": "Langues et littératures",
+      "category": "Langues / Lettres",
       "description": "Bibliographie sur les littératures francophones du XVIe siècle à nos jours",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.classiques-garnier.com/numerique-bases/blf",
       "remote": true,
@@ -1978,7 +1978,7 @@
     {
       "id": "bibliographie-der-deutschen-sprach-und-literaturwissenschaft",
       "name": "Bibliographie der deutschen Sprach- und Literaturwissenschaft",
-      "category": "Langues et littératures",
+      "category": "Langues / Lettres",
       "description": "Bibliographie des études littéraires et linguistiques germanophones",
       "url": "http://www.bdsl-online.de",
       "remote": false,
@@ -2018,7 +2018,7 @@
     {
       "id": "bibliographie-internationale-de-l-humanisme-et-de-la-renaissance",
       "name": "Bibliographie internationale de l'Humanisme et de la Renaissance",
-      "category": "Histoire, religion et sources anciennes",
+      "category": "Histoire / Géo",
       "description": "Bibliographie des travaux sur l’Humanisme et la Renaissance",
       "url": "https://bnf.idm.oclc.org/login?url=http://www.brepolis.net",
       "remote": true,
@@ -2061,7 +2061,7 @@
     {
       "id": "bibliorecit",
       "name": "Bibliorécit",
-      "category": "Langues et littératures",
+      "category": "Langues / Lettres",
       "description": "Base sur les contes, récits populaires et littérature orale",
       "url": "https://bnf.idm.oclc.org/login?url=http://bibliorecitbnf.fr",
       "remote": false,
@@ -2100,7 +2100,7 @@
     {
       "id": "bibliotheque-des-lettres",
       "name": "Bibliothèque des Lettres",
-      "category": "Langues et littératures",
+      "category": "Langues / Lettres",
       "description": "Bibliothèque de classiques de la littérature française, critiques littéraires et histoires révolutionnaires du XIXe siècle",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.classiques-garnier.com/numerique-bases/index.php?module=App&action=FrameMain&colname=ColBdl",
       "remote": true,
@@ -2141,7 +2141,7 @@
     {
       "id": "bhl",
       "name": "Biodiversity Heritage Library",
-      "category": "Sciences, santé et techniques",
+      "category": "Sciences / Santé",
       "description": "BHL - La plus grande bibliothèque numérique en accès libre au monde consacrée à la littérature et aux archives sur la biodiversité et l'histoire naturelle",
       "url": "https://www.biodiversitylibrary.org/",
       "remote": true,
@@ -2180,7 +2180,7 @@
     {
       "id": "biographisch-bibliographisches-kirchenlexikon-bbkl",
       "name": "Biographisch-Bibliographisches Kirchenlexikon",
-      "category": "Histoire, religion et sources anciennes",
+      "category": "Histoire / Géo",
       "description": "BBKL - Base bibliographique et biographique sur l’histoire du christianisme",
       "url": "https://www.bbkl.de/",
       "remote": false,
@@ -2223,7 +2223,7 @@
     {
       "id": "biosis-previews-1989-2007",
       "name": "Biosis Previews",
-      "category": "Sciences, santé et techniques",
+      "category": "Sciences / Santé",
       "description": "Base de données la plus complète dans le domaine des sciences biologiques",
       "url": "http://isiknowledge.com/biosis",
       "remote": false,
@@ -2266,7 +2266,7 @@
     {
       "id": "biotechnology-abstracts-1982",
       "name": "Biotechnology Abstracts",
-      "category": "Sciences, santé et techniques",
+      "category": "Sciences / Santé",
       "description": "Bibliographie internationales et références de brevets en biotechnologie (> 1982)",
       "url": "https://stneasy.fiz-karlsruhe.de/intranet",
       "remote": false,
@@ -2303,7 +2303,7 @@
     {
       "id": "bloomsbury-design-library",
       "name": "Bloomsbury design library",
-      "category": "Arts, images et patrimoine",
+      "category": "Arts / Images",
       "description": "Base de données consacrée aux designs du monde entier (de -1500 à nos jours)",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.bloomsburydesignlibrary.com/",
       "remote": true,
@@ -2348,7 +2348,7 @@
     {
       "id": "book-history-online",
       "name": "Book History Online",
-      "category": "Langues et littératures",
+      "category": "Langues / Lettres",
       "description": "Bibliographie internationale sur l'histoire du livre imprimé, des bibliothèques et de la presse",
       "url": "https://bnf.idm.oclc.org/login?url=https://bibliographies.brillonline.com/browse/book-history-online",
       "remote": true,
@@ -2393,7 +2393,7 @@
     {
       "id": "bref-cinema",
       "name": "Brefcinéma",
-      "category": "Musique, cinéma et spectacle",
+      "category": "Musique / Cinéma / Spectacle",
       "description": "Service de SVOD consacré au court-métrage",
       "url": "https://www.brefcinema.com/?idClient=BNFR",
       "remote": false,
@@ -2414,7 +2414,7 @@
     {
       "id": "bulletin-analytique-d-histoire-romaine-1990",
       "name": "Bulletin analytique d'histoire romaine",
-      "category": "Histoire, religion et sources anciennes",
+      "category": "Histoire / Géo",
       "description": "Articles et périodiques d'histoire et d'archéologie romaines",
       "url": "https://pus.unistra.fr/collection-revue/bulletin-analytique-dhistoire-romaine-bahr/",
       "remote": true,
@@ -2455,7 +2455,7 @@
     {
       "id": "business-source-complete",
       "name": "Business Source Complete",
-      "category": "Droit, économie et entreprise",
+      "category": "Droit / Économie",
       "description": "Articles de presse et universitaires sur l’entreprise, la finance et le management",
       "url": "https://bnf.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=ehost&defaultdb=bth",
       "remote": true,
@@ -2497,7 +2497,7 @@
     {
       "id": "cab-abstracts",
       "name": "CAB Abstracts",
-      "category": "Sciences, santé et techniques",
+      "category": "Sciences / Santé",
       "description": "Bibliographie internationale en agriculture et sylviculture",
       "url": "https://stneasy.fiz-karlsruhe.de/intranet",
       "remote": false,
@@ -2534,7 +2534,7 @@
     {
       "id": "cairn-droit",
       "name": "CAIRN Droit",
-      "category": "Droit, économie et entreprise",
+      "category": "Droit / Économie",
       "description": "Revues et ouvrages en administration et droit français",
       "url": "https://droit.cairn.info/?lang=fr",
       "remote": false,
@@ -2571,7 +2571,7 @@
     {
       "id": "cairn-soc",
       "name": "CAIRN Social",
-      "category": "Sciences humaines et sociales",
+      "category": "Sciences Humaines / Sociales",
       "description": "Revues et ouvrages de sciences humaines et sociales francophones, ainsi que les collections Que-Sais-Je ? et Repères",
       "url": "http://www.cairn.info/",
       "remote": false,
@@ -2608,7 +2608,7 @@
     {
       "id": "cairn-sciences",
       "name": "CAIRN Sciences",
-      "category": "Sciences, santé et techniques",
+      "category": "Sciences / Santé",
       "description": "Revues et ouvrages en sciences, techniques et médecine",
       "url": "https://www.cairn-sciences.info/",
       "remote": false,
@@ -2656,7 +2656,7 @@
     {
       "id": "capfi",
       "name": "Capfi",
-      "category": "Droit, économie et entreprise",
+      "category": "Droit / Économie",
       "description": "Informations économiques et financières sur les entreprises françaises",
       "url": "https://app.capfinancials.com",
       "remote": false,
@@ -2693,7 +2693,7 @@
     {
       "id": "cartomundi-outil-de-valorisation-en-ligne-du-patrimoine-cartographique",
       "name": "CartoMundi",
-      "category": "Cartes et géographie",
+      "category": "Histoire / Géo",
       "description": "Bases de données de documents cartographiques",
       "url": "https://www.cartomundi.fr/searchMap",
       "remote": true,
@@ -2701,11 +2701,10 @@
         "public"
       ],
       "tags": [
-        "art et images",
         "cartomundi",
-        "ligne",
-        "outil",
-        "valorisation"
+        "cartes",
+        "géographie",
+        "patrimoine cartographique"
       ],
       "notes": "",
       "default_favorite": false,
@@ -2734,7 +2733,7 @@
     {
       "id": "cedram-centre-de-diffusion-de-revues-academiques-mathematiques",
       "name": "Centre Mersenne",
-      "category": "Sciences, santé et techniques",
+      "category": "Sciences / Santé",
       "description": "Revues académiques françaises en mathématiques, physique et informatique (ex-CEDRAM)",
       "url": "https://www.centre-mersenne.org/",
       "remote": true,
@@ -2776,7 +2775,7 @@
     {
       "id": "chemical-abstracts",
       "name": "Chemical Abstracts",
-      "category": "Sciences, santé et techniques",
+      "category": "Sciences / Santé",
       "description": "Références, brevets et données factuelles en chimie, issus de 9000 périodiques",
       "url": "https://stneasy.fiz-karlsruhe.de/intranet",
       "remote": false,
@@ -2814,7 +2813,7 @@
     {
       "id": "churchill-archive",
       "name": "Churchill Archive",
-      "category": "Histoire, religion et sources anciennes",
+      "category": "Histoire / Géo",
       "description": "Archives de Winston Churchill, des correspondances aux documents politiques",
       "url": "https://bnf.idm.oclc.org/login?url=http://www.churchillarchive.com",
       "remote": true,
@@ -2855,7 +2854,7 @@
     {
       "id": "classiques-garnier-livres-et-revues-numeriques",
       "name": "Classiques Garnier",
-      "category": "Langues et littératures",
+      "category": "Langues / Lettres",
       "description": "Articles et périodiques sur la littérature française classique et les sciences humaines du moyen-âge et de la renaissance",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.classiques-garnier.com/numerique-bases/index.php?module=App&action=FrameMain&colname=ColGarnier",
       "remote": true,
@@ -2898,7 +2897,7 @@
     {
       "id": "clavis-clavium",
       "name": "Clavis Clavium",
-      "category": "Histoire, religion et sources anciennes",
+      "category": "Histoire / Géo",
       "description": "Répertoire de référence sur les textes chrétiens antiques et médiévaux",
       "url": "https://clavis.brepols.net/clacla/Default.aspx",
       "remote": true,
@@ -2939,7 +2938,7 @@
     {
       "id": "cobaz-afnor",
       "name": "CObaz",
-      "category": "Droit, économie et entreprise",
+      "category": "Droit / Économie",
       "description": "Normes AFNOR, références bibliographiques et textes réglementaires",
       "url": "https://cobaz.afnor.org",
       "remote": false,
@@ -2977,7 +2976,7 @@
     {
       "id": "compendex",
       "name": "Compendex",
-      "category": "Sciences, santé et techniques",
+      "category": "Sciences / Santé",
       "description": "Bibliographie internationale en sciences de l’ingénieur",
       "url": "https://stneasy.fiz-karlsruhe.de/intranet",
       "remote": false,
@@ -3014,7 +3013,7 @@
     {
       "id": "congressional-publications",
       "name": "Congressional Publications",
-      "category": "Droit, économie et entreprise",
+      "category": "Droit / Économie",
       "description": "Base de données des publications du Congrès des Etats-Unis",
       "url": "https://bnf.idm.oclc.org/login?url=https://search.proquest.com/congressional/?accountid=170408",
       "remote": true,
@@ -3055,7 +3054,7 @@
     {
       "id": "cds",
       "name": "Cross Database Searchtool",
-      "category": "Langues et littératures",
+      "category": "Langues / Lettres",
       "description": "CDS - Recherche multi-bases des ressources latines de Brepolis",
       "url": "https://bnf.idm.oclc.org/login?url=https://clt.brepolis.net/cds/pages/Search.aspx",
       "remote": true,
@@ -3097,7 +3096,7 @@
     {
       "id": "dalloz",
       "name": "Dalloz",
-      "category": "Droit, économie et entreprise",
+      "category": "Droit / Économie",
       "description": "Bases juridiques Dalloz de référence couvrant droit civil, pénal, administratif, social ...",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.dalloz.fr/",
       "remote": true,
@@ -3136,7 +3135,7 @@
     {
       "id": "dalloz-bibliotheque-bibliotheque-numerique-dalloz",
       "name": "Dalloz - Bibliothèque",
-      "category": "Droit, économie et entreprise",
+      "category": "Droit / Économie",
       "description": "Bibliothèque d’ouvrages juridiques Dalloz : codes, manuels, mémentos et essais",
       "url": "https://bnf.idm.oclc.org/login?url=http://www.dalloz-bibliotheque.fr/secure/",
       "remote": true,
@@ -3177,7 +3176,7 @@
     {
       "id": "database-of-latin-dictionaries",
       "name": "Database of Latin Dictionaries",
-      "category": "Langues et littératures",
+      "category": "Langues / Lettres",
       "description": "Dictionnaires latins anciens et modernes",
       "url": "https://bnf.idm.oclc.org/login?url=http://www.brepolis.net/",
       "remote": true,
@@ -3219,7 +3218,7 @@
     {
       "id": "dblp-computer-science-bibliography",
       "name": "DBLP",
-      "category": "Sciences, santé et techniques",
+      "category": "Sciences / Santé",
       "description": "Base bibliographique en informatique, cataloguant 3 millions d'entrées",
       "url": "http://dblp.uni-trier.de/",
       "remote": true,
@@ -3260,7 +3259,7 @@
     {
       "id": "delphes-1997",
       "name": "IndexPresse - Business",
-      "category": "Presse et médias",
+      "category": "Presse",
       "description": "Base bibliographique d’articles économiques (remplace Delphes)",
       "url": "https://bnf.idm.oclc.org/login?url=https://indexpresse.vercel.app/fr",
       "remote": true,
@@ -3285,7 +3284,7 @@
     {
       "id": "dmlbs",
       "name": "Dictionary of Medieval Latin from British Sources",
-      "category": "Langues et littératures",
+      "category": "Langues / Lettres",
       "description": "DMLBS - Lexique du latin médiéval brittanique",
       "url": "https://bnf.idm.oclc.org/login?url=http://clt.brepolis.net/dmlbs/Default.aspx",
       "remote": true,
@@ -3314,7 +3313,7 @@
     {
       "id": "dictionnaire-biographique-du-mouvement-ouvrier-francais",
       "name": "Maitron",
-      "category": "Dictionnaires et encyclopédies",
+      "category": "Dicos / Encyclopédies",
       "description": "Dictionnaire biographique du mouvement ouvrier français",
       "url": "http://maitron-en-ligne.univ-paris1.fr/",
       "remote": true,
@@ -3358,7 +3357,7 @@
     {
       "id": "dictionnaire-d-histoire-et-de-geographie-ecclesiastiques",
       "name": "Dictionnaire d'histoire et de géographie ecclésiastiques",
-      "category": "Histoire, religion et sources anciennes",
+      "category": "Histoire / Géo",
       "description": "Dictionnaire d'histoire et de géographie ecclésiastiques, de l'antiquité à nos jours, tout autour du globe",
       "url": "https://bnf.idm.oclc.org/login?url=http://www.brepolis.net/",
       "remote": true,
@@ -3401,7 +3400,7 @@
     {
       "id": "dictionnaire-universel-des-creatrices",
       "name": "Dictionnaire universel des créatrices",
-      "category": "Dictionnaires et encyclopédies",
+      "category": "Dicos / Encyclopédies",
       "description": "Dictionnaire bibliographique consacré aux femmes de tous lieux et de tous temps qui ont marqué l'histoire",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.dictionnaire-creatrices.com/",
       "remote": true,
@@ -3446,7 +3445,7 @@
     {
       "id": "doctrinal-plus",
       "name": "Doctrinal Plus",
-      "category": "Droit, économie et entreprise",
+      "category": "Droit / Économie",
       "description": "Références de doctrine juridique et jurisprudences, issues de plus de 250 périodiques",
       "url": "https://bnf.idm.oclc.org/login?url=http://newip.doctrinalplus.fr.",
       "remote": true,
@@ -3489,7 +3488,7 @@
     {
       "id": "droits-antiques",
       "name": "Droits antiques",
-      "category": "Histoire, religion et sources anciennes",
+      "category": "Histoire / Géo",
       "description": "Articles et périodiques regroupés par le Centre de Documentation des Droits de l'Antiquité",
       "url": "https://drant.cnrs.fr/fr/",
       "remote": true,
@@ -3528,7 +3527,7 @@
     {
       "id": "early-english-books-online-eebo",
       "name": "Early English Books",
-      "category": "Langues et littératures",
+      "category": "Langues / Lettres",
       "description": "EEBO - Numérisations de livres imprimés anglophones (de 1473 à 1700)",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.proquest.com/eebo/literature/fromDatabasesLayer?accountid=170408",
       "remote": true,
@@ -3574,7 +3573,7 @@
     {
       "id": "early-european-books",
       "name": "Early European Books",
-      "category": "Langues et littératures",
+      "category": "Langues / Lettres",
       "description": "Livres européens anciens numérisés (du XVe au XVIIIe siècle)",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.proquest.com/eeb/literature/fromDatabasesLayer?accountid=170408",
       "remote": true,
@@ -3619,7 +3618,7 @@
     {
       "id": "early-modern-books",
       "name": "Early Modern Books",
-      "category": "Langues et littératures",
+      "category": "Langues / Lettres",
       "description": "Recherche croisée dans EEBO (Early English Books Online) et EBB (Early European Books)",
       "url": "https://bnf.idm.oclc.org/login?url=https://www-proquest-com.bnf.idm.oclc.org/emb?accountid=170408",
       "remote": true,
@@ -3661,7 +3660,7 @@
     {
       "id": "econlit",
       "name": "Econlit",
-      "category": "Droit, économie et entreprise",
+      "category": "Droit / Économie",
       "description": "Articles et périodiques sur la recherche en économie",
       "url": "https://bnf.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=ehost&defaultdb=ecn",
       "remote": true,
@@ -3701,7 +3700,7 @@
     {
       "id": "education-research-complete",
       "name": "Education Research Complete",
-      "category": "Sciences humaines et sociales",
+      "category": "Sciences Humaines / Sociales",
       "description": "Articles et références internationales en sciences de l’éducation",
       "url": "https://bnf.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=ehost&defaultdb=ehh",
       "remote": true,
@@ -3743,7 +3742,7 @@
     {
       "id": "eighteenth-century-collections-online-ii-ecco-ii",
       "name": "Eighteenth Century Collections Online",
-      "category": "Langues et littératures",
+      "category": "Langues / Lettres",
       "description": "ECCO II - Textes complets de près de 200000 documents parus au XVIIIe siècle au Royaume-Uni",
       "url": "https://bnf.idm.oclc.org/login?url=https://go.gale.com/ps/dispBasicSearch.do?userGroupName=natfra&prodId=ECCO",
       "remote": true,
@@ -3786,7 +3785,7 @@
     {
       "id": "electre",
       "name": "Electre",
-      "category": "Catalogues et annuaires",
+      "category": "Catalogues / Annuaires",
       "description": "Base professionnelle des livres parus et à paraître en langue française",
       "url": "https://diffusion-backend.electre-ng.com/api/auth/ip",
       "remote": false,
@@ -3826,7 +3825,7 @@
     {
       "id": "electronic-enlightenment",
       "name": "Electronic Enlightenment",
-      "category": "Histoire, religion et sources anciennes",
+      "category": "Histoire / Géo",
       "description": "Correspondances savantes, artistiques et littéraires des Lumières européennes",
       "url": "https://bnf.idm.oclc.org/login?url=http://www.e-enlightenment.com/",
       "remote": true,
@@ -3872,7 +3871,7 @@
     {
       "id": "elnet",
       "name": "ELnet",
-      "category": "Droit, économie et entreprise",
+      "category": "Droit / Économie",
       "description": "Documentation juridique des Éditions Législatives",
       "url": "https://bnf.idm.oclc.org/login?url=http://www.elnet.fr/GA/Login",
       "remote": true,
@@ -3911,7 +3910,7 @@
     {
       "id": "em-premium",
       "name": "EM Premium",
-      "category": "Sciences, santé et techniques",
+      "category": "Sciences / Santé",
       "description": "Base de données de traités médicaux et paramédicaux. Anciennement appelée EMC (Encyclopédie Médico-Chirurgicale)",
       "url": "https://bnf.idm.oclc.org/login?url=http://www.em-premium.com",
       "remote": true,
@@ -3951,7 +3950,7 @@
     {
       "id": "emerald-management-first-120",
       "name": "Emerald Management",
-      "category": "Droit, économie et entreprise",
+      "category": "Droit / Économie",
       "description": "Revues académiques en management, commerce et sciences de gestion",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.emerald.com/insight",
       "remote": true,
@@ -3977,7 +3976,7 @@
     {
       "id": "encyclopaedia-judaica",
       "name": "Encyclopaedia judaica",
-      "category": "Histoire, religion et sources anciennes",
+      "category": "Histoire / Géo",
       "description": "Encyclopédie sur la culture, l'histoire et la religion juive (en anglais)",
       "url": "https://bnf.idm.oclc.org/login?url=http://go.galegroup.com/ps/i.do?id=GALE|9780028660974&v=2.1&u=natfra&it=aboutBook&p=GVRL&sw=w",
       "remote": true,
@@ -4018,7 +4017,7 @@
     {
       "id": "encyclopedie-d-yverdon",
       "name": "Encyclopédie d'Yverdon",
-      "category": "Dictionnaires et encyclopédies",
+      "category": "Dicos / Encyclopédies",
       "description": "Encyclopédie suisse de 1770-1780, réputée moins française, moins anti-religieuse que celle de Diderot et de d'Alembert",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.classiques-garnier.com/numerique-bases/index.php?module=App&action=FrameMain&colname=ColYverdon",
       "remote": true,
@@ -4059,7 +4058,7 @@
     {
       "id": "encyclopedie-de-diderot-et-d-alembert",
       "name": "Encyclopédie de Diderot et d'Alembert",
-      "category": "Dictionnaires et encyclopédies",
+      "category": "Dicos / Encyclopédies",
       "description": "Planches et textes originaux de la première édition",
       "url": "http://portail.atilf.fr/encyclopedie/Formulaire-de-recherche.htm",
       "remote": false,
@@ -4098,7 +4097,7 @@
     {
       "id": "encyclopedie-de-l-islam",
       "name": "Encyclopédie de l'Islam",
-      "category": "Histoire, religion et sources anciennes",
+      "category": "Histoire / Géo",
       "description": "État actuel des connaissances sur le monde musulman pour les islamologues, historiens, géographes et sociologues",
       "url": "https://bnf.idm.oclc.org/login?url=https://referenceworks.brillonline.com/cluster/Encyclopaedia%20of%20Islam",
       "remote": true,
@@ -4139,7 +4138,7 @@
     {
       "id": "eni-bibliotheque-numerique",
       "name": "ENI - Bibliothèque Numérique",
-      "category": "Sciences, santé et techniques",
+      "category": "Sciences / Santé",
       "description": "Livres, exercices et formations en français sur l’informatique, les logiciels et leurs usages professionnels",
       "url": "https://bnf.idm.oclc.org/login?url=http://www.eni-training.com/cs/bnf",
       "remote": true,
@@ -4180,7 +4179,7 @@
     {
       "id": "eric",
       "name": "Eric",
-      "category": "Sciences humaines et sociales",
+      "category": "Sciences Humaines / Sociales",
       "description": "Base de données bibliographique nord-américaine sur l'Éducation (2 millions de notices et 600 000 liens)r",
       "url": "https://bnf.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?lauthtype=ip,uid&profile=ehost&defaultdb=eric",
       "remote": true,
@@ -4220,7 +4219,7 @@
     {
       "id": "ethnologue-languages-of-the-world",
       "name": "Ethnologue",
-      "category": "Langues et littératures",
+      "category": "Langues / Lettres",
       "description": "Recensement de 7000 langues connues, leurs parentés, leurs locuteurs, zones géographiques ...",
       "url": "https://www.ethnologue.com/",
       "remote": false,
@@ -4262,7 +4261,7 @@
     {
       "id": "eudml",
       "name": "European Digital Mathematics Library",
-      "category": "Sciences, santé et techniques",
+      "category": "Sciences / Santé",
       "description": "EuDML - Bibliothèque numérique mathématique européenne en libre accès",
       "url": "https://eudml.org/",
       "remote": true,
@@ -4300,7 +4299,7 @@
     {
       "id": "euromonitor-s-global-market-information-database",
       "name": "Euromonitor",
-      "category": "Droit, économie et entreprise",
+      "category": "Droit / Économie",
       "description": "Données et analyses internationales sur la consommation, les différents secteurs économiques et marchés",
       "url": "https://www.portal.euromonitor.com",
       "remote": false,
@@ -4343,7 +4342,7 @@
     {
       "id": "europa-world-of-learning",
       "name": "Europa World of Learning",
-      "category": "Catalogues et annuaires",
+      "category": "Catalogues / Annuaires",
       "description": "Annuaire de 30 000 universités, collèges, écoles d'art et de musique, bibliothèques ... avec leurs informations et membres",
       "url": "https://bnf.idm.oclc.org/login?url=http://www.worldoflearning.com",
       "remote": true,
@@ -4385,7 +4384,7 @@
     {
       "id": "factiva",
       "name": "Factiva",
-      "category": "Presse et médias",
+      "category": "Presse",
       "description": "Presse internationale en texte intégral (des milliers de titres)",
       "url": "https://global.factiva.com/en/sess/login.asp?xsid=S00YcvcZWva5DEs5DEqNDYmMp6pNT3yMHn0YqYvMq382rbRQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQQAA",
       "remote": false,
@@ -4422,7 +4421,7 @@
     {
       "id": "food-science-and-technology-abstracts-fsta",
       "name": "Food Science and Technology Abstracts",
-      "category": "Sciences, santé et techniques",
+      "category": "Sciences / Santé",
       "description": "FSTA - Bibliographie internationale en agro-alimentaire, agro-industrie et nutrition",
       "url": "https://stneasy.fiz-karlsruhe.de/intranet",
       "remote": false,
@@ -4462,7 +4461,7 @@
     {
       "id": "francis",
       "name": "Francis",
-      "category": "Sciences humaines et sociales",
+      "category": "Sciences Humaines / Sociales",
       "description": "Bibliographies multilingues en sciences humaines, sociales et économiques",
       "url": "http://pascal-francis.inist.fr",
       "remote": true,
@@ -4504,7 +4503,7 @@
     {
       "id": "frantext",
       "name": "Frantext",
-      "category": "Langues et littératures",
+      "category": "Langues / Lettres",
       "description": "Corpus de textes intégraux français, surtout littéraires, du XVIe au XXe siècle",
       "url": "https://bnf.idm.oclc.org/login?url=http://www.frantext.fr",
       "remote": true,
@@ -4544,7 +4543,7 @@
     {
       "id": "gale-general-research",
       "name": "Gale - General Research",
-      "category": "Ressources pluridisciplinaires",
+      "category": "Pluridisciplinaires",
       "description": "Articles de périodiques (généraux et universitaires) et ouvrages nord-américains et internationaux",
       "url": "https://bnf.idm.oclc.org/login?url=https://link.gale.com/apps/GPS?u=natfra",
       "remote": true,
@@ -4586,7 +4585,7 @@
     {
       "id": "gale-literature",
       "name": "Gale - Literature",
-      "category": "Langues et littératures",
+      "category": "Langues / Lettres",
       "description": "Base de données et collections littéraires anglophones de Gale avec notices biographiques, œuvres et critiques",
       "url": "https://bnf.idm.oclc.org/login?url=https://link.gale.com/apps/GLS?u=natfra",
       "remote": true,
@@ -4627,7 +4626,7 @@
     {
       "id": "gale-primary-sources",
       "name": "Gale - Primary Sources",
-      "category": "Histoire, religion et sources anciennes",
+      "category": "Histoire / Géo",
       "description": "Documents historiques internationnaux numérisés, issus des collections Gale",
       "url": "https://bnf.idm.oclc.org/login?url=https://link.gale.com/apps/GDSC?u=natfra",
       "remote": true,
@@ -4669,7 +4668,7 @@
     {
       "id": "gale-reference-complete",
       "name": "Gale - Reference Complete",
-      "category": "Ressources pluridisciplinaires",
+      "category": "Pluridisciplinaires",
       "description": "Accès complet aux collections Gale (presse, articles de recherches, notices littéraires et archives historique)",
       "url": "https://bnf.idm.oclc.org/login?url=https://link.gale.com/apps/menu/grc?u=natfra",
       "remote": true,
@@ -4711,7 +4710,7 @@
     {
       "id": "gazettes-europeennes-du-18e-siecle",
       "name": "Gazettes Européennes du XVIIIe",
-      "category": "Presse et médias",
+      "category": "Presse",
       "description": "Presse européenne francophone du XVIIIe siècle",
       "url": "http://www.gazettes18e.fr/",
       "remote": true,
@@ -4754,7 +4753,7 @@
     {
       "id": "gbv-ikar-landkartendrucke-vor-1850",
       "name": "GBV - IKAR",
-      "category": "Cartes et géographie",
+      "category": "Histoire / Géo",
       "description": "Catalogue de globes, cartes et atlas (d'avant 1850)",
       "url": "https://ikar.k10plus.de/",
       "remote": true,
@@ -4762,10 +4761,12 @@
         "public"
       ],
       "tags": [
-        "1850",
-        "art et images",
         "ikar",
-        "landkartendrucke"
+        "cartes",
+        "atlas",
+        "globes",
+        "géographie",
+        "cartes anciennes"
       ],
       "notes": "",
       "default_favorite": false,
@@ -4794,7 +4795,7 @@
     {
       "id": "generalis",
       "name": "IndexPresse - Généralis",
-      "category": "Presse et médias",
+      "category": "Presse",
       "description": "Index d’articles de presse française généraliste et spécialisée",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.indexpresse-generalis.fr/node/133",
       "remote": true,
@@ -4834,7 +4835,7 @@
     {
       "id": "global-books-in-print",
       "name": "Global Books in Print",
-      "category": "Catalogues et annuaires",
+      "category": "Catalogues / Annuaires",
       "description": "Base professionnelle des livres parus et à paraître dans les principaux pays anglophones",
       "url": "http://www.booksinprint.com/Home/Index",
       "remote": false,
@@ -4876,7 +4877,7 @@
     {
       "id": "grand-corpus-des-dictionnaires-du-9e-au-20e-siecle",
       "name": "Grand Corpus des Dictionnaires",
-      "category": "Langues et littératures",
+      "category": "Langues / Lettres",
       "description": "Corpus historique d'anciens dictionnaires français, du IXe au XXe siècle",
       "url": "https://bnf.idm.oclc.org/login?url=https://bnf.idm.oclc.org/login?url=https://www.classiques-garnier.com/numerique-bases/index.php?module=App&action=FrameMain&colname=ColCorpusDictionnaires",
       "remote": true,
@@ -4919,7 +4920,7 @@
     {
       "id": "grand-corpus-des-grammaires-francaises-des-remarques-et-des-traites-sur-la-langue-xive-xviie-siecles",
       "name": "Grand Corpus des Grammaires",
-      "category": "Langues et littératures",
+      "category": "Langues / Lettres",
       "description": "Corpus historiques de grammaires et traités français, du XIVe au XVIIe siècle",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.classiques-garnier.com/numerique-bases/index.php?module=App&action=FrameMain&colname=ColGrammaires",
       "remote": true,
@@ -4962,7 +4963,7 @@
     {
       "id": "grand-corpus-des-litteratures-francaises-et-francophones-du-moyen-age-au-20e-siecle",
       "name": "Grand Corpus des Littératures Francophones",
-      "category": "Langues et littératures",
+      "category": "Langues / Lettres",
       "description": "Corpus littéraire français et francophones du Moyen Âge au XXe siècle",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.classiques-garnier.com/numerique-bases/index.php?module=App&action=FrameMain&colname=ColCorpusLitteraire",
       "remote": true,
@@ -5005,7 +5006,7 @@
     {
       "id": "grand-ricci-online",
       "name": "Grand Ricci Online",
-      "category": "Dictionnaires et encyclopédies",
+      "category": "Dicos / Encyclopédies",
       "description": "Dictionnaire encyclopédique de la langue chinoise (mandarin classique, littéraire, ancien et moderne)",
       "url": "https://bnf.idm.oclc.org/login?url=http://chinesereferenceshelf.brillonline.com/grand-ricci/",
       "remote": true,
@@ -5047,7 +5048,7 @@
     {
       "id": "greenfile",
       "name": "Greenfile",
-      "category": "Sciences, santé et techniques",
+      "category": "Sciences / Santé",
       "description": "Bibliographie sur l’environnement, l’écologie et le développement durable",
       "url": "https://bnf.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=ehost&defaultdb=8gh",
       "remote": true,
@@ -5083,7 +5084,7 @@
     {
       "id": "hansard",
       "name": "Hansard",
-      "category": "Histoire, religion et sources anciennes",
+      "category": "Histoire / Géo",
       "description": "Archives des débats parlementaires britanniques",
       "url": "http://www.parliament.uk/business/publications/hansard/",
       "remote": true,
@@ -5121,7 +5122,7 @@
     {
       "id": "helveticat",
       "name": "Helveticat",
-      "category": "Catalogues et annuaires",
+      "category": "Catalogues / Annuaires",
       "description": "Catalogue des documents de la Bibliothèque Nationale Suisse",
       "url": "http://helveticat.nb.admin.ch/livresuisse",
       "remote": true,
@@ -5159,7 +5160,7 @@
     {
       "id": "heritage-printed-book",
       "name": "Heritage Printed Book",
-      "category": "Catalogues et annuaires",
+      "category": "Catalogues / Annuaires",
       "description": "Catalogue de livres anciens imprimés en Europe entre 1455 et 1830",
       "url": "https://bnf.idm.oclc.org/login?url=http://hpb.cerl.org",
       "remote": true,
@@ -5201,7 +5202,7 @@
     {
       "id": "hispanic-american-periodicals-index",
       "name": "Hispanic American Periodicals Index",
-      "category": "Sciences humaines et sociales",
+      "category": "Sciences Humaines / Sociales",
       "description": "Base bibliographique d’articles sur l’Amérique latine, les Caraïbes et les populations hispaniques",
       "url": "http://hapi.ucla.edu",
       "remote": false,
@@ -5245,7 +5246,7 @@
     {
       "id": "hoovers",
       "name": "Hoovers",
-      "category": "Droit, économie et entreprise",
+      "category": "Droit / Économie",
       "description": "Base de données B2B internationnale proposant des informations économiques et financières sur les entreprises",
       "url": "https://signon.onesource.com/?LogonUserID=RollingUserID",
       "remote": false,
@@ -5282,7 +5283,7 @@
     {
       "id": "ijbox",
       "name": "IJbox",
-      "category": "Droit, économie et entreprise",
+      "category": "Droit / Économie",
       "description": "Base juridique spécialisée en droit administratif et jurisprudence",
       "url": "https://www.ijbox.fr/cas/login?byIP=true&service=https://www.ijbox.fr/casservice?destination=/user/login?destination=/accueil",
       "remote": false,
@@ -5322,7 +5323,7 @@
     {
       "id": "in-principio",
       "name": "In Principio",
-      "category": "Langues et littératures",
+      "category": "Langues / Lettres",
       "description": "Recueil d'incipit de textes latins, de l'âge pré-classique à la Renaissance",
       "url": "https://bnf.idm.oclc.org/login?url=http://www.brepolis.net/",
       "remote": true,
@@ -5362,7 +5363,7 @@
     {
       "id": "index-islamicus",
       "name": "Index Islamicus",
-      "category": "Histoire, religion et sources anciennes",
+      "category": "Histoire / Géo",
       "description": "Bibliographie sur l’islam et les mondes musulmans",
       "url": "https://bnf.idm.oclc.org/login?url=http://bibliographies.brillonline.com/browse/index-islamicus",
       "remote": true,
@@ -5390,7 +5391,7 @@
     {
       "id": "index-of-medieval-art",
       "name": "Index of medieval art",
-      "category": "Arts, images et patrimoine",
+      "category": "Arts / Images",
       "description": "Base d’iconographie sur l’art médiéval (fiches d’œuvres d’art détaillées, avec bibliographies et images)",
       "url": "https://theindex.princeton.edu/",
       "remote": true,
@@ -5429,7 +5430,7 @@
     {
       "id": "index-religiosus",
       "name": "Index Religiosus",
-      "category": "Histoire, religion et sources anciennes",
+      "category": "Histoire / Géo",
       "description": "Bibliographie internationale en théologie, études religieuses et histoire de l’église",
       "url": "https://bnf.idm.oclc.org/login?url=http://www.brepolis.net/",
       "remote": true,
@@ -5470,7 +5471,7 @@
     {
       "id": "index-translationum",
       "name": "Index translationum",
-      "category": "Langues et littératures",
+      "category": "Langues / Lettres",
       "description": "Bibliographie internationale de traductions",
       "url": "https://unesdoc.unesco.org/search/3eab78d9-a2cb-430e-af39-ff742b1131f4",
       "remote": true,
@@ -5509,7 +5510,7 @@
     {
       "id": "inspec",
       "name": "INSPEC",
-      "category": "Sciences, santé et techniques",
+      "category": "Sciences / Santé",
       "description": "Bibliographies en physique, électronique, informatique et sciences de l’ingénieur",
       "url": "https://stneasy.fiz-karlsruhe.de/intranet",
       "remote": false,
@@ -5546,7 +5547,7 @@
     {
       "id": "intelex-pastmasters",
       "name": "Intelex Pastmasters",
-      "category": "Histoire, religion et sources anciennes",
+      "category": "Histoire / Géo",
       "description": "Œuvres complètes en sciences humaines et philosophie de grands auteurs",
       "url": "http://pm.nlx.com",
       "remote": false,
@@ -5584,7 +5585,7 @@
     {
       "id": "international-directory-of-company-histories",
       "name": "International Directory of Company Histories",
-      "category": "Droit, économie et entreprise",
+      "category": "Droit / Économie",
       "description": "Encyclopédie en ligne couvrant l'histoire de plus de 8 500 sociétés du monde entier",
       "url": "https://bnf.idm.oclc.org/login?url=http://go.galegroup.com/ps/aboutSeries.do?userGroupName=natfra&inPS=true&prodId=GVRL&seriesId=0IAD",
       "remote": true,
@@ -5627,7 +5628,7 @@
     {
       "id": "international-directory-of-medievalists",
       "name": "International Directory of Medievalists",
-      "category": "Catalogues et annuaires",
+      "category": "Catalogues / Annuaires",
       "description": "Annuaire de médiévistes de plus de 70 pays avec leurs spécialités",
       "url": "https://bnf.idm.oclc.org/login?url=http://www.brepolis.net",
       "remote": true,
@@ -5668,7 +5669,7 @@
     {
       "id": "international-medieval-bibliography",
       "name": "International Medieval Bibliography",
-      "category": "Histoire, religion et sources anciennes",
+      "category": "Histoire / Géo",
       "description": "Bibliographie de référence sur le Moyen Âge européen",
       "icon_url": "./logos/imb.svg",
       "icon_alt": "Logo IMB",
@@ -5710,7 +5711,7 @@
     {
       "id": "issn",
       "name": "ISSN",
-      "category": "Catalogues et annuaires",
+      "category": "Catalogues / Annuaires",
       "description": "Répertoire international des publications et périodiques possédant un ISSN",
       "url": "https://portal.issn.org/login",
       "remote": false,
@@ -5750,7 +5751,7 @@
     {
       "id": "jstor",
       "name": "JSTOR",
-      "category": "Ressources pluridisciplinaires",
+      "category": "Pluridisciplinaires",
       "description": "12 millions d'articles et ouvrages, surtout en sciences humaines et sociales, mais aussi en histoire, arts, littérature, droit ...",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.jstor.org/",
       "remote": true,
@@ -5790,7 +5791,7 @@
     {
       "id": "klapp-online",
       "name": "Klapp-online",
-      "category": "Catalogues et annuaires",
+      "category": "Catalogues / Annuaires",
       "description": "Bibliographie d’histoire littéraire française, du Moyen Âge à nos jours",
       "url": "http://klapp-online.de",
       "remote": false,
@@ -5831,7 +5832,7 @@
     {
       "id": "kompass",
       "name": "Kompass",
-      "category": "Droit, économie et entreprise",
+      "category": "Droit / Économie",
       "description": "Annuaire mondial de 60 millions d'entreprises",
       "url": "http://fr.kompass.com/ebol/ip",
       "remote": false,
@@ -5868,7 +5869,7 @@
     {
       "id": "kurschners-deutscher-gelehrten-kalender",
       "name": "Kürschners Deutscher Gelehrten-Kalender",
-      "category": "Catalogues et annuaires",
+      "category": "Catalogues / Annuaires",
       "description": "Annuaire bio-bibliographique des chercheurs en poste dans les universités des pays germanophones",
       "url": "https://bnf.idm.oclc.org/login?url=https://www-degruyter-com.bnf.idm.oclc.org/database/KDGO/html",
       "remote": true,
@@ -5911,7 +5912,7 @@
     {
       "id": "lamyline",
       "name": "Lamyline",
-      "category": "Droit, économie et entreprise",
+      "category": "Droit / Économie",
       "description": " Bases juridiques Lamy sur le droit français et communautaire (affaires, banques, assurances, associations ...)",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.lamyline.fr/Content/Search.aspx?DATA=t3xYZGJ3rprbmIABJzwNyn",
       "remote": true,
@@ -5953,7 +5954,7 @@
     {
       "id": "lexbase",
       "name": "Lexbase",
-      "category": "Droit, économie et entreprise",
+      "category": "Droit / Économie",
       "description": "Base de données en droit français et communautaire, pour les affaires",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.lexbase.fr",
       "remote": true,
@@ -5995,7 +5996,7 @@
     {
       "id": "lexis-360",
       "name": "Lexis 360",
-      "category": "Droit, économie et entreprise",
+      "category": "Droit / Économie",
       "description": "Base juridique française : encyclopédies, jurisprudence, doctrine et actualités",
       "url": "https://www.lexis360intelligence.fr/home",
       "remote": false,
@@ -6032,7 +6033,7 @@
     {
       "id": "lextenso",
       "name": "Lextenso",
-      "category": "Droit, économie et entreprise",
+      "category": "Droit / Économie",
       "description": "Revues juridiques françaises en texte intégral et actualités doctrinales",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.labase-lextenso.fr/",
       "remote": false,
@@ -6069,7 +6070,7 @@
     {
       "id": "library-of-congress-online-catalog",
       "name": "Library of Congress Online Catalog",
-      "category": "Catalogues et annuaires",
+      "category": "Catalogues / Annuaires",
       "description": "Catalogue en ligne de la Bibliothèque du Congrès (en Anglais)",
       "url": "http://catalog.loc.gov",
       "remote": true,
@@ -6110,7 +6111,7 @@
     {
       "id": "library-of-latin-texts",
       "name": "Library of Latin Texts",
-      "category": "Langues et littératures",
+      "category": "Langues / Lettres",
       "description": "Corpus de textes latins de l’Antiquité au XXe siècle",
       "url": "https://bnf.idm.oclc.org/login?url=http://www.brepolis.net/",
       "remote": true,
@@ -6152,7 +6153,7 @@
     {
       "id": "library-information-science-technology-abstracts",
       "name": "Library, Information Science & Technology Abstracts",
-      "category": "Sciences humaines et sociales",
+      "category": "Sciences Humaines / Sociales",
       "description": "Bibliographie en sciences de l’information, bibliothéconomie et technologies documentaires",
       "url": "http://www.libraryresearch.com",
       "remote": true,
@@ -6193,7 +6194,7 @@
     {
       "id": "lisa-library-and-information-science-abstracts",
       "name": "Library and Information Science Abstracts",
-      "category": "Sciences humaines et sociales",
+      "category": "Sciences Humaines / Sociales",
       "description": "LISA - Bibliographie internationale en sciences de l'information et bibliothéconomie",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.proquest.com/lisa/socialsciences/fromDatabasesLayer?accountid=170408",
       "remote": true,
@@ -6239,7 +6240,7 @@
     {
       "id": "littre",
       "name": "Littré",
-      "category": "Dictionnaires et encyclopédies",
+      "category": "Dicos / Encyclopédies",
       "description": "Dictionnaire de la langue française d’Émile Littré (1873)",
       "url": "http://www.littre.org",
       "remote": true,
@@ -6280,7 +6281,7 @@
     {
       "id": "loeb-classical-library",
       "name": "Loeb Classical Library",
-      "category": "Langues et littératures",
+      "category": "Langues / Lettres",
       "description": "Textes grecs et latins classiques avec traductions anglaises",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.loebclassics.com/",
       "remote": true,
@@ -6322,7 +6323,7 @@
     {
       "id": "mapping-the-world-maps-and-travel-literature",
       "name": "Mapping the World",
-      "category": "Cartes et géographie",
+      "category": "Histoire / Géo",
       "description": "Archives cartographiques et récits de voyage du XIXe siècle",
       "url": "https://bnf.idm.oclc.org/login?url=https://go.gale.com/ps/dispBasicSearch.do?userGroupName=natfra&prodId=NCCO",
       "remote": true,
@@ -6332,10 +6333,10 @@
       ],
       "tags": [
         "mapping",
-        "maps",
-        "sciences humaines",
-        "travel",
-        "world"
+        "cartes",
+        "géographie",
+        "récits de voyage",
+        "travel literature"
       ],
       "notes": "",
       "default_favorite": false,
@@ -6365,7 +6366,7 @@
     {
       "id": "mascarille",
       "name": "Mascarille",
-      "category": "Musique, cinéma et spectacle",
+      "category": "Musique / Cinéma / Spectacle",
       "description": "Bibliographie sur le théâtre français, recensant œuvres, auteurs et ouvrages consacrés à la discipline",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.mascarille.fr",
       "remote": true,
@@ -6405,7 +6406,7 @@
     {
       "id": "middle-english-compendium",
       "name": "Middle English Compendium",
-      "category": "Dictionnaires et encyclopédies",
+      "category": "Dicos / Encyclopédies",
       "description": "Dictionnaire, bibliographie et corpus de l'anglais médiéval",
       "url": "http://ets.umdl.umich.edu/m/mec/",
       "remote": true,
@@ -6445,7 +6446,7 @@
     {
       "id": "mla-international-bibliography",
       "name": "MLA International Bibliography",
-      "category": "Langues et littératures",
+      "category": "Langues / Lettres",
       "description": "Bibliographies critiques sur les langues modernes, la linguistique, la littérature et le folklore",
       "url": "https://bnf.idm.oclc.org/login?url=https://search.ebscohost.com/login.aspx?profile=ehost&defaultdb=mzh&authtype=ip&custid=s1149613",
       "remote": true,
@@ -6486,7 +6487,7 @@
     {
       "id": "monumenta-germaniae-historica-emgh",
       "name": "Monumenta Germaniae Historica",
-      "category": "Histoire, religion et sources anciennes",
+      "category": "Histoire / Géo",
       "description": "eMGH - Publication critique de textes médiévaux sur l'histoire allemande et l'empire carolingien",
       "url": "https://bnf.idm.oclc.org/login?url=http://www.brepolis.net",
       "remote": true,
@@ -6529,7 +6530,7 @@
     {
       "id": "motif-index-of-folk-literature",
       "name": "Motif-Index of Folk-Literature",
-      "category": "Langues et littératures",
+      "category": "Langues / Lettres",
       "description": "Classification systématique des motifs de la littérature traditionnelle (contes, mythes, fables, littérature médiévale ...)",
       "url": "http://pm.nlx.com/xtf/view?docId=motif/motif.00.xml;chunk.id=div.motif.pmpreface.1;toc.depth=2;toc.id=div.motif.pmpreface.1;hit.rank=0;brand=default",
       "remote": false,
@@ -6569,7 +6570,7 @@
     {
       "id": "music-periodicals-database",
       "name": "Music Periodicals Database",
-      "category": "Musique, cinéma et spectacle",
+      "category": "Musique / Cinéma / Spectacle",
       "description": "Bibliographie internationale sur la musique (140 revues en texte intégral)",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.proquest.com/iimpft/arts/fromDatabasesLayer?accountid=170408",
       "remote": true,
@@ -6614,7 +6615,7 @@
     {
       "id": "musik-in-geschichte-und-gegenwart-mgg",
       "name": "Musik in Geschichte und Gegenwart",
-      "category": "Musique, cinéma et spectacle",
+      "category": "Musique / Cinéma / Spectacle",
       "description": "MGG - Encyclopédie de la musique (en allemand, avec traduction automatique)",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.mgg-online.com",
       "remote": true,
@@ -6659,7 +6660,7 @@
     {
       "id": "naima",
       "name": "Naïma",
-      "category": "Arts, images et patrimoine",
+      "category": "Arts / Images",
       "description": "Accès au catalogue de l'Éditeur d'Art Naïma (ouvrages, vidéos et podcasts)",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.naimaunlimited.com/",
       "remote": true,
@@ -6702,7 +6703,7 @@
     {
       "id": "navis",
       "name": "Navis",
-      "category": "Droit, économie et entreprise",
+      "category": "Droit / Économie",
       "description": "Documentation fiscale et patrimoniale des éditions Francis Lefebvre",
       "url": "https://bnf.idm.oclc.org/login?url=http://abonnes.efl.fr",
       "remote": true,
@@ -6741,7 +6742,7 @@
     {
       "id": "naxos-music-library",
       "name": "Naxos Music Library",
-      "category": "Musique, cinéma et spectacle",
+      "category": "Musique / Cinéma / Spectacle",
       "description": "Service de streaming musical du label Naxos (classique, jazz et musique du monde)",
       "url": "https://bnf.idm.oclc.org/login?url=https://bnf.naxosmusiclibrary.com",
       "remote": true,
@@ -6783,7 +6784,7 @@
     {
       "id": "new-pauly",
       "name": "New Pauly",
-      "category": "Histoire, religion et sources anciennes",
+      "category": "Histoire / Géo",
       "description": "Encyclopédie sur l’Antiquité gréco-romaine : histoire, littérature, mythologie, religion, philosophie et réception de l’Antiquité",
       "url": "https://bnf.idm.oclc.org/login?url=https://referenceworks.brill.com/display/db/npoe",
       "remote": true,
@@ -6826,7 +6827,7 @@
     {
       "id": "oecd-ilibrary",
       "name": "OECD iLibrary",
-      "category": "Droit, économie et entreprise",
+      "category": "Droit / Économie",
       "description": "Documents publiés par l'OCDE (Organisation de Coopération et de Développement Économiques)",
       "url": "http://www.oecd-ilibrary.org/fr",
       "remote": false,
@@ -6864,7 +6865,7 @@
     {
       "id": "online-egyptological-bibliography",
       "name": "Online Egyptological Bibliography",
-      "category": "Histoire, religion et sources anciennes",
+      "category": "Histoire / Géo",
       "description": "Bibliographie en égyptologie",
       "url": "http://oeb.griffith.ox.ac.uk/",
       "remote": false,
@@ -6903,7 +6904,7 @@
     {
       "id": "openedition-books",
       "name": "OpenEdition Books",
-      "category": "Ressources pluridisciplinaires",
+      "category": "Pluridisciplinaires",
       "description": "Livres numériques des éditions de la Bibliothèque Nationale de France",
       "url": "https://bnf.idm.oclc.org/login?url=http://books.openedition.org/editionsbnf/",
       "remote": true,
@@ -6947,7 +6948,7 @@
     {
       "id": "oxford-art-online",
       "name": "Oxford Art Online",
-      "category": "Arts, images et patrimoine",
+      "category": "Arts / Images",
       "description": "Encyclopédie de référence sur l’art : artistes, œuvres, mouvements, techniques et histoire, avec bibliographies et illustrations",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.oxfordartonline.com",
       "remote": true,
@@ -6988,7 +6989,7 @@
     {
       "id": "oxford-dictionary-of-national-biography",
       "name": "Oxford Dictionary of National Biography",
-      "category": "Dictionnaires et encyclopédies",
+      "category": "Dicos / Encyclopédies",
       "description": "Notices biographiques de personnalités britanniques ou liées au Royaume-Uni",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.oxforddnb.com/",
       "remote": true,
@@ -7034,7 +7035,7 @@
     {
       "id": "oxford-english-dictionary",
       "name": "Oxford English Dictionary",
-      "category": "Dictionnaires et encyclopédies",
+      "category": "Dicos / Encyclopédies",
       "description": "Dictionnaire de référence de l'anglais britannique",
       "url": "https://bnf.idm.oclc.org/login?url=https://oed.com",
       "remote": true,
@@ -7079,7 +7080,7 @@
     {
       "id": "oxford-music-online",
       "name": "Oxford Music Online",
-      "category": "Musique, cinéma et spectacle",
+      "category": "Musique / Cinéma / Spectacle",
       "description": "Dictionnaire encyclopédique sur la musique mondiale (en anglais)",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.oxfordmusiconline.com",
       "remote": true,
@@ -7121,7 +7122,7 @@
     {
       "id": "oxford-reference",
       "name": "Oxford Reference",
-      "category": "Dictionnaires et encyclopédies",
+      "category": "Dicos / Encyclopédies",
       "description": "Collection d’encyclopédies et dictionnaires Oxford couvrant : sciences, arts, droit, langues ... (en anglais)",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.oxfordreference.com/",
       "remote": true,
@@ -7162,7 +7163,7 @@
     {
       "id": "pascal",
       "name": "Pascal",
-      "category": "Sciences, santé et techniques",
+      "category": "Sciences / Santé",
       "description": "Références bibliographiques internationales en sciences, technologie et médecine",
       "url": "http://pascal-francis.inist.fr",
       "remote": true,
@@ -7204,7 +7205,7 @@
     {
       "id": "patrologia-latina-database",
       "name": "Patrologia Latina Database",
-      "category": "Langues et littératures",
+      "category": "Langues / Lettres",
       "description": "Corpus latin des pères de l’Église et auteurs ecclésiastiques",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.proquest.com/patrologialatina",
       "remote": true,
@@ -7246,7 +7247,7 @@
     {
       "id": "performing-arts-periodicals-database",
       "name": "Performing Arts Periodicals Database",
-      "category": "Musique, cinéma et spectacle",
+      "category": "Musique / Cinéma / Spectacle",
       "description": "Bibliographie de périodiques internationaux sur les arts du spectacle",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.proquest.com/iipaft/arts/fromDatabasesLayer?accountid=170408",
       "remote": true,
@@ -7292,7 +7293,7 @@
     {
       "id": "periodicals-archive-online",
       "name": "ProQuest - Periodicals Archive Online",
-      "category": "Sciences humaines et sociales",
+      "category": "Sciences Humaines / Sociales",
       "description": "Archives de 750 périodiques en sciences humaines et sociales",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.proquest.com/pao/socialsciences/fromDatabasesLayer?accountid=170408",
       "remote": true,
@@ -7337,7 +7338,7 @@
     {
       "id": "peter-lang-livres-numeriques",
       "name": "Peter Lang",
-      "category": "Sciences humaines et sociales",
+      "category": "Sciences Humaines / Sociales",
       "description": "Livres des éditions universitaires Peter Lang en sciences humaines et sociales",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.peterlang.com/browse?access=user&level=parent&pageSize=10&sort=datedescending",
       "remote": true,
@@ -7383,7 +7384,7 @@
     {
       "id": "philosopher-s-index",
       "name": "Philosopher's Index",
-      "category": "Sciences humaines et sociales",
+      "category": "Sciences Humaines / Sociales",
       "description": "Bibliographie d'articles et de livres occidentaux sur la philosophie et ses domaines connexes",
       "url": "https://bnf.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=ehost&defaultdb=phl",
       "remote": true,
@@ -7424,7 +7425,7 @@
     {
       "id": "photography-the-world-through-the-lens",
       "name": "Photography - The World through the Lens",
-      "category": "Arts, images et patrimoine",
+      "category": "Arts / Images",
       "description": "Archives photographiques et documents visuels du XIXe siècle",
       "url": "https://bnf.idm.oclc.org/login?url=https://go.gale.com/ps/dispBasicSearch.do?userGroupName=natfra&prodId=NCCO",
       "remote": true,
@@ -7467,7 +7468,7 @@
     {
       "id": "portail-suisse-des-periodiques-psp",
       "name": "Portail suisse des périodiques",
-      "category": "Catalogues et annuaires",
+      "category": "Catalogues / Annuaires",
       "description": "PSP - Catalogue des périodiques conservés dans les bibliothèques suisses",
       "url": "http://ead.nb.admin.ch/web/swiss-serials/psp_fr.html",
       "remote": true,
@@ -7507,7 +7508,7 @@
     {
       "id": "proquest-dissertations-theses",
       "name": "ProQuest - Dissertations & theses",
-      "category": "Ressources pluridisciplinaires",
+      "category": "Pluridisciplinaires",
       "description": "Base de données de thèses et dissertations internationnales",
       "url": "https://www.proquest.com/pqdtglobal/dissertations/fromDatabasesLayer?accountid=9641",
       "remote": false,
@@ -7549,7 +7550,7 @@
     {
       "id": "proquest-one-literature",
       "name": "ProQuest - Literature",
-      "category": "Langues et littératures",
+      "category": "Langues / Lettres",
       "description": "Base de données sur les littératures anglophones et mondiales",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.proquest.com/pq1lit/literature/fromDatabasesLayer?accountid=170408",
       "remote": true,
@@ -7593,7 +7594,7 @@
     {
       "id": "pbsc",
       "name": "Psychology and Behavioral Sciences Collection",
-      "category": "Sciences humaines et sociales",
+      "category": "Sciences Humaines / Sociales",
       "description": "PBSC - Base de données académiques d'articles en psychologie, notamment en lien avec les enfants et adolescents (300 revues)",
       "url": "https://bnf.idm.oclc.org/login?url=https://research.ebsco.com/c/oiipx6?db=pbh",
       "remote": true,
@@ -7617,7 +7618,7 @@
     {
       "id": "psy-src",
       "name": "Psychology Source",
-      "category": "Sciences humaines et sociales",
+      "category": "Sciences Humaines / Sociales",
       "description": "Base de données académiques d'articles en psychologie (1500 revues)",
       "url": "https://bnf.idm.oclc.org/login?url=https://research.ebsco.com/c/oiipx6?db=psy",
       "remote": true,
@@ -7641,7 +7642,7 @@
     {
       "id": "psycinfo-1887",
       "name": "PsycINFO",
-      "category": "Sciences humaines et sociales",
+      "category": "Sciences Humaines / Sociales",
       "description": "Références bibliographiques en psychologie et psychiatrie",
       "url": "https://bnf.idm.oclc.org/login?url=https://search.ebscohost.com/login.aspx?profile=ehost&groupid=main&defaultdb=psyh&authtype=ip,uid&custid=s1149613",
       "remote": true,
@@ -7682,7 +7683,7 @@
     {
       "id": "rambi-the-index-of-articles-on-jewish-studies",
       "name": "RAMBI",
-      "category": "Histoire, religion et sources anciennes",
+      "category": "Histoire / Géo",
       "description": "Bibliographie sélective d’articles en études du judaïsme",
       "url": "https://web.nli.org.il/sites/nli/english/infochannels/catalogs/bibliographic-databases/rambi/pages/rambi.aspx",
       "remote": true,
@@ -7722,7 +7723,7 @@
     {
       "id": "reef-classique",
       "name": "Reef Classique",
-      "category": "Sciences, santé et techniques",
+      "category": "Sciences / Santé",
       "description": "Batipédia - Documentation technique du bâtiment, DTU, normes et règles de calcul",
       "url": "http://www.batipedia.com/accueil.html",
       "remote": false,
@@ -7763,7 +7764,7 @@
     {
       "id": "repertoire-bibliographique-de-la-philosophie-international-philosophical-bibliography",
       "name": "Répertoire Bibliographique de la Philosophie",
-      "category": "Sciences humaines et sociales",
+      "category": "Sciences Humaines / Sociales",
       "description": "Bibliographie en philosophie (livres, articles, comptes rendus)",
       "url": "https://bnf.idm.oclc.org/login?url=https://ipb.uclouvain.be",
       "remote": true,
@@ -7809,7 +7810,7 @@
     {
       "id": "openbibart",
       "name": "OpenBibArt",
-      "category": "Arts, images et patrimoine",
+      "category": "Arts / Images",
       "description": "Bibliographie de référence qui donne accès à un siècle de littérature occidentale dans les domaines de l’histoire de l'art et de la recherche archéologique",
       "url": "https://www.openbibart.fr/",
       "remote": true,
@@ -7852,7 +7853,7 @@
     {
       "id": "repertoire-international-de-la-presse-musicale-ripm-1800-1950-full-text",
       "name": "Répertoire international de la presse musicale",
-      "category": "Musique, cinéma et spectacle",
+      "category": "Musique / Cinéma / Spectacle",
       "description": "RIPM - Articles de périodiques musicaux du XIXe et début XXe siècle",
       "url": "https://bnf.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=ehost&defaultdb=rip",
       "remote": true,
@@ -7894,7 +7895,7 @@
     {
       "id": "repertoire-international-des-sources-musicales-rism",
       "name": "Répertoire international des sources musicales",
-      "category": "Musique, cinéma et spectacle",
+      "category": "Musique / Cinéma / Spectacle",
       "description": "RISM - Catalogue international de manuscrits et sources musicales (>1600)",
       "url": "https://rism.info/index.html",
       "remote": true,
@@ -7938,7 +7939,7 @@
     {
       "id": "retronews-un-site-media-pour-explorer-trois-siecles-de-presse",
       "name": "RetroNews",
-      "category": "Presse et médias",
+      "category": "Presse",
       "description": "Archives de presse française de la BnF, enrichies d’articles et dossiers éditoriaux (entre 1631 et 1945)",
       "url": "http://www.retronews.fr/",
       "remote": false,
@@ -7981,7 +7982,7 @@
     {
       "id": "rilm-abstracts-of-music-literature",
       "name": "RILM - Abstracts of Music Literature",
-      "category": "Musique, cinéma et spectacle",
+      "category": "Musique / Cinéma / Spectacle",
       "description": "Références issues du RILM (Répertoire International de la Littérature Musicale)",
       "url": "https://bnf.idm.oclc.org/login?url=https://search.ebscohost.com/login.aspx?authtype=ip,uid&profid=ehost&custid=s1149613&groupid=main&defaultdb=ram",
       "remote": true,
@@ -8024,7 +8025,7 @@
     {
       "id": "romanische-bibliographie-online",
       "name": "Romanische Bibliographie Online",
-      "category": "Langues et littératures",
+      "category": "Langues / Lettres",
       "description": "Bibliographie sur les langues et littératures romanes, hors français",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.degruyter.com/database/rom/html",
       "remote": true,
@@ -8069,7 +8070,7 @@
     {
       "id": "rsc-publishing",
       "name": "RSC Publishing",
-      "category": "Sciences, santé et techniques",
+      "category": "Sciences / Santé",
       "description": "Bibliothèque des périodiques et livres de Chimie de l'éditeur RSC Publishing (Royal Society of Chemistry)",
       "url": "https://bnf.idm.oclc.org/login?url=http://pubs.rsc.org/",
       "remote": true,
@@ -8109,7 +8110,7 @@
     {
       "id": "scholarvox-cyberlibris",
       "name": "Scholarvox (Cyberlibris)",
-      "category": "Ressources pluridisciplinaires",
+      "category": "Pluridisciplinaires",
       "description": "Large bibliothèque de livres multidisciplinaire (et un peu de fiction et de BD) à destination des étudiants et du grand public",
       "url": "https://bnf.idm.oclc.org/login?url=http://univ.scholarvox.com/",
       "remote": true,
@@ -8152,7 +8153,7 @@
     {
       "id": "science-citation-index",
       "name": "Science Citation Index",
-      "category": "Sciences, santé et techniques",
+      "category": "Sciences / Santé",
       "description": "Bibliographie en sciences et techniques (5700 périodiques internationaux)",
       "url": "https://stneasy.fiz-karlsruhe.de/intranet",
       "remote": false,
@@ -8191,7 +8192,7 @@
     {
       "id": "sciencedirect",
       "name": "ScienceDirect",
-      "category": "Sciences, santé et techniques",
+      "category": "Sciences / Santé",
       "description": "Bibliothèque des périodiques et livres de l'éditeur scientifique Elsevier",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.sciencedirect.com",
       "remote": true,
@@ -8230,7 +8231,7 @@
     {
       "id": "sciences-au-fil-du-temps",
       "name": "Sciences au fil du temps",
-      "category": "Sciences, santé et techniques",
+      "category": "Sciences / Santé",
       "description": "Bibliographie sélective de 1500 textes fondateurs de l’histoire des sciences, d’Aristote à l’ADN (1953) (avec accès aux numérisations disponibles)",
       "url": "https://gallica.bnf.fr/selections/fr/html/les-sciences-au-fil-du-temps-bibliographie-de-philippe-zoummeroff",
       "remote": true,
@@ -8272,7 +8273,7 @@
     {
       "id": "sciences-en-ligne-dictionnaire-interactif-des-sciences-et-techniques",
       "name": "Sciences en ligne",
-      "category": "Dictionnaires et encyclopédies",
+      "category": "Dicos / Encyclopédies",
       "description": "Dictionnaire interactif de vulgarisation scientifique et technique",
       "url": "https://bnf.idm.oclc.org/login?url=https://sciences-en-ligne.net/connectors/referer.php",
       "remote": true,
@@ -8299,7 +8300,7 @@
     {
       "id": "scipio-catalogues-de-ventes-d-oeuvres-d-art-et-de-livres-rares",
       "name": "Scipio",
-      "category": "Arts, images et patrimoine",
+      "category": "Arts / Images",
       "description": "Base de données des catalogues de vente d'art et livres rares des principales maisons nord-américaines et européennes",
       "url": "https://bnf.idm.oclc.org/login?url=https://firstsearch.oclc.org/FSIP:language=fr:dbname=SCIPIO",
       "remote": true,
@@ -8342,7 +8343,7 @@
     {
       "id": "socindex-with-full-text",
       "name": "SocIndex",
-      "category": "Sciences humaines et sociales",
+      "category": "Sciences Humaines / Sociales",
       "description": "Articles et références en sociologie, avec de nombreux articles intégraux",
       "url": "https://bnf.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?lauthtype=ip,uid&profile=ehost&defaultdb=sih",
       "remote": true,
@@ -8385,7 +8386,7 @@
     {
       "id": "sociological-abstracts",
       "name": "Sociological Abstracts",
-      "category": "Sciences humaines et sociales",
+      "category": "Sciences Humaines / Sociales",
       "description": "Base de données bibliographiques internationale en sociologie, comprenant aussi l'accès aux articles de 300 revues",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.proquest.com/sociologicalabstracts/socialsciences/fromDatabasesLayer?accountid=170408",
       "remote": true,
@@ -8429,7 +8430,7 @@
     {
       "id": "sociology-database",
       "name": "Sociology Database",
-      "category": "Sciences humaines et sociales",
+      "category": "Sciences Humaines / Sociales",
       "description": "Publications internationales en sociologie et travail social, souvent en texte intégral",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.proquest.com/sociology/socialsciences/fromDatabasesLayer?accountid=170408",
       "remote": true,
@@ -8473,7 +8474,7 @@
     {
       "id": "springerlink",
       "name": "SpringerLink",
-      "category": "Sciences, santé et techniques",
+      "category": "Sciences / Santé",
       "description": "Bibliothèque des périodiques et livres de l'éditeur scientifique Springer",
       "url": "https://bnf.idm.oclc.org/login?url=https://link.springer.com/",
       "remote": true,
@@ -8515,7 +8516,7 @@
     {
       "id": "sudoc",
       "name": "Sudoc",
-      "category": "Catalogues et annuaires",
+      "category": "Catalogues / Annuaires",
       "description": "Catalogue collectif des bibliothèques universitaires françaises",
       "url": "https://www.sudoc.abes.fr/cbs/",
       "remote": true,
@@ -8553,7 +8554,7 @@
     {
       "id": "supplementum-epigraphicum-graecum-online",
       "name": "Supplementum Epigraphicum Graecum Online",
-      "category": "Histoire, religion et sources anciennes",
+      "category": "Histoire / Géo",
       "description": "Corpus et bibliographie des inscriptions grecques publiées",
       "url": "https://bnf.idm.oclc.org/login?url=https://scholarlyeditions.brill.com/sego/search/",
       "remote": true,
@@ -8599,7 +8600,7 @@
     {
       "id": "techniques-de-l-ingenieur",
       "name": "Techniques de l'ingénieur",
-      "category": "Sciences, santé et techniques",
+      "category": "Sciences / Santé",
       "description": "Base documentaire en français couvrant l'ensemble des techniques mises en œuvre dans l'industrie et la recherche",
       "url": "https://bnf.idm.oclc.org/login?url=http://www.techniques-ingenieur.fr",
       "remote": true,
@@ -8643,7 +8644,7 @@
     {
       "id": "thesaurus-linguae-graecae",
       "name": "Thesaurus Linguae Graecae",
-      "category": "Langues et littératures",
+      "category": "Langues / Lettres",
       "description": "Bibliothèque numérique de textes grecs, d’Homère à l’époque moderne",
       "url": "http://stephanus.tlg.uci.edu/",
       "remote": false,
@@ -8685,7 +8686,7 @@
     {
       "id": "thesaurus-linguae-latinae-tll",
       "name": "Thesaurus Linguae Latinae",
-      "category": "Langues et littératures",
+      "category": "Langues / Lettres",
       "description": "TLL - Dictionnaire historique couvrant le latin classique jusqu’à 600",
       "url": "https://bnf.idm.oclc.org/login?url=https://tll.degruyter.com/",
       "remote": true,
@@ -8730,7 +8731,7 @@
     {
       "id": "times-digital-archives-1785-2014",
       "name": "Times Digital Archives",
-      "category": "Presse et médias",
+      "category": "Presse",
       "description": "Archives des articles du Times de 1785 à 2014 (en anglais)",
       "url": "https://bnf.idm.oclc.org/login?url=https://go.gale.com/ps/dispBasicSearch.do?userGroupName=natfra&prodId=TTDA",
       "remote": true,
@@ -8773,7 +8774,7 @@
     {
       "id": "twentieth-century-religious-thought-library-christianity",
       "name": "Twentieth Century Religious Thought Library – Christianity",
-      "category": "Histoire, religion et sources anciennes",
+      "category": "Histoire / Géo",
       "description": "Collection de livres et textes sur la pensée chrétienne du XXᵉ siècle : théologie, philosophie, écrits religieux et œuvres de penseurs majeurs (en anglais)",
       "url": "https://bnf.idm.oclc.org/login?url=https://search.alexanderstreet.com/tcrb",
       "remote": true,
@@ -8819,7 +8820,7 @@
     {
       "id": "ulrich-s",
       "name": "Ulrich's",
-      "category": "Catalogues et annuaires",
+      "category": "Catalogues / Annuaires",
       "description": "Répertoire mondial des périodiques : informations bibliographiques, éditeurs, sujets, statut scientifique et comité de lecture, indexation et disponibilité",
       "url": "http://www.ulrichsweb.com/",
       "remote": false,
@@ -8856,7 +8857,7 @@
     {
       "id": "un-ilibrary-bibliotheque-numerique-des-nations-unies",
       "name": "UN-iLibrary",
-      "category": "Droit, économie et entreprise",
+      "category": "Droit / Économie",
       "description": "Publications, bases de données et journaux des Nations Unies",
       "url": "http://www.un-ilibrary.org/",
       "remote": false,
@@ -8896,7 +8897,7 @@
     {
       "id": "ut-per-litteras-apostolicas",
       "name": "Papal Letters",
-      "category": "Histoire, religion et sources anciennes",
+      "category": "Histoire / Géo",
       "description": "Base de données des lettres pontificales médiévales : regestes et références des actes des papes (ex-Ut per litteras apostolicas)",
       "url": "https://bnf.idm.oclc.org/login?url=http://www.brepolis.net/",
       "remote": true,
@@ -8937,7 +8938,7 @@
     {
       "id": "vidal",
       "name": "Vidal",
-      "category": "Sciences, santé et techniques",
+      "category": "Sciences / Santé",
       "description": "Information officielle, scientifique, législative et tarifaire sur les médicaments et produits de santé",
       "url": "https://evidal.vidal.fr/?token=-NBGGBd6DQPYrLe9eWlNwhhOOM4qNjKryF1JNy37Nwv1gXas2GJwn-V_a5OYoN4-",
       "remote": false,
@@ -8977,7 +8978,7 @@
     {
       "id": "visible-body",
       "name": "Visible Body Suite",
-      "category": "Sciences, santé et techniques",
+      "category": "Sciences / Santé",
       "description": "Base de données visuelle et interactive en anatomie, physiologie et kinésiologie",
       "url": "https://bnf.idm.oclc.org/login?url=https://websuite.visiblebody.com",
       "remote": true,
@@ -9024,7 +9025,7 @@
     {
       "id": "waterloo-directory-of-english-newspapers-and-periodicals-series-2",
       "name": "Waterloo directory of english newspapers and periodicals",
-      "category": "Presse et médias",
+      "category": "Presse",
       "description": "Répertoire des journaux et périodiques britanniques et irlandais du XIXe siècle : notices, contributeurs et éditeurs",
       "url": "http://www.victorianperiodicals.com/series2",
       "remote": false,
@@ -9064,7 +9065,7 @@
     {
       "id": "wiley-digital-archives-british-association-for-the-advancement-of-science-collections-on-the-history-of-science-1830-1970",
       "name": "Wiley Digital Archives",
-      "category": "Histoire, religion et sources anciennes",
+      "category": "Histoire / Géo",
       "description": "Base de données de sources primaires sur l’histoire des sciences britanniques (1830-1970)",
       "url": "https://bnf.idm.oclc.org/login?url=https://app.wileydigitalarchives.com/baas",
       "remote": false,
@@ -9104,7 +9105,7 @@
     {
       "id": "wiley-online-library",
       "name": "Wiley Online Library",
-      "category": "Sciences, santé et techniques",
+      "category": "Sciences / Santé",
       "description": "Bibliothèque des périodiques et livres de l'éditeur scientifique Wiley",
       "url": "https://bnf.idm.oclc.org/login?url=https://onlinelibrary.wiley.com/",
       "remote": true,
@@ -9145,7 +9146,7 @@
     {
       "id": "worldcat",
       "name": "Worldcat",
-      "category": "Catalogues et annuaires",
+      "category": "Catalogues / Annuaires",
       "description": "Catalogue collectif international permettant d’identifier et localiser livres, périodiques, thèses et autres documents dans les collections de milliers de bibliothèques.",
       "url": "https://bnf.idm.oclc.org/login?url=https://firstsearch.oclc.org/FSIP:language=fr:dbname=WorldCat",
       "remote": true,
@@ -9185,7 +9186,7 @@
     {
       "id": "whos-who",
       "name": "World Who's Who",
-      "category": "Catalogues et annuaires",
+      "category": "Catalogues / Annuaires",
       "description": "Répertoire biographique anglophone international de référence de personnalités contemporaines",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.worldwhoswho.com",
       "remote": true,
@@ -9229,7 +9230,7 @@
     {
       "id": "xerfi",
       "name": "Xerfi",
-      "category": "Droit, économie et entreprise",
+      "category": "Droit / Économie",
       "description": "Études de marché et analyses économiques de centaines de secteurs français : tendances, chiffres clés, concurrence, entreprises et prévisions",
       "url": "https://www.xerfiknowledge.com/xerfifrance/loginclient/200493/xerfi/BNF",
       "remote": false,
@@ -9268,7 +9269,7 @@
     {
       "id": "zeitschriften-datenbank",
       "name": "Zeitschriften Datenbank",
-      "category": "Catalogues et annuaires",
+      "category": "Catalogues / Annuaires",
       "description": "Catalogue allemand de périodiques et journaux",
       "url": "https://zdb-katalog.de/index.xhtml",
       "remote": true,

@@ -59,18 +59,17 @@ const accessModeClasses = {
 };
 
 const categoryOrder = [
-  "Presse et médias",
-  "Dictionnaires et encyclopédies",
-  "Catalogues et annuaires",
-  "Ressources pluridisciplinaires",
-  "Langues et littératures",
-  "Histoire, religion et sources anciennes",
-  "Sciences humaines et sociales",
-  "Arts, images et patrimoine",
-  "Musique, cinéma et spectacle",
-  "Cartes et géographie",
-  "Droit, économie et entreprise",
-  "Sciences, santé et techniques",
+  "Presse",
+  "Dicos / Encyclopédies",
+  "Catalogues / Annuaires",
+  "Pluridisciplinaires",
+  "Langues / Lettres",
+  "Histoire / Géo",
+  "Sciences Humaines / Sociales",
+  "Arts / Images",
+  "Musique / Cinéma / Spectacle",
+  "Droit / Économie",
+  "Sciences / Santé",
 ];
 
 async function init() {

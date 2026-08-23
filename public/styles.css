@@ -37,6 +37,10 @@ footer {
   padding: 24px;
 }
 
+main {
+  position: relative;
+}
+
 .topbar {
   display: flex;
   align-items: end;
@@ -879,20 +883,84 @@ h1 {
   text-align: center;
 }
 
-footer {
+.site-footer {
   color: var(--muted);
   font-size: 0.88rem;
+  text-align: center;
+}
+
+.footer-note {
+  margin-bottom: 10px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  justify-content: center;
+  text-align: center;
+}
+
+.footer-links a {
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration-color: rgb(143 36 50 / 0.32);
+  text-underline-offset: 3px;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+  text-decoration-color: currentColor;
+}
+
+.footer-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1;
+}
+
+.footer-brand-logo {
+  width: 30px;
+  height: 30px;
+  flex: 0 0 auto;
+  vertical-align: middle;
+  transform: translateY(-1px);
+}
+
+.legal-placeholder {
+  max-width: 760px;
+}
+
+.legal-placeholder p {
+  color: var(--muted);
+}
+
+.jump-to-search-dock {
+  position: absolute;
+  inset: 0 auto max(18px, env(safe-area-inset-bottom)) 0;
+  z-index: 20;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  pointer-events: none;
 }
 
 .jump-to-search {
-  position: fixed;
-  right: max(18px, env(safe-area-inset-right));
-  bottom: max(18px, env(safe-area-inset-bottom));
-  z-index: 20;
+  position: sticky;
+  top: calc(100vh - 81px - max(18px, env(safe-area-inset-bottom)));
   display: grid;
   place-items: center;
   width: 81px;
   height: 81px;
+  margin-left: auto;
+  margin-right: max(18px, env(safe-area-inset-right));
   border: 3px solid var(--panel);
   border-radius: 50%;
   background: var(--accent);
@@ -901,6 +969,7 @@ footer {
     0 3px 8px rgb(30 35 41 / 0.24),
     0 14px 30px rgb(30 35 41 / 0.18);
   cursor: pointer;
+  pointer-events: auto;
 }
 
 .jump-to-search:hover {
@@ -971,7 +1040,12 @@ footer {
   }
 
   .jump-to-search {
+    top: calc(100vh - 75px - max(18px, env(safe-area-inset-bottom)));
     width: 75px;
     height: 75px;
+  }
+
+  .jump-to-search-dock {
+    width: 100vw;
   }
 }

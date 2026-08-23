@@ -21,6 +21,14 @@
     </header>
 
     <main>
+      <div class="jump-to-search-dock">
+        <button id="jumpToSearch" class="jump-to-search" type="button" aria-label="Revenir à la recherche" title="Revenir à la recherche">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="m21 21-4.35-4.35m2.35-5.15a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/>
+          </svg>
+        </button>
+      </div>
+
       <section id="privacyNotice" class="notice">
         <p>
           <strong>Important.</strong> Cette page n'est pas affiliée à la BnF. Elle ne collecte aucun identifiant : les connexions se font uniquement sur les pages BnF/OCLC. Les favoris, filtres et préférences restent dans ce navigateur, sans être envoyés ni stockés sur un serveur.
@@ -72,15 +80,14 @@
       </section>
     </main>
 
-    <footer>
-      <p>Données recoupées progressivement depuis les sources BnF officielles et les traces publiques archivées. Ne pas me taper si imprécis, inexacte ou pas à jour. Merci.</p>
+    <footer id="siteFooter" class="site-footer">
+      <p class="footer-note">Données recoupées progressivement depuis les sources BnF officielles et les traces publiques archivées. Ne pas me taper si imprécis, inexacte ou pas à jour. Merci.</p>
+      <nav class="footer-links" aria-label="Informations du site">
+        <a href="./mentions-legales.html">Mentions légales</a>
+        <span aria-hidden="true">·</span>
+        <span class="footer-credit">Créé par <a class="footer-brand" href="https://arnaud.cool/" target="_blank" rel="noreferrer"><img class="footer-brand-logo" src="./logos/arnaud-cool.svg" alt="" aria-hidden="true">arnaud.cool</a></span>
+      </nav>
     </footer>
-
-    <button id="jumpToSearch" class="jump-to-search" type="button" aria-label="Revenir à la recherche" title="Revenir à la recherche">
-      <svg aria-hidden="true" viewBox="0 0 24 24">
-        <path d="m21 21-4.35-4.35m2.35-5.15a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/>
-      </svg>
-    </button>
 
     <script src="./app.js" type="module"></script>
   </body>

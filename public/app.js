@@ -36,6 +36,7 @@ const favoriteOrderStorageKey = "bnf-access:favorite-order:v1";
 const favoriteOrderCustomStorageKey = "bnf-access:favorite-order-custom:v1";
 const passFilterStorageKey = "bnf-access:pass-filter:v1";
 const remoteFilterStorageKey = "bnf-access:remote-filter:v1";
+const themedSvgCache = new Map();
 
 const accessLabels = {
   pass_lecture_culture: "Pass Lecture/Culture",
@@ -155,6 +156,8 @@ function render() {
   for (const resource of resources) {
     grid.append(createCard(resource));
   }
+
+  hydrateThemedSvgIcons(grid);
 }
 
 function renderQuickLaunch() {
@@ -203,7 +206,7 @@ function renderQuickLaunch() {
     item.innerHTML = resource.icon_url
       ? `
         <span class="quick-launch-tile">
-          <img src="${escapeAttribute(resource.icon_url)}" alt="" loading="lazy">
+          ${renderIcon(resource, "quick")}
           ${warningBadge}
         </span>
         ${quickLaunchLabel}
@@ -236,6 +239,7 @@ function renderQuickLaunch() {
   }
 
   quickLaunch.append(list);
+  hydrateThemedSvgIcons(list);
 }
 
 function getQuickLaunchAccessWarning(resource) {
@@ -408,7 +412,7 @@ function createCard(resource) {
       >${isExpanded ? "[-]" : "[+]"}</button>`
     : "";
   const logo = resource.icon_url
-    ? `<img src="${escapeAttribute(resource.icon_url)}" alt="${escapeAttribute(resource.icon_alt ?? "")}" loading="lazy">`
+    ? renderIcon(resource, "card")
     : `<span>${escapeHtml(getFallbackLabel(resource))}</span>`;
   const accessInstruction = renderAccessInstruction(resource);
   const secondaryCategoryBadges = (resource.secondary_categories ?? [])
@@ -960,6 +964,168 @@ function writeStoredValue(key, value) {
 
 function getFallbackLabel(resource) {
   return resource.fallback_label || getInitials(resource.name);
+}
+
+function renderIcon(resource, context) {
+  const src = escapeAttribute(resource.icon_url);
+  const alt = context === "card" ? escapeAttribute(resource.icon_alt ?? "") : "";
+  const color = getIconBackgroundColor(resource);
+
+  if (!color || !isSvgIcon(resource.icon_url)) {
+    return `<img src="${src}" alt="${alt}" loading="lazy">`;
+  }
+
+  return `
+    <span
+      class="themed-svg-icon"
+      data-icon-src="${src}"
+      data-icon-color="${escapeAttribute(color)}"
+    >
+      <img src="${src}" alt="${alt}" loading="lazy">
+    </span>
+  `;
+}
+
+function getIconBackgroundColor(resource) {
+  const color = resource.icon_background_color;
+  return typeof color === "string" && /^#[0-9a-f]{6}$/i.test(color) ? color : "";
+}
+
+function isSvgIcon(url) {
+  return typeof url === "string" && /\.svg(?:[?#].*)?$/i.test(url);
+}
+
+function hydrateThemedSvgIcons(root = document) {
+  root.querySelectorAll(".themed-svg-icon[data-icon-src][data-icon-color]").forEach((target) => {
+    if (target.dataset.hydrated === "true") {
+      return;
+    }
+
+    target.dataset.hydrated = "true";
+    loadThemedSvg(target.dataset.iconSrc, target.dataset.iconColor)
+      .then((svg) => {
+        if (svg) {
+          target.replaceChildren(svg);
+        }
+      })
+      .catch(() => {
+        // Le <img> de secours reste affiché si le SVG ne peut pas être préparé.
+      });
+  });
+}
+
+async function loadThemedSvg(src, color) {
+  const cacheKey = `${src}|${color}`;
+  const cached = themedSvgCache.get(cacheKey);
+  if (cached) {
+    return cached.cloneNode(true);
+  }
+
+  const response = await fetch(src);
+  if (!response.ok) {
+    return null;
+  }
+
+  const svg = buildThemedSvg(await response.text(), color);
+  if (!svg) {
+    return null;
+  }
+
+  themedSvgCache.set(cacheKey, svg);
+  return svg.cloneNode(true);
+}
+
+function buildThemedSvg(svgText, color) {
+  const documentSvg = new DOMParser().parseFromString(svgText, "image/svg+xml");
+  const svg = documentSvg.querySelector("svg");
+  if (!svg || documentSvg.querySelector("parsererror")) {
+    return null;
+  }
+
+  svg.querySelectorAll("script, foreignObject").forEach((node) => node.remove());
+  const sourceColor = findPrimarySvgColor(svg);
+  if (!sourceColor) {
+    return null;
+  }
+
+  replaceSvgColor(svg, sourceColor, color);
+  svg.removeAttribute("id");
+  svg.removeAttribute("x");
+  svg.removeAttribute("y");
+  svg.setAttribute("focusable", "false");
+  svg.setAttribute("aria-hidden", "true");
+  svg.classList.add("themed-svg-icon__svg");
+  return svg;
+}
+
+function findPrimarySvgColor(svg) {
+  const colors = new Map();
+  svg.querySelectorAll("*").forEach((node) => {
+    for (const color of getNodeFillColors(node)) {
+      const normalized = normalizeHexColor(color);
+      if (normalized && normalized !== "#ffffff" && normalized !== "#000000") {
+        colors.set(normalized, (colors.get(normalized) ?? 0) + 1);
+      }
+    }
+  });
+
+  return [...colors.entries()].sort((a, b) => b[1] - a[1])[0]?.[0] ?? "";
+}
+
+function getNodeFillColors(node) {
+  const colors = [];
+  const fill = node.getAttribute("fill");
+  const style = node.getAttribute("style");
+
+  if (fill) {
+    colors.push(fill);
+  }
+
+  if (style) {
+    const match = style.match(/(?:^|;)\s*fill\s*:\s*([^;]+)/i);
+    if (match) {
+      colors.push(match[1]);
+    }
+  }
+
+  return colors;
+}
+
+function replaceSvgColor(svg, sourceColor, targetColor) {
+  svg.querySelectorAll("*").forEach((node) => {
+    if (normalizeHexColor(node.getAttribute("fill")) === sourceColor) {
+      node.setAttribute("fill", targetColor);
+    }
+
+    const style = node.getAttribute("style");
+    if (!style) {
+      return;
+    }
+
+    node.setAttribute(
+      "style",
+      style.replace(/((?:^|;)\s*fill\s*:\s*)(#[0-9a-f]{3,6})/gi, (match, prefix, color) => (
+        normalizeHexColor(color) === sourceColor ? `${prefix}${targetColor}` : match
+      )),
+    );
+  });
+}
+
+function normalizeHexColor(color) {
+  if (typeof color !== "string") {
+    return "";
+  }
+
+  const trimmed = color.trim();
+  if (/^#[0-9a-f]{6}$/i.test(trimmed)) {
+    return trimmed.toLowerCase();
+  }
+
+  if (/^#[0-9a-f]{3}$/i.test(trimmed)) {
+    return `#${[...trimmed.slice(1)].map((char) => char + char).join("")}`.toLowerCase();
+  }
+
+  return "";
 }
 
 function getInitials(name) {

@@ -31,6 +31,11 @@ const searchControls = document.querySelector("#searchControls");
 const jumpToSearch = document.querySelector("#jumpToSearch");
 const privacyNotice = document.querySelector("#privacyNotice");
 const dismissNotice = document.querySelector("#dismissNotice");
+const startupImageTimeoutMs = 1800;
+const startupAssetUrls = [
+  "./logos/arnaud-cool.svg",
+  "./logos/kofi.svg",
+];
 const privacyNoticeDismissedKey = "bnf-access:privacy-notice-dismissed:v1";
 const favoriteStorageKey = "bnf-access:favorites:v1";
 const favoriteStorageReadyKey = "bnf-access:favorites-ready:v1";
@@ -87,6 +92,64 @@ async function init() {
   loadProfileFilters();
   renderFilters();
   render();
+  await waitForStartupImages();
+  revealApp();
+}
+
+function revealApp() {
+  document.body.classList.remove("is-loading");
+  document.body.classList.add("is-ready");
+}
+
+async function waitForStartupImages() {
+  const imageUrls = getStartupImageUrls();
+  if (imageUrls.length === 0) {
+    return;
+  }
+
+  await Promise.race([
+    Promise.allSettled(imageUrls.map(preloadImage)),
+    delay(startupImageTimeoutMs),
+  ]);
+}
+
+function getStartupImageUrls() {
+  const urls = new Set(startupAssetUrls.map(resolveAssetUrl));
+
+  state.resources
+    .map((resource) => resource.icon_url)
+    .filter(Boolean)
+    .forEach((url) => urls.add(resolveAssetUrl(url)));
+
+  return [...urls].filter(Boolean);
+}
+
+function resolveAssetUrl(url) {
+  try {
+    return new URL(url, window.location.href).href;
+  } catch {
+    return "";
+  }
+}
+
+function preloadImage(url) {
+  return new Promise((resolve) => {
+    const image = new Image();
+    image.decoding = "async";
+    image.onload = resolve;
+    image.onerror = resolve;
+    image.src = url;
+
+    if (image.complete) {
+      resolve();
+    }
+  });
+}
+
+function delay(duration) {
+  return new Promise((resolve) => {
+    window.setTimeout(resolve, duration);
+  });
 }
 
 function setupPrivacyNotice() {
@@ -1006,7 +1069,7 @@ function renderIcon(resource, context) {
   const color = getIconBackgroundColor(resource);
 
   if (!color || !isSvgIcon(resource.icon_url)) {
-    return `<img src="${src}" alt="${alt}" loading="lazy">`;
+    return `<img src="${src}" alt="${alt}" loading="eager" decoding="async">`;
   }
 
   return `
@@ -1015,7 +1078,7 @@ function renderIcon(resource, context) {
       data-icon-src="${src}"
       data-icon-color="${escapeAttribute(color)}"
     >
-      <img src="${src}" alt="${alt}" loading="lazy">
+      <img src="${src}" alt="${alt}" loading="eager" decoding="async">
     </span>
   `;
 }
@@ -1221,5 +1284,6 @@ jumpToSearch.addEventListener("click", () => {
 
 init().catch((error) => {
   grid.innerHTML = `<p class="empty">Impossible de charger les ressources.</p>`;
+  revealApp();
   console.error(error);
 });

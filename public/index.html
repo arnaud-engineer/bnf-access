@@ -7,7 +7,12 @@
     <meta name="description" content="Page non officielle pour retrouver les ressources numériques accessibles via la BnF.">
     <link rel="stylesheet" href="./styles.css">
   </head>
-  <body>
+  <body class="is-loading">
+    <div id="appLoader" class="app-loader" role="status" aria-live="polite">
+      <span class="app-loader-spinner" aria-hidden="true"></span>
+      <span class="app-loader-text">Chargement</span>
+    </div>
+
     <header class="topbar">
       <div>
         <p class="eyebrow">Beta</p>

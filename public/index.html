@@ -30,31 +30,35 @@
 
       <section id="quickLaunch" class="quick-launch" aria-label="Lancement rapide"></section>
 
-      <section id="searchControls" class="controls" aria-label="Filtres">
-        <label class="search">
-          <span>Rechercher</span>
-          <input id="searchInput" type="search" placeholder="Mediapart, presse, dictionnaire..." autocomplete="off">
-        </label>
-        <div class="filter-groups">
-          <div id="categoryFilters" class="filters" aria-label="Catégories"></div>
-          <div class="profile-filters" aria-label="Profil d'accès">
-            <label>
-              <span>Profil</span>
-              <select id="passFilter">
-                <option value="all">Tous les profils</option>
-                <option value="pass_lecture_culture">Pass Lecture/Culture</option>
-                <option value="pass_recherche_illimite">Pass Recherche illimité</option>
-                <option value="public">Sans Pass BnF</option>
-              </select>
-            </label>
-            <label>
-              <span>Accès</span>
-              <select id="remoteFilter">
-                <option value="all">Tous les accès</option>
-                <option value="remote">À distance</option>
-                <option value="onsite">Sur place uniquement</option>
-              </select>
-            </label>
+      <section id="searchControls" class="search-section" aria-labelledby="searchTitle">
+        <div class="section-heading">
+          <h2 id="searchTitle">Recherche</h2>
+        </div>
+        <div class="controls" aria-label="Filtres">
+          <label class="search">
+            <input id="searchInput" type="search" placeholder="Mediapart, presse, dictionnaire..." aria-label="Rechercher une ressource" autocomplete="off">
+          </label>
+          <div class="filter-groups">
+            <div id="categoryFilters" class="filters" aria-label="Catégories"></div>
+            <div class="profile-filters" aria-label="Profil d'accès">
+              <label>
+                <span>Profil</span>
+                <select id="passFilter">
+                  <option value="all">Tous les profils</option>
+                  <option value="pass_lecture_culture">Pass Lecture/Culture</option>
+                  <option value="pass_recherche_illimite">Pass Recherche illimité</option>
+                  <option value="public">Sans Pass BnF</option>
+                </select>
+              </label>
+              <label>
+                <span>Accès</span>
+                <select id="remoteFilter">
+                  <option value="all">Tous les accès</option>
+                  <option value="remote">À distance</option>
+                  <option value="onsite">Sur place uniquement</option>
+                </select>
+              </label>
+            </div>
           </div>
         </div>
       </section>

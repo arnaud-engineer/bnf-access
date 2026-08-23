@@ -101,8 +101,7 @@ h1 {
   color: var(--ink);
 }
 
-.notice,
-.controls {
+.notice {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--panel);
@@ -538,25 +537,28 @@ h1 {
   }
 }
 
+.search-section {
+  margin: 18px 0 28px;
+}
+
 .controls {
   display: grid;
-  grid-template-columns: minmax(220px, 1fr) 2fr;
-  gap: 16px;
-  margin: 18px 0 28px;
-  padding: 16px;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  padding: 0;
 }
 
 .filter-groups {
   display: grid;
-  gap: 14px;
+  gap: 12px;
+  justify-self: center;
+  margin-top: 8px;
+  width: min(85%, 920px);
 }
 
-.search span {
-  display: block;
-  margin-bottom: 6px;
-  color: var(--muted);
-  font-size: 0.84rem;
-  font-weight: 700;
+.search {
+  justify-self: center;
+  width: min(70%, 760px);
 }
 
 .search input {
@@ -572,29 +574,31 @@ h1 {
 .profile-filters {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
+  justify-content: center;
 }
 
 .profile-filters label {
   display: grid;
-  gap: 6px;
-  min-width: 190px;
+  gap: 4px;
+  min-width: 170px;
 }
 
 .profile-filters span {
   color: var(--muted);
-  font-size: 0.84rem;
+  font-size: 0.75rem;
   font-weight: 700;
 }
 
 .profile-filters select {
-  min-height: 40px;
+  min-height: 34px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  padding: 0 10px;
+  padding: 0 8px;
   background: #ffffff;
   color: var(--ink);
   font: inherit;
+  font-size: 0.86rem;
 }
 
 .profile-filters select.has-selected-profile {
@@ -606,19 +610,22 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   align-content: end;
-  gap: 8px;
+  gap: 6px;
+  justify-content: center;
 }
 
 .filter-button {
-  min-height: 36px;
+  min-height: 30px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  padding: 0 12px;
-  background: #f7f7f4;
+  padding: 0 9px;
+  background: #fffefa;
   color: var(--ink);
   cursor: pointer;
   font: inherit;
-  font-weight: 700;
+  font-size: 0.78rem;
+  font-weight: 650;
+  line-height: 1;
 }
 
 .filter-button[aria-pressed="true"] {
@@ -641,8 +648,8 @@ h1 {
   align-self: center;
   flex: 0 0 2px;
   width: 2px;
-  height: 28px;
-  margin: 0 6px;
+  height: 22px;
+  margin: 0 4px;
   background: #c6cec5;
 }
 
@@ -932,6 +939,14 @@ footer {
   .controls,
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .search {
+    width: 100%;
+  }
+
+  .filter-groups {
+    width: 100%;
   }
 
   .profile-filters label {

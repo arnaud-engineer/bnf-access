@@ -160,6 +160,7 @@ h1 {
 }
 
 .quick-launch-header {
+  align-items: center;
   margin-bottom: 10px;
 }
 
@@ -840,6 +841,15 @@ footer {
   .section-heading {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .quick-launch-header {
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .quick-launch-actions {
+    flex: 0 0 auto;
   }
 
   .controls,

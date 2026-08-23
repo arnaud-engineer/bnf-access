@@ -903,6 +903,7 @@ h1 {
 
 .favorite-button:focus-visible,
 .description-toggle:focus-visible,
+.inline-action:focus-visible,
 .access-instruction a:focus-visible,
 .notice-action:focus-visible,
 .filter-button:focus-visible,
@@ -947,6 +948,21 @@ h1 {
 
 .description-toggle:hover {
   text-decoration: underline;
+}
+
+.inline-action {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+.inline-action:hover {
+  color: var(--ink);
 }
 
 .access-instruction {
@@ -1096,6 +1112,36 @@ h1 {
   max-width: 760px;
 }
 
+.faq-list {
+  display: grid;
+  gap: 14px;
+}
+
+.faq-item {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  padding: 18px;
+}
+
+.faq-item h2 {
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  font-size: 1.18rem;
+}
+
+.faq-item p {
+  margin-bottom: 0;
+}
+
+.faq-item p + p {
+  margin-top: 10px;
+}
+
+.faq-status {
+  font-weight: 700;
+}
+
 .text-page p,
 .legal-placeholder p {
   color: var(--muted);
@@ -1120,7 +1166,7 @@ h1 {
   margin-left: auto;
   margin-right: max(18px, env(safe-area-inset-right));
   border: 3px solid var(--panel);
-  border-radius: 50%;
+  border-radius: var(--corner);
   background: var(--accent);
   color: var(--accent-ink);
   box-shadow:
@@ -1145,6 +1191,7 @@ h1 {
   stroke: currentColor;
   stroke-width: 2.5;
   stroke-linecap: round;
+  transform: translateX(8px);
 }
 
 @media (max-width: 860px) {

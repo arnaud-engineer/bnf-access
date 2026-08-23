@@ -15,6 +15,7 @@
     <link rel="manifest" href="./manifest.webmanifest">
     <link rel="stylesheet" href="./styles.css">
     <script src="./pwa.js" defer></script>
+    <script src="./faq.js" defer></script>
   </head>
   <body>
     <header class="topbar">
@@ -29,9 +30,39 @@
     </header>
 
     <main>
-      <section class="text-page">
-        <h2>À compléter</h2>
-        <p>Cette page servira à expliquer ce qu’est BnF Access, comment utiliser les liens, les favoris, les filtres et les conditions d’accès aux ressources.</p>
+      <section class="text-page faq-list" aria-label="Questions fréquentes">
+        <article class="faq-item">
+          <h2>Qu'est-ce que BnF Access ?</h2>
+          <p>BnF Access est un catalogue de raccourcis personnalisables permettant un accès simplifié aux ressources en ligne de la BnF.</p>
+        </article>
+
+        <article class="faq-item">
+          <h2>Un Pass BnF est-il nécessaire ?</h2>
+          <p>Oui, il vous faut un Pass Lecture/Culture ou un Pass Recherche illimité pour accéder aux ressources en ligne. Vous pouvez vous abonner <a href="https://www.bnf.fr/fr/tarifs-dacces-aux-bibliotheques-et-loffre-culturelle" target="_blank" rel="noreferrer">ici</a>.</p>
+        </article>
+
+        <article class="faq-item">
+          <h2>BnF Access a-t-il un lien avec la BnF ?</h2>
+          <p>Non, aucun. Usager des ressources en ligne de la BnF, j'ai créé BnF Access pour faciliter l'accès à ces ressources.</p>
+        </article>
+
+        <article class="faq-item">
+          <h2>BnF Access a-t-il un lien avec EasyBNF ?</h2>
+          <p>Non. <a href="https://easybnf.fr/" target="_blank" rel="noreferrer">EasyBNF</a> a été créé par <a href="https://twitter.com/jeremypgn" target="_blank" rel="noreferrer">@jeremypgn</a>. S'il passe par ici, encore merci à lui pour son super site, qui a largement inspiré celui-ci.</p>
+        </article>
+
+        <article class="faq-item">
+          <h2>C'est quoi cette histoire de café à offrir ?</h2>
+          <p>Si vous aimez ce projet, souhaitez m'aider à le poursuivre ou à en démarrer de nouveaux, vous pouvez faire un don sur ma <a href="https://ko-fi.com/arnaudcool" target="_blank" rel="noreferrer">page Ko-Fi</a>. C'est évidemment facultatif, et ce service restera quoi qu'il arrive gratuit et sans publicité.</p>
+        </article>
+
+        <article class="faq-item">
+          <h2>Et mes données personnelles ?</h2>
+          <p>Aucune donnée personnelle n'est transférée par ce site vers un serveur distant. Seules vos ressources favorites et vos préférences sont conservées localement dans votre navigateur.</p>
+          <p>Ce site n'a aucun accès à vos identifiants BnF.</p>
+          <p>Pour supprimer les données locales (favoris et préférences), vous pouvez cliquer <button id="clearLocalData" class="inline-action" type="button">ici</button>.</p>
+          <p id="clearLocalDataStatus" class="faq-status" role="status" aria-live="polite"></p>
+        </article>
       </section>
     </main>
 

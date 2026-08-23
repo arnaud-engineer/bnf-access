@@ -1,4 +1,4 @@
-const cacheName = "bnf-access-v1";
+const cacheName = "bnf-access-v2";
 const appShellUrls = [
   "./",
   "./index.html",
@@ -6,6 +6,7 @@ const appShellUrls = [
   "./mentions-legales.html",
   "./styles.css",
   "./pwa.js",
+  "./faq.js",
   "./app.js",
   "./resources.json",
   "./bnf-network.json",

@@ -109,6 +109,14 @@ Les ressources en accès libre restent visibles quel que soit le Pass sélection
 
 Exception : lorsqu'un utilisateur filtre explicitement sur les ressources `sur place`, les ressources sur place sans étiquette de Pass restent visibles. Dans l'archive source, beaucoup de ressources sur place ne portent pas de métadonnée de Pass exploitable.
 
+## Detection reseau BnF
+
+Les plages IP publiques identifiees comme appartenant a la BnF sont stockees dans `public/bnf-network.json`. Elles ne doivent pas etre dupliquees en dur dans le code JavaScript.
+
+Une detection automatique fiable ne peut pas etre faite uniquement en frontend statique : le navigateur ne donne pas directement son IP publique. Si cette fonctionnalite est ajoutee plus tard, elle doit passer par un endpoint explicite qui compare l'IP de la requete aux plages du JSON et renvoie uniquement un statut minimal, par exemple `onBnfNetwork: true/false`, sans journaliser l'adresse IP.
+
+Le resultat doit rester un indice pratique, pas une promesse absolue d'acces : les sorties reseau peuvent varier selon le site, le wifi, AVEC, les postes publics ou les proxys.
+
 ## Points de contrôle
 
 - Validite actuelle de chaque lien BnF.

@@ -1,0 +1,56 @@
+{
+  "name": "BNF public network ranges",
+  "last_verified_at": "2026-08-23",
+  "description": "Plages publiques identifiées comme appartenant à la Bibliothèque nationale de France. Ce fichier sert de source de données pour une éventuelle détection côté serveur ou endpoint dédié ; les plages ne doivent pas être dupliquées en dur dans le code applicatif.",
+  "sources": [
+    {
+      "label": "RIPE Database",
+      "url": "https://apps.db.ripe.net/db-web-ui/query?searchtext=194.199.4.204",
+      "note": "Résultat public indiquant netname FR-BNF et descr Bibliotheque Nationale de France pour 194.199.3.0 - 194.199.10.255."
+    },
+    {
+      "label": "IPinfo",
+      "url": "https://ipinfo.io/194.199.8.10",
+      "note": "Page publique associant l'adresse au réseau Bibliotheque Nationale de France / AS2200 RENATER."
+    }
+  ],
+  "networks": [
+    {
+      "id": "fr-bnf-ripe-194-199-3-0-24",
+      "cidr": "194.199.3.0/24",
+      "ip_version": 4,
+      "label": "FR-BNF",
+      "source": "ripe",
+      "confidence": "public_registry"
+    },
+    {
+      "id": "fr-bnf-ripe-194-199-4-0-22",
+      "cidr": "194.199.4.0/22",
+      "ip_version": 4,
+      "label": "FR-BNF",
+      "source": "ripe",
+      "confidence": "public_registry"
+    },
+    {
+      "id": "fr-bnf-ripe-194-199-8-0-23",
+      "cidr": "194.199.8.0/23",
+      "ip_version": 4,
+      "label": "FR-BNF",
+      "source": "ripe",
+      "confidence": "public_registry"
+    },
+    {
+      "id": "fr-bnf-ripe-194-199-10-0-24",
+      "cidr": "194.199.10.0/24",
+      "ip_version": 4,
+      "label": "FR-BNF",
+      "source": "ripe",
+      "confidence": "public_registry"
+    }
+  ],
+  "notes": [
+    "Ces plages représentent le bloc RIPE observé 194.199.3.0 - 194.199.10.255, découpé en CIDR.",
+    "Elles ne garantissent pas que tous les accès wifi, AVEC, proxy ou sites BnF sortent exclusivement par ces adresses.",
+    "Toute détection doit être présentée comme un indicateur pratique, pas comme une preuve absolue d'accès aux ressources."
+  ]
+}

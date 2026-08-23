@@ -123,16 +123,23 @@ L'utilisateur peut filtrer les ressources selon son Pass et selon le mode d'acc�
 - tous les profils ;
 - Pass Lecture/Culture ;
 - Pass Recherche illimité ;
+- sans Pass BnF ;
 - accès à distance ;
 - accès à distance sous condition ;
 - accès sur place uniquement ;
 - accès libre.
 
-Ces choix sont stockés dans `localStorage`. Les ressources sans étiquette de Pass explicite sont masquées lorsqu'un Pass précis est sélectionné, pour éviter de promettre un accès non vérifié.
+Ces choix sont stockés dans `localStorage`. Chaque ressource déclare explicitement son profil d'accès dans `access` :
+
+- `pass_lecture_culture` ;
+- `pass_recherche_illimite` ;
+- `public`, pour les ressources libres sur Internet.
 
 Les ressources en accès libre restent visibles quel que soit le Pass sélectionné, puisqu'elles ne dépendent pas d'un droit BnF particulier.
 
-Exception : lorsqu'un utilisateur filtre explicitement sur les ressources `sur place`, les ressources sur place sans étiquette de Pass restent visibles. Dans l'archive source, beaucoup de ressources sur place ne portent pas de métadonnée de Pass exploitable.
+Le profil `Sans Pass BnF` isole uniquement les ressources déclarées `public`.
+
+Pour les ressources uniquement consultables sur place, l'annuaire BnF indique l'accès à la BnF sans distinguer les droits par type de Pass. Elles sont donc taguées avec les deux Pass annuels lorsque l'annuaire ne précise pas de restriction plus fine.
 
 ## Detection reseau BnF
 

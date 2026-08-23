@@ -357,15 +357,11 @@ function matchesPassFilter(resource) {
 
   const access = resource.access ?? [];
 
-  if (access.includes("public")) {
-    return true;
+  if (state.passFilter === "public") {
+    return access.includes("public");
   }
 
-  if (access.includes(state.passFilter)) {
-    return true;
-  }
-
-  return state.remoteFilter === "onsite" && getAccessMode(resource) === "onsite" && access.length === 0;
+  return access.includes(state.passFilter) || access.includes("public");
 }
 
 function createCard(resource) {
@@ -401,6 +397,9 @@ function createCard(resource) {
   const secondaryCategoryBadges = (resource.secondary_categories ?? [])
     .map((category) => `<span class="badge category">${escapeHtml(category)}</span>`)
     .join("");
+  const profileBadges = state.passFilter === "all"
+    ? access.map((label) => `<span class="badge">${escapeHtml(label)}</span>`).join("")
+    : "";
 
   card.innerHTML = `
     <div class="card-header">
@@ -425,7 +424,7 @@ function createCard(resource) {
       <span class="badge category">${escapeHtml(resource.category)}</span>
       ${secondaryCategoryBadges}
       <span class="badge ${accessModeClass}">${escapeHtml(accessModeLabel)}</span>
-      ${access.map((label) => `<span class="badge">${escapeHtml(label)}</span>`).join("")}
+      ${profileBadges}
     </div>
   `;
 
@@ -618,11 +617,18 @@ function loadProfileFilters() {
 
   passFilter.value = state.passFilter;
   remoteFilter.value = state.remoteFilter;
+  syncProfileFilterState();
 }
 
 function saveProfileFilters() {
   writeStoredValue(passFilterStorageKey, state.passFilter);
   writeStoredValue(remoteFilterStorageKey, state.remoteFilter);
+}
+
+function syncProfileFilterState() {
+  const hasSelectedProfile = state.passFilter !== "all";
+  passFilter.classList.toggle("has-selected-profile", hasSelectedProfile);
+  passFilter.closest("label")?.classList.toggle("has-selected-profile", hasSelectedProfile);
 }
 
 function syncFavoriteOrder() {
@@ -966,6 +972,7 @@ searchInput.addEventListener("input", (event) => {
 
 passFilter.addEventListener("change", (event) => {
   state.passFilter = event.target.value;
+  syncProfileFilterState();
   saveProfileFilters();
   render();
 });

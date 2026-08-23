@@ -343,7 +343,8 @@
       "url": "https://bnf.idm.oclc.org/login?url=https://bnf.idm.oclc.org/login?url=http://www.universalis-edu.com",
       "remote": true,
       "access": [
-        "pass_lecture_culture"
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
       ],
       "tags": [
         "art et images",
@@ -462,7 +463,10 @@
       "description": "Concerts, conférences et ressources de la Philharmonie de Paris",
       "url": "https://admin-pad.philharmoniedeparis.fr/75-paris-bnf-surplace",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "demande",
         "musique et vidéo",
@@ -707,7 +711,10 @@
       "description": "Catalogue des livres disponibles dans le commerce en Italie",
       "url": "http://alicebib.ibuk.it",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "alice",
         "bibliographies et catalogues",
@@ -1000,7 +1007,10 @@
       "description": "Index de périodiques en archéologie, anthropologie, ethnologie et linguistique",
       "url": "https://aio.therai.org.uk/",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "anthropological",
         "index",
@@ -1129,7 +1139,10 @@
       "icon_url": "./logos/aoc.svg",
       "icon_alt": "Logo AOC",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "opinion",
         "aoc"
@@ -1982,7 +1995,10 @@
       "description": "Bibliographie des études littéraires et linguistiques germanophones",
       "url": "http://www.bdsl-online.de",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "bibliographie",
         "deutschen",
@@ -2065,7 +2081,10 @@
       "description": "Base sur les contes, récits populaires et littérature orale",
       "url": "https://bnf.idm.oclc.org/login?url=http://bibliorecitbnf.fr",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "bibliorecit",
         "conte",
@@ -2184,7 +2203,10 @@
       "description": "BBKL - Base bibliographique et biographique sur l’histoire du christianisme",
       "url": "https://www.bbkl.de/",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "art et images",
         "bbkl",
@@ -2227,7 +2249,10 @@
       "description": "Base de données la plus complète dans le domaine des sciences biologiques",
       "url": "http://isiknowledge.com/biosis",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "1989",
         "2007",
@@ -2270,7 +2295,10 @@
       "description": "Bibliographie internationales et références de brevets en biotechnologie (> 1982)",
       "url": "https://stneasy.fiz-karlsruhe.de/intranet",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "1982",
         "abstracts",
@@ -2397,7 +2425,10 @@
       "description": "Service de SVOD consacré au court-métrage",
       "url": "https://www.brefcinema.com/?idClient=BNFR",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "cinema",
         "sundance"
@@ -2501,7 +2532,10 @@
       "description": "Bibliographie internationale en agriculture et sylviculture",
       "url": "https://stneasy.fiz-karlsruhe.de/intranet",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "abstracts",
         "bibliographies et catalogues"
@@ -2538,7 +2572,10 @@
       "description": "Revues et ouvrages en administration et droit français",
       "url": "https://droit.cairn.info/?lang=fr",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "cairn",
         "sciences et techniques"
@@ -2575,7 +2612,10 @@
       "description": "Revues et ouvrages de sciences humaines et sociales francophones, ainsi que les collections Que-Sais-Je ? et Repères",
       "url": "http://www.cairn.info/",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "cairn",
         "sciences et techniques"
@@ -2612,7 +2652,10 @@
       "description": "Revues et ouvrages en sciences, techniques et médecine",
       "url": "https://www.cairn-sciences.info/",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "cairn",
         "sciences",
@@ -2660,7 +2703,10 @@
       "description": "Informations économiques et financières sur les entreprises françaises",
       "url": "https://app.capfinancials.com",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "capfi",
         "généralistes et référence"
@@ -2779,7 +2825,10 @@
       "description": "Références, brevets et données factuelles en chimie, issus de 9000 périodiques",
       "url": "https://stneasy.fiz-karlsruhe.de/intranet",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "abstracts",
         "chemical",
@@ -2942,7 +2991,10 @@
       "description": "Normes AFNOR, références bibliographiques et textes réglementaires",
       "url": "https://cobaz.afnor.org",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "afnor",
         "bibliographies et catalogues",
@@ -2980,7 +3032,10 @@
       "description": "Bibliographie internationale en sciences de l’ingénieur",
       "url": "https://stneasy.fiz-karlsruhe.de/intranet",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "compendex",
         "sciences et techniques"
@@ -3789,7 +3844,10 @@
       "description": "Base professionnelle des livres parus et à paraître en langue française",
       "url": "https://diffusion-backend.electre-ng.com/api/auth/ip",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "electre",
         "généralistes et référence"
@@ -4062,7 +4120,10 @@
       "description": "Planches et textes originaux de la première édition",
       "url": "http://portail.atilf.fr/encyclopedie/Formulaire-de-recherche.htm",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "alembert",
         "diderot",
@@ -4223,7 +4284,10 @@
       "description": "Recensement de 7000 langues connues, leurs parentés, leurs locuteurs, zones géographiques ...",
       "url": "https://www.ethnologue.com/",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "art et images",
         "ethnologue",
@@ -4303,7 +4367,10 @@
       "description": "Données et analyses internationales sur la consommation, les différents secteurs économiques et marchés",
       "url": "https://www.portal.euromonitor.com",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "droit et économie",
         "euromonitor",
@@ -4388,7 +4455,10 @@
       "description": "Presse internationale en texte intégral (des milliers de titres)",
       "url": "https://global.factiva.com/en/sess/login.asp?xsid=S00YcvcZWva5DEs5DEqNDYmMp6pNT3yMHn0YqYvMq382rbRQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQQAA",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "factiva",
         "presse"
@@ -4425,7 +4495,10 @@
       "description": "FSTA - Bibliographie internationale en agro-alimentaire, agro-industrie et nutrition",
       "url": "https://stneasy.fiz-karlsruhe.de/intranet",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "abstracts",
         "food",
@@ -4839,7 +4912,10 @@
       "description": "Base professionnelle des livres parus et à paraître dans les principaux pays anglophones",
       "url": "http://www.booksinprint.com/Home/Index",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "books",
         "généralistes et référence",
@@ -5052,7 +5128,10 @@
       "description": "Bibliographie sur l’environnement, l’écologie et le développement durable",
       "url": "https://bnf.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=ehost&defaultdb=8gh",
       "remote": true,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "généralistes et référence",
         "greenfile"
@@ -5206,7 +5285,10 @@
       "description": "Base bibliographique d’articles sur l’Amérique latine, les Caraïbes et les populations hispaniques",
       "url": "http://hapi.ucla.edu",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "hapi",
         "amérique latine",
@@ -5250,7 +5332,10 @@
       "description": "Base de données B2B internationnale proposant des informations économiques et financières sur les entreprises",
       "url": "https://signon.onesource.com/?LogonUserID=RollingUserID",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "généralistes et référence",
         "hoovers"
@@ -5287,7 +5372,10 @@
       "description": "Base juridique spécialisée en droit administratif et jurisprudence",
       "url": "https://www.ijbox.fr/cas/login?byIP=true&service=https://www.ijbox.fr/casservice?destination=/user/login?destination=/accueil",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "généralistes et référence",
         "ijbox"
@@ -5514,7 +5602,10 @@
       "description": "Bibliographies en physique, électronique, informatique et sciences de l’ingénieur",
       "url": "https://stneasy.fiz-karlsruhe.de/intranet",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "art et images",
         "inspec"
@@ -5551,7 +5642,10 @@
       "description": "Œuvres complètes en sciences humaines et philosophie de grands auteurs",
       "url": "http://pm.nlx.com",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "intelex",
         "pastmasters",
@@ -5715,7 +5809,10 @@
       "description": "Répertoire international des publications et périodiques possédant un ISSN",
       "url": "https://portal.issn.org/login",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "généralistes et référence",
         "issn"
@@ -5795,7 +5892,10 @@
       "description": "Bibliographie d’histoire littéraire française, du Moyen Âge à nos jours",
       "url": "http://klapp-online.de",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "bibliographies et catalogues",
         "klapp",
@@ -5836,7 +5936,10 @@
       "description": "Annuaire mondial de 60 millions d'entreprises",
       "url": "http://fr.kompass.com/ebol/ip",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "art et images",
         "kompass"
@@ -6000,7 +6103,10 @@
       "description": "Base juridique française : encyclopédies, jurisprudence, doctrine et actualités",
       "url": "https://www.lexis360intelligence.fr/home",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "droit et économie",
         "lexis"
@@ -6037,7 +6143,10 @@
       "description": "Revues juridiques françaises en texte intégral et actualités doctrinales",
       "url": "https://bnf.idm.oclc.org/login?url=https://www.labase-lextenso.fr/",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "droit et économie",
         "lextenso"
@@ -6534,7 +6643,10 @@
       "description": "Classification systématique des motifs de la littérature traditionnelle (contes, mythes, fables, littérature médiévale ...)",
       "url": "http://pm.nlx.com/xtf/view?docId=motif/motif.00.xml;chunk.id=div.motif.pmpreface.1;toc.depth=2;toc.id=div.motif.pmpreface.1;hit.rank=0;brand=default",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "folk",
         "index",
@@ -6831,7 +6943,10 @@
       "description": "Documents publiés par l'OCDE (Organisation de Coopération et de Développement Économiques)",
       "url": "http://www.oecd-ilibrary.org/fr",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "droit et économie",
         "ilibrary",
@@ -6869,7 +6984,10 @@
       "description": "Bibliographie en égyptologie",
       "url": "http://oeb.griffith.ox.ac.uk/",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "bibliography",
         "egyptological",
@@ -7512,7 +7630,10 @@
       "description": "Base de données de thèses et dissertations internationnales",
       "url": "https://www.proquest.com/pqdtglobal/dissertations/fromDatabasesLayer?accountid=9641",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "dissertations",
         "droit et économie",
@@ -7727,7 +7848,10 @@
       "description": "Batipédia - Documentation technique du bâtiment, DTU, normes et règles de calcul",
       "url": "http://www.batipedia.com/accueil.html",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "classique",
         "reef",
@@ -7943,7 +8067,10 @@
       "description": "Archives de presse française de la BnF, enrichies d’articles et dossiers éditoriaux (entre 1631 et 1945)",
       "url": "http://www.retronews.fr/",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "media",
         "pour",
@@ -8157,7 +8284,10 @@
       "description": "Bibliographie en sciences et techniques (5700 périodiques internationaux)",
       "url": "https://stneasy.fiz-karlsruhe.de/intranet",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "citation",
         "index",
@@ -8648,7 +8778,10 @@
       "description": "Bibliothèque numérique de textes grecs, d’Homère à l’époque moderne",
       "url": "http://stephanus.tlg.uci.edu/",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "graecae",
         "langue et dictionnaires",
@@ -8824,7 +8957,10 @@
       "description": "Répertoire mondial des périodiques : informations bibliographiques, éditeurs, sujets, statut scientifique et comité de lecture, indexation et disponibilité",
       "url": "http://www.ulrichsweb.com/",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "bibliographies et catalogues",
         "ulrich"
@@ -8861,7 +8997,10 @@
       "description": "Publications, bases de données et journaux des Nations Unies",
       "url": "http://www.un-ilibrary.org/",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "bibliothèque",
         "ilibrary",
@@ -8942,7 +9081,10 @@
       "description": "Information officielle, scientifique, législative et tarifaire sur les médicaments et produits de santé",
       "url": "https://evidal.vidal.fr/?token=-NBGGBd6DQPYrLe9eWlNwhhOOM4qNjKryF1JNy37Nwv1gXas2GJwn-V_a5OYoN4-",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "langue et dictionnaires",
         "vidal"
@@ -9029,7 +9171,10 @@
       "description": "Répertoire des journaux et périodiques britanniques et irlandais du XIXe siècle : notices, contributeurs et éditeurs",
       "url": "http://www.victorianperiodicals.com/series2",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "directory",
         "english",
@@ -9069,7 +9214,10 @@
       "description": "Base de données de sources primaires sur l’histoire des sciences britanniques (1830-1970)",
       "url": "https://bnf.idm.oclc.org/login?url=https://app.wileydigitalarchives.com/baas",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "archives",
         "british",
@@ -9234,7 +9382,10 @@
       "description": "Études de marché et analyses économiques de centaines de secteurs français : tendances, chiffres clés, concurrence, entreprises et prévisions",
       "url": "https://www.xerfiknowledge.com/xerfifrance/loginclient/200493/xerfi/BNF",
       "remote": false,
-      "access": [],
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
       "tags": [
         "7000",
         "droit et économie",

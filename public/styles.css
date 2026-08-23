@@ -569,6 +569,11 @@ h1 {
   font: inherit;
 }
 
+.profile-filters select.has-selected-profile {
+  border-color: #d3c074;
+  background: #fffbed;
+}
+
 .filters {
   display: flex;
   flex-wrap: wrap;

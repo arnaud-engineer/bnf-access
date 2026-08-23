@@ -361,14 +361,19 @@ h1 {
 
 .is-editing .quick-launch-item.is-dragging {
   animation: none;
-  box-shadow: 0 8px 18px #0000001a;
   cursor: grabbing;
-  opacity: 0.72;
-  transform: scale(0.98);
+  opacity: 1;
 }
 
 .is-editing .quick-launch-item.is-dragging .quick-launch-tile {
   border-color: var(--accent);
+  box-shadow: 0 8px 18px #0000001a;
+  transform: scale(0.98);
+}
+
+.is-editing .quick-launch-item.is-dragging .quick-launch-label,
+.is-editing .quick-launch-item.is-dragging .quick-launch-remove {
+  opacity: 0;
 }
 
 .quick-launch-remove {

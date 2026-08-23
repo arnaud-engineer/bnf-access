@@ -187,7 +187,9 @@ function renderQuickLaunch() {
     const item = document.createElement(state.quickLaunchEditing ? "div" : "a");
     item.className = "quick-launch-item";
     item.classList.toggle("generated", !resource.icon_url);
-    item.title = resource.name;
+    if (!state.quickLaunchEditing) {
+      item.title = resource.name;
+    }
     const accessWarning = getQuickLaunchAccessWarning(resource);
     const quickLaunchAriaLabel = accessWarning
       ? `${resource.name} - ${accessWarning}`
@@ -217,6 +219,7 @@ function renderQuickLaunch() {
     if (state.quickLaunchEditing) {
       item.tabIndex = 0;
       item.setAttribute("role", "button");
+      item.setAttribute("draggable", "false");
       item.classList.toggle("is-dragging", state.dragging?.id === resource.id);
       item.append(createQuickLaunchRemoveButton(resource));
       item.addEventListener("pointerdown", handleQuickLaunchPointerDown);

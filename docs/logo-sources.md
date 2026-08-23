@@ -34,6 +34,7 @@ Les logos sont stockés localement pour éviter de dépendre de hotlinks externe
 - RAMBI : icône typographique SVG locale inspirée du visuel RAMBI publié sur le site officiel de la Bibliothèque nationale d'Israël ; le JPEG officiel n'a pas été intégré directement.
 - ProQuest - Dissertations & theses : logo PNG officiel `ProQuest Dissertations & Theses Global`, récupéré depuis le kit marketing ProQuest.
 - ProQuest - Literature : logo PNG officiel `ProQuest One Literature`, récupéré depuis le kit marketing ProQuest Digital Collections.
+- Classiques Garnier : SVG vectorisé localement depuis le PNG officiel diffusé sur Wikimedia Commons, faute de SVG public identifié. Les sous-collections utilisent le même SVG avec une couleur dédiée via `icon_background_color`.
 - ERIC : logo PNG récupéré depuis le site officiel ERIC.
 - MLA International Bibliography : logo SVG de la Modern Language Association, récupéré depuis la page officielle de la bibliographie.
 - RILM - Abstracts of Music Literature : pictogramme SVG RILM récupéré depuis le site officiel RILM.

@@ -2138,7 +2138,7 @@
       ],
       "notes": "",
       "default_favorite": false,
-      "icon_url": "./logos/cg.png",
+      "icon_url": "./logos/cg.svg",
       "icon_alt": "Logo Classiques Garnier",
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
@@ -2159,7 +2159,8 @@
       "access_mode": "remote",
       "access_label": "Accès distant",
       "access_source": "bnf_official",
-      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture",
+      "icon_background_color": "#8A3D68"
     },
     {
       "id": "bhl",
@@ -2926,7 +2927,7 @@
       ],
       "notes": "",
       "default_favorite": false,
-      "icon_url": "./logos/cg.png",
+      "icon_url": "./logos/cg.svg",
       "icon_alt": "Logo Classiques Garnier",
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
@@ -4983,7 +4984,7 @@
       ],
       "notes": "",
       "default_favorite": false,
-      "icon_url": "./logos/cg.png",
+      "icon_url": "./logos/cg.svg",
       "icon_alt": "Logo Classiques Garnier",
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
@@ -5004,7 +5005,8 @@
       "access_mode": "remote",
       "access_label": "Accès distant",
       "access_source": "bnf_official",
-      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture",
+      "icon_background_color": "#276B73"
     },
     {
       "id": "grand-corpus-des-grammaires-francaises-des-remarques-et-des-traites-sur-la-langue-xive-xviie-siecles",
@@ -5026,7 +5028,7 @@
       ],
       "notes": "",
       "default_favorite": false,
-      "icon_url": "./logos/cg.png",
+      "icon_url": "./logos/cg.svg",
       "icon_alt": "Logo Classiques Garnier",
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
@@ -5047,7 +5049,8 @@
       "access_mode": "remote",
       "access_label": "Accès distant",
       "access_source": "bnf_official",
-      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture",
+      "icon_background_color": "#5F5C9B"
     },
     {
       "id": "grand-corpus-des-litteratures-francaises-et-francophones-du-moyen-age-au-20e-siecle",
@@ -5069,7 +5072,7 @@
       ],
       "notes": "",
       "default_favorite": false,
-      "icon_url": "./logos/cg.png",
+      "icon_url": "./logos/cg.svg",
       "icon_alt": "Logo Classiques Garnier",
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
@@ -5090,7 +5093,8 @@
       "access_mode": "remote",
       "access_label": "Accès distant",
       "access_source": "bnf_official",
-      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture",
+      "icon_background_color": "#3F6F5A"
     },
     {
       "id": "grand-ricci-online",

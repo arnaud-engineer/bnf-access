@@ -935,10 +935,12 @@ h1 {
   transform: translateY(-1px);
 }
 
+.text-page,
 .legal-placeholder {
   max-width: 760px;
 }
 
+.text-page p,
 .legal-placeholder p {
   color: var(--muted);
 }

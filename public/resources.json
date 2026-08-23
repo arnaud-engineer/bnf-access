@@ -694,7 +694,7 @@
           }
         ]
       },
-      "icon_url": "./logos/aida.jpg",
+      "icon_url": "./logos/aida.webp",
       "icon_alt": "Logo Aida",
       "icon_source_file": "product_pages.jpg",
       "icon_source_kind": "svg_recreation",
@@ -765,7 +765,7 @@
       ],
       "notes": "",
       "default_favorite": false,
-      "icon_url": "./logos/akl.jpg",
+      "icon_url": "./logos/akl.webp",
       "icon_alt": "Logo AKL",
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
@@ -819,7 +819,7 @@
       ],
       "notes": "",
       "default_favorite": false,
-      "icon_url": "./logos/aow.jpg",
+      "icon_url": "./logos/aow.webp",
       "icon_alt": "Logo AOW",
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
@@ -1079,7 +1079,7 @@
           }
         ]
       },
-      "icon_url": "./logos/alexanderstreet.png",
+      "icon_url": "./logos/alexanderstreet.webp",
       "icon_alt": "Logo Anthropology Resource Library",
       "icon_source_url": "https://search.alexanderstreet.com/sites/search.alexanderstreet.com/themes/custom/as_lazr/images/beam/Clarivate_as_black.png",
       "icon_source_kind": "png",
@@ -1383,7 +1383,7 @@
       ],
       "notes": "",
       "default_favorite": false,
-      "icon_url": "./logos/art-sales-catalog-online.jpg",
+      "icon_url": "./logos/art-sales-catalog-online.webp",
       "icon_alt": "Logo ASC Online",
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
@@ -1726,7 +1726,7 @@
       ],
       "notes": "",
       "default_favorite": false,
-      "icon_url": "./logos/benezit.jpg",
+      "icon_url": "./logos/benezit.webp",
       "icon_alt": "Logo Benezit",
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
@@ -1927,7 +1927,7 @@
       ],
       "notes": "",
       "default_favorite": false,
-      "icon_url": "./logos/bcm.jpg",
+      "icon_url": "./logos/bcm.webp",
       "icon_alt": "Logo BCM",
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
@@ -2467,7 +2467,7 @@
       ],
       "notes": "",
       "default_favorite": false,
-      "icon_url": "./logos/bahr.png",
+      "icon_url": "./logos/bahr.webp",
       "icon_alt": "Logo BAHR",
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
@@ -3049,7 +3049,7 @@
       ],
       "notes": "Accès sur place indiqué dans les traces EasyBNF.",
       "default_favorite": false,
-      "icon_url": "./logos/compendex.png",
+      "icon_url": "./logos/compendex.webp",
       "icon_alt": "Logo Compendex",
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
@@ -3408,7 +3408,7 @@
           }
         ]
       },
-      "icon_url": "./logos/dictionnaire-biographique-du-mouvement-ouvrier-francais.png",
+      "icon_url": "./logos/dictionnaire-biographique-du-mouvement-ouvrier-francais.webp",
       "icon_alt": "Logo Dictionnaire biographique du mouvement ouvrier français",
       "icon_source_url": "https://maitron.fr/wp-content/themes/themeMaitron/img/logo-maitron.png",
       "icon_source_kind": "png",
@@ -3479,7 +3479,7 @@
       ],
       "notes": "",
       "default_favorite": false,
-      "icon_url": "./logos/crea.jpg",
+      "icon_url": "./logos/crea.webp",
       "icon_alt": "Logo du Dictionnaire des Créatrices",
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
@@ -3827,7 +3827,7 @@
       ],
       "notes": "",
       "default_favorite": false,
-      "icon_url": "./logos/ecco.png",
+      "icon_url": "./logos/ecco.webp",
       "icon_alt": "Logo ECCO",
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
@@ -4062,7 +4062,7 @@
       ],
       "notes": "",
       "default_favorite": false,
-      "icon_url": "./logos/enc-juda.jpg",
+      "icon_url": "./logos/enc-juda.webp",
       "icon_alt": "Logo Encyclopædia Judaica",
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
@@ -4103,7 +4103,7 @@
       ],
       "notes": "",
       "default_favorite": false,
-      "icon_url": "./logos/yverdon.jpg",
+      "icon_url": "./logos/yverdon.webp",
       "icon_alt": "Page de Garde de l'Encyclopædia d'Yverdon",
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
@@ -4603,7 +4603,7 @@
       ],
       "notes": "",
       "default_favorite": false,
-      "icon_url": "./logos/frantext.jpg",
+      "icon_url": "./logos/frantext.webp",
       "icon_alt": "Logo de Frantext",
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
@@ -4645,7 +4645,7 @@
       ],
       "notes": "",
       "default_favorite": false,
-      "icon_url": "./logos/gale-power.jpg",
+      "icon_url": "./logos/gale-power.webp",
       "icon_alt": "Logo Gale Power Search",
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
@@ -4686,7 +4686,7 @@
       ],
       "notes": "",
       "default_favorite": false,
-      "icon_url": "./logos/gale-lit.jpg",
+      "icon_url": "./logos/gale-lit.webp",
       "icon_alt": "Logo Gale Litterature",
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
@@ -4728,7 +4728,7 @@
       ],
       "notes": "",
       "default_favorite": false,
-      "icon_url": "./logos/gale-prim.jpg",
+      "icon_url": "./logos/gale-prim.webp",
       "icon_alt": "Logo Gale Primary Sources",
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
@@ -4827,7 +4827,7 @@
           }
         ]
       },
-      "icon_url": "./logos/gazettes-europeennes-du-18e-siecle.png",
+      "icon_url": "./logos/gazettes-europeennes-du-18e-siecle.webp",
       "icon_alt": "Logo Gazettes européennes du 18e siècle",
       "icon_source_url": "https://www.gazettes18e.fr/sites/all/files/logo-ihrim.png",
       "icon_source_kind": "png",
@@ -5859,7 +5859,7 @@
           }
         ]
       },
-      "icon_url": "./logos/issn.png",
+      "icon_url": "./logos/issn.webp",
       "icon_alt": "Logo ISSN",
       "icon_source_url": "https://portal.issn.org/static/logo.png",
       "icon_source_kind": "png",
@@ -6013,7 +6013,7 @@
       ],
       "notes": "",
       "default_favorite": false,
-      "icon_url": "./logos/kdgko.jpg",
+      "icon_url": "./logos/kdgko.webp",
       "icon_alt": "Logo KDGKO",
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
@@ -6432,7 +6432,7 @@
       ],
       "notes": "",
       "default_favorite": false,
-      "icon_url": "./logos/loeb.jpg",
+      "icon_url": "./logos/loeb.webp",
       "icon_alt": "Logo LOEB",
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
@@ -6475,7 +6475,7 @@
       ],
       "notes": "",
       "default_favorite": false,
-      "icon_url": "./logos/ncco.png",
+      "icon_url": "./logos/ncco.webp",
       "icon_alt": "Logo NCCO",
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
@@ -7167,7 +7167,7 @@
           }
         ]
       },
-      "icon_url": "./logos/oxford-dnb.jpg",
+      "icon_url": "./logos/oxford-dnb.webp",
       "icon_alt": "Logo Oxford Dictionary of National Biography",
       "icon_source_url": "https://www.oxforddnb.com/fileasset/logo-x.svg",
       "icon_source_kind": "svg",
@@ -7591,7 +7591,7 @@
       ],
       "notes": "",
       "default_favorite": false,
-      "icon_url": "./logos/ncco.png",
+      "icon_url": "./logos/ncco.webp",
       "icon_alt": "Logo NCCO",
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
@@ -7689,7 +7689,7 @@
           }
         ]
       },
-      "icon_url": "./logos/proquest-dissertations-theses.png",
+      "icon_url": "./logos/proquest-dissertations-theses.webp",
       "icon_alt": "Logo ProQuest Dissertations & Theses Global",
       "icon_source_url": "https://pq-static-content.proquest.com/collateral/media2/images/pqdt-logo-3.png",
       "icon_source_kind": "png",
@@ -7733,7 +7733,7 @@
           }
         ]
       },
-      "icon_url": "./logos/proquest-one-literature.png",
+      "icon_url": "./logos/proquest-one-literature.webp",
       "icon_alt": "Logo ProQuest One Literature",
       "icon_source_url": "https://pq-static-content.proquest.com/collateral/media2/images/logo-pq1literature-365x288.png",
       "icon_source_kind": "png",
@@ -7960,7 +7960,7 @@
           }
         ]
       },
-      "icon_url": "./logos/repertoire-bibliographique-de-la-philosophie-international-philosophical-bibliography.png",
+      "icon_url": "./logos/repertoire-bibliographique-de-la-philosophie-international-philosophical-bibliography.webp",
       "icon_alt": "Logo Répertoire bibliographique de la philosophie = International philosophical bibliography",
       "icon_source_url": "https://ipb.uclouvain.be/consult/images/logo-ipb.png",
       "icon_source_kind": "png",
@@ -8090,7 +8090,7 @@
           }
         ]
       },
-      "icon_url": "./logos/repertoire-international-des-sources-musicales-rism.png",
+      "icon_url": "./logos/repertoire-international-des-sources-musicales-rism.webp",
       "icon_alt": "Logo Répertoire international des sources musicales (RISM)",
       "icon_source_url": "https://rism.info/images/logo-large.png",
       "icon_source_kind": "png",
@@ -8207,7 +8207,7 @@
       ],
       "notes": "",
       "default_favorite": false,
-      "icon_url": "./logos/rom.jpg",
+      "icon_url": "./logos/rom.webp",
       "icon_alt": "Logo Romanische Bibliographie Online",
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
@@ -8759,7 +8759,7 @@
           }
         ]
       },
-      "icon_url": "./logos/seg.jpg",
+      "icon_url": "./logos/seg.webp",
       "icon_alt": "Logo Supplementum Epigraphicum Graecum Online",
       "icon_source_url": "https://scholarlyeditions.brill.com/site_media/static/images/logo-brill-300x100-transparent-desktop.png",
       "icon_source_kind": "png",
@@ -8893,7 +8893,7 @@
           }
         ]
       },
-      "icon_url": "./logos/tllo.jpg",
+      "icon_url": "./logos/tllo.webp",
       "icon_alt": "Logo Thesaurus Linguae Latinae (TLL)",
       "icon_source_url": "https://tll.degruyter.com/images/logo-black.png",
       "icon_source_kind": "png",
@@ -8982,7 +8982,7 @@
           }
         ]
       },
-      "icon_url": "./logos/alexanderstreet.png",
+      "icon_url": "./logos/alexanderstreet.webp",
       "icon_alt": "Logo Twentieth Century Religious Thought Library – Christianity",
       "icon_source_url": "https://search.alexanderstreet.com/sites/search.alexanderstreet.com/themes/custom/as_lazr/images/beam/Clarivate_as_black.png",
       "icon_source_kind": "png",
@@ -9093,7 +9093,7 @@
       ],
       "notes": "",
       "default_favorite": false,
-      "icon_url": "./logos/utet.jpg",
+      "icon_url": "./logos/utet.webp",
       "icon_alt": "Logo UPLA",
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
@@ -9149,7 +9149,7 @@
           }
         ]
       },
-      "icon_url": "./logos/vidal.png",
+      "icon_url": "./logos/vidal.webp",
       "icon_alt": "Logo Vidal",
       "icon_source_url": "https://evidal.vidal.fr/themes/main/evidal/front/img/beta-vidalEvidalLogoNew.png",
       "icon_source_kind": "png",
@@ -9226,7 +9226,7 @@
       ],
       "notes": "Accès sur place indiqué dans les traces EasyBNF.",
       "default_favorite": false,
-      "icon_url": "./logos/waterloo.jpg",
+      "icon_url": "./logos/waterloo.webp",
       "icon_alt": "Logo Waterloo Directory",
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",

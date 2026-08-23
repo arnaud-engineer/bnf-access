@@ -39,6 +39,8 @@ const favoriteOrderCustomStorageKey = "bnf-access:favorite-order-custom:v1";
 const passFilterStorageKey = "bnf-access:pass-filter:v1";
 const remoteFilterStorageKey = "bnf-access:remote-filter:v1";
 const themedSvgCache = new Map();
+let resourceGridTransitionTimer = 0;
+let resourceGridEnterTimer = 0;
 
 const accessLabels = {
   pass_lecture_culture: "Pass Lecture/Culture",
@@ -113,9 +115,13 @@ function renderFilters() {
     button.textContent = category;
     button.setAttribute("aria-pressed", String(category === state.category));
     button.addEventListener("click", () => {
+      if (state.category === category) {
+        return;
+      }
+
       state.category = category;
       renderFilters();
-      render();
+      renderResourceGridWithTransition();
     });
     filters.append(button);
   }
@@ -128,7 +134,7 @@ function renderFilters() {
   favoriteButton.addEventListener("click", () => {
     state.favoritesOnly = !state.favoritesOnly;
     renderFilters();
-    render();
+    renderResourceGridWithTransition();
   });
 
   const separator = document.createElement("span");
@@ -143,6 +149,10 @@ function getResourceCategories(resource) {
 
 function render() {
   renderQuickLaunch();
+  renderResourceGrid();
+}
+
+function renderResourceGrid() {
   const resources = getFilteredResources();
   resultCount.textContent = `${resources.length} ressource${resources.length > 1 ? "s" : ""}`;
   grid.innerHTML = "";
@@ -160,6 +170,28 @@ function render() {
   }
 
   hydrateThemedSvgIcons(grid);
+}
+
+function renderResourceGridWithTransition() {
+  if (prefersReducedMotion()) {
+    renderResourceGrid();
+    return;
+  }
+
+  window.clearTimeout(resourceGridTransitionTimer);
+  window.clearTimeout(resourceGridEnterTimer);
+  grid.classList.remove("is-entering");
+  grid.classList.add("is-refreshing");
+
+  resourceGridTransitionTimer = window.setTimeout(() => {
+    renderResourceGrid();
+    grid.classList.remove("is-refreshing");
+    grid.classList.add("is-entering");
+
+    resourceGridEnterTimer = window.setTimeout(() => {
+      grid.classList.remove("is-entering");
+    }, 220);
+  }, 130);
 }
 
 function renderQuickLaunch() {
@@ -1169,13 +1201,13 @@ passFilter.addEventListener("change", (event) => {
   state.passFilter = event.target.value;
   syncProfileFilterState();
   saveProfileFilters();
-  render();
+  renderResourceGridWithTransition();
 });
 
 remoteFilter.addEventListener("change", (event) => {
   state.remoteFilter = event.target.value;
   saveProfileFilters();
-  render();
+  renderResourceGridWithTransition();
 });
 
 jumpToSearch.addEventListener("click", () => {

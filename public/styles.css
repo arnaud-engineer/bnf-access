@@ -527,6 +527,18 @@ h1 {
   }
 }
 
+@keyframes resource-grid-enter {
+  0% {
+    opacity: 0.35;
+    transform: translateY(6px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .is-editing .quick-launch-item,
   .quick-launch-remove,
@@ -534,10 +546,20 @@ h1 {
   .quick-launch-header.actions-entering .quick-launch-action,
   .quick-launch-header.actions-exiting .quick-launch-action,
   .quick-launch-header.modifier-entering .quick-launch-action,
+  .grid.is-entering,
   .notice {
     animation: none;
     transform: none;
     will-change: auto;
+  }
+
+  .grid {
+    transition: none;
+  }
+
+  .grid.is-refreshing {
+    opacity: 1;
+    transform: none;
   }
 }
 
@@ -679,6 +701,20 @@ h1 {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
+  transition:
+    opacity 130ms ease,
+    transform 130ms ease;
+  will-change: opacity, transform;
+}
+
+.grid.is-refreshing {
+  opacity: 0.35;
+  pointer-events: none;
+  transform: translateY(6px);
+}
+
+.grid.is-entering {
+  animation: resource-grid-enter 200ms ease-out both;
 }
 
 .card {

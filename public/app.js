@@ -58,6 +58,21 @@ const accessModeClasses = {
   free: "free",
 };
 
+const categoryOrder = [
+  "Presse et médias",
+  "Dictionnaires et encyclopédies",
+  "Catalogues et annuaires",
+  "Ressources pluridisciplinaires",
+  "Langues et littératures",
+  "Histoire, religion et sources anciennes",
+  "Sciences humaines et sociales",
+  "Arts, images et patrimoine",
+  "Musique, cinéma et spectacle",
+  "Cartes et géographie",
+  "Droit, économie et entreprise",
+  "Sciences, santé et techniques",
+];
+
 async function init() {
   setupPrivacyNotice();
   const response = await fetch("./resources.json");
@@ -83,7 +98,10 @@ function setupPrivacyNotice() {
 }
 
 function renderFilters() {
-  const categories = ["Toutes", ...new Set(state.resources.map((resource) => resource.category))];
+  const knownCategories = new Set(state.resources.flatMap(getResourceCategories));
+  const orderedCategories = categoryOrder.filter((category) => knownCategories.delete(category));
+  const extraCategories = [...knownCategories].sort((a, b) => a.localeCompare(b, "fr"));
+  const categories = ["Toutes", ...orderedCategories, ...extraCategories];
   filters.innerHTML = "";
 
   for (const category of categories) {
@@ -115,6 +133,10 @@ function renderFilters() {
   separator.className = "filter-separator";
   separator.setAttribute("aria-hidden", "true");
   filters.prepend(favoriteButton, separator);
+}
+
+function getResourceCategories(resource) {
+  return [resource.category, ...(resource.secondary_categories ?? [])].filter(Boolean);
 }
 
 function render() {
@@ -307,13 +329,14 @@ function getFilteredResources() {
   return state.resources
     .filter((resource) => {
       const accessMode = getAccessMode(resource);
-      const matchesCategory = state.category === "Toutes" || resource.category === state.category;
+      const resourceCategories = getResourceCategories(resource);
+      const matchesCategory = state.category === "Toutes" || resourceCategories.includes(state.category);
       const matchesFavorite = !state.favoritesOnly || state.favorites.has(resource.id);
       const matchesPass = matchesPassFilter(resource);
       const matchesRemote = state.remoteFilter === "all" || state.remoteFilter === accessMode;
       const haystack = normalize([
         resource.name,
-        resource.category,
+        ...resourceCategories,
         resource.description,
         getAccessModeLabel(resource),
         resource.access_note,
@@ -376,6 +399,9 @@ function createCard(resource) {
     ? `<img src="${escapeAttribute(resource.icon_url)}" alt="${escapeAttribute(resource.icon_alt ?? "")}" loading="lazy">`
     : `<span>${escapeHtml(getFallbackLabel(resource))}</span>`;
   const accessInstruction = renderAccessInstruction(resource);
+  const secondaryCategoryBadges = (resource.secondary_categories ?? [])
+    .map((category) => `<span class="badge category">${escapeHtml(category)}</span>`)
+    .join("");
 
   card.innerHTML = `
     <div class="card-header">
@@ -398,6 +424,7 @@ function createCard(resource) {
     ${accessInstruction}
     <div class="badges">
       <span class="badge category">${escapeHtml(resource.category)}</span>
+      ${secondaryCategoryBadges}
       <span class="badge ${accessModeClass}">${escapeHtml(accessModeLabel)}</span>
       ${access.map((label) => `<span class="badge">${escapeHtml(label)}</span>`).join("")}
     </div>

@@ -56,6 +56,7 @@ Chaque entrée de `resources.json` contient :
 - `id` : identifiant stable.
 - `name` : nom affiché.
 - `category` : catégorie d'affichage.
+- `secondary_categories` : catégories secondaires optionnelles. Elles permettent à une ressource d'apparaître dans plusieurs filtres sans changer sa catégorie principale.
 - `description` : courte description originale.
 - `url` : lien à ouvrir.
 - `access_mode` : mode d'accès normalisé pour l'interface (`remote`, `remote_conditional`, `onsite`, `free`).
@@ -72,6 +73,31 @@ Chaque entrée de `resources.json` contient :
 - `notes` : détails pratiques, si nécessaire.
 
 Les sources communes sont conservées au niveau racine du JSON, dans `sources`, plutôt que répétées dans chaque ressource.
+
+## Taxonomie des ressources
+
+Chaque ressource porte une categorie principale unique dans `resources.json`. Cette categorie sert au filtre visible dans l'interface : elle doit donc correspondre a l'endroit ou un utilisateur s'attendrait d'abord a trouver la ressource, plutot qu'a tous les sujets couverts.
+
+Une ressource peut aussi définir `secondary_categories` lorsqu'elle relève clairement de deux usages. Dans ce cas, elle apparaît dans les filtres de sa catégorie principale et de ses catégories secondaires, mais le premier badge reste sa catégorie principale. Exemple : `Bellefaye` reste dans `Musique, cinéma et spectacle`, tout en apparaissant aussi dans `Catalogues et annuaires`.
+
+Les categories actuellement retenues sont :
+
+- Presse et médias ;
+- Dictionnaires et encyclopédies ;
+- Catalogues et annuaires ;
+- Ressources pluridisciplinaires ;
+- Langues et littératures ;
+- Histoire, religion et sources anciennes ;
+- Sciences humaines et sociales ;
+- Arts, images et patrimoine ;
+- Musique, cinéma et spectacle ;
+- Cartes et géographie ;
+- Droit, économie et entreprise ;
+- Sciences, santé et techniques.
+
+Les ressources très spécialisées sont classees selon leur usage dominant. Par exemple, une bibliographie de psychologie relève des sciences humaines et sociales, tandis qu'un catalogue collectif ou un répertoire de périodiques relève plutôt de `Catalogues et annuaires`.
+
+L'ordre d'affichage des filtres est défini dans `categoryOrder` dans `public/app.js`. Les catégories non prévues restent affichées automatiquement en fin de liste par ordre alphabétique.
 
 ## Import initial
 

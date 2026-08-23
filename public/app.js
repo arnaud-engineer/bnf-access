@@ -1,5 +1,6 @@
 const state = {
   resources: [],
+  catalogMeta: null,
   category: "Toutes",
   favorites: new Set(),
   favoritesReady: false,
@@ -86,7 +87,8 @@ async function init() {
   setupPrivacyNotice();
   const response = await fetch("./resources.json");
   const data = await response.json();
-  state.resources = data.resources;
+  state.catalogMeta = getCatalogMeta(data);
+  state.resources = getCatalogResources(data);
   loadFavorites();
   loadFavoriteOrder();
   loadProfileFilters();
@@ -94,6 +96,25 @@ async function init() {
   render();
   await waitForStartupImages();
   revealApp();
+}
+
+function getCatalogMeta(data) {
+  if (Array.isArray(data)) {
+    return {
+      schema_version: null,
+      catalog_version: null,
+    };
+  }
+
+  return {
+    schema_version: data.schema_version ?? null,
+    catalog_version: data.catalog?.version ?? null,
+    released_at: data.catalog?.released_at ?? null,
+  };
+}
+
+function getCatalogResources(data) {
+  return Array.isArray(data) ? data : data.resources ?? [];
 }
 
 function revealApp() {

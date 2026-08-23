@@ -1,0 +1,213 @@
+# Audit annuaire BnF
+
+Date : 2026-08-23T17:39:01.582075+00:00
+
+Source : https://bdl.bnf.fr/bases-de-donnees-par-titre
+
+## Résumé
+
+- Ressources locales : 228
+- Entrées BnF extraites : 226
+- Ressources rapprochées : 215
+- Ressources locales sans rapprochement automatique : 13
+- Entrées BnF non rapprochées automatiquement : 12
+- Liens locaux différents du lien BnF : 40
+
+## Ressources locales sans rapprochement automatique
+
+- `grand-robert` — Grand Robert
+  - Grand Ricci Online (0.5)
+  - Larousse - Grand Dictionnaire universel du XIXe siècle (0.25)
+  - Littré (0.231)
+  - Grand corpus des dictionnaires [du 9e au 20e siecle] (0.222)
+- `american-bibliography-of-slavic-and-east-european-studies-absees` — American Bibliography of Slavic, East European, and Eurasian Studies
+  - Online Egyptological Bibliography (0.222)
+  - Brepolis Medieval and Early Modern Bibliography (0.211)
+  - American National Biography (0.2)
+  - Early European Books (0.2)
+- `amicus` — Voilà
+  - Amicus (0.188)
+  - GBV - IKAR Landkartendrucke vor 1850 (0.178)
+- `biotechnology-abstracts-1982` — Biotechnology Abstracts
+  - Sociological Abstracts (0.5)
+  - RILM Abstracts of Music Literature (0.333)
+  - Library, Information Science & Technology Abstracts (0.286)
+  - LISA (Library and Information Science Abstracts) (0.286)
+- `cab-abstracts` — CAB Abstracts
+  - Sociological Abstracts (0.5)
+  - RILM Abstracts of Music Literature (0.333)
+  - Index translationum (0.286)
+  - Library, Information Science & Technology Abstracts (0.286)
+- `chemical-abstracts` — Chemical Abstracts
+  - Sociological Abstracts (0.5)
+  - RILM Abstracts of Music Literature (0.333)
+  - Library, Information Science & Technology Abstracts (0.286)
+  - LISA (Library and Information Science Abstracts) (0.286)
+- `compendex` — Compendex
+  - Index translationum (0.333)
+  - LISA (Library and Information Science Abstracts) (0.231)
+  - Index Religiosus (0.222)
+  - Francis (0.214)
+- `emerald-management-first-120` — Emerald Management
+  - Alice : catalogo dei libri in commercio in italia (0.16)
+  - Aida (0.154)
+- `food-science-and-technology-abstracts-fsta` — Food Science and Technology Abstracts
+  - Library, Information Science & Technology Abstracts (0.667)
+  - LISA (Library and Information Science Abstracts) (0.444)
+  - Sociological Abstracts (0.333)
+  - DBLP Computer science bibliography (0.25)
+- `index-islamicus` — Index Islamicus
+  - Anthropological index (0.5)
+  - Index Religiosus (0.5)
+  - Index translationum (0.5)
+  - Art Index Retrospective (0.4)
+- `inspec` — INSPEC
+  - Aida (0.16)
+- `science-citation-index` — Science Citation Index
+  - Anthropological index (0.4)
+  - Index Religiosus (0.4)
+  - Index translationum (0.4)
+  - Art Index Retrospective (0.333)
+- `sciences-en-ligne-dictionnaire-interactif-des-sciences-et-techniques` — Sciences en ligne
+  - CartoMundi – Outil de valorisation en ligne du patrimoine cartographique (0.4)
+  - CAIRN - Sciences humaines et sociales (0.286)
+  - CAIRN - Sciences, techniques et médecine (0.286)
+  - Sciences au fil du temps (0.286)
+
+## Entrées BnF non rapprochées automatiquement
+
+- Amicus — acces-libre — http://www.collectionscanada.gc.ca/amicus/index-f.html
+- Brepolis Medieval and Early Modern Bibliography — acces-distance — https://bnf.idm.oclc.org/login?url=https://cpps-brepolis-net.bnf.idm.oclc.org/bmb/search.cfm?
+- CAIRN - Sciences, techniques et médecine — acces-sur-place — https://www.cairn-sciences.info/
+- ClinicalKey — acces-distance — https://bnf.idm.oclc.org/login?url=https://www.clinicalkey.fr
+- Gordon's Print Prices — acces-sur-place — https://www.gordonsart.com/ds.asp?id=BIBFRA
+- Grove Art Online — acces-distance — https://bnf.idm.oclc.org/login?url=https://www-oxfordartonline-com.bnf.idm.oclc.org/groveart
+- IBN : Index Bio-Bibliographicus Notorum Hominum — acces-sur-place — https://ibn.zeller-verlag.de/
+- LeMonde.fr — acces-sur-place — https://www.lemonde.fr/autologin
+- Markets and Markets — acces-sur-place — https://www.mnmks.com/
+- Oxford language dictionaries online — acces-distance — https://bnf.idm.oclc.org/login?url=https://premium-oxforddictionaries-com.bnf.idm.oclc.org/
+- Revue d'histoire ecclésiastique- bibliographie (1993-2013 ) — acces-distance — https://bnf.idm.oclc.org/login?url=https://cpps-brepolis-net.bnf.idm.oclc.org/ir/search.cfm?
+- Wiley Digital Archives: Archives of Environmental Science and History — acces-sur-place — https://app.wileydigitalarchives.com/env
+
+## Liens locaux différents du lien BnF
+
+- `pressreader` — PressReader
+  - BnF : PressReader — https://www.pressreader.com/
+  - Local : https://bnf.idm.oclc.org/login?url=https://www.pressreader.com/
+- `arretsurimages-net` — Arrêt sur images
+  - BnF : Arretsurimages.net — https://bnf.idm.oclc.org/login?url=https://www.arretsurimages.net/autologin.php
+  - Local : https://bnf.idm.oclc.org/login?url=http://www.arretsurimages.net/autologin.php
+- `mediapart` — Mediapart
+  - BnF : Mediapart — https://bnf.idm.oclc.org/login?url=https://www.mediapart.fr/licence
+  - Local : https://bnf.idm.oclc.org/login?url=http://www.mediapart.fr/licence
+- `new-york-times` — New York Times
+  - BnF : New York Times — https://www.nytimes.com
+  - Local : https://www.nytimes.com/subscription/redeem?campaignId=8RHXJ&gift_code=8df078f005d2b885
+- `encyclop-dia-universalis` — Encyclopædia Universalis
+  - BnF : Encyclopaedia Universalis — https://bnf.idm.oclc.org/login?url=http://www.universalis-edu.com
+  - Local : https://bnf.idm.oclc.org/login?url=https://bnf.idm.oclc.org/login?url=http://www.universalis-edu.com
+- `academic-search-premier` — Academic Search Premier
+  - BnF : Academic Search Premier — https://bnf.idm.oclc.org/login?url=https://bnf.idm.oclc.org/login?url=https://research.ebsco.com/c/oiipx6?db=aph
+  - Local : https://bnf.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=ehost&defaultdb=aph
+- `annee-philologique` — Année philologique
+  - BnF : Année philologique — https://bnf.idm.oclc.org/login?url=https://apps.brepolis.net/brebiaph/search?l=FR
+  - Local : https://bnf.idm.oclc.org/login?url=http://www.brepolis.net
+- `archive-of-celtic-latin-literature` — Archive of Celtic-Latin Literature
+  - BnF : Archive of Celtic-Latin Literature — https://bnf.idm.oclc.org/login?url=https://clt-brepolis-net.bnf.idm.oclc.org/acll/Default.aspx
+  - Local : https://bnf.idm.oclc.org/login?url=http://www.brepolis.net/
+- `aristoteles-latinus-database` — Aristoteles Latinus Database
+  - BnF : Aristoteles Latinus Database — https://bnf.idm.oclc.org/login?url=https://clt-brepolis-net.bnf.idm.oclc.org/ald/Search
+  - Local : https://bnf.idm.oclc.org/login?url=http://www.brepolis.net/
+- `art-full-text` — Art Full Text
+  - BnF : Art Full Text — https://bnf.idm.oclc.org/login?url=https://bnf.idm.oclc.org/login?url=https://research.ebsco.com/c/oiipx6?db=H.W
+  - Local : https://bnf.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=ehost&defaultdb=aft
+- `artstor-digital-library` — Artstor Digital library
+  - BnF : Artstor Digital library — https://bnf.idm.oclc.org/login?url=https://www-jstor-org.bnf.idm.oclc.org/images
+  - Local : https://bnf.idm.oclc.org/login?url=https://library.artstor.org/
+- `astrophysics-data-system` — Astrophysics Data System
+  - BnF : Astrophysics Data System — http://cdsads.u-strasbg.fr/
+  - Local : https://ui.adsabs.harvard.edu/
+- `bibliographie-de-civilisation-medievale` — Bibliographie de civilisation médiévale
+  - BnF : Bibliographie de civilisation médiévale — https://bnf.idm.oclc.org/login?url=https://cpps-brepolis-net.bnf.idm.oclc.org/bmb/search.cfm
+  - Local : https://bnf.idm.oclc.org/login?url=http://www.brepolis.net
+- `bibliographie-internationale-de-l-humanisme-et-de-la-renaissance` — Bibliographie internationale de l'Humanisme et de la Renaissance
+  - BnF : International Bibliography of Humanism and the Renaissance — https://bnf.idm.oclc.org/login?url=https://cpps-brepolis-net.bnf.idm.oclc.org/bmb/search.cfm
+  - Local : https://bnf.idm.oclc.org/login?url=http://www.brepolis.net
+- `bibliorecit` — Bibliorécit
+  - BnF : Bibliorécit — http://bibliorecitbnf.fr
+  - Local : https://bnf.idm.oclc.org/login?url=http://bibliorecitbnf.fr
+- `bulletin-analytique-d-histoire-romaine-1990` — Bulletin analytique d'histoire romaine
+  - BnF : Bulletin analytique d'histoire romaine (1990- ) — http://www2.misha.fr/flora/jsp/index.jsp
+  - Local : https://pus.unistra.fr/collection-revue/bulletin-analytique-dhistoire-romaine-bahr/
+- `business-source-complete` — Business Source Complete
+  - BnF : Business Source Complete — https://bnf.idm.oclc.org/login?url=https://bnf.idm.oclc.org/login?url=https://research.ebsco.com/c/oiipx6?db=bth
+  - Local : https://bnf.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=ehost&defaultdb=bth
+- `cairn-soc` — CAIRN Social
+  - BnF : CAIRN - Droit et Administration — https://droit.cairn.info/?lang=fr
+  - Local : http://www.cairn.info/
+- `cairn-sciences` — CAIRN Sciences
+  - BnF : CAIRN - Sciences humaines et sociales — http://www.cairn.info/
+  - Local : https://www.cairn-sciences.info/
+- `dalloz-bibliotheque-bibliotheque-numerique-dalloz` — Dalloz - Bibliothèque
+  - BnF : Dalloz Bibliothèque (Bibliothèque numérique Dalloz) — https://bnf.idm.oclc.org/login?url=https://bibliotheque-lefebvre-dalloz-fr.bnf.idm.oclc.org/
+  - Local : https://bnf.idm.oclc.org/login?url=http://www.dalloz-bibliotheque.fr/secure/
+- `database-of-latin-dictionaries` — Database of Latin Dictionaries
+  - BnF : Database of Latin Dictionaries — https://bnf.idm.oclc.org/login?url=https://clt-brepolis-net.bnf.idm.oclc.org/dld/Dictionaries/Search
+  - Local : https://bnf.idm.oclc.org/login?url=http://www.brepolis.net/
+- `dictionnaire-d-histoire-et-de-geographie-ecclesiastiques` — Dictionnaire d'histoire et de géographie ecclésiastiques
+  - BnF : Dictionnaire d'histoire et de géographie ecclésiastiques — https://bnf.idm.oclc.org/login?url=https://apps.brepolis.net/DHGE/test/Default2.aspx
+  - Local : https://bnf.idm.oclc.org/login?url=http://www.brepolis.net/
+- `droits-antiques` — Droits antiques
+  - BnF : Droits antiques — http://www2.misha.fr/flora/jsp/index.jsp
+  - Local : https://drant.cnrs.fr/fr/
+- `encyclopedie-de-l-islam` — Encyclopédie de l'Islam
+  - BnF : Encyclopédie de l'Islam — https://bnf.idm.oclc.org/login?url=https://referenceworks-brill-com.bnf.idm.oclc.org/display/package/eiof
+  - Local : https://bnf.idm.oclc.org/login?url=https://referenceworks.brillonline.com/cluster/Encyclopaedia%20of%20Islam
+- `eni-bibliotheque-numerique` — ENI - Bibliothèque Numérique
+  - BnF : ENI Bibliothèque Numérique — https://bnf.idm.oclc.org/login?url=https://www.eni-training.com/cs/bnf
+  - Local : https://bnf.idm.oclc.org/login?url=http://www.eni-training.com/cs/bnf
+- `factiva` — Factiva
+  - BnF : Factiva — https://global.factiva.com/en/sess/login.asp?xsid=S00YcvcZWva5DEs5DEtN92sMp6sMDByMHn0YqYvMq382rbRQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQQAA
+  - Local : https://global.factiva.com/en/sess/login.asp?xsid=S00YcvcZWva5DEs5DEqNDYmMp6pNT3yMHn0YqYvMq382rbRQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQQAA
+- `grand-corpus-des-dictionnaires-du-9e-au-20e-siecle` — Grand Corpus des Dictionnaires
+  - BnF : Grand corpus des dictionnaires [du 9e au 20e siecle] — https://bnf.idm.oclc.org/login?url=https://www.classiques-garnier.com/numerique-bases/index.php?module=App&action=FrameMain&colname=ColCorpusDictionnaires
+  - Local : https://bnf.idm.oclc.org/login?url=https://bnf.idm.oclc.org/login?url=https://www.classiques-garnier.com/numerique-bases/index.php?module=App&action=FrameMain&colname=ColCorpusDictionnaires
+- `grand-ricci-online` — Grand Ricci Online
+  - BnF : Grand Ricci Online — https://bnf.idm.oclc.org/login?url=https://chinesereferenceshelf.brillonline.com/grand-ricci
+  - Local : https://bnf.idm.oclc.org/login?url=http://chinesereferenceshelf.brillonline.com/grand-ricci/
+- `in-principio` — In Principio
+  - BnF : In Principio — https://bnf.idm.oclc.org/login?url=https://apps-brepolis-net.bnf.idm.oclc.org/inpr/Main.aspx
+  - Local : https://bnf.idm.oclc.org/login?url=http://www.brepolis.net/
+- `index-religiosus` — Index Religiosus
+  - BnF : Index Religiosus — https://bnf.idm.oclc.org/login?url=https://cpps-brepolis-net.bnf.idm.oclc.org/ir/search.cfm
+  - Local : https://bnf.idm.oclc.org/login?url=http://www.brepolis.net/
+- `index-translationum` — Index translationum
+  - BnF : Index translationum — https://www.unesco.org/xtrans/bsform.aspx?lg=1
+  - Local : https://unesdoc.unesco.org/search/3eab78d9-a2cb-430e-af39-ff742b1131f4
+- `international-medieval-bibliography` — International Medieval Bibliography
+  - BnF : International Medieval Bibliography — https://bnf.idm.oclc.org/login?url=https://cpps-brepolis-net.bnf.idm.oclc.org/bmb/search.cfm
+  - Local : https://bnf.idm.oclc.org/login?url=http://www.brepolis.net
+- `lextenso` — Lextenso
+  - BnF : Lextenso — https://www.labase-lextenso.fr/
+  - Local : https://bnf.idm.oclc.org/login?url=https://www.labase-lextenso.fr/
+- `library-of-latin-texts` — Library of Latin Texts
+  - BnF : Library of Latin Texts — https://bnf.idm.oclc.org/login?url=https://clt.brepolis.net/llta/Search
+  - Local : https://bnf.idm.oclc.org/login?url=http://www.brepolis.net/
+- `monumenta-germaniae-historica-emgh` — Monumenta Germaniae Historica
+  - BnF : Monumenta Germaniae Historica (eMGH) — https://bnf.idm.oclc.org/login?url=https://clt-brepolis-net.bnf.idm.oclc.org/eMGH/pages/QuickSearch.aspx
+  - Local : https://bnf.idm.oclc.org/login?url=http://www.brepolis.net
+- `navis` — Navis
+  - BnF : Navis — https://bnf.idm.oclc.org/login?url=https://abonnes.efl.fr
+  - Local : https://bnf.idm.oclc.org/login?url=http://abonnes.efl.fr
+- `scholarvox-cyberlibris` — Scholarvox (Cyberlibris)
+  - BnF : Scholarvox (Cyberlibris) — https://bnf.idm.oclc.org/login?url=https://univ.scholarvox.com/
+  - Local : https://bnf.idm.oclc.org/login?url=http://univ.scholarvox.com/
+- `sciences-au-fil-du-temps` — Sciences au fil du temps
+  - BnF : Sciences au fil du temps — https://gallica.bnf.fr/html/und/sciences/les-sciences-au-fil-du-temps-bibliographie-selective-par-philippe-zoummeroff
+  - Local : https://gallica.bnf.fr/selections/fr/html/les-sciences-au-fil-du-temps-bibliographie-de-philippe-zoummeroff
+- `ut-per-litteras-apostolicas` — Papal Letters
+  - BnF : Papal letters (Ut per litteras apostolicas (LITPA)) — https://bnf.idm.oclc.org/login?url=https://apps-brepolis-net.bnf.idm.oclc.org/litpa/Pontificates.aspx
+  - Local : https://bnf.idm.oclc.org/login?url=http://www.brepolis.net/
+- `wiley-digital-archives-british-association-for-the-advancement-of-science-collections-on-the-history-of-science-1830-1970` — Wiley Digital Archives
+  - BnF : Wiley Digital Archives: British Association for the Advancement of Science (Collections on the History of Science: 1830 — 1970) — https://app.wileydigitalarchives.com/baas
+  - Local : https://bnf.idm.oclc.org/login?url=https://app.wileydigitalarchives.com/baas

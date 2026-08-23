@@ -13,6 +13,29 @@ public/styles.css
 public/resources.json
 ```
 
+## Version du catalogue
+
+`resources.json` porte deux niveaux de version :
+
+- `schema_version` : version du format du fichier ;
+- `catalog.version` : version du référentiel de ressources.
+
+Ces deux versions peuvent évoluer séparément. Une correction de titre, de lien, de description, de logo ou de condition d'accès incrémente le catalogue. Une modification de structure attendue par l'application incrémente le schéma.
+
+Les `id` des ressources sont traités comme des identifiants stables. Ils ne doivent être renommés qu'en dernier recours, car ils servent de clé aux favoris et aux futurs mécanismes de migration locale.
+
+## Suivi de l'annuaire BnF
+
+Le script `scripts/audit_bnf_directory.py` compare `public/resources.json` avec l'annuaire officiel BnF. Il extrait les titres, les liens et les classes d'accès de la page BnF, puis produit un rapport dans `docs/audits/bnf-directory-audit.md`.
+
+Ce rapport sert à repérer :
+
+- les ressources locales sans équivalent BnF trouvé automatiquement ;
+- les entrées BnF non représentées localement ;
+- les liens locaux qui divergent du lien affiché par la BnF.
+
+Les écarts de liens doivent être relus manuellement avant correction : certains sont volontaires, notamment quand BnF Access pointe vers une procédure d'accès particulière ou vers un lien plus pratique que celui de l'annuaire.
+
 ## Accès BnF via EZproxy
 
 La plupart des liens distants utilisent EZproxy/OCLC, sous cette forme :
@@ -101,7 +124,7 @@ L'ordre d'affichage des filtres est défini dans `categoryOrder` dans `public/ap
 
 ## Import initial
 
-L'import initial couvre les 245 ressources presentes dans l'archive EasyBNF du 29 juillet 2026. Les descriptions affichees sont courtes et propres au projet ; les textes longs d'origine ne sont pas recopies dans l'interface.
+Le catalogue est consolidé depuis les traces publiques EasyBNF et l'annuaire BnF. Les descriptions affichees sont courtes et propres au projet ; les textes longs d'origine ne sont pas recopies dans l'interface.
 
 Plusieurs logos ont pu être rapatriés ou recréés localement depuis les traces archivées, des sources publiques ou des fichiers fournis pour la maquette. La majorité est servie en SVG local ; MusicMe, Encyclopædia Universalis, Academic Search Premier, Année philologique et Aida utilisent des vectorisations générées ou recréées depuis les images sources, faute de SVG officiel fiable identifié. AFP Forum utilise le logo vectoriel public de l'Agence France-Presse ; Agricola utilise le logo vectoriel public de l'USDA. Worldcat utilise le pictogramme extrait du logo vectoriel public. Acta Sanctorum, ABSEEES et Littré utilisent des marques typographiques originales faute de logo officiel autonome identifié. RetroNews utilise un SVG local fourni. Mascarille et American National Biography utilisent des WebP transparents optimisés pour conserver les formes des visuels sources. Certaines familles de ressources, notamment ProQuest et EBSCO, conservent aussi un logo éditeur recoloré quand aucun logo autonome satisfaisant n'a été validé. Les autres ressources utilisent un bloc d'initiales généré par l'interface.
 

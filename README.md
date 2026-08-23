@@ -17,8 +17,9 @@ Le projet est volontairement statique :
 - `public/index.html` : coquille de l'application.
 - `public/styles.css` : styles de l'interface.
 - `public/app.js` : lecture du JSON, recherche, filtres et rendu des cartes.
-- `public/resources.json` : liste des ressources, liens, conditions d'accès, logos connus et sources.
+- `public/resources.json` : catalogue versionné des ressources, liens, conditions d'accès, logos connus et sources.
 - `public/bnf-network.json` : plages reseau BnF candidates pour une future detection sur site.
+- `scripts/audit_bnf_directory.py` : comparaison locale entre le catalogue et l'annuaire officiel BnF.
 - `docs/architecture.md` : notes techniques sur la logique des liens.
 - `docs/backlog.md` : pistes produit et notes de backlog.
 - `docs/logo-sources.md` : provenance des logos locaux.
@@ -38,13 +39,23 @@ Puis ouvrir :
 http://localhost:5173
 ```
 
+## Auditer l'annuaire BnF
+
+Pour comparer le catalogue local avec l'annuaire officiel BnF :
+
+```bash
+python3 scripts/audit_bnf_directory.py --write-report
+```
+
+Le rapport est écrit dans `docs/audits/bnf-directory-audit.md`.
+
 ## Principes
 
 - Projet non officiel, non affilié à la BnF.
 - Pas de collecte d'identifiants, pas de compte utilisateur, pas de backend.
-- Données versionnées dans un fichier lisible.
+- Catalogue de ressources versionné dans un fichier lisible.
 - Sources communes conservées au niveau global du JSON.
-- Import initial de 245 ressources depuis les traces publiques EasyBNF.
+- Catalogue consolidé depuis les traces publiques EasyBNF et l'annuaire BnF.
 - Logos locaux affichés quand une trace publique exploitable existe ; sinon l'interface génère des initiales.
 - Favoris sauvegardés localement dans le navigateur, initialisés avec les ressources grand public.
 - Barre de lancement rapide alimentée par les favoris, avec ordre manuel optionnel.

@@ -1,5 +1,12 @@
 {
   "name": "BNF Access resources",
+  "schema_version": "1.0.0",
+  "catalog": {
+    "version": "1.0.0",
+    "released_at": "2026-08-23",
+    "description": "Référentiel initial consolidé des ressources électroniques utilisées par BnF Access.",
+    "resource_id_policy": "Les identifiants de ressources doivent rester stables pour préserver les favoris locaux et permettre les futures migrations."
+  },
   "last_verified_at": null,
   "source_last_update_at": "2023-02-25 01:54:32",
   "sources": [

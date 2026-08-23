@@ -320,7 +320,7 @@
       "notes": "",
       "icon_url": "./logos/larousse.svg",
       "icon_alt": "Logo Larousse - Grand Dictionnaire universel du XIXe siècle",
-      "default_favorite": true,
+      "default_favorite": false,
       "bnf_official": {
         "source_url": "https://bdl.bnf.fr/bases-de-donnees-par-titre",
         "retrieved_at": "2026-08-21",

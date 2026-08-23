@@ -17,6 +17,7 @@ Les logos sont stockés localement pour éviter de dépendre de hotlinks externe
 - RetroNews : fichier local `partenaire-retronews.svg` fourni pour la maquette.
 - Agricola : logo USDA, fichier `Logo of the United States Department of Agriculture.svg`, Wikimedia Commons ; le guide officiel USDA documente le logo et ses couleurs.
 - Worldcat : pictogramme multicolore extrait du fichier `WorldCat logo.svg`, Wikimedia Commons.
+- International Directory of Medievalists : logo FIDEM récupéré depuis le site officiel de la Fédération internationale des instituts d'études médiévales, organisme producteur de la ressource.
 
 ## SVG générés depuis les images sources
 
@@ -30,6 +31,9 @@ Les logos sont stockés localement pour éviter de dépendre de hotlinks externe
 - Acta Sanctorum : SVG typographique original, inspiré des pages de titre anciennes fournies en référence ; pas de logo officiel identifié.
 - Littré : icône typographique originale inspirée des pages de titre anciennes du `Dictionnaire de la langue française` consultables sur Gallica ; aucun logo officiel identifié.
 - AFP Forum : SVG `Agence France-Presse Logo.svg`, Wikimedia Commons ; la notice indique une source originale AFP aujourd'hui indisponible à l'URL historique.
+- RAMBI : icône typographique SVG locale inspirée du visuel RAMBI publié sur le site officiel de la Bibliothèque nationale d'Israël ; le JPEG officiel n'a pas été intégré directement.
+- ProQuest - Dissertations & theses : logo PNG officiel `ProQuest Dissertations & Theses Global`, récupéré depuis le kit marketing ProQuest.
+- ProQuest - Literature : logo PNG officiel `ProQuest One Literature`, récupéré depuis le kit marketing ProQuest Digital Collections.
 
 ## Images détourées et optimisées
 

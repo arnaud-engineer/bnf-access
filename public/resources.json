@@ -5758,7 +5758,12 @@
       "access_mode": "remote",
       "access_label": "Accès distant",
       "access_source": "bnf_official",
-      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture"
+      "access_note": "Ressource accessible à distance pour les détenteurs d’un Pass Recherche illimité ou d’un Pass BnF Lecture/Culture",
+      "icon_url": "./logos/fidem.png",
+      "icon_alt": "Logo FIDEM",
+      "icon_source_url": "https://fidemweb.eu/wp-content/uploads/2013/12/logo-fidem.png",
+      "icon_source_kind": "png",
+      "icon_review_status": "to_review"
     },
     {
       "id": "international-medieval-bibliography",
@@ -7658,10 +7663,10 @@
           }
         ]
       },
-      "icon_url": "./logos/proquest.svg",
-      "icon_alt": "Logo ProQuest",
-      "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
-      "icon_source_kind": "svg",
+      "icon_url": "./logos/proquest-dissertations-theses.png",
+      "icon_alt": "Logo ProQuest Dissertations & Theses Global",
+      "icon_source_url": "https://pq-static-content.proquest.com/collateral/media2/images/pqdt-logo-3.png",
+      "icon_source_kind": "png",
       "icon_review_status": "to_review",
       "access_mode": "onsite",
       "access_label": "Sur place uniquement",
@@ -7702,10 +7707,10 @@
           }
         ]
       },
-      "icon_url": "./logos/proquest.svg",
-      "icon_alt": "Logo ProQuest",
-      "icon_source_url": "https://www.proquest.com/assets/meta/zd2d6a3ce/images/icons/login/proquest-q-logo.svg",
-      "icon_source_kind": "svg",
+      "icon_url": "./logos/proquest-one-literature.png",
+      "icon_alt": "Logo ProQuest One Literature",
+      "icon_source_url": "https://pq-static-content.proquest.com/collateral/media2/images/logo-pq1literature-365x288.png",
+      "icon_source_kind": "png",
       "icon_review_status": "to_review",
       "access_mode": "remote",
       "access_label": "Accès distant",
@@ -7839,7 +7844,12 @@
       },
       "access_mode": "free",
       "access_label": "Accès libre",
-      "access_source": "bnf_official"
+      "access_source": "bnf_official",
+      "icon_url": "./logos/rambi.svg",
+      "icon_alt": "Marque RAMBI",
+      "icon_source_url": "https://www.nli.org.il/en/research-and-teach/catalogs/bibliographic-databases/rambi",
+      "icon_source_kind": "svg_local_typographic",
+      "icon_review_status": "to_review"
     },
     {
       "id": "reef-classique",

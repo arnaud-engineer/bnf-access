@@ -971,6 +971,20 @@ h1 {
   transform: translateY(-1px);
 }
 
+.footer-support {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1;
+}
+
+.footer-support-logo {
+  width: 22px;
+  height: auto;
+  flex: 0 0 auto;
+  filter: drop-shadow(0 1px 0 rgb(0 0 0 / 0.08));
+}
+
 .text-page,
 .legal-placeholder {
   max-width: 760px;

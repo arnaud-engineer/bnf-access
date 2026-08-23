@@ -1,8 +1,6 @@
-# BNF Access
+# Présentation
 
-Prototype non officiel pour retrouver rapidement les ressources numériques accessibles via un Pass BnF.
-
-Nom provisoire : `BNF Access`.
+BnF Access est un catalogue de raccourcis personnalisables permettant un accès simplifié aux ressources en ligne de la BnF.
 
 ## Intention
 

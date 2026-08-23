@@ -3,6 +3,7 @@
   --bg: #f7f7f4;
   --panel: #ffffff;
   --ink: #1e2329;
+  --ink-rgb: 30 35 41;
   --muted: #606a76;
   --line: #d9ded7;
   --accent: #8f2432;
@@ -11,6 +12,7 @@
   --danger-line: #e3a1a8;
   --green: #256f5b;
   --amber: #8a5a0a;
+  --corner: 0;
 }
 
 * {
@@ -158,7 +160,7 @@ h1 {
   align-items: center;
   justify-content: center;
   min-height: 34px;
-  border-radius: 8px;
+  border-radius: var(--corner);
   padding: 0 12px;
   background: var(--ink);
   color: var(--accent-ink);
@@ -176,7 +178,7 @@ h1 {
 
 .notice {
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: var(--corner);
   background: var(--panel);
 }
 
@@ -213,7 +215,7 @@ h1 {
   flex: 0 0 auto;
   min-height: 40px;
   border: 1px solid var(--accent);
-  border-radius: 8px;
+  border-radius: var(--corner);
   padding: 9px 13px;
   background: var(--accent);
   color: var(--accent-ink);
@@ -246,7 +248,7 @@ h1 {
 .quick-launch-action {
   min-height: 34px;
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: var(--corner);
   padding: 0 12px;
   background: var(--panel);
   color: var(--ink);
@@ -348,7 +350,7 @@ h1 {
   aspect-ratio: 1;
   min-width: 0;
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: var(--corner);
   background: var(--panel);
   overflow: hidden;
 }
@@ -368,7 +370,7 @@ h1 {
   font-size: 0.82rem;
   font-weight: 900;
   line-height: 1;
-  box-shadow: 0 2px 6px #00000024;
+  box-shadow: 0 2px 6px rgb(var(--ink-rgb) / 0.14);
 }
 
 .quick-launch-tile img {
@@ -452,7 +454,7 @@ h1 {
 
 .is-editing .quick-launch-item.is-dragging .quick-launch-tile {
   border-color: var(--accent);
-  box-shadow: 0 8px 18px #0000001a;
+  box-shadow: 0 8px 18px rgb(var(--ink-rgb) / 0.10);
   transform: scale(0.98);
 }
 
@@ -477,7 +479,7 @@ h1 {
   color: var(--accent-ink);
   cursor: pointer;
   font: inherit;
-  box-shadow: 0 3px 8px #00000026;
+  box-shadow: 0 3px 8px rgb(var(--ink-rgb) / 0.15);
 }
 
 .quick-launch-remove::before {
@@ -689,7 +691,7 @@ h1 {
   width: 100%;
   min-height: 44px;
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: var(--corner);
   padding: 0 12px;
   color: var(--ink);
   font: inherit;
@@ -717,7 +719,7 @@ h1 {
 .profile-filters select {
   min-height: 34px;
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: var(--corner);
   padding: 0 8px;
   background: #ffffff;
   color: var(--ink);
@@ -741,7 +743,7 @@ h1 {
 .filter-button {
   min-height: 30px;
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: var(--corner);
   padding: 0 9px;
   background: #fffefa;
   color: var(--ink);
@@ -825,7 +827,7 @@ h1 {
   display: flex;
   flex-direction: column;
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: var(--corner);
   background: var(--panel);
   cursor: pointer;
   padding: 18px;
@@ -849,7 +851,7 @@ h1 {
   width: 58px;
   height: 58px;
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: var(--corner);
   background: #fafaf8;
   overflow: hidden;
 }
@@ -886,7 +888,7 @@ h1 {
   width: 38px;
   height: 38px;
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: var(--corner);
   background: #ffffff;
   color: #9a7613;
   cursor: pointer;
@@ -979,7 +981,7 @@ h1 {
 
 .badge {
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: var(--corner);
   padding: 4px 8px;
   color: var(--muted);
   font-size: 0.75rem;
@@ -1017,7 +1019,7 @@ h1 {
 .empty {
   grid-column: 1 / -1;
   border: 1px dashed var(--line);
-  border-radius: 8px;
+  border-radius: var(--corner);
   padding: 28px;
   color: var(--muted);
   text-align: center;
@@ -1086,7 +1088,7 @@ h1 {
   width: 22px;
   height: auto;
   flex: 0 0 auto;
-  filter: drop-shadow(0 1px 0 rgb(0 0 0 / 0.08));
+  filter: drop-shadow(0 1px 0 rgb(var(--ink-rgb) / 0.08));
 }
 
 .text-page,
@@ -1122,8 +1124,8 @@ h1 {
   background: var(--accent);
   color: var(--accent-ink);
   box-shadow:
-    0 3px 8px rgb(30 35 41 / 0.24),
-    0 14px 30px rgb(30 35 41 / 0.18);
+    0 3px 8px rgb(var(--ink-rgb) / 0.24),
+    0 14px 30px rgb(var(--ink-rgb) / 0.18);
   cursor: pointer;
   pointer-events: auto;
 }

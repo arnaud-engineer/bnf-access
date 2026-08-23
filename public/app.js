@@ -27,6 +27,8 @@ const passFilter = document.querySelector("#passFilter");
 const remoteFilter = document.querySelector("#remoteFilter");
 const resultCount = document.querySelector("#resultCount");
 const quickLaunch = document.querySelector("#quickLaunch");
+const searchControls = document.querySelector("#searchControls");
+const jumpToSearch = document.querySelector("#jumpToSearch");
 const privacyNotice = document.querySelector("#privacyNotice");
 const dismissNotice = document.querySelector("#dismissNotice");
 const privacyNoticeDismissedKey = "bnf-access:privacy-notice-dismissed:v1";
@@ -1174,6 +1176,15 @@ remoteFilter.addEventListener("change", (event) => {
   state.remoteFilter = event.target.value;
   saveProfileFilters();
   render();
+});
+
+jumpToSearch.addEventListener("click", () => {
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const targetTop = Math.max(0, searchControls.getBoundingClientRect().top + window.scrollY - 14);
+  window.scrollTo({
+    top: targetTop,
+    behavior: reduceMotion ? "auto" : "smooth",
+  });
 });
 
 init().catch((error) => {

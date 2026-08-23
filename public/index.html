@@ -30,7 +30,7 @@
 
       <section id="quickLaunch" class="quick-launch" aria-label="Lancement rapide"></section>
 
-      <section class="controls" aria-label="Filtres">
+      <section id="searchControls" class="controls" aria-label="Filtres">
         <label class="search">
           <span>Rechercher</span>
           <input id="searchInput" type="search" placeholder="Mediapart, presse, dictionnaire..." autocomplete="off">
@@ -71,6 +71,12 @@
     <footer>
       <p>Données recoupées progressivement depuis les sources BnF officielles et les traces publiques archivées. Ne pas me taper si imprécis, inexacte ou pas à jour. Merci.</p>
     </footer>
+
+    <button id="jumpToSearch" class="jump-to-search" type="button" aria-label="Revenir à la recherche" title="Revenir à la recherche">
+      <svg aria-hidden="true" viewBox="0 0 24 24">
+        <path d="m21 21-4.35-4.35m2.35-5.15a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/>
+      </svg>
+    </button>
 
     <script src="./app.js" type="module"></script>
   </body>

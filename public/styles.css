@@ -758,7 +758,8 @@ h1 {
 .quick-launch-remove:focus-visible,
 .quick-launch-item:focus-visible,
 .profile-filters select:focus-visible,
-.official-link:focus-visible {
+.official-link:focus-visible,
+.jump-to-search:focus-visible {
   outline: 3px solid #d8a31d;
   outline-offset: 2px;
 }
@@ -876,6 +877,42 @@ footer {
   font-size: 0.88rem;
 }
 
+.jump-to-search {
+  position: fixed;
+  right: max(18px, env(safe-area-inset-right));
+  bottom: max(18px, env(safe-area-inset-bottom));
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  width: 81px;
+  height: 81px;
+  border: 3px solid var(--panel);
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink);
+  box-shadow:
+    0 3px 8px rgb(30 35 41 / 0.24),
+    0 14px 30px rgb(30 35 41 / 0.18);
+  cursor: pointer;
+}
+
+.jump-to-search:hover {
+  background: #761d29;
+}
+
+.jump-to-search:active {
+  transform: translateY(1px);
+}
+
+.jump-to-search svg {
+  width: 36px;
+  height: 36px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
 @media (max-width: 860px) {
   .topbar,
   .section-heading {
@@ -916,5 +953,10 @@ footer {
 
   .official-link {
     width: fit-content;
+  }
+
+  .jump-to-search {
+    width: 75px;
+    height: 75px;
   }
 }

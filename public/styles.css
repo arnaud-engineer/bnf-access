@@ -579,6 +579,21 @@ h1 {
   border-color: #e1c66f;
 }
 
+.favorite-filter[aria-pressed="true"] {
+  border-color: #e1c66f;
+  background: #fff7d7;
+  color: #9a7613;
+}
+
+.filter-separator {
+  align-self: center;
+  flex: 0 0 2px;
+  width: 2px;
+  height: 28px;
+  margin: 0 6px;
+  background: #c6cec5;
+}
+
 .section-heading {
   display: flex;
   align-items: baseline;

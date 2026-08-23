@@ -110,7 +110,11 @@ function renderFilters() {
     renderFilters();
     render();
   });
-  filters.prepend(favoriteButton);
+
+  const separator = document.createElement("span");
+  separator.className = "filter-separator";
+  separator.setAttribute("aria-hidden", "true");
+  filters.prepend(favoriteButton, separator);
 }
 
 function render() {

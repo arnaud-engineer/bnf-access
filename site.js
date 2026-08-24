@@ -2,6 +2,10 @@ const isAppDisplayMode = window.matchMedia("(display-mode: fullscreen)").matches
   || window.matchMedia("(display-mode: standalone)").matches
   || navigator.standalone === true;
 
+window.addEventListener("beforeinstallprompt", (event) => {
+  event.preventDefault();
+});
+
 if (!isAppDisplayMode) {
   window.addEventListener("load", () => {
     unregisterAppWorker();

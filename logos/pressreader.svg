@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 113.1 139.26" role="img" aria-labelledby="title desc">
+  <title id="title">PressReader</title>
+  <desc id="desc">Pictogramme bulle du logo PressReader.</desc>
+  <defs>
+    <linearGradient id="shadow" gradientUnits="userSpaceOnUse" x1="13.88" x2="58.7" y1="131.95" y2="98.46">
+      <stop offset="0" stop-opacity=".4"/>
+      <stop offset="1" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <path d="m69.63 0h-26.16a43.52 43.52 0 0 0 -43.47 43.47v85a10.76 10.76 0 0 0 17.47 8.42l29.76-23.8h22.4a43.52 43.52 0 0 0 43.47-43.46v-26.16a43.52 43.52 0 0 0 -43.47-43.47zm21.94 69.63a22 22 0 0 1 -21.94 21.93h-26.16a10.81 10.81 0 0 0 -6.73 2.36l-15.21 12.17v-62.62a22 22 0 0 1 21.94-21.94h26.16a22 22 0 0 1 21.94 21.94z" fill="#2bc48c"/>
+  <path d="m67.15 91.56h-23.68a10.81 10.81 0 0 0 -6.73 2.36l-15.21 12.17v22.4a10.75 10.75 0 0 1 -4.06 8.42l29.76-23.8h19.9z" fill="url(#shadow)"/>
+</svg>

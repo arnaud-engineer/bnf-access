@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">RAMBI</title>
+  <desc id="desc">Marque typographique pour RAMBI, index d'articles en études juives.</desc>
+  <rect width="256" height="256" rx="28" fill="#fbf5ec"/>
+  <path d="M43 52h170c12 0 22 10 22 22v108c0 12-10 22-22 22H43c-12 0-22-10-22-22V74c0-12 10-22 22-22Z" fill="#fffaf3" stroke="#d7c8b6" stroke-width="3"/>
+  <text x="128" y="105" text-anchor="middle" direction="rtl" unicode-bidi="bidi-override" font-family="Georgia, 'Times New Roman', serif" font-size="46" font-weight="700" fill="#4f463d">רמב״י</text>
+  <text x="128" y="147" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="800" letter-spacing="3" fill="#c83d35">RAMBI</text>
+  <path d="M68 169h120" fill="none" stroke="#4f463d" stroke-width="5" stroke-linecap="round"/>
+  <path d="M76 185h104" fill="none" stroke="#c83d35" stroke-width="5" stroke-linecap="round"/>
+</svg>

@@ -188,7 +188,7 @@
       "name": "New York Times",
       "category": "Presse",
       "description": "Accès au quotidien américain et à ses archives selon les conditions BnF",
-      "url": "https://www.nytimes.com/subscription/redeem?campaignId=8RHXJ&gift_code=8df078f005d2b885",
+      "url": "http://nytimes.com/subscription/promotions/lp3FURL.html?campaignId=8RHXJ&gift_code=8df078f005d2b885",
       "remote": true,
       "access": [
         "pass_lecture_culture",
@@ -228,7 +228,7 @@
         "links": [
           {
             "label": "Activer le pass",
-            "url": "https://www.nytimes.com/subscription/redeem?campaignId=8RHXJ&gift_code=8df078f005d2b885"
+            "url": "http://nytimes.com/subscription/promotions/lp3FURL.html?campaignId=8RHXJ&gift_code=8df078f005d2b885"
           }
         ]
       }

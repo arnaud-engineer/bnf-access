@@ -16,8 +16,11 @@ async function unregisterAppWorker() {
   }
 
   try {
+    const rootScope = `${window.location.origin}/`;
     const registrations = await navigator.serviceWorker.getRegistrations();
-    await Promise.all(registrations.map((registration) => registration.unregister()));
+    await Promise.all(registrations
+      .filter((registration) => registration.scope === rootScope)
+      .map((registration) => registration.unregister()));
   } catch (error) {
     console.warn("Nettoyage du service worker impossible.", error);
   }
@@ -30,7 +33,7 @@ async function clearAppCaches() {
 
   try {
     const keys = await caches.keys();
-    await Promise.all(keys.filter((key) => key.startsWith("bnf-access-")).map((key) => caches.delete(key)));
+    await Promise.all(keys.filter((key) => key.startsWith("bnf-access-v")).map((key) => caches.delete(key)));
   } catch (error) {
     console.warn("Nettoyage du cache applicatif impossible.", error);
   }

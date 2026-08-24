@@ -2,7 +2,7 @@
   "name": "BnF Access",
   "short_name": "BnF Access",
   "description": "Raccourcis vers les ressources numériques accessibles avec un Pass BnF.",
-  "id": "./",
+  "id": "/app/",
   "lang": "fr",
   "start_url": "./",
   "scope": "./",

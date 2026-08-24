@@ -1139,6 +1139,10 @@ h1 {
 }
 
 .faq-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
   margin-top: 14px;
   border: 1px solid var(--ink);
   background: var(--ink);
@@ -1147,6 +1151,7 @@ h1 {
   font: inherit;
   font-weight: 800;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .faq-action:disabled {

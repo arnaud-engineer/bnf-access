@@ -1,0 +1,13 @@
+{
+  "name": "BnF Access",
+  "short_name": "BnF Access",
+  "description": "Raccourcis vers les ressources numériques accessibles avec un Pass BnF.",
+  "id": "./",
+  "lang": "fr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "browser",
+  "display_override": ["browser"],
+  "background_color": "#f7f7f4",
+  "theme_color": "#1e2329"
+}

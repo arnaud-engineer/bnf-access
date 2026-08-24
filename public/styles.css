@@ -1138,7 +1138,24 @@ h1 {
   margin-top: 10px;
 }
 
+.faq-action {
+  margin-top: 14px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--accent-ink);
+  padding: 10px 14px;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.faq-action:disabled {
+  cursor: default;
+  opacity: 0.62;
+}
+
 .faq-status {
+  margin-top: 10px;
   font-weight: 700;
 }
 

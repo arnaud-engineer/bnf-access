@@ -2,6 +2,7 @@
   "name": "BnF Access",
   "short_name": "BnF Access",
   "description": "Raccourcis vers les ressources numériques accessibles avec un Pass BnF.",
+  "id": "./",
   "lang": "fr",
   "start_url": "./",
   "scope": "./",
@@ -12,16 +13,22 @@
   "theme_color": "#1e2329",
   "icons": [
     {
+      "src": "./bnf-access-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
       "src": "./icons/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "any maskable"
     },
     {
       "src": "./icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "any maskable"
     }
   ]
 }

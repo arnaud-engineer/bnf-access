@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Installer BnF Access</title>
+    <meta name="description" content="Page d'installation de BnF Access comme application web.">
+    <meta name="theme-color" content="#1e2329">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="BnF Access">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="icon" href="./bnf-access-icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+    <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./pwa.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Application web</p>
+        <h1>Installer BnF Access</h1>
+        <p class="intro">Cette page permet à votre navigateur de reconnaître BnF Access comme une application installable.</p>
+      </div>
+      <nav class="topbar-links" aria-label="Navigation">
+        <a class="official-link secondary" href="./">Ouvrir BnF Access</a>
+        <a class="official-link secondary" href="./faq.html">Retour à la FAQ</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="text-page faq-list" aria-label="Installation de l'application web">
+        <article class="faq-item">
+          <h2>Comment l'ajouter à l'écran d'accueil ?</h2>
+          <p>Sur Firefox mobile, ouvrez le menu du navigateur depuis cette page, puis choisissez l'option permettant d'ajouter BnF Access à l'écran d'accueil.</p>
+          <p>Une fois ajoutée, l'application s'ouvrira en plein écran et vous retrouverez la page principale de BnF Access.</p>
+        </article>
+
+        <article class="faq-item">
+          <h2>Vous préférez le site classique ?</h2>
+          <p>Retournez dans la FAQ, désactivez le mode application web, puis la page se rechargera en mode site web normal.</p>
+        </article>
+      </section>
+    </main>
+
+    <footer id="siteFooter" class="site-footer">
+      <nav class="footer-links" aria-label="Informations du site">
+        <a href="./faq.html">FAQ</a>
+        <span aria-hidden="true">·</span>
+        <a href="./mentions-legales.html">Mentions légales</a>
+        <span aria-hidden="true">·</span>
+        <span class="footer-credit">Créé par <a class="footer-brand" href="https://arnaud.cool/" target="_blank" rel="noreferrer"><img class="footer-brand-logo" src="./logos/arnaud-cool.svg" alt="" aria-hidden="true">arnaud.cool</a></span>
+      </nav>
+    </footer>
+  </body>
+</html>

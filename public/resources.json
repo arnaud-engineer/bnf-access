@@ -4803,7 +4803,7 @@
     {
       "id": "gazettes-europeennes-du-18e-siecle",
       "name": "Gazettes Européennes du XVIIIe",
-      "category": "Presse",
+      "category": "Histoire / Géo",
       "description": "Presse européenne francophone du XVIIIe siècle",
       "url": "http://www.gazettes18e.fr/",
       "remote": true,
@@ -8913,7 +8913,7 @@
     {
       "id": "times-digital-archives-1785-2014",
       "name": "Times Digital Archives",
-      "category": "Presse",
+      "category": "Histoire / Géo",
       "description": "Archives des articles du Times de 1785 à 2014 (en anglais)",
       "url": "https://bnf.idm.oclc.org/login?url=https://go.gale.com/ps/dispBasicSearch.do?userGroupName=natfra&prodId=TTDA",
       "remote": true,
@@ -9216,7 +9216,7 @@
     {
       "id": "waterloo-directory-of-english-newspapers-and-periodicals-series-2",
       "name": "Waterloo directory of english newspapers and periodicals",
-      "category": "Presse",
+      "category": "Histoire / Géo",
       "description": "Répertoire des journaux et périodiques britanniques et irlandais du XIXe siècle : notices, contributeurs et éditeurs",
       "url": "http://www.victorianperiodicals.com/series2",
       "remote": false,

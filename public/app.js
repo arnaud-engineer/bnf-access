@@ -77,6 +77,7 @@ const accessLabels = {
 const accessModeLabels = {
   remote: "Accès distant",
   remote_conditional: "Accès distant sous condition",
+  onsite_extended: "Accès sur site prolongé",
   onsite: "Sur place uniquement",
   free: "Accès libre",
 };
@@ -84,6 +85,7 @@ const accessModeLabels = {
 const accessModeClasses = {
   remote: "remote",
   remote_conditional: "conditional",
+  onsite_extended: "conditional",
   onsite: "onsite",
   free: "free",
 };
@@ -578,6 +580,10 @@ function getQuickLaunchAccessWarning(resource) {
     return "Sur place uniquement";
   }
 
+  if (accessMode === "onsite_extended") {
+    return "Accès sur site prolongé";
+  }
+
   if (accessMode === "remote_conditional") {
     return "Accès distant sous condition";
   }
@@ -697,6 +703,10 @@ function matchesRemoteFilter(accessMode) {
 
   if (state.remoteFilter === "remote") {
     return accessMode === "remote" || accessMode === "remote_conditional" || accessMode === "free";
+  }
+
+  if (state.remoteFilter === "onsite") {
+    return accessMode === "onsite" || accessMode === "onsite_extended";
   }
 
   return accessMode === state.remoteFilter;

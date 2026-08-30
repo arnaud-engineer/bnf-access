@@ -7,17 +7,8 @@
     <meta name="description" content="Page non officielle pour retrouver les ressources numériques accessibles via la BnF.">
     <link rel="icon" href="./bnf-access-icon.svg" type="image/svg+xml">
     <link rel="manifest" href="./browser.webmanifest?v=20260830-language-filters">
-    <script>
-      try {
-        const theme = localStorage.getItem("bnf-access:theme:v1");
-        if (theme === "dark" || theme === "oled") {
-          document.documentElement.dataset.theme = theme;
-        } else if (theme !== "light" && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-          document.documentElement.dataset.theme = "oled";
-        }
-      } catch {}
-    </script>
-    <link rel="stylesheet" href="./styles.css?v=20260830-language-filters">
+    <script src="./theme-init.js?v=20260830-theme-pages"></script>
+    <link rel="stylesheet" href="./styles.css?v=20260830-theme-pages">
   </head>
   <body class="is-loading">
     <div id="appLoader" class="app-loader" role="status" aria-live="polite">

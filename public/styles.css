@@ -1539,9 +1539,9 @@ html[data-theme="oled"] .brand-heading-logo {
   justify-content: center;
   width: fit-content;
   margin-top: 14px;
-  border: 1px solid var(--ink);
-  background: var(--ink);
-  color: var(--accent-ink);
+  border: 1px solid var(--solid-button-bg);
+  background: var(--solid-button-bg);
+  color: var(--solid-button-ink);
   padding: 10px 14px;
   font: inherit;
   font-weight: 800;

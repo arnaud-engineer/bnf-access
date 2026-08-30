@@ -320,10 +320,10 @@
           }
         ]
       },
-      "access_mode": "remote_conditional",
-      "access_label": "Accès distant sous condition",
+      "access_mode": "onsite_extended",
+      "access_label": "Accès sur site prolongé",
       "access_source": "bnf_official_manual_override",
-      "access_note": "Accès distant possible via une procédure spécifique web, mobile ou tablette.",
+      "access_note": "Accès temporaire à distance après téléchargement depuis un établissement abonné.",
       "access_instruction": {
         "text": "Téléchargez vos titres depuis un établissement abonné, puis lisez-les à distance pendant 7 jours.",
         "links": [

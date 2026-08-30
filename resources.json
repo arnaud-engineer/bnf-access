@@ -13,6 +13,213 @@
     "https://bdl.bnf.fr/bases-de-donnees-par-titre",
     "https://web.archive.org/web/20260729074038id_/https://easybnf.fr/resources.json"
   ],
+  "language_policy": {
+    "field": "content_languages",
+    "code_standard": "ISO 639-1 quand disponible; ISO 639-3 pour les langues sans code ISO 639-1 utile.",
+    "meaning": "Langues des contenus consultables ou référencés par la ressource, pas seulement la langue de son interface.",
+    "coverage_values": [
+      "complete",
+      "primary",
+      "partial",
+      "unknown"
+    ],
+    "scope_values": [
+      "identified",
+      "multilingual",
+      "very_multilingual",
+      "unknown"
+    ],
+    "confidence_values": [
+      "high",
+      "medium",
+      "low"
+    ],
+    "unknown_policy": "Conserver un tableau de codes vide quand la ressource est probablement multilingue mais que la liste fiable des langues reste à consolider.",
+    "optional_fields": [
+      "source_url",
+      "language_count",
+      "language_count_min",
+      "note"
+    ],
+    "count_policy": "Utiliser language_count ou language_count_min quand une source fiable donne un ordre de grandeur sans publier de liste de langues exploitable."
+  },
+  "language_vocabulary": {
+    "af": "afrikaans",
+    "ae": "avestique",
+    "ace": "acehnais",
+    "alg": "langues algonquiennes",
+    "am": "amharique",
+    "ar": "arabe",
+    "arc": "araméen",
+    "as": "assamais",
+    "ast": "asturien",
+    "ang": "vieil anglais",
+    "art": "langues artificielles",
+    "az": "azéri",
+    "be": "biélorusse",
+    "bg": "bulgare",
+    "bm": "bambara",
+    "bn": "bengali",
+    "bo": "tibétain",
+    "br": "breton",
+    "bs": "bosnien",
+    "ca": "catalan",
+    "car": "caribe",
+    "ceb": "cebuano",
+    "cld": "chaldéen",
+    "chu": "slavon d’église",
+    "cnr": "monténégrin",
+    "co": "corse",
+    "cop": "copte",
+    "cpf": "créoles à base française",
+    "cr": "cri",
+    "cs": "tchèque",
+    "cy": "gallois",
+    "da": "danois",
+    "dar": "dargwa",
+    "de": "allemand",
+    "dsb": "bas-sorabe",
+    "el": "grec",
+    "en": "anglais",
+    "enm": "moyen anglais",
+    "egy": "égyptien ancien",
+    "efi": "efik",
+    "eo": "espéranto",
+    "es": "espagnol",
+    "et": "estonien",
+    "eu": "basque",
+    "fa": "persan",
+    "fi": "finnois",
+    "fil": "filipino",
+    "fon": "fon",
+    "fo": "féroïen",
+    "fr": "français",
+    "fro": "ancien français",
+    "frm": "moyen français",
+    "fy": "frison",
+    "ga": "irlandais",
+    "gd": "gaélique écossais",
+    "gez": "guèze",
+    "gl": "galicien",
+    "gmh": "moyen haut allemand",
+    "gn": "guarani",
+    "got": "gothique",
+    "grc": "grec ancien",
+    "gu": "gujarati",
+    "gv": "mannois",
+    "hbs": "serbo-croate",
+    "he": "hébreu",
+    "hi": "hindi",
+    "hr": "croate",
+    "haw": "hawaïen",
+    "ht": "créole haïtien",
+    "hu": "hongrois",
+    "hy": "arménien",
+    "id": "indonésien",
+    "iba": "iban",
+    "ie": "interlingue",
+    "ilo": "ilocano",
+    "is": "islandais",
+    "it": "italien",
+    "iu": "inuktitut",
+    "ja": "japonais",
+    "ka": "géorgien",
+    "kac": "jingpo",
+    "kk": "kazakh",
+    "kl": "groenlandais",
+    "km": "khmer",
+    "kn": "kannada",
+    "ko": "coréen",
+    "ku": "kurde",
+    "ky": "kirghiz",
+    "la": "latin",
+    "lah": "lahnda",
+    "lam": "lamba",
+    "lad": "judéo-espagnol",
+    "lt": "lituanien",
+    "lv": "letton",
+    "mg": "malgache",
+    "mi": "maori",
+    "ml": "malayalam",
+    "mk": "macédonien",
+    "moh": "mohawk",
+    "mn": "mongol",
+    "mr": "marathi",
+    "ms": "malais",
+    "mt": "maltais",
+    "mus": "creek",
+    "my": "birman",
+    "na": "nauruan",
+    "nb": "norvégien bokmål",
+    "ne": "népalais",
+    "nds": "bas allemand",
+    "new": "nepalbhasa",
+    "nl": "néerlandais",
+    "nn": "norvégien nynorsk",
+    "no": "norvégien",
+    "nso": "sotho du Nord",
+    "niu": "niuéen",
+    "oc": "occitan",
+    "oj": "ojibwa",
+    "or": "odia",
+    "ota": "turc ottoman",
+    "pa": "pendjabi",
+    "pap": "papiamento",
+    "pi": "pali",
+    "pl": "polonais",
+    "pra": "prakrit",
+    "pro": "ancien provençal",
+    "pt": "portugais",
+    "qu": "quechua",
+    "raj": "rajasthani",
+    "rar": "rarotongien",
+    "rm": "romanche",
+    "rn": "kirundi",
+    "ro": "roumain",
+    "roa": "langues romanes",
+    "rom": "romani",
+    "rw": "kinyarwanda",
+    "sam": "araméen samaritain",
+    "sco": "écossais",
+    "ru": "russe",
+    "sa": "sanskrit",
+    "se": "same du Nord",
+    "si": "cingalais",
+    "sk": "slovaque",
+    "sl": "slovène",
+    "sm": "samoan",
+    "sn": "shona",
+    "so": "somali",
+    "sq": "albanais",
+    "sr": "serbe",
+    "sv": "suédois",
+    "sw": "swahili",
+    "syc": "syriaque",
+    "ta": "tamoul",
+    "te": "télougou",
+    "th": "thaï",
+    "tkl": "tokelau",
+    "tl": "tagalog",
+    "to": "tongien",
+    "tr": "turc",
+    "tk": "turkmène",
+    "tn": "tswana",
+    "ts": "tsonga",
+    "tt": "tatar",
+    "ug": "ouïghour",
+    "uk": "ukrainien",
+    "ur": "ourdou",
+    "uz": "ouzbek",
+    "vi": "vietnamien",
+    "ve": "venda",
+    "wa": "wallon",
+    "xh": "xhosa",
+    "yo": "yoruba",
+    "yi": "yiddish",
+    "zen": "zenaga",
+    "zh": "chinois",
+    "zu": "zoulou"
+  },
   "resources": [
     {
       "id": "pressreader",
@@ -25,6 +232,70 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "af",
+          "ar",
+          "be",
+          "bg",
+          "bs",
+          "ca",
+          "ceb",
+          "cs",
+          "cy",
+          "da",
+          "de",
+          "el",
+          "en",
+          "es",
+          "fa",
+          "fr",
+          "ga",
+          "gl",
+          "gu",
+          "he",
+          "hi",
+          "hr",
+          "id",
+          "ilo",
+          "it",
+          "ja",
+          "kn",
+          "ko",
+          "lt",
+          "mr",
+          "ms",
+          "nb",
+          "nl",
+          "or",
+          "pa",
+          "pl",
+          "pt",
+          "ro",
+          "ru",
+          "se",
+          "si",
+          "sk",
+          "sl",
+          "sn",
+          "sq",
+          "sr",
+          "ta",
+          "th",
+          "tl",
+          "tr",
+          "uk",
+          "ur",
+          "vi",
+          "xh",
+          "zu"
+        ],
+        "scope": "very_multilingual",
+        "coverage": "partial",
+        "confidence": "medium",
+        "source": "bnf_access_press_pressreader_catalog",
+        "note": "Liste issue du catalogue PressReader consolidé dans BNF Access Press; à revérifier contre la liste complète du fournisseur."
+      },
       "tags": [
         "presse",
         "pressreader"
@@ -74,6 +345,18 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en",
+          "fr",
+          "nl"
+        ],
+        "scope": "multilingual",
+        "coverage": "partial",
+        "confidence": "medium",
+        "source": "bnf_access_press_europresse_pdf_subset",
+        "note": "Liste issue des titres PDF Europresse déjà consolidés dans BNF Access Press; Europresse couvre davantage de sources."
+      },
       "tags": [
         "europresse",
         "presse"
@@ -114,6 +397,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "bnf_access_press_original_match"
+      },
       "tags": [
         "arretsurimages",
         "presse"
@@ -154,6 +446,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "bnf_access_press_original_match"
+      },
       "tags": [
         "mediapart",
         "presse"
@@ -194,6 +495,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "bnf_access_press_original_match"
+      },
       "tags": [
         "presse",
         "times",
@@ -244,6 +554,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "bnf_access_press_original_match"
+      },
       "tags": [
         "alternatives",
         "économiques",
@@ -285,6 +604,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "grand",
         "presse",
@@ -310,6 +638,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "dictionnaire",
         "grand",
@@ -353,6 +690,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "art et images",
         "encyclop",
@@ -394,6 +740,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "musicme",
         "musique et vidéo"
@@ -434,6 +789,16 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en",
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "medici",
         "musique et vidéo"
@@ -474,6 +839,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_title"
+      },
       "tags": [
         "demande",
         "musique et vidéo",
@@ -515,6 +889,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [],
+        "scope": "multilingual",
+        "coverage": "unknown",
+        "confidence": "low",
+        "source": "provider_title_list",
+        "source_url": "https://about.ebsco.com/title-lists",
+        "note": "Les listes EBSCO confirment une large base de périodiques mais ne fournissent pas de champ langue directement exploitable."
+      },
       "tags": [
         "academic",
         "art et images",
@@ -558,6 +941,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "la"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "acta",
         "généralistes et référence",
@@ -598,6 +990,15 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "agricola",
         "sciences et techniques"
@@ -637,6 +1038,16 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [],
+        "scope": "very_multilingual",
+        "coverage": "unknown",
+        "confidence": "high",
+        "source": "provider_home",
+        "source_url": "https://agris.fao.org/",
+        "language_count": 257,
+        "note": "FAO AGRIS annonce des millions de notices bibliographiques en 257 langues; liste exacte des codes à consolider."
+      },
       "tags": [
         "agris",
         "sciences et techniques"
@@ -679,6 +1090,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "it"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "aida",
         "sciences humaines"
@@ -722,6 +1142,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "it"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_title"
+      },
       "tags": [
         "alice",
         "bibliographies et catalogues",
@@ -765,6 +1194,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "de"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_title"
+      },
       "tags": [
         "allgemeines",
         "art et images",
@@ -818,6 +1256,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_title"
+      },
       "tags": [
         "allgemeines",
         "art et images",
@@ -862,6 +1309,17 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "producer_product_page",
+        "source_url": "https://about.ebsco.com/products/research-databases/american-bibliography-slavic-east-european-and-eurasian-studies",
+        "note": "Base bibliographique anglophone sur les études slaves, est-européennes et eurasiennes; le tag langue décrit la langue des notices, pas le sujet couvert."
+      },
       "tags": [
         "american",
         "bibliography",
@@ -893,6 +1351,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "american",
         "biography",
@@ -934,6 +1401,16 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [
+          "en",
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "amicus",
         "art et images"
@@ -974,6 +1451,24 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "de",
+          "el",
+          "en",
+          "es",
+          "fr",
+          "grc",
+          "it",
+          "la"
+        ],
+        "scope": "multilingual",
+        "coverage": "primary",
+        "confidence": "high",
+        "source": "provider_product_page",
+        "source_url": "https://about.brepolis.net/lannee-philologique-aph-2/",
+        "note": "Brepolis documente les résumés et le thésaurus en cinq langues modernes; grec ancien, grec moderne et latin reflètent le cœur disciplinaire classique."
+      },
       "tags": [
         "annee",
         "langue et dictionnaires",
@@ -1018,6 +1513,19 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en",
+          "fr",
+          "de",
+          "it"
+        ],
+        "scope": "multilingual",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "bnf_official_description",
+        "note": "La notice BnF indique explicitement des périodiques en anglais, français, allemand et italien."
+      },
       "tags": [
         "anthropological",
         "index",
@@ -1062,6 +1570,16 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "catalog_scope_inferred",
+        "note": "Ressource éditoriale anglophone; certains contenus primaires peuvent relever d’autres langues."
+      },
       "tags": [
         "anthropology",
         "library",
@@ -1107,6 +1625,16 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "bnf_official_description",
+        "note": "La notice BnF indique plus de 30 périodiques en anglais."
+      },
       "tags": [
         "anthrosource",
         "art et images"
@@ -1150,6 +1678,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "opinion",
         "aoc"
@@ -1172,6 +1709,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "la"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "bnf_official_description"
+      },
       "tags": [
         "archive",
         "celtic",
@@ -1215,6 +1761,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [],
+        "scope": "very_multilingual",
+        "coverage": "unknown",
+        "confidence": "medium",
+        "source": "provider_product_page",
+        "source_url": "https://www.degruyterbrill.com/database/wbis/html",
+        "note": "WBIS agrège des archives biographiques internationales issues de dictionnaires et encyclopédies; liste exacte des langues non publiée."
+      },
       "tags": [
         "archives",
         "biographiques",
@@ -1256,6 +1811,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "la"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "aristoteles",
         "database",
@@ -1298,6 +1862,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "art et images",
         "full",
@@ -1340,6 +1913,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "art et images",
         "index",
@@ -1382,6 +1964,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "art et images",
         "catalogues",
@@ -1424,6 +2015,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [],
+        "scope": "multilingual",
+        "coverage": "unknown",
+        "confidence": "low",
+        "source": "provider_title_list",
+        "source_url": "https://about.proquest.com/en/title-lists/",
+        "note": "Les listes ProQuest confirment une base de périodiques en arts et humanités mais ne fournissent pas de champ langue directement exploitable."
+      },
       "tags": [
         "arts",
         "database",
@@ -1470,6 +2070,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [],
+        "scope": "unknown",
+        "coverage": "unknown",
+        "confidence": "low",
+        "source": "provider_product_page",
+        "source_url": "https://about.jstor.org/products/artstor/",
+        "note": "Bibliothèque principalement iconographique; les langues pertinentes relèvent surtout des métadonnées et des collections contributrices, à qualifier plus finement."
+      },
       "tags": [
         "artstor",
         "digital",
@@ -1511,6 +2120,15 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "astrophysics",
         "data",
@@ -1553,6 +2171,16 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "catalog_scope_inferred",
+        "note": "Base bibliographique internationale surtout anglophone; autres langues possibles."
+      },
       "tags": [
         "atla",
         "database",
@@ -1596,6 +2224,16 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en",
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "babelscores",
         "musique et vidéo"
@@ -1638,6 +2276,15 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "bnf_official_description"
+      },
       "tags": [
         "base",
         "gerflint",
@@ -1684,6 +2331,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "bellefaye",
         "annuaire",
@@ -1727,6 +2383,16 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en",
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "benezit",
         "langue et dictionnaires"
@@ -1766,6 +2432,15 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [
+          "es"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_title"
+      },
       "tags": [
         "bibliografia",
         "espanola",
@@ -1806,6 +2481,14 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [],
+        "scope": "multilingual",
+        "coverage": "unknown",
+        "confidence": "medium",
+        "source": "bnf_official_description",
+        "note": "La notice BnF indique des références dans toutes les langues du domaine des études franciscaines, sans liste fermée."
+      },
       "tags": [
         "bibliographia",
         "franciscana"
@@ -1844,6 +2527,19 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [
+          "en",
+          "it",
+          "es"
+        ],
+        "scope": "multilingual",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_product_page",
+        "source_url": "https://www.teresianum.net/en/altre-pubblicazioni/bis-bibliographia-internationalis-spiritualitatis/",
+        "note": "La source indique des sujets en anglais, italien et espagnol; langues des publications indexées à consolider."
+      },
       "tags": [
         "bibliographia",
         "spiritualitatis"
@@ -1882,6 +2578,16 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [
+          "la"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "catalog_scope_inferred",
+        "note": "Répertoire centré sur les auteurs et textes latins de la fin du Moyen Âge."
+      },
       "tags": [
         "bibliographie",
         "histoire",
@@ -1926,6 +2632,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [],
+        "scope": "multilingual",
+        "coverage": "unknown",
+        "confidence": "high",
+        "source": "provider_product_page",
+        "source_url": "https://www.brepols.net/products/IS-9782503620480-1",
+        "note": "Brepols décrit une bibliographie de monographies mondiale sur les civilisations médiévales; liste exacte des langues non publiée."
+      },
       "tags": [
         "bibliographie",
         "civilisation",
@@ -1968,6 +2683,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "bibliographie",
         "française",
@@ -2010,6 +2734,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "de"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "bnf_official_description"
+      },
       "tags": [
         "bibliographie",
         "deutschen",
@@ -2053,6 +2786,30 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en",
+          "fr",
+          "de",
+          "el",
+          "es",
+          "it",
+          "pt",
+          "hu",
+          "ro",
+          "nl",
+          "pl",
+          "ru",
+          "sv",
+          "ja"
+        ],
+        "scope": "multilingual",
+        "coverage": "partial",
+        "confidence": "high",
+        "source": "provider_product_page",
+        "source_url": "https://about.brepolis.net/international-bibliography-of-humanism-and-the-renaissance-ibhr-2/",
+        "note": "Brepolis liste explicitement ces langues comme exemples de la couverture IBHR; la formulation laisse ouverte une couverture plus large."
+      },
       "tags": [
         "bibliographie",
         "droit et économie",
@@ -2096,6 +2853,16 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "low",
+        "source": "catalog_scope_inferred",
+        "note": "Base française; langues des récits indexés à consolider."
+      },
       "tags": [
         "bibliorecit",
         "conte",
@@ -2138,6 +2905,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "bibliothèque",
         "lettres",
@@ -2179,6 +2955,68 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [
+          "af",
+          "ar",
+          "az",
+          "bg",
+          "ca",
+          "cs",
+          "cy",
+          "da",
+          "de",
+          "el",
+          "en",
+          "es",
+          "et",
+          "fa",
+          "fi",
+          "fo",
+          "fr",
+          "frm",
+          "ga",
+          "gd",
+          "gmh",
+          "grc",
+          "gu",
+          "he",
+          "hi",
+          "hr",
+          "hu",
+          "id",
+          "is",
+          "it",
+          "ja",
+          "la",
+          "mg",
+          "nl",
+          "no",
+          "oj",
+          "ota",
+          "pi",
+          "pl",
+          "pt",
+          "rm",
+          "ro",
+          "ru",
+          "sa",
+          "si",
+          "sr",
+          "sv",
+          "uk",
+          "ur",
+          "yi",
+          "zh"
+        ],
+        "scope": "very_multilingual",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "bhl_title_data_export",
+        "source_url": "https://www.biodiversitylibrary.org/data/title.txt",
+        "language_count": 51,
+        "note": "Codes issus de l’export Title BHL analysé le 2026-08-30; les valeurs MARC UND et MUL sont exclues de la liste de langues identifiées."
+      },
       "tags": [
         "biodiversité",
         "heritage"
@@ -2219,6 +3057,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "de"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_title"
+      },
       "tags": [
         "art et images",
         "bbkl",
@@ -2265,6 +3112,16 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "catalog_scope_inferred",
+        "note": "Base d’indexation scientifique principalement anglophone; publications non anglophones possibles."
+      },
       "tags": [
         "1989",
         "2007",
@@ -2312,6 +3169,16 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "catalog_scope_inferred",
+        "note": "Base d’indexation scientifique principalement anglophone; publications non anglophones possibles."
+      },
       "tags": [
         "1982",
         "abstracts",
@@ -2352,6 +3219,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_title"
+      },
       "tags": [
         "art et images",
         "bloomsbury",
@@ -2397,6 +3273,16 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [],
+        "scope": "very_multilingual",
+        "coverage": "unknown",
+        "confidence": "high",
+        "source": "provider_product_page",
+        "source_url": "https://brill.com/display/db/bho",
+        "language_count_min": 40,
+        "note": "Brill indique une couverture de plus de 40 langues, avec dominante allemand, anglais et français."
+      },
       "tags": [
         "book",
         "history",
@@ -2442,6 +3328,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_title"
+      },
       "tags": [
         "cinema",
         "sundance"
@@ -2465,6 +3360,15 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_title"
+      },
       "tags": [
         "analytique",
         "art et images",
@@ -2507,6 +3411,16 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "catalog_scope_inferred",
+        "note": "Base d’articles économiques et de presse principalement anglophone; titres non anglophones possibles."
+      },
       "tags": [
         "business",
         "complete",
@@ -2550,6 +3464,16 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "catalog_scope_inferred",
+        "note": "Base d’indexation internationale principalement anglophone; publications non anglophones possibles."
+      },
       "tags": [
         "abstracts",
         "bibliographies et catalogues"
@@ -2590,6 +3514,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "bnf_official_description"
+      },
       "tags": [
         "cairn",
         "sciences et techniques"
@@ -2630,6 +3563,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "bnf_official_description"
+      },
       "tags": [
         "cairn",
         "sciences et techniques"
@@ -2670,6 +3612,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "bnf_official_description"
+      },
       "tags": [
         "cairn",
         "sciences",
@@ -2721,6 +3672,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "capfi",
         "généralistes et référence"
@@ -2760,6 +3720,16 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "low",
+        "source": "bnf_official_description",
+        "note": "La notice BnF décrit un catalogue de cartothèques françaises et étrangères; langue des documents cartographiques à consolider."
+      },
       "tags": [
         "cartomundi",
         "cartes",
@@ -2800,6 +3770,16 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [
+          "en",
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "resource_description"
+      },
       "tags": [
         "art et images",
         "cedram",
@@ -2843,6 +3823,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "abstracts",
         "chemical",
@@ -2884,6 +3873,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_title"
+      },
       "tags": [
         "archive",
         "churchill",
@@ -2925,6 +3923,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "classiques",
         "garnier",
@@ -2967,6 +3974,17 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [
+          "la",
+          "grc"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "catalog_scope_inferred",
+        "note": "Répertoire centré sur les littératures chrétiennes antiques et médiévales; autres langues anciennes possibles."
+      },
       "tags": [
         "christianisme",
         "antiquité",
@@ -3009,6 +4027,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "afnor",
         "bibliographies et catalogues",
@@ -3050,6 +4077,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "compendex",
         "sciences et techniques"
@@ -3090,6 +4126,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_title"
+      },
       "tags": [
         "congressional",
         "droit et économie",
@@ -3132,6 +4177,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "la"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "bnf_official_description"
+      },
       "tags": [
         "database",
         "dictionaries",
@@ -3173,6 +4227,15 @@
       "access": [
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "dalloz",
         "droit et économie"
@@ -3212,6 +4275,15 @@
       "access": [
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "bibliothèque",
         "dalloz",
@@ -3254,6 +4326,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "la"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "database",
         "dictionaries",
@@ -3295,6 +4376,15 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "bibliography",
         "computer",
@@ -3337,6 +4427,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "bnf_access_press_indexpresse"
+      },
       "tags": [
         "1997",
         "delphes",
@@ -3362,6 +4461,16 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en",
+          "la"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "medieval",
         "latin",
@@ -3390,6 +4499,15 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "biographique",
         "dictionnaire",
@@ -3435,6 +4553,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "dictionnaire",
         "ecclesiastiques",
@@ -3478,6 +4605,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "creatrices",
         "dictionnaire",
@@ -3522,6 +4658,15 @@
       "access": [
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "doctrinal",
         "droit et économie",
@@ -3565,6 +4710,16 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "catalog_scope_inferred",
+        "note": "Ressource française; langues des sources antiques citées à consolider."
+      },
       "tags": [
         "antiques",
         "droits",
@@ -3605,6 +4760,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "books",
         "early",
@@ -3652,6 +4816,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [],
+        "scope": "very_multilingual",
+        "coverage": "unknown",
+        "confidence": "high",
+        "source": "library_source_record",
+        "source_url": "https://www.kb.nl/en/source/early-european-books-eeb-proquest",
+        "note": "La KB décrit une collection couvrant les imprimés européens avant 1701 quelle que soit la langue, et les imprimés hors Europe en langues européennes; liste exacte à consolider."
+      },
       "tags": [
         "books",
         "early",
@@ -3698,6 +4871,17 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en",
+          "enm"
+        ],
+        "scope": "multilingual",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "catalog_scope_inferred",
+        "note": "Inclut Early English Books Online et Early European Books; forte dominante anglaise et moyen anglais, autres langues européennes possibles."
+      },
       "tags": [
         "books",
         "early",
@@ -3741,6 +4925,16 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "catalog_scope_inferred",
+        "note": "Base bibliographique économique principalement anglophone; publications non anglophones possibles."
+      },
       "tags": [
         "econlit",
         "sciences humaines"
@@ -3782,6 +4976,16 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "catalog_scope_inferred",
+        "note": "Base d’indexation en sciences de l’éducation principalement anglophone; autres langues possibles."
+      },
       "tags": [
         "complete",
         "education",
@@ -3825,6 +5029,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "century",
         "collections",
@@ -3868,6 +5081,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "electre",
         "généralistes et référence"
@@ -3911,6 +5133,27 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "de",
+          "el",
+          "en",
+          "es",
+          "fr",
+          "it",
+          "la",
+          "nl",
+          "pt",
+          "ru",
+          "sv"
+        ],
+        "scope": "multilingual",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_and_library_records",
+        "source_url": "https://global.oup.com/academic/product/electronic-enlightenment-9780729409209",
+        "note": "Sources concordantes: corpus surtout anglais/français, avec documents en allemand, grec, italien, latin, néerlandais, portugais, russe, espagnol et suédois; à revérifier dans le corpus."
+      },
       "tags": [
         "electronic",
         "enlightenment",
@@ -3956,6 +5199,15 @@
       "access": [
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "elnet",
         "langue et dictionnaires"
@@ -3996,6 +5248,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "premium",
         "sciences et techniques"
@@ -4036,6 +5297,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "art et images",
         "emerald",
@@ -4062,6 +5332,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "encyclopaedia",
         "généralistes et référence",
@@ -4103,6 +5382,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "encyclopedie",
         "langue et dictionnaires",
@@ -4144,6 +5432,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "alembert",
         "diderot",
@@ -4186,6 +5483,16 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "medium",
+        "source": "catalog_scope_inferred",
+        "note": "Notice et édition consultée en français."
+      },
       "tags": [
         "encyclopedie",
         "généralistes et référence",
@@ -4227,6 +5534,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "bibliothèque",
         "musique et vidéo",
@@ -4268,6 +5584,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "art et images",
         "eric"
@@ -4308,6 +5633,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "art et images",
         "ethnologue",
@@ -4352,6 +5686,22 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [
+          "en",
+          "fr",
+          "ru",
+          "cs",
+          "de",
+          "it"
+        ],
+        "scope": "multilingual",
+        "coverage": "partial",
+        "confidence": "medium",
+        "source": "provider_statistics",
+        "source_url": "https://eudml.org/statistics",
+        "note": "Principales langues relevées dans les statistiques EuDML; catégorie « Others » non détaillée à consolider."
+      },
       "tags": [
         "maths",
         "europe"
@@ -4391,6 +5741,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "droit et économie",
         "euromonitor",
@@ -4437,6 +5796,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_title"
+      },
       "tags": [
         "europa",
         "learning",
@@ -4479,6 +5847,20 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "de",
+          "en",
+          "fr",
+          "it",
+          "ja"
+        ],
+        "scope": "multilingual",
+        "coverage": "partial",
+        "confidence": "medium",
+        "source": "bnf_access_press_factiva_candidates",
+        "note": "Liste issue des candidats Factiva déjà consolidés dans BNF Access Press; à compléter."
+      },
       "tags": [
         "factiva",
         "presse"
@@ -4519,6 +5901,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "abstracts",
         "food",
@@ -4561,6 +5952,15 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [],
+        "scope": "multilingual",
+        "coverage": "unknown",
+        "confidence": "medium",
+        "source": "bnf_official_description",
+        "source_url": "https://pascal-francis.inist.fr/",
+        "note": "La description BnF indique une bibliographie multilingue; le site INIST ne publie pas ici de liste de langues directement exploitable."
+      },
       "tags": [
         "droit et économie",
         "francis"
@@ -4604,6 +6004,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "frantext",
         "langue et dictionnaires"
@@ -4644,6 +6053,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "gale",
         "general",
@@ -4686,6 +6104,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "gale",
         "langue et dictionnaires",
@@ -4727,6 +6154,19 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en",
+          "fr",
+          "yi",
+          "de"
+        ],
+        "scope": "multilingual",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "bnf_official_description",
+        "note": "La notice BnF signale une dominante anglaise et des ensembles en français, yiddish et allemand; liste non exhaustive."
+      },
       "tags": [
         "gale",
         "presse",
@@ -4769,6 +6209,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "complete",
         "gale",
@@ -4810,6 +6259,15 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_title"
+      },
       "tags": [
         "europeennes",
         "gazettes",
@@ -4853,6 +6311,16 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [
+          "de"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "catalog_scope_inferred",
+        "note": "Catalogue allemand; langues des documents cartographiques à consolider."
+      },
       "tags": [
         "ikar",
         "cartes",
@@ -4896,6 +6364,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "bnf_access_press_indexpresse"
+      },
       "tags": [
         "generalis",
         "presse"
@@ -4936,6 +6413,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_title"
+      },
       "tags": [
         "books",
         "généralistes et référence",
@@ -4982,6 +6468,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "corpus",
         "dictionnaires",
@@ -5026,6 +6521,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "corpus",
         "françaises",
@@ -5070,6 +6574,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "corpus",
         "françaises",
@@ -5114,6 +6627,16 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr",
+          "zh"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "bnf_official_description"
+      },
       "tags": [
         "grand",
         "online",
@@ -5156,6 +6679,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "généralistes et référence",
         "greenfile"
@@ -5195,6 +6727,15 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_title"
+      },
       "tags": [
         "bibliographies et catalogues",
         "hansard"
@@ -5233,6 +6774,18 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [
+          "de",
+          "fr",
+          "it",
+          "rm"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "helveticat",
         "presse"
@@ -5272,6 +6825,88 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr",
+          "la",
+          "frm",
+          "en",
+          "de",
+          "it",
+          "grc",
+          "es",
+          "el",
+          "he",
+          "nl",
+          "pt",
+          "sv",
+          "ar",
+          "ru",
+          "da",
+          "fro",
+          "pl",
+          "oc",
+          "tr",
+          "arc",
+          "hy",
+          "ca",
+          "zh",
+          "syc",
+          "hu",
+          "rm",
+          "cs",
+          "sa",
+          "ja",
+          "eu",
+          "cy",
+          "fa",
+          "ota",
+          "sq",
+          "bg",
+          "ga",
+          "sco",
+          "got",
+          "fi",
+          "hr",
+          "ta",
+          "ang",
+          "is",
+          "ms",
+          "sl",
+          "be",
+          "ka",
+          "gez",
+          "nds",
+          "chu",
+          "gmh",
+          "yi",
+          "br",
+          "et",
+          "gd",
+          "hi",
+          "lt",
+          "ro",
+          "uk",
+          "af",
+          "fo",
+          "lad",
+          "lv",
+          "mg",
+          "no",
+          "sk",
+          "am",
+          "my",
+          "or",
+          "enm"
+        ],
+        "scope": "very_multilingual",
+        "coverage": "partial",
+        "confidence": "high",
+        "source": "cerl_hpb_language_facet",
+        "source_url": "https://kxp.k10plus.de/DB=1.77/LNG=EN/",
+        "language_count_min": 70,
+        "note": "Liste partielle issue de la facette Language HPB consultée le 2026-08-30; valeurs indéterminées ou manifestement corrompues exclues."
+      },
       "tags": [
         "bibliographies et catalogues",
         "book",
@@ -5314,6 +6949,19 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en",
+          "es",
+          "pt",
+          "fr"
+        ],
+        "scope": "multilingual",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "catalog_scope_inferred",
+        "note": "Index sur l’Amérique latine, les Caraïbes et les populations hispaniques; liste à consolider."
+      },
       "tags": [
         "hapi",
         "amérique latine",
@@ -5361,6 +7009,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "généralistes et référence",
         "hoovers"
@@ -5401,6 +7058,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "généralistes et référence",
         "ijbox"
@@ -5444,6 +7110,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "la"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "langue et dictionnaires",
         "principio"
@@ -5484,6 +7159,56 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en",
+          "fr",
+          "es",
+          "de",
+          "ru",
+          "it",
+          "nl",
+          "bs",
+          "pl",
+          "pt",
+          "ca",
+          "ar",
+          "sq",
+          "el",
+          "da",
+          "sv",
+          "ro",
+          "hu",
+          "no",
+          "bg",
+          "hbs",
+          "hr",
+          "tr",
+          "sr",
+          "cs",
+          "fa",
+          "fi",
+          "uk",
+          "mk",
+          "sl",
+          "la",
+          "sk",
+          "lt",
+          "et",
+          "bn",
+          "gl",
+          "ur",
+          "cnr",
+          "he"
+        ],
+        "scope": "very_multilingual",
+        "coverage": "partial",
+        "confidence": "high",
+        "source": "provider_language_facet_screenshot",
+        "source_url": "https://bibliographies.brill.com/IIO/",
+        "language_count_min": 39,
+        "note": "Liste relevée depuis la facette Languages d’Index Islamicus; Serbian Roman script et Serbian Cyrillic sont regroupés sous le code sr."
+      },
       "tags": [
         "art et images",
         "index",
@@ -5511,6 +7236,16 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "catalog_scope_inferred",
+        "note": "Base documentaire de Princeton principalement anglophone; langues des œuvres ou inscriptions à consolider."
+      },
       "tags": [
         "art et images",
         "index",
@@ -5551,6 +7286,23 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en",
+          "fr",
+          "de",
+          "it",
+          "es",
+          "nl",
+          "pt"
+        ],
+        "scope": "multilingual",
+        "coverage": "partial",
+        "confidence": "high",
+        "source": "provider_product_page",
+        "source_url": "https://about.brepolis.net/index-religiosus-2/",
+        "note": "Brepolis cite les grandes langues européennes suivantes, avec « etc. » : liste non exhaustive."
+      },
       "tags": [
         "bibliographies et catalogues",
         "index",
@@ -5591,6 +7343,96 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [
+          "fr",
+          "de",
+          "en",
+          "es",
+          "ja",
+          "nl",
+          "da",
+          "zh",
+          "pt",
+          "pl",
+          "cs",
+          "it",
+          "fi",
+          "hu",
+          "sv",
+          "ru",
+          "bg",
+          "el",
+          "hr",
+          "ko",
+          "et",
+          "no",
+          "sl",
+          "nb",
+          "ca",
+          "ro",
+          "sr",
+          "fa",
+          "ar",
+          "lt",
+          "sq",
+          "mn",
+          "cy",
+          "sk",
+          "he",
+          "lv",
+          "is",
+          "id",
+          "be",
+          "eu",
+          "gl",
+          "tr",
+          "mi",
+          "af",
+          "bo",
+          "ms",
+          "gd",
+          "hi",
+          "bn",
+          "ug",
+          "fo",
+          "th",
+          "sm",
+          "tkl",
+          "br",
+          "rar",
+          "eo",
+          "kl",
+          "niu",
+          "ml",
+          "to",
+          "hy",
+          "rm",
+          "ur",
+          "bs",
+          "mr",
+          "nn",
+          "ta",
+          "vi",
+          "uk",
+          "hbs",
+          "iu",
+          "se",
+          "or",
+          "si",
+          "so",
+          "fil",
+          "ga",
+          "la"
+        ],
+        "scope": "very_multilingual",
+        "coverage": "partial",
+        "confidence": "high",
+        "source": "unesco_datahub_export",
+        "source_url": "https://data.unesco.org/api/explore/v2.1/catalog/datasets/tran001/exports/csv",
+        "language_count": 512,
+        "note": "Export UNESCO complet analysé le 2026-08-30: 829377 lignes, 512 libellés de langues cibles observés; liste limitée aux langues les plus représentées et aux langues utiles pour le filtre."
+      },
       "tags": [
         "bibliographies et catalogues",
         "index",
@@ -5631,6 +7473,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "art et images",
         "inspec"
@@ -5672,6 +7523,27 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "zh",
+          "da",
+          "nl",
+          "en",
+          "fr",
+          "de",
+          "el",
+          "it",
+          "la",
+          "ru",
+          "es"
+        ],
+        "scope": "multilingual",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "provider_language_index",
+        "source_url": "https://www.nlx.com/languages",
+        "note": "Langues listées sur l’index officiel Past Masters; « English Translation » est intégré sous anglais."
+      },
       "tags": [
         "intelex",
         "pastmasters",
@@ -5713,6 +7585,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "medium",
+        "source": "catalog_scope_inferred"
+      },
       "tags": [
         "company",
         "directory",
@@ -5756,6 +7637,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_title"
+      },
       "tags": [
         "directory",
         "généralistes et référence",
@@ -5804,6 +7694,25 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en",
+          "fr",
+          "de",
+          "he",
+          "is",
+          "it",
+          "ja",
+          "es"
+        ],
+        "scope": "multilingual",
+        "coverage": "partial",
+        "confidence": "high",
+        "source": "producer_product_page",
+        "source_url": "https://ahc.leeds.ac.uk/medieval/doc/history-international-medieval-bibliography",
+        "language_count": 30,
+        "note": "L’Université de Leeds indique 30 langues nommées indexées, dont islandais, hébreu et japonais; seuls les exemples et grandes langues documentées sont codés ici."
+      },
       "tags": [
         "art et images",
         "bibliography",
@@ -5844,6 +7753,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [],
+        "scope": "very_multilingual",
+        "coverage": "unknown",
+        "confidence": "high",
+        "source": "library_source_record",
+        "source_url": "https://www.nkp.cz/en/catalogues-databases-digital-libraries/issn-portal",
+        "note": "Répertoire international de périodiques; les notices contiennent une donnée de langue, mais la liste exhaustive n’est pas publiée côté accès public."
+      },
       "tags": [
         "généralistes et référence",
         "issn"
@@ -5887,6 +7805,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "généralistes et référence",
         "jstor"
@@ -5927,6 +7854,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "bibliographies et catalogues",
         "klapp",
@@ -5971,6 +7907,32 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "ar",
+          "cs",
+          "da",
+          "de",
+          "en",
+          "es",
+          "fr",
+          "it",
+          "ja",
+          "nl",
+          "pl",
+          "pt",
+          "ru",
+          "sk",
+          "zh"
+        ],
+        "scope": "multilingual",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_site_language_index",
+        "source_url": "https://www.kompass.com/businessplace/",
+        "language_count_min": 26,
+        "note": "Langues visibles dans le sélecteur public Kompass; le fournisseur annonce par ailleurs des profils jusqu’à 26 langues selon les marchés."
+      },
       "tags": [
         "art et images",
         "kompass"
@@ -6011,6 +7973,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "de"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_title"
+      },
       "tags": [
         "bibliographies et catalogues",
         "deutscher",
@@ -6053,6 +8024,15 @@
       "access": [
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "droit et économie",
         "lamyline"
@@ -6095,6 +8075,15 @@
       "access": [
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "droit et économie",
         "lexbase"
@@ -6138,6 +8127,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "droit et économie",
         "lexis"
@@ -6178,6 +8176,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "droit et économie",
         "lextenso"
@@ -6217,6 +8224,15 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "bibliographies et catalogues",
         "catalog",
@@ -6259,6 +8275,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "la"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "langue et dictionnaires",
         "latin",
@@ -6300,6 +8325,15 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "droit et économie",
         "information",
@@ -6343,6 +8377,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "lisa",
         "sciences de l’information",
@@ -6389,6 +8432,15 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "langue et dictionnaires",
         "littre"
@@ -6431,6 +8483,17 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en",
+          "grc",
+          "la"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "bnf_official_description"
+      },
       "tags": [
         "classical",
         "library",
@@ -6473,6 +8536,16 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "catalog_scope_inferred",
+        "note": "Collection Gale centrée sur des archives et récits de voyage; autres langues possibles."
+      },
       "tags": [
         "mapping",
         "cartes",
@@ -6516,6 +8589,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "mascarille",
         "sciences humaines"
@@ -6555,6 +8637,16 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [
+          "en",
+          "enm"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "compendium",
         "english",
@@ -6596,6 +8688,16 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [],
+        "scope": "very_multilingual",
+        "coverage": "unknown",
+        "confidence": "high",
+        "source": "provider_product_page",
+        "source_url": "https://about.ebsco.com/products/research-databases/mla-international-bibliography-full-text",
+        "language_count_min": 70,
+        "note": "EBSCO indique une couverture internationale de publications savantes dans plus de 70 langues, sans liste de codes directement exploitable."
+      },
       "tags": [
         "bibliography",
         "international",
@@ -6637,6 +8739,16 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "de",
+          "la"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "resource_description"
+      },
       "tags": [
         "emgh",
         "germaniae",
@@ -6680,6 +8792,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "folk",
         "index",
@@ -6723,6 +8844,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "database",
         "music",
@@ -6769,6 +8899,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "de"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "gegenwart",
         "geschichte",
@@ -6814,6 +8953,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "catalog_scope_inferred"
+      },
       "tags": [
         "musique et vidéo",
         "naima"
@@ -6856,6 +9004,15 @@
       "access": [
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "medium",
+        "source": "catalog_scope_inferred"
+      },
       "tags": [
         "navis",
         "presse"
@@ -6896,6 +9053,23 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en",
+          "zh",
+          "fr",
+          "de",
+          "ja",
+          "ko",
+          "pt",
+          "es"
+        ],
+        "scope": "multilingual",
+        "coverage": "partial",
+        "confidence": "high",
+        "source": "provider_interface_language_menu_screenshot",
+        "note": "Langues de l’interface Naxos relevées le 2026-08-30; chinois simplifié et traditionnel regroupés sous zh."
+      },
       "tags": [
         "library",
         "music",
@@ -6938,6 +9112,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "art et images",
         "pauly"
@@ -6981,6 +9164,16 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en",
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "droit et économie",
         "ilibrary",
@@ -7022,6 +9215,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [],
+        "scope": "multilingual",
+        "coverage": "unknown",
+        "confidence": "medium",
+        "source": "producer_product_page",
+        "source_url": "https://oeb.griffith.ox.ac.uk/",
+        "note": "OEB agrège Annual Egyptological Bibliography, Bibliographie Altägypten, Aigyptos et des ajouts récents; liste exacte des langues non publiée."
+      },
       "tags": [
         "bibliography",
         "egyptological",
@@ -7064,6 +9266,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "books",
         "généralistes et référence",
@@ -7108,6 +9319,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "langue et dictionnaires",
         "online",
@@ -7149,6 +9369,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "biography",
         "dictionary",
@@ -7195,6 +9424,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "dictionary",
         "english",
@@ -7240,6 +9478,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "music",
         "musique et vidéo",
@@ -7282,6 +9529,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "oxford",
         "presse",
@@ -7322,6 +9578,78 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [
+          "en",
+          "fr",
+          "ru",
+          "ja",
+          "de",
+          "pl",
+          "es",
+          "it",
+          "pt",
+          "bg",
+          "hu",
+          "nl",
+          "ro",
+          "cs",
+          "sv",
+          "no",
+          "hbs",
+          "zh",
+          "sk",
+          "uk",
+          "da",
+          "fi",
+          "sl",
+          "el",
+          "tr",
+          "he",
+          "sq",
+          "be",
+          "la",
+          "ca",
+          "ko",
+          "ka",
+          "sr",
+          "hr",
+          "af",
+          "ar",
+          "mt",
+          "mk",
+          "grc",
+          "az",
+          "hy",
+          "lt",
+          "is",
+          "et",
+          "id",
+          "zen",
+          "cy",
+          "vi",
+          "bo",
+          "rom",
+          "ms",
+          "ie",
+          "eu",
+          "ug",
+          "tk",
+          "sa",
+          "fa",
+          "lv",
+          "kk",
+          "iu",
+          "ang"
+        ],
+        "scope": "very_multilingual",
+        "coverage": "partial",
+        "confidence": "high",
+        "source": "provider_language_facet_paste",
+        "source_url": "https://pascal-francis.inist.fr/",
+        "language_count_min": 62,
+        "note": "Liste issue de la facette langue Pascal fournie le 2026-08-30; doublons fusionnés, valeurs indéterminées et familles linguistiques générales exclues."
+      },
       "tags": [
         "pascal",
         "sciences et techniques"
@@ -7365,6 +9693,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "la"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "database",
         "langue et dictionnaires",
@@ -7408,6 +9745,46 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "de",
+          "en",
+          "ar",
+          "ca",
+          "zh",
+          "co",
+          "da",
+          "es",
+          "et",
+          "fi",
+          "fr",
+          "el",
+          "hu",
+          "id",
+          "it",
+          "ja",
+          "la",
+          "ml",
+          "nl",
+          "no",
+          "pl",
+          "pt",
+          "ro",
+          "ru",
+          "sk",
+          "sl",
+          "sv",
+          "sw",
+          "cs",
+          "tr"
+        ],
+        "scope": "very_multilingual",
+        "coverage": "partial",
+        "confidence": "high",
+        "source": "provider_language_facet_paste",
+        "language_count_min": 30,
+        "note": "Liste issue de la facette langue Performing Arts Periodicals Database fournie le 2026-08-30."
+      },
       "tags": [
         "arts",
         "database",
@@ -7455,6 +9832,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "bnf_official_description"
+      },
       "tags": [
         "archive",
         "online",
@@ -7501,6 +9887,17 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "de",
+          "en",
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "lang",
         "livres",
@@ -7547,6 +9944,39 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en",
+          "es",
+          "it",
+          "de",
+          "fr",
+          "pt",
+          "tr",
+          "pl",
+          "hr",
+          "nl",
+          "sk",
+          "sl",
+          "ru",
+          "cs",
+          "lt",
+          "bg",
+          "fa",
+          "eu",
+          "ro",
+          "he",
+          "bs",
+          "hu",
+          "no"
+        ],
+        "scope": "very_multilingual",
+        "coverage": "partial",
+        "confidence": "high",
+        "source": "provider_language_facet_screenshot",
+        "language_count_min": 23,
+        "note": "Liste issue de la facette langue Philosopher's Index fournie le 2026-08-30; ligne finale tronquée non reprise."
+      },
       "tags": [
         "index",
         "philosopher",
@@ -7589,6 +10019,16 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "catalog_scope_inferred",
+        "note": "Collection Gale principalement anglophone; documents visuels et sources non anglophones possibles."
+      },
       "tags": [
         "lens",
         "photography",
@@ -7631,6 +10071,17 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [
+          "de",
+          "fr",
+          "it"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "periodiques",
         "portail",
@@ -7672,6 +10123,123 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en",
+          "pt",
+          "es",
+          "fr",
+          "tr",
+          "de",
+          "zh",
+          "it",
+          "pl",
+          "ru",
+          "lt",
+          "sr",
+          "el",
+          "hu",
+          "la",
+          "nl",
+          "cs",
+          "af",
+          "he",
+          "sl",
+          "uk",
+          "id",
+          "sk",
+          "ar",
+          "ro",
+          "hr",
+          "no",
+          "ms",
+          "az",
+          "sv",
+          "bg",
+          "da",
+          "fa",
+          "ca",
+          "th",
+          "cy",
+          "lv",
+          "bs",
+          "ga",
+          "ko",
+          "is",
+          "hi",
+          "ja",
+          "et",
+          "grc",
+          "mr",
+          "fi",
+          "sw",
+          "gd",
+          "mk",
+          "ml",
+          "ht",
+          "ka",
+          "sco",
+          "sa",
+          "ur",
+          "gu",
+          "nso",
+          "xh",
+          "zu",
+          "frm",
+          "enm",
+          "gl",
+          "haw",
+          "rw",
+          "eo",
+          "eu",
+          "bn",
+          "pap",
+          "ta",
+          "be",
+          "uz",
+          "gv",
+          "ve",
+          "yi",
+          "hy",
+          "co",
+          "te",
+          "vi",
+          "ang",
+          "mi",
+          "yo",
+          "sq",
+          "cld",
+          "gez",
+          "gn",
+          "kk",
+          "ne",
+          "new",
+          "syc",
+          "tn",
+          "ts",
+          "am",
+          "my",
+          "cop",
+          "fil",
+          "fro",
+          "fy",
+          "km",
+          "ky",
+          "mg",
+          "oc",
+          "pa",
+          "qu",
+          "rn",
+          "tl",
+          "bo"
+        ],
+        "scope": "very_multilingual",
+        "coverage": "partial",
+        "confidence": "high",
+        "source": "provider_language_facet_paste",
+        "language_count_min": 107,
+        "note": "Liste issue de la facette langue ProQuest Dissertations & Theses fournie le 2026-08-30; doublons fusionnés, langues multiples, valeurs indéterminées et familles générales exclues."
+      },
       "tags": [
         "dissertations",
         "droit et économie",
@@ -7717,6 +10285,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "literature",
         "presse",
@@ -7761,6 +10338,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "psycextra",
         "sciences humaines"
@@ -7786,6 +10372,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "psycextra",
         "sciences humaines"
@@ -7811,6 +10406,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "1887",
         "bibliographies et catalogues",
@@ -7852,6 +10456,14 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [],
+        "scope": "multilingual",
+        "coverage": "unknown",
+        "confidence": "medium",
+        "source": "bnf_official_description",
+        "note": "La notice BnF décrit la ressource comme une bibliographie sélective, thématique et multilingue."
+      },
       "tags": [
         "art et images",
         "articles",
@@ -7898,6 +10510,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "classique",
         "reef",
@@ -7942,6 +10563,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [],
+        "scope": "multilingual",
+        "coverage": "unknown",
+        "confidence": "high",
+        "source": "producer_product_page",
+        "source_url": "https://uclouvain.be/en/research-institutes/isp/ipb",
+        "note": "UCLouvain indique une couverture des principales langues européennes et une recherche par langue de publication, sans publier de liste exhaustive."
+      },
       "tags": [
         "art et images",
         "bibliographique",
@@ -7987,6 +10617,15 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "archeologie",
         "repertoire",
@@ -8031,6 +10670,19 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en",
+          "fr",
+          "de",
+          "it"
+        ],
+        "scope": "identified",
+        "coverage": "partial",
+        "confidence": "medium",
+        "source": "provider_scope_inferred",
+        "note": "Répertoire international de périodiques musicaux; liste de langues à confirmer."
+      },
       "tags": [
         "international",
         "musicale",
@@ -8072,6 +10724,17 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [
+          "en",
+          "fr",
+          "de"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "international",
         "musicales",
@@ -8117,6 +10780,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "bnf_official_description"
+      },
       "tags": [
         "media",
         "pour",
@@ -8163,6 +10835,16 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [],
+        "scope": "very_multilingual",
+        "coverage": "unknown",
+        "confidence": "high",
+        "source": "provider_scope",
+        "source_url": "https://www.rilm.org/abstracts/",
+        "language_count_min": 140,
+        "note": "RILM indique couvrir des publications musicales de 184 pays dans plus de 140 langues."
+      },
       "tags": [
         "abstracts",
         "literature",
@@ -8206,6 +10888,21 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "de",
+          "es",
+          "it",
+          "pt",
+          "ca",
+          "ro"
+        ],
+        "scope": "multilingual",
+        "coverage": "primary",
+        "confidence": "low",
+        "source": "catalog_scope_inferred",
+        "note": "Bibliographie sur les langues et littératures romanes hors français; liste à vérifier."
+      },
       "tags": [
         "bibliographie",
         "online",
@@ -8251,6 +10948,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "généralistes et référence",
         "publishing"
@@ -8290,6 +10996,15 @@
       "access": [
         "pass_lecture_culture"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "cyberlibris",
         "scholarvox",
@@ -8334,6 +11049,16 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "catalog_scope_inferred",
+        "note": "Index scientifique international à dominante anglophone; publications non anglophones possibles."
+      },
       "tags": [
         "citation",
         "index",
@@ -8375,6 +11100,16 @@
       "access": [
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "catalog_scope_inferred",
+        "note": "Plateforme Elsevier principalement anglophone; titres non anglophones possibles."
+      },
       "tags": [
         "sciencedirect",
         "sciences et techniques"
@@ -8414,6 +11149,15 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_title"
+      },
       "tags": [
         "sciences",
         "sciences et techniques",
@@ -8457,6 +11201,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "dictionnaire",
         "interactif",
@@ -8484,6 +11237,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "catalogues",
         "ventes d'art",
@@ -8527,6 +11289,16 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "catalog_scope_inferred",
+        "note": "Base de sociologie principalement anglophone; publications non anglophones possibles."
+      },
       "tags": [
         "art et images",
         "full",
@@ -8571,6 +11343,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "abstracts",
         "art et images",
@@ -8616,6 +11397,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "database",
         "sciences humaines",
@@ -8661,6 +11451,16 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "catalog_scope_inferred",
+        "note": "Plateforme Springer principalement anglophone; titres non anglophones possibles."
+      },
       "tags": [
         "sciences et techniques",
         "springerlink"
@@ -8702,6 +11502,15 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "art et images",
         "sudoc"
@@ -8741,6 +11550,16 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en",
+          "grc"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "epigraphicum",
         "graecum",
@@ -8787,6 +11606,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "ingenieur",
         "sciences et techniques",
@@ -8831,6 +11659,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "grc"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "graecae",
         "langue et dictionnaires",
@@ -8876,6 +11713,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "la"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "langue et dictionnaires",
         "latinae",
@@ -8921,6 +11767,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "1785",
         "archives",
@@ -8964,6 +11819,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "century",
         "religious",
@@ -9010,6 +11874,16 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [],
+        "scope": "very_multilingual",
+        "coverage": "unknown",
+        "confidence": "high",
+        "source": "provider_product_page",
+        "source_url": "https://about.proquest.com/en/products-services/Ulrichsweb/",
+        "language_count": 200,
+        "note": "ProQuest indique une couverture de périodiques dans 200 langues; liste exacte à consolider."
+      },
       "tags": [
         "bibliographies et catalogues",
         "ulrich"
@@ -9050,6 +11924,20 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "ar",
+          "en",
+          "es",
+          "fr",
+          "ru",
+          "zh"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "bibliothèque",
         "ilibrary",
@@ -9093,6 +11981,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "la"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_title"
+      },
       "tags": [
         "apostolicas",
         "art et images",
@@ -9134,6 +12031,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "langue et dictionnaires",
         "vidal"
@@ -9177,6 +12083,23 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en",
+          "zh",
+          "fr",
+          "de",
+          "it",
+          "ja",
+          "es"
+        ],
+        "scope": "multilingual",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "provider_product_page",
+        "source_url": "https://www.visiblebody.com/anatomy-and-physiology-apps/vb-suite",
+        "note": "Visible Body liste six traductions en plus de la version anglaise."
+      },
       "tags": [
         "kiné",
         "anatomie",
@@ -9224,6 +12147,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_title"
+      },
       "tags": [
         "directory",
         "english",
@@ -9267,6 +12199,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "medium",
+        "source": "catalog_scope_inferred"
+      },
       "tags": [
         "archives",
         "british",
@@ -9309,6 +12250,15 @@
       "access": [
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "primary",
+        "confidence": "medium",
+        "source": "provider_scope_inferred"
+      },
       "tags": [
         "library",
         "online",
@@ -9351,6 +12301,16 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [],
+        "scope": "very_multilingual",
+        "coverage": "unknown",
+        "confidence": "high",
+        "source": "provider_statistics",
+        "source_url": "https://www.oclc.org/en/worldcat/inside-worldcat.html",
+        "language_count": 488,
+        "note": "OCLC indique 488 langues dans WorldCat en novembre 2025; liste exacte à consolider."
+      },
       "tags": [
         "art et images",
         "worldcat"
@@ -9391,6 +12351,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "en"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "medium",
+        "source": "catalog_scope_inferred"
+      },
       "tags": [
         "who",
         "annuaire",
@@ -9435,6 +12404,15 @@
         "pass_lecture_culture",
         "pass_recherche_illimite"
       ],
+      "content_languages": {
+        "codes": [
+          "fr"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "7000",
         "droit et économie",
@@ -9476,6 +12454,15 @@
       "access": [
         "public"
       ],
+      "content_languages": {
+        "codes": [
+          "de"
+        ],
+        "scope": "identified",
+        "coverage": "complete",
+        "confidence": "high",
+        "source": "resource_description"
+      },
       "tags": [
         "datenbank",
         "généralistes et référence",

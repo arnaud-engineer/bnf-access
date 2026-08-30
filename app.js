@@ -1,12 +1,16 @@
 const state = {
   resources: [],
   catalogMeta: null,
+  languageVocabulary: {},
   category: "Toutes",
   favorites: new Set(),
   favoritesReady: false,
   favoritesOnly: false,
   passFilter: "all",
   remoteFilter: "all",
+  siteAccess: "unknown",
+  languageFilter: new Set(),
+  theme: "auto",
   favoriteOrder: [],
   favoriteOrderCustom: false,
   quickLaunchEditing: false,
@@ -30,9 +34,20 @@ const resultCount = document.querySelector("#resultCount");
 const quickLaunch = document.querySelector("#quickLaunch");
 const searchControls = document.querySelector("#searchControls");
 const jumpToSearch = document.querySelector("#jumpToSearch");
+const openSettings = document.querySelector("#openSettings");
+const settingsModal = document.querySelector("#settingsModal");
+const closeSettings = document.querySelector("#closeSettings");
+const clearLocalDataButton = document.querySelector("#clearLocalData");
+const clearLocalDataStatus = document.querySelector("#clearLocalDataStatus");
+const settingsTheme = document.querySelector("#settingsTheme");
+const settingsPassFilter = document.querySelector("#settingsPassFilter");
+const settingsSiteAccess = document.querySelector("#settingsSiteAccess");
+const languageFilters = document.querySelector("#languageFilters");
+const settingsLanguageFilters = document.querySelector("#settingsLanguageFilters");
 const privacyNotice = document.querySelector("#privacyNotice");
 const dismissNotice = document.querySelector("#dismissNotice");
 const startupImageTimeoutMs = 1800;
+const assetVersion = "20260830-language-filters";
 const startupAssetUrls = [
   "./bnf-access-icon.svg",
   "./logos/arnaud-cool.svg",
@@ -45,6 +60,9 @@ const favoriteOrderStorageKey = "bnf-access:favorite-order:v1";
 const favoriteOrderCustomStorageKey = "bnf-access:favorite-order-custom:v1";
 const passFilterStorageKey = "bnf-access:pass-filter:v1";
 const remoteFilterStorageKey = "bnf-access:remote-filter:v1";
+const siteAccessStorageKey = "bnf-access:site-access:v1";
+const languageFilterStorageKey = "bnf-access:language-filter:v1";
+const themeStorageKey = "bnf-access:theme:v1";
 const themedSvgCache = new Map();
 let resourceGridTransitionTimer = 0;
 let resourceGridEnterTimer = 0;
@@ -70,6 +88,15 @@ const accessModeClasses = {
   free: "free",
 };
 
+const siteAccessValues = new Set(["unknown", "yes", "no"]);
+const themeValues = new Set(["auto", "light", "dark", "oled"]);
+const darkThemeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+const compactLanguageCodes = {
+  enm: "ME",
+  grc: "GR",
+};
+const primaryLanguageCodes = ["fr", "en", "es", "de", "it"];
+
 const categoryOrder = [
   "Presse",
   "Dicos / Encyclopédies",
@@ -85,15 +112,18 @@ const categoryOrder = [
 ];
 
 async function init() {
+  loadTheme();
   setupPrivacyNotice();
-  const response = await fetch("./resources.json");
+  const response = await fetch(`./resources.json?v=${assetVersion}`);
   const data = await response.json();
   state.catalogMeta = getCatalogMeta(data);
   state.resources = getCatalogResources(data);
+  state.languageVocabulary = getLanguageVocabulary(data);
   loadFavorites();
   loadFavoriteOrder();
   loadProfileFilters();
   renderFilters();
+  renderLanguageFilterControls();
   render();
   await waitForStartupImages();
   revealApp();
@@ -116,6 +146,10 @@ function getCatalogMeta(data) {
 
 function getCatalogResources(data) {
   return Array.isArray(data) ? data : data.resources ?? [];
+}
+
+function getLanguageVocabulary(data) {
+  return Array.isArray(data) ? {} : data.language_vocabulary ?? {};
 }
 
 function revealApp() {
@@ -186,6 +220,82 @@ function setupPrivacyNotice() {
   });
 }
 
+function openSettingsModal() {
+  clearLocalDataStatus.textContent = "";
+  settingsModal.hidden = false;
+  document.body.classList.add("has-modal");
+  window.requestAnimationFrame(() => {
+    settingsModal.classList.add("is-open");
+    closeSettings.focus();
+  });
+}
+
+function closeSettingsModal() {
+  settingsModal.classList.remove("is-open");
+  document.body.classList.remove("has-modal");
+  window.setTimeout(() => {
+    settingsModal.hidden = true;
+  }, 160);
+  openSettings.focus();
+}
+
+function clearLocalData() {
+  const keys = [];
+
+  try {
+    for (let index = 0; index < localStorage.length; index += 1) {
+      const key = localStorage.key(index);
+      if (key?.startsWith("bnf-access:")) {
+        keys.push(key);
+      }
+    }
+
+    keys.forEach((key) => localStorage.removeItem(key));
+  } catch {
+    setClearLocalDataStatus("Impossible de supprimer les données locales depuis ce navigateur.", false);
+    return;
+  }
+
+  setClearLocalDataStatus(
+    keys.length > 0
+      ? "Les données locales de BnF Access ont été supprimées."
+      : "Aucune donnée locale BnF Access n'était enregistrée dans ce navigateur.",
+    true,
+  );
+}
+
+function setClearLocalDataStatus(message, ok) {
+  clearLocalDataStatus.textContent = message;
+  clearLocalDataStatus.dataset.status = ok ? "success" : "error";
+}
+
+function loadTheme() {
+  const storedTheme = readStoredValue(themeStorageKey);
+  state.theme = themeValues.has(storedTheme) ? storedTheme : "auto";
+  applyTheme();
+}
+
+function saveTheme() {
+  writeStoredValue(themeStorageKey, state.theme);
+}
+
+function applyTheme() {
+  const resolvedTheme = state.theme === "auto" ? getAutomaticTheme() : state.theme;
+
+  if (resolvedTheme === "light") {
+    delete document.documentElement.dataset.theme;
+  } else {
+    document.documentElement.dataset.theme = resolvedTheme;
+  }
+
+  settingsTheme.value = state.theme;
+  settingsTheme.closest("label")?.classList.toggle("has-selected-profile", state.theme !== "auto");
+}
+
+function getAutomaticTheme() {
+  return darkThemeQuery.matches ? "oled" : "light";
+}
+
 function renderFilters() {
   const knownCategories = new Set(state.resources.flatMap(getResourceCategories));
   const orderedCategories = categoryOrder.filter((category) => knownCategories.delete(category));
@@ -226,6 +336,106 @@ function renderFilters() {
   separator.className = "filter-separator";
   separator.setAttribute("aria-hidden", "true");
   filters.prepend(favoriteButton, separator);
+}
+
+function renderLanguageFilterControls() {
+  renderLanguageFilterControl(languageFilters);
+  renderLanguageFilterControl(settingsLanguageFilters);
+}
+
+function renderLanguageFilterControl(container) {
+  container.innerHTML = "";
+
+  const knownCodes = getKnownLanguageCodes();
+  const primaryCodes = primaryLanguageCodes.filter((code) => knownCodes.has(code));
+  const extraCodes = getOrderedLanguageCodes()
+    .filter((code) => !primaryLanguageCodes.includes(code));
+  const selectedExtraCodes = [...state.languageFilter]
+    .filter((code) => extraCodes.includes(code));
+
+  container.append(createLanguageFilterButton("", "Toutes", "Toutes les langues", state.languageFilter.size === 0));
+
+  for (const code of primaryCodes) {
+    container.append(createLanguageFilterButton(
+      code,
+      formatLanguageBadgeText(code),
+      formatLanguageTooltipItem(code),
+      state.languageFilter.has(code),
+    ));
+  }
+
+  if (extraCodes.length > 0) {
+    const select = document.createElement("select");
+    select.className = "language-filter-select";
+    select.title = "Ajouter une autre langue";
+    select.setAttribute("aria-label", "Ajouter une autre langue");
+    select.innerHTML = `
+      <option value="">+</option>
+      ${extraCodes
+        .filter((code) => !state.languageFilter.has(code))
+        .map((code) => `<option value="${escapeAttribute(code)}">${escapeHtml(formatLanguageOptionLabel(code))}</option>`)
+        .join("")}
+    `;
+    select.addEventListener("change", (event) => {
+      const code = event.target.value;
+      if (code) {
+        updateLanguageFilter(code);
+      }
+      event.target.value = "";
+    });
+    container.append(select);
+  }
+
+  for (const code of selectedExtraCodes) {
+    container.append(createLanguageFilterButton(
+      code,
+      formatLanguageBadgeText(code),
+      formatLanguageTooltipItem(code),
+      true,
+    ));
+  }
+}
+
+function createLanguageFilterButton(code, label, title, isActive) {
+  const button = document.createElement("button");
+  button.className = "language-filter-button";
+  button.classList.toggle("is-active", isActive);
+  button.type = "button";
+  button.textContent = label;
+  button.title = title;
+  button.setAttribute("aria-pressed", String(isActive));
+  button.addEventListener("click", () => {
+    updateLanguageFilter(code);
+  });
+  return button;
+}
+
+function updateLanguageFilter(code) {
+  if (!code) {
+    state.languageFilter.clear();
+  } else if (state.languageFilter.has(code)) {
+    state.languageFilter.delete(code);
+  } else {
+    state.languageFilter.add(code);
+  }
+
+  syncProfileFilterState();
+  saveProfileFilters();
+  renderResourceGridWithTransition();
+}
+
+function getOrderedLanguageCodes() {
+  const knownCodes = getKnownLanguageCodes();
+  const primaryCodes = primaryLanguageCodes.filter((code) => knownCodes.has(code));
+  const otherCodes = [...knownCodes]
+    .filter((code) => !primaryLanguageCodes.includes(code))
+    .sort((a, b) => formatLanguageOptionLabel(a).localeCompare(formatLanguageOptionLabel(b), "fr"));
+
+  return [...primaryCodes, ...otherCodes];
+}
+
+function getKnownLanguageCodes() {
+  return new Set(state.resources.flatMap((resource) => getResourceLanguageCodes(resource)));
 }
 
 function getResourceCategories(resource) {
@@ -461,6 +671,7 @@ function getFilteredResources() {
       const matchesFavorite = !state.favoritesOnly || state.favorites.has(resource.id);
       const matchesPass = matchesPassFilter(resource);
       const matchesRemote = matchesRemoteFilter(accessMode);
+      const matchesLanguage = matchesLanguageFilter(resource);
       const haystack = normalize([
         resource.name,
         ...resourceCategories,
@@ -468,9 +679,10 @@ function getFilteredResources() {
         getAccessModeLabel(resource),
         resource.access_note,
         resource.access_instruction?.text,
+        ...getLanguageSearchTerms(resource),
         ...(resource.tags ?? []),
       ].join(" "));
-      return matchesCategory && matchesFavorite && matchesPass && matchesRemote && (!query || haystack.includes(query));
+      return matchesCategory && matchesFavorite && matchesPass && matchesRemote && matchesLanguage && (!query || haystack.includes(query));
     })
     .sort((a, b) => {
       const favoriteDelta = Number(state.favorites.has(b.id)) - Number(state.favorites.has(a.id));
@@ -504,6 +716,20 @@ function matchesPassFilter(resource) {
   return access.includes(state.passFilter) || access.includes("public");
 }
 
+function matchesLanguageFilter(resource) {
+  if (state.languageFilter.size === 0) {
+    return true;
+  }
+
+  const codes = getResourceLanguageCodes(resource);
+  if (codes.length === 0) {
+    const scope = resource.content_languages?.scope;
+    return scope === "multilingual" || scope === "very_multilingual";
+  }
+
+  return codes.some((code) => state.languageFilter.has(code));
+}
+
 function createCard(resource) {
   const card = document.createElement("article");
   card.className = "card";
@@ -534,6 +760,7 @@ function createCard(resource) {
     ? renderIcon(resource, "card")
     : `<span>${escapeHtml(getFallbackLabel(resource))}</span>`;
   const accessInstruction = renderAccessInstruction(resource);
+  const languageBadges = renderLanguageBadges(resource);
   const secondaryCategoryBadges = (resource.secondary_categories ?? [])
     .map((category) => `<span class="badge category">${escapeHtml(category)}</span>`)
     .join("");
@@ -564,6 +791,7 @@ function createCard(resource) {
       <span class="badge category">${escapeHtml(resource.category)}</span>
       ${secondaryCategoryBadges}
       <span class="badge ${accessModeClass}">${escapeHtml(accessModeLabel)}</span>
+      ${languageBadges}
       ${profileBadges}
     </div>
   `;
@@ -647,6 +875,84 @@ function renderAccessInstruction(resource) {
       <strong>Accès :</strong> ${escapeHtml(instruction.text)}${links ? ` ${links}` : ""}
     </p>
   `;
+}
+
+function renderLanguageBadges(resource) {
+  const languageData = resource.content_languages;
+  if (!languageData) {
+    return "";
+  }
+
+  const codes = getResourceLanguageCodes(resource);
+  if (codes.length === 0) {
+    if (languageData.scope !== "multilingual" && languageData.scope !== "very_multilingual") {
+      return "";
+    }
+
+    const title = [
+      getLanguageSummaryLabel(languageData),
+      languageData.note,
+    ].filter(Boolean).join(" - ");
+
+    return `<span class="badge language" title="${escapeAttribute(title)}">MULTI</span>`;
+  }
+
+  if (codes.length > 3) {
+    const title = `Langues : ${codes.map(formatLanguageTooltipItem).join(", ")}`;
+    return `<span class="badge language" title="${escapeAttribute(title)}">MULTI</span>`;
+  }
+
+  return codes
+    .map((code) => `<span class="badge language" title="${escapeAttribute(formatLanguageTooltipItem(code))}">${escapeHtml(formatLanguageBadgeText(code))}</span>`)
+    .join("");
+}
+
+function getLanguageSummaryLabel(languageData) {
+  if (languageData.language_count) {
+    return `${languageData.language_count} langues`;
+  }
+
+  if (languageData.language_count_min) {
+    return `${languageData.language_count_min} langues ou plus`;
+  }
+
+  return "Plusieurs langues";
+}
+
+function formatLanguageTooltipItem(code) {
+  const label = state.languageVocabulary[code];
+  return label ? `${label} (${code.toUpperCase()})` : code.toUpperCase();
+}
+
+function formatLanguageOptionLabel(code) {
+  const label = state.languageVocabulary[code];
+  return label ? `${capitalize(label)} (${formatLanguageBadgeText(code)})` : formatLanguageBadgeText(code);
+}
+
+function formatLanguageBadgeText(code) {
+  const normalizedCode = code.toLowerCase();
+  return compactLanguageCodes[normalizedCode] ?? normalizedCode.slice(0, 2).toUpperCase();
+}
+
+function getResourceLanguageCodes(resource) {
+  return [...new Set(resource.content_languages?.codes ?? [])].filter(Boolean);
+}
+
+function getLanguageSearchTerms(resource) {
+  const terms = getResourceLanguageCodes(resource)
+    .flatMap((code) => [code, formatLanguageBadgeText(code), state.languageVocabulary[code]])
+    .filter(Boolean);
+  const scope = resource.content_languages?.scope;
+
+  if (scope === "multilingual" || scope === "very_multilingual") {
+    terms.push("multi", "multilingue", "plusieurs langues");
+  }
+
+  return terms;
+}
+
+function capitalize(value) {
+  return value ? `${value[0].toUpperCase()}${value.slice(1)}` : "";
 }
 
 function getAccessMode(resource) {
@@ -746,6 +1052,8 @@ function loadFavoriteOrder() {
 function loadProfileFilters() {
   const storedPass = readStoredValue(passFilterStorageKey);
   const storedRemote = readStoredValue(remoteFilterStorageKey);
+  const storedSiteAccess = readStoredValue(siteAccessStorageKey);
+  const storedLanguageFilter = readStoredValue(languageFilterStorageKey);
 
   if ([...passFilter.options].some((option) => option.value === storedPass)) {
     state.passFilter = storedPass;
@@ -757,6 +1065,14 @@ function loadProfileFilters() {
     state.remoteFilter = "remote";
   }
 
+  if (siteAccessValues.has(storedSiteAccess)) {
+    state.siteAccess = storedSiteAccess;
+  } else {
+    state.siteAccess = getSiteAccessFromRemoteFilter(state.remoteFilter);
+  }
+
+  state.languageFilter = parseStoredLanguageFilter(storedLanguageFilter);
+
   passFilter.value = state.passFilter;
   remoteFilter.value = state.remoteFilter;
   syncProfileFilterState();
@@ -765,12 +1081,52 @@ function loadProfileFilters() {
 function saveProfileFilters() {
   writeStoredValue(passFilterStorageKey, state.passFilter);
   writeStoredValue(remoteFilterStorageKey, state.remoteFilter);
+  writeStoredValue(siteAccessStorageKey, state.siteAccess);
+  writeStoredValue(languageFilterStorageKey, JSON.stringify([...state.languageFilter]));
 }
 
 function syncProfileFilterState() {
   const hasSelectedProfile = state.passFilter !== "all";
   passFilter.classList.toggle("has-selected-profile", hasSelectedProfile);
   passFilter.closest("label")?.classList.toggle("has-selected-profile", hasSelectedProfile);
+  settingsPassFilter.value = state.passFilter;
+  settingsSiteAccess.value = state.siteAccess;
+  settingsPassFilter.closest("label")?.classList.toggle("has-selected-profile", hasSelectedProfile);
+  settingsSiteAccess
+    .closest("label")
+    ?.classList.toggle("has-selected-profile", state.siteAccess !== "unknown");
+  renderLanguageFilterControls();
+}
+
+function parseStoredLanguageFilter(value) {
+  const knownCodes = getKnownLanguageCodes();
+
+  try {
+    return new Set(
+      JSON.parse(value ?? "[]")
+        .filter((code) => typeof code === "string")
+        .map((code) => code.toLowerCase())
+        .filter((code) => knownCodes.has(code)),
+    );
+  } catch {
+    return new Set();
+  }
+}
+
+function getSiteAccessFromRemoteFilter(value) {
+  if (value === "remote") {
+    return "no";
+  }
+
+  if (value === "onsite") {
+    return "yes";
+  }
+
+  return "unknown";
+}
+
+function getRemoteFilterFromSiteAccess(value) {
+  return value === "no" ? "remote" : "all";
 }
 
 function syncFavoriteOrder() {
@@ -1282,6 +1638,18 @@ searchInput.addEventListener("input", (event) => {
   render();
 });
 
+settingsTheme.addEventListener("change", (event) => {
+  state.theme = event.target.value;
+  applyTheme();
+  saveTheme();
+});
+
+darkThemeQuery.addEventListener("change", () => {
+  if (state.theme === "auto") {
+    applyTheme();
+  }
+});
+
 passFilter.addEventListener("change", (event) => {
   state.passFilter = event.target.value;
   syncProfileFilterState();
@@ -1291,8 +1659,42 @@ passFilter.addEventListener("change", (event) => {
 
 remoteFilter.addEventListener("change", (event) => {
   state.remoteFilter = event.target.value;
+  state.siteAccess = getSiteAccessFromRemoteFilter(state.remoteFilter);
+  syncProfileFilterState();
   saveProfileFilters();
   renderResourceGridWithTransition();
+});
+
+settingsPassFilter.addEventListener("change", (event) => {
+  state.passFilter = event.target.value;
+  passFilter.value = state.passFilter;
+  syncProfileFilterState();
+  saveProfileFilters();
+  renderResourceGridWithTransition();
+});
+
+settingsSiteAccess.addEventListener("change", (event) => {
+  state.siteAccess = event.target.value;
+  state.remoteFilter = getRemoteFilterFromSiteAccess(state.siteAccess);
+  remoteFilter.value = state.remoteFilter;
+  syncProfileFilterState();
+  saveProfileFilters();
+  renderResourceGridWithTransition();
+});
+
+openSettings.addEventListener("click", openSettingsModal);
+closeSettings.addEventListener("click", closeSettingsModal);
+clearLocalDataButton.addEventListener("click", clearLocalData);
+settingsModal.addEventListener("click", (event) => {
+  if (event.target === settingsModal) {
+    closeSettingsModal();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !settingsModal.hidden) {
+    closeSettingsModal();
+  }
 });
 
 jumpToSearch.addEventListener("click", () => {

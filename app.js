@@ -47,7 +47,7 @@ const settingsLanguageFilters = document.querySelector("#settingsLanguageFilters
 const privacyNotice = document.querySelector("#privacyNotice");
 const dismissNotice = document.querySelector("#dismissNotice");
 const startupImageTimeoutMs = 1800;
-const assetVersion = "20260830-language-filters";
+const assetVersion = "20260831-pressreader-access";
 const startupAssetUrls = [
   "./bnf-access-icon.svg",
   "./logos/arnaud-cool.svg",

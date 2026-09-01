@@ -1568,23 +1568,24 @@ html[data-theme="oled"] .brand-heading-logo {
   --search-button-size: 81px;
   --settings-button-size: 69px;
   --dock-gap: 10px;
-  position: absolute;
-  inset: 0 auto max(18px, env(safe-area-inset-bottom)) 0;
-  z-index: 20;
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
+  --floating-edge-gap: max(18px, env(safe-area-inset-right));
+  --floating-bottom-gap: max(18px, env(safe-area-inset-bottom));
+  --floating-viewport-offset: 0px;
+  --floating-footer-offset: 0px;
+  position: fixed;
+  right: var(--floating-edge-gap);
+  bottom: calc(var(--floating-bottom-gap) + var(--floating-viewport-offset) + var(--floating-footer-offset));
+  z-index: 80;
+  width: fit-content;
   pointer-events: none;
 }
 
 .page-tools {
-  position: sticky;
-  top: calc(100vh - var(--search-button-size) - var(--settings-button-size) - var(--dock-gap) - max(18px, env(safe-area-inset-bottom)));
   display: grid;
   gap: var(--dock-gap);
   justify-items: center;
   width: fit-content;
-  margin-left: auto;
-  margin-right: max(18px, env(safe-area-inset-right));
+  margin: 0;
   pointer-events: auto;
 }
 
@@ -1712,7 +1713,8 @@ html[data-theme="oled"] .brand-heading-logo {
   .jump-to-search-dock {
     --search-button-size: 75px;
     --settings-button-size: 63px;
-    width: 100vw;
+    --floating-edge-gap: max(14px, env(safe-area-inset-right));
+    --floating-bottom-gap: max(18px, env(safe-area-inset-bottom));
   }
 
   .settings-panel {
@@ -1726,6 +1728,13 @@ html[data-theme="oled"] .brand-heading-logo {
 }
 
 @media (max-width: 640px) {
+  .jump-to-search-dock {
+    --search-button-size: 64px;
+    --settings-button-size: 56px;
+    --dock-gap: 8px;
+    --floating-edge-gap: max(10px, env(safe-area-inset-right));
+  }
+
   .grid {
     grid-template-columns: 1fr;
   }

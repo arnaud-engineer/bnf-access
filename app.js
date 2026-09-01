@@ -33,6 +33,8 @@ const remoteFilter = document.querySelector("#remoteFilter");
 const resultCount = document.querySelector("#resultCount");
 const quickLaunch = document.querySelector("#quickLaunch");
 const searchControls = document.querySelector("#searchControls");
+const siteFooter = document.querySelector("#siteFooter");
+const jumpToSearchDock = document.querySelector(".jump-to-search-dock");
 const jumpToSearch = document.querySelector("#jumpToSearch");
 const openSettings = document.querySelector("#openSettings");
 const settingsModal = document.querySelector("#settingsModal");
@@ -47,7 +49,7 @@ const settingsLanguageFilters = document.querySelector("#settingsLanguageFilters
 const privacyNotice = document.querySelector("#privacyNotice");
 const dismissNotice = document.querySelector("#dismissNotice");
 const startupImageTimeoutMs = 1800;
-const assetVersion = "20260831-pressreader-access";
+const assetVersion = "20260901-floating-tools";
 const startupAssetUrls = [
   "./bnf-access-icon.svg",
   "./logos/arnaud-cool.svg",
@@ -64,8 +66,11 @@ const siteAccessStorageKey = "bnf-access:site-access:v1";
 const languageFilterStorageKey = "bnf-access:language-filter:v1";
 const themeStorageKey = "bnf-access:theme:v1";
 const themedSvgCache = new Map();
+const floatingFooterGap = 18;
+const maxFloatingViewportOffset = 120;
 let resourceGridTransitionTimer = 0;
 let resourceGridEnterTimer = 0;
+let floatingToolsFrame = null;
 
 const accessLabels = {
   pass_lecture_culture: "Pass Lecture/Culture",
@@ -127,6 +132,7 @@ async function init() {
   renderFilters();
   renderLanguageFilterControls();
   render();
+  setupFloatingTools();
   await waitForStartupImages();
   revealApp();
 }
@@ -447,6 +453,61 @@ function getResourceCategories(resource) {
 function render() {
   renderQuickLaunch();
   renderResourceGrid();
+  scheduleFloatingToolsUpdate();
+}
+
+function setupFloatingTools() {
+  if (!jumpToSearchDock) {
+    return;
+  }
+
+  scheduleFloatingToolsUpdate();
+  window.addEventListener("scroll", scheduleFloatingToolsUpdate, { passive: true });
+  window.addEventListener("resize", scheduleFloatingToolsUpdate);
+
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener("scroll", scheduleFloatingToolsUpdate, { passive: true });
+    window.visualViewport.addEventListener("resize", scheduleFloatingToolsUpdate);
+  }
+}
+
+function scheduleFloatingToolsUpdate() {
+  if (!jumpToSearchDock || floatingToolsFrame) {
+    return;
+  }
+
+  floatingToolsFrame = window.requestAnimationFrame(() => {
+    floatingToolsFrame = null;
+    updateFloatingToolsPosition();
+  });
+}
+
+function updateFloatingToolsPosition() {
+  const visualViewportOffset = getFloatingVisualViewportOffset();
+
+  jumpToSearchDock.style.setProperty("--floating-viewport-offset", `${visualViewportOffset}px`);
+  jumpToSearchDock.style.setProperty("--floating-footer-offset", "0px");
+
+  if (!siteFooter) {
+    return;
+  }
+
+  const dockRect = jumpToSearchDock.getBoundingClientRect();
+  const footerRect = siteFooter.getBoundingClientRect();
+  const footerOffset = Math.max(0, Math.ceil(dockRect.bottom + floatingFooterGap - footerRect.top));
+
+  jumpToSearchDock.style.setProperty("--floating-footer-offset", `${footerOffset}px`);
+}
+
+function getFloatingVisualViewportOffset() {
+  if (!window.visualViewport) {
+    return 0;
+  }
+
+  const layoutHeight = window.innerHeight || document.documentElement.clientHeight;
+  const hiddenBottom = layoutHeight - window.visualViewport.height - window.visualViewport.offsetTop;
+
+  return Math.min(maxFloatingViewportOffset, Math.max(0, Math.ceil(hiddenBottom)));
 }
 
 function renderResourceGrid() {
@@ -459,6 +520,7 @@ function renderResourceGrid() {
     empty.className = "empty";
     empty.textContent = "Aucune ressource ne correspond à cette recherche.";
     grid.append(empty);
+    scheduleFloatingToolsUpdate();
     return;
   }
 
@@ -467,6 +529,7 @@ function renderResourceGrid() {
   }
 
   hydrateThemedSvgIcons(grid);
+  scheduleFloatingToolsUpdate();
 }
 
 function renderResourceGridWithTransition() {

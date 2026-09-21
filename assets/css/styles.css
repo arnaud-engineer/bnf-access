@@ -5937,7 +5937,7 @@ button.badge.recommended {
     gap: 8px;
   }
 
-  .quick-launch-row-heading {
+  .quick-launch.is-editing .quick-launch-row-heading {
     grid-template-columns: 30px minmax(0, 1fr) auto;
     align-items: center;
   }

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta id="themeColor" name="theme-color" content="#f7f7f4">
+    <title>Préparation de l'accès - BnF Access</title>
+    <meta name="description" content="Préparation de l'accès BnF avant ouverture de la ressource demandée.">
+    <link rel="icon" href="../assets/icons/bnf-access-icon.svg" type="image/svg+xml">
+    <script src="../assets/js/pages/theme-init.js"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css?v=2026-09-08-v2-brand-1">
+  </head>
+  <body class="transition-body">
+    <main class="transition-shell" aria-labelledby="transitionTitle">
+      <a class="brand-link brand-link--compact" href="../" aria-label="BnF Access, accueil">
+        <img src="../assets/icons/bnf-access-icon.svg" alt="" aria-hidden="true">
+        <span>BnF Access</span>
+      </a>
+      <h1 id="transitionTitle">Préparation de l'accès</h1>
+      <p id="transitionResource" class="transition-resource"></p>
+      <div class="transition-progress" aria-hidden="true">
+        <span></span>
+      </div>
+      <p id="transitionStatus" class="transition-status" role="status" aria-live="polite">
+        Initialisation de l'accès...
+      </p>
+      <div class="transition-actions">
+        <a id="targetLink" class="resource-action" href="#">Ouvrir la ressource</a>
+        <a id="startLink" class="resource-action secondary" href="#" target="_blank">Connexion BnF</a>
+      </div>
+      <p class="transition-help">
+        Si la ressource ne s'ouvre pas, connectez-vous dans l'onglet BnF, puis revenez ouvrir la ressource.
+      </p>
+      <iframe id="sessionFrame" class="session-frame" title="Préparation de l'accès" aria-hidden="true"></iframe>
+    </main>
+
+    <script src="../assets/js/pages/transition.js?v=2026-08-28-link-converter-session" type="module"></script>
+  </body>
+</html>

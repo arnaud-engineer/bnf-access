@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta id="themeColor" name="theme-color" content="#f7f7f4">
+    <title>Crédits - BnF Access</title>
+    <meta name="description" content="Crédits et remerciements de BnF Access.">
+    <link rel="icon" href="../assets/icons/bnf-access-icon.svg" type="image/svg+xml">
+    <script>
+      try {
+        const theme = localStorage.getItem("bnf-access:v2:theme:v1");
+        if (theme === "dark" || theme === "oled") document.documentElement.dataset.theme = theme;
+        else if (theme !== "light" && window.matchMedia("(prefers-color-scheme: dark)").matches) document.documentElement.dataset.theme = "oled";
+        if (localStorage.getItem("bnf-access:v2:colorblind-mode:v1") === "true") document.documentElement.dataset.colorVision = "colorblind";
+      } catch {}
+    </script>
+    <link rel="stylesheet" href="../assets/css/styles.css?v=2026-09-21-info-pages">
+    <script src="../assets/js/pages/info-page.js?v=2026-09-21-info-pages" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <a class="brand-link brand-link--compact" href="../" aria-label="BnF Access, accueil">
+          <img src="../assets/icons/bnf-access-icon.svg" alt="" aria-hidden="true">
+          <span>BnF Access</span>
+        </a>
+        <h1>Crédits</h1>
+        <p class="intro">Les personnes, services et sources qui ont contribué à BnF Access.</p>
+      </div>
+      <nav class="topbar-links" aria-label="Navigation">
+        <a class="official-link secondary" href="../">Retour à BnF Access</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="text-page faq-list" aria-label="Crédits et remerciements">
+        <article class="faq-item">
+          <h2>Conception et réalisation</h2>
+          <p>BnF Access est conçu, édité et maintenu par <a href="https://arnaud.cool/" target="_blank" rel="noreferrer">arnaud.cool</a>.</p>
+        </article>
+
+        <article class="faq-item">
+          <h2>Inspiration</h2>
+          <p>Le projet doit beaucoup à <a href="https://easybnf.fr/" target="_blank" rel="noreferrer">EasyBNF</a>, créé par <a href="https://twitter.com/jeremypgn" target="_blank" rel="noreferrer">@jeremypgn</a>, qui a ouvert la voie à une consultation plus simple des ressources numériques de la BnF.</p>
+          <p>S’il passe par ici, encore merci à lui pour son super site, qui a largement inspiré celui-ci.</p>
+        </article>
+
+        <article class="faq-item">
+          <h2>Taxonomie</h2>
+          <p>La taxonomie de BnF Access est notamment inspirée du travail réalisé par <a href="https://www.mabillot.com/" target="_blank" rel="noreferrer">David Mabillot</a> pour <a href="https://www.mabillot.com/easybnf-phoenix.html" target="_blank" rel="noreferrer">easyBnF Phoenix</a>. Merci à lui pour ce travail et de m’avoir autorisé à le reprendre à ma sauce.</p>
+          <p>Je vous invite à découvrir <a href="https://www.mabillot.com/easybnf-phoenix.html" target="_blank" rel="noreferrer">easyBnF Phoenix</a>, ainsi que ses autres travaux sur <a href="https://www.mabillot.com/" target="_blank" rel="noreferrer">son site</a>.</p>
+        </article>
+
+        <article class="faq-item">
+          <h2>Informations et services</h2>
+          <p>Les informations présentées sont notamment établies à partir des pages publiques de la Bibliothèque nationale de France, des plateformes d’accès et des éditeurs des ressources référencées.</p>
+          <p>BnF Access est un projet indépendant et n’est affilié ni à la BnF, ni aux plateformes, titres de presse ou éditeurs cités.</p>
+        </article>
+
+        <article class="faq-item">
+          <h2>Marques et visuels</h2>
+          <p>Les noms, marques et logos reproduits restent la propriété de leurs titulaires respectifs. Ils sont utilisés uniquement pour identifier les ressources et faciliter leur consultation.</p>
+        </article>
+      </section>
+    </main>
+
+    <footer id="siteFooter" class="site-footer">
+      <nav class="footer-links" aria-label="Informations du site">
+        <a href="./faq.html">FAQ</a>
+        <span aria-hidden="true">·</span>
+        <a href="./credits.html">Crédits</a>
+        <span aria-hidden="true">·</span>
+        <a href="./mentions-legales.html">Mentions légales</a>
+        <span aria-hidden="true">·</span>
+        <span class="footer-credit">Créé par <a class="footer-brand" href="https://arnaud.cool/" target="_blank" rel="noreferrer"><img class="footer-brand-logo" src="../assets/logos/arnaud-cool.svg" alt="" aria-hidden="true">arnaud.cool</a></span>
+        <span aria-hidden="true">·</span>
+        <a class="footer-support" href="https://ko-fi.com/arnaudcool" target="_blank" rel="noreferrer" aria-label="M’offrir un café sur Ko-fi">
+          <img class="footer-support-logo" src="../assets/logos/kofi.svg" alt="" aria-hidden="true">
+          M’offrir un café
+        </a>
+      </nav>
+    </footer>
+  </body>
+</html>

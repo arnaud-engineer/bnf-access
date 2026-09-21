@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta id="themeColor" name="theme-color" content="#f7f7f4">
+    <title>Recherche Europresse - BnF Access</title>
+    <meta name="description" content="Préparation d'une recherche Europresse depuis un lien de presse.">
+    <link rel="icon" href="../assets/icons/bnf-access-icon.svg" type="image/svg+xml">
+    <script src="../assets/js/pages/theme-init.js"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css?v=2026-09-08-v2-brand-1">
+  </head>
+  <body class="transition-body europresse-search-body">
+    <main class="transition-shell" aria-labelledby="europresseSearchTitle">
+      <img class="transition-logo" src="../assets/logos/europresse.webp" alt="" aria-hidden="true">
+      <a class="brand-link brand-link--compact" href="../" aria-label="BnF Access, accueil">
+        <img src="../assets/icons/bnf-access-icon.svg" alt="" aria-hidden="true">
+        <span>BnF Access</span>
+      </a>
+      <h1 id="europresseSearchTitle">Recherche Europresse</h1>
+      <p id="europresseSearchResource" class="transition-resource"></p>
+      <p id="europresseSearchStatus" class="transition-status" role="status" aria-live="polite">
+        Préparation de la recherche...
+      </p>
+      <dl class="conversion-details">
+        <div>
+          <dt>Recherche à coller</dt>
+          <dd id="europresseSearchMachineQuery"></dd>
+        </div>
+        <div>
+          <dt>Mots-clés</dt>
+          <dd id="europresseSearchQuery"></dd>
+        </div>
+        <div>
+          <dt>Source détectée</dt>
+          <dd id="europresseSearchSource"></dd>
+        </div>
+        <div id="europresseSearchCriteriaBlock" hidden>
+          <dt>Filtre source conseillé</dt>
+          <dd id="europresseSearchCriteria"></dd>
+        </div>
+        <div>
+          <dt>Période conseillée</dt>
+          <dd>Dans toutes les archives</dd>
+        </div>
+      </dl>
+      <div class="transition-actions">
+        <button id="submitSearch" class="resource-action europresse-search-submit" type="button">
+          Copier la recherche et ouvrir Europresse
+        </button>
+        <button id="copySearch" class="resource-action secondary" type="button">Copier seulement</button>
+      </div>
+      <section id="europresseSearchAlternative" class="europresse-search-alternative" hidden>
+        <h2>Essai mots-clés</h2>
+        <p id="europresseSearchAlternativeQuery"></p>
+        <button id="copyKeywordSearch" class="resource-action secondary" type="button">
+          Copier les mots-clés
+        </button>
+      </section>
+      <p class="transition-help">
+        Après ouverture d’Europresse, collez la recherche dans le champ principal, remplacez “Depuis 30 jours” par “Dans toutes les archives”, puis lancez la recherche. Si la recherche par titre ne suffit pas, essayez les mots-clés ; si trop de résultats remontent, ajoutez le filtre source indiqué.
+      </p>
+    </main>
+
+    <script src="../assets/js/pages/europresse-search.js?v=2026-08-30-keyword-fallback" type="module"></script>
+  </body>
+</html>

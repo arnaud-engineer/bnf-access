@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="420" viewBox="0 0 1040 420">
+  <rect width="1040" height="420" rx="0" fill="#ffffff"/>
+  <rect x="38" y="38" width="964" height="344" fill="#ffffff" stroke="#d1d5db" stroke-width="8"/>
+  <rect x="38" y="38" width="964" height="18" fill="#0b7285"/>
+  <text x="520" y="246" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="94" font-weight="700" fill="#111827">Factiva</text>
+  
+  <text x="520" y="344" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#6b7280">Factiva</text>
+</svg>

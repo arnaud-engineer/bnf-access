@@ -1,8 +1,5 @@
+/private/
+/AGENTS.md
 .DS_Store
-node_modules/
-dist/
-.env
 __pycache__/
 *.pyc
-docs/
-scripts/

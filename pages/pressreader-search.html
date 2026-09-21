@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta id="themeColor" name="theme-color" content="#f7f7f4">
+    <title>Recherche PressReader - BnF Access</title>
+    <meta name="description" content="Préparation d'une recherche PressReader depuis un lien de presse.">
+    <link rel="icon" href="../assets/icons/bnf-access-icon.svg" type="image/svg+xml">
+    <script src="../assets/js/pages/theme-init.js"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css?v=2026-09-08-v2-brand-1">
+  </head>
+  <body class="transition-body pressreader-search-body">
+    <main class="transition-shell" aria-labelledby="pressreaderSearchTitle">
+      <img class="transition-logo" src="../assets/logos/pressreader.svg" alt="" aria-hidden="true">
+      <a class="brand-link brand-link--compact" href="../" aria-label="BnF Access, accueil">
+        <img src="../assets/icons/bnf-access-icon.svg" alt="" aria-hidden="true">
+        <span>BnF Access</span>
+      </a>
+      <h1 id="pressreaderSearchTitle">Recherche PressReader</h1>
+      <p id="pressreaderSearchResource" class="transition-resource"></p>
+      <p id="pressreaderSearchStatus" class="transition-status" role="status" aria-live="polite">
+        Préparation de la recherche...
+      </p>
+      <dl class="conversion-details">
+        <div>
+          <dt>Recherche</dt>
+          <dd id="pressreaderSearchQuery"></dd>
+        </div>
+        <div>
+          <dt>Titre détecté</dt>
+          <dd id="pressreaderSearchSource"></dd>
+        </div>
+        <div>
+          <dt>Filtre PressReader</dt>
+          <dd id="pressreaderSearchCids"></dd>
+        </div>
+      </dl>
+      <div class="transition-actions">
+        <a id="openPressReaderSearch" class="resource-action pressreader-search-submit" href="#" rel="noreferrer">
+          Ouvrir la recherche PressReader
+        </a>
+      </div>
+      <section id="pressreaderSearchAlternatives" class="pressreader-search-alternatives" hidden>
+        <h2>Essais alternatifs</h2>
+        <div id="pressreaderSearchAlternativeLinks" class="pressreader-search-alternative-links"></div>
+      </section>
+      <p class="transition-help">
+        Rappel : cette recherche passe par l’accès PressReader de la BnF. Elle fonctionne surtout depuis un site BnF ou dans une session BnF déjà autorisée.
+      </p>
+    </main>
+
+    <script src="../assets/js/pages/pressreader-search.js?v=2026-08-30-query-variants" type="module"></script>
+  </body>
+</html>

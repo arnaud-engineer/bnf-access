@@ -2,13 +2,50 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta id="themeColor" name="theme-color" content="#f7f7f4">
     <title>BnF Access</title>
-    <meta name="description" content="Page non officielle pour retrouver les ressources numériques accessibles via la BnF.">
-    <link rel="icon" href="./bnf-access-icon.svg" type="image/svg+xml">
-    <link rel="manifest" href="./browser.webmanifest?v=20260830-language-filters">
-    <script src="./theme-init.js?v=20260830-theme-pages"></script>
-    <link rel="stylesheet" href="./styles.css?v=20260901-floating-tools">
+    <meta name="description" content="Catalogue non officiel des ressources numériques et titres de presse accessibles via la BnF. Recherche, filtres et favoris personnalisables.">
+    <link rel="canonical" href="https://bnfaccess.fr/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="BnF Access">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:title" content="BnF Access | Ressources numériques et presse">
+    <meta property="og:description" content="Explorez les ressources numériques et la presse accessibles via la BnF, puis organisez vos favoris.">
+    <meta property="og:url" content="https://bnfaccess.fr/">
+    <meta property="og:image" content="https://bnfaccess.fr/assets/social/bnf-access-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:alt" content="Aperçu de BnF Access : ressources numériques et titres de presse dans les favoris.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BnF Access | Ressources numériques et presse">
+    <meta name="twitter:description" content="Explorez les ressources numériques et la presse accessibles via la BnF, puis organisez vos favoris.">
+    <meta name="twitter:image" content="https://bnfaccess.fr/assets/social/bnf-access-preview.png">
+    <meta name="twitter:image:alt" content="Aperçu de BnF Access : ressources numériques et titres de presse dans les favoris.">
+    <link rel="icon" href="./assets/icons/bnf-access-icon.svg" type="image/svg+xml">
+    <script>
+      try {
+        const previewTheme = new URLSearchParams(window.location.search).get("theme");
+        const theme = ["light", "dark", "oled"].includes(previewTheme)
+          ? previewTheme
+          : localStorage.getItem("bnf-access:v2:theme:v1");
+        if (theme === "dark" || theme === "oled") {
+          document.documentElement.dataset.theme = theme;
+        } else if (theme !== "light" && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          document.documentElement.dataset.theme = "oled";
+        }
+        if (localStorage.getItem("bnf-access:v2:colorblind-mode:v1") === "true") {
+          document.documentElement.dataset.colorVision = "colorblind";
+        }
+        const resolvedTheme = document.documentElement.dataset.theme;
+        document.querySelector("#themeColor")?.setAttribute(
+          "content",
+          resolvedTheme === "oled" ? "#000000" : resolvedTheme === "dark" ? "#141619" : "#f7f7f4",
+        );
+      } catch {}
+    </script>
+    <link rel="stylesheet" href="./assets/css/styles.css?v=2026-09-21-card-disclosures-18">
   </head>
   <body class="is-loading">
     <div id="appLoader" class="app-loader" role="status" aria-live="polite">
@@ -18,15 +55,17 @@
 
     <header class="topbar">
       <div class="topbar-title">
-        <p class="eyebrow">Beta</p>
+        <p class="eyebrow">BETA</p>
         <h1 class="brand-heading">
-          <img class="brand-heading-logo" src="./bnf-access-icon.svg" alt="" aria-hidden="true">
-          <span>BnF Access</span>
+          <a class="brand-link" href="./" aria-label="BnF Access, accueil">
+            <img class="brand-heading-logo" src="./assets/icons/bnf-access-icon.svg" alt="" aria-hidden="true">
+            <span>BnF Access</span>
+          </a>
         </h1>
-        <p class="intro">Raccourcis vers les ressources numériques accessibles avec un Pass BnF.</p>
+        <p class="intro">Raccourcis vers les ressources numériques accessibles avec un Pass BnF</p>
       </div>
       <nav class="topbar-links" aria-label="Navigation principale">
-        <a class="official-link" href="./faq.html">FAQ</a>
+        <a class="official-link" href="./pages/faq.html">FAQ</a>
         <a class="official-link" href="https://bdl.bnf.fr/bases-de-donnees-par-titre" target="_blank" rel="noreferrer">Annuaire BnF</a>
         <a class="official-link secondary" href="https://www.bnf.fr/fr/tarifs-dacces-aux-bibliotheques-et-loffre-culturelle" target="_blank" rel="noreferrer">Choisir un Pass BnF</a>
         <a class="official-link secondary" href="https://ko-fi.com/arnaudcool" target="_blank" rel="noreferrer">M’offrir un café</a>
@@ -51,20 +90,39 @@
     <main>
       <section id="privacyNotice" class="notice">
         <p>
-          <strong>Important.</strong> Cette page n'est pas affiliée à la BnF. Elle ne collecte aucun identifiant, les connexions se font uniquement sur les pages BnF. Les favoris, filtres et préférences restent dans ce navigateur, sans être envoyés ni stockés sur aucun serveur.
+          <strong>Important.</strong> Ce site n'est pas affilié à la BnF. Il ne collecte aucun identifiant ; les connexions se font uniquement sur les pages BnF. Favoris, filtres et préférences restent dans ce navigateur et ne sont ni envoyés ni stockés sur un serveur.
         </p>
         <button id="dismissNotice" class="notice-action" type="button">J’ai compris</button>
       </section>
 
+      <section id="linkConverter" class="link-converter" aria-labelledby="linkConverterTitle" hidden>
+        <div class="section-heading compact">
+          <h2 id="linkConverterTitle">Ouvrir un lien via la BnF</h2>
+        </div>
+        <form id="linkConverterForm" class="link-converter-form">
+          <label class="link-converter-field">
+            <span class="sr-only">Lien à ouvrir via la BnF</span>
+            <input id="linkConverterInput" type="text" placeholder="Coller un lien article..." autocomplete="off" inputmode="url" spellcheck="false">
+          </label>
+          <button class="link-converter-submit" type="submit" aria-label="Ouvrir le lien via la BnF" title="Ouvrir le lien via la BnF">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="m21 21-4.35-4.35m2.35-5.15a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/>
+            </svg>
+          </button>
+        </form>
+        <div class="link-converter-meta">
+          <div id="linkConverterServices" class="link-converter-services" aria-label="Services pris en charge"></div>
+          <button id="linkConverterResourceListOpen" class="link-converter-list-link" type="button">Liste complète</button>
+        </div>
+        <p id="linkConverterFeedback" class="link-converter-feedback" role="status" aria-live="polite"></p>
+      </section>
+
       <section id="quickLaunch" class="quick-launch" aria-label="Lancement rapide"></section>
 
-      <section id="searchControls" class="search-section" aria-labelledby="searchTitle">
-        <div class="section-heading">
-          <h2 id="searchTitle">Recherche</h2>
-        </div>
+      <section id="searchControls" class="search-section" aria-label="Recherche">
         <div class="controls" aria-label="Filtres">
           <label class="search">
-            <input id="searchInput" type="search" placeholder="Mediapart, presse, dictionnaire..." aria-label="Rechercher une ressource" autocomplete="off">
+            <input id="searchInput" type="search" placeholder="Rechercher une ressource…" aria-label="Rechercher une ressource" autocomplete="off" enterkeyhint="search">
           </label>
           <div class="filter-groups">
             <div id="categoryFilters" class="filters" aria-label="Catégories"></div>
@@ -96,7 +154,7 @@
       </section>
 
       <section>
-        <div class="section-heading">
+        <div class="section-heading results-summary">
           <h2>Ressources</h2>
           <p id="resultCount"></p>
         </div>
@@ -166,12 +224,28 @@
           </div>
         </article>
 
+        <article class="settings-panel settings-panel-form">
+          <div>
+            <h3>Accessibilité</h3>
+            <p>Renforcer les distinctions qui reposent sur des codes couleur.</p>
+          </div>
+          <div class="settings-fields">
+            <label class="settings-field">
+              <span>Mode daltonien</span>
+              <select id="settingsColorBlindMode">
+                <option value="no">Non</option>
+                <option value="yes">Oui</option>
+              </select>
+            </label>
+          </div>
+        </article>
+
         <article class="settings-panel">
           <div>
             <h3>Application web</h3>
-            <p>Installer l'app web BNF Access sur mon téléphone</p>
+            <p>Installer l’app web BnF Access sur mon téléphone.</p>
           </div>
-          <a class="settings-action secondary" href="https://app.bnfaccess.fr/">Installer la PWA</a>
+          <a class="settings-action" href="https://app.bnfaccess.fr/" target="_blank" rel="noreferrer">Installer l’app web</a>
         </article>
 
         <article class="settings-panel">
@@ -185,22 +259,67 @@
       </section>
     </div>
 
+    <div id="converterResourcesModal" class="converter-resources-modal" hidden>
+      <section class="converter-resources-dialog" role="dialog" aria-modal="true" aria-labelledby="converterResourcesTitle">
+        <div class="converter-resources-header">
+          <h2 id="converterResourcesTitle">Ressources</h2>
+          <button id="converterResourcesClose" class="converter-resources-close" type="button" aria-label="Fermer la liste">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M18 6 6 18M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+        <label class="converter-resources-search">
+          <span class="sr-only">Rechercher une ressource compatible avec l’ouverture de lien via la BnF</span>
+          <input id="converterResourcesSearch" type="search" placeholder="Rechercher une ressource..." autocomplete="off">
+        </label>
+        <div class="converter-resources-toolbar">
+          <p id="converterResourcesCount" class="converter-resources-count"></p>
+          <label class="converter-resources-provider-filter">
+            <span class="sr-only">Filtrer les ressources compatibles</span>
+            <select id="converterResourcesProviderFilter">
+              <option value="all">Toutes les ressources</option>
+              <option value="direct">Accès direct</option>
+              <option value="europresse">Via Europresse</option>
+              <option value="indexpresse">Via IndexPresse Business</option>
+              <option value="pressreader">Via PressReader</option>
+            </select>
+          </label>
+        </div>
+        <div id="converterResourcesList" class="converter-resources-list"></div>
+      </section>
+    </div>
+
+    <aside id="pressPopularityNote" class="press-popularity-note" aria-live="polite" hidden>
+      <div class="press-popularity-note-content">
+        <h2 id="pressPopularityNoteTitle"></h2>
+        <div id="pressPopularityNoteDetails" class="press-popularity-note-details"></div>
+      </div>
+      <button id="pressPopularityNoteClose" class="press-popularity-note-close" type="button" aria-label="Fermer la note d’information" title="Fermer">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M18 6 6 18M6 6l12 12"/>
+        </svg>
+      </button>
+    </aside>
+
     <footer id="siteFooter" class="site-footer">
       <p class="footer-note">Données recoupées depuis les sources BnF officielles et diverses traces publiques archivées. Ne pas me taper si imprécis, inexact ou pas à jour. Merci.</p>
       <nav class="footer-links" aria-label="Informations du site">
-        <a href="./faq.html">FAQ</a>
+        <a href="./pages/faq.html">FAQ</a>
         <span aria-hidden="true">·</span>
-        <a href="./mentions-legales.html">Mentions légales</a>
+        <a href="./pages/credits.html">Crédits</a>
         <span aria-hidden="true">·</span>
-        <span class="footer-credit">Créé par <a class="footer-brand" href="https://arnaud.cool/" target="_blank" rel="noreferrer"><img class="footer-brand-logo" src="./logos/arnaud-cool.svg" alt="" aria-hidden="true">arnaud.cool</a></span>
+        <a href="./pages/mentions-legales.html">Mentions légales</a>
+        <span aria-hidden="true">·</span>
+        <span class="footer-credit">Créé par <a class="footer-brand" href="https://arnaud.cool/" target="_blank" rel="noreferrer"><img class="footer-brand-logo" src="./assets/logos/arnaud-cool.svg" alt="" aria-hidden="true">arnaud.cool</a></span>
         <span aria-hidden="true">·</span>
         <a class="footer-support" href="https://ko-fi.com/arnaudcool" target="_blank" rel="noreferrer" aria-label="M’offrir un café sur Ko-fi">
-          <img class="footer-support-logo" src="./logos/kofi.svg" alt="" aria-hidden="true">
+          <img class="footer-support-logo" src="./assets/logos/kofi.svg" alt="" aria-hidden="true">
           M’offrir un café
         </a>
       </nav>
     </footer>
 
-    <script src="./app.js?v=20260901-floating-tools" type="module"></script>
+    <script src="./assets/js/app.js?v=2026-09-21-idle-asset-acquisition" type="module"></script>
   </body>
 </html>

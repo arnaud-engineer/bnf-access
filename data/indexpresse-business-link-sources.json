@@ -1,0 +1,2057 @@
+{
+  "schema_version": 1,
+  "name": "IndexPresse Business URL converter sources",
+  "source": "work/audits/indexpresse/business-titles.csv + verified local URL sources",
+  "generated_at": "2026-08-30",
+  "matching": "Conservative exact-title and manually verified official-domain matches only. Entries covered by direct access, Europresse priority, press catalog manual exclusions, or same-site hors-serie duplicates are kept in the audit CSV but excluded from this active routing JSON.",
+  "sources": [
+    {
+      "title": "Actu environnement",
+      "publicationCode": "ACTENV",
+      "publicationLabel": "Actu environnement",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-actenv.webp",
+      "evidenceUrls": [
+        "https://www.actu-environnement.com/"
+      ],
+      "hosts": [
+        "actu-environnement.com",
+        "www.actu-environnement.com"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Actu-Environnement as an independent media site for environment and sustainable development",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Exact current official-domain match for Actu environnement.",
+      "officialSiteAccess": {
+        "model": "unknown",
+        "paidOrFree": "unknown",
+        "articleBlockStatus": "not_testable",
+        "confidence": "low",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Afrique magazine",
+      "publicationCode": "AFRM",
+      "publicationLabel": "Afrique magazine",
+      "iconUrl": "./assets/logos/optimized/indexpresse-official-indexpresse-official-afrm-2.webp",
+      "evidenceUrls": [
+        "https://afriquemagazine.com/"
+      ],
+      "hosts": [
+        "afriquemagazine.com",
+        "www.afriquemagazine.com"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Afrique Magazine as the contemporary African magazine",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Exact current official-domain match for Afrique magazine.",
+      "officialSiteAccess": {
+        "model": "mixed",
+        "paidOrFree": "mixed",
+        "articleBlockStatus": "mixed_access_found",
+        "confidence": "high",
+        "checkedAt": "2026-09-07",
+        "method": "manual_override_after_automated_probe",
+        "manualOverride": true,
+        "manualEvidenceType": "CGV_et_observation_site",
+        "manualEvidenceStatus": "missing_external_evidence"
+      }
+    },
+    {
+      "title": "Archimag",
+      "publicationCode": "ARCH",
+      "publicationLabel": "Archimag",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-arch.webp",
+      "evidenceUrls": [
+        "https://www.archimag.com/"
+      ],
+      "hosts": [
+        "archimag.com",
+        "www.archimag.com"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Archimag as the magazine for information professionals",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Exact current official-domain match for Archimag.",
+      "officialSiteAccess": {
+        "model": "mixed",
+        "paidOrFree": "mixed",
+        "articleBlockStatus": "mixed_access_found",
+        "confidence": "high",
+        "checkedAt": "2026-09-07",
+        "method": "manual_override_after_automated_probe",
+        "manualOverride": true,
+        "manualEvidenceType": "offre_abonnement_et_observation_site",
+        "manualEvidenceStatus": "missing_external_evidence"
+      }
+    },
+    {
+      "title": "Bâtiment entretien",
+      "publicationCode": "BATI",
+      "publicationLabel": "Bâtiment entretien",
+      "iconUrl": "./assets/logos/optimized/indexpresse-official-indexpresse-official-bati-2.webp",
+      "evidenceUrls": [
+        "https://www.batiment-entretien.fr/",
+        "https://www.batiment-entretien.fr/contactez-nous"
+      ],
+      "hosts": [
+        "batiment-entretien.fr",
+        "www.batiment-entretien.fr"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result and contact page identify Bâtiment Entretien as the professional magazine site",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Exact current official-domain match for Bâtiment entretien.",
+      "officialSiteAccess": {
+        "model": "unknown",
+        "paidOrFree": "unknown",
+        "articleBlockStatus": "readable_sample_without_distribution_evidence",
+        "confidence": "low",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Bike éco",
+      "publicationCode": "BIKE",
+      "publicationLabel": "Bike éco",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-bike.webp",
+      "evidenceUrls": [
+        "https://www.sporteco.com/categorie-produit/bikeeco/",
+        "https://www.sporteco.com/produit/bikeeco-abonnement/",
+        "https://fr.linkedin.com/company/sport-co"
+      ],
+      "hosts": [
+        "sporteco.com",
+        "www.sporteco.com"
+      ],
+      "pathPrefixes": [
+        "/categorie-produit/bikeeco",
+        "/produit/bikeeco-abonnement"
+      ],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current official SPORTéco site exposes BIKEéco product pages and shared SPORTéco BIKEéco publisher identity",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Path-limited match because SPORTéco uses the same host and broader sporteco.com already belongs to Sport éco.",
+      "officialSiteAccess": {
+        "model": "paid",
+        "paidOrFree": "paid",
+        "articleBlockStatus": "paid_offer_found",
+        "confidence": "medium",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Carrosserie",
+      "publicationCode": "CARO",
+      "publicationLabel": "Carrosserie",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-caro-black.webp",
+      "evidenceUrls": [
+        "https://www.carrosseriemagazine.com/"
+      ],
+      "hosts": [
+        "carrosseriemagazine.com",
+        "www.carrosseriemagazine.com"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Carrosserie Magazine as the official FFC-linked magazine site",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Exact current official-domain match for Carrosserie.",
+      "officialSiteAccess": {
+        "model": "unknown",
+        "paidOrFree": "unknown",
+        "articleBlockStatus": "not_testable",
+        "confidence": "low",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "CFNEWS (Corporate Finance News)",
+      "publicationCode": "CFNW",
+      "publicationLabel": "CFNEWS (Corporate Finance News)",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-cfnw.svg",
+      "evidenceUrls": [
+        "https://www.cfnews.net/"
+      ],
+      "hosts": [
+        "cfnews.net",
+        "www.cfnews.net"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies CFNEWS Corporate Finance News as the reference site for corporate finance news",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Exact current official-domain match for CFNEWS.",
+      "officialSiteAccess": {
+        "model": "paid",
+        "paidOrFree": "paid",
+        "articleBlockStatus": "blocked_article_found",
+        "confidence": "high",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Chantiers de France",
+      "publicationCode": "CHAN",
+      "publicationLabel": "Chantiers de France",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-chan.webp",
+      "evidenceUrls": [
+        "https://www.chantiersdefrance.fr/"
+      ],
+      "hosts": [
+        "chantiersdefrance.fr",
+        "www.chantiersdefrance.fr"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Chantiers de France as a PYC Média brand",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Exact current official-domain match for Chantiers de France.",
+      "officialSiteAccess": {
+        "model": "paid",
+        "paidOrFree": "paid",
+        "articleBlockStatus": "blocked_article_found",
+        "confidence": "high",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Courrier cadres",
+      "publicationCode": "CADR",
+      "publicationLabel": "Courrier cadres",
+      "iconUrl": "./assets/logos/optimized/pressreader-2924.webp",
+      "evidenceUrls": [],
+      "hosts": [
+        "courriercadres.com",
+        "www.courriercadres.com"
+      ],
+      "pathPrefixes": [],
+      "source": "pressreader_exact_title_match",
+      "verification": "exact title match with an integrated PressReader official-domain source",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": true,
+      "notes": "Useful as IndexPresse/PressReader choice when no Europresse source matches; IndexPresse code CADR. Also matched to PressReader by exact catalog audit.",
+      "officialSiteAccess": {
+        "model": "paid",
+        "paidOrFree": "paid",
+        "articleBlockStatus": "paid_offer_found",
+        "confidence": "medium",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Economie rurale",
+      "publicationCode": "ECOR",
+      "publicationLabel": "Economie rurale",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-ecor.webp",
+      "evidenceUrls": [
+        "https://journals.openedition.org/economierurale/",
+        "https://journals.openedition.org/economierurale"
+      ],
+      "hosts": [
+        "journals.openedition.org"
+      ],
+      "pathPrefixes": [
+        "/economierurale"
+      ],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current public journal platform identifies Economie rurale under the OpenEdition journal path",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Path-limited match for the Economie rurale journal on OpenEdition.",
+      "officialSiteAccess": {
+        "model": "unknown",
+        "paidOrFree": "unknown",
+        "articleBlockStatus": "no_conclusive_evidence",
+        "confidence": "low",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      },
+      "websiteUrl": "https://journals.openedition.org/economierurale/"
+    },
+    {
+      "title": "Ecran total Musique info",
+      "publicationCode": "ECRA",
+      "publicationLabel": "Ecran total Musique info",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-ecra.svg",
+      "evidenceUrls": [
+        "https://ecran-total.fr/",
+        "https://catalogue.ina.fr/doc/ECRIT/DE_40/Ecran-total"
+      ],
+      "hosts": [
+        "ecran-total.fr",
+        "www.ecran-total.fr"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Ecran Total as the professional cinema and television media site and records the Musique info merger",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Official-domain match for Ecran total Musique info.",
+      "officialSiteAccess": {
+        "model": "unknown",
+        "paidOrFree": "unknown",
+        "articleBlockStatus": "not_testable",
+        "confidence": "low",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Enjeux",
+      "publicationCode": "ENJA",
+      "publicationLabel": "Enjeux",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-enja.webp",
+      "evidenceUrls": [
+        "https://www.boutique.afnor.org/fr-fr/services/enjeux",
+        "https://reseau-mirabel.info/revue/2372/Enjeux-le-magazine-de-la-normalisation-et-du-management"
+      ],
+      "hosts": [
+        "boutique.afnor.org"
+      ],
+      "pathPrefixes": [
+        "/fr-fr/services/enjeux"
+      ],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result and Mirabel record identify Enjeux as the AFNOR magazine page",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Path-limited match because the broader AFNOR shop is not only the magazine.",
+      "officialSiteAccess": {
+        "model": "unknown",
+        "paidOrFree": "unknown",
+        "articleBlockStatus": "not_testable",
+        "confidence": "low",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      },
+      "websiteUrl": "https://www.boutique.afnor.org/fr-fr/services/enjeux"
+    },
+    {
+      "title": "Environnement magazine",
+      "publicationCode": "ENVM",
+      "publicationLabel": "Environnement magazine",
+      "iconUrl": "./assets/logos/pressreader-external/environnement-magazine.webp",
+      "evidenceUrls": [],
+      "hosts": [
+        "environnement-magazine.fr",
+        "www.environnement-magazine.fr"
+      ],
+      "pathPrefixes": [],
+      "source": "pressreader_exact_title_match",
+      "verification": "exact title match with an integrated PressReader official-domain source",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": true,
+      "notes": "Useful as IndexPresse/PressReader choice when no Europresse source matches; IndexPresse code ENVM. Also matched to PressReader by exact catalog audit.",
+      "officialSiteAccess": {
+        "model": "mixed",
+        "paidOrFree": "mixed",
+        "articleBlockStatus": "mixed_access_found",
+        "confidence": "high",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Espaces tourisme et loisirs",
+      "publicationCode": "ESTL",
+      "publicationLabel": "Espaces tourisme et loisirs",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-estl.webp",
+      "evidenceUrls": [
+        "https://www.tourisme-espaces.com/",
+        "https://www.tourisme-espaces.com/editeur/283.espaces-tourisme-loisirs-1.html"
+      ],
+      "hosts": [
+        "tourisme-espaces.com",
+        "www.tourisme-espaces.com"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Revue Espaces tourisme et loisirs on tourisme-espaces.com",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Official-domain match for Espaces tourisme et loisirs.",
+      "officialSiteAccess": {
+        "model": "paid",
+        "paidOrFree": "paid",
+        "articleBlockStatus": "paid_offer_found",
+        "confidence": "medium",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Filières avicoles",
+      "publicationCode": "FAVI",
+      "publicationLabel": "Filières avicoles",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-favi.svg",
+      "evidenceUrls": [
+        "https://www.filieres-avicoles.com/"
+      ],
+      "hosts": [
+        "filieres-avicoles.com",
+        "www.filieres-avicoles.com"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Filières Avicoles as the professional aviculture media site",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Official-domain match for Filières avicoles.",
+      "officialSiteAccess": {
+        "model": "unknown",
+        "paidOrFree": "unknown",
+        "articleBlockStatus": "readable_sample_without_distribution_evidence",
+        "confidence": "low",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Forêts de France",
+      "publicationCode": "FORE",
+      "publicationLabel": "Forêts de France",
+      "iconUrl": "./assets/logos/indexpresse/indexpresse-logo-fore.webp",
+      "evidenceUrls": [
+        "https://www.fransylva.fr/A-la-Une-Foret-France.html",
+        "https://www.fransylva.fr/Liste-Anciens-Numeros"
+      ],
+      "hosts": [
+        "fransylva.fr",
+        "www.fransylva.fr"
+      ],
+      "pathPrefixes": [
+        "/A-la-Une-Foret-France",
+        "/Liste-Anciens-Numeros"
+      ],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Forêts de France as the Fransylva review page",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Path-limited match for Forêts de France to avoid routing the full federation site.",
+      "officialSiteAccess": {
+        "model": "paid",
+        "paidOrFree": "paid",
+        "articleBlockStatus": "paid_offer_found",
+        "confidence": "medium",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Futuribles",
+      "publicationCode": "FUTU",
+      "publicationLabel": "Futuribles",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-futu.svg",
+      "evidenceUrls": [
+        "https://www.futuribles.com/",
+        "https://www.futuribles.com/revue/a-propos-de-la-revue/ou-trouver-la-revue/"
+      ],
+      "hosts": [
+        "futuribles.com",
+        "www.futuribles.com"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Futuribles as the journal and article site",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Official-domain match for Futuribles.",
+      "officialSiteAccess": {
+        "model": "paid",
+        "paidOrFree": "paid",
+        "articleBlockStatus": "paid_offer_found",
+        "confidence": "medium",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Hospitality On",
+      "publicationCode": "HYON",
+      "publicationLabel": "Hospitality On",
+      "iconUrl": "./assets/logos/indexpresse/indexpresse-logo-hyon.webp",
+      "evidenceUrls": [
+        "https://hospitality-on.com/en/about-hospitality",
+        "https://hospitality-on.com/en"
+      ],
+      "hosts": [
+        "hospitality-on.com",
+        "www.hospitality-on.com"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current official about page identifies Hospitality ON magazine and website",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Official-domain match for Hospitality On.",
+      "officialSiteAccess": {
+        "model": "unknown",
+        "paidOrFree": "unknown",
+        "articleBlockStatus": "not_testable",
+        "confidence": "low",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Info Chimie magazine",
+      "publicationCode": "CHIM",
+      "publicationLabel": "Info Chimie magazine",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-chim.webp",
+      "evidenceUrls": [
+        "https://www.infopro-digital-media.fr/medias/infochimie",
+        "https://www.fnps.fr/revue/info-chimie-magazine/",
+        "http://www.infochimie.com/"
+      ],
+      "hosts": [
+        "industrie.com",
+        "www.industrie.com"
+      ],
+      "pathPrefixes": [
+        "/chimie"
+      ],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "FNPS identifies infochimie.com as the title site and that host redirects to industrie.com/chimie",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Path-limited current redirect target for Info Chimie magazine.",
+      "officialSiteAccess": {
+        "model": "mixed",
+        "paidOrFree": "mixed",
+        "articleBlockStatus": "mixed_access_found",
+        "confidence": "high",
+        "checkedAt": "2026-09-07",
+        "method": "manual_override_after_automated_probe",
+        "manualOverride": true,
+        "manualEvidenceUrl": "https://www.info-chimie.fr/",
+        "manualEvidenceUrls": [
+          "https://www.info-chimie.fr/"
+        ],
+        "manualEvidenceType": "offre_abonnement",
+        "manualEvidenceStatus": "external_sources"
+      },
+      "websiteUrl": "https://www.usinenouvelle.com/mes-magazines/magazine-info-chimie/"
+    },
+    {
+      "title": "INSEE Première",
+      "publicationCode": "INSEE",
+      "publicationLabel": "INSEE Première",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-insee.svg",
+      "evidenceUrls": [
+        "https://www.insee.fr/fr/information/2410133",
+        "https://www.insee.fr/fr/statistiques"
+      ],
+      "hosts": [
+        "insee.fr",
+        "www.insee.fr"
+      ],
+      "pathPrefixes": [
+        "/fr/statistiques"
+      ],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current official INSEE statistics pages host INSEE Première articles",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Path-limited match for INSEE Première statistical publication pages.",
+      "officialSiteAccess": {
+        "model": "free",
+        "paidOrFree": "free",
+        "articleBlockStatus": "no_blocked_article_found",
+        "confidence": "high",
+        "checkedAt": "2026-09-07",
+        "method": "manual_override_after_automated_probe",
+        "manualOverride": true,
+        "manualEvidenceUrl": "https://www.insee.fr/",
+        "manualEvidenceUrls": [
+          "https://www.insee.fr/"
+        ],
+        "manualEvidenceType": "source_institutionnelle",
+        "manualEvidenceStatus": "external_sources"
+      },
+      "websiteUrl": "https://www.insee.fr/fr/information/2410133"
+    },
+    {
+      "title": "Jurisport",
+      "publicationCode": "JURI",
+      "publicationLabel": "Jurisport",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-juri-black.webp",
+      "evidenceUrls": [
+        "https://www.dalloz-revues.fr/revues/jurisport-50.htm",
+        "https://reseau-mirabel.info/revue/3871/Jurisport"
+      ],
+      "hosts": [
+        "dalloz-revues.fr",
+        "www.dalloz-revues.fr"
+      ],
+      "pathPrefixes": [
+        "/revues/jurisport-50.htm"
+      ],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current Dalloz Revues page identifies Jurisport as the legal and economic sport review",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Path-limited match because Dalloz Revues hosts multiple journals.",
+      "officialSiteAccess": {
+        "model": "unknown",
+        "paidOrFree": "unknown",
+        "articleBlockStatus": "no_conclusive_evidence",
+        "confidence": "low",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      },
+      "websiteUrl": "https://www.dalloz-revues.fr/revues/jurisport-50.htm"
+    },
+    {
+      "title": "Le Courrier du meuble et de l'habitat",
+      "publicationCode": "COUR",
+      "publicationLabel": "Courrier du meuble et de l'habitat (Le)",
+      "iconUrl": "./assets/logos/optimized/indexpresse-official-indexpresse-official-cour-1.webp",
+      "evidenceUrls": [
+        "https://www.courrierdumeuble.fr/",
+        "https://fr.linkedin.com/company/le-courrier-du-meuble-et-de-l-habitat"
+      ],
+      "hosts": [
+        "courrierdumeuble.fr",
+        "www.courrierdumeuble.fr"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result and professional profile identify Courrier du Meuble as the publication site",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Official-domain match for Le Courrier du meuble et de l'habitat.",
+      "officialSiteAccess": {
+        "model": "paid",
+        "paidOrFree": "paid",
+        "articleBlockStatus": "paid_offer_found",
+        "confidence": "medium",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Le Film français",
+      "publicationCode": "FILM",
+      "publicationLabel": "Film français (Le)",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-film.webp",
+      "evidenceUrls": [
+        "https://www.lefilmfrancais.com/",
+        "https://www.lefilmfrancais.com/abonnement"
+      ],
+      "hosts": [
+        "lefilmfrancais.com",
+        "www.lefilmfrancais.com"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current official site identifies Le Film français as the professional cinema and audiovisual media",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Official-domain match for Le Film français.",
+      "officialSiteAccess": {
+        "model": "paid",
+        "paidOrFree": "paid",
+        "articleBlockStatus": "blocked_article_found",
+        "confidence": "high",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Le Journal de l'automobile",
+      "publicationCode": "JAUT",
+      "publicationLabel": "Journal de l'automobile (Le)",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-jaut.avif",
+      "evidenceUrls": [
+        "https://journalauto.com/"
+      ],
+      "hosts": [
+        "journalauto.com",
+        "www.journalauto.com"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Le Journal de l'Automobile as the professional automotive media",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Official-domain match for Le Journal de l'automobile.",
+      "officialSiteAccess": {
+        "model": "unknown",
+        "paidOrFree": "unknown",
+        "articleBlockStatus": "readable_sample_without_distribution_evidence",
+        "confidence": "low",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Le Losange",
+      "publicationCode": "LOSA",
+      "publicationLabel": "Losange (Le)",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-losa.webp",
+      "evidenceUrls": [
+        "https://lelosange.fr/",
+        "https://www.maisondesburalistes.fr"
+      ],
+      "hosts": [
+        "lelosange.fr",
+        "www.lelosange.fr"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current official domain lelosange.fr redirects to the buralistes platform for Le Losange",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-31",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Official-domain match for Le Losange.",
+      "officialSiteAccess": {
+        "model": "unknown",
+        "paidOrFree": "unknown",
+        "articleBlockStatus": "no_conclusive_evidence",
+        "confidence": "low",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Le Magazine de l'ANDRH",
+      "publicationCode": "PERSO",
+      "publicationLabel": "Magazine de l'ANDRH (Le)",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-perso.svg",
+      "evidenceUrls": [
+        "https://www.andrh.fr/le-magazine-andrh",
+        "https://reseau-mirabel.info/revue/315/Le-Magazine-de-l-ANDRH"
+      ],
+      "hosts": [
+        "andrh.fr",
+        "www.andrh.fr"
+      ],
+      "pathPrefixes": [
+        "/le-magazine-andrh",
+        "/actualites/magazine-de-landrh"
+      ],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result and Mirabel record identify the ANDRH magazine pages on andrh.fr",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Path-limited match for Le Magazine de l'ANDRH to avoid routing the full association site.",
+      "officialSiteAccess": {
+        "model": "paid",
+        "paidOrFree": "paid",
+        "articleBlockStatus": "paid_offer_found",
+        "confidence": "medium",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Le Monde de l'épicerie fine",
+      "publicationCode": "LMEF",
+      "publicationLabel": "Monde de l'épicerie fine (Le)",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-lmef.webp",
+      "evidenceUrls": [
+        "https://monde-epicerie-fine.fr/"
+      ],
+      "hosts": [
+        "monde-epicerie-fine.fr",
+        "www.monde-epicerie-fine.fr"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Le Monde de l'épicerie fine as the professional fine-food media",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Official-domain match for Le Monde de l'épicerie fine.",
+      "officialSiteAccess": {
+        "model": "unknown",
+        "paidOrFree": "unknown",
+        "articleBlockStatus": "readable_sample_without_distribution_evidence",
+        "confidence": "low",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Le Monde du surgelé",
+      "publicationCode": "SURG",
+      "publicationLabel": "Monde du surgelé (Le)",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-surg.webp",
+      "evidenceUrls": [
+        "https://www.lemondedusurgele.fr/"
+      ],
+      "hosts": [
+        "lemondedusurgele.fr",
+        "www.lemondedusurgele.fr"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Le Monde du Surgelé as the frozen-food buyer media",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Official-domain match for Le Monde du surgelé.",
+      "officialSiteAccess": {
+        "model": "paid",
+        "paidOrFree": "paid",
+        "articleBlockStatus": "blocked_article_found",
+        "confidence": "high",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Le Moniteur des pharmacies",
+      "publicationCode": "MOPH",
+      "publicationLabel": "Moniteur des pharmacies (Le)",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-moph.svg",
+      "evidenceUrls": [
+        "https://www.lemoniteurdespharmacies.fr/"
+      ],
+      "hosts": [
+        "lemoniteurdespharmacies.fr",
+        "www.lemoniteurdespharmacies.fr"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Le Moniteur des pharmacies as the pharmacy media site",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Official-domain match for Le Moniteur des pharmacies.",
+      "officialSiteAccess": {
+        "model": "paid",
+        "paidOrFree": "paid",
+        "articleBlockStatus": "paid_offer_found",
+        "confidence": "medium",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Le Nouvel économiste",
+      "publicationCode": "NOUV",
+      "publicationLabel": "Nouvel économiste (Le)",
+      "iconUrl": "./assets/logos/optimized/pressreader-2986.webp",
+      "evidenceUrls": [
+        "https://www.lenouveleconomiste.fr/"
+      ],
+      "hosts": [
+        "lenouveleconomiste.fr",
+        "www.lenouveleconomiste.fr"
+      ],
+      "pathPrefixes": [],
+      "source": "pressreader_exact_title_match",
+      "verification": "exact title match with an integrated PressReader official-domain source",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": true,
+      "notes": "Useful as IndexPresse/PressReader choice when no Europresse source matches; IndexPresse code NOUV. Also matched to PressReader by exact catalog audit.",
+      "officialSiteAccess": {
+        "model": "unknown",
+        "paidOrFree": "unknown",
+        "articleBlockStatus": "readable_sample_without_distribution_evidence",
+        "confidence": "low",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      },
+      "websiteUrl": "https://www.lenouveleconomiste.fr/"
+    },
+    {
+      "title": "Le Papetier de France",
+      "publicationCode": "PAPF",
+      "publicationLabel": "Papetier de France (Le)",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-papf.webp",
+      "evidenceUrls": [
+        "https://www.papetierdefrance.com/",
+        "https://www.pyc.fr/le-papetier-de-france-pnp/"
+      ],
+      "hosts": [
+        "papetierdefrance.com",
+        "www.papetierdefrance.com"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Le Papetier de France - PNP as the magazine site",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Official-domain match for Le Papetier de France.",
+      "officialSiteAccess": {
+        "model": "paid",
+        "paidOrFree": "paid",
+        "articleBlockStatus": "blocked_article_found",
+        "confidence": "high",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Les Cahiers français",
+      "publicationCode": "CAHI",
+      "publicationLabel": "Cahiers français (Les)",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-cahi.webp",
+      "evidenceUrls": [
+        "https://www.vie-publique.fr/cahiers-francais",
+        "https://www.dila.gouv.fr/publications/revues-collections-la-documentation-francaise/cahiers-francais"
+      ],
+      "hosts": [
+        "vie-publique.fr",
+        "www.vie-publique.fr"
+      ],
+      "pathPrefixes": [
+        "/cahiers-francais"
+      ],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current official DILA and Vie publique pages identify Cahiers français",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Path-limited match because vie-publique.fr hosts many unrelated public information pages.",
+      "officialSiteAccess": {
+        "model": "paid",
+        "paidOrFree": "paid",
+        "articleBlockStatus": "paid_offer_found",
+        "confidence": "high",
+        "checkedAt": "2026-09-08",
+        "method": "manual_override_after_automated_probe",
+        "manualOverride": true,
+        "manualEvidenceUrl": "https://www.vie-publique.fr/files/pdfs/Bon-de-commande-Revues-DILA%20_3.pdf",
+        "manualEvidenceUrls": [
+          "https://www.vie-publique.fr/files/pdfs/Bon-de-commande-Revues-DILA%20_3.pdf"
+        ],
+        "manualEvidenceType": "official"
+      }
+    },
+    {
+      "title": "Les Clés de la presse : la lettre",
+      "publicationCode": "CLES",
+      "publicationLabel": "Clés de la presse : la lettre (Les)",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-cles-black.webp",
+      "evidenceUrls": [
+        "https://www.lesclesdelapresse.fr/",
+        "https://kiosque.lesclesdelapresse.fr/"
+      ],
+      "hosts": [
+        "lesclesdelapresse.fr",
+        "www.lesclesdelapresse.fr",
+        "kiosque.lesclesdelapresse.fr"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Les Clés de la presse and its letter kiosk",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Official-domain match for Les Clés de la presse : la lettre.",
+      "officialSiteAccess": {
+        "model": "unknown",
+        "paidOrFree": "unknown",
+        "articleBlockStatus": "no_conclusive_evidence",
+        "confidence": "low",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Les Echos week-end",
+      "publicationCode": "ECHOWE",
+      "publicationLabel": "Echos week-end (Les)",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-echowe.webp",
+      "evidenceUrls": [
+        "https://medias.lesechosleparisien.fr/portfolio/mode-art-de-vivre-environnement-culture-les-echos-week-end-renforce-son-offre-editoriale/",
+        "https://reseau-mirabel.info/revue/187/Les-Echos-week-end"
+      ],
+      "hosts": [
+        "lesechos.fr",
+        "www.lesechos.fr"
+      ],
+      "pathPrefixes": [
+        "/weekend"
+      ],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current media and external title records identify Les Echos Week-End under lesechos.fr/weekend",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Path-limited match to avoid routing all Les Echos URLs to the Week-End publication.",
+      "officialSiteAccess": {
+        "model": "paid",
+        "paidOrFree": "paid",
+        "articleBlockStatus": "paid_offer_found",
+        "confidence": "high",
+        "checkedAt": "2026-09-08",
+        "method": "manual_override_after_automated_probe",
+        "manualOverride": true,
+        "manualEvidenceUrl": "https://www.journaux.fr/redirection/208129",
+        "manualEvidenceUrls": [
+          "https://www.journaux.fr/redirection/208129"
+        ],
+        "manualEvidenceType": "subscription_platform"
+      }
+    },
+    {
+      "title": "Les Nouvelles esthétiques spa",
+      "publicationCode": "NSPA",
+      "publicationLabel": "Nouvelles esthétiques spa (Les)",
+      "iconUrl": "./assets/logos/optimized/indexpresse-official-indexpresse-official-nspa.webp",
+      "evidenceUrls": [
+        "https://www.nouvelles-esthetiques.com/",
+        "https://www.nouvelles-esthetiques.com/magazines"
+      ],
+      "hosts": [
+        "nouvelles-esthetiques.com",
+        "www.nouvelles-esthetiques.com"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Les Nouvelles Esthétiques as the professional aesthetic and spa magazine site",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Official-domain match for Les Nouvelles esthétiques spa.",
+      "officialSiteAccess": {
+        "model": "unknown",
+        "paidOrFree": "unknown",
+        "articleBlockStatus": "readable_sample_without_distribution_evidence",
+        "confidence": "low",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "LH le magazine",
+      "publicationCode": "LIVR",
+      "publicationLabel": "LH le magazine",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-livr.webp",
+      "evidenceUrls": [
+        "https://www.livreshebdo.fr/thematiques/lh-le-magazine"
+      ],
+      "hosts": [
+        "livreshebdo.fr",
+        "www.livreshebdo.fr"
+      ],
+      "pathPrefixes": [
+        "/thematiques/lh-le-magazine"
+      ],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies LH le magazine under Livres Hebdo",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Path-limited match for LH le magazine.",
+      "officialSiteAccess": {
+        "model": "mixed",
+        "paidOrFree": "mixed",
+        "articleBlockStatus": "mixed_access_found",
+        "confidence": "high",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "L'Hôtellerie",
+      "publicationCode": "HOTE",
+      "publicationLabel": "Hôtellerie (L')",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-hote.webp",
+      "evidenceUrls": [
+        "https://www.lhotellerie-restauration.fr/"
+      ],
+      "hosts": [
+        "lhotellerie-restauration.fr",
+        "www.lhotellerie-restauration.fr"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Journal L'Hôtellerie Restauration as the publication site",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Official-domain match for L'Hôtellerie.",
+      "officialSiteAccess": {
+        "model": "unknown",
+        "paidOrFree": "unknown",
+        "articleBlockStatus": "readable_sample_without_distribution_evidence",
+        "confidence": "low",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "L'Informaticien",
+      "publicationCode": "INFO",
+      "publicationLabel": "Informaticien (L')",
+      "iconUrl": "./assets/logos/pressreader/2905.svg",
+      "evidenceUrls": [],
+      "hosts": [
+        "linformaticien.com",
+        "www.linformaticien.com"
+      ],
+      "pathPrefixes": [],
+      "source": "pressreader_exact_title_match",
+      "verification": "exact title match with an integrated PressReader official-domain source",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": true,
+      "notes": "Useful as IndexPresse/PressReader choice when no Europresse source matches; IndexPresse code INFO. Also matched to PressReader by exact catalog audit.",
+      "officialSiteAccess": {
+        "model": "paid",
+        "paidOrFree": "paid",
+        "articleBlockStatus": "paid_offer_found",
+        "confidence": "high",
+        "checkedAt": "2026-09-08",
+        "method": "manual_override_after_automated_probe",
+        "manualOverride": true,
+        "manualEvidenceUrl": "https://www.linformaticien.com/component/virtuemart/abonnements/linfo2num-detail.pdf?tmpl=component",
+        "manualEvidenceUrls": [
+          "https://www.linformaticien.com/component/virtuemart/abonnements/linfo2num-detail.pdf?tmpl=component"
+        ],
+        "manualEvidenceType": "official"
+      }
+    },
+    {
+      "title": "L'OT - L'officiel des terrains de camping",
+      "publicationCode": "OTOT",
+      "publicationLabel": "OT - L'officiel des terrains de camping (L')",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-otot.svg",
+      "evidenceUrls": [
+        "https://www.ot-campings.com/",
+        "https://www.ot-campings.com/les-archives/"
+      ],
+      "hosts": [
+        "ot-campings.com",
+        "www.ot-campings.com"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies L'Officiel des terrains de camping on ot-campings.com",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Official-domain match for L'OT - L'officiel des terrains de camping.",
+      "officialSiteAccess": {
+        "model": "unknown",
+        "paidOrFree": "unknown",
+        "articleBlockStatus": "readable_sample_without_distribution_evidence",
+        "confidence": "low",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Maddyness",
+      "publicationCode": "MADDY",
+      "publicationLabel": "Maddyness",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-maddy.svg",
+      "evidenceUrls": [
+        "https://www.maddyness.com/"
+      ],
+      "hosts": [
+        "maddyness.com",
+        "www.maddyness.com"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Maddyness as a media for entrepreneurship and innovation",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Exact current official-domain match for Maddyness.",
+      "officialSiteAccess": {
+        "model": "unknown",
+        "paidOrFree": "unknown",
+        "articleBlockStatus": "readable_sample_without_distribution_evidence",
+        "confidence": "low",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Market. Edition jaune",
+      "publicationCode": "MEDJ",
+      "publicationLabel": "Market. Edition jaune",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-medj-black.webp",
+      "evidenceUrls": [
+        "https://www.journalmarket.fr/"
+      ],
+      "hosts": [
+        "journalmarket.fr",
+        "www.journalmarket.fr"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Journal Market and Edition jaune issues",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Official-domain match for Market. Edition jaune.",
+      "officialSiteAccess": {
+        "model": "unknown",
+        "paidOrFree": "unknown",
+        "articleBlockStatus": "no_conclusive_evidence",
+        "confidence": "low",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Montagne leaders",
+      "publicationCode": "MONT",
+      "publicationLabel": "Montagne leaders",
+      "iconUrl": "./assets/logos/optimized/indexpresse-official-indexpresse-official-mont-1.webp",
+      "evidenceUrls": [
+        "https://www.montagneleaders.fr/",
+        "https://www.montagneleaders.fr/qui-sommes-nous/"
+      ],
+      "hosts": [
+        "montagneleaders.fr",
+        "www.montagneleaders.fr"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Montagne Leaders as the professional mountain media",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Official-domain match for Montagne leaders.",
+      "officialSiteAccess": {
+        "model": "paid",
+        "paidOrFree": "paid",
+        "articleBlockStatus": "blocked_article_found",
+        "confidence": "high",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "M Pharmacien business",
+      "publicationCode": "MPHA",
+      "publicationLabel": "M Pharmacien business",
+      "iconUrl": "./assets/logos/indexpresse/indexpresse-logo-mpha.webp",
+      "evidenceUrls": [
+        "https://www.lemoniteurdespharmacies.fr/business/",
+        "https://fr.linkedin.com/company/pharmacien-business"
+      ],
+      "hosts": [
+        "lemoniteurdespharmacies.fr",
+        "www.lemoniteurdespharmacies.fr"
+      ],
+      "pathPrefixes": [
+        "/business",
+        "/revues/pharmacien-manager"
+      ],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Pharmacien Business under Le Moniteur des pharmacies",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Path-limited match to avoid overriding Le Moniteur des pharmacies.",
+      "officialSiteAccess": {
+        "model": "paid",
+        "paidOrFree": "paid",
+        "articleBlockStatus": "blocked_article_found",
+        "confidence": "high",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Offrir international",
+      "publicationCode": "OFRI",
+      "publicationLabel": "Offrir international",
+      "iconUrl": "./assets/logos/optimized/indexpresse-official-indexpresse-official-ofri-2.webp",
+      "evidenceUrls": [
+        "https://www.offrir-international.com/",
+        "https://www.offrir-international.com/revue/offrir-international-504-504"
+      ],
+      "hosts": [
+        "offrir-international.com",
+        "www.offrir-international.com"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Offrir International as the publication site",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Official-domain match for Offrir international.",
+      "officialSiteAccess": {
+        "model": "paid",
+        "paidOrFree": "paid",
+        "articleBlockStatus": "paid_offer_found",
+        "confidence": "medium",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Petmarket magazine",
+      "publicationCode": "PETM",
+      "publicationLabel": "Petmarket magazine",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-petm.webp",
+      "evidenceUrls": [
+        "https://petmarketmagazine.com/",
+        "https://1health.fr/medias%2Cindustrie.html"
+      ],
+      "hosts": [
+        "petmarketmagazine.com",
+        "www.petmarketmagazine.com"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Petmarket Magazine as the business media for pet-market professionals",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Official-domain match for Petmarket magazine.",
+      "officialSiteAccess": {
+        "model": "unknown",
+        "paidOrFree": "unknown",
+        "articleBlockStatus": "no_conclusive_evidence",
+        "confidence": "low",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Pharmaceutiques",
+      "publicationCode": "PHAR",
+      "publicationLabel": "Pharmaceutiques",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-phar.webp",
+      "evidenceUrls": [
+        "https://pharmaceutiques.com/",
+        "https://pharmaceutiques.com/magazine/"
+      ],
+      "hosts": [
+        "pharmaceutiques.com",
+        "www.pharmaceutiques.com"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Pharmaceutiques and its magazine pages",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Official-domain match for Pharmaceutiques.",
+      "officialSiteAccess": {
+        "model": "paid",
+        "paidOrFree": "paid",
+        "articleBlockStatus": "blocked_article_found",
+        "confidence": "high",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Porc magazine",
+      "publicationCode": "PORC",
+      "publicationLabel": "Porc magazine",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-porc.svg",
+      "evidenceUrls": [
+        "https://www.porcmag.com/"
+      ],
+      "hosts": [
+        "porcmag.com",
+        "www.porcmag.com"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Porcmag as the professional swine-production media site",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Official-domain match for Porc magazine.",
+      "officialSiteAccess": {
+        "model": "unknown",
+        "paidOrFree": "unknown",
+        "articleBlockStatus": "readable_sample_without_distribution_evidence",
+        "confidence": "low",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "RB - Revue banque",
+      "publicationCode": "RBRB",
+      "publicationLabel": "RB - Revue banque",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-rbrb.webp",
+      "evidenceUrls": [
+        "https://www.revue-banque.fr/"
+      ],
+      "hosts": [
+        "revue-banque.fr",
+        "www.revue-banque.fr"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Revue Banque as the banking and finance publication site",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Official-domain match for RB - Revue banque.",
+      "officialSiteAccess": {
+        "model": "unknown",
+        "paidOrFree": "unknown",
+        "articleBlockStatus": "readable_sample_without_distribution_evidence",
+        "confidence": "low",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Rebondir",
+      "publicationCode": "REBO",
+      "publicationLabel": "Rebondir",
+      "iconUrl": "./assets/logos/pressreader/2926.svg",
+      "evidenceUrls": [],
+      "hosts": [
+        "rebondir.fr",
+        "www.rebondir.fr"
+      ],
+      "pathPrefixes": [],
+      "source": "pressreader_exact_title_match",
+      "verification": "exact title match with an integrated PressReader official-domain source",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": true,
+      "notes": "Useful as IndexPresse/PressReader choice when no Europresse source matches; IndexPresse code REBO. Also matched to PressReader by exact catalog audit.",
+      "officialSiteAccess": {
+        "model": "paid",
+        "paidOrFree": "paid",
+        "articleBlockStatus": "paid_offer_found",
+        "confidence": "medium",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "REE - Revue de l'électricité et de l'électronique",
+      "publicationCode": "REE",
+      "publicationLabel": "REE - Revue de l'électricité et de l'électronique",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-ree.webp",
+      "evidenceUrls": [
+        "https://see.asso.fr/la-ree-see/",
+        "https://www.fnps.fr/revue/ree-revue-de-lelectricite-et-de-lelectronique/"
+      ],
+      "hosts": [
+        "see.asso.fr",
+        "www.see.asso.fr"
+      ],
+      "pathPrefixes": [
+        "/la-ree-see",
+        "/ree"
+      ],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies REE on the SEE site",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Path-limited match for REE because the wider SEE domain is not only the revue.",
+      "officialSiteAccess": {
+        "model": "paid",
+        "paidOrFree": "paid",
+        "articleBlockStatus": "paid_offer_found",
+        "confidence": "medium",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Revue française de gestion",
+      "publicationCode": "RFGE",
+      "publicationLabel": "Revue française de gestion",
+      "iconUrl": "./assets/logos/indexpresse/indexpresse-logo-rfge.webp",
+      "evidenceUrls": [
+        "https://www.jle.com/fr/revues/rfg/revue.phtml",
+        "https://reseau-mirabel.info/revue/353/Revue-francaise-de-gestion-RFG"
+      ],
+      "hosts": [
+        "jle.com",
+        "www.jle.com"
+      ],
+      "pathPrefixes": [
+        "/fr/revues/rfg"
+      ],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current external publication records identify Revue française de gestion on JLE",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Path-limited official journal-site match for Revue française de gestion.",
+      "officialSiteAccess": {
+        "model": "unknown",
+        "paidOrFree": "unknown",
+        "articleBlockStatus": "not_testable",
+        "confidence": "low",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      },
+      "websiteUrl": "https://www.jle.com/fr/revues/rfg/revue.phtml"
+    },
+    {
+      "title": "Ria - Revue de l'industrie agroalimentaire",
+      "publicationCode": "RIAG",
+      "publicationLabel": "Ria - Revue de l'industrie agroalimentaire",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-riag.svg",
+      "evidenceUrls": [
+        "https://www.ria.fr/",
+        "https://www.ria.fr/revues/"
+      ],
+      "hosts": [
+        "ria.fr",
+        "www.ria.fr"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies RIA as La Revue de l'Industrie Agroalimentaire",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Official-domain match for Ria - Revue de l'industrie agroalimentaire.",
+      "officialSiteAccess": {
+        "model": "paid",
+        "paidOrFree": "paid",
+        "articleBlockStatus": "blocked_article_found",
+        "confidence": "high",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Sites commerciaux",
+      "publicationCode": "SCCX",
+      "publicationLabel": "Sites commerciaux",
+      "iconUrl": "./assets/logos/indexpresse/indexpresse-logo-sccx.webp",
+      "evidenceUrls": [
+        "https://sites-commerciaux.com/mentions-legales/"
+      ],
+      "hosts": [
+        "sites-commerciaux.com",
+        "www.sites-commerciaux.com"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current legal page identifies Sites-commerciaux.com as the site of Sites commerciaux",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Official-domain match for Sites commerciaux.",
+      "officialSiteAccess": {
+        "model": "paid",
+        "paidOrFree": "paid",
+        "articleBlockStatus": "paid_offer_found",
+        "confidence": "medium",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Sport éco",
+      "publicationCode": "SPOR",
+      "publicationLabel": "Sport éco",
+      "iconUrl": "./assets/logos/indexpresse/indexpresse-logo-spor.webp",
+      "evidenceUrls": [
+        "https://www.sporteco.com/",
+        "https://fr.linkedin.com/company/sport-co"
+      ],
+      "hosts": [
+        "sporteco.com",
+        "www.sporteco.com"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies SPORTéco as the professional sports-retail media",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Official-domain match for Sport éco. Bike éco kept separate because it shares the same host ambiguously.",
+      "officialSiteAccess": {
+        "model": "paid",
+        "paidOrFree": "paid",
+        "articleBlockStatus": "paid_offer_found",
+        "confidence": "medium",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Technic'baie",
+      "publicationCode": "BAIE",
+      "publicationLabel": "Technic'baie",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-baie.webp",
+      "evidenceUrls": [
+        "https://technicbaie.fr/",
+        "https://www.pyc.fr/technicbaie/"
+      ],
+      "hosts": [
+        "technicbaie.fr",
+        "www.technicbaie.fr"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Technic'Baie as the professional openings and facade-equipment magazine site",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Official-domain match for Technic'baie.",
+      "officialSiteAccess": {
+        "model": "unknown",
+        "paidOrFree": "unknown",
+        "articleBlockStatus": "not_testable",
+        "confidence": "low",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "VDL Magazine",
+      "publicationCode": "VDLM",
+      "publicationLabel": "VDL Magazine",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-vdlm.webp",
+      "evidenceUrls": [
+        "https://www.univdl.com/vdl-magazine/"
+      ],
+      "hosts": [
+        "univdl.com",
+        "www.univdl.com"
+      ],
+      "pathPrefixes": [
+        "/vdl-magazine"
+      ],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies VDL Magazine on the UNIVDL site",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Path-limited match for VDL Magazine.",
+      "officialSiteAccess": {
+        "model": "unknown",
+        "paidOrFree": "unknown",
+        "articleBlockStatus": "no_conclusive_evidence",
+        "confidence": "low",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Verre et protections mag",
+      "publicationCode": "VERR",
+      "publicationLabel": "Verre et protections mag",
+      "iconUrl": "./assets/logos/indexpresse-official/indexpresse-official-verr.svg",
+      "evidenceUrls": [
+        "https://www.verreetprotections.com/",
+        "https://www.verreetprotections.com/english-version/"
+      ],
+      "hosts": [
+        "verreetprotections.com",
+        "www.verreetprotections.com"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Verre & Protections Mag as the glazing and protection magazine site",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Official-domain match for Verre et protections mag.",
+      "officialSiteAccess": {
+        "model": "unknown",
+        "paidOrFree": "unknown",
+        "articleBlockStatus": "no_conclusive_evidence",
+        "confidence": "low",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Zepros. Habitat & jardin",
+      "publicationCode": "ZHEJ",
+      "publicationLabel": "Zepros. Habitat & jardin",
+      "iconUrl": "./assets/logos/optimized/indexpresse-official-indexpresse-official-zhej-2.webp",
+      "evidenceUrls": [
+        "https://habitat.zepros.fr/",
+        "https://groupezepros.com/nos-expertises/nos-medias/zepros-habitat-jardin/"
+      ],
+      "hosts": [
+        "habitat.zepros.fr",
+        "www.habitat.zepros.fr"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Zepros Habitat as the Habitat and Jardin media site",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Official-domain match for Zepros. Habitat & jardin.",
+      "officialSiteAccess": {
+        "model": "free",
+        "paidOrFree": "free",
+        "articleBlockStatus": "no_blocked_article_found",
+        "confidence": "high",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Zepros. Métiers Bâti",
+      "publicationCode": "ZBAT",
+      "publicationLabel": "Zepros. Métiers Bâti",
+      "iconUrl": "./assets/logos/optimized/indexpresse-official-indexpresse-official-zbat-1.webp",
+      "evidenceUrls": [
+        "https://bati.zepros.fr/",
+        "https://groupezepros.com/nos-expertises/nos-medias/zepros-batiment/"
+      ],
+      "hosts": [
+        "bati.zepros.fr",
+        "www.bati.zepros.fr"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Zepros Bati as the professional building media site",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Official-domain match for Zepros. Métiers Bâti.",
+      "officialSiteAccess": {
+        "model": "free",
+        "paidOrFree": "free",
+        "articleBlockStatus": "no_blocked_article_found",
+        "confidence": "high",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Zepros. Métiers Collective",
+      "publicationCode": "ZCOL",
+      "publicationLabel": "Zepros. Métiers Collective",
+      "iconUrl": "./assets/logos/optimized/indexpresse-official-indexpresse-official-zcol-1.webp",
+      "evidenceUrls": [
+        "https://resto.zepros.fr/journaux/collective",
+        "https://resto.zepros.fr/restauration-collective"
+      ],
+      "hosts": [
+        "resto.zepros.fr",
+        "www.resto.zepros.fr"
+      ],
+      "pathPrefixes": [
+        "/restauration-collective",
+        "/journaux/collective"
+      ],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Zepros La Collective under resto.zepros.fr",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Path-limited match for Zepros. Métiers Collective.",
+      "officialSiteAccess": {
+        "model": "free",
+        "paidOrFree": "free",
+        "articleBlockStatus": "no_blocked_article_found",
+        "confidence": "high",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Zepros. Métiers Distributeurs RHD",
+      "publicationCode": "ZRHD",
+      "publicationLabel": "Zepros. Métiers Distributeurs RHD",
+      "iconUrl": "./assets/logos/optimized/indexpresse-official-indexpresse-official-zrhd-1.webp",
+      "evidenceUrls": [
+        "https://resto.zepros.fr/journaux/distributeurs-rhd"
+      ],
+      "hosts": [
+        "resto.zepros.fr",
+        "www.resto.zepros.fr"
+      ],
+      "pathPrefixes": [
+        "/journaux/distributeurs-rhd"
+      ],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Zepros Distributeurs RHD under resto.zepros.fr",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Path-limited match for Zepros. Métiers Distributeurs RHD.",
+      "officialSiteAccess": {
+        "model": "free",
+        "paidOrFree": "free",
+        "articleBlockStatus": "no_blocked_article_found",
+        "confidence": "high",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Zepros. Métiers Énergie",
+      "publicationCode": "ZENE",
+      "publicationLabel": "Zepros. Métiers Énergie",
+      "iconUrl": "./assets/logos/optimized/indexpresse-official-indexpresse-official-zene-1.webp",
+      "evidenceUrls": [
+        "https://bati.zepros.fr/journaux/energie",
+        "https://bati.zepros.fr/energie"
+      ],
+      "hosts": [
+        "bati.zepros.fr",
+        "www.bati.zepros.fr"
+      ],
+      "pathPrefixes": [
+        "/energie",
+        "/journaux/energie"
+      ],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Zepros Énergie under bati.zepros.fr",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Path-limited match for Zepros. Métiers Énergie.",
+      "officialSiteAccess": {
+        "model": "free",
+        "paidOrFree": "free",
+        "articleBlockStatus": "no_blocked_article_found",
+        "confidence": "high",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Zepros. Métiers réno",
+      "publicationCode": "ZREN",
+      "publicationLabel": "Zepros. Métiers réno",
+      "iconUrl": "./assets/logos/optimized/indexpresse-official-indexpresse-official-zren-1.webp",
+      "evidenceUrls": [
+        "https://bati.zepros.fr/journaux/reno"
+      ],
+      "hosts": [
+        "bati.zepros.fr",
+        "www.bati.zepros.fr"
+      ],
+      "pathPrefixes": [
+        "/journaux/reno"
+      ],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Zepros Réno under bati.zepros.fr",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Path-limited match for Zepros. Métiers réno.",
+      "officialSiteAccess": {
+        "model": "free",
+        "paidOrFree": "free",
+        "articleBlockStatus": "no_blocked_article_found",
+        "confidence": "high",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Zepros. Métiers Resto",
+      "publicationCode": "ZRST",
+      "publicationLabel": "Zepros. Métiers Resto",
+      "iconUrl": "./assets/logos/optimized/indexpresse-official-indexpresse-official-zrst-1.webp",
+      "evidenceUrls": [
+        "https://resto.zepros.fr/",
+        "https://groupezepros.com/nos-expertises/nos-medias/zepros-restauration/"
+      ],
+      "hosts": [
+        "resto.zepros.fr",
+        "www.resto.zepros.fr"
+      ],
+      "pathPrefixes": [],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Zepros Resto as the professional restaurant media site",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Official-domain match for Zepros. Métiers Resto with narrower Zepros restaurant titles taking priority by path.",
+      "officialSiteAccess": {
+        "model": "free",
+        "paidOrFree": "free",
+        "articleBlockStatus": "no_blocked_article_found",
+        "confidence": "high",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Zepros. Métiers Snack",
+      "publicationCode": "ZSNA",
+      "publicationLabel": "Zepros. Métiers Snack",
+      "iconUrl": "./assets/logos/optimized/indexpresse-official-indexpresse-official-zsna-1.webp",
+      "evidenceUrls": [
+        "https://resto.zepros.fr/journaux/snack",
+        "https://resto.zepros.fr/snacking"
+      ],
+      "hosts": [
+        "resto.zepros.fr",
+        "www.resto.zepros.fr"
+      ],
+      "pathPrefixes": [
+        "/snacking",
+        "/journaux/snack"
+      ],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web search result identifies Zepros Snack under resto.zepros.fr",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Path-limited match for Zepros. Métiers Snack.",
+      "officialSiteAccess": {
+        "model": "free",
+        "paidOrFree": "free",
+        "articleBlockStatus": "no_blocked_article_found",
+        "confidence": "high",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    },
+    {
+      "title": "Zepros. Prévention & EPI",
+      "publicationCode": "ZSAF",
+      "publicationLabel": "Zepros. Prévention & EPI",
+      "iconUrl": "./assets/logos/optimized/indexpresse-official-indexpresse-official-zsaf-1.webp",
+      "evidenceUrls": [
+        "https://bati.zepros.fr/epi",
+        "https://bati.zepros.fr/actu-generale/zepros-quo-se-transforme-devient-zepros-safety-votre-nouveau-journal-dedie-epi"
+      ],
+      "hosts": [
+        "bati.zepros.fr",
+        "www.bati.zepros.fr"
+      ],
+      "pathPrefixes": [
+        "/epi"
+      ],
+      "source": "manual_current_web_verified_official_domain",
+      "verification": "current web result shows Zepros Safety succeeding the EPI-focused Zepros title and current EPI articles under bati.zepros.fr",
+      "integrationStatus": "integrated",
+      "integratedAt": "2026-08-30",
+      "europresseOverlap": false,
+      "pressreaderOverlap": false,
+      "notes": "Path-limited match for Zepros. Prévention & EPI due current naming as Zepros Safety.",
+      "officialSiteAccess": {
+        "model": "free",
+        "paidOrFree": "free",
+        "articleBlockStatus": "no_blocked_article_found",
+        "confidence": "high",
+        "checkedAt": "2026-09-07",
+        "method": "affirmative_publication_evidence_and_article_probe"
+      }
+    }
+  ],
+  "access_audit": {
+    "generated_at": "2026-09-08",
+    "source": "data/research/access/link-source-access-audit.json",
+    "field": "officialSiteAccess",
+    "public_payload": "compact"
+  }
+}

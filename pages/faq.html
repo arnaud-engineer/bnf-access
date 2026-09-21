@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta id="themeColor" name="theme-color" content="#f7f7f4">
+    <title>FAQ - BnF Access</title>
+    <meta name="description" content="Questions fréquentes sur BnF Access.">
+    <link rel="icon" href="../assets/icons/bnf-access-icon.svg" type="image/svg+xml">
+    <script>
+      try {
+        const theme = localStorage.getItem("bnf-access:v2:theme:v1");
+        if (theme === "dark" || theme === "oled") document.documentElement.dataset.theme = theme;
+        else if (theme !== "light" && window.matchMedia("(prefers-color-scheme: dark)").matches) document.documentElement.dataset.theme = "oled";
+        if (localStorage.getItem("bnf-access:v2:colorblind-mode:v1") === "true") document.documentElement.dataset.colorVision = "colorblind";
+      } catch {}
+    </script>
+    <link rel="stylesheet" href="../assets/css/styles.css?v=2026-09-21-info-pages">
+    <script src="../assets/js/pages/faq.js" defer></script>
+    <script src="../assets/js/pages/info-page.js?v=2026-09-21-info-pages" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <a class="brand-link brand-link--compact" href="../" aria-label="BnF Access, accueil">
+          <img src="../assets/icons/bnf-access-icon.svg" alt="" aria-hidden="true">
+          <span>BnF Access</span>
+        </a>
+        <h1>FAQ</h1>
+        <p class="intro">Quelques réponses rapides sur BnF Access, ses limites et son fonctionnement.</p>
+      </div>
+      <nav class="topbar-links" aria-label="Navigation">
+        <a class="official-link secondary" href="../">Retour à BnF Access</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="text-page faq-list" aria-label="Questions fréquentes">
+        <article class="faq-item">
+          <h2>Qu'est-ce que BnF Access ?</h2>
+          <p>BnF Access est un catalogue de raccourcis personnalisables permettant un accès simplifié aux ressources en ligne de la BnF.</p>
+        </article>
+
+        <article class="faq-item">
+          <h2>Un Pass BnF est-il nécessaire ?</h2>
+          <p>Oui, il vous faut un Pass Lecture/Culture ou un Pass Recherche illimité pour accéder aux ressources en ligne. Vous pouvez vous abonner <a href="https://www.bnf.fr/fr/tarifs-dacces-aux-bibliotheques-et-loffre-culturelle" target="_blank" rel="noreferrer">ici</a>.</p>
+        </article>
+
+        <article class="faq-item">
+          <h2>BnF Access a-t-il un lien avec la BnF ?</h2>
+          <p>Non, aucun. Usager des ressources en ligne de la BnF, j'ai créé BnF Access pour faciliter l'accès à ces ressources.</p>
+        </article>
+
+        <article class="faq-item">
+          <h2>BnF Access a-t-il un lien avec EasyBNF ?</h2>
+          <p>Non. <a href="https://easybnf.fr/" target="_blank" rel="noreferrer">EasyBNF</a> a été créé par <a href="https://twitter.com/jeremypgn" target="_blank" rel="noreferrer">@jeremypgn</a>. S'il passe par ici, encore merci à lui pour son super site, qui a largement inspiré celui-ci.</p>
+        </article>
+
+        <article class="faq-item">
+          <h2>C'est quoi cette histoire de café à offrir ?</h2>
+          <p>Si vous aimez ce projet, souhaitez m'aider à le poursuivre ou à en démarrer de nouveaux, vous pouvez faire un don sur ma <a href="https://ko-fi.com/arnaudcool" target="_blank" rel="noreferrer">page Ko-Fi</a>. C'est évidemment facultatif, et ce service restera quoi qu'il arrive gratuit et sans publicité.</p>
+        </article>
+
+        <article class="faq-item">
+          <h2>Existe-t-il une application BnF Access ?</h2>
+          <p>BnF Access est d'abord un site web classique. Si vous voulez l'ajouter à l'écran d'accueil de votre téléphone comme application, ouvrez la page dédiée puis utilisez le menu de votre navigateur.</p>
+          <a class="faq-action" href="https://app.bnfaccess.fr/">Ouvrir la page d'installation</a>
+        </article>
+
+        <article class="faq-item">
+          <h2>Et mes données personnelles ?</h2>
+          <p>Aucune donnée personnelle n'est transférée par ce site vers un serveur distant. Seules vos ressources favorites et vos préférences sont conservées localement dans votre navigateur.</p>
+          <p>Ce site n'a aucun accès à vos identifiants BnF.</p>
+          <p>Pour supprimer les données locales (favoris et préférences), vous pouvez cliquer <button id="clearLocalData" class="inline-action" type="button">ici</button>.</p>
+          <p id="clearLocalDataStatus" class="faq-status" role="status" aria-live="polite"></p>
+        </article>
+      </section>
+    </main>
+
+    <footer id="siteFooter" class="site-footer">
+      <nav class="footer-links" aria-label="Informations du site">
+        <a href="./faq.html">FAQ</a>
+        <span aria-hidden="true">·</span>
+        <a href="./credits.html">Crédits</a>
+        <span aria-hidden="true">·</span>
+        <a href="./mentions-legales.html">Mentions légales</a>
+        <span aria-hidden="true">·</span>
+        <span class="footer-credit">Créé par <a class="footer-brand" href="https://arnaud.cool/" target="_blank" rel="noreferrer"><img class="footer-brand-logo" src="../assets/logos/arnaud-cool.svg" alt="" aria-hidden="true">arnaud.cool</a></span>
+        <span aria-hidden="true">·</span>
+        <a class="footer-support" href="https://ko-fi.com/arnaudcool" target="_blank" rel="noreferrer" aria-label="M’offrir un café sur Ko-fi">
+          <img class="footer-support-logo" src="../assets/logos/kofi.svg" alt="" aria-hidden="true">
+          M’offrir un café
+        </a>
+      </nav>
+    </footer>
+  </body>
+</html>

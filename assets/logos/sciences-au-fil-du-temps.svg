@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img" aria-label="Sciences au fil du temps, BnF">
+  <rect width="500" height="500" fill="#111"/>
+  <g fill="#fff" font-family="Arial, Helvetica, sans-serif">
+    <text x="250" y="142" text-anchor="middle" font-size="112" font-weight="700">{BnF</text>
+    <text x="250" y="274" text-anchor="middle" font-size="40" font-weight="700">SCIENCES AU</text>
+    <text x="250" y="329" text-anchor="middle" font-size="40" font-weight="700">FIL DU TEMPS</text>
+  </g>
+  <path d="M42 410H458" stroke="#fff" stroke-width="2"/>
+  <circle cx="42" cy="410" r="6" fill="#fff"/>
+  <circle cx="250" cy="410" r="6" fill="#fff"/>
+  <circle cx="458" cy="410" r="6" fill="#fff"/>
+</svg>

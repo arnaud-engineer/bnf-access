@@ -1,0 +1,3597 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-21",
+  "entries": {
+    "converter-link:direct:alternatives-economiques": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:direct:arret-sur-images": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:direct:europresse": {
+      "directory_visible": false,
+      "review_status": "correction",
+      "access_model": "paid"
+    },
+    "converter-link:direct:indexpresse-business": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:direct:mediapart": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:direct:pressreader": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:name:afp": {
+      "directory_visible": false,
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:apres-demain": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:architectures-a-vivre": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:associations-mode-d-emploi": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:name:auto-infos": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:auto-plus": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:avantages": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:beaux-arts-magazine": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:benefits-canada": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:biba": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:biofil": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:business-immo-global": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:name:chemainus-valley-courier-bc": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:closer": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:cosmetiquemag": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:cowichan-valley-citizen-duncan-bc": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:cranbrook-townsman-bc": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:cultures-marines": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:name:de-standaard": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:decideurs-magazine": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:decision-atelier-aftermarket": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:diapason": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:emballages-magazine": {
+      "directory_visible": false,
+      "review_status": "unavailable"
+    },
+    "converter-link:europresse:name:emerging-nations": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:name:entrepreneurs-des-territoires-magazine": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:feeling": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:femmes-d-aujourd-hui": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:financial-times": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:name:flair-francais": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:formes-de-luxe": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:formule-verte": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:gael": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:name:grandes-cuisines": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:grazia": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:ici-radio-canada": {
+      "directory_visible": false,
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:icon-france": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:europresse:name:industrie-et-technologies": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:name:industrie-hoteliere": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:industrie-pharma": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:infochimie": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:infos-laurentides": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:investissement-conseils": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:jeune-afrique": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:kimberley-bulletin-bc": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:knack": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:kootenay-news-advertiser": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:l-action-d-autray-berthierville-qc": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:l-ami-des-jardins-et-de-la-maison": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:l-ardennais": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:l-auto-journal": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:l-automobile-et-l-entreprise": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:name:l-avenir": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:l-echo-la-tuque-haut-st-maurice": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:l-essentiel-de-l-optique": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:l-essor-savoyard": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:l-est-eclair": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:l-info-du-nord-mont-tremblant-qc": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:l-officiel-des-transporteurs": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:name:l-opinion": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:l-union-france": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:la-capitale": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:la-depeche": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:name:la-lettre-de-l-audiovisuel": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:la-lettre-valloire": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:la-libre-belgique": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:la-meuse": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:la-nouvelle-gazette": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:la-peche-et-les-poissons": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:la-provence": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:la-province": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:la-releve-edition-de-boucherville-qc": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:la-revue-de-l-alimentation-animale": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:name:la-revue-du-jouet": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:name:la-revue-nationale-de-la-chasse": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:europresse:name:la-tribune-de-l-assurance": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:la-tribune-des-boulangers-patissiers": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:la-voix-mrc-des-moulins": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:lacombe-express-ab": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:ladysmith-chemainus-chronicle-bc": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:langley-advance-times-bc": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:le-chasseur-francais": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:name:le-clairon-saint-hyacinthe-qc": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:le-coeur-des-chefs": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:le-courrier-de-l-ouest": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:name:le-courrier-de-saint-hyacinthe-qc": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:le-journal-de-boucherville": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:le-journal-de-gien": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:le-journal-de-levis-qc": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:le-journal-des-fluides": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:le-journal-du-vrac": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:le-messager": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:le-moniteur-materiels": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:le-pays-gessien": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:le-pays-roannais": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:le-peuple-lotbiniere-qc": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:le-progres-de-coaticook-qc": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:le-reveil-alma-qc": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:le-soleil-de-chateauguay-qc": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:le-vif-weekend": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:les-veillees-des-chaumieres": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:europresse:name:lettre-du-cadre": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:name:liberation-champagne": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:marianne": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:marmiton": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:mieux-vivre-votre-argent": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:modes-et-travaux": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:monaco-matin": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:niagara-falls-review-on": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:name:nord-eclair-tournai": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:north-delta-reporter-bc": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:north-thompson-star-journal-bc": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:nous-deux": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:europresse:name:people-at-work": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:pleine-vie": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:politis": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:produits-de-la-mer": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:profession-cgp": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:psychologies": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:recyclage-recuperation": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:reference-carrelage": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:reponses-photo": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:reuters": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:name:rimbey-review-ab": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:science-et-vie": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:science-et-vie-guerres-et-histoire-hors-serie": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:seaway-news-cornwall-express": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:sherbrooke-info": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:sport-auto": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:sport-strategies": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:stettler-independent-ab": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:sylvan-lake-news-ab": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:tele-magazine": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:europresse:name:tele-poche": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:tele-star": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:tendances-restauration": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:the-economist": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:name:the-hamilton-spectator-on": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:name:the-peterborough-examiner-on": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:name:the-pipestone-flyer-ab": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:the-standard-st-catharines-on": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:name:tirmag": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:europresse:name:tofino-ucluelet-westerly-news-bc": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:name:tolerie": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:top-sante": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:toronto-star-on": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:name:trends": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:name:vital-food": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:europresse:name:waterloo-region-record-on": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:name:welland-tribune-on": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:name:yukon-news": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:1005": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:1011": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:1061": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:1074": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:source:1075": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:1078": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:10822": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:source:11013": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:11448": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:11450": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:11981": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:12286": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:source:12287": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:source:12303": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:12433": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:1362": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:14185": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:1435": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:149": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:source:1506": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:source:1510": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:15453": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:source:156": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:15635": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:15638": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:15653": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:15658": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:15664": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:15666": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:15672": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:15680": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:1580": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:16619": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:source:16699": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:16934": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:17279": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:18846": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:18850": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:18854": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:18855": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:18856": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:18869": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:18878": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:18879": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:18888": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:18889": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:18890": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:18900": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:18908": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:18909": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:19307": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:19372": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:19385": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:195": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:1995": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:source:19990": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:20226": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:source:2073": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:2080": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:20913": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:source:20930": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:2121": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:21306": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:21307": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:21356": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:2144": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:21724": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:21725": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:source:2179": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:2182": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:source:2211": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2213": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2215": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2217": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2219": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:2223": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2234": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2236": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2238": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2240": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2242": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:2246": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:2253": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2255": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:2257": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2259": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2263": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2267": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2269": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2272": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2274": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2276": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2278": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:2284": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2285": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2287": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2289": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2292": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2294": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2296": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2302": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2303": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2306": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2308": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2309": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2311": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2315": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2317": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2320": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2322": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2324": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2326": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2330": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2331": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2333": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2340": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:2343": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:23466": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:23468": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:23469": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:23470": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:23472": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:23684": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:2400": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:24064": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:242": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:source:2423": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:243": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:24328": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:24689": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:24691": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:24692": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:24693": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:24694": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:24695": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:24697": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:248": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:source:24899": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:250": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:25071": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:25072": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:258": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:259": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:264": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:source:265": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:266": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:371": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:3729": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:3730": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:3731": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:3732": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:3830": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:3836": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:3855": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:4141": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:4153": {
+      "directory_visible": false,
+      "review_status": "valid"
+    },
+    "converter-link:europresse:source:4279": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:4304": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:4462": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:4488": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:460": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:4621": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:4622": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:4623": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:4624": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:4625": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:4629": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:4678": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:4682": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:4709": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:4724": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:4725": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:4728": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:4741": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:4909": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:4997": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:5002": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:5003": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:5011": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:5276": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:5277": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:5278": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:5289": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:5344": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:source:5402": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:5403": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:5404": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:5405": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:5406": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:5558": {
+      "directory_visible": false,
+      "review_status": "valid"
+    },
+    "converter-link:europresse:source:5687": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:5735": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:5736": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:5737": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:5757": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:5758": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:5762": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:source:5763": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:source:5782": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:5796": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:5798": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:5799": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:5800": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:5801": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:5833": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:8265": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:8285": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:8343": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:source:8643": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:source:8645": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:8647": {
+      "directory_visible": false,
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:8946": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:8947": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:8972": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:europresse:source:8979": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:9192": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:9195": {
+      "directory_visible": false,
+      "access_model": "paid"
+    },
+    "converter-link:europresse:source:9354": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:9473": {
+      "directory_visible": false,
+      "review_status": "valid"
+    },
+    "converter-link:europresse:source:9509": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:europresse:source:9586": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:9588": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:9688": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:9731": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:europresse:source:9761": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:indexpresse:publication:ACTENV": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:AFRM": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:indexpresse:publication:ARCH": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:indexpresse:publication:BAIE": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:indexpresse:publication:BATI": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:BIKE": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:CAHI": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:CARO": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:CFNW": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:CHAN": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:CLES": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:COUR": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:ECOR": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:indexpresse:publication:ECRA": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:ENJA": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:ESTL": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:FAVI": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:FILM": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:FORE": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:FUTU": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:HOTE": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:HYON": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:INSEE": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:indexpresse:publication:JAUT": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:JURI": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:LIVR": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:LMEF": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:LOSA": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:MADDY": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:MEDJ": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:indexpresse:publication:MONT": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:MOPH": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:MPHA": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:NSPA": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:OFRI": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:OTOT": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:PAPF": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:PERSO": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:PETM": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:indexpresse:publication:PHAR": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:PORC": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:RBRB": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:REE": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:RFGE": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:RIAG": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:SCCX": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:SPOR": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:SURG": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:VDLM": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:indexpresse:publication:VERR": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:indexpresse:publication:ZBAT": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:indexpresse:publication:ZCOL": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:indexpresse:publication:ZENE": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:indexpresse:publication:ZHEJ": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:indexpresse:publication:ZREN": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:indexpresse:publication:ZRHD": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:indexpresse:publication:ZRST": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:indexpresse:publication:ZSAF": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:indexpresse:publication:ZSNA": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:pressreader:cid:0501": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:0503": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:0533": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:0557": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:0558|0527": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:0844": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:0855": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:0942|0943": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:0980": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:1029": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:1047": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:1105": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:1156|9lvh": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:1390": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:1545": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:1720": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:1893": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:22f9": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:pressreader:cid:22fc": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:pressreader:cid:22kk": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:pressreader:cid:22mx|f438|f476": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:22x8": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:2337": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:233j": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:23f2|23f3|23dy|23f4|23f5|23f6": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:23f9|23f8": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:23fc|23fd": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:23fh|23fj": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:23h3": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:23hy": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:23jt|23kt": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:23kw": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid",
+      "display_name": "Bakery"
+    },
+    "converter-link:pressreader:cid:23r4": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:23rm": {
+      "directory_visible": false,
+      "review_status": "unavailable"
+    },
+    "converter-link:pressreader:cid:23rn": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:23xf": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:23yw": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:24ny|24p3|24p2": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:24x5|24xh": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:252k": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:pressreader:cid:252n": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:pressreader:cid:25j9": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:25m4": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:pressreader:cid:25m6": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:2798": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:2833": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:2836": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:2839": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:2840": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:2847": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:2851": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:2905": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:2924": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:2925": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:2926": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:2939": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:2956": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:2957": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:2967": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:2968": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:2969": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:2986": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:2987": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:3035": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:3038": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:309c": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:pressreader:cid:3211": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:34rw": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:3501": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:3511|9wd9": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:353k": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:pressreader:cid:367b": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:pressreader:cid:367c": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:pressreader:cid:368s": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:pressreader:cid:368t": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:pressreader:cid:36ap": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:pressreader:cid:36ar": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:pressreader:cid:36as": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:pressreader:cid:36cv": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:3752|2065|3754|3757|2183|2182|2189": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:4205": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:pressreader:cid:4268": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:4271": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:4300": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:4314": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:4317": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:pressreader:cid:4450|4451": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:447g": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:447m": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:4481": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:4602": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:4700|4735": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:4836|4837|4842|4841|4840": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:4838|4aa3|4aa4|4aa5|4aa6|4aa7|4aa8|4aa9|4aaa|4aab|4aac|4aad|4aae|4aaf|4aag|4aah|4aaj|4869|4867": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:4863": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:4881|9bsy|9bt3": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:5014|5126": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:5510": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:5531": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:5810": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:5814": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:5831": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:6150": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:6532": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:6533": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:799b": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:799d": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:8812": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:9034": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:9153": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:9627": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:9631": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:9amd": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:9blf": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:9bp3": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:9bp4": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:9bp5": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:9e9s": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:9ebk": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:pressreader:cid:9ebt": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:pressreader:cid:9ebu": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:pressreader:cid:9f64": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:9fh4": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:9g31": {
+      "directory_visible": false,
+      "review_status": "valid"
+    },
+    "converter-link:pressreader:cid:9g40": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:pressreader:cid:9gcl": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:9gm4": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:9gq1": {
+      "directory_visible": false,
+      "review_status": "valid"
+    },
+    "converter-link:pressreader:cid:9gw7": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:9gzg": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:pressreader:cid:9i30": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:9ieg": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:9j55": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:9j64": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:9jad": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:9jag": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:pressreader:cid:9jam": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:9kbe": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:9kvc": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:9kwj": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:9l34": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:9leg": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:pressreader:cid:9lhl": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:9lhr": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:9lym|9lyn|ta9z|23xj|24pk|248v|23yd|24hc|24h8|248p|24pm|243w|248w|23yc|24h6|248r|24h9|248n|24pn|248x|23yf|24hd|24h5|248t|25cd": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:pressreader:cid:9lyx|9lyw": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:pressreader:cid:9lzj": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:9vrn": {
+      "directory_visible": false,
+      "review_status": "valid"
+    },
+    "converter-link:pressreader:cid:9vsc": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:9wsp": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:9wvr": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:9xyl": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:9y2r": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:9y4x": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:9y55": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:9y9w": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:pressreader:cid:9yk5": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:pressreader:cid:9zzs": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:pressreader:cid:e610": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:e955": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:pressreader:cid:eajf|eajg|eak5|eak6": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free",
+      "display_name": "20 Minutos (ES)"
+    },
+    "converter-link:pressreader:cid:eamt": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:pressreader:cid:eans": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:pressreader:cid:efct": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f040": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f043": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f045": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f046": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f047": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f048": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f053": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f056": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f058": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f059": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:pressreader:cid:f064": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f066": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f074": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:pressreader:cid:f075": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:pressreader:cid:f076": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:pressreader:cid:f079": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:pressreader:cid:f080": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:pressreader:cid:f131": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f135": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:pressreader:cid:f138": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:pressreader:cid:f140": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:pressreader:cid:f142": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:pressreader:cid:f143": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f144": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f145": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:pressreader:cid:f147": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:pressreader:cid:f151": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f157": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f163": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f171": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f281": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f30z|f30p|f30y|f30w|f30x|f30n|f30q|f30s|f30u|f30t|f30v": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f31y": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f321": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f32b": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f32f": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f32z": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f33a": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f33e": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f33f": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f33n": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f33p": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f33q|f371": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f33s": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f342": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f343|f715": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f344": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f34f": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f34g": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f350": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f351": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f355": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f357": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f358": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f360": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f361": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f362": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f363": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f366": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f367": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f368": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f369": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f370": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f373": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f376|f375": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f377|f374": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f378": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f381": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f382": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f383": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f384": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f385": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f386": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f387": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f390|f389": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f394": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f396": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f398|f392": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f399": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f401": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f406": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f409|f414": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f411": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f412": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f413": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f415": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f418": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f419|f420": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f424": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f425": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f431|f432": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f434": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f475": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f482": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:pressreader:cid:f488": {
+      "directory_visible": false,
+      "review_status": "no_website",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f494": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:pressreader:cid:f495": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:pressreader:cid:f496": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:pressreader:cid:f576": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f578": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f586": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f59d": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f59e": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f605": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f613": {
+      "directory_visible": false,
+      "review_status": "valid",
+      "access_model": "free"
+    },
+    "converter-link:pressreader:cid:f633": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f639": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f641": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f642": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:pressreader:cid:f657": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f66f": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f673": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f674": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f676": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:pressreader:cid:f678": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:pressreader:cid:f682": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f683": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:f705": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f708": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "mixed"
+    },
+    "converter-link:pressreader:cid:f709": {
+      "directory_visible": false,
+      "review_status": "no_website"
+    },
+    "converter-link:pressreader:cid:f711": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:sank": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:saxs": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    },
+    "converter-link:pressreader:cid:saxu": {
+      "directory_visible": true,
+      "review_status": "valid",
+      "access_model": "paid"
+    }
+  }
+}

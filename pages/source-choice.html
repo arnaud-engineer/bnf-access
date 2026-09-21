@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta id="themeColor" name="theme-color" content="#f7f7f4">
+    <title>Choisir une recherche - BnF Access</title>
+    <meta name="description" content="Choix entre IndexPresse Business et PressReader pour rechercher un article via la BnF.">
+    <link rel="icon" href="../assets/icons/bnf-access-icon.svg" type="image/svg+xml">
+    <script src="../assets/js/pages/theme-init.js"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css?v=2026-09-08-v2-brand-1">
+  </head>
+  <body class="transition-body source-choice-body">
+    <main class="transition-shell source-choice-shell" aria-labelledby="sourceChoiceTitle">
+      <a class="brand-link brand-link--compact" href="../" aria-label="BnF Access, accueil">
+        <img src="../assets/icons/bnf-access-icon.svg" alt="" aria-hidden="true">
+        <span>BnF Access</span>
+      </a>
+      <h1 id="sourceChoiceTitle">Choisir une recherche</h1>
+      <p id="sourceChoiceResource" class="transition-resource"></p>
+      <p class="transition-status">
+        Deux pistes sont possibles pour ce titre. Lancez celle qui correspond le mieux à votre situation.
+      </p>
+
+      <section id="sourceChoiceOptions" class="source-choice-options" aria-label="Recherches disponibles"></section>
+
+      <dl class="conversion-details">
+        <div>
+          <dt>Lien d'origine</dt>
+          <dd id="sourceChoiceOriginalUrl"></dd>
+        </div>
+      </dl>
+
+      <p class="transition-help">
+        IndexPresse Business ne répertorie pas forcément tous les articles. PressReader peut couvrir le titre, mais son accès BnF fonctionne surtout sur site.
+      </p>
+    </main>
+
+    <script src="../assets/js/pages/source-choice.js?v=2026-08-30-indexpresse-choice" type="module"></script>
+  </body>
+</html>

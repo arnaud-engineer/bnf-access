@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="blue-left" x1="32" y1="216" x2="286" y2="646" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#58a9f5"/>
+      <stop offset="1" stop-color="#1f63ca"/>
+    </linearGradient>
+    <linearGradient id="blue-right" x1="286" y1="306" x2="501" y2="568" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8ed9ff"/>
+      <stop offset="1" stop-color="#55afe9"/>
+    </linearGradient>
+    <linearGradient id="red-main" x1="354" y1="103" x2="579" y2="371" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ff394d"/>
+      <stop offset="1" stop-color="#ff1535"/>
+    </linearGradient>
+    <linearGradient id="red-overlap" x1="354" y1="282" x2="501" y2="458" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#d7133b"/>
+      <stop offset="1" stop-color="#b5002c"/>
+    </linearGradient>
+    <filter id="mark-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#1f1f1f" flood-opacity=".22"/>
+    </filter>
+  </defs>
+  <rect width="512" height="512" fill="#fdc600"/>
+  <g filter="url(#mark-shadow)" transform="translate(135 40) scale(.41)">
+    <g fill="none" stroke="#f8fbff" stroke-linejoin="round" stroke-width="13" opacity=".72">
+      <path d="M20 210 285 310v340L20 553Z"/>
+      <path d="m285 310 216-85v340l-216 85Z"/>
+      <path d="m350 100 235-92v362l-235 92Z"/>
+    </g>
+    <path fill="url(#blue-left)" stroke="#1762b9" stroke-opacity=".3" stroke-width="5" d="M20 210 285 310v340L20 553Z"/>
+    <path fill="url(#blue-right)" stroke="#309bd3" stroke-opacity=".28" stroke-width="5" d="m285 310 216-85v340l-216 85Z"/>
+    <path fill="url(#red-main)" stroke="#e41432" stroke-opacity=".3" stroke-width="5" d="m350 100 235-92v362l-235 92Z"/>
+    <path fill="url(#red-overlap)" d="m350 284 151-59v178l-151 59Z"/>
+  </g>
+  <rect x="62" y="360" width="388" height="78" fill="none" stroke="#7f6900" stroke-width="4" stroke-dasharray="15 12" opacity=".7"/>
+  <path d="M62 344v32M46 360h32M450 344v32M434 360h32M62 422v32M46 438h32M450 422v32M434 438h32" stroke="#7f6900" stroke-width="5" opacity=".7"/>
+  <text x="256" y="420" text-anchor="middle" fill="#f8fbff" stroke="#7f6900" stroke-width="1" paint-order="stroke" font-family="Arial, Helvetica, sans-serif" font-size="55" font-weight="700">Généralis</text>
+</svg>

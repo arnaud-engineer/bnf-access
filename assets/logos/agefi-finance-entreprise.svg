@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="L'AGEFI FINANCE D’ENTREPRISE">
+  <rect width="400" height="400" fill="#ffffff"/>
+  <g transform="translate(40 105) scale(1.48148148)">
+    <path fill="#D50303" d="M9.21.92v29.75h21.54v6.34H0V.88h9.21v.04Zm22.94 0-3.48 10.72h4.3L38.2.92h-6.05ZM55.5 23.27H72l-8.2-16.2-8.29 16.2ZM69.71.92l19.63 36.12H78.95l-3.98-7.84H52.54l-4.05 7.84H38.8L58.71.92h11ZM111.16 38c6.41 0 12.33-.85 18.49-2.25V17.5h-19.32v5.9h10.68v7.14a39.5 39.5 0 0 1-9.5 1.4c-10.03 0-14.65-4.87-14.65-13.15 0-7.44 4.4-12.74 13.4-12.74 5.16 0 9.14 1.55 9.68 5.7h9.67C128.98 2.95 120.02 0 110.16 0 96.62 0 87.37 6.55 87.37 18.85c-.03 13 9.46 19.15 23.8 19.15Zm55.87-.96v-6.37h-22.47v-8.83h20.68v-6.3h-20.68V7.29h21.93V.92h-31.18v36.12h31.72ZM201.5 7.3V.92H172v36.12h9.26V22.5h19.17v-6.34h-19.17V7.33h20.24v-.04Zm4.27 29.75h9.24V.92h-9.24v36.12Z"/>
+  </g>
+  <text text-anchor="middle" fill="#8F1D22" font-family="Arial, Helvetica, sans-serif"
+      font-size="46" font-weight="700">
+      <tspan x="200" y="257">FINANCE</tspan>
+      <tspan x="200" y="305">D’ENTREPRISE</tspan>
+    </text>
+</svg>

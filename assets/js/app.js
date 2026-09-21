@@ -3226,7 +3226,13 @@ function createQuickLaunchResourceItem(resource, resourceIndex, location = {}) {
 
   const actions = catalogFavoritesPreview ? getActions(resource) : getProfileVisibleActions(resource);
   const primaryAction = actions[0];
-  if (!primaryAction) return item;
+  if (!primaryAction) {
+    item.classList.add("is-unavailable");
+    item.title = `${resource.name} : indisponible avec les filtres de profil et d'accès actuels`;
+    item.innerHTML = `<span class="quick-launch-main" aria-disabled="true">${quickLaunchTile}</span>`;
+    bindQuickLaunchAccessWarning(item, resource);
+    return item;
+  }
   const secondaryActions = getQuickLaunchSecondaryActions(resource, actions, primaryAction);
   const primaryUrl = resolveActionHref(resource, primaryAction);
   item.title = resource.name;
@@ -6767,8 +6773,11 @@ function matchesLanguageFilter(resource) {
     return true;
   }
 
-  const codes = getResourceLanguageCodes(resource);
-  if (codes.length === 0) {
+  const displayCodes = getResourceLanguageCodes(resource);
+  const codes = displayCodes.includes("mul")
+    ? getUniqueLanguageCodes(resource.content_languages?.codes)
+    : displayCodes;
+  if (displayCodes.length === 0) {
     const scope = resource.content_languages?.scope;
     return scope === "multilingual" || scope === "very_multilingual";
   }

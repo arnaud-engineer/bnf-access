@@ -137,6 +137,7 @@ const pressPopularityNoteTitle = document.querySelector("#pressPopularityNoteTit
 const pressPopularityNoteDetails = document.querySelector("#pressPopularityNoteDetails");
 const pressPopularityNoteClose = document.querySelector("#pressPopularityNoteClose");
 const quickLaunch = document.querySelector("#quickLaunch");
+const releaseModeLabel = document.querySelector("#betaLabel");
 const linkConverter = document.querySelector("#linkConverter");
 const linkConverterForm = document.querySelector("#linkConverterForm");
 const linkConverterInput = document.querySelector("#linkConverterInput");
@@ -179,8 +180,16 @@ let shareReturnFocus = null;
 let qrScriptPromise = null;
 let shareScanner = null;
 let shareScanGeneration = 0;
-let shareShortcutRevealed = false;
+let isAlphaMode = false;
+let alphaModeDiscovered = false;
 const closeSettings = document.querySelector("#closeSettings");
+const releaseModeSettings = document.querySelector("#releaseModeSettings");
+const settingsAlphaMode = document.querySelector("#settingsAlphaMode");
+const releaseModeToggleLabel = document.querySelector("#releaseModeToggleLabel");
+const releaseModeDescription = document.querySelector("#releaseModeDescription");
+const alphaModeNote = document.querySelector("#alphaModeNote");
+const alphaModeNoteClose = document.querySelector("#alphaModeNoteClose");
+const alphaModeSettingsLink = document.querySelector("#alphaModeSettingsLink");
 const clearLocalDataButton = document.querySelector("#clearLocalData");
 const clearLocalDataStatus = document.querySelector("#clearLocalDataStatus");
 const settingsTheme = document.querySelector("#settingsTheme");
@@ -263,6 +272,8 @@ const resourceCategoryIcons = {
 const promotedPressTitleCountryCodes = new Set(["fr", "ca", "be", "ch", "us", "gb"]);
 const promotedPressTitleCountryMinimumCount = 20;
 const privacyNoticeDismissedKey = "bnf-access:v2:privacy-notice-dismissed:v1";
+const releaseModeStorageKey = "bnf-access:v2:release-mode:v1";
+const alphaModeDiscoveredStorageKey = "bnf-access:v2:alpha-discovered:v1";
 const favoriteStorageKey = "bnf-access:v2:favorites:v1";
 const favoriteStorageReadyKey = "bnf-access:v2:favorites-ready:v1";
 const favoriteOrderStorageKey = "bnf-access:v2:favorite-order:v1";
@@ -675,6 +686,7 @@ async function init() {
     loadFavorites();
     loadFavoriteLayout();
     loadProfileFilters();
+    loadReleaseMode();
     applyInitialViewFromUrl();
     renderFilters();
     renderLanguageFilterControls();
@@ -1001,6 +1013,7 @@ function setupPrivacyNotice() {
 }
 
 function openSettingsModal() {
+  closeAlphaModeNote();
   clearLocalDataStatus.textContent = "";
   settingsModal.hidden = false;
   document.body.classList.add("has-modal");
@@ -1046,7 +1059,6 @@ function setShareMode(mode) {
   document.querySelector("#shareIntro").textContent = mode === "import"
     ? "Collez un lien ou scannez son QR code. Vérifiez le contenu avant de remplacer vos réglages locaux."
     : "Choisissez ce que le lien contiendra.";
-  if (mode === "import") shareImportLink.focus();
 }
 
 function showShareModal(mode = "export") {
@@ -1139,6 +1151,18 @@ function openShareExport(trigger) {
   updateShareLink();
 }
 
+function isLocalShareHost(hostname) {
+  const host = hostname.toLowerCase();
+  if (["localhost", "127.0.0.1", "[::1]"].includes(host)
+    || host.endsWith(".localhost") || host.endsWith(".local")) return true;
+  const octets = host.split(".").map(Number);
+  if (octets.length !== 4 || octets.some((part) => !Number.isInteger(part) || part < 0 || part > 255)) return false;
+  return octets[0] === 10 || octets[0] === 127
+    || (octets[0] === 172 && octets[1] >= 16 && octets[1] <= 31)
+    || (octets[0] === 192 && octets[1] === 168)
+    || (octets[0] === 169 && octets[1] === 254);
+}
+
 function readShareLink(rawLink) {
   let url;
   try {
@@ -1146,7 +1170,9 @@ function readShareLink(rawLink) {
   } catch {
     throw new Error("Collez un lien de partage BnF Access complet.");
   }
-  if (![window.location.origin, "https://bnfaccess.fr"].includes(url.origin)
+  const acceptedOrigin = url.origin === "https://bnfaccess.fr"
+    || (url.protocol === "http:" && isLocalShareHost(url.hostname));
+  if (!acceptedOrigin
     || !["/", "/index.html"].includes(url.pathname)
     || url.search || url.username || url.password) {
     throw new Error("Ce lien ne vient pas de BnF Access.");
@@ -1337,6 +1363,9 @@ async function clearLocalData() {
       : "Aucune préférence locale BnF Access n'était enregistrée dans ce navigateur.",
     true,
   );
+  alphaModeDiscovered = false;
+  setAlphaMode(false, { persist: false });
+  closeAlphaModeNote();
 }
 
 function setClearLocalDataStatus(message, ok) {
@@ -1452,6 +1481,12 @@ function bindEvents() {
     saveColorBlindMode();
   });
 
+  settingsAlphaMode.addEventListener("change", (event) => {
+    setAlphaMode(event.target.checked);
+  });
+  alphaModeNoteClose.addEventListener("click", closeAlphaModeNote);
+  alphaModeSettingsLink.addEventListener("click", openSettingsModal);
+
   darkThemeQuery.addEventListener("change", () => {
     if (state.theme === "auto") {
       applyTheme();
@@ -1480,12 +1515,55 @@ function bindEvents() {
 
   openSettings.addEventListener("click", openSettingsModal);
   closeSettings.addEventListener("click", closeSettingsModal);
-  document.querySelector("#settingsShare").addEventListener("click", (event) => openShareExport(event.currentTarget));
+  let releaseTapCount = 0;
+  let releaseTapStartedAt = 0;
+  releaseModeLabel.addEventListener("click", () => {
+    const now = performance.now();
+    if (now - releaseTapStartedAt > 5000) {
+      releaseTapCount = 0;
+      releaseTapStartedAt = now;
+    }
+    releaseTapCount += 1;
+    if (releaseTapCount === 7) {
+      releaseTapCount = 0;
+      releaseTapStartedAt = 0;
+      setAlphaMode(!isAlphaMode, { gesture: true });
+    }
+  });
   shareExportTab.addEventListener("click", () => {
     setShareMode("export");
     updateShareLink();
   });
   shareImportTab.addEventListener("click", () => setShareMode("import"));
+  const pasteShareLink = document.querySelector("#pasteShareLink");
+  pasteShareLink.hidden = !window.isSecureContext || typeof navigator.clipboard?.readText !== "function";
+  pasteShareLink.addEventListener("click", async () => {
+    pendingShareImport = null;
+    confirmShareImport.disabled = true;
+    shareImportPreview.hidden = true;
+    let link;
+    try {
+      if (!navigator.clipboard?.readText) throw new Error("clipboard unavailable");
+      link = (await navigator.clipboard.readText()).trim();
+    } catch {
+      shareImportLink.focus();
+      shareImportStatus.textContent = window.matchMedia("(pointer: coarse)").matches
+        ? "Le navigateur bloque le collage automatique ici. Utilisez le menu Coller du champ."
+        : "Le navigateur bloque le collage automatique ici. Collez dans le champ avec ⌘V ou Ctrl+V.";
+      return;
+    }
+    if (!link) {
+      shareImportStatus.textContent = "Le presse-papiers est vide.";
+      return;
+    }
+    try {
+      readShareLink(link);
+      shareImportLink.value = link;
+      shareImportStatus.textContent = "Lien collé. Appuyez sur « Lire le lien ».";
+    } catch (error) {
+      shareImportStatus.textContent = error.message;
+    }
+  });
   document.querySelector("#shareImportForm").addEventListener("submit", async (event) => {
     event.preventDefault();
     try {
@@ -1516,12 +1594,24 @@ function bindEvents() {
     input.addEventListener("change", updateShareLink);
   });
   document.querySelector("#copyShareLink").addEventListener("click", async () => {
+    if (!shareLink.value) return;
+    if (!navigator.clipboard?.writeText) {
+      shareLink.select();
+      if (document.execCommand("copy")) {
+        shareStatus.textContent = "Lien copié.";
+      } else {
+        shareStatus.textContent = "Copiez le lien sélectionné avec ⌘C ou Ctrl+C.";
+      }
+      return;
+    }
     try {
       await navigator.clipboard.writeText(shareLink.value);
       shareStatus.textContent = "Lien copié.";
     } catch {
       shareLink.select();
-      shareStatus.textContent = "Sélectionnez et copiez le lien.";
+      shareStatus.textContent = document.execCommand("copy")
+        ? "Lien copié."
+        : "Copiez le lien sélectionné avec ⌘C ou Ctrl+C.";
     }
   });
   shareModal.addEventListener("click", (event) => {
@@ -1546,8 +1636,7 @@ function bindEvents() {
 
     if (usesOptionOnly && ["Enter", "NumpadEnter"].includes(event.code) && !event.repeat) {
       event.preventDefault();
-      shareShortcutRevealed = true;
-      renderQuickLaunch();
+      setAlphaMode(!isAlphaMode, { gesture: true });
       return;
     }
 
@@ -1563,7 +1652,7 @@ function bindEvents() {
       && !event.repeat
     ) {
       event.preventDefault();
-      toggleLinkConverter();
+      if (isAlphaMode) toggleLinkConverter();
       return;
     }
 
@@ -1579,6 +1668,10 @@ function bindEvents() {
       closePressPopularityNote();
     }
 
+    if (event.key === "Escape" && !alphaModeNote.hidden) {
+      closeAlphaModeNote();
+    }
+
     if (event.key === "Escape" && state.quickLaunchActionMenus.size) {
       state.quickLaunchActionMenus.clear();
       renderQuickLaunch();
@@ -1589,6 +1682,58 @@ function bindEvents() {
     searchControls.scrollIntoView({ behavior: "smooth", block: "start" });
     searchInput.focus({ preventScroll: true });
   });
+}
+
+function loadReleaseMode() {
+  alphaModeDiscovered = readStoredValue(alphaModeDiscoveredStorageKey) === "true";
+  setAlphaMode(alphaModeDiscovered && readStoredValue(releaseModeStorageKey) === "alpha", { persist: false });
+}
+
+function syncReleaseModeSettings() {
+  releaseModeSettings.hidden = !alphaModeDiscovered;
+  settingsAlphaMode.checked = isAlphaMode;
+  releaseModeToggleLabel.textContent = isAlphaMode ? "Mode Alpha" : "Mode Bêta";
+  releaseModeDescription.textContent = isAlphaMode
+    ? "Le mode Alpha propose des fonctionnalités expérimentales, parfois moins stables."
+    : "Le mode Bêta est plus stable, avec moins de fonctionnalités.";
+}
+
+function showAlphaModeNote() {
+  closePressPopularityNote();
+  alphaModeNote.hidden = false;
+  window.requestAnimationFrame(() => {
+    alphaModeNote.classList.add("is-visible");
+    syncPressPopularityNoteDockOffset();
+  });
+}
+
+function closeAlphaModeNote() {
+  if (alphaModeNote.hidden) return;
+  alphaModeNote.classList.remove("is-visible");
+  alphaModeNote.hidden = true;
+  syncPressPopularityNoteDockOffset();
+}
+
+function setAlphaMode(enabled, { gesture = false, persist = true } = {}) {
+  const firstDiscovery = enabled && gesture && !alphaModeDiscovered;
+  if (firstDiscovery) {
+    alphaModeDiscovered = true;
+    writeStoredValue(alphaModeDiscoveredStorageKey, "true");
+  }
+  isAlphaMode = enabled;
+  releaseModeLabel.textContent = enabled ? "ALPHA" : "BETA";
+  syncReleaseModeSettings();
+  if (persist) writeStoredValue(releaseModeStorageKey, enabled ? "alpha" : "beta");
+  if (enabled) {
+    linkConverter.hidden = false;
+    loadDeferredLinkSources();
+  } else {
+    if (!linkConverter.hidden) toggleLinkConverter();
+    if (!shareModal.hidden) closeShareModal();
+    closeAlphaModeNote();
+  }
+  renderQuickLaunch();
+  if (firstDiscovery) showAlphaModeNote();
 }
 
 function toggleLinkConverter() {
@@ -4707,7 +4852,7 @@ function createQuickLaunchHeader(favorites) {
     share.title = "Partager ma configuration";
     share.innerHTML = '<svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.7 10.6 6.6-4.2m-6.6 7 6.6 4.2"/></svg>';
     share.addEventListener("click", () => openShareExport(share));
-    if (shareShortcutRevealed) actions.append(share);
+    if (isAlphaMode) actions.append(share);
     actions.append(createActionButton("Modifier", startQuickLaunchEdit, "neutral"));
   }
 
@@ -7450,6 +7595,7 @@ function revealPressTitleNote(resource, noteKind) {
 }
 
 function revealContextNote(resourceId, noteKind, title) {
+  closeAlphaModeNote();
   const wasHidden = pressPopularityNote.hidden;
   window.clearTimeout(pressPopularityNoteCloseTimer);
   pressPopularityNoteCloseTimer = null;
@@ -7490,10 +7636,12 @@ function closePressPopularityNote() {
 function syncPressPopularityNoteDockOffset() {
   if (!jumpToSearchDock) return;
 
-  const noteIsOpen = !pressPopularityNote.hidden && pressPopularityNote.classList.contains("is-visible");
+  const activeNote = [pressPopularityNote, alphaModeNote].find(
+    (note) => !note.hidden && note.classList.contains("is-visible"),
+  );
   let offset = 0;
-  if (noteIsOpen) {
-    const noteRect = pressPopularityNote.getBoundingClientRect();
+  if (activeNote) {
+    const noteRect = activeNote.getBoundingClientRect();
     const dockRect = jumpToSearchDock.getBoundingClientRect();
     const overlapsHorizontally = dockRect.left < noteRect.right && dockRect.right > noteRect.left;
     if (overlapsHorizontally) offset = Math.ceil(noteRect.height) + 10;

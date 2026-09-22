@@ -686,6 +686,8 @@ body.is-catalog-favorites-preview.has-catalog-preview-inspector main {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0;
+  touch-action: manipulation;
+  user-select: none;
 }
 
 h1,
@@ -5539,6 +5541,77 @@ button.badge.recommended {
   padding: 18px;
 }
 
+.settings-panel[hidden] {
+  display: none;
+}
+
+.release-mode-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  flex: 0 0 auto;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.release-mode-toggle input {
+  position: absolute;
+  opacity: 0;
+}
+
+.release-mode-track {
+  position: relative;
+  width: 42px;
+  height: 24px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--control-bg);
+}
+
+.release-mode-track::after {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--muted);
+  content: "";
+  transition: transform 150ms ease;
+}
+
+.release-mode-toggle input:checked + .release-mode-track {
+  border-color: var(--accent);
+  background: var(--selected-soft);
+}
+
+.release-mode-toggle input:checked + .release-mode-track::after {
+  background: var(--accent);
+  transform: translateX(18px);
+}
+
+.release-mode-toggle input:focus-visible + .release-mode-track {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.alpha-mode-settings-link {
+  border: 0;
+  background: none;
+  color: var(--accent);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.alpha-mode-settings-link span {
+  display: inline-block;
+  margin-right: 3px;
+  text-decoration: none;
+}
+
 .settings-panel + .settings-panel {
   border-top: 1px solid var(--line);
 }
@@ -5728,6 +5801,16 @@ button.badge.recommended {
   gap: 10px;
 }
 
+.share-import-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+#pasteShareLink {
+  margin-right: auto;
+}
+
 .share-scan-panel[hidden],
 .share-import-preview[hidden] {
   display: none;
@@ -5744,16 +5827,6 @@ button.badge.recommended {
 .share-scan-panel button,
 .share-scan > button {
   justify-self: start;
-}
-
-@media (max-width: 520px) {
-  .share-import-form .share-link-row {
-    flex-direction: column;
-  }
-
-  .share-import-form .share-link-row button {
-    align-self: end;
-  }
 }
 
 .share-qr {

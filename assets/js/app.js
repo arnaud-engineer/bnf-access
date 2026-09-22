@@ -157,6 +157,7 @@ const jumpToSearch = document.querySelector("#jumpToSearch");
 const openSettings = document.querySelector("#openSettings");
 const settingsModal = document.querySelector("#settingsModal");
 const shareModal = document.querySelector("#shareModal");
+const openShareFromSettings = document.querySelector("#openShareFromSettings");
 const shareExportTab = document.querySelector("#shareExportTab");
 const shareImportTab = document.querySelector("#shareImportTab");
 const shareExport = document.querySelector("#shareExport");
@@ -1534,6 +1535,7 @@ function bindEvents() {
   settingsAlphaMode.addEventListener("change", (event) => {
     setAlphaMode(event.target.checked);
   });
+  openShareFromSettings.addEventListener("click", () => openShareExport(openShareFromSettings));
   alphaModeNoteClose.addEventListener("click", closeAlphaModeNote);
   alphaModeSettingsLink.addEventListener("click", openSettingsModal);
 
@@ -1800,7 +1802,6 @@ function setAlphaMode(enabled, { gesture = false, persist = true } = {}) {
     loadDeferredLinkSources();
   } else {
     if (!linkConverter.hidden) toggleLinkConverter();
-    if (!shareModal.hidden) closeShareModal();
     closeAlphaModeNote();
   }
   renderQuickLaunch();
@@ -4923,7 +4924,7 @@ function createQuickLaunchHeader(favorites) {
     share.title = "Partager ma configuration";
     share.innerHTML = '<svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.7 10.6 6.6-4.2m-6.6 7 6.6 4.2"/></svg>';
     share.addEventListener("click", () => openShareExport(share));
-    if (isAlphaMode) actions.append(share);
+    actions.append(share);
     actions.append(createActionButton("Modifier", startQuickLaunchEdit, "neutral"));
   }
 

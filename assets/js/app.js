@@ -316,6 +316,7 @@ const themeCycle = ["light", "dark", "oled"];
 const darkThemeQuery = window.matchMedia("(prefers-color-scheme: dark)");
 const pressTitleMediumLayoutQuery = window.matchMedia("(max-width: 980px)");
 const pressTitleNarrowLayoutQuery = window.matchMedia("(max-width: 640px)");
+let entryCardColumnCount = getEntryCardColumnCount();
 const compactLanguageCodes = {
   enm: "ME",
   grc: "GR",
@@ -1547,6 +1548,8 @@ function bindEvents() {
 
   pressTitleMediumLayoutQuery.addEventListener("change", syncPressTitleEditorialBranchExpansion);
   pressTitleNarrowLayoutQuery.addEventListener("change", syncPressTitleEditorialBranchExpansion);
+  pressTitleMediumLayoutQuery.addEventListener("change", syncEntryGridColumns);
+  pressTitleNarrowLayoutQuery.addEventListener("change", syncEntryGridColumns);
 
   settingsPassFilter.addEventListener("change", (event) => {
     state.passFilter = event.target.value;
@@ -5242,9 +5245,10 @@ function renderResourceGrid(options = {}) {
 
 function appendCardRange(list, resources, startIndex, endIndex, options = {}) {
   let currentRow = null;
+  const columns = getEntryCardColumnCount();
 
   for (let index = startIndex; index < endIndex; index += 1) {
-    if (index % 3 === 0) {
+    if (index % columns === 0) {
       currentRow = document.createElement("div");
       currentRow.className = "entry-row";
       list.append(currentRow);
@@ -5257,6 +5261,38 @@ function appendCardRange(list, resources, startIndex, endIndex, options = {}) {
   }
 
   return endIndex - startIndex;
+}
+
+function getEntryCardColumnCount() {
+  if (pressTitleNarrowLayoutQuery.matches) return 1;
+  if (pressTitleMediumLayoutQuery.matches) return 2;
+  return 3;
+}
+
+function syncEntryGridColumns() {
+  const columns = getEntryCardColumnCount();
+  if (columns === entryCardColumnCount) return;
+  entryCardColumnCount = columns;
+
+  document.querySelectorAll(".entry-grid").forEach((list) => {
+    const cards = Array.from(list.children).flatMap((row) => (
+      row.classList.contains("entry-row") ? Array.from(row.children) : []
+    ));
+    if (!cards.length) return;
+
+    const rows = document.createDocumentFragment();
+    for (let index = 0; index < cards.length; index += columns) {
+      const row = document.createElement("div");
+      row.className = "entry-row";
+      row.append(...cards.slice(index, index + columns));
+      rows.append(row);
+    }
+
+    Array.from(list.children)
+      .filter((child) => child.classList.contains("entry-row"))
+      .forEach((row) => row.remove());
+    list.append(rows);
+  });
 }
 
 function beginProgressiveCardRendering(renderVersion, sections) {

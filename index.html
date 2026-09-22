@@ -45,7 +45,7 @@
         );
       } catch {}
     </script>
-    <link rel="stylesheet" href="./assets/css/styles.css?v=2026-09-22-share-prototype">
+    <link rel="stylesheet" href="./assets/css/styles.css?v=2026-09-22-share-import">
   </head>
   <body class="is-loading">
     <div id="appLoader" class="app-loader" role="status" aria-live="polite">
@@ -278,6 +278,10 @@
             <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
           </button>
         </div>
+        <div class="share-tabs" role="tablist" aria-label="Configuration">
+          <button id="shareExportTab" type="button" role="tab" aria-controls="shareExport" aria-selected="true">Partager</button>
+          <button id="shareImportTab" type="button" role="tab" aria-controls="shareImport" aria-selected="false">Importer</button>
+        </div>
         <div id="shareExport" class="share-content">
           <fieldset class="share-options">
             <legend>Contenu du partage</legend>
@@ -295,12 +299,28 @@
           <p id="shareStatus" class="share-status" role="status" aria-live="polite"></p>
         </div>
         <div id="shareImport" class="share-content" hidden>
-          <p id="shareImportSummary"></p>
-          <p id="shareImportDetails" class="share-muted"></p>
+          <form id="shareImportForm" class="share-import-form">
+            <label class="share-link-label" for="shareImportLink">Lien de partage</label>
+            <div class="share-link-row">
+              <input id="shareImportLink" type="url" inputmode="url" autocomplete="off" spellcheck="false" placeholder="https://bnfaccess.fr/#share=…" required>
+              <button class="settings-action" type="submit">Lire le lien</button>
+            </div>
+          </form>
+          <div class="share-scan">
+            <button id="startShareScan" class="quick-launch-action" type="button">Scanner un QR code</button>
+            <div id="shareScanPanel" class="share-scan-panel" hidden>
+              <video id="shareScanVideo" playsinline muted></video>
+              <button id="stopShareScan" class="quick-launch-action" type="button">Arrêter la caméra</button>
+            </div>
+          </div>
           <p id="shareImportStatus" class="share-status" role="status" aria-live="polite"></p>
-          <div class="share-import-actions">
-            <button id="cancelShareImport" class="quick-launch-action" type="button">Annuler</button>
-            <button id="confirmShareImport" class="settings-action" type="button">Remplacer sur cet appareil</button>
+          <div id="shareImportPreview" class="share-import-preview" hidden>
+            <p id="shareImportSummary"></p>
+            <p id="shareImportDetails" class="share-muted"></p>
+            <div class="share-import-actions">
+              <button id="cancelShareImport" class="quick-launch-action" type="button">Annuler</button>
+              <button id="confirmShareImport" class="settings-action" type="button">Remplacer sur cet appareil</button>
+            </div>
           </div>
         </div>
       </section>
@@ -367,6 +387,6 @@
       </nav>
     </footer>
 
-    <script src="./assets/js/app.js?v=2026-09-22-share-prototype" type="module"></script>
+    <script src="./assets/js/app.js?v=2026-09-22-share-import" type="module"></script>
   </body>
 </html>

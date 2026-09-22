@@ -156,8 +156,14 @@ const jumpToSearch = document.querySelector("#jumpToSearch");
 const openSettings = document.querySelector("#openSettings");
 const settingsModal = document.querySelector("#settingsModal");
 const shareModal = document.querySelector("#shareModal");
+const shareExportTab = document.querySelector("#shareExportTab");
+const shareImportTab = document.querySelector("#shareImportTab");
 const shareExport = document.querySelector("#shareExport");
 const shareImport = document.querySelector("#shareImport");
+const shareImportLink = document.querySelector("#shareImportLink");
+const shareImportPreview = document.querySelector("#shareImportPreview");
+const shareScanPanel = document.querySelector("#shareScanPanel");
+const shareScanVideo = document.querySelector("#shareScanVideo");
 const shareLink = document.querySelector("#shareLink");
 const shareQr = document.querySelector("#shareQr");
 const shareStatus = document.querySelector("#shareStatus");
@@ -171,6 +177,9 @@ let pendingShareImport = null;
 let shareGeneration = 0;
 let shareReturnFocus = null;
 let qrScriptPromise = null;
+let shareScanner = null;
+let shareScanGeneration = 0;
+let shareShortcutRevealed = false;
 const closeSettings = document.querySelector("#closeSettings");
 const clearLocalDataButton = document.querySelector("#clearLocalData");
 const clearLocalDataStatus = document.querySelector("#clearLocalDataStatus");
@@ -1010,14 +1019,38 @@ function closeSettingsModal() {
   openSettings.focus();
 }
 
-function showShareModal(mode = "export") {
+function stopShareScanning() {
+  shareScanGeneration += 1;
+  const scanner = shareScanner;
+  shareScanner = null;
+  if (scanner) {
+    scanner.pause(true).catch(() => {});
+    scanner.destroy();
+  }
+  if (shareScanVideo.srcObject) {
+    shareScanVideo.srcObject.getTracks().forEach((track) => track.stop());
+    shareScanVideo.srcObject = null;
+  }
+  shareScanPanel.hidden = true;
+  document.querySelector("#startShareScan").disabled = false;
+}
+
+function setShareMode(mode) {
+  stopShareScanning();
   shareExport.hidden = mode !== "export";
   shareImport.hidden = mode !== "import";
+  shareExportTab.setAttribute("aria-selected", String(mode === "export"));
+  shareImportTab.setAttribute("aria-selected", String(mode === "import"));
   document.querySelector("#shareTitle").textContent = mode === "import"
-    ? "Recevoir une configuration" : "Partager ma configuration";
+    ? "Importer une configuration" : "Partager ma configuration";
   document.querySelector("#shareIntro").textContent = mode === "import"
-    ? "Vérifiez le contenu avant de remplacer vos réglages locaux."
+    ? "Collez un lien ou scannez son QR code. Vérifiez le contenu avant de remplacer vos réglages locaux."
     : "Choisissez ce que le lien contiendra.";
+  if (mode === "import") shareImportLink.focus();
+}
+
+function showShareModal(mode = "export") {
+  setShareMode(mode);
   shareModal.hidden = false;
   document.body.classList.add("has-modal");
   window.requestAnimationFrame(() => {
@@ -1027,6 +1060,7 @@ function showShareModal(mode = "export") {
 }
 
 function closeShareModal() {
+  stopShareScanning();
   shareModal.classList.remove("is-open");
   document.body.classList.remove("has-modal");
   window.setTimeout(() => { shareModal.hidden = true; }, converterResourcesAnimationMs);
@@ -1105,10 +1139,71 @@ function openShareExport(trigger) {
   updateShareLink();
 }
 
+function readShareLink(rawLink) {
+  let url;
+  try {
+    url = new URL(rawLink.trim());
+  } catch {
+    throw new Error("Collez un lien de partage BnF Access complet.");
+  }
+  if (![window.location.origin, "https://bnfaccess.fr"].includes(url.origin)
+    || !["/", "/index.html"].includes(url.pathname)
+    || url.search || url.username || url.password) {
+    throw new Error("Ce lien ne vient pas de BnF Access.");
+  }
+  const token = url.hash.startsWith("#share=") ? url.hash.slice(7) : "";
+  if (!/^1[zr]\.[A-Za-z0-9_-]+$/.test(token) || token.length > 120000) {
+    throw new Error("Ce lien ne contient pas de configuration partageable.");
+  }
+  return token;
+}
+
+async function startShareScanning() {
+  if (shareScanner) return;
+  if (!navigator.mediaDevices?.getUserMedia) {
+    shareImportStatus.textContent = "Caméra indisponible ici. Collez le lien à la place.";
+    return;
+  }
+  const generation = ++shareScanGeneration;
+  const button = document.querySelector("#startShareScan");
+  button.disabled = true;
+  shareScanPanel.hidden = false;
+  shareImportStatus.textContent = "Ouverture de la caméra…";
+  try {
+    const { default: QrScanner } = await import("./vendor/qr-scanner.min.js");
+    if (generation !== shareScanGeneration) return;
+    const scanner = new QrScanner(shareScanVideo, (result) => {
+      try {
+        const token = readShareLink(result.data);
+        stopShareScanning();
+        loadPressCatalog().then(() => openIncomingShare(token)).catch(() => {
+          shareImportStatus.textContent = "Impossible de charger le catalogue pour cet import.";
+        });
+      } catch (error) {
+        shareImportStatus.textContent = error.message;
+      }
+    }, { preferredCamera: "environment", returnDetailedScanResult: true });
+    shareScanner = scanner;
+    await scanner.start();
+    if (generation !== shareScanGeneration) return;
+    shareImportStatus.textContent = "Cadrez le QR code de partage.";
+  } catch (error) {
+    if (generation !== shareScanGeneration) return;
+    stopShareScanning();
+    shareImportStatus.textContent = error?.name === "NotAllowedError"
+      ? "Accès à la caméra refusé. Collez le lien à la place."
+      : "Impossible de démarrer la caméra. Collez le lien à la place.";
+  }
+}
+
 async function openIncomingShare(token) {
-  shareReturnFocus = document.querySelector("#openSettings");
-  showShareModal("import");
+  if (shareModal.hidden) {
+    shareReturnFocus = document.querySelector("#openSettings");
+    showShareModal("import");
+  }
+  else setShareMode("import");
   pendingShareImport = null;
+  shareImportPreview.hidden = true;
   confirmShareImport.disabled = true;
   shareImportStatus.textContent = "Lecture du lien…";
   try {
@@ -1142,6 +1237,7 @@ async function openIncomingShare(token) {
     shareImportSummary.textContent = `${knownIds.length} favori${knownIds.length > 1 ? "s" : ""}, ${normalizedLayout.rows.length} rangée${normalizedLayout.rows.length > 1 ? "s" : ""} et ${editions.size} édition${editions.size > 1 ? "s" : ""} sélectionnée${editions.size > 1 ? "s" : ""}.`;
     shareImportDetails.textContent = `${profile ? "Configuration complète : profil, langues, thème et accessibilité seront aussi remplacés." : "Favoris uniquement : votre profil et votre apparence seront conservés."}${missingCount ? ` ${missingCount} ressource(s) absente(s) du catalogue actuel seront ignorée(s).` : ""}`;
     shareImportStatus.textContent = "Rien n’a encore été modifié sur cet appareil.";
+    shareImportPreview.hidden = false;
     confirmShareImport.disabled = false;
   } catch (error) {
     shareImportSummary.textContent = "Impossible de recevoir cette configuration.";
@@ -1385,6 +1481,34 @@ function bindEvents() {
   openSettings.addEventListener("click", openSettingsModal);
   closeSettings.addEventListener("click", closeSettingsModal);
   document.querySelector("#settingsShare").addEventListener("click", (event) => openShareExport(event.currentTarget));
+  shareExportTab.addEventListener("click", () => {
+    setShareMode("export");
+    updateShareLink();
+  });
+  shareImportTab.addEventListener("click", () => setShareMode("import"));
+  document.querySelector("#shareImportForm").addEventListener("submit", async (event) => {
+    event.preventDefault();
+    try {
+      const token = readShareLink(shareImportLink.value);
+      stopShareScanning();
+      await loadPressCatalog();
+      await openIncomingShare(token);
+    } catch (error) {
+      pendingShareImport = null;
+      confirmShareImport.disabled = true;
+      shareImportPreview.hidden = true;
+      shareImportStatus.textContent = error.message;
+    }
+  });
+  document.querySelector("#startShareScan").addEventListener("click", startShareScanning);
+  document.querySelector("#stopShareScan").addEventListener("click", () => {
+    stopShareScanning();
+    shareImportStatus.textContent = "Caméra arrêtée.";
+  });
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden && shareScanner) stopShareScanning();
+  });
+  window.addEventListener("pagehide", stopShareScanning);
   document.querySelector("#closeShare").addEventListener("click", closeShareModal);
   document.querySelector("#cancelShareImport").addEventListener("click", closeShareModal);
   confirmShareImport.addEventListener("click", applyIncomingShare);
@@ -1419,6 +1543,13 @@ function bindEvents() {
   document.addEventListener("keydown", (event) => {
     interruptBackgroundAssetWarmup();
     const usesOptionOnly = event.altKey && !event.ctrlKey && !event.metaKey && !event.shiftKey;
+
+    if (usesOptionOnly && ["Enter", "NumpadEnter"].includes(event.code) && !event.repeat) {
+      event.preventDefault();
+      shareShortcutRevealed = true;
+      renderQuickLaunch();
+      return;
+    }
 
     if (usesOptionOnly && event.key === "Tab" && !event.repeat) {
       event.preventDefault();
@@ -4576,7 +4707,7 @@ function createQuickLaunchHeader(favorites) {
     share.title = "Partager ma configuration";
     share.innerHTML = '<svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.7 10.6 6.6-4.2m-6.6 7 6.6 4.2"/></svg>';
     share.addEventListener("click", () => openShareExport(share));
-    actions.append(share);
+    if (shareShortcutRevealed) actions.append(share);
     actions.append(createActionButton("Modifier", startQuickLaunchEdit, "neutral"));
   }
 

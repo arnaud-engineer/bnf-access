@@ -5635,6 +5635,28 @@ button.badge.recommended {
   width: min(620px, 100%);
 }
 
+.share-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--line);
+}
+
+.share-tabs button {
+  flex: 1;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  padding: 12px;
+  background: var(--surface);
+  color: var(--muted);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.share-tabs button[aria-selected="true"] {
+  border-bottom-color: var(--accent);
+  color: var(--ink);
+}
+
 .share-content {
   display: grid;
   gap: 14px;
@@ -5696,6 +5718,42 @@ button.badge.recommended {
   color: var(--ink);
   padding: 8px;
   font: inherit;
+}
+
+.share-import-form,
+.share-scan,
+.share-scan-panel,
+.share-import-preview {
+  display: grid;
+  gap: 10px;
+}
+
+.share-scan-panel[hidden],
+.share-import-preview[hidden] {
+  display: none;
+}
+
+.share-scan-panel video {
+  width: 100%;
+  max-height: 42dvh;
+  aspect-ratio: 4 / 3;
+  background: #000;
+  object-fit: cover;
+}
+
+.share-scan-panel button,
+.share-scan > button {
+  justify-self: start;
+}
+
+@media (max-width: 520px) {
+  .share-import-form .share-link-row {
+    flex-direction: column;
+  }
+
+  .share-import-form .share-link-row button {
+    align-self: end;
+  }
 }
 
 .share-qr {

@@ -5795,7 +5795,6 @@ button.badge.recommended {
 
 .share-import-form,
 .share-scan,
-.share-scan-panel,
 .share-import-preview {
   display: grid;
   gap: 10px;
@@ -5811,20 +5810,88 @@ button.badge.recommended {
   margin-right: auto;
 }
 
-.share-scan-panel[hidden],
 .share-import-preview[hidden] {
   display: none;
 }
 
-.share-scan-panel video {
-  width: 100%;
-  max-height: 42dvh;
-  aspect-ratio: 4 / 3;
+.share-content.has-preview > .share-import-form,
+.share-content.has-preview > .share-scan,
+.share-content.has-preview > #shareImportStatus {
+  display: none;
+}
+
+.share-import-preview h3 {
+  margin: 0;
+  font-size: 1.12rem;
+}
+
+.share-scan-panel {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
   background: #000;
+  color: #fff;
+}
+
+.share-scan-panel[hidden] {
+  display: none;
+}
+
+.share-scan-panel video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
-.share-scan-panel button,
+.share-scan-topbar {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: max(18px, env(safe-area-inset-top)) max(18px, env(safe-area-inset-right)) 18px max(18px, env(safe-area-inset-left));
+  background: linear-gradient(#000b, transparent);
+}
+
+.share-scan-topbar .settings-close {
+  width: 44px;
+  height: 44px;
+  background: #111a;
+  border-color: #fff8;
+  color: #fff;
+}
+
+.share-scan-target {
+  position: relative;
+  width: min(66vw, 66dvh, 420px);
+  aspect-ratio: 1;
+  border: 3px solid #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 0 100vmax #0007;
+  pointer-events: none;
+}
+
+.share-scan-status {
+  position: absolute;
+  z-index: 1;
+  bottom: max(24px, env(safe-area-inset-bottom));
+  left: 24px;
+  right: 24px;
+  margin: 0;
+  text-align: center;
+  font-weight: 700;
+  text-shadow: 0 1px 6px #000;
+}
+
 .share-scan > button {
   justify-self: start;
 }

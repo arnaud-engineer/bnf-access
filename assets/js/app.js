@@ -1445,6 +1445,9 @@ function applyTheme() {
     oled: "#000000",
   };
   document.querySelector("#themeColor")?.setAttribute("content", browserThemeColors[resolvedTheme]);
+  if (window.parent !== window) {
+    window.parent.postMessage({ type: "bnf-access:theme", theme: resolvedTheme }, "https://app.bnfaccess.fr");
+  }
 
   settingsTheme.value = state.theme;
   settingsTheme.closest("label")?.classList.toggle("has-selected-profile", state.theme !== "auto");

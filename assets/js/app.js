@@ -1050,6 +1050,7 @@ function stopShareScanning() {
 
 function setShareMode(mode) {
   stopShareScanning();
+  document.querySelector("#chooseShareQrPhoto").hidden = true;
   shareExport.hidden = mode !== "export";
   shareImport.hidden = mode !== "import";
   shareExportTab.setAttribute("aria-selected", String(mode === "export"));
@@ -1187,13 +1188,14 @@ function readShareLink(rawLink) {
 async function startShareScanning() {
   if (shareScanner) return;
   if (!navigator.mediaDevices?.getUserMedia) {
-    shareImportStatus.textContent = "Caméra indisponible ici. Collez le lien à la place.";
+    document.querySelector("#chooseShareQrPhoto").hidden = false;
+    shareImportStatus.textContent = "Flux caméra indisponible ici. Vous pouvez prendre une photo du QR code ou coller le lien.";
     return;
   }
   const generation = ++shareScanGeneration;
   const button = document.querySelector("#startShareScan");
   button.disabled = true;
-  shareScanPanel.hidden = false;
+  document.querySelector("#chooseShareQrPhoto").hidden = true;
   shareImportStatus.textContent = "Ouverture de la caméra…";
   try {
     const { default: QrScanner } = await import("./vendor/qr-scanner.min.js");
@@ -1212,13 +1214,36 @@ async function startShareScanning() {
     shareScanner = scanner;
     await scanner.start();
     if (generation !== shareScanGeneration) return;
+    shareScanPanel.hidden = false;
     shareImportStatus.textContent = "Cadrez le QR code de partage.";
   } catch (error) {
     if (generation !== shareScanGeneration) return;
     stopShareScanning();
+    document.querySelector("#chooseShareQrPhoto").hidden = false;
+    const reason = error?.name && error.name !== "Error" ? ` (${error.name})` : "";
     shareImportStatus.textContent = error?.name === "NotAllowedError"
-      ? "Accès à la caméra refusé. Collez le lien à la place."
-      : "Impossible de démarrer la caméra. Collez le lien à la place.";
+      ? `Accès à la caméra refusé${reason}. Vous pouvez prendre une photo du QR code ou coller le lien.`
+      : `Impossible de démarrer la caméra${reason}. Vous pouvez prendre une photo du QR code ou coller le lien.`;
+  }
+}
+
+async function readShareQrPhoto(file) {
+  if (!file) return;
+  const generation = shareScanGeneration;
+  shareImportStatus.textContent = "Lecture du QR code…";
+  try {
+    const { default: QrScanner } = await import("./vendor/qr-scanner.min.js");
+    const result = await QrScanner.scanImage(file, { returnDetailedScanResult: true });
+    if (generation !== shareScanGeneration || shareModal.hidden || shareImport.hidden) return;
+    const token = readShareLink(result.data);
+    await loadPressCatalog();
+    if (generation !== shareScanGeneration || shareModal.hidden || shareImport.hidden) return;
+    await openIncomingShare(token);
+  } catch (error) {
+    if (generation !== shareScanGeneration || shareModal.hidden || shareImport.hidden) return;
+    shareImportStatus.textContent = String(error).includes("No QR code found")
+      ? "Aucun QR code trouvé dans cette photo. Réessayez ou collez le lien."
+      : error?.message || "Impossible de lire ce QR code. Réessayez ou collez le lien.";
   }
 }
 
@@ -1579,6 +1604,14 @@ function bindEvents() {
     }
   });
   document.querySelector("#startShareScan").addEventListener("click", startShareScanning);
+  document.querySelector("#chooseShareQrPhoto").addEventListener("click", () => {
+    document.querySelector("#shareQrPhoto").click();
+  });
+  document.querySelector("#shareQrPhoto").addEventListener("change", (event) => {
+    const file = event.target.files?.[0];
+    event.target.value = "";
+    readShareQrPhoto(file);
+  });
   document.querySelector("#stopShareScan").addEventListener("click", () => {
     stopShareScanning();
     shareImportStatus.textContent = "Caméra arrêtée.";

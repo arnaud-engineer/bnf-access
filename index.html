@@ -315,6 +315,8 @@
           </form>
           <div class="share-scan">
             <button id="startShareScan" class="quick-launch-action" type="button">Scanner un QR code</button>
+            <button id="chooseShareQrPhoto" class="quick-launch-action" type="button" hidden>Prendre une photo du QR code</button>
+            <input id="shareQrPhoto" type="file" accept="image/*" capture="environment" hidden>
             <div id="shareScanPanel" class="share-scan-panel" hidden>
               <video id="shareScanVideo" playsinline muted></video>
               <button id="stopShareScan" class="quick-launch-action" type="button">Arrêter la caméra</button>
@@ -404,6 +406,6 @@
       </nav>
     </footer>
 
-    <script src="./assets/js/app.js?v=2026-09-22-alpha-persist" type="module"></script>
+    <script src="./assets/js/app.js?v=2026-09-22-qr-photo" type="module"></script>
   </body>
 </html>

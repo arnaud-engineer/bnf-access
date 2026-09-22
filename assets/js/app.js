@@ -23,6 +23,19 @@ import {
   normalizeFavoriteLayout,
   removeFavoriteResource,
 } from "./favorite-layout.js?v=2026-09-13";
+import {
+  decodeShareConfig,
+  encodeShareConfig,
+  packFavoriteLayout,
+  unpackFavoriteLayout,
+} from "./share-config.js?v=2026-09-22";
+
+const incomingShareToken = window.location.hash.startsWith("#share=")
+  ? window.location.hash.slice("#share=".length)
+  : null;
+if (incomingShareToken) {
+  window.history.replaceState(null, "", window.location.pathname + window.location.search);
+}
 
 const catalogFavoritesPreview = new URLSearchParams(window.location.search)
   .get("catalog-editor-preview") === "all-favorites";
@@ -142,6 +155,22 @@ const jumpToSearchDock = document.querySelector(".jump-to-search-dock");
 const jumpToSearch = document.querySelector("#jumpToSearch");
 const openSettings = document.querySelector("#openSettings");
 const settingsModal = document.querySelector("#settingsModal");
+const shareModal = document.querySelector("#shareModal");
+const shareExport = document.querySelector("#shareExport");
+const shareImport = document.querySelector("#shareImport");
+const shareLink = document.querySelector("#shareLink");
+const shareQr = document.querySelector("#shareQr");
+const shareStatus = document.querySelector("#shareStatus");
+const shareScopeDetails = document.querySelector("#shareScopeDetails");
+const shareNetworkHint = document.querySelector("#shareNetworkHint");
+const shareImportSummary = document.querySelector("#shareImportSummary");
+const shareImportDetails = document.querySelector("#shareImportDetails");
+const shareImportStatus = document.querySelector("#shareImportStatus");
+const confirmShareImport = document.querySelector("#confirmShareImport");
+let pendingShareImport = null;
+let shareGeneration = 0;
+let shareReturnFocus = null;
+let qrScriptPromise = null;
 const closeSettings = document.querySelector("#closeSettings");
 const clearLocalDataButton = document.querySelector("#clearLocalData");
 const clearLocalDataStatus = document.querySelector("#clearLocalDataStatus");
@@ -653,7 +682,10 @@ async function init() {
   revealApp();
   if (!catalogFavoritesPreview) {
     scheduleDeferredStartupWork();
-    loadPressCatalog();
+    const pressReady = loadPressCatalog();
+    if (incomingShareToken) {
+      pressReady.then(() => openIncomingShare(incomingShareToken));
+    }
   }
 }
 
@@ -978,6 +1010,202 @@ function closeSettingsModal() {
   openSettings.focus();
 }
 
+function showShareModal(mode = "export") {
+  shareExport.hidden = mode !== "export";
+  shareImport.hidden = mode !== "import";
+  document.querySelector("#shareTitle").textContent = mode === "import"
+    ? "Recevoir une configuration" : "Partager ma configuration";
+  document.querySelector("#shareIntro").textContent = mode === "import"
+    ? "Vérifiez le contenu avant de remplacer vos réglages locaux."
+    : "Choisissez ce que le lien contiendra.";
+  shareModal.hidden = false;
+  document.body.classList.add("has-modal");
+  window.requestAnimationFrame(() => {
+    shareModal.classList.add("is-open");
+    document.querySelector("#closeShare").focus();
+  });
+}
+
+function closeShareModal() {
+  shareModal.classList.remove("is-open");
+  document.body.classList.remove("has-modal");
+  window.setTimeout(() => { shareModal.hidden = true; }, converterResourcesAnimationMs);
+  shareReturnFocus?.focus();
+  pendingShareImport = null;
+}
+
+async function loadQrGenerator() {
+  if (window.qrcode) return window.qrcode;
+  if (!qrScriptPromise) {
+    qrScriptPromise = new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src = "./assets/js/vendor/qrcode-generator.js";
+      script.onload = () => resolve(window.qrcode);
+      script.onerror = () => reject(new Error("Impossible de charger le générateur de QR code."));
+      document.head.append(script);
+    });
+  }
+  return qrScriptPromise;
+}
+
+async function updateShareLink() {
+  const generation = ++shareGeneration;
+  const mode = document.querySelector('input[name="shareScope"]:checked').value;
+  shareScopeDetails.textContent = mode === "c"
+    ? "Favoris, dossiers, éditions choisies, profil, langues, thème et accessibilité."
+    : "Favoris, dossiers et éditions choisies. Les autres réglages du destinataire restent inchangés.";
+  shareStatus.textContent = "Création du lien…";
+  shareQr.replaceChildren();
+  shareLink.value = "";
+  shareNetworkHint.hidden = !["localhost", "127.0.0.1", "::1"].includes(window.location.hostname);
+  shareNetworkHint.textContent = "Ce lien pointe vers cet appareil. Pour le scanner avec un téléphone, ouvrez d’abord le site via son adresse IP locale.";
+  try {
+    await loadPressCatalog();
+    if (state.pressLoadError) throw new Error("Le catalogue de presse doit être chargé avant le partage.");
+    const config = {
+      v: 1,
+      m: mode,
+      l: packFavoriteLayout(state.favoriteLayout),
+      e: [...state.editionSelections],
+    };
+    if (mode === "c") {
+      config.p = [state.passFilter, state.siteAccess, state.remoteFilter,
+        [...state.languageFilter], state.theme, state.colorBlindMode ? 1 : 0];
+    }
+    const encoded = await encodeShareConfig(config);
+    const url = new URL(window.location.pathname, window.location.origin);
+    url.hash = `share=${encoded}`;
+    if (generation !== shareGeneration) return;
+    shareLink.value = url.href;
+    try {
+      const qrcode = await loadQrGenerator();
+      if (generation !== shareGeneration) return;
+      const qr = qrcode(0, "L");
+      qr.addData(url.href);
+      qr.make();
+      shareQr.innerHTML = qr.createSvgTag({ cellSize: 4, margin: 4 });
+      shareStatus.textContent = qr.getModuleCount() > 85
+        ? "QR dense : pour beaucoup de favoris, copier le lien peut être plus fiable."
+        : "Le lien contient la configuration sélectionnée et ne passe par aucun serveur.";
+    } catch {
+      if (generation === shareGeneration) {
+        shareStatus.textContent = "QR indisponible pour ce partage : le lien reste copiable.";
+      }
+    }
+  } catch (error) {
+    if (generation !== shareGeneration) return;
+    shareStatus.textContent = error.message || "Impossible de créer ce partage.";
+  }
+}
+
+function openShareExport(trigger) {
+  shareReturnFocus = settingsModal.hidden ? trigger : openSettings;
+  if (!settingsModal.hidden) closeSettingsModal();
+  showShareModal();
+  updateShareLink();
+}
+
+async function openIncomingShare(token) {
+  shareReturnFocus = document.querySelector("#openSettings");
+  showShareModal("import");
+  pendingShareImport = null;
+  confirmShareImport.disabled = true;
+  shareImportStatus.textContent = "Lecture du lien…";
+  try {
+    if (state.pressLoadError) throw new Error("Le catalogue de presse doit être chargé pour recevoir ce partage.");
+    const config = await decodeShareConfig(token);
+    const layout = unpackFavoriteLayout(config.l);
+    const requestedIds = listFavoriteResourceIds(layout);
+    const knownIds = [...new Set(requestedIds.map(resolveCatalogResourceId))]
+      .filter((id) => isCatalogVisible(getResourceById(id)));
+    const normalizedLayout = normalizeFavoriteLayout(layout, knownIds, resolveCatalogResourceId);
+    if (config.e.length > 1500 || !config.e.every((entry) => Array.isArray(entry)
+      && entry.length === 2 && entry.every((value) => typeof value === "string" && value.length <= 200))) {
+      throw new Error("Éditions partagées invalides.");
+    }
+    const editions = new Map(config.e.filter(([id, edition]) =>
+      isValidEditionSelection(getResourceById(resolveCatalogResourceId(id)), edition))
+      .map(([id, edition]) => [resolveCatalogResourceId(id), edition]));
+    let profile = null;
+    if (config.m === "c") {
+      const [pass, site, remote, languages, theme, colorBlind] = config.p;
+      if (config.p.length !== 6 || ![...passFilter.options].some((option) => option.value === pass)
+        || !siteAccessValues.has(site) || ![...remoteFilter.options].some((option) => option.value === remote)
+        || !Array.isArray(languages) || languages.length > 200 || !languages.every((code) => typeof code === "string" && code.length <= 20)
+        || !themeValues.has(theme) || ![0, 1].includes(colorBlind)) {
+        throw new Error("Préférences partagées invalides.");
+      }
+      profile = { pass, site, remote, languages: languages.filter((code) => getKnownLanguageCodes().has(code)), theme, colorBlind: Boolean(colorBlind) };
+    }
+    pendingShareImport = { layout: normalizedLayout, editions, profile };
+    const missingCount = requestedIds.length - knownIds.length;
+    shareImportSummary.textContent = `${knownIds.length} favori${knownIds.length > 1 ? "s" : ""}, ${normalizedLayout.rows.length} rangée${normalizedLayout.rows.length > 1 ? "s" : ""} et ${editions.size} édition${editions.size > 1 ? "s" : ""} sélectionnée${editions.size > 1 ? "s" : ""}.`;
+    shareImportDetails.textContent = `${profile ? "Configuration complète : profil, langues, thème et accessibilité seront aussi remplacés." : "Favoris uniquement : votre profil et votre apparence seront conservés."}${missingCount ? ` ${missingCount} ressource(s) absente(s) du catalogue actuel seront ignorée(s).` : ""}`;
+    shareImportStatus.textContent = "Rien n’a encore été modifié sur cet appareil.";
+    confirmShareImport.disabled = false;
+  } catch (error) {
+    shareImportSummary.textContent = "Impossible de recevoir cette configuration.";
+    shareImportDetails.textContent = "";
+    shareImportStatus.textContent = error.message || "Lien invalide.";
+  }
+}
+
+function applyIncomingShare() {
+  if (!pendingShareImport) return;
+  const { layout, editions, profile } = pendingShareImport;
+  const favoriteIds = listFavoriteResourceIds(layout);
+  const entries = new Map([
+    [favoriteStorageKey, JSON.stringify(favoriteIds)],
+    [favoriteStorageReadyKey, "true"],
+    [favoriteLayoutStorageKey, JSON.stringify(layout)],
+    [editionSelectionStorageKey, JSON.stringify(Object.fromEntries(editions))],
+  ]);
+  if (profile) {
+    entries.set(passFilterStorageKey, profile.pass);
+    entries.set(siteAccessStorageKey, profile.site);
+    entries.set(remoteFilterStorageKey, profile.remote);
+    entries.set(languageFilterStorageKey, JSON.stringify(profile.languages));
+    entries.set(themeStorageKey, profile.theme);
+    entries.set(colorBlindModeStorageKey, String(profile.colorBlind));
+  }
+  const previous = new Map();
+  try {
+    for (const [key, value] of entries) {
+      previous.set(key, window.localStorage.getItem(key));
+      window.localStorage.setItem(key, value);
+    }
+  } catch {
+    for (const [key, value] of previous) {
+      try {
+        if (value === null) window.localStorage.removeItem(key);
+        else window.localStorage.setItem(key, value);
+      } catch {}
+    }
+    shareImportStatus.textContent = "Impossible d’enregistrer cette configuration dans ce navigateur.";
+    return;
+  }
+  state.favoriteLayout = layout;
+  state.favorites = new Set(favoriteIds);
+  state.editionSelections = editions;
+  if (profile) {
+    state.passFilter = profile.pass;
+    state.siteAccess = profile.site;
+    state.remoteFilter = profile.remote;
+    state.languageFilter = new Set(profile.languages);
+    state.theme = profile.theme;
+    state.colorBlindMode = profile.colorBlind;
+    passFilter.value = profile.pass;
+    remoteFilter.value = profile.remote;
+    applyTheme();
+    applyColorBlindMode();
+    syncProfileFilterState();
+  }
+  renderFilters();
+  renderLanguageFilterControls();
+  render();
+  closeShareModal();
+}
+
 async function clearLocalData() {
   const keys = [];
   let clearedRuntimeCaches = 0;
@@ -1156,6 +1384,31 @@ function bindEvents() {
 
   openSettings.addEventListener("click", openSettingsModal);
   closeSettings.addEventListener("click", closeSettingsModal);
+  document.querySelector("#settingsShare").addEventListener("click", (event) => openShareExport(event.currentTarget));
+  document.querySelector("#closeShare").addEventListener("click", closeShareModal);
+  document.querySelector("#cancelShareImport").addEventListener("click", closeShareModal);
+  confirmShareImport.addEventListener("click", applyIncomingShare);
+  document.querySelectorAll('input[name="shareScope"]').forEach((input) => {
+    input.addEventListener("change", updateShareLink);
+  });
+  document.querySelector("#copyShareLink").addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(shareLink.value);
+      shareStatus.textContent = "Lien copié.";
+    } catch {
+      shareLink.select();
+      shareStatus.textContent = "Sélectionnez et copiez le lien.";
+    }
+  });
+  shareModal.addEventListener("click", (event) => {
+    if (event.target === shareModal) closeShareModal();
+  });
+  window.addEventListener("hashchange", () => {
+    if (!window.location.hash.startsWith("#share=")) return;
+    const token = window.location.hash.slice("#share=".length);
+    window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    loadPressCatalog().then(() => openIncomingShare(token));
+  });
   clearLocalDataButton.addEventListener("click", clearLocalData);
   settingsModal.addEventListener("click", (event) => {
     if (event.target === settingsModal) {
@@ -1185,6 +1438,10 @@ function bindEvents() {
 
     if (event.key === "Escape" && !settingsModal.hidden) {
       closeSettingsModal();
+    }
+
+    if (event.key === "Escape" && !shareModal.hidden) {
+      closeShareModal();
     }
 
     if (event.key === "Escape" && !pressPopularityNote.hidden) {
@@ -4312,6 +4569,14 @@ function createQuickLaunchHeader(favorites) {
   }
 
   if (!catalogFavoritesPreview && favorites.length > 0) {
+    const share = document.createElement("button");
+    share.className = "quick-launch-action share-shortcut";
+    share.type = "button";
+    share.setAttribute("aria-label", "Partager ma configuration");
+    share.title = "Partager ma configuration";
+    share.innerHTML = '<svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.7 10.6 6.6-4.2m-6.6 7 6.6 4.2"/></svg>';
+    share.addEventListener("click", () => openShareExport(share));
+    actions.append(share);
     actions.append(createActionButton("Modifier", startQuickLaunchEdit, "neutral"));
   }
 

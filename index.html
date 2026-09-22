@@ -45,7 +45,7 @@
         );
       } catch {}
     </script>
-    <link rel="stylesheet" href="./assets/css/styles.css?v=2026-09-21-mobile-favorite-heading">
+    <link rel="stylesheet" href="./assets/css/styles.css?v=2026-09-22-share-prototype">
   </head>
   <body class="is-loading">
     <div id="appLoader" class="app-loader" role="status" aria-live="polite">
@@ -242,6 +242,14 @@
 
         <article class="settings-panel">
           <div>
+            <h3>Partager ma configuration</h3>
+            <p>Transférer vos favoris et, au choix, vos préférences vers un autre navigateur.</p>
+          </div>
+          <button id="settingsShare" class="settings-action" type="button">Partager</button>
+        </article>
+
+        <article class="settings-panel">
+          <div>
             <h3>Application web</h3>
             <p>Installer l’app web BnF Access sur mon téléphone.</p>
           </div>
@@ -256,6 +264,45 @@
           </div>
           <button id="clearLocalData" class="settings-action danger" type="button">Supprimer</button>
         </article>
+      </section>
+    </div>
+
+    <div id="shareModal" class="settings-modal share-modal" hidden>
+      <section class="settings-dialog share-dialog" role="dialog" aria-modal="true" aria-labelledby="shareTitle">
+        <div class="settings-dialog-header">
+          <div>
+            <h2 id="shareTitle">Partager ma configuration</h2>
+            <p id="shareIntro">Choisissez ce que le lien contiendra.</p>
+          </div>
+          <button id="closeShare" class="settings-close" type="button" aria-label="Fermer le partage">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div id="shareExport" class="share-content">
+          <fieldset class="share-options">
+            <legend>Contenu du partage</legend>
+            <label><input type="radio" name="shareScope" value="c" checked> Configuration complète</label>
+            <label><input type="radio" name="shareScope" value="f"> Favoris uniquement</label>
+          </fieldset>
+          <p id="shareScopeDetails" class="share-muted"></p>
+          <label class="share-link-label" for="shareLink">Lien de partage</label>
+          <div class="share-link-row">
+            <input id="shareLink" type="text" readonly spellcheck="false">
+            <button id="copyShareLink" class="settings-action" type="button">Copier</button>
+          </div>
+          <p id="shareNetworkHint" class="share-muted" hidden></p>
+          <div id="shareQr" class="share-qr" aria-label="QR code du lien de partage"></div>
+          <p id="shareStatus" class="share-status" role="status" aria-live="polite"></p>
+        </div>
+        <div id="shareImport" class="share-content" hidden>
+          <p id="shareImportSummary"></p>
+          <p id="shareImportDetails" class="share-muted"></p>
+          <p id="shareImportStatus" class="share-status" role="status" aria-live="polite"></p>
+          <div class="share-import-actions">
+            <button id="cancelShareImport" class="quick-launch-action" type="button">Annuler</button>
+            <button id="confirmShareImport" class="settings-action" type="button">Remplacer sur cet appareil</button>
+          </div>
+        </div>
       </section>
     </div>
 
@@ -320,6 +367,6 @@
       </nav>
     </footer>
 
-    <script src="./assets/js/app.js?v=2026-09-21-favorites-language-fix" type="module"></script>
+    <script src="./assets/js/app.js?v=2026-09-22-share-prototype" type="module"></script>
   </body>
 </html>

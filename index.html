@@ -121,9 +121,10 @@
 
       <section id="searchControls" class="search-section" aria-label="Recherche">
         <div class="controls" aria-label="Filtres">
-          <label class="search">
-            <input id="searchInput" type="search" placeholder="Rechercher une ressource…" aria-label="Rechercher une ressource" autocomplete="off" enterkeyhint="search">
-          </label>
+          <div class="search">
+            <input id="searchInput" type="search" placeholder="Rechercher une ressource ou un livre…" aria-label="Rechercher une ressource ou un livre" autocomplete="off" enterkeyhint="search" role="combobox" aria-haspopup="dialog" aria-expanded="false" aria-controls="bookSuggestions">
+            <div id="bookSuggestions" class="book-suggestions" role="dialog" aria-label="Suggestions de livres" hidden></div>
+          </div>
           <div class="filter-groups">
             <div id="categoryFilters" class="filters" aria-label="Catégories"></div>
             <div class="profile-filters" aria-label="Profil d'accès">
@@ -424,6 +425,6 @@
       </nav>
     </footer>
 
-    <script src="./assets/js/app.js?v=2026-09-22-tablet-card-rows" type="module"></script>
+    <script src="./assets/js/app.js?v=2026-09-30-books" type="module"></script>
   </body>
 </html>

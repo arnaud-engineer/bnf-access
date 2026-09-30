@@ -1,3 +1,4 @@
+import { createBookSearch } from "./book-search.js?v=2026-09-30";
 import {
   activeEditorialCategoryIds,
   canonicalizeEditorialTaxonomy,
@@ -127,6 +128,40 @@ const state = {
 const grid = document.querySelector("#resourceGrid");
 const filters = document.querySelector("#categoryFilters");
 const searchInput = document.querySelector("#searchInput");
+const bookSearch = createBookSearch({
+  input: searchInput,
+  suggestions: document.querySelector("#bookSuggestions"),
+  getContext: () => {
+    const byId = new Map(state.resources.map((entry) => [entry.id, entry]));
+    const canAccess = (id) => {
+      const resource = byId.get(id);
+      return Boolean(resource && matchesPassFilter(resource) && matchesRemoteFilter(getAccessMode(resource)));
+    };
+    const platforms = [
+      ["pret-bnf", "bnf-pret-numerique", "Prêt BnF"],
+      ["scholarvox", "scholarvox-cyberlibris", "ScholarVox"],
+      ["eni", "eni-bibliotheque-numerique", "ENI"],
+      ["garnier", "classiques-garnier-livres-et-revues-numeriques", "Garnier"],
+    ].filter(([, id]) => canAccess(id)).map(([id, resourceId, label]) => {
+      const resource = byId.get(resourceId);
+      return { id, label, icon: resource.icon_url, access: getAccessModeLabel(resource), url: resource.actions?.[0]?.url };
+    });
+    return {
+      category: state.category,
+      languages: state.languageFilter,
+      canAccess,
+      platforms,
+      platformUrl: (id) => byId.get(id)?.actions?.[0]?.url,
+    };
+  },
+  selectBooks: (query) => {
+    state.category = "Livre";
+    state.favoritesOnly = false;
+    state.query = query;
+    renderFilters();
+    render();
+  },
+});
 const passFilter = document.querySelector("#passFilter");
 const remoteFilter = document.querySelector("#remoteFilter");
 const resultCount = document.querySelector("#resultCount");
@@ -255,6 +290,7 @@ const resourceCategoryIcons = {
   favorites: '<path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"></path>',
   Toutes: '<rect width="7" height="7" x="3" y="3" rx="1"></rect><rect width="7" height="7" x="14" y="3" rx="1"></rect><rect width="7" height="7" x="14" y="14" rx="1"></rect><rect width="7" height="7" x="3" y="14" rx="1"></rect>',
   Presse: '<path d="M15 18h-5"></path><path d="M18 14h-8"></path><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2"></path><rect width="8" height="4" x="10" y="6" rx="1"></rect>',
+  Livre: '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"></path>',
   presse_et_medias: '<ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5v6c0 1.7 4 3 9 3s9-1.3 9-3V5"></path><path d="M3 11v6c0 1.7 4 3 9 3s9-1.3 9-3v-6"></path>',
   economie_et_entreprise: '<rect width="18" height="13" x="3" y="8" rx="2"></rect><path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><path d="M3 13h18"></path>',
   droit: '<path d="m16 16 3-8 3 8a5 5 0 0 1-6 0Z"></path><path d="m2 16 3-8 3 8a5 5 0 0 1-6 0Z"></path><path d="M7 21h10"></path><path d="M12 3v18"></path><path d="M3 7h18"></path>',
@@ -1501,6 +1537,7 @@ function bindEvents() {
   });
 
   searchInput.addEventListener("keydown", (event) => {
+    if (bookSearch.handleKeydown(event)) return;
     if (event.key !== "Enter") return;
     event.preventDefault();
     searchInput.blur();
@@ -3354,6 +3391,7 @@ function render() {
     return;
   }
   renderResourceGrid();
+  bookSearch.update();
   scheduleFloatingToolsUpdate();
 }
 
@@ -3491,6 +3529,7 @@ function renderFilters() {
   const categories = [
     { id: "Toutes", label: "Ressources" },
     { id: "Presse", label: "Presse" },
+    { id: "Livre", label: "Livres" },
     ...getResourceTaxonomyRoots().map(({ id, label }) => ({ id, label })),
   ];
 
@@ -3503,6 +3542,7 @@ function renderFilters() {
   const favoriteButton = document.createElement("button");
   favoriteButton.className = "filter-button favorite-filter";
   favoriteButton.type = "button";
+  favoriteButton.disabled = state.category === "Livre";
   favoriteButton.innerHTML = `${renderResourceCategoryIcon("favorites")}<span>Favoris</span>`;
   favoriteButton.setAttribute("aria-pressed", String(state.favoritesOnly));
   favoriteButton.addEventListener("click", () => {
@@ -3524,12 +3564,13 @@ function renderFilters() {
     button.setAttribute("aria-pressed", String(category.id === state.category));
     button.addEventListener("click", () => {
       state.category = category.id;
+      if (category.id === "Livre") state.favoritesOnly = false;
       if (category.id === "Presse" && !state.pressLoaded) loadPressCatalog();
       renderFilters();
       render();
     });
     filters.append(button);
-    if (category.id === "Presse") {
+    if (category.id === "Livre") {
       const categorySeparator = document.createElement("span");
       categorySeparator.className = "filter-separator";
       categorySeparator.setAttribute("aria-hidden", "true");
@@ -5030,6 +5071,12 @@ function getPressPlatformResources(resources) {
 
 function renderResourceGrid(options = {}) {
   const renderVersion = ++progressiveRenderVersion;
+  if (state.category === "Livre") {
+    resultsSummary.hidden = true;
+    grid.classList.add("results-grouped");
+    bookSearch.renderGrid(grid, resultCount);
+    return;
+  }
   const resources = getFilteredResources();
   const resourceEntries = resources.filter(isPressResourceEntry);
   const displayedResourceEntries = shouldShowPressTitleSection()

@@ -1,4 +1,7 @@
 /private/
+# Internal book collections must never enter the public Pages tree.
+/books-workspace/
+/book-collections/
 /AGENTS.md
 .DS_Store
 __pycache__/

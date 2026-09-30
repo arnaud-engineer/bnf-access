@@ -25,6 +25,18 @@ Le projet est volontairement statique. Le site publiable se trouve directement �
 
 Les catalogues volumineux et les images sont chargés progressivement. Les éléments déjà consultés peuvent être réutilisés depuis le cache du navigateur lorsque leur version n'a pas changé.
 
+## Developpement des livres
+
+Le chantier livres se prepare sur `feature/livres`. GitHub Pages continue de
+publier exclusivement `main`, depuis la racine, avec le domaine `bnfaccess.fr`.
+Cette branche ne doit pas devenir la source Pages pendant le developpement.
+
+L'atelier de collecte est dans `private/books/`, ignore par Git comme le reste
+de `private/`. Scripts, sessions, donnees brutes, caches, couvertures et rapports
+restent locaux. Ils necessitent une sauvegarde distincte de Git. Seules les
+projections publiques explicitement relues pourront rejoindre `data/` et
+`assets/` lors d'une future integration validee.
+
 ## Lancer en local
 
 Depuis la racine du dépôt :

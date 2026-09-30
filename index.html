@@ -122,8 +122,9 @@
       <section id="searchControls" class="search-section" aria-label="Recherche">
         <div class="controls" aria-label="Filtres">
           <div class="search">
-            <input id="searchInput" type="search" placeholder="Rechercher une ressource ou un livre…" aria-label="Rechercher une ressource ou un livre" autocomplete="off" enterkeyhint="search" role="combobox" aria-haspopup="dialog" aria-expanded="false" aria-controls="bookSuggestions">
-            <div id="bookSuggestions" class="book-suggestions" role="dialog" aria-label="Suggestions de livres" hidden></div>
+            <input id="searchInput" type="search" placeholder="Rechercher une ressource, un titre de presse ou un livre…" aria-label="Rechercher une ressource, un titre de presse ou un livre" autocomplete="off" enterkeyhint="search" role="combobox" aria-haspopup="dialog" aria-expanded="false" aria-controls="bookSuggestions">
+            <button id="searchClear" type="button" aria-label="Effacer la recherche" title="Effacer la recherche" hidden><span aria-hidden="true">×</span></button>
+            <div id="bookSuggestions" class="book-suggestions" role="dialog" aria-label="Suggestions de ressources, presse et livres" hidden></div>
           </div>
           <div class="filter-groups">
             <div id="categoryFilters" class="filters" aria-label="Catégories"></div>

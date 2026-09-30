@@ -131,6 +131,7 @@ const searchInput = document.querySelector("#searchInput");
 const bookSearch = createBookSearch({
   input: searchInput,
   suggestions: document.querySelector("#bookSuggestions"),
+  getSuggestionGroups: getCatalogSuggestionGroups,
   getContext: () => {
     const byId = new Map(state.resources.map((entry) => [entry.id, entry]));
     const canAccess = (id) => {
@@ -144,15 +145,24 @@ const bookSearch = createBookSearch({
       ["garnier", "classiques-garnier-livres-et-revues-numeriques", "Garnier"],
     ].filter(([, id]) => canAccess(id)).map(([id, resourceId, label]) => {
       const resource = byId.get(resourceId);
-      return { id, label, icon: resource.icon_url, access: getAccessModeLabel(resource), url: resource.actions?.[0]?.url };
+      return { id, label, resource, access: getAccessModeLabel(resource), accessClass: accessModeClasses[getAccessMode(resource)] ?? "onsite", url: resource.actions?.[0]?.url };
     });
     return {
       category: state.category,
+      favoritesOnly: state.category === "Livre" && state.favoritesOnly,
       languages: state.languageFilter,
+      languageTag: (code) => ({ text: formatLanguageBadgeText(code), title: formatLanguageTooltipItem(code) }),
       canAccess,
       platforms,
       platformUrl: (id) => byId.get(id)?.actions?.[0]?.url,
     };
+  },
+  createPlatformLogo: (resource) => {
+    const logo = document.createElement("span");
+    logo.className = `quick-launch-tile press-platform-logo${resource.icon_no_padding ? " icon-no-padding" : ""}`;
+    applyLogoAppearance(logo, resource);
+    logo.innerHTML = resource.icon_url ? renderIcon(resource, true) : escapeHtml(getFallbackLabel(resource));
+    return logo;
   },
   selectBooks: (query) => {
     state.category = "Livre";
@@ -161,6 +171,10 @@ const bookSearch = createBookSearch({
     renderFilters();
     render();
   },
+  onFavoritesChange: () => renderQuickLaunch(),
+  getFavoriteIds: () => state.favorites,
+  toggleFavoriteBook: (id) => toggleFavorite(id),
+  onCatalogReady: () => { integrateBookFavorites(); render(); },
 });
 const passFilter = document.querySelector("#passFilter");
 const remoteFilter = document.querySelector("#remoteFilter");
@@ -317,6 +331,7 @@ const favoriteStorageReadyKey = "bnf-access:v2:favorites-ready:v1";
 const favoriteOrderStorageKey = "bnf-access:v2:favorite-order:v1";
 const favoriteOrderCustomStorageKey = "bnf-access:v2:favorite-order-custom:v1";
 const favoriteLayoutStorageKey = "bnf-access:v2:favorite-layout:v1";
+const bookFavoritesMigratedKey = "bnf-access:v2:book-favorites-migrated:v1";
 const legacyFavoritesMigratedStorageKey = "bnf-access:v2:legacy-favorites-migrated:v1";
 const pressFavoriteLayoutMigratedStorageKey = "bnf-access:v2:press-favorite-layout-migrated:v1";
 const legacyCatalogResourceIds = new Map([
@@ -724,6 +739,7 @@ async function init() {
   } else {
     loadFavorites();
     loadFavoriteLayout();
+    if (bookSearch.legacyFavoriteIds().length || [...state.favorites].some(id => id.startsWith("book:"))) bookSearch.load().then(integrateBookFavorites);
     loadProfileFilters();
     loadReleaseMode();
     applyInitialViewFromUrl();
@@ -1322,8 +1338,9 @@ async function openIncomingShare(token) {
     const config = await decodeShareConfig(token);
     const layout = unpackFavoriteLayout(config.l);
     const requestedIds = listFavoriteResourceIds(layout);
+    if (requestedIds.some(id => id.startsWith("book:"))) await bookSearch.load();
     const knownIds = [...new Set(requestedIds.map(resolveCatalogResourceId))]
-      .filter((id) => isCatalogVisible(getResourceById(id)));
+      .filter((id) => getResourceById(id) && isCatalogVisible(getResourceById(id)));
     const normalizedLayout = normalizeFavoriteLayout(layout, knownIds, resolveCatalogResourceId);
     if (config.e.length > 1500 || !config.e.every((entry) => Array.isArray(entry)
       && entry.length === 2 && entry.every((value) => typeof value === "string" && value.length <= 200))) {
@@ -1427,6 +1444,7 @@ async function clearLocalData() {
     }
 
     keys.forEach((key) => localStorage.removeItem(key));
+    bookSearch.clearFavorites();
     // An explicit reset must not restore the historical preferences on reload.
     localStorage.setItem("bnf-access:v2:migrated", "true");
     localStorage.setItem("bnf-access:v2:migration-version", "2");
@@ -3542,7 +3560,6 @@ function renderFilters() {
   const favoriteButton = document.createElement("button");
   favoriteButton.className = "filter-button favorite-filter";
   favoriteButton.type = "button";
-  favoriteButton.disabled = state.category === "Livre";
   favoriteButton.innerHTML = `${renderResourceCategoryIcon("favorites")}<span>Favoris</span>`;
   favoriteButton.setAttribute("aria-pressed", String(state.favoritesOnly));
   favoriteButton.addEventListener("click", () => {
@@ -3841,6 +3858,7 @@ function createQuickLaunchList(label) {
 }
 
 function createQuickLaunchResourceItem(resource, resourceIndex, location = {}) {
+  if (resource.is_book) return createQuickLaunchBookItem(resource, location);
   const item = document.createElement("div");
   const accessWarning = renderQuickLaunchAccessWarning(resource);
   const showsBackgroundComparison = catalogFavoritesPreview
@@ -3899,6 +3917,35 @@ function createQuickLaunchResourceItem(resource, resourceIndex, location = {}) {
   }
   item.querySelector("[data-quick-launch-actions-toggle]")?.addEventListener("click", handleQuickLaunchActionsToggle);
   bindQuickLaunchAccessWarning(item, resource);
+  return item;
+}
+
+function createQuickLaunchBookItem(resource, location) {
+  const item = resource.book ? bookSearch.favoriteTile(resource.book) : document.createElement("div");
+  item.className = "quick-launch-item book-favorite-item";
+  item.dataset.resourceId = resource.id;
+  if (location.rowId) item.dataset.rowId = location.rowId;
+  if (location.folderId) item.dataset.folderId = location.folderId;
+  if (!resource.book) {
+    item.title = resource.name;
+    item.innerHTML = `<span class="quick-launch-main" aria-disabled="true"><span class="quick-launch-tile book-favorite-tile">Livre</span><small class="quick-launch-label">${escapeHtml(resource.name)}</small></span>`;
+  }
+  if (state.quickLaunchEditing) {
+    const main = item.querySelector(".quick-launch-main");
+    const tile = main.querySelector(".quick-launch-tile"), label = main.querySelector(".quick-launch-label");
+    item.replaceChildren(tile, label);
+    item.tabIndex = 0;
+    item.setAttribute("role", "button");
+    item.setAttribute("aria-label", `Déplacer ${resource.name}`);
+    item.setAttribute("draggable", "false");
+    item.classList.toggle("is-dragging", state.dragging?.kind === "resource" && state.dragging.id === resource.id);
+    tile.append(createFavoriteDestinationControl(resource.id));
+    item.append(createQuickLaunchRemoveButton(resource));
+    item.addEventListener("pointerdown", handleQuickLaunchPointerDown);
+    item.addEventListener("contextmenu", preventQuickLaunchEditContextMenu);
+    item.addEventListener("dragstart", preventQuickLaunchEditContextMenu);
+    item.addEventListener("keydown", handleQuickLaunchKeyDown);
+  }
   return item;
 }
 
@@ -4035,11 +4082,13 @@ function createQuickLaunchFolderMosaic(folder) {
   for (const resource of resources) {
     const cell = document.createElement("span");
     cell.className = "quick-launch-folder-cell";
+    cell.classList.toggle("is-book", resource.is_book === true);
     cell.classList.toggle("icon-no-padding", resource.icon_no_padding === true);
     applyLogoAppearance(cell, resource);
     cell.innerHTML = resource.icon_url
       ? renderIcon(resource, true)
       : `<strong>${escapeHtml(getFallbackLabel(resource))}</strong>`;
+    if (resource.is_book) bookSearch.decorateFavoriteCover(cell);
     mosaic.append(cell);
   }
   while (mosaic.children.length < 4) {
@@ -5042,11 +5091,11 @@ function getAlphaFavoriteResources() {
 }
 
 function getResourcesByIds(ids) {
-  const byId = new Map(state.resources.map((resource) => [resource.id, resource]));
-  return ids.map((id) => byId.get(id)).filter((resource) => resource && isCatalogVisible(resource));
+  return ids.map(getResourceById).filter((resource) => resource && isCatalogVisible(resource));
 }
 
 function getResourceById(id) {
+  if (typeof id === "string" && id.startsWith("book:")) return bookSearch.getFavoriteResource(id);
   return state.resources.find((resource) => resource.id === id) ?? null;
 }
 
@@ -6364,6 +6413,7 @@ function createCard(resource, eagerLogo = false, options = {}) {
     hasEditionOptions ? "has-edition-options" : "",
   ].filter(Boolean);
   card.className = cardClasses.join(" ");
+  card.dataset.resourceId = resource.id;
 
   const access = (resource.access ?? []).map((item) => accessLabels[item] ?? item);
   const accessMode = getAccessMode(resource);
@@ -7357,6 +7407,107 @@ function withTransitionParams(url, values) {
   ), url);
 }
 
+function getCatalogSuggestionGroups(query) {
+  const words = normalize(query).trim().split(/\s+/).filter(Boolean);
+  const candidates = state.resources.filter(resource => shouldShowResourceInCurrentListing(resource)
+    && matchesResourceCategoryFilter(resource)
+    && (!state.favoritesOnly || state.favorites.has(resource.id))
+    && matchesPassFilter(resource) && matchesRemoteFilter(getAccessMode(resource)) && matchesLanguageFilter(resource)
+    && (!isPressTitleEntry(resource) || (matchesPressTitleSourceFilter(resource)
+      && matchesPressTitleCountryFilter(resource) && matchesPressTitleEditorialFilter(resource)
+      && matchesPressTitleLocalRegionFilter(resource) && getVisibleActions(resource).length > 0))
+    && words.every(word => normalize(resource.name).includes(word)))
+    .sort((a, b) => Number(!words.every(word => normalize(a.name).includes(word))) - Number(!words.every(word => normalize(b.name).includes(word)))
+      || Number(!normalize(a.name).startsWith(normalize(query))) - Number(!normalize(b.name).startsWith(normalize(query)))
+      || a.name.localeCompare(b.name, "fr"));
+  return [
+    { label: "Ressources", entries: candidates.filter(resource => isPressResourceEntry(resource) && !isPressTitleEntry(resource)) },
+    { label: "Presse", entries: candidates.filter(isPressTitleEntry) },
+  ].map(group => ({ label: group.label, rows: group.entries.slice(0, 6).map(createCatalogSuggestion) }));
+}
+
+function createCatalogSuggestion(resource) {
+  const row = document.createElement("div");
+  row.className = "book-suggestion-row";
+  const action = getVisibleActions(resource)[0];
+  const href = action ? resolveActionHref(resource, action) : "";
+  const choose = () => {
+    bookSearch.dismissSuggestions();
+    state.query = resource.name;
+    searchInput.value = resource.name;
+    searchInput.blur();
+    renderFilters();
+    render();
+    requestAnimationFrame(() => {
+      const card = [...grid.querySelectorAll(".card")].find(item => item.dataset.resourceId === resource.id);
+      card?.scrollIntoView({ block: "center", behavior: "smooth" });
+    });
+  };
+  const option = document.createElement(/^https?:\/\//.test(href) ? "a" : "button");
+  option.className = "book-suggestion";
+  if (option.tagName === "A") {
+    option.href = href;
+    option.target = "_blank";
+    option.rel = "noopener noreferrer";
+    option.dataset.actionResourceId = resource.id;
+    option.dataset.actionId = action.id;
+    const session = getSessionStartUrl(resource, action);
+    if (session && !isEuropressePdfAction(resource, action)) {
+      option.dataset.sessionStart = session;
+      option.dataset.transitionHref = href;
+    }
+  } else { option.type = "button"; option.addEventListener("click", choose); }
+  option.title = action?.label || "Voir la fiche sur BnF Access";
+  option.setAttribute("aria-label", `${option.title} : ${resource.name}`);
+  option.innerHTML = `<span class="logo search-resource-logo ${resource.icon_no_padding ? "icon-no-padding" : ""}"${logoAppearanceAttributes(resource)}>${resource.icon_url ? renderIcon(resource) : escapeHtml(getFallbackLabel(resource))}</span>
+    <span class="book-description"><strong>${escapeHtml(resource.name)}</strong><span class="search-suggestion-summary">${escapeHtml(resource.description || "")}</span><span class="book-suggestion-platforms">${action ? `<span class="badge">${escapeHtml(isPressTitleEntry(resource) ? getActionProviderLabel(action) : getAccessModeLabel(resource))}</span>` : ""}</span></span>`;
+  const languageTags = option.querySelector(".book-suggestion-platforms");
+  for (const code of getResourceLanguageCodes(resource)) {
+    const tag = document.createElement("span");
+    tag.className = "badge language";
+    tag.textContent = formatLanguageBadgeText(code);
+    tag.title = formatLanguageTooltipItem(code);
+    languageTags.append(tag);
+  }
+  const actions = document.createElement("div");
+  actions.className = "book-suggestion-actions";
+  const favorite = document.createElement("button");
+  favorite.type = "button";
+  favorite.className = "favorite-button book-favorite";
+  const updateFavorite = () => {
+    const selected = state.favorites.has(resource.id);
+    favorite.innerHTML = `<span aria-hidden="true">${selected ? "★" : "☆"}</span>`;
+    favorite.setAttribute("aria-pressed", String(selected));
+    favorite.setAttribute("aria-label", `${selected ? "Retirer des" : "Ajouter aux"} favoris : ${resource.name}`);
+    favorite.title = selected ? "Retirer des favoris" : "Ajouter aux favoris";
+  };
+  updateFavorite();
+  favorite.addEventListener("click", () => {
+    const top = searchInput.getBoundingClientRect().top;
+    toggleFavorite(resource.id);
+    updateFavorite();
+    requestAnimationFrame(() => window.scrollBy(0, searchInput.getBoundingClientRect().top - top));
+  });
+  const fiche = document.createElement("button");
+  fiche.type = "button";
+  fiche.className = "book-suggestion-fiche";
+  fiche.textContent = "Voir la fiche";
+  fiche.setAttribute("aria-label", `Voir la fiche sur BnF Access : ${resource.name}`);
+  fiche.addEventListener("click", choose);
+  actions.append(favorite, fiche);
+  row.append(option, actions);
+  return row;
+}
+
+function matchesResourceCategoryFilter(resource) {
+  if (state.category === "Livre") return false;
+  return state.category === "Presse"
+    ? isPressTitleEntry(resource) || resource.topic_ids?.includes("presse")
+    : isPressResourceEntry(resource)
+      && (state.category !== "Toutes" || !isPressTitleEntry(resource))
+      && (state.category === "Toutes" || resourceMatchesTaxonomyRoot(resource, state.category));
+}
+
 function getFilteredResources() {
   const query = normalize(state.query);
   const filteredResources = state.resources
@@ -7364,11 +7515,7 @@ function getFilteredResources() {
       const accessMode = getAccessMode(resource);
       const resourceCategories = getResourceCategories(resource);
       const resourceTaxonomyLabels = getResourceTaxonomyNodes(resource).map((category) => category.label);
-      const matchesCategory = state.category === "Presse"
-        ? isPressTitleEntry(resource) || resource.topic_ids?.includes("presse")
-        : isPressResourceEntry(resource)
-          && (state.category !== "Toutes" || !isPressTitleEntry(resource))
-          && (state.category === "Toutes" || resourceMatchesTaxonomyRoot(resource, state.category));
+      const matchesCategory = matchesResourceCategoryFilter(resource);
       const matchesFavorite = !state.favoritesOnly || state.favorites.has(resource.id);
       const matchesPass = matchesPassFilter(resource);
       const matchesRemote = matchesRemoteFilter(accessMode);
@@ -8239,6 +8386,30 @@ function finalizeInitialFavoriteLayout() {
   saveFavorites();
   saveFavoriteLayout();
   writeStoredValue(pressFavoriteLayoutMigratedStorageKey, "true");
+  integrateBookFavorites();
+}
+
+function integrateBookFavorites() {
+  if (catalogFavoritesPreview || !state.favoritesReady || state.favoriteLayoutNeedsPressClassification || state.quickLaunchEditing) return;
+  const layout = cloneFavoriteLayout(state.favoriteLayout);
+  const ids = new Set(listFavoriteResourceIds(layout));
+  // Keep the legacy list as backup without restoring favorites removed after migration.
+  const legacy = readStoredValue(bookFavoritesMigratedKey) === "true" ? [] : bookSearch.legacyFavoriteIds();
+  const extras = [...new Set(legacy.map(id => bookSearch.resolveFavoriteId(id)))].filter(id => !ids.has(id));
+  if (extras.length) {
+    const row = createFavoriteRow(layout, createFavoriteContainerId("row"), "Livres");
+    for (const id of extras) { ids.add(id); moveFavoriteResource(layout, id, { rowId: row.id }); }
+  }
+  const normalized = normalizeFavoriteLayout(layout, [...ids], resolveCatalogResourceId);
+  const changed = JSON.stringify(normalized) !== JSON.stringify(state.favoriteLayout);
+  if (changed) {
+    state.favoriteLayout = normalized;
+    state.favorites = new Set(listFavoriteResourceIds(normalized));
+    saveFavorites();
+    saveFavoriteLayout();
+  }
+  if (readStoredValue(favoriteLayoutStorageKey) === JSON.stringify(normalized)) writeStoredValue(bookFavoritesMigratedKey, "true");
+  if (changed) render();
 }
 
 function createInitialFavoriteLayout(orderedIds, { addDefaultPressFavorites = false } = {}) {
@@ -8296,6 +8467,7 @@ function createInitialFavoriteLayout(orderedIds, { addDefaultPressFavorites = fa
 }
 
 function resolveCatalogResourceId(id) {
+  if (typeof id === "string" && id.startsWith("book:")) return bookSearch.resolveFavoriteId(id);
   const seen = new Set();
   id = legacyCatalogResourceIds.get(id) ?? id;
   let resource = state.resources.find((entry) => entry.id === id);
@@ -8582,6 +8754,7 @@ function finishQuickLaunchExit() {
   state.quickLaunchModifierEntering = !prefersReducedMotion();
   state.draftFavoriteLayout = null;
   clearQuickLaunchDrag();
+  integrateBookFavorites();
   render();
 }
 

@@ -1,4 +1,5 @@
-import { createBookSearch } from "./book-search.js?v=2026-09-30";
+import { createBookSearch } from "./book-search.js?v=2026-10-01-overview-more";
+import { createSearchHints } from "./search-hints.js?v=2026-10-01-two-cycles";
 import {
   activeEditorialCategoryIds,
   canonicalizeEditorialTaxonomy,
@@ -128,8 +129,10 @@ const state = {
 const grid = document.querySelector("#resourceGrid");
 const filters = document.querySelector("#categoryFilters");
 const searchInput = document.querySelector("#searchInput");
+const searchHints = createSearchHints(searchInput, [document.querySelector("#filterSearchInput")]);
 const bookSearch = createBookSearch({
   input: searchInput,
+  mirrors: [{ input: document.querySelector("#filterSearchInput"), clear: document.querySelector("#filterSearchClear") }],
   suggestions: document.querySelector("#bookSuggestions"),
   getSuggestionGroups: getCatalogSuggestionGroups,
   getContext: () => {
@@ -3398,6 +3401,7 @@ function revealApp() {
   document.body.classList.remove("is-loading");
   document.body.classList.add("is-ready");
   state.appRevealed = true;
+  if (!catalogFavoritesPreview) searchHints.start();
 
   if (pendingProgressiveRender) {
     scheduleNextCardBatch(pendingProgressiveRender.renderVersion);
@@ -7419,12 +7423,14 @@ function renderOverview() {
   grid.classList.add("results-grouped");
   grid.replaceChildren();
   const resources = getFilteredResources()
-    .filter(resource => resource.default_favorite)
     .sort((a, b) => a.name.localeCompare(b.name, "fr"));
-  for (const [label, category, entries] of [
+  for (const [label, category, allEntries] of [
     ["Ressources", "Toutes", resources.filter(resource => isPressResourceEntry(resource) && !isPressTitleEntry(resource))],
     ["Presse", "Presse", resources.filter(resource => isPressTitleEntry(resource) && getVisibleActions(resource).length)],
   ]) {
+    const entries = allEntries.filter(resource => state.query.trim() || resource.default_favorite);
+    const hasMore = allEntries.length > Math.min(entries.length, 40);
+    if (!entries.length && (category !== "Presse" || state.pressLoaded)) continue;
     const section = document.createElement("section");
     section.className = "entry-section overview-section";
     const heading = document.createElement("div");
@@ -7438,10 +7444,11 @@ function renderOverview() {
     more.setAttribute("aria-label", `Voir tous les résultats : ${label}`);
     const openCategory = () => { state.category = category; renderFilters(); render(); };
     more.addEventListener("click", openCategory);
-    heading.append(title, more);
+    heading.append(title);
+    if (hasMore) heading.append(more);
     const list = document.createElement("div");
     list.className = "entry-grid";
-    appendCardRange(list, entries, 0, entries.length, {
+    appendCardRange(list, entries, 0, Math.min(entries.length, 40), {
       eager: true,
       context: category === "Presse" ? "title" : "resource",
     });
@@ -7454,13 +7461,20 @@ function renderOverview() {
     const bottomMore = more.cloneNode(true);
     bottomMore.classList.add("overview-more");
     bottomMore.addEventListener("click", openCategory);
-    section.append(heading, list, bottomMore);
+    section.append(heading, list);
+    if (hasMore) section.append(bottomMore);
     grid.append(section);
   }
   const books = document.createElement("section");
   books.className = "entry-section overview-section";
   grid.append(books);
-  bookSearch.renderOverview(books);
+  bookSearch.renderOverview(books).then(() => {
+    if (state.category !== "Tout" || grid.childElementCount) return;
+    const empty = document.createElement("p");
+    empty.className = "empty";
+    empty.textContent = "Aucun résultat avec ces filtres.";
+    grid.append(empty);
+  });
   grid.dataset.renderComplete = "true";
 }
 

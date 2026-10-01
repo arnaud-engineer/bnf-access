@@ -1,6 +1,6 @@
 const fold = (value) => String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 
-export function createBookSearch({ input, suggestions, getContext, createPlatformLogo, selectBooks, onFavoritesChange, getFavoriteIds, toggleFavoriteBook, onCatalogReady, getSuggestionGroups = () => [] }) {
+export function createBookSearch({ input, mirrors = [], suggestions, getContext, createPlatformLogo, selectBooks, onFavoritesChange, getFavoriteIds, toggleFavoriteBook, onCatalogReady, getSuggestionGroups = () => [] }) {
   const favoriteKey = "bnf-access:v2:book-favorites:v1";
   let legacyFavorites = new Set();
   try {
@@ -19,13 +19,38 @@ export function createBookSearch({ input, suggestions, getContext, createPlatfor
   let limit = 40;
   let lastQuery = "";
   let gridTarget = null;
+  let gridVersion = 0;
+  let moreObserver = null;
   let dismissed = false;
   let selectedBookId = null;
   let focusSelection = false;
   let suggestionVersion = 0;
   let summaryId = 0;
   const clearButton = document.querySelector("#searchClear");
-  const syncClear = () => { if (clearButton) clearButton.hidden = !input.value.length; };
+  const searchInputs = [input, ...mirrors.map(mirror => mirror.input)];
+  const syncClear = () => {
+    if (clearButton) clearButton.hidden = !input.value.length;
+    for (const mirror of mirrors) {
+      if (mirror.input.value !== input.value) mirror.input.value = input.value;
+      mirror.clear.hidden = !input.value.length;
+    }
+  };
+  for (const mirror of mirrors) {
+    mirror.input.addEventListener("input", () => {
+      input.value = mirror.input.value;
+      input.dispatchEvent(new Event("input", { bubbles: true }));
+    });
+    mirror.clear.addEventListener("pointerdown", event => event.preventDefault());
+    mirror.clear.addEventListener("click", () => {
+      mirror.input.value = "";
+      mirror.input.focus({ preventScroll: true });
+      mirror.input.dispatchEvent(new Event("input", { bubbles: true }));
+    });
+    mirror.input.addEventListener("keydown", event => {
+      if (event.key === "Enter") { event.preventDefault(); mirror.input.blur(); }
+    });
+    mirror.input.addEventListener("focus", () => { dismissed = true; close(); });
+  }
   clearButton?.addEventListener("pointerdown", (event) => event.preventDefault());
   clearButton?.addEventListener("click", () => {
     input.value = "";
@@ -422,12 +447,14 @@ export function createBookSearch({ input, suggestions, getContext, createPlatfor
   }
 
   async function renderGrid(grid, count) {
+    const version = ++gridVersion;
+    moreObserver?.disconnect();
     gridTarget = { grid, count };
     const query = input.value.trim();
     if (query !== lastQuery) { lastQuery = query; limit = 40; }
     grid.replaceChildren(text("p", "Chargement des livres…", "book-search-status"));
     await load();
-    if (getContext().category !== "Livre") return;
+    if (version !== gridVersion || getContext().category !== "Livre") return;
     const result = filtered().filter((book) => !selectedBookId || book.id === selectedBookId);
     count.textContent = error ? "" : `${result.length.toLocaleString("fr")} livres`;
     grid.replaceChildren();
@@ -453,10 +480,27 @@ export function createBookSearch({ input, suggestions, getContext, createPlatfor
     for (const book of result.slice(0, limit)) list.append(bookCard(book));
     section.append(list);
     if (result.length > limit) {
-      const more = text("button", "Afficher davantage", "book-load-more");
-      more.type = "button";
-      more.addEventListener("click", () => { limit += 40; renderGrid(grid, count); });
+      const more = text("div", "", "book-load-sentinel");
+      more.setAttribute("aria-hidden", "true");
       section.append(more);
+      const observer = new IntersectionObserver((entries) => {
+        if (!entries.some(entry => entry.isIntersecting) || !more.isConnected
+          || version !== gridVersion || getContext().category !== "Livre") return;
+        observer.unobserve(more);
+        const nextLimit = Math.min(limit + 40, result.length);
+        const batch = document.createDocumentFragment();
+        for (const book of result.slice(limit, nextLimit)) batch.append(bookCard(book));
+        list.append(batch);
+        limit = nextLimit;
+        if (limit === result.length) {
+          observer.disconnect();
+          more.remove();
+        } else requestAnimationFrame(() => {
+          if (more.isConnected && version === gridVersion && getContext().category === "Livre") observer.observe(more);
+        });
+      }, { rootMargin: "0px 0px 300px 0px" });
+      moreObserver = observer;
+      observer.observe(more);
     }
     grid.dataset.renderComplete = "true";
     if (focusSelection) { list.querySelector("h3")?.focus(); focusSelection = false; }
@@ -612,7 +656,7 @@ export function createBookSearch({ input, suggestions, getContext, createPlatfor
 
   input.addEventListener("input", () => { selectedBookId = null; syncClear(); });
   input.addEventListener("focus", () => { dismissed = false; load(); suggest(); });
-  input.addEventListener("blur", () => setTimeout(() => { if (!suggestions.contains(document.activeElement)) close(); }, 150));
+  input.addEventListener("blur", () => setTimeout(() => { if (document.activeElement !== input && !suggestions.contains(document.activeElement)) close(); }, 150));
   suggestions.addEventListener("focusout", () => setTimeout(() => {
     if (document.activeElement !== input && !suggestions.contains(document.activeElement)) close();
   }, 0));
@@ -626,28 +670,35 @@ export function createBookSearch({ input, suggestions, getContext, createPlatfor
     options[active]?.focus();
   });
   document.addEventListener("pointerdown", (event) => {
-    if (!suggestions.contains(event.target) && event.target !== input && !clearButton?.contains(event.target)) { dismissed = true; close(); }
+    if (!suggestions.contains(event.target) && !searchInputs.includes(event.target) && !clearButton?.contains(event.target) && !mirrors.some(mirror => mirror.clear.contains(event.target))) { dismissed = true; close(); }
   });
   return {
     async renderOverview(section) {
+      const version = ++gridVersion;
+      moreObserver?.disconnect();
       section.append(text("p", "Chargement des livres…", "book-search-status"));
       await load();
-      if (!section.isConnected || getContext().category !== "Tout") return;
+      if (version !== gridVersion || !section.isConnected || getContext().category !== "Tout") return;
       section.replaceChildren();
+      const searching = Boolean(input.value.trim());
+      const allResults = filtered("all");
+      const result = allResults.filter(book => searching || book.default_favorite).slice(0, searching ? 40 : undefined);
+      const hasMore = allResults.length > result.length;
+      if (!error && !result.length) { section.remove(); return; }
       const heading = text("div", "", "entry-section-heading");
       const more = text("button", "Voir tout", "filter-button");
       more.type = "button";
       more.setAttribute("aria-label", "Voir tous les résultats : Livres");
       more.addEventListener("click", () => selectBooks(input.value, { keepFavorites: true }));
-      heading.append(text("h2", "Livres"), more);
+      heading.append(text("h2", "Livres"));
+      if (hasMore) heading.append(more);
       const list = text("div", "", "book-results");
-      const result = filtered("all").filter(book => book.default_favorite);
       for (const book of result) list.append(bookCard(book));
       section.append(heading, list);
       const bottomMore = more.cloneNode(true);
       bottomMore.classList.add("overview-more");
       bottomMore.addEventListener("click", () => selectBooks(input.value, { keepFavorites: true }));
-      section.append(bottomMore);
+      if (hasMore) section.append(bottomMore);
       if (error || !result.length) section.append(text("p", error ? "Le catalogue de livres n’a pas pu être chargé." : "Aucun résultat avec ces filtres.", "empty"));
     },
     dismissSuggestions() { dismissed = true; ++suggestionVersion; close(); },

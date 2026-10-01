@@ -45,7 +45,7 @@
         );
       } catch {}
     </script>
-    <link rel="stylesheet" href="./assets/css/styles.css?v=2026-10-01-search-field">
+    <link rel="stylesheet" href="./assets/css/styles.css?v=2026-10-01-search-hints">
   </head>
   <body class="is-loading">
     <div id="appLoader" class="app-loader" role="status" aria-live="polite">
@@ -130,7 +130,14 @@
       <section id="searchControls" class="filter-section" aria-label="Filtres de recherche">
         <div class="controls" aria-label="Filtres">
           <div class="filter-groups">
-            <div id="categoryFilters" class="filters" aria-label="Catégories"></div>
+            <div class="category-filter-row">
+              <div id="categoryFilters" class="filters" aria-label="Catégories"></div>
+              <span class="filter-separator" aria-hidden="true"></span>
+              <div class="filter-search">
+                <input id="filterSearchInput" type="text" placeholder="Rechercher…" aria-label="Rechercher une ressource, un titre de presse ou un livre" autocomplete="off" enterkeyhint="search">
+                <button id="filterSearchClear" class="search-clear" type="button" aria-label="Effacer la recherche" title="Effacer la recherche" hidden><span aria-hidden="true">×</span></button>
+              </div>
+            </div>
             <div id="resourceCategoryFilters" class="filters resource-category-filters" aria-label="Catégories de ressources" hidden></div>
             <div class="profile-filters" aria-label="Profil d'accès">
               <label>
@@ -430,6 +437,6 @@
       </nav>
     </footer>
 
-    <script src="./assets/js/app.js?v=2026-09-30-books" type="module"></script>
+    <script src="./assets/js/app.js?v=2026-10-01-search-hints-two-cycles" type="module"></script>
   </body>
 </html>

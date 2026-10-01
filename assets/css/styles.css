@@ -2702,8 +2702,8 @@ main:has(.book-suggestions:not([hidden])) {
 .search-official { position: sticky; bottom: 0; z-index: 3; padding: 8px; border-top: 1px solid var(--line); background: var(--panel); }
 .search-official-link { display: flex; align-items: center; justify-content: center; min-height: 36px; padding: 7px 10px; border: 1px solid var(--accent); background: var(--accent); color: var(--accent-ink); font-size: 12px; line-height: 1.4; text-align: center; text-decoration: none; }
 .search-official-link:is(:hover, :focus-visible) { background: var(--accent-hover); }
-#searchInput { padding-right: 48px; }
-#searchInput::-webkit-search-cancel-button { display: none; }
+#searchInput { appearance: none; -webkit-appearance: none; padding-right: 12px; }
+#searchInput:not(:placeholder-shown) { padding-right: 48px; }
 #searchClear { position: absolute; top: 50%; transform: translateY(-50%); right: 4px; width: 40px; height: 40px; padding: 0; border: 0; background: transparent; color: var(--panel); display: grid; place-items: center; cursor: pointer; }
 #searchClear span { position: relative; width: 20px; height: 20px; border-radius: 50%; background: var(--muted); font-size: 0; }
 #searchClear span::before, #searchClear span::after { content: ""; position: absolute; top: 50%; left: 50%; width: 10px; height: 1.5px; background: currentColor; transform: translate(-50%, -50%) rotate(45deg); }

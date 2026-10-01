@@ -21279,7 +21279,7 @@
       "icon_url": "./assets/logos/optimized/pressreader.webp",
       "icon_no_padding": true,
       "icon_alt": "Logo PressReader",
-      "default_favorite": true,
+      "default_favorite": false,
       "access_mode": "onsite_extended",
       "access_label": "Accès sur site prolongé",
       "access_note": "Accès temporaire à distance après téléchargement depuis un établissement abonné.",
@@ -53840,7 +53840,7 @@
         "titre fusionné",
         "variantes"
       ],
-      "default_favorite": true,
+      "default_favorite": false,
       "actions": [
         {
           "id": "latest",

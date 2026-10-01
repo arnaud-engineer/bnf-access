@@ -117,17 +117,21 @@
         <p id="linkConverterFeedback" class="link-converter-feedback" role="status" aria-live="polite"></p>
       </section>
 
-      <section id="quickLaunch" class="quick-launch" aria-label="Lancement rapide"></section>
-
-      <section id="searchControls" class="search-section" aria-label="Recherche">
-        <div class="controls" aria-label="Filtres">
+      <section id="globalSearch" class="search-section global-search" aria-label="Recherche">
           <div class="search">
             <input id="searchInput" type="search" placeholder="Rechercher une ressource, un titre de presse ou un livre…" aria-label="Rechercher une ressource, un titre de presse ou un livre" autocomplete="off" enterkeyhint="search" role="combobox" aria-haspopup="dialog" aria-expanded="false" aria-controls="bookSuggestions">
             <button id="searchClear" type="button" aria-label="Effacer la recherche" title="Effacer la recherche" hidden><span aria-hidden="true">×</span></button>
             <div id="bookSuggestions" class="book-suggestions" role="dialog" aria-label="Suggestions de ressources, presse et livres" hidden></div>
           </div>
+      </section>
+
+      <section id="quickLaunch" class="quick-launch" aria-label="Lancement rapide"></section>
+
+      <section id="searchControls" class="filter-section" aria-label="Filtres de recherche">
+        <div class="controls" aria-label="Filtres">
           <div class="filter-groups">
             <div id="categoryFilters" class="filters" aria-label="Catégories"></div>
+            <div id="resourceCategoryFilters" class="filters resource-category-filters" aria-label="Catégories de ressources" hidden></div>
             <div class="profile-filters" aria-label="Profil d'accès">
               <label>
                 <span>Profil</span>

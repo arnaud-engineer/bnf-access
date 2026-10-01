@@ -8,6 +8,7 @@ export function createBookSearch({ input, suggestions, getContext, createPlatfor
     if (Array.isArray(saved)) legacyFavorites = new Set(saved.filter((value) => typeof value === "string"));
   } catch { /* Unavailable or malformed storage must not prevent browsing. */ }
   let books = null;
+  let defaultFavorites = [];
   const favoriteBooks = new Map();
   const favoriteId = (book) => `book:${book.variants.map(v => v.source_id).sort()[0]}`;
   let pending = null;
@@ -57,6 +58,8 @@ export function createBookSearch({ input, suggestions, getContext, createPlatfor
           search: fold([book.title, ...(book.display_authors ?? book.authors), ...book.variants.map((v) => v.metadata.display_publisher || v.publisher), ...book.publishers, ...book.isbns].join(" ")),
           titleSearch: fold(book.title) }));
         for (const book of books) for (const variant of book.variants) favoriteBooks.set(`book:${variant.source_id}`, book);
+        defaultFavorites = [...new Set((data.default_favorites ?? []).map(id => `book:${id}`)
+          .filter(id => favoriteBooks.has(id)).map(id => favoriteId(favoriteBooks.get(id))))];
         onCatalogReady?.();
         return books;
       }).catch(() => { error = true; return null; })
@@ -73,15 +76,15 @@ export function createBookSearch({ input, suggestions, getContext, createPlatfor
       if (!words.every((word) => (forSuggestions ? book.suggestionSearch : book.search).includes(word))) continue;
       if (context.languages.size && book.languages.length && !book.languages.some((code) => context.languages.has(code))) continue;
       const availability = book.availability.filter((access) => context.canAccess(access.resource_id)
-        && (ignore === "platform" || !selection.platform || access.platform === selection.platform));
+        && (["platform", "all"].includes(ignore) || !selection.platform || access.platform === selection.platform));
       if (!availability.length) continue;
       const platforms = new Set(availability.map((access) => access.platform));
       const variants = book.variants.filter((variant) => platforms.has(variant.availability.platform));
       const publishers = [...new Set(variants.map((variant) => variant.metadata.display_publisher || variant.publisher).filter(Boolean))];
       const categories = [...new Set(variants.flatMap((variant) => variant.metadata.display_categories ?? variant.metadata.filter_categories ?? []))];
       if (context.favoritesOnly && !isFavorite(book)) continue;
-      if (ignore !== "publisher" && selection.publisher && !publishers.includes(selection.publisher)) continue;
-      if (ignore !== "category" && selection.category && !categories.includes(selection.category)) continue;
+      if (!["publisher", "all"].includes(ignore) && selection.publisher && !publishers.includes(selection.publisher)) continue;
+      if (!["category", "all"].includes(ignore) && selection.category && !categories.includes(selection.category)) continue;
       result.push({ ...book, availability, publishers, categories, score: query && book.titleSearch.startsWith(query) ? 0 : 1 });
     }
     if (query) result.sort((a, b) => a.score - b.score || a.title.localeCompare(b.title, "fr"));
@@ -128,8 +131,8 @@ export function createBookSearch({ input, suggestions, getContext, createPlatfor
       const url = access.url || getContext().platformUrl(access.resource_id);
       if (!url || !/^https?:\/\//.test(url) || seen.has(url)) continue;
       seen.add(url);
-      const link = text("a", access.label);
-      link.className = `badge press-provider-badge book-source book-source-${access.platform}`;
+      const link = text("a", book.availability.length > 1 ? access.label : "Consulter");
+      link.className = `resource-action book-open book-source-${access.platform}`;
       link.href = url;
       link.target = "_blank";
       link.rel = "noreferrer";
@@ -156,6 +159,24 @@ export function createBookSearch({ input, suggestions, getContext, createPlatfor
     active = -1;
   }
 
+  function appendOfficialSearch() {
+    suggestions.querySelector(".search-official")?.remove();
+    const url = new URL("https://publications.ebsco.com/");
+    url.search = new URLSearchParams({
+      custId: "s1149613", groupId: "testpm", profileId: "pfi",
+      search: input.value.trim(), searchField: "keyword",
+    }).toString();
+    const footer = text("div", "", "search-official");
+    const link = text("a", "Recherche officielle BnF", "search-official-link");
+    link.href = url.href;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.title = "Ouvrir votre recherche dans le catalogue officiel des livres et revues de la BnF, dans un nouvel onglet. Catalogue plus étendu, sans les filtres de BnF Access.";
+    link.setAttribute("aria-label", "Recherche officielle BnF : ouvrir votre recherche dans un nouvel onglet");
+    footer.append(link);
+    suggestions.append(footer);
+  }
+
   async function suggest() {
     if (suggestions.contains(document.activeElement)) return;
     if (dismissed || document.activeElement !== input || input.value.trim().length < 2) { close(); return; }
@@ -172,19 +193,22 @@ export function createBookSearch({ input, suggestions, getContext, createPlatfor
     const numberOptions = () => {
       matches = [...suggestions.querySelectorAll(".book-suggestion")];
       matches.forEach((option, index) => { option.id = `book-suggestion-${index}`; });
+      appendOfficialSearch();
     };
     suggestions.replaceChildren();
     appendGroups();
     numberOptions();
-    if (getContext().category !== "Livre") {
+    if (!["Livre", "Tout"].includes(getContext().category)) {
       if (!matches.length) suggestions.append(text("p", "Aucun résultat trouvé avec ces filtres", "book-search-status"));
+      appendOfficialSearch();
       return;
     }
     suggestions.append(text("p", "Chargement des livres…", "book-search-status"));
+    appendOfficialSearch();
     await load();
     if (version !== suggestionVersion || suggestions.contains(document.activeElement)) return;
     if (dismissed || document.activeElement !== input || input.value.trim().length < 2) { close(); return; }
-    matches = filtered("", true).slice(0, 6);
+    matches = filtered(getContext().category === "Tout" ? "all" : "", true).slice(0, 6);
     active = -1;
     input.removeAttribute("aria-activedescendant");
     suggestions.replaceChildren();
@@ -455,7 +479,15 @@ export function createBookSearch({ input, suggestions, getContext, createPlatfor
       if (getContext().category === "Livre" && gridTarget) renderGrid(gridTarget.grid, gridTarget.count);
     }, content);
     const access = accessLinks(book);
-    appendLanguageTags(access, book);
+    const tags = text("span", "", "book-platform-tags badge-row");
+    for (const platform of new Map(book.availability.map(entry => [entry.platform, entry])).values()) {
+      const tag = text("span", "", `badge press-provider-badge book-platform-tag book-source-${platform.platform}`);
+      const dot = text("span", "", "entry-source-dot");
+      dot.setAttribute("aria-hidden", "true");
+      tag.append(dot, document.createTextNode(platform.label));
+      tags.append(tag);
+    }
+    appendLanguageTags(tags, book);
     const source = book.variants.find(variant => {
       const value = variant.metadata.description || variant.metadata.abstract;
       return typeof value === "string" && value.trim();
@@ -481,14 +513,14 @@ export function createBookSearch({ input, suggestions, getContext, createPlatfor
       content.append(summary);
       requestAnimationFrame(() => { if (summary.isConnected) summaryObserver.observe(summary); });
     }
-    content.append(access);
+    content.append(tags);
     if (book.categories.length) {
       const categories = text("span", "", "book-categories badge-row");
       for (const category of book.categories) categories.append(text("span", category, "badge editorial book-category-badge"));
       categories.title = `Catégories sources : ${[...new Set(book.variants.flatMap((v) => v.metadata.filter_categories || []))].join(" · ")}`;
       content.append(categories);
     }
-    card.append(illustration(book), content, favorite);
+    card.append(illustration(book), content, favorite, access);
     return card;
   }
 
@@ -503,14 +535,14 @@ export function createBookSearch({ input, suggestions, getContext, createPlatfor
     frame.prepend(backdrop);
   }
 
-  function favoriteTile(book) {
+  function favoriteTile(book, { actionsExpanded = false } = {}) {
     const item = document.createElement("div");
     item.className = "quick-launch-item book-favorite-item";
     item.dataset.bookId = book.id;
     const access = book.availability.find((entry) => entry.url || getContext().platformUrl(entry.resource_id));
     const url = access && (access.url || getContext().platformUrl(access.resource_id));
     const main = text(url && /^https?:\/\//.test(url) ? "a" : "button", "", "quick-launch-main");
-    main.title = book.title;
+    main.title = access && !access.url ? `Ouvrir la plateforme ${access.label} : ${book.title}` : book.title;
     main.setAttribute("aria-label", `Ouvrir : ${book.title}`);
     if (main.tagName === "A") {
       main.href = url;
@@ -530,7 +562,51 @@ export function createBookSearch({ input, suggestions, getContext, createPlatfor
     details.setAttribute("aria-label", `Voir la fiche sur BnF Access : ${book.title}`);
     details.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></svg>';
     details.addEventListener("click", () => choose(book));
-    item.append(main, details);
+    const alternatives = [];
+    const seen = new Set([url]);
+    for (const entry of book.availability) {
+      const href = entry.url || getContext().platformUrl(entry.resource_id);
+      if (!href || !/^https?:\/\//.test(href) || seen.has(href)) continue;
+      seen.add(href);
+      alternatives.push({ entry, href });
+    }
+    item.append(main);
+    if (!alternatives.length) {
+      item.append(details);
+      return item;
+    }
+    item.classList.toggle("has-open-actions", actionsExpanded);
+    const toggle = text("button", actionsExpanded ? "-" : "+", "quick-launch-action-toggle");
+    toggle.type = "button";
+    toggle.dataset.quickLaunchActionsToggle = favoriteId(book);
+    toggle.setAttribute("aria-expanded", String(actionsExpanded));
+    toggle.title = `${actionsExpanded ? "Masquer" : "Afficher"} les actions - ${book.title}`;
+    toggle.setAttribute("aria-label", toggle.title);
+    item.append(toggle);
+    if (actionsExpanded) {
+      const menu = text("div", "", "quick-launch-action-menu");
+      menu.dataset.actionCount = String(alternatives.length + 1);
+      menu.setAttribute("aria-label", `Actions - ${book.title}`);
+      const fiche = text("button", "Fiche", "quick-launch-menu-action");
+      fiche.type = "button";
+      fiche.title = details.title;
+      fiche.setAttribute("aria-label", details.getAttribute("aria-label"));
+      fiche.addEventListener("click", () => choose(book));
+      const row = text("div", "", "quick-launch-menu-row");
+      row.append(fiche);
+      menu.append(row);
+      for (const { entry, href } of alternatives) {
+        const row = text("div", "", "quick-launch-menu-row");
+        const link = text("a", entry.platform === "pret-bnf" ? "Prêt BnF" : entry.label, "quick-launch-menu-action");
+        link.href = href;
+        link.target = "_blank";
+        link.rel = "noreferrer";
+        link.title = `Consulter sur ${entry.label} : ${book.title}`;
+        row.append(link);
+        menu.append(row);
+      }
+      item.append(menu);
+    }
     return item;
   }
 
@@ -553,12 +629,34 @@ export function createBookSearch({ input, suggestions, getContext, createPlatfor
     if (!suggestions.contains(event.target) && event.target !== input && !clearButton?.contains(event.target)) { dismissed = true; close(); }
   });
   return {
+    async renderOverview(section) {
+      section.append(text("p", "Chargement des livres…", "book-search-status"));
+      await load();
+      if (!section.isConnected || getContext().category !== "Tout") return;
+      section.replaceChildren();
+      const heading = text("div", "", "entry-section-heading");
+      const more = text("button", "Voir tout", "filter-button");
+      more.type = "button";
+      more.setAttribute("aria-label", "Voir tous les résultats : Livres");
+      more.addEventListener("click", () => selectBooks(input.value, { keepFavorites: true }));
+      heading.append(text("h2", "Livres"), more);
+      const list = text("div", "", "book-results");
+      const result = filtered("all").filter(book => book.default_favorite);
+      for (const book of result) list.append(bookCard(book));
+      section.append(heading, list);
+      const bottomMore = more.cloneNode(true);
+      bottomMore.classList.add("overview-more");
+      bottomMore.addEventListener("click", () => selectBooks(input.value, { keepFavorites: true }));
+      section.append(bottomMore);
+      if (error || !result.length) section.append(text("p", error ? "Le catalogue de livres n’a pas pu être chargé." : "Aucun résultat avec ces filtres.", "empty"));
+    },
     dismissSuggestions() { dismissed = true; ++suggestionVersion; close(); },
     renderGrid,
     load,
     favoriteTile,
     decorateFavoriteCover,
     legacyFavoriteIds() { return [...legacyFavorites].map(id => `book:${id}`); },
+    defaultFavoriteIds() { return [...defaultFavorites]; },
     resolveFavoriteId(id) { const book = favoriteBooks.get(id); return book ? favoriteId(book) : id; },
     getFavoriteResource(id) {
       if (!/^book:(scholarvox|pret-bnf|eni|garnier):[a-zA-Z0-9_-]+$/.test(id)) return null;

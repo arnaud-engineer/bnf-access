@@ -27053,6 +27053,146 @@
       "icon_size_bytes": 8180
     },
     {
+      "id": "europresse-ob-p",
+      "name": "Le Nouvel Obs",
+      "provider_ids": [
+        "europresse"
+      ],
+      "description": "Hebdomadaire français d’actualité générale, historiquement ancré à gauche et de sensibilité sociale-démocrate",
+      "description_full": "Leader des news magazines en France Le Nouvel Obs est disponible tous les jeudis. Il propose des analyses en profondeur des événements qui font l'actualité, il suit l'évolution de l'économie",
+      "description_status": "europresse_summary",
+      "description_source": "data/sources/catalog/europresse/details.json",
+      "url": "https://nouveau-europresse-com.bnf.idm.oclc.org/PDF/Edition?sourceCode={sourceCode}",
+      "source": "europresse_pdf",
+      "entry_types": [
+        "press_title"
+      ],
+      "source_code": "OB_P",
+      "languages": [
+        {
+          "code": "fr",
+          "label": "français"
+        }
+      ],
+      "language_codes": [
+        "fr"
+      ],
+      "language_labels": [
+        "français"
+      ],
+      "provenance": "France",
+      "latest_edition": "2026/08/20",
+      "archive_start": "2008/01/17",
+      "gif_filename": "Docviewer_199_7wvf.gif",
+      "icon_url": "./assets/logos/webp/collected/7abea4d8cb400b9e9678f6d8f9dd19be4f9efc0f8312afb79580960e1cf1e218.webp",
+      "icon_alt": null,
+      "remote": true,
+      "access": [
+        "pass_lecture_culture",
+        "pass_recherche_illimite"
+      ],
+      "access_mode": "remote",
+      "access_label": "Accès distant",
+      "access_note": "Se connecter a Europresse une fois dans le navigateur peut etre necessaire avant les liens de titres.",
+      "session_prerequisite": "europresse_initialized",
+      "session_start_url": "https://bnf.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=D000067U_1",
+      "tags": [
+        "APA_P",
+        "France",
+        "Le Nouvel Obs",
+        "Le Nouvel Obs (Supplément)",
+        "OB_P",
+        "Société",
+        "europresse",
+        "fr",
+        "français",
+        "hors-série",
+        "langue français",
+        "langue:fr",
+        "pays:fr",
+        "presse",
+        "societe",
+        "titre fusionné",
+        "variantes"
+      ],
+      "default_favorite": false,
+      "actions": [
+        {
+          "id": "latest",
+          "label": "Dernier numéro",
+          "kind": "europresse_latest",
+          "url_template": "https://nouveau-europresse-com.bnf.idm.oclc.org/PDF/Edition?sourceCode={sourceCode}",
+          "session_prerequisite": "europresse_initialized"
+        },
+        {
+          "id": "archives",
+          "label": "Archives",
+          "kind": "europresse_archives",
+          "url_template": "https://nouveau-europresse-com.bnf.idm.oclc.org/PDF/EditionRange?sourceCode={sourceCode}&dateStart={oneYearAgo}&dateEnd={today}",
+          "session_prerequisite": "europresse_initialized"
+        },
+        {
+          "id": "variant_europresse-apa-p",
+          "label": "Hors-série",
+          "kind": "europresse_latest",
+          "url_template": "https://nouveau-europresse-com.bnf.idm.oclc.org/PDF/Edition?sourceCode={sourceCode}",
+          "session_prerequisite": "europresse_initialized",
+          "favorite_label": "Hors-série",
+          "short_label": null,
+          "variant_tone": null,
+          "variant_featured": false,
+          "action_group": "variant",
+          "variant_resource_id": "europresse-apa-p",
+          "variant_resource_name": "Le Nouvel Obs (Supplément)",
+          "source_code": "APA_P",
+          "source_filter_id": "europresse",
+          "source_label": "Europresse",
+          "access_mode": "remote",
+          "access": [
+            "pass_lecture_culture",
+            "pass_recherche_illimite"
+          ],
+          "favorite_visible": true,
+          "session_start_url": "https://bnf.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=D000067U_1"
+        }
+      ],
+      "merged_variant_resource_ids": [
+        "europresse-apa-p"
+      ],
+      "absorbed_resource_ids": [
+        "europresse-apa-p"
+      ],
+      "catalog_merge_kind": "title_variants",
+      "country": {
+        "code": "fr",
+        "label": "France",
+        "source": "europresse_provenance",
+        "confidence": "high"
+      },
+      "country_code": "fr",
+      "country_label": "France",
+      "country_flag_url": "./assets/flags/fr.svg",
+      "topic_ids": [
+        "societe"
+      ],
+      "topic_ids_source": "catalog_editor",
+      "icon_no_padding": true,
+      "icon_background": "#ffffff",
+      "icon_size_bytes": 3498,
+      "catalog_visible": true,
+      "recommended": true,
+      "icon_align": "center",
+      "icon_background_image": "",
+      "icon_white": false,
+      "icon_color": "",
+      "icon_remove_background": false,
+      "icon_remove_outer_background": false,
+      "relations": [],
+      "language_public_note": "",
+      "language_public_note_validated": false,
+      "language_public_note_omitted": false
+    },
+    {
       "id": "europresse-apa-p",
       "name": "Le Nouvel Obs (Supplément)",
       "provider_ids": [

@@ -64,7 +64,7 @@ const state = {
   popularPressTitleIds: new Set(),
   pressPopularityReasons: new Map(),
   languageVocabulary: {},
-  category: "Toutes",
+  category: "Tout",
   favorites: new Set(),
   favoritesReady: false,
   favoritesOnly: false,
@@ -149,7 +149,7 @@ const bookSearch = createBookSearch({
     });
     return {
       category: state.category,
-      favoritesOnly: state.category === "Livre" && state.favoritesOnly,
+      favoritesOnly: state.favoritesOnly,
       languages: state.languageFilter,
       languageTag: (code) => ({ text: formatLanguageBadgeText(code), title: formatLanguageTooltipItem(code) }),
       canAccess,
@@ -164,9 +164,9 @@ const bookSearch = createBookSearch({
     logo.innerHTML = resource.icon_url ? renderIcon(resource, true) : escapeHtml(getFallbackLabel(resource));
     return logo;
   },
-  selectBooks: (query) => {
+  selectBooks: (query, { keepFavorites = false } = {}) => {
     state.category = "Livre";
-    state.favoritesOnly = false;
+    if (!keepFavorites) state.favoritesOnly = false;
     state.query = query;
     renderFilters();
     render();
@@ -199,7 +199,7 @@ const converterResourcesSearch = document.querySelector("#converterResourcesSear
 const converterResourcesProviderFilter = document.querySelector("#converterResourcesProviderFilter");
 const converterResourcesCount = document.querySelector("#converterResourcesCount");
 const converterResourcesList = document.querySelector("#converterResourcesList");
-const searchControls = document.querySelector("#searchControls");
+const searchControls = document.querySelector("#globalSearch");
 const siteFooter = document.querySelector("#siteFooter");
 const jumpToSearchDock = document.querySelector(".jump-to-search-dock");
 const jumpToSearch = document.querySelector("#jumpToSearch");
@@ -332,6 +332,7 @@ const favoriteOrderStorageKey = "bnf-access:v2:favorite-order:v1";
 const favoriteOrderCustomStorageKey = "bnf-access:v2:favorite-order-custom:v1";
 const favoriteLayoutStorageKey = "bnf-access:v2:favorite-layout:v1";
 const bookFavoritesMigratedKey = "bnf-access:v2:book-favorites-migrated:v1";
+const bookDefaultFavoritesMigratedKey = "bnf-access:v2:book-default-favorites-migrated:v1";
 const legacyFavoritesMigratedStorageKey = "bnf-access:v2:legacy-favorites-migrated:v1";
 const pressFavoriteLayoutMigratedStorageKey = "bnf-access:v2:press-favorite-layout-migrated:v1";
 const legacyCatalogResourceIds = new Map([
@@ -739,7 +740,7 @@ async function init() {
   } else {
     loadFavorites();
     loadFavoriteLayout();
-    if (bookSearch.legacyFavoriteIds().length || [...state.favorites].some(id => id.startsWith("book:"))) bookSearch.load().then(integrateBookFavorites);
+    if (readStoredValue(bookDefaultFavoritesMigratedKey) !== "true" || bookSearch.legacyFavoriteIds().length || [...state.favorites].some(id => id.startsWith("book:"))) bookSearch.load().then(integrateBookFavorites);
     loadProfileFilters();
     loadReleaseMode();
     applyInitialViewFromUrl();
@@ -3544,18 +3545,22 @@ function resourceMatchesTaxonomyRoot(resource, rootId) {
 }
 
 function renderFilters() {
+  const roots = getResourceTaxonomyRoots();
   const categories = [
+    { id: "Tout", label: "Tout" },
     { id: "Toutes", label: "Ressources" },
     { id: "Presse", label: "Presse" },
     { id: "Livre", label: "Livres" },
-    ...getResourceTaxonomyRoots().map(({ id, label }) => ({ id, label })),
   ];
 
-  if (!categories.some((category) => category.id === state.category)) {
-    state.category = "Toutes";
+  if (!categories.some((category) => category.id === state.category) && !roots.some(root => root.id === state.category)) {
+    state.category = "Tout";
   }
 
   filters.innerHTML = "";
+  const subfilters = document.querySelector("#resourceCategoryFilters");
+  subfilters.replaceChildren();
+  subfilters.hidden = state.category !== "Toutes" && !roots.some(root => root.id === state.category);
 
   const favoriteButton = document.createElement("button");
   favoriteButton.className = "filter-button favorite-filter";
@@ -3573,26 +3578,20 @@ function renderFilters() {
   separator.setAttribute("aria-hidden", "true");
   filters.append(favoriteButton, separator);
 
-  for (const category of categories) {
+  for (const category of [...categories, ...roots]) {
     const button = document.createElement("button");
     button.className = "filter-button";
     button.type = "button";
     button.innerHTML = `${renderResourceCategoryIcon(category.id)}<span>${escapeHtml(category.label)}</span>`;
-    button.setAttribute("aria-pressed", String(category.id === state.category));
+    button.setAttribute("aria-pressed", String(category.id === state.category || (category.id === "Toutes" && roots.some(root => root.id === state.category))));
     button.addEventListener("click", () => {
       state.category = category.id;
-      if (category.id === "Livre") state.favoritesOnly = false;
-      if (category.id === "Presse" && !state.pressLoaded) loadPressCatalog();
+      if (["Presse", "Tout"].includes(category.id) && !state.pressLoaded) loadPressCatalog();
       renderFilters();
       render();
     });
-    filters.append(button);
-    if (category.id === "Livre") {
-      const categorySeparator = document.createElement("span");
-      categorySeparator.className = "filter-separator";
-      categorySeparator.setAttribute("aria-hidden", "true");
-      filters.append(categorySeparator);
-    }
+    (categories.includes(category) ? filters : subfilters).append(button);
+    if (category.id === "Tout") filters.append(separator.cloneNode(true));
   }
 }
 
@@ -3921,8 +3920,11 @@ function createQuickLaunchResourceItem(resource, resourceIndex, location = {}) {
 }
 
 function createQuickLaunchBookItem(resource, location) {
-  const item = resource.book ? bookSearch.favoriteTile(resource.book) : document.createElement("div");
+  const item = resource.book ? bookSearch.favoriteTile(resource.book, {
+    actionsExpanded: state.quickLaunchActionMenus.has(resource.id),
+  }) : document.createElement("div");
   item.className = "quick-launch-item book-favorite-item";
+  item.classList.toggle("has-open-actions", !state.quickLaunchEditing && state.quickLaunchActionMenus.has(resource.id));
   item.dataset.resourceId = resource.id;
   if (location.rowId) item.dataset.rowId = location.rowId;
   if (location.folderId) item.dataset.folderId = location.folderId;
@@ -3930,6 +3932,7 @@ function createQuickLaunchBookItem(resource, location) {
     item.title = resource.name;
     item.innerHTML = `<span class="quick-launch-main" aria-disabled="true"><span class="quick-launch-tile book-favorite-tile">Livre</span><small class="quick-launch-label">${escapeHtml(resource.name)}</small></span>`;
   }
+  item.querySelector("[data-quick-launch-actions-toggle]")?.addEventListener("click", handleQuickLaunchActionsToggle);
   if (state.quickLaunchEditing) {
     const main = item.querySelector(".quick-launch-main");
     const tile = main.querySelector(".quick-launch-tile"), label = main.querySelector(".quick-launch-label");
@@ -5120,6 +5123,10 @@ function getPressPlatformResources(resources) {
 
 function renderResourceGrid(options = {}) {
   const renderVersion = ++progressiveRenderVersion;
+  if (state.category === "Tout") {
+    renderOverview();
+    return;
+  }
   if (state.category === "Livre") {
     resultsSummary.hidden = true;
     grid.classList.add("results-grouped");
@@ -7407,6 +7414,56 @@ function withTransitionParams(url, values) {
   ), url);
 }
 
+function renderOverview() {
+  resultsSummary.hidden = true;
+  grid.classList.add("results-grouped");
+  grid.replaceChildren();
+  const resources = getFilteredResources()
+    .filter(resource => resource.default_favorite)
+    .sort((a, b) => a.name.localeCompare(b.name, "fr"));
+  for (const [label, category, entries] of [
+    ["Ressources", "Toutes", resources.filter(resource => isPressResourceEntry(resource) && !isPressTitleEntry(resource))],
+    ["Presse", "Presse", resources.filter(resource => isPressTitleEntry(resource) && getVisibleActions(resource).length)],
+  ]) {
+    const section = document.createElement("section");
+    section.className = "entry-section overview-section";
+    const heading = document.createElement("div");
+    heading.className = "entry-section-heading";
+    const title = document.createElement("h2");
+    title.textContent = label;
+    const more = document.createElement("button");
+    more.type = "button";
+    more.className = "filter-button";
+    more.textContent = "Voir tout";
+    more.setAttribute("aria-label", `Voir tous les résultats : ${label}`);
+    const openCategory = () => { state.category = category; renderFilters(); render(); };
+    more.addEventListener("click", openCategory);
+    heading.append(title, more);
+    const list = document.createElement("div");
+    list.className = "entry-grid";
+    appendCardRange(list, entries, 0, entries.length, {
+      eager: true,
+      context: category === "Presse" ? "title" : "resource",
+    });
+    if (!entries.length) {
+      const empty = document.createElement("p");
+      empty.className = "empty";
+      empty.textContent = category === "Presse" && !state.pressLoaded ? "Chargement des titres de presse…" : "Aucun résultat avec ces filtres.";
+      list.append(empty);
+    }
+    const bottomMore = more.cloneNode(true);
+    bottomMore.classList.add("overview-more");
+    bottomMore.addEventListener("click", openCategory);
+    section.append(heading, list, bottomMore);
+    grid.append(section);
+  }
+  const books = document.createElement("section");
+  books.className = "entry-section overview-section";
+  grid.append(books);
+  bookSearch.renderOverview(books);
+  grid.dataset.renderComplete = "true";
+}
+
 function getCatalogSuggestionGroups(query) {
   const words = normalize(query).trim().split(/\s+/).filter(Boolean);
   const candidates = state.resources.filter(resource => shouldShowResourceInCurrentListing(resource)
@@ -7500,6 +7557,7 @@ function createCatalogSuggestion(resource) {
 }
 
 function matchesResourceCategoryFilter(resource) {
+  if (state.category === "Tout") return true;
   if (state.category === "Livre") return false;
   return state.category === "Presse"
     ? isPressTitleEntry(resource) || resource.topic_ids?.includes("presse")
@@ -8396,6 +8454,10 @@ function integrateBookFavorites() {
   // Keep the legacy list as backup without restoring favorites removed after migration.
   const legacy = readStoredValue(bookFavoritesMigratedKey) === "true" ? [] : bookSearch.legacyFavoriteIds();
   const extras = [...new Set(legacy.map(id => bookSearch.resolveFavoriteId(id)))].filter(id => !ids.has(id));
+  const defaultsPending = readStoredValue(bookDefaultFavoritesMigratedKey) !== "true";
+  if (defaultsPending && (ids.size || state.favoritesInitializedFromDefaults)) {
+    for (const id of bookSearch.defaultFavoriteIds()) if (!ids.has(id) && !extras.includes(id)) extras.push(id);
+  }
   if (extras.length) {
     const row = createFavoriteRow(layout, createFavoriteContainerId("row"), "Livres");
     for (const id of extras) { ids.add(id); moveFavoriteResource(layout, id, { rowId: row.id }); }
@@ -8409,6 +8471,7 @@ function integrateBookFavorites() {
     saveFavoriteLayout();
   }
   if (readStoredValue(favoriteLayoutStorageKey) === JSON.stringify(normalized)) writeStoredValue(bookFavoritesMigratedKey, "true");
+  if (bookSearch.defaultFavoriteIds().length && readStoredValue(favoriteLayoutStorageKey) === JSON.stringify(normalized)) writeStoredValue(bookDefaultFavoritesMigratedKey, "true");
   if (changed) render();
 }
 

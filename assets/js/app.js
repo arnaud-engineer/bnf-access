@@ -1,5 +1,5 @@
-import { createBookSearch } from "./book-search.js?v=2026-10-01-overview-more";
-import { createSearchHints } from "./search-hints.js?v=2026-10-01-two-cycles";
+import { createBookSearch } from "./book-search.js?v=2026-10-01-unified-search";
+import { createSearchHints } from "./search-hints.js?v=2026-10-01-unified-search";
 import {
   activeEditorialCategoryIds,
   canonicalizeEditorialTaxonomy,
@@ -130,28 +130,31 @@ const grid = document.querySelector("#resourceGrid");
 const filters = document.querySelector("#categoryFilters");
 const searchInput = document.querySelector("#searchInput");
 const searchHints = createSearchHints(searchInput, [document.querySelector("#filterSearchInput")]);
+const bookPlatformDefinitions = [
+  ["pret-bnf", "bnf-pret-numerique", "Prêt BnF"],
+  ["scholarvox", "scholarvox-cyberlibris", "ScholarVox"],
+  ["eni", "eni-bibliotheque-numerique", "ENI"],
+  ["garnier", "classiques-garnier-livres-et-revues-numeriques", "Garnier"],
+];
 const bookSearch = createBookSearch({
   input: searchInput,
   mirrors: [{ input: document.querySelector("#filterSearchInput"), clear: document.querySelector("#filterSearchClear") }],
   suggestions: document.querySelector("#bookSuggestions"),
   getSuggestionGroups: getCatalogSuggestionGroups,
+  shouldSuggest: () => !isSearchLink(searchInput.value),
   getContext: () => {
     const byId = new Map(state.resources.map((entry) => [entry.id, entry]));
     const canAccess = (id) => {
       const resource = byId.get(id);
       return Boolean(resource && matchesPassFilter(resource) && matchesRemoteFilter(getAccessMode(resource)));
     };
-    const platforms = [
-      ["pret-bnf", "bnf-pret-numerique", "Prêt BnF"],
-      ["scholarvox", "scholarvox-cyberlibris", "ScholarVox"],
-      ["eni", "eni-bibliotheque-numerique", "ENI"],
-      ["garnier", "classiques-garnier-livres-et-revues-numeriques", "Garnier"],
-    ].filter(([, id]) => canAccess(id)).map(([id, resourceId, label]) => {
+    const platforms = bookPlatformDefinitions.filter(([, id]) => canAccess(id)).map(([id, resourceId, label]) => {
       const resource = byId.get(resourceId);
       return { id, label, resource, access: getAccessModeLabel(resource), accessClass: accessModeClasses[getAccessMode(resource)] ?? "onsite", url: resource.actions?.[0]?.url };
     });
     return {
       category: state.category,
+      query: state.query,
       favoritesOnly: state.favoritesOnly,
       languages: state.languageFilter,
       languageTag: (code) => ({ text: formatLanguageBadgeText(code), title: formatLanguageTooltipItem(code) }),
@@ -192,7 +195,8 @@ const quickLaunch = document.querySelector("#quickLaunch");
 const releaseModeLabel = document.querySelector("#betaLabel");
 const linkConverter = document.querySelector("#linkConverter");
 const linkConverterForm = document.querySelector("#linkConverterForm");
-const linkConverterInput = document.querySelector("#linkConverterInput");
+const linkConverterInput = searchInput;
+const searchLinkOpen = document.querySelector("#searchLinkOpen");
 const linkConverterServices = document.querySelector("#linkConverterServices");
 const linkConverterFeedback = document.querySelector("#linkConverterFeedback");
 const linkConverterResourceListOpen = document.querySelector("#linkConverterResourceListOpen");
@@ -399,6 +403,7 @@ const jsonFetchPromises = new Map();
 const linkConverterRules = [
   {
     label: "Arrêt sur images",
+    resourceId: "arretsurimages-net",
     mappings: [
       {
         hosts: ["arretsurimages.net", "www.arretsurimages.net"],
@@ -411,6 +416,7 @@ const linkConverterRules = [
   },
   {
     label: "Alternatives économiques",
+    resourceId: "alternatives-economiques",
     mappings: [
       {
         hosts: ["alternatives-economiques.fr", "www.alternatives-economiques.fr"],
@@ -423,6 +429,7 @@ const linkConverterRules = [
   },
   {
     label: "Mediapart",
+    resourceId: "mediapart",
     mappings: [
       {
         hosts: ["mediapart.fr", "www.mediapart.fr"],
@@ -441,18 +448,21 @@ const linkConverterRules = [
 
 const europresseSearchConverterRule = {
   label: "Europresse",
+  resourceId: "europresse",
   iconUrl: "./assets/logos/europresse.webp",
   exampleUrl: "https://www.lemonde.fr/",
 };
 
 const pressreaderSearchConverterRule = {
   label: "PressReader",
+  resourceId: "pressreader",
   iconUrl: "./assets/logos/pressreader.png",
   exampleUrl: "https://www.foreignaffairs.com/",
 };
 
 const indexpresseBusinessSearchConverterRule = {
   label: "IndexPresse Business",
+  resourceId: "indexpresse-business",
   iconUrl: "./assets/logos/indexpresse.svg",
   exampleUrl: "https://www.strategies.fr/",
 };
@@ -723,6 +733,7 @@ async function init() {
   ]);
   validateCatalog(data);
   state.resources = data.resources;
+  renderLinkConverterServices();
   state.providers = data.providers;
   state.editorialTaxonomy = getEditorialTaxonomy(data, state.resources);
   state.editorialTaxonomyIndex = categoryIndex(state.editorialTaxonomy);
@@ -782,6 +793,7 @@ async function loadPressCatalog() {
       state.popularPressTitleIds = new Set(popularity.popular_catalog_ids ?? []);
       state.pressPopularityReasons = buildPressPopularityReasonIndex(popularity);
       state.pressLoaded = true;
+      renderLinkConverterServices();
       state.pressLoadError = false;
       finalizeInitialFavoriteLayout();
       loadEditionSelections();
@@ -1554,15 +1566,24 @@ function bindEvents() {
   pressPopularityNoteClose.addEventListener("click", closePressPopularityNote);
 
   searchInput.addEventListener("input", (event) => {
-    state.query = event.target.value;
+    state.query = isSearchLink(event.target.value) ? "" : event.target.value;
+    linkConverterFeedback.textContent = "";
+    syncSearchLinkAction();
     render();
   });
-
   searchInput.addEventListener("keydown", (event) => {
+    if (event.altKey || event.ctrlKey || event.metaKey) return;
+    if (event.key === "Enter" && isSearchLink(searchInput.value)) {
+      event.preventDefault();
+      if (isAlphaMode) linkConverterForm.requestSubmit();
+      return;
+    }
     if (bookSearch.handleKeydown(event)) return;
     if (event.key !== "Enter") return;
     event.preventDefault();
     searchInput.blur();
+    bookSearch.dismissSuggestions();
+    requestAnimationFrame(() => grid.scrollIntoView({ block: "start", behavior: "smooth" }));
   });
 
   passFilter.addEventListener("change", (event) => {
@@ -1856,6 +1877,10 @@ function setAlphaMode(enabled, { gesture = false, persist = true } = {}) {
     writeStoredValue(alphaModeDiscoveredStorageKey, "true");
   }
   isAlphaMode = enabled;
+  searchHints.setAlphaMode(enabled);
+  syncSearchLinkAction();
+  linkConverterFeedback.textContent = "";
+  bookSearch.dismissSuggestions();
   releaseModeLabel.textContent = enabled ? "ALPHA" : "BETA";
   syncReleaseModeSettings();
   if (persist) writeStoredValue(releaseModeStorageKey, enabled ? "alpha" : "beta");
@@ -1863,7 +1888,8 @@ function setAlphaMode(enabled, { gesture = false, persist = true } = {}) {
     linkConverter.hidden = false;
     loadDeferredLinkSources();
   } else {
-    if (!linkConverter.hidden) toggleLinkConverter();
+    linkConverter.hidden = true;
+    closeConverterResourcesModal();
     closeAlphaModeNote();
   }
   renderQuickLaunch();
@@ -1871,20 +1897,21 @@ function setAlphaMode(enabled, { gesture = false, persist = true } = {}) {
 }
 
 function toggleLinkConverter() {
-  if (!linkConverter) return;
-  const willShow = linkConverter.hidden;
-  linkConverter.hidden = !willShow;
+  if (!isAlphaMode) return;
+  loadDeferredLinkSources();
+  searchInput.focus({ preventScroll: true });
+  searchInput.scrollIntoView({ behavior: "smooth", block: "center" });
+}
 
-  if (willShow) {
-    loadDeferredLinkSources();
-    linkConverterInput?.focus({ preventScroll: true });
-    linkConverter.scrollIntoView({ behavior: "smooth", block: "nearest" });
-    return;
-  }
+function isSearchLink(value) {
+  const text = String(value ?? "").trim();
+  return /^https?:\/\//i.test(text) || /^(?:www\.)?[a-z0-9-]+(?:\.[a-z0-9-]+)*\.[a-z]{2,}(?:[/:?#]|$)/i.test(text);
+}
 
-  window.clearTimeout(converterResourcesCloseTimer);
-  converterResourcesModal?.classList.remove("is-open", "is-closing");
-  if (converterResourcesModal) converterResourcesModal.hidden = true;
+function syncSearchLinkAction() {
+  const enabled = isAlphaMode && isSearchLink(searchInput.value);
+  searchLinkOpen.hidden = !enabled;
+  searchInput.closest(".search").classList.toggle("has-link-action", enabled);
 }
 
 function setupLinkConverter() {
@@ -1896,6 +1923,8 @@ function setupLinkConverter() {
 
   linkConverterForm.addEventListener("submit", (event) => {
     event.preventDefault();
+    if (!isAlphaMode || !isSearchLink(linkConverterInput.value)) return;
+    bookSearch.dismissSuggestions();
     const conversion = convertToBnfProxyUrl(linkConverterInput.value);
 
     if (!conversion) {
@@ -2524,32 +2553,50 @@ function openConvertedLink(url) {
 }
 
 function renderLinkConverterServices() {
-  linkConverterServices.innerHTML = getLinkConverterServices()
-    .map((rule) => `
+  const bookPlatforms = document.querySelector("#searchBookPlatforms");
+  const renderShortcuts = (target, entries, className) => {
+    target.innerHTML = entries
+      .filter((rule) => {
+        const resource = state.resources.find(entry => entry.id === rule.resourceId);
+        return resource && isCatalogVisible(resource) && matchesPassFilter(resource)
+          && matchesRemoteFilter(getAccessMode(resource));
+      })
+      .map((rule) => {
+        const resource = state.resources.find(entry => entry.id === rule.resourceId);
+        return `
       <button
-        class="link-converter-service"
+        class="${className}"
         type="button"
-        title="${escapeAttribute(rule.label)}"
+        title="Rechercher : ${escapeAttribute(rule.label)}"
         aria-label="${escapeAttribute(rule.label)}"
-        data-example-url="${escapeAttribute(rule.exampleUrl ?? "")}"
+        data-resource-id="${escapeAttribute(rule.resourceId)}"
       >
-        ${rule.iconUrl
-          ? `<img src="${escapeAttribute(rule.iconUrl)}" alt="" aria-hidden="true" loading="eager" decoding="async" fetchpriority="high">`
-          : `<span aria-hidden="true">${escapeHtml(getFallbackLabel({ name: rule.label }))}</span>`}
+        <span class="quick-launch-tile${resource.icon_no_padding ? " icon-no-padding" : ""}"${logoAppearanceAttributes(resource)}>${resource.icon_url ? renderIcon(resource, true) : escapeHtml(getFallbackLabel(resource))}</span>
       </button>
-    `)
-    .join("");
+      `;
+      })
+      .join("");
 
-  linkConverterServices.querySelectorAll(".link-converter-service").forEach((button) => {
-    button.addEventListener("click", () => {
-      if (button.dataset.exampleUrl) {
-        linkConverterInput.value = button.dataset.exampleUrl;
-      }
-
-      linkConverterInput.focus();
-      linkConverterInput.select();
+    target.querySelectorAll("button").forEach((button) => {
+      button.addEventListener("click", () => {
+        if (!isAlphaMode) return;
+        const resource = state.resources.find(entry => entry.id === button.dataset.resourceId);
+        if (resource) searchConverterResource(resource);
+      });
     });
-  });
+  };
+  renderShortcuts(linkConverterServices, getLinkConverterServices(), "link-converter-service");
+  renderShortcuts(bookPlatforms, bookPlatformDefinitions.map(([, resourceId, label]) => ({ resourceId, label })), "search-book-platform");
+}
+
+function searchConverterResource(resource) {
+  state.category = isPressTitleEntry(resource) ? "Presse" : "Toutes";
+  state.favoritesOnly = false;
+  searchInput.value = resource.name;
+  renderFilters();
+  searchInput.dispatchEvent(new Event("input", { bubbles: true }));
+  bookSearch.dismissSuggestions();
+  searchInput.dispatchEvent(new KeyboardEvent("keydown", { key: "Enter", bubbles: true, cancelable: true }));
 }
 
 function convertToBnfProxyUrl(rawValue) {
@@ -3409,6 +3456,7 @@ function revealApp() {
 }
 
 function render() {
+  renderLinkConverterServices();
   renderQuickLaunch();
   if (catalogFavoritesPreview) {
     return;
@@ -4833,7 +4881,7 @@ function renderQuickLaunchActionMenu(resource, actions) {
 
   return `
     <button class="quick-launch-action-toggle" type="button" data-quick-launch-actions-toggle="${escapeAttribute(resource.id)}" aria-expanded="${String(isExpanded)}" aria-label="${escapeAttribute(toggleLabel)}" title="${escapeAttribute(toggleLabel)}">
-      ${isExpanded ? "-" : "+"}
+      <span class="shortcut-plus-symbol${isExpanded ? " is-minus" : ""}" aria-hidden="true">${isExpanded ? "-" : "+"}</span>
     </button>
     ${isExpanded ? `
       <div class="quick-launch-action-menu" data-action-count="${actions.length}" aria-label="${escapeAttribute(`Actions - ${resource.name}`)}">

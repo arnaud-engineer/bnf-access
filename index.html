@@ -45,7 +45,7 @@
         );
       } catch {}
     </script>
-    <link rel="stylesheet" href="./assets/css/styles.css?v=2026-10-01-search-hints">
+    <link rel="stylesheet" href="./assets/css/styles.css?v=2026-10-01-unified-search">
   </head>
   <body class="is-loading">
     <div id="appLoader" class="app-loader" role="status" aria-live="polite">
@@ -95,32 +95,27 @@
         <button id="dismissNotice" class="notice-action" type="button">J’ai compris</button>
       </section>
 
-      <section id="linkConverter" class="link-converter" aria-labelledby="linkConverterTitle" hidden>
-        <div class="section-heading compact">
-          <h2 id="linkConverterTitle">Ouvrir un lien via la BnF</h2>
-        </div>
-        <form id="linkConverterForm" class="link-converter-form">
-          <label class="link-converter-field">
-            <span class="sr-only">Lien à ouvrir via la BnF</span>
-            <input id="linkConverterInput" type="text" placeholder="Coller un lien article..." autocomplete="off" inputmode="url" spellcheck="false">
-          </label>
-          <button class="link-converter-submit" type="submit" aria-label="Ouvrir le lien via la BnF" title="Ouvrir le lien via la BnF">
-            <svg aria-hidden="true" viewBox="0 0 24 24">
-              <path d="m21 21-4.35-4.35m2.35-5.15a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/>
-            </svg>
-          </button>
-        </form>
-        <div class="link-converter-meta">
-          <div id="linkConverterServices" class="link-converter-services" aria-label="Services pris en charge"></div>
-          <button id="linkConverterResourceListOpen" class="link-converter-list-link" type="button">Liste complète</button>
-        </div>
-        <p id="linkConverterFeedback" class="link-converter-feedback" role="status" aria-live="polite"></p>
-      </section>
-
       <section id="globalSearch" class="search-section global-search" aria-label="Recherche">
           <div class="search">
-            <input id="searchInput" type="text" placeholder="Rechercher une ressource, un titre de presse ou un livre…" aria-label="Rechercher une ressource, un titre de presse ou un livre" autocomplete="off" enterkeyhint="search" role="combobox" aria-haspopup="dialog" aria-expanded="false" aria-controls="bookSuggestions">
-            <button id="searchClear" type="button" aria-label="Effacer la recherche" title="Effacer la recherche" hidden><span aria-hidden="true">×</span></button>
+            <form id="linkConverterForm" class="unified-search-form">
+              <input id="searchInput" type="text" placeholder="Rechercher une ressource, un titre de presse ou un livre…" aria-label="Rechercher une ressource, un titre de presse ou un livre" autocomplete="off" enterkeyhint="search" role="combobox" aria-haspopup="dialog" aria-expanded="false" aria-controls="bookSuggestions">
+              <button id="searchClear" type="button" aria-label="Effacer la recherche" title="Effacer la recherche" hidden><span aria-hidden="true">×</span></button>
+              <button id="searchLinkOpen" class="link-converter-submit" type="submit" aria-label="Ouvrir le lien via la BnF" title="Ouvrir le lien via la BnF" hidden>
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="m21 21-4.35-4.35m2.35-5.15a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/>
+                </svg>
+              </button>
+            </form>
+            <div id="linkConverter" class="link-converter" aria-label="Liens via la BnF — Alpha" hidden>
+              <div class="link-converter-meta">
+                <div id="searchBookPlatforms" class="link-converter-services" aria-label="Plateformes de livres recensées"></div>
+                <div class="search-press-shortcuts">
+                <div id="linkConverterServices" class="link-converter-services" aria-label="Services pris en charge"></div>
+                <button id="linkConverterResourceListOpen" class="search-shortcut-more" type="button" aria-label="Liste complète des ressources" title="Liste complète des ressources"><span class="shortcut-plus-symbol" aria-hidden="true">+</span></button>
+                </div>
+              </div>
+              <p id="linkConverterFeedback" class="link-converter-feedback" role="status" aria-live="polite"></p>
+            </div>
             <div id="bookSuggestions" class="book-suggestions" role="dialog" aria-label="Suggestions de ressources, presse et livres" hidden></div>
           </div>
       </section>
@@ -437,6 +432,6 @@
       </nav>
     </footer>
 
-    <script src="./assets/js/app.js?v=2026-10-01-search-hints-two-cycles" type="module"></script>
+    <script src="./assets/js/app.js?v=2026-10-01-unified-search" type="module"></script>
   </body>
 </html>

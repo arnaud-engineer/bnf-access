@@ -1,6 +1,6 @@
 const fold = (value) => String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 
-export function createBookSearch({ input, mirrors = [], suggestions, getContext, createPlatformLogo, selectBooks, onFavoritesChange, getFavoriteIds, toggleFavoriteBook, onCatalogReady, getSuggestionGroups = () => [] }) {
+export function createBookSearch({ input, mirrors = [], suggestions, getContext, createPlatformLogo, selectBooks, onFavoritesChange, getFavoriteIds, toggleFavoriteBook, onCatalogReady, getSuggestionGroups = () => [], shouldSuggest = () => true }) {
   const favoriteKey = "bnf-access:v2:book-favorites:v1";
   let legacyFavorites = new Set();
   try {
@@ -94,7 +94,7 @@ export function createBookSearch({ input, mirrors = [], suggestions, getContext,
 
   function filtered(ignore = "", forSuggestions = false) {
     const context = getContext();
-    const query = fold(input.value.trim());
+    const query = fold((context.query ?? input.value).trim());
     const words = query.split(/\s+/).filter(Boolean);
     const result = [];
     for (const book of books ?? []) {
@@ -203,8 +203,9 @@ export function createBookSearch({ input, mirrors = [], suggestions, getContext,
   }
 
   async function suggest() {
+    if (!shouldSuggest()) { close(); return; }
     if (suggestions.contains(document.activeElement)) return;
-    if (dismissed || document.activeElement !== input || input.value.trim().length < 2) { close(); return; }
+    if (dismissed || !shouldSuggest() || document.activeElement !== input || input.value.trim().length < 2) { close(); return; }
     suggestions.hidden = false;
     matches = [];
     input.setAttribute("aria-expanded", "true");
@@ -232,7 +233,7 @@ export function createBookSearch({ input, mirrors = [], suggestions, getContext,
     appendOfficialSearch();
     await load();
     if (version !== suggestionVersion || suggestions.contains(document.activeElement)) return;
-    if (dismissed || document.activeElement !== input || input.value.trim().length < 2) { close(); return; }
+    if (dismissed || !shouldSuggest() || document.activeElement !== input || input.value.trim().length < 2) { close(); return; }
     matches = filtered(getContext().category === "Tout" ? "all" : "", true).slice(0, 6);
     active = -1;
     input.removeAttribute("aria-activedescendant");
@@ -450,7 +451,7 @@ export function createBookSearch({ input, mirrors = [], suggestions, getContext,
     const version = ++gridVersion;
     moreObserver?.disconnect();
     gridTarget = { grid, count };
-    const query = input.value.trim();
+    const query = (getContext().query ?? input.value).trim();
     if (query !== lastQuery) { lastQuery = query; limit = 40; }
     grid.replaceChildren(text("p", "Chargement des livres…", "book-search-status"));
     await load();
@@ -680,7 +681,7 @@ export function createBookSearch({ input, mirrors = [], suggestions, getContext,
       await load();
       if (version !== gridVersion || !section.isConnected || getContext().category !== "Tout") return;
       section.replaceChildren();
-      const searching = Boolean(input.value.trim());
+      const searching = Boolean((getContext().query ?? input.value).trim());
       const allResults = filtered("all");
       const result = allResults.filter(book => searching || book.default_favorite).slice(0, searching ? 40 : undefined);
       const hasMore = allResults.length > result.length;

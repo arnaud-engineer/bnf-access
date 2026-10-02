@@ -23,18 +23,26 @@ export function validateDebridageProfiles(data) {
     }
     // Profiles are data, not executable regex programs: no assertions, backrefs or nested quantifiers.
     if (!string(p.path, 500) || !p.path.endsWith("$") || /\(\?|\\[1-9]|\||\([^)]*[*+{][^)]*\)[*+{]/.test(p.path)) throw new Error("Format de lien non autorisé.");
-    try { new RegExp(p.path); } catch { throw new Error("Format de lien invalide."); }
+    let captureCount;
+    try {
+      // The empty alternative lets the parser report capture slots without an article match.
+      captureCount = new RegExp(`(?:${p.path})|`).exec("").length - 1;
+    } catch { throw new Error("Format de lien invalide."); }
     if (!list(p.methods) || !p.methods.length || new Set(p.methods).size !== p.methods.length || p.methods.some(m => !methods.has(m))) throw new Error("Méthodes invalides.");
     if (!["reference", "title-only"].includes(p.methods[0])) throw new Error("La méthode principale doit être une référence ou une recherche par titre.");
     if (p.methods.includes("title-only") && p.methods.some(m => m !== "title-only")) throw new Error("La recherche sans référence doit avoir son propre profil.");
     if (p.title_fallback_without_reference !== undefined && (typeof p.title_fallback_without_reference !== "boolean" || (p.title_fallback_without_reference && !p.methods.includes("reference-title")))) throw new Error("Secours textuel sans référence invalide.");
     if (p.title_word_strategy !== undefined && p.title_word_strategy !== "balanced") throw new Error("Sélection des mots du titre invalide.");
     if (!p.date || !["input", "captures", "month"].includes(p.date.type)) throw new Error("Extraction de date invalide.");
-    for (const groups of [p.date.groups, p.date.month_groups ?? []]) {
-      if (!Array.isArray(groups) || groups.some(g => !Number.isInteger(g) || g < 1 || g > 9)) throw new Error("Groupes de date invalides.");
+    for (const [index, groups] of [p.date.groups, p.date.month_groups ?? []].entries()) {
+      // Historical input recipes retain unused groups; only read groups must exist.
+      const used = index === 1 || p.date.type !== "input";
+      if (!Array.isArray(groups) || groups.some(g => !Number.isInteger(g) || g < 1 || g > 9 || (used && g > captureCount))) throw new Error("Groupes de date invalides : le groupe utilisé doit exister dans le format du lien.");
     }
     if (p.date.type !== "input" && !p.date.groups.length) throw new Error("Date sans groupe d'extraction.");
     if (p.date_hint !== undefined && p.date_hint !== "uuid-v1") throw new Error("Indice de date invalide.");
+    if (p.manual_search_source !== undefined && (!p.manual_search_source || !string(p.manual_search_source.id, 12) || !/^\d{1,12}$/.test(p.manual_search_source.id) ||
+      !string(p.manual_search_source.label, 120) || !p.manual_search_source.label.trim())) throw new Error("Source du secours manuel invalide.");
     if (p.publications !== undefined) {
       if (!Array.isArray(p.publications) || !p.publications.length || p.publications.some(v => !/^[A-Z0-9]{1,12}$/.test(v.code) || !string(v.label, 120))) throw new Error("Publications invalides.");
       if (new Set(p.publications.map(v => v.code)).size !== p.publications.length) throw new Error("Publications dupliquées.");
@@ -45,6 +53,8 @@ export function validateDebridageProfiles(data) {
       } else if (p.reference?.type === "id") {
         const template = p.reference.template;
         if (!string(template, 200) || !template.startsWith("news·{day}·") || !/^[a-zA-Z0-9·×{}_-]+$/.test(template) || /\{(?!(?:day|publication|id[1-9])\})/.test(template)) throw new Error("Modèle de référence invalide.");
+        if ([...template.matchAll(/\{id([1-9])\}/g)].some(match => Number(match[1]) > captureCount)) throw new Error("Identifiant de référence absent du format du lien.");
+        if (template.includes("{publication}") && !p.publications?.length) throw new Error("Le modèle exige une liste de publications au choix.");
       } else throw new Error("Méthode de référence manquante.");
     }
     for (const field of ["message", "date_message", "limitations", "catalog_resource_id"]) if (!string(p[field])) throw new Error("Champ de profil invalide : " + field);

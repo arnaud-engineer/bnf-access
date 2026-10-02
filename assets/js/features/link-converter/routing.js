@@ -25,6 +25,7 @@ export function createConverterRouting({
   equivalentHostPrefixes = defaultEquivalentHostPrefixes,
   europresseEntrypointUrl = defaultEuropresseEntrypointUrl,
   europresseProxyHost = defaultEuropresseProxyHost,
+  identifyDebridage: identifyProfile = identifyDebridage,
   findResourceForIndexPresseBusinessSource,
   findResourceForPressReaderSource,
   state
@@ -157,7 +158,7 @@ export function createConverterRouting({
     const keywordQuery = buildEuropresseKeywordQueryFromUrl(url);
     const query = titleQuery || keywordQuery;
 
-    if (!query && identifyDebridage(url.href)?.enabled !== true) {
+    if (!query && identifyProfile(url.href)?.enabled !== true) {
       return null;
     }
 
@@ -485,12 +486,16 @@ export function createConverterRouting({
 
   function findEuropresseSourceForUrl(url) {
     const resources = state.resources.filter((resource) => resource.source === "europresse_pdf");
-    const profile = identifyDebridage(url.href);
+    const profile = identifyProfile(url.href);
     const profileResource = profile && resources.find(resource => resource.id === profile.catalog_resource_id);
     const configuredMatch = profileResource
       ? {matches: [profileResource], searchSource: getEuropresseSearchSourceFromMatches([profileResource]), sourceLabel: profileResource.name, confidence: "configured-profile"}
       // Press entries load lazily; a qualified profile already identifies the journal.
       : profile ? {matches: [], searchSource: null, sourceLabel: profile.name, confidence: "configured-profile"} : null;
+    // An editor override targets manual search only; it never constrains V2 title queries.
+    if (profile?.manual_search_source && configuredMatch) {
+      return {...configuredMatch, searchSource: profile.manual_search_source};
+    }
     if (profile?.path_prefix && configuredMatch) return configuredMatch;
     const knownMapping = europresseKnownDomainMappings.find((mapping) => hostMatchesAny(url.hostname, mapping.hosts));
 

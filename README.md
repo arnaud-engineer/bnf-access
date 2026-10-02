@@ -25,6 +25,9 @@ Le projet est volontairement statique. Le site publiable se trouve directement �
 
 Les catalogues volumineux et les images sont chargés progressivement. Les éléments déjà consultés peuvent être réutilisés depuis le cache du navigateur lorsque leur version n'a pas changé.
 
+Le découpage des modules, les responsabilités et les conventions de maintenance
+sont documentés dans [Code Structure](docs/CODE-STRUCTURE.md).
+
 ## Developpement des livres
 
 Le chantier livres se prepare sur `feature/livres`. GitHub Pages continue de

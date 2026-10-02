@@ -1,4 +1,7 @@
+import { prepareEuropresseAutomatic, suggestEuropresseDate, prepareEuropresseDateAlternatives, europresseTitleWords, prepareEuropresseTitleFallback, prepareEuropresseTextSearch } from "../modules/europresse-auto.mjs?v=2026-10-02-auto-v15";
+
 const params = new URLSearchParams(window.location.search);
+const originalUrl = params.get("from") || "";
 const query = params.get("q") || "";
 const keywords = params.get("keywords") || "";
 const source = params.get("source") || "";
@@ -24,6 +27,7 @@ const alternativeQueryOutput = document.querySelector("#europresseSearchAlternat
 const copyKeywordButton = document.querySelector("#copyKeywordSearch");
 
 function init() {
+  initAutomaticSearch();
   if (!query) {
     status.textContent = "Aucun terme exploitable n'a été trouvé dans ce lien.";
     submitButton.disabled = true;
@@ -48,6 +52,79 @@ function init() {
   copyButton.addEventListener("click", copySearch);
   copyKeywordButton.addEventListener("click", copyKeywordSearch);
   status.textContent = "Recherche prête. Cliquez sur le bouton ci-dessous quand vous avez lu les consignes.";
+}
+
+function initAutomaticSearch() {
+  const button = document.querySelector("#automaticSearch");
+  const dateBlock = document.querySelector("#automaticDateBlock");
+  const dateInput = document.querySelector("#automaticDate");
+  const alternateDateInput = document.querySelector("#automaticAlternateDate");
+  const publicationBlock = document.querySelector("#automaticPublicationBlock");
+  const publicationInput = document.querySelector("#automaticPublication");
+  const output = document.querySelector("#automaticStatus");
+  const estimateButton = document.querySelector("#automaticDateEstimate");
+  const alternativesBlock = document.querySelector("#automaticDateAlternativesBlock");
+  const alternativesButton = document.querySelector("#automaticDateAlternatives");
+  const alternativesStatus = document.querySelector("#automaticDateAlternativesStatus");
+  const titleBlock = document.querySelector("#automaticTitleBlock");
+  const titleWords = document.querySelector("#automaticTitleWords");
+  const titleButton = document.querySelector("#automaticTitleSearch");
+  const titleStatus = document.querySelector("#automaticTitleStatus");
+  const dateHint = suggestEuropresseDate(originalUrl);
+  titleWords.value = europresseTitleWords(keywords || query).slice(0, 6).join(" ");
+  const titleOnly = prepareEuropresseTextSearch(originalUrl, titleWords.value).state !== "unsupported";
+  let usingEstimatedDate = false;
+  let sharedPublication = false;
+  try { sharedPublication = new URL(originalUrl).hostname === "www.ouest-france.fr"; } catch {}
+  publicationBlock.hidden = !sharedPublication;
+  dateBlock.hidden = prepareEuropresseAutomatic(originalUrl).state !== "needs-date";
+  estimateButton.hidden = !dateHint || dateBlock.hidden;
+  function render() {
+    const result = titleOnly ? prepareEuropresseTextSearch(originalUrl, titleWords.value)
+      : prepareEuropresseAutomatic(originalUrl, dateInput.value, publicationInput.value);
+    const alternatives = prepareEuropresseDateAlternatives(originalUrl, dateInput.value, publicationInput.value, alternateDateInput.value);
+    const titleResult = titleOnly ? result
+      : prepareEuropresseTitleFallback(originalUrl, titleWords.value, dateInput.value, publicationInput.value);
+    titleBlock.hidden = !titleOnly && !dateHint && result.state !== "ready";
+    titleButton.hidden = titleOnly;
+    button.disabled = titleOnly && result.state !== "ready";
+    titleButton.disabled = titleResult.state !== "ready";
+    titleStatus.textContent = titleResult.message;
+    alternativesBlock.hidden = !alternatives;
+    alternativesStatus.textContent = alternatives?.message || "";
+    output.textContent = titleOnly ? "Essai par titre : choisissez les mots du sujet qui peuvent rester dans la version papier. Aucun collage dans Europresse ni date à renseigner."
+      : usingEstimatedDate
+      ? `Date estimée depuis la création du lien, pas sa publication. Si l'essai échoue, corrigez la date ou utilisez la recherche manuelle. ${result.message}`
+      : result.message;
+    return result;
+  }
+  render();
+  dateInput.addEventListener("input", () => { usingEstimatedDate = false; render(); });
+  alternateDateInput.addEventListener("input", render);
+  estimateButton.addEventListener("click", () => {
+    if (!dateHint) return;
+    dateInput.value = dateHint.date;
+    usingEstimatedDate = true;
+    render();
+  });
+  publicationInput.addEventListener("change", render);
+  titleWords.addEventListener("input", render);
+  titleButton.addEventListener("click", () => {
+    const result = prepareEuropresseTitleFallback(originalUrl, titleWords.value, dateInput.value, publicationInput.value);
+    if (result.state === "ready") window.location.assign(result.url);
+  });
+  alternativesButton.addEventListener("click", () => {
+    const result = prepareEuropresseDateAlternatives(originalUrl, dateInput.value, publicationInput.value, alternateDateInput.value);
+    if (result?.state === "ready") window.location.assign(result.url);
+  });
+  button.addEventListener("click", () => {
+    const result = render();
+    if (result.state === "ready") {
+      window.location.assign(result.url);
+    } else if (result.state === "needs-date") {
+      dateInput.focus();
+    }
+  });
 }
 
 async function openEuropresse() {

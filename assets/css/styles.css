@@ -5283,6 +5283,52 @@ button.badge.recommended {
   font-size: 0.96rem;
 }
 
+.europresse-auto {
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.europresse-auto [hidden] {
+  display: none;
+}
+
+.europresse-auto > button {
+  width: 100%;
+  height: auto;
+  padding: 12px 16px;
+  white-space: normal;
+}
+
+.europresse-auto label {
+  display: block;
+  margin: 12px 0 6px;
+}
+
+.europresse-auto input,
+.europresse-auto select {
+  max-width: 100%;
+  padding: 8px;
+  color: var(--ink);
+  background: var(--control-bg);
+  border: 1px solid var(--line);
+}
+
+#automaticStatus {
+  font-size: .92rem;
+  overflow-wrap: anywhere;
+}
+
+#automaticTitleWords,
+#automaticTitleSearch {
+  width: 100%;
+  min-height: 42px;
+}
+
+#automaticTitleSearch {
+  margin-top: 8px;
+}
+
 .pressreader-search-alternatives {
   display: grid;
   gap: 10px;
@@ -5338,6 +5384,10 @@ button.badge.recommended {
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.82);
   text-align: left;
+}
+
+.europresse-search-alternative[hidden] {
+  display: none;
 }
 
 .europresse-search-alternative h2 {

@@ -8,7 +8,7 @@
     <meta name="description" content="Préparation d'une recherche Europresse depuis un lien de presse.">
     <link rel="icon" href="../assets/icons/bnf-access-icon.svg" type="image/svg+xml">
     <script src="../assets/js/pages/theme-init.js"></script>
-    <link rel="stylesheet" href="../assets/css/styles.css?v=2026-09-08-v2-brand-1">
+    <link rel="stylesheet" href="../assets/css/styles.css?v=2026-10-02-europresse-auto-v15">
   </head>
   <body class="transition-body europresse-search-body">
     <main class="transition-shell" aria-labelledby="europresseSearchTitle">
@@ -22,6 +22,38 @@
       <p id="europresseSearchStatus" class="transition-status" role="status" aria-live="polite">
         Préparation de la recherche...
       </p>
+      <section class="europresse-auto" aria-label="Recherche automatique expérimentale">
+        <button id="automaticSearch" class="resource-action europresse-search-submit" type="button">
+          Recherche automatique V2 expérimentale
+        </button>
+        <div id="automaticDateBlock" hidden>
+          <label for="automaticDate">Date de publication de l'article</label>
+          <input id="automaticDate" type="date">
+          <button id="automaticDateEstimate" class="resource-action secondary" type="button" hidden>Proposer une date estimée</button>
+          <label for="automaticAlternateDate">Autre date relevée (facultative)</label>
+          <input id="automaticAlternateDate" type="date">
+        </div>
+        <div id="automaticPublicationBlock" hidden>
+          <label for="automaticPublication">Publication</label>
+          <select id="automaticPublication">
+            <option value="OFW">Ouest-France</option>
+            <option value="OOW">Presse Océan</option>
+            <option value="OCW">Le Courrier de l'Ouest</option>
+          </select>
+        </div>
+        <p id="automaticStatus" role="status" aria-live="polite"></p>
+        <div id="automaticDateAlternativesBlock" hidden>
+          <button id="automaticDateAlternatives" class="resource-action secondary" type="button" aria-describedby="automaticDateAlternativesStatus">Essayer les deux dates</button>
+          <p id="automaticDateAlternativesStatus" class="transition-help"></p>
+        </div>
+        <div id="automaticTitleBlock" hidden>
+          <label for="automaticTitleWords">Mots distinctifs du titre</label>
+          <input id="automaticTitleWords" type="text" maxlength="500" autocomplete="off" aria-describedby="automaticTitleStatus">
+          <button id="automaticTitleSearch" class="resource-action secondary" type="button" aria-describedby="automaticTitleStatus">Essayer par le titre</button>
+          <p id="automaticTitleStatus" class="transition-help" role="status" aria-live="polite"></p>
+        </div>
+        <p class="transition-help">L'essai ouvre Europresse via la BnF, sans installation. La présence de l'article et vos droits d'accès ne sont pas garantis. Si aucun résultat ne s'ouvre, revenez ici pour utiliser le copier-coller.</p>
+      </section>
       <dl class="conversion-details">
         <div>
           <dt>Recherche à coller</dt>
@@ -62,6 +94,6 @@
       </p>
     </main>
 
-    <script src="../assets/js/pages/europresse-search.js?v=2026-08-30-keyword-fallback" type="module"></script>
+    <script src="../assets/js/pages/europresse-search.js?v=2026-10-02-auto-v15" type="module"></script>
   </body>
 </html>

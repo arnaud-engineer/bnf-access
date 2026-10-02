@@ -1,5 +1,6 @@
 import { createBookSearch } from "./book-search.js?v=2026-10-01-unified-search";
 import { createSearchHints } from "./search-hints.js?v=2026-10-01-unified-search";
+import {identifyDebridage} from "./modules/debridage.mjs?v=2026-10-02-recommended";
 import {
   activeEditorialCategoryIds,
   canonicalizeEditorialTaxonomy,
@@ -2457,7 +2458,7 @@ function renderLinkConverterFeedback({ conversion, targetUrl, openedWindow }) {
   if (conversion.searchText) {
     const displayedSearchText = conversion.copyText || humanizeSearchQuery(conversion.searchText);
     linkConverterFeedback.innerHTML = `
-      Onglet de préparation ouvert. Vérifiez la recherche, puis cliquez sur “Copier la recherche et ouvrir Europresse”.
+      Préparation Europresse ouverte. Essayez la recherche automatique lorsqu’elle est disponible, ou utilisez le secours manuel.
       <span class="converter-query">${escapeHtml(displayedSearchText)}</span>
       ${openedWindow ? "" : `Si l’ouverture est bloquée par le navigateur, <a href="${escapeAttribute(targetUrl)}" target="_blank" rel="noreferrer">ouvrir la préparation Europresse</a>.`}
     `;
@@ -2727,7 +2728,7 @@ function buildEuropresseSearchConversion(url) {
   const keywordQuery = buildEuropresseKeywordQueryFromUrl(url);
   const query = titleQuery || keywordQuery;
 
-  if (!query) {
+  if (!query && identifyDebridage(url.href)?.enabled !== true) {
     return null;
   }
 
@@ -3239,6 +3240,7 @@ function getEuropresseArticleTitleFromUrl(url) {
 function cleanEuropresseArticleSlug(value) {
   const cleanSlug = String(value ?? "")
     .replace(/\.[a-z0-9]{2,5}$/i, "")
+    .replace(/-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i, "")
     .replace(/[_-]\d{4,}(?:[_-]\d+)*$/g, "")
     .replace(/[_-]+/g, " ")
     .replace(/\s+/g, " ")
@@ -3255,7 +3257,7 @@ function getEuropresseArticleTerms(url) {
   const candidateParts = pathParts
     .slice()
     .reverse()
-    .map((part) => part.replace(/\.[a-z0-9]{2,5}$/i, ""))
+    .map((part) => part.replace(/\.[a-z0-9]{2,5}$/i, "").replace(/-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i, ""))
     .filter((part) => part && !/^\d+$/.test(part));
 
   for (const candidate of candidateParts) {
@@ -3286,6 +3288,13 @@ function tokenizeEuropressePathPart(value) {
 
 function findEuropresseSourceForUrl(url) {
   const resources = state.resources.filter((resource) => resource.source === "europresse_pdf");
+  const profile = identifyDebridage(url.href);
+  const profileResource = profile && resources.find(resource => resource.id === profile.catalog_resource_id);
+  const configuredMatch = profileResource
+    ? {matches: [profileResource], searchSource: getEuropresseSearchSourceFromMatches([profileResource]), sourceLabel: profileResource.name, confidence: "configured-profile"}
+    // Press entries load lazily; a qualified profile already identifies the journal.
+    : profile ? {matches: [], searchSource: null, sourceLabel: profile.name, confidence: "configured-profile"} : null;
+  if (profile?.path_prefix && configuredMatch) return configuredMatch;
   const knownMapping = europresseKnownDomainMappings.find((mapping) => hostMatchesAny(url.hostname, mapping.hosts));
 
   if (knownMapping) {
@@ -3306,6 +3315,8 @@ function findEuropresseSourceForUrl(url) {
     }
   }
 
+  // Preserve qualified legacy source criteria; profiles fill gaps or scoped magazines.
+  if (configuredMatch) return configuredMatch;
   const inferredMatches = inferEuropresseResourcesFromHost(resources, url.hostname);
   return {
     matches: inferredMatches,

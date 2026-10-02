@@ -1,4 +1,6 @@
-import { prepareEuropresseAutomatic, suggestEuropresseDate, prepareEuropresseDateAlternatives, europresseTitleWords, prepareEuropresseTitleFallback, prepareEuropresseTextSearch } from "../modules/europresse-auto.mjs?v=2026-10-02-auto-v15";
+import {identifyDebridage, prepareDebridage, debridageDateHint, suggestedDebridageWords} from "../modules/debridage.mjs?v=2026-10-02-recommended";
+import {applyLogoAppearance} from "../logo-appearance.js";
+import {europresseTitleWords, prepareEuropresseRefinedTextSearch} from "../modules/europresse-auto.mjs";
 
 const params = new URLSearchParams(window.location.search);
 const originalUrl = params.get("from") || "";
@@ -14,6 +16,7 @@ const bnfProxyLoginUrl = "https://bnf.idm.oclc.org/login";
 const europresseEntrypointUrl = "https://nouveau.europresse.com/access/ip/default.aspx?un=D000067U_1";
 
 const resource = document.querySelector("#europresseSearchResource");
+const pageTitle = document.querySelector("#europresseSearchTitle");
 const status = document.querySelector("#europresseSearchStatus");
 const machineQueryOutput = document.querySelector("#europresseSearchMachineQuery");
 const queryOutput = document.querySelector("#europresseSearchQuery");
@@ -25,24 +28,35 @@ const copyButton = document.querySelector("#copySearch");
 const alternativeBlock = document.querySelector("#europresseSearchAlternative");
 const alternativeQueryOutput = document.querySelector("#europresseSearchAlternativeQuery");
 const copyKeywordButton = document.querySelector("#copyKeywordSearch");
+const manualCopyStatus = document.querySelector("#manualCopyStatus");
+let manualQuery = query;
+let manualUsesTitleWords = !query;
 
 function init() {
   initAutomaticSearch();
+  renderJournalIdentity();
+  const identified = identifyDebridage(originalUrl);
+  pageTitle.textContent = identified?.name || source || "Recherche Europresse";
+  resource.textContent = "Consulter via Europresse";
+  if (query) {
+    const title = document.querySelector("#articleTitle");
+    title.textContent = humanizeSearchQuery(query);
+    title.setAttribute("aria-label", "Titre déduit du lien");
+    title.hidden = false;
+  }
   if (!query) {
-    status.textContent = "Aucun terme exploitable n'a été trouvé dans ce lien.";
-    submitButton.disabled = true;
-    copyButton.disabled = true;
-    return;
+    const prepared = prepareDebridage(originalUrl);
+    status.textContent = prepared.state === "ready" ? "Le lien est reconnu. Vous pouvez essayer l'accès automatique."
+      : prepared.state === "needs-words" ? "Le lien ne contient pas le titre. Renseignez ses mots distinctifs dans les paramètres de recherche."
+      : prepared.state === "needs-date" ? "Renseignez la date de publication dans les paramètres de recherche."
+      : "Aucun terme exploitable n'a été trouvé dans ce lien.";
   }
 
-  const sourceText = source || "Aucune source reconnue automatiquement";
+  const sourceText = source || identified?.name || "Aucune source reconnue automatiquement";
   const confidenceText = getConfidenceText(confidence, sourceCount);
   const displayQuery = humanizeSearchQuery(query);
   const displayKeywords = humanizeSearchQuery(keywords || query);
-  const machineQuery = buildMachineSearchQuery(query);
-
-  resource.textContent = source ? `${sourceText} - recherche dans Europresse` : "Recherche large dans Europresse";
-  machineQueryOutput.textContent = machineQuery;
+  machineQueryOutput.textContent = buildMachineSearchQuery(manualQuery, manualUsesTitleWords);
   queryOutput.textContent = displayKeywords;
   sourceOutput.textContent = confidenceText ? `${sourceText} (${confidenceText})` : sourceText;
   renderCriteriaHint();
@@ -51,7 +65,7 @@ function init() {
   submitButton.addEventListener("click", openEuropresse);
   copyButton.addEventListener("click", copySearch);
   copyKeywordButton.addEventListener("click", copyKeywordSearch);
-  status.textContent = "Recherche prête. Cliquez sur le bouton ci-dessous quand vous avez lu les consignes.";
+  if (query) status.textContent = "La présence de cet article dans Europresse reste à vérifier.";
 }
 
 function initAutomaticSearch() {
@@ -70,32 +84,62 @@ function initAutomaticSearch() {
   const titleWords = document.querySelector("#automaticTitleWords");
   const titleButton = document.querySelector("#automaticTitleSearch");
   const titleStatus = document.querySelector("#automaticTitleStatus");
-  const dateHint = suggestEuropresseDate(originalUrl);
-  titleWords.value = europresseTitleWords(keywords || query).slice(0, 6).join(" ");
-  const titleOnly = prepareEuropresseTextSearch(originalUrl, titleWords.value).state !== "unsupported";
+  const refinementBlock = document.querySelector("#automaticRefinementBlock");
+  const authorInput = document.querySelector("#automaticAuthor");
+  const languageInput = document.querySelector("#automaticLanguage");
+  const refinedButton = document.querySelector("#automaticRefinedSearch");
+  const refinedStatus = document.querySelector("#automaticRefinementStatus");
+  const profile = identifyDebridage(originalUrl);
+  const panel = document.querySelector("#searchParameters");
+  const methodOutput = document.querySelector("#automaticMethod");
+  const connectionHelp = document.querySelector("#automaticConnectionHelp");
+  let automaticAttempts = 0;
+  document.querySelector("#restoreBnfAccess").href = buildSearchHomeUrl();
+  document.querySelector("#manualRestoreBnfAccess").href = buildSearchHomeUrl();
+  const dateHint = debridageDateHint(originalUrl);
+  titleWords.value = profile?.requires_title_input ? "" : suggestedDebridageWords(keywords || query, profile);
+  const titleOnly = profile?.methods[0] === "title-only";
   let usingEstimatedDate = false;
-  let sharedPublication = false;
-  try { sharedPublication = new URL(originalUrl).hostname === "www.ouest-france.fr"; } catch {}
-  publicationBlock.hidden = !sharedPublication;
-  dateBlock.hidden = prepareEuropresseAutomatic(originalUrl).state !== "needs-date";
+  publicationInput.replaceChildren(...(profile?.publications || []).map(choice => {
+    const option = document.createElement("option");
+    option.value = choice.code;
+    option.textContent = choice.label;
+    return option;
+  }));
+  publicationBlock.hidden = !profile?.publications?.length;
+  dateBlock.hidden = profile?.enabled !== true || profile.date.type !== "input" || titleOnly;
   estimateButton.hidden = !dateHint || dateBlock.hidden;
+  const options = () => ({date: dateInput.value, publication: publicationInput.value || undefined, words: titleWords.value, alternateDate: alternateDateInput.value});
+  const refinedResult = () => prepareEuropresseRefinedTextSearch(originalUrl, titleWords.value, {
+    author: authorInput.value, language: languageInput.value
+  });
   function render() {
-    const result = titleOnly ? prepareEuropresseTextSearch(originalUrl, titleWords.value)
-      : prepareEuropresseAutomatic(originalUrl, dateInput.value, publicationInput.value);
-    const alternatives = prepareEuropresseDateAlternatives(originalUrl, dateInput.value, publicationInput.value, alternateDateInput.value);
-    const titleResult = titleOnly ? result
-      : prepareEuropresseTitleFallback(originalUrl, titleWords.value, dateInput.value, publicationInput.value);
-    titleBlock.hidden = !titleOnly && !dateHint && result.state !== "ready";
+    manualQuery = humanizeSearchQuery(manualUsesTitleWords ? titleWords.value : query);
+    machineQueryOutput.textContent = buildMachineSearchQuery(manualQuery, manualUsesTitleWords);
+    submitButton.disabled = !manualQuery;
+    copyButton.disabled = !manualQuery;
+    manualCopyStatus.textContent = "";
+    const result = prepareDebridage(originalUrl, options());
+    const alternatives = prepareDebridage(originalUrl, {...options(), method: "date-alternatives"});
+    const titleResult = titleOnly ? result : prepareDebridage(originalUrl, {...options(), method: "reference-title"});
+    // Only the self-excluded title transport was tested with these extra criteria.
+    refinementBlock.hidden = profile?.enabled !== true || !(titleOnly ||
+      (profile?.title_fallback_without_reference && result.state === "ready" && result.method === "reference-title"));
+    const refined = refinementBlock.hidden ? null : refinedResult();
+    refinedButton.disabled = refined?.state !== "ready";
+    refinedStatus.textContent = refined?.message || "";
+    titleBlock.hidden = !titleOnly && !profile?.title_fallback_without_reference && !dateHint && result.state !== "ready";
     titleButton.hidden = titleOnly;
-    button.disabled = titleOnly && result.state !== "ready";
+    button.disabled = result.state === "unsupported";
     titleButton.disabled = titleResult.state !== "ready";
     titleStatus.textContent = titleResult.message;
-    alternativesBlock.hidden = !alternatives;
+    alternativesBlock.hidden = alternatives.state !== "ready";
     alternativesStatus.textContent = alternatives?.message || "";
-    output.textContent = titleOnly ? "Essai par titre : choisissez les mots du sujet qui peuvent rester dans la version papier. Aucun collage dans Europresse ni date à renseigner."
-      : usingEstimatedDate
-      ? `Date estimée depuis la création du lien, pas sa publication. Si l'essai échoue, corrigez la date ou utilisez la recherche manuelle. ${result.message}`
-      : result.message;
+    methodOutput.textContent = (usingEstimatedDate ? "Date estimée depuis la création du lien, pas sa publication. " : "") + result.message + (profile?.limitations ? " " + profile.limitations : "");
+    output.textContent = result.state === "ready"
+      ? (titleOnly || result.method === "reference-title" ? "Recherche par titre, toutes dates et tous journaux. Vérifiez l'article ouvert." : "Accès expérimental prêt. Vérifiez l'article ouvert.")
+      : result.state === "unsupported" ? result.message
+      : "Un réglage est nécessaire dans les paramètres de recherche.";
     return result;
   }
   render();
@@ -108,43 +152,68 @@ function initAutomaticSearch() {
     render();
   });
   publicationInput.addEventListener("change", render);
-  titleWords.addEventListener("input", render);
+  authorInput.addEventListener("input", render);
+  languageInput.addEventListener("change", render);
+  refinedButton.addEventListener("click", () => {
+    if (refinementBlock.hidden) return;
+    const result = refinedResult();
+    if (result.state === "ready") openAutomaticResult(result);
+  });
+  titleWords.addEventListener("input", () => {
+    manualUsesTitleWords = true;
+    render();
+  });
   titleButton.addEventListener("click", () => {
-    const result = prepareEuropresseTitleFallback(originalUrl, titleWords.value, dateInput.value, publicationInput.value);
-    if (result.state === "ready") window.location.assign(result.url);
+    const result = prepareDebridage(originalUrl, {...options(), method: "reference-title"});
+    if (result.state === "ready") openAutomaticResult(result);
   });
   alternativesButton.addEventListener("click", () => {
-    const result = prepareEuropresseDateAlternatives(originalUrl, dateInput.value, publicationInput.value, alternateDateInput.value);
-    if (result?.state === "ready") window.location.assign(result.url);
+    const result = prepareDebridage(originalUrl, {...options(), method: "date-alternatives"});
+    if (result?.state === "ready") openAutomaticResult(result);
   });
   button.addEventListener("click", () => {
     const result = render();
     if (result.state === "ready") {
-      window.location.assign(result.url);
-    } else if (result.state === "needs-date") {
-      dateInput.focus();
+      openAutomaticResult(result);
+    } else if (result.state === "needs-date" || result.state === "needs-words") {
+      panel.open = true;
+      (result.state === "needs-date" ? dateInput : titleWords).focus();
     }
   });
+  function openAutomaticResult(result) {
+    window.open(result.url, "_blank", "noopener,noreferrer");
+    automaticAttempts += 1;
+    button.textContent = "Réessayer la recherche V2";
+    connectionHelp.hidden = false;
+    if (automaticAttempts >= 2) {
+      document.querySelector("#manualSearch").open = true;
+      document.querySelector("#manualRecoveryNotice").hidden = false;
+    }
+  }
 }
 
 async function openEuropresse() {
-  if (!query) {
+  if (!manualQuery) {
     return;
   }
-
+  // Open during the click: clipboard permission can outlast browser user activation.
+  window.open(buildSearchHomeUrl(), "_blank", "noopener,noreferrer");
   const copied = await copySearch();
-  status.textContent = copied
-    ? "Recherche copiée. Ouverture d'Europresse..."
-    : "Ouverture d'Europresse... Copiez la recherche affichée si elle n'est pas déjà dans votre presse-papiers.";
-  window.location.assign(buildSearchHomeUrl());
+  manualCopyStatus.textContent = copied
+    ? "Recherche copiée. Dans le nouvel onglet Europresse, collez-la dans le champ de recherche."
+    : "Copie automatique impossible. Copiez le texte « Recherche à coller » ci-dessus, puis collez-le dans le nouvel onglet Europresse.";
 }
 
 function humanizeSearchQuery(value) {
   return value.replace(/\s+/g, " ").trim();
 }
 
-function buildMachineSearchQuery(value) {
+function buildMachineSearchQuery(value, distinctWords = false) {
   const cleanQuery = humanizeSearchQuery(value);
+  if (distinctWords) {
+    const terms = europresseTitleWords(cleanQuery);
+    if (terms.length) return `TIT_HEAD=(${terms.map(term => `"${term}"`).join(" et ")})`;
+  }
   return cleanQuery ? `TIT_HEAD="${escapeEuropresseQueryValue(cleanQuery)}"` : "";
 }
 
@@ -153,11 +222,11 @@ function escapeEuropresseQueryValue(value) {
 }
 
 async function copySearch() {
-  if (!query) {
+  if (!manualQuery) {
     return false;
   }
 
-  return copyPreparedSearch(buildMachineSearchQuery(query), "Recherche copiée. Collez-la dans Europresse pour lancer la recherche.");
+  return copyPreparedSearch(buildMachineSearchQuery(manualQuery, manualUsesTitleWords), "Recherche copiée. Collez-la dans Europresse pour lancer la recherche.");
 }
 
 async function copyKeywordSearch() {
@@ -175,6 +244,7 @@ async function copyPreparedSearch(text, successMessage) {
     try {
       await navigator.clipboard.writeText(text);
       status.textContent = successMessage;
+      manualCopyStatus.textContent = successMessage;
       return true;
     } catch {
       // Local-network HTTP pages can be rejected by Clipboard API.
@@ -183,10 +253,12 @@ async function copyPreparedSearch(text, successMessage) {
 
   if (copyTextWithSelection(text)) {
     status.textContent = successMessage;
+    manualCopyStatus.textContent = successMessage;
     return true;
   }
 
-  status.textContent = "Recherche prête. Copiez les mots affichés dans Europresse.";
+  status.textContent = "Copie automatique impossible. Copiez vous-même le texte affiché sur cette page, puis collez-le dans Europresse.";
+  manualCopyStatus.textContent = status.textContent;
   return false;
 }
 
@@ -281,3 +353,40 @@ function renderKeywordFallback(displayKeywords, displayQuery) {
 }
 
 init();
+
+async function renderJournalIdentity() {
+  const profile = identifyDebridage(originalUrl);
+  if (!profile) return;
+  if (!profile.catalog_resource_id) return;
+  try {
+    const root = new URL("../../../", import.meta.url);
+    const catalogs = await Promise.all(["catalog-core.json", "catalog-press.json"].map(async file => {
+      const response = await fetch(new URL("data/" + file, root));
+      if (!response.ok) throw new Error("Catalogue indisponible");
+      return response.json();
+    }));
+    const journal = catalogs.flatMap(c => c.resources || []).find(r => r.id === profile.catalog_resource_id);
+    if (!journal?.icon_url) return;
+    const icon = new URL(journal.icon_url, root);
+    if (icon.origin !== window.location.origin || !icon.pathname.startsWith(root.pathname + "assets/logos/")) return;
+    const platformIcon = new URL(document.querySelector(".debridage-identity > span:first-child img").src);
+    if (icon.pathname === platformIcon.pathname) return;
+    const tile = document.querySelector("#journalLogo");
+    const image = document.createElement("img");
+    image.src = icon.href;
+    image.alt = profile.name;
+    image.addEventListener("error", () => { tile.hidden = true; document.querySelector("#journalSeparator").hidden = true; });
+    const appearance = {...journal};
+    if (appearance.icon_background_image) {
+      const background = new URL(appearance.icon_background_image, root);
+      appearance.icon_background_image = background.origin === icon.origin && background.pathname.startsWith(root.pathname + "assets/logos/") ? background.href : "";
+    }
+    tile.classList.toggle("icon-no-padding", journal.icon_no_padding === true);
+    applyLogoAppearance(tile, appearance);
+    tile.replaceChildren(image);
+    tile.hidden = false;
+    document.querySelector("#journalSeparator").hidden = false;
+  } catch {
+    // The identified name remains available if the optional catalogue image cannot load.
+  }
+}

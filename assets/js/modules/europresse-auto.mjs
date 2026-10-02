@@ -1,4 +1,7 @@
 import { sha1 } from "../vendor/europresse-sha1.mjs";
+import profiles from "./debridage-profiles.mjs";
+import {matchDebridageProfile, validateDebridageProfiles} from "./debridage-schema.mjs";
+validateDebridageProfiles(profiles);
 
 function publicationDate(value) {
   if (typeof value !== "string") return "";
@@ -18,11 +21,13 @@ function eddKey(source, day, code, prefix) {
 }
 
 // UUIDv1 records creation time, not publication time. This is only an opt-in hint.
-export function suggestEuropresseDate(value) {
+export function suggestEuropresseDate(value, data = profiles) {
+  const matched = matchDebridageProfile(value, data);
+  if (!matched?.profile.enabled || matched.profile.date_hint !== "uuid-v1") return null;
   let source;
   try { source = new URL(value); } catch { return null; }
   if (source.protocol !== "https:" || source.username || source.password || source.port ||
-      source.hostname !== "www.ouest-france.fr") return null;
+      !matched.profile.hosts.includes(source.hostname)) return null;
   const match = source.pathname.match(/-([a-f0-9]{8})-([a-f0-9]{4})-1([a-f0-9]{3})-[89ab][a-f0-9]{3}-[a-f0-9]{12}\/?$/);
   if (!match) return null;
   const ticks = (BigInt(`0x${match[3]}`) << 48n) |
@@ -38,13 +43,13 @@ export function suggestEuropresseDate(value) {
   return { date, createdAt: created.toISOString(), basis: "uuid-v1-creation", confidence: "experimental" };
 }
 
-export function prepareEuropresseDateAlternatives(value, date, publication = "OFW", alternateDate = "") {
-  const hint = suggestEuropresseDate(value);
+export function prepareEuropresseDateAlternatives(value, date, publication = "OFW", alternateDate = "", data = profiles) {
+  const hint = suggestEuropresseDate(value, data);
   if (typeof date !== "string" || !publicationDate(date) || typeof alternateDate !== "string") return null;
   const otherDate = alternateDate || hint?.date;
   if (!otherDate || !publicationDate(otherDate)) return null;
-  const primary = prepareEuropresseAutomatic(value, date, publication);
-  const alternative = prepareEuropresseAutomatic(value, otherDate, publication);
+  const primary = prepareEuropresseAutomatic(value, date, publication, data);
+  const alternative = prepareEuropresseAutomatic(value, otherDate, publication, data);
   if (primary.state !== "ready" || alternative.state !== "ready" ||
       primary.key === alternative.key) return null;
   // The official Link route prepends NODOC= to this bounded equation (E142).
@@ -74,22 +79,11 @@ export function europresseTitleWords(value) {
 // E154: this known reference minus itself is empty, even when the document exists.
 const textSearchCarrier = "news\u00b720260924\u00b7ERP\u00b7f2d528e562e847a5bbeb585bf9c603ce";
 
-export function prepareEuropresseTextSearch(value, words) {
-  let source;
-  try { source = new URL(value); } catch {
-    return { state: "unsupported", message: "Lien absent ou invalide." };
-  }
-  if (source.protocol !== "https:" || source.username || source.password || source.port) {
-    return { state: "unsupported", message: "Un lien public HTTPS sans identifiants est requis." };
-  }
-  const monde = source.hostname === "www.lemonde.fr";
-  const est = source.hostname === "www.estrepublicain.fr";
-  const match = monde
-    ? source.pathname.match(/^\/[a-z0-9-]+\/article\/(\d{4})\/(\d{2})\/(\d{2})\/[a-z0-9-]+_\d{1,10}_\d{1,10}\.html$/)
-    : est ? source.pathname.match(/^\/[a-z0-9-]+\/(\d{4})\/(\d{2})\/(\d{2})\/[a-z0-9-]+$/) : null;
-  if (!match || !publicationDate(`${match[1]}${match[2]}${match[3]}`)) {
-    return { state: "unsupported", message: "Ce format n'est pas qualifié pour la recherche textuelle sans référence." };
-  }
+export function prepareEuropresseTextSearch(value, words, data = profiles) {
+  const matched = matchDebridageProfile(value, data);
+  if (!matched?.profile.enabled || (!matched.profile.methods.includes("title-only") && !matched.profile.title_fallback_without_reference)) return {state: "unsupported", message: "Ce format n'est pas qualifié pour la recherche textuelle sans référence."};
+  const {profile, captures} = matched;
+  if (profile.date.type !== "input" && profile.date.groups.length && !publicationDate(profile.date.groups.map(i => captures[i]).join("") + (profile.date.type === "month" ? "01" : ""))) return {state: "unsupported", message: "La date du lien est invalide."};
   const terms = europresseTitleWords(words);
   if (terms.length < 2 || terms.length > 8 || terms.some(term => term.length > 60)) {
     return { state: "needs-words", message: "Choisissez de 2 à 8 mots distinctifs du titre." };
@@ -102,25 +96,68 @@ export function prepareEuropresseTextSearch(value, words) {
   }
   const login = new URL("https://bnf.idm.oclc.org/login");
   login.searchParams.set("qurl", `https://nouveau.europresse.com/Link/D000067U_1/${encodeURIComponent(equation)}`);
-  const caution = monde
-    ? "Le résultat peut provenir du Monde ou de La Matinale du Monde."
-    : "Le fonds papier peut avoir un titre raccourci, une date différente et un délai de disponibilité.";
+  const caution = profile.title_fallback_without_reference
+    ? "Ce domaine héberge plusieurs journaux : vérifiez la publication dans Europresse."
+    : profile.message;
   return {
-    state: "ready", method: "title-only", url: login.href, terms, titleQuery,
+    state: "ready", method: "title-only", profileId: profile.id, url: login.href, terms, titleQuery,
     message: `Recherche par titre, sans date ni référence de l'article, toutes dates et tous journaux. ${caution} Europresse peut ouvrir un article voisin : vérifiez le titre, la publication et la date.`
   };
 }
 
+// Optional explicit criteria; never change the broad title route or infer an author.
+export function prepareEuropresseRefinedTextSearch(value, words, refinements = {}, data = profiles) {
+  const broad = prepareEuropresseTextSearch(value, words, data);
+  if (broad.state !== "ready") return broad;
+  const invalid = message => ({state: "needs-refinement", message});
+  if (!refinements || typeof refinements !== "object" || Array.isArray(refinements)) {
+    return invalid("Renseignez un auteur personnel ou une langue pour cet essai.");
+  }
+  const {author = "", language = ""} = refinements;
+  if (typeof author !== "string" || typeof language !== "string") {
+    return invalid("Renseignez un nom de personne et choisissez une langue.");
+  }
+  const name = author.normalize("NFC").trim();
+  if (name.length > 100 || (name && !/^[\p{L}\p{M}\s.'\u2019-]+$/u.test(name))) {
+    return invalid("Renseignez seulement le nom de l'auteur, sans opérateur de recherche.");
+  }
+  const names = [...new Set(name.match(/[\p{L}\p{M}]+/gu) || [])];
+  if (name && (names.length < 1 || names.length > 4 || names.some(term => term.length > 40))) {
+    return invalid("Gardez au maximum quatre mots du nom de l'auteur.");
+  }
+  if (!["", "fra", "eng"].includes(language)) return invalid("Choisissez une langue proposée.");
+  if (!names.length && !language) return invalid("Renseignez un auteur personnel ou une langue pour cet essai.");
+  const suffix = [
+    names.length ? `AUT_BY=(${names.map(term => `"${term}"`).join(" et ")})` : "",
+    language ? `LANG=${language}` : ""
+  ].filter(Boolean).map(clause => ` et ${clause}`).join("");
+  const titleQuery = broad.titleQuery + suffix;
+  const equation = `${textSearchCarrier} sans NODOC= ${textSearchCarrier} | ${titleQuery}`;
+  if ((`/Link/D000067U_1/${equation}`).length > 240) {
+    return invalid("Cette recherche est trop longue. Gardez moins de mots du titre ou du nom de l'auteur, ou utilisez la recherche V2 sans affinage.");
+  }
+  return {
+    ...broad, method: "title-refined", url: europresseLoginUrl(equation), titleQuery,
+    message: "Essai avec les critères renseignés, toutes dates et tous journaux. Aucun résultat ? Revenez à la recherche V2 sans affinage. Vérifiez l'article ouvert."
+  };
+}
+
 // E146: textual 'et' is accepted through Link; a literal '&' was not qualified.
-export function prepareEuropresseTitleFallback(value, words, date = "", publication = "OFW") {
+export function prepareEuropresseTitleFallback(value, words, date = "", publication = "OFW", data = profiles) {
   if (typeof date !== "string") return { state: "needs-date", message: "Date renseignée invalide." };
+  const profile = matchDebridageProfile(value, data)?.profile;
+  if (profile?.title_fallback_without_reference) {
+    if (date && !publicationDate(date)) return {state: "needs-date", message: "Date renseignée invalide."};
+    if (profile.publications && !profile.publications.some(p => p.code === publication)) return {state: "unsupported", message: "Publication non reconnue."};
+    return prepareEuropresseTextSearch(value, words, data);
+  }
   const terms = europresseTitleWords(words);
   if (terms.length < 2 || terms.length > 8 || terms.some(term => term.length > 60)) {
     return { state: "needs-words", message: "Choisissez de 2 à 8 mots distinctifs du titre." };
   }
-  const hint = suggestEuropresseDate(value);
+  const hint = suggestEuropresseDate(value, data);
   const candidateDate = date || hint?.date || "";
-  const candidate = prepareEuropresseAutomatic(value, candidateDate, publication);
+  const candidate = prepareEuropresseAutomatic(value, candidateDate, publication, data);
   if (candidate.state !== "ready") return {
     state: candidate.state,
     message: "Un candidat de référence qualifié est nécessaire pour cet essai par titre. " + candidate.message
@@ -136,265 +173,37 @@ export function prepareEuropresseTitleFallback(value, words, date = "", publicat
   };
 }
 
-// Only URL formats checked in the R&D journal are used. A candidate is not proof of availability.
-export function prepareEuropresseAutomatic(value, date = "", publication = "OFW") {
-  let source;
-  try { source = new URL(value); } catch {
-    return { state: "unsupported", message: "Le lien d'origine est absent ou invalide. Utilisez la recherche manuelle." };
-  }
-  if (source.protocol !== "https:" || source.username || source.password || source.port) {
-    return { state: "unsupported", message: "Un lien public HTTPS sans identifiants est requis." };
-  }
-  let key;
-  let method;
-  if (source.hostname === "www.liberation.fr") {
-    const match = source.pathname.match(/-(\d{8})_([A-Z2-7]{26})\/$/);
-    if (match && publicationDate(match[1])) {
-      key = `news\u00b7${match[1]}\u00b7LIF\u00b70${match[2].toLowerCase()}`;
-      method = "Libération : date et référence extraites du lien.";
-    }
-  } else if (source.hostname === "www.monde-diplomatique.fr") {
-    const match = source.pathname.match(/^\/(\d{4})\/(\d{2})\/[A-Z][A-Z0-9_-]*\/(\d{1,8})\/?$/);
-    if (match && publicationDate(`${match[1]}${match[2]}01`)) {
-      key = `news\u00b7${match[1]}${match[2]}01\u00b7MD\u00b7${match[3]}`;
-      method = "Le Monde diplomatique : numéro mensuel et référence extraits du lien. Édition papier Europresse.";
-    }
-  } else if (source.hostname === "www.nouvelobs.com") {
-    const match = source.pathname.match(/^\/[a-z0-9-]+\/(\d{8})\.OBS(\d{1,9})\/[a-z0-9-]+\.html$/);
-    if (match && publicationDate(match[1])) {
-      const day = match[1];
-      key = `news\u00b7${day}\u00b7OA\u00b7edd\u00d7cnoco\u00d7c${day}\u00d7c${day}obs${match[2]}`;
-      method = "Le Nouvel Obs : date et numéro extraits du lien. Référence web expérimentale.";
-    }
-  } else if (source.hostname === "www.ouest-france.fr") {
-    const match = source.pathname.match(/-([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})\/?$/);
-    if (match) {
-      const labels = { OFW: "Ouest-France", OOW: "Presse Océan", OCW: "Le Courrier de l'Ouest" };
-      const label = Object.hasOwn(labels, publication) ? labels[publication] : "";
-      if (!label) return {
-        state: "unsupported", message: "Cette publication partenaire n'est pas encore couverte par l'essai automatique."
-      };
-      if (!publicationDate(date)) return {
-        state: "needs-date", message: `${label} : renseignez la date de publication et vérifiez la publication choisie. Les autres titres partenaires ne sont pas couverts.`
-      };
-      key = `news\u00b7${publicationDate(date)}\u00b7${publication}\u00b7${match[1]}`;
-      method = `${label} : référence du lien, publication choisie et date renseignée. Correspondance expérimentale; disponibilité à vérifier dans Europresse.`;
-    }
-  } else if (source.hostname === "www.challenges.fr") {
-    const match = source.pathname.match(/^\/[a-z0-9/-]+_(\d{1,9})\/?$/);
-    if (match) {
-      if (!publicationDate(date)) return {
-        state: "needs-date", message: "Challenges : renseignez la date de publication de l'article pour essayer l'accès direct."
-      };
-      key = `news\u00b7${publicationDate(date)}\u00b7OHW\u00b7${match[1]}`;
-      method = "Challenges : numéro du lien et date renseignée. Correspondance expérimentale.";
-    }
-  } else if (source.hostname === "www.ladepeche.fr") {
-    const match = source.pathname.match(/^\/(\d{4})\/(\d{2})\/(\d{2})\/[a-z0-9-]+-\d{1,10}\.php$/);
-    const day = match ? publicationDate(`${match[1]}${match[2]}${match[3]}`) : "";
-    if (day) {
-      key = eddKey(source, day, "ABBQ", "dmfr");
-      method = "La Dépêche : date du lien et empreinte de l'URL publique. Correspondance web expérimentale.";
-    }
-  } else if (source.hostname === "www.lindependant.fr") {
-    const match = source.pathname.match(/^\/(\d{4})\/(\d{2})\/(\d{2})\/[a-z0-9-]+-\d{1,10}\.php$/);
-    const day = match ? publicationDate(`${match[1]}${match[2]}${match[3]}`) : "";
-    if (day) {
-      key = eddKey(source, day, "MNE", "infr");
-      method = "L'Indépendant : date du lien et empreinte de l'URL publique. Correspondance web expérimentale.";
-    }
-  } else if (source.hostname === "www.lavoixdunord.fr") {
-    const match = source.pathname.match(/^\/\d{1,10}\/article\/(\d{4}-\d{2}-\d{2})\/[a-z0-9-]+$/);
-    const day = match ? publicationDate(match[1]) : "";
-    if (day) {
-      key = eddKey(source, day, "VWN", "vnfr");
-      method = "La Voix du Nord : date du lien et empreinte de l'URL publique. Correspondance web expérimentale.";
-    }
-  } else if (source.hostname === "www.courrier-picard.fr") {
-    const match = source.pathname.match(/^\/id\d{1,10}\/article\/(\d{4}-\d{2}-\d{2})\/[a-z0-9-]+$/);
-    const day = match ? publicationDate(match[1]) : "";
-    if (day) {
-      key = eddKey(source, day, "VWC", "cpif");
-      method = "Courrier Picard : date du lien et empreinte de l'URL publique. Correspondance web expérimentale.";
-    }
-  } else if (source.hostname === "www.aisnenouvelle.fr") {
-    const match = source.pathname.match(/^\/id\d{1,10}\/article\/(\d{4}-\d{2}-\d{2})\/[a-z0-9-]+$/);
-    const day = match ? publicationDate(match[1]) : "";
-    if (day) {
-      key = eddKey(source, day, "AASC", "hw22");
-      method = "L'Aisne nouvelle : date du lien et empreinte de l'URL publique. Correspondance web expérimentale.";
-    }
-  } else if (source.hostname === "www.lardennais.fr") {
-    const match = source.pathname.match(/^\/id\d{1,10}\/article\/(\d{4}-\d{2}-\d{2})\/[a-z0-9-]+$/);
-    const day = match ? publicationDate(match[1]) : "";
-    if (day) {
-      key = eddKey(source, day, "AASG", "adnw");
-      method = "L'Ardennais : date du lien et empreinte de l'URL publique. Correspondance web expérimentale.";
-    }
-  } else if (source.hostname === "www.lest-eclair.fr") {
-    const match = source.pathname.match(/^\/id\d{1,10}\/article\/(\d{4}-\d{2}-\d{2})\/[a-z0-9-]+$/);
-    const day = match ? publicationDate(match[1]) : "";
-    if (day) {
-      key = eddKey(source, day, "AASD", "ewec");
-      method = "L'Est éclair : date du lien et empreinte de l'URL publique. Correspondance web expérimentale.";
-    }
-  } else if (source.hostname === "www.lemessager.fr") {
-    const match = source.pathname.match(/^\/\d{1,10}\/article\/(\d{4}-\d{2}-\d{2})\/[a-z0-9-]+$/);
-    const day = match ? publicationDate(match[1]) : "";
-    if (day) {
-      key = eddKey(source, day, "AJK", "hw27");
-      method = "Le Messager : date du lien et empreinte de l'URL publique. Correspondance web expérimentale.";
-    }
-  } else if (source.hostname === "www.nordlittoral.fr") {
-    const match = source.pathname.match(/^\/\d{1,10}\/article\/(\d{4}-\d{2}-\d{2})\/[a-z0-9-]+$/);
-    const day = match ? publicationDate(match[1]) : "";
-    if (day) {
-      key = eddKey(source, day, "VWL", "nlfr");
-      method = "Nord Littoral : date du lien et empreinte de l'URL publique. Correspondance web expérimentale.";
-    }
-  } else if (source.hostname === "www.nicematin.com") {
-    if (/^\/[a-z0-9-]+\/[a-z0-9-]+\/[a-z0-9-]+-\d{1,9}$/.test(source.pathname)) {
-      if (!publicationDate(date)) return {
-        state: "needs-date", message: "Nice-Matin : renseignez la date de publication de l'article pour essayer l'accès direct."
-      };
-      key = eddKey(source, publicationDate(date), "ABAX", "nmfr");
-      method = "Nice-Matin : date renseignée et empreinte du lien public, édition web. Les anciens liens Var-Matin doivent être résolus séparément.";
-    }
-  } else if (source.hostname === "www.lavie.fr") {
-    if (/^\/[a-z0-9-]+\/[a-z0-9-]+\/[a-z0-9-]+-\d{1,9}\.php$/.test(source.pathname)) {
-      if (!publicationDate(date)) return {
-        state: "needs-date", message: "La Vie : renseignez la date de publication de l'article pour essayer l'accès direct."
-      };
-      key = eddKey(source, publicationDate(date), "AABY", "mviw");
-      method = "La Vie : date renseignée et empreinte du lien public. Correspondance web expérimentale.";
-    }
-  } else if (source.hostname === "www.huffingtonpost.fr") {
-    if (/^\/[a-z0-9-]+\/article\/[a-z0-9-]+_\d{1,9}\.html$/.test(source.pathname)) {
-      if (!publicationDate(date)) return {
-        state: "needs-date", message: "HuffPost France : renseignez la date de publication de l'article pour essayer l'accès direct."
-      };
-      key = eddKey(source, publicationDate(date), "HUF", "hufp");
-      method = "HuffPost France : date renseignée et empreinte du lien public. Conversion testée sur des articles gratuits; disponibilité et intégralité à vérifier.";
-    }
-  } else if (source.hostname === "www.courrierinternational.com") {
-    if (/^\/article\/[a-z0-9-]+_\d{1,9}$/.test(source.pathname)) {
-      if (!publicationDate(date)) return {
-        state: "needs-date", message: "Courrier International : renseignez la date de publication de l'article pour essayer l'accès direct."
-      };
-      key = eddKey(source, publicationDate(date), "ILW", "coco");
-      method = "Courrier International : empreinte de l'URL publique et date renseignée. Correspondance web expérimentale.";
-    }
-  } else if (source.hostname === "www.charentelibre.fr") {
-    if (/^\/[a-z0-9/-]+-\d{1,10}\.php$/.test(source.pathname)) {
-      if (!publicationDate(date)) return {
-        state: "needs-date", message: "Charente Libre : renseignez la date de publication de l'article pour essayer l'accès direct."
-      };
-      key = eddKey(source, publicationDate(date), "AARU", "chfr");
-      method = "Charente Libre : empreinte de l'URL publique et date renseignée. Correspondance web expérimentale.";
-    }
-  } else if (source.hostname === "www.dordognelibre.fr") {
-    if (/^\/[a-z0-9/-]+-\d{1,10}\.php$/.test(source.pathname)) {
-      if (!publicationDate(date)) return {
-        state: "needs-date", message: "Dordogne Libre : renseignez la date de publication initiale, pas celle de mise à jour, pour essayer l'accès direct."
-      };
-      key = eddKey(source, publicationDate(date), "AAAD", "dofr");
-      method = "Dordogne Libre : empreinte de l'URL et date de publication initiale. Correspondance expérimentale; le titre peut avoir changé depuis l'archivage.";
-    }
-  } else if (source.hostname === "www.larepubliquedespyrenees.fr") {
-    if (/^\/[a-z0-9-]+\/[a-z0-9-]+\/[a-z0-9-]+-\d{1,10}\.php$/.test(source.pathname)) {
-      if (!publicationDate(date)) return {
-        state: "needs-date", message: "La République des Pyrénées : renseignez la date de publication de l'article pour essayer l'accès direct."
-      };
-      key = eddKey(source, publicationDate(date), "RDP", "pywe");
-      method = "La République des Pyrénées : date renseignée et empreinte du lien public, édition web. Certains articles récents testés ne sont pas disponibles.";
-    }
-  } else if (source.hostname === "www.sudouest.fr") {
-    if (/^\/[a-z0-9/-]+-\d{1,10}\.php$/.test(source.pathname)) {
-      if (!publicationDate(date)) return {
-        state: "needs-date", message: "Sud Ouest : renseignez la date de publication de l'article pour essayer l'accès direct."
-      };
-      key = eddKey(source, publicationDate(date), "SOE", "sofr");
-      method = "Sud Ouest : empreinte de l'URL publique et date renseignée. Correspondance web expérimentale.";
-    }
-  } else if (source.hostname === "www.telerama.fr") {
-    if (/^\/[a-z0-9-]+\/[a-z0-9-]+-\d{1,10}\.php$/.test(source.pathname)) {
-      if (!publicationDate(date)) return {
-        state: "needs-date", message: "Télérama : renseignez la date de publication de l'article pour essayer l'accès direct."
-      };
-      key = eddKey(source, publicationDate(date), "TAW", "trfr");
-      method = "Télérama : empreinte de l'URL publique et date renseignée. Correspondance web expérimentale; critiques non couvertes.";
-    }
-  } else if (source.hostname === "www.lexpress.fr") {
-    const match = source.pathname.match(/^\/[a-z0-9/-]+-([A-Z2-7]{26})\/$/);
-    if (match) {
-      if (!publicationDate(date)) return {
-        state: "needs-date", message: "L'Express : renseignez la date de publication de l'article pour essayer l'accès direct."
-      };
-      key = `news\u00b7${publicationDate(date)}\u00b7EWL\u00b7${match[1].toLowerCase()}`;
-      method = "L'Express : référence du lien et date renseignée. Correspondance web expérimentale.";
-    }
-  } else if (source.hostname === "www.greenunivers.com") {
-    const match = source.pathname.match(/^\/(\d{4})\/(\d{2})\/[a-z0-9-]+-(\d{1,9})\/$/);
-    if (match && publicationDate(`${match[1]}${match[2]}01`)) {
-      const day = publicationDate(date);
-      if (!day || !day.startsWith(match[1] + match[2])) return {
-        state: "needs-date", message: "GreenUnivers : renseignez la date de publication dans le mois indiqué par le lien. Les articles récents peuvent ne pas être encore disponibles."
-      };
-      key = `news\u00b7${day}\u00b7GRE\u00b7${match[3]}`;
-      method = "GreenUnivers : numéro du lien et date renseignée. Correspondance web expérimentale; les articles récents peuvent ne pas être encore disponibles.";
-    }
-  } else if (source.hostname === "www.auto-infos.fr") {
-    const match = source.pathname.match(/^\/article\/[a-z0-9-]+\.(\d{1,9})$/);
-    if (match) {
-      if (!publicationDate(date)) return {
-        state: "needs-date", message: "Auto Infos : renseignez la date de publication de l'article pour essayer l'accès direct."
-      };
-      key = `news\u00b7${publicationDate(date)}\u00b7GAAD\u00b7${match[1]}`;
-      method = "Auto Infos : numéro du lien et date renseignée. Correspondance web expérimentale.";
-    }
-  } else if (source.hostname === "www.ft.com") {
-    const match = source.pathname.match(/^\/content\/([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})$/);
-    if (match) {
-      if (!publicationDate(date)) return {
-        state: "needs-date", message: "Financial Times : renseignez la date de publication. Les articles récents peuvent ne pas être encore disponibles dans Europresse."
-      };
-      key = `news\u00b7${publicationDate(date)}\u00b7GE\u00b7${match[1]}`;
-      method = "Financial Times : référence du lien et date renseignée. Correspondance web expérimentale; les articles récents peuvent ne pas être encore disponibles.";
-    }
-  } else if (source.hostname === "www.usinenouvelle.com") {
-    const match = source.pathname.match(/^\/[a-z0-9/-]+\.([A-Z2-7]{26})\.html$/);
-    if (match) {
-      if (!publicationDate(date)) return {
-        state: "needs-date", message: "L'Usine Nouvelle : renseignez la date de publication de l'article pour essayer l'accès direct."
-      };
-      key = `news\u00b7${publicationDate(date)}\u00b7GUNB\u00b7${match[1].toLowerCase()}`;
-      method = "L'Usine Nouvelle : référence du lien et date renseignée. Correspondance web expérimentale; anciennes URL non couvertes.";
-    }
-  } else if (source.hostname === "www.lsa-conso.fr") {
-    const match = source.pathname.match(/^\/[a-z0-9/-]+\.([A-Z2-7]{26})\.html$/);
-    if (match) {
-      if (!publicationDate(date)) return {
-        state: "needs-date", message: "LSA : renseignez la date de publication de l'article pour essayer l'accès direct."
-      };
-      key = `news\u00b7${publicationDate(date)}\u00b7GLSB\u00b7${match[1].toLowerCase()}`;
-      method = "LSA : référence du lien et date renseignée. Correspondance web expérimentale; les articles récents peuvent ne pas être encore disponibles.";
-    }
-  } else if (source.hostname === "www.lepoint.fr") {
-    const match = source.pathname.match(/-([A-Z2-7]{26})\/$/);
-    if (match) {
-      if (!publicationDate(date)) return {
-        state: "needs-date", message: "Le Point : renseignez la date de publication de l'article pour essayer l'accès direct."
-      };
-      key = `news\u00b7${publicationDate(date)}\u00b7POR\u00b7${match[1].toLowerCase()}`;
-      method = "Le Point : référence du lien et date renseignée. Correspondance expérimentale.";
-    }
-  }
-  if (!key) return {
-    state: "unsupported",
-    message: "Ce lien ne permet pas encore de construire un accès automatique fiable. La recherche par copier-coller reste disponible ci-dessous."
+// Profiles contain publisher differences; the transport and safety checks are shared.
+export function prepareEuropresseAutomatic(value, date = "", publication = "OFW", data = profiles) {
+  const matched = matchDebridageProfile(value, data);
+  if (!matched || !matched.profile.enabled || !matched.profile.methods.includes("reference")) return {
+    state: "unsupported", message: "Ce lien ne permet pas encore de construire un accès automatique fiable. La recherche par copier-coller reste disponible ci-dessous."
   };
-  const destination = `https://nouveau.europresse.com/Link/D000067U_1/${encodeURIComponent(key)}`;
+  const {profile, url: source, captures} = matched;
+  const choice = profile.publications?.find(p => p.code === publication);
+  if (profile.publications && !choice) return { state: "unsupported", message: "Cette publication partenaire n'est pas encore couverte par l'essai automatique." };
+  const message = text => text.replaceAll("{publication_label}", choice?.label || profile.name);
+  let day = profile.date.type === "input" ? publicationDate(date)
+    : publicationDate(profile.date.groups.map(i => captures[i]).join("") + (profile.date.type === "month" ? "01" : ""));
+  const month = profile.date.month_groups?.map(i => captures[i]).join("");
+  if (month && !publicationDate(month + "01")) return {state: "unsupported", message: "Le mois du lien est invalide."};
+  if (profile.date.type === "input" && (!day || (month && !day.startsWith(month)))) return {
+    state: "needs-date", profileId: profile.id, message: message(profile.date_message)
+  };
+  if (!day) return {state: "unsupported", message: "La date du lien est invalide."};
+  let key;
+  if (profile.reference.type === "url-sha1") {
+    key = eddKey(source, day, profile.reference.source_code, profile.reference.prefix);
+  } else {
+    key = profile.reference.template.replace(/\{(day|publication|id[1-9])\}/g, (_, field) =>
+      field === "day" ? day : field === "publication" ? choice.code : (captures[Number(field.slice(2))] || "").toLowerCase());
+  }
+  if (!/^news·[0-9]{8}·[A-Z0-9]+·[a-z0-9×-]+$/.test(key)) return { state: "unsupported", message: "La référence du lien est invalide." };
+  return { state: "ready", key, url: europresseLoginUrl(key), profileId: profile.id, message: message(profile.message) };
+}
+
+function europresseLoginUrl(equation) {
   const login = new URL("https://bnf.idm.oclc.org/login");
-  login.searchParams.set("qurl", destination);
-  return { state: "ready", key, url: login.href, message: method };
+  login.searchParams.set("qurl", `https://nouveau.europresse.com/Link/D000067U_1/${encodeURIComponent(equation)}`);
+  return login.href;
 }

@@ -5289,6 +5289,83 @@ button.badge.recommended {
   border-bottom: 1px solid var(--line);
 }
 
+.europresse-search-body .transition-shell {
+  width: min(100%, 640px);
+}
+
+.europresse-search-body .transition-shell h1 {
+  font-size: 1.6rem;
+}
+
+.debridage-identity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.debridage-logo {
+  width: 64px;
+  height: 64px;
+  flex: 0 0 64px;
+}
+
+.debridage-separator {
+  width: 1px;
+  height: 40px;
+  background: var(--line);
+}
+
+.debridage-article {
+  overflow-wrap: anywhere;
+  margin: 0 0 20px;
+  font-weight: 650;
+  text-align: left;
+}
+
+.debridage-parameters,
+.debridage-manual {
+  border-top: 1px solid var(--line);
+  text-align: left;
+  margin-top: 16px;
+}
+
+.debridage-parameters > summary,
+.debridage-manual > summary {
+  padding: 14px 0;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.debridage-manual-steps {
+  padding-left: 24px;
+  line-height: 1.6;
+}
+
+.debridage-manual-steps li + li {
+  margin-top: 12px;
+}
+
+.debridage-parameters .resource-action {
+  white-space: normal;
+  height: auto;
+  min-height: 42px;
+  width: 100%;
+  padding: 10px;
+}
+
+.debridage-parameters input,
+.debridage-parameters select {
+  width: 100%;
+  min-width: 0;
+}
+
+.debridage-logo[hidden],
+.debridage-separator[hidden] {
+  display: none;
+}
+
 .europresse-auto [hidden] {
   display: none;
 }
@@ -5320,12 +5397,16 @@ button.badge.recommended {
 }
 
 #automaticTitleWords,
-#automaticTitleSearch {
+#automaticTitleSearch,
+#automaticAuthor,
+#automaticLanguage,
+#automaticRefinedSearch {
   width: 100%;
   min-height: 42px;
 }
 
-#automaticTitleSearch {
+#automaticTitleSearch,
+#automaticRefinedSearch {
   margin-top: 8px;
 }
 

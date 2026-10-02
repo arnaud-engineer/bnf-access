@@ -8,24 +8,37 @@
     <meta name="description" content="Préparation d'une recherche Europresse depuis un lien de presse.">
     <link rel="icon" href="../assets/icons/bnf-access-icon.svg" type="image/svg+xml">
     <script src="../assets/js/pages/theme-init.js"></script>
-    <link rel="stylesheet" href="../assets/css/styles.css?v=2026-10-02-europresse-auto-v15">
+    <link rel="stylesheet" href="../assets/css/styles.css?v=2026-10-02-optional-refinement">
   </head>
   <body class="transition-body europresse-search-body">
     <main class="transition-shell" aria-labelledby="europresseSearchTitle">
-      <img class="transition-logo" src="../assets/logos/europresse.webp" alt="" aria-hidden="true">
+      <div class="debridage-identity" aria-label="Plateforme et journal">
+        <span class="quick-launch-tile debridage-logo icon-no-padding"><img src="../assets/logos/europresse.webp" alt="Europresse"></span>
+        <span id="journalSeparator" class="debridage-separator" aria-hidden="true" hidden></span>
+        <span id="journalLogo" class="quick-launch-tile debridage-logo" hidden></span>
+      </div>
       <a class="brand-link brand-link--compact" href="../" aria-label="BnF Access, accueil">
         <img src="../assets/icons/bnf-access-icon.svg" alt="" aria-hidden="true">
         <span>BnF Access</span>
       </a>
       <h1 id="europresseSearchTitle">Recherche Europresse</h1>
-      <p id="europresseSearchResource" class="transition-resource"></p>
+      <p id="europresseSearchResource" class="transition-resource">Consulter via Europresse</p>
+      <p id="articleTitle" class="debridage-article" hidden></p>
       <p id="europresseSearchStatus" class="transition-status" role="status" aria-live="polite">
         Préparation de la recherche...
       </p>
       <section class="europresse-auto" aria-label="Recherche automatique expérimentale">
         <button id="automaticSearch" class="resource-action europresse-search-submit" type="button">
-          Recherche automatique V2 expérimentale
+          Recherche automatique · V2 expérimentale
         </button>
+        <p id="automaticStatus" role="status" aria-live="polite"></p>
+        <p id="automaticConnectionHelp" class="transition-help" hidden>
+          Si Europresse affiche un écran de connexion,
+          <a id="restoreBnfAccess" target="_blank" rel="noopener noreferrer">rétablissez l’accès via la BnF</a>,
+          puis réessayez la recherche V2 depuis cette page.
+        </p>
+        <details id="searchParameters" class="debridage-parameters">
+          <summary>Paramètres de recherche</summary>
         <div id="automaticDateBlock" hidden>
           <label for="automaticDate">Date de publication de l'article</label>
           <input id="automaticDate" type="date">
@@ -41,7 +54,7 @@
             <option value="OCW">Le Courrier de l'Ouest</option>
           </select>
         </div>
-        <p id="automaticStatus" role="status" aria-live="polite"></p>
+        <p id="automaticMethod" class="transition-help"></p>
         <div id="automaticDateAlternativesBlock" hidden>
           <button id="automaticDateAlternatives" class="resource-action secondary" type="button" aria-describedby="automaticDateAlternativesStatus">Essayer les deux dates</button>
           <p id="automaticDateAlternativesStatus" class="transition-help"></p>
@@ -52,8 +65,34 @@
           <button id="automaticTitleSearch" class="resource-action secondary" type="button" aria-describedby="automaticTitleStatus">Essayer par le titre</button>
           <p id="automaticTitleStatus" class="transition-help" role="status" aria-live="polite"></p>
         </div>
+        <div id="automaticRefinementBlock" hidden>
+          <label for="automaticAuthor">Auteur personnel (facultatif)</label>
+          <input id="automaticAuthor" type="text" maxlength="100" autocomplete="off" aria-describedby="automaticRefinementHelp automaticRefinementStatus">
+          <label for="automaticLanguage">Langue de l’article (facultative)</label>
+          <select id="automaticLanguage">
+            <option value="">Toutes les langues</option>
+            <option value="fra">Français</option>
+            <option value="eng">Anglais</option>
+          </select>
+          <p id="automaticRefinementHelp" class="transition-help">Indiquez le nom de la personne qui signe l’article, pas celui du journal. Ces critères peuvent masquer des résultats pertinents.</p>
+          <button id="automaticRefinedSearch" class="resource-action secondary" type="button" aria-describedby="automaticRefinementStatus" disabled>Essayer avec ces critères</button>
+          <p id="automaticRefinementStatus" class="transition-help" role="status" aria-live="polite"></p>
+        </div>
+        </details>
         <p class="transition-help">L'essai ouvre Europresse via la BnF, sans installation. La présence de l'article et vos droits d'accès ne sont pas garantis. Si aucun résultat ne s'ouvre, revenez ici pour utiliser le copier-coller.</p>
       </section>
+      <details id="manualSearch" class="debridage-manual">
+        <summary>Recherche manuelle de secours</summary>
+      <p id="manualRecoveryNotice" class="transition-help" role="status" hidden>
+        Toujours pas d’article après deux essais V2 ? Essayez la recherche manuelle ci-dessous.
+      </p>
+      <ol class="debridage-manual-steps">
+        <li>Cliquez sur <strong>Copier la recherche et ouvrir Europresse</strong> : la recherche est copiée et Europresse s’ouvre dans un nouvel onglet. Cette page reste disponible pour revenir aux instructions.</li>
+        <li>Si une connexion est demandée, connectez-vous via la BnF. Si Europresse affiche son propre formulaire de connexion, revenez ici et cliquez sur <a id="manualRestoreBnfAccess" target="_blank" rel="noopener noreferrer">rétablir l’accès via la BnF</a>.</li>
+        <li>Dans Europresse, ouvrez la recherche si nécessaire, puis <strong>collez le texte dans le champ de recherche</strong>. Si la copie a échoué, copiez vous-même le texte « Recherche à coller » ci-dessous.</li>
+        <li>Dans le choix de période, remplacez <strong>Depuis 30 jours</strong> par <strong>Dans toutes les archives</strong>.</li>
+        <li><strong>Lancez la recherche</strong>, puis ouvrez le résultat correspondant au titre et au journal recherchés.</li>
+      </ol>
       <dl class="conversion-details">
         <div>
           <dt>Recherche à coller</dt>
@@ -82,6 +121,7 @@
         </button>
         <button id="copySearch" class="resource-action secondary" type="button">Copier seulement</button>
       </div>
+      <p id="manualCopyStatus" class="transition-help" role="status" aria-live="polite"></p>
       <section id="europresseSearchAlternative" class="europresse-search-alternative" hidden>
         <h2>Essai mots-clés</h2>
         <p id="europresseSearchAlternativeQuery"></p>
@@ -90,10 +130,11 @@
         </button>
       </section>
       <p class="transition-help">
-        Après ouverture d’Europresse, collez la recherche dans le champ principal, remplacez “Depuis 30 jours” par “Dans toutes les archives”, puis lancez la recherche. Si la recherche par titre ne suffit pas, essayez les mots-clés ; si trop de résultats remontent, ajoutez le filtre source indiqué.
+        Aucun résultat ? Essayez le bouton « Copier les mots-clés » s’il est proposé, ou quelques mots distinctifs du titre. Trop de résultats ? Ajoutez le filtre source conseillé ci-dessus. L’article peut aussi ne pas être disponible dans Europresse.
       </p>
+      </details>
     </main>
 
-    <script src="../assets/js/pages/europresse-search.js?v=2026-10-02-auto-v15" type="module"></script>
+    <script src="../assets/js/pages/europresse-search.js?v=2026-10-02-optional-refinement" type="module"></script>
   </body>
 </html>

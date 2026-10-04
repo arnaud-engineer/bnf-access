@@ -1,5 +1,5 @@
 import {createBookPresentation} from './features/books/presentation.js';
-import {bookFavoriteId as favoriteId, filterBooks, indexBookCatalog, isFavoriteBook} from './features/books/model.js';
+import {bookFavoriteId as favoriteId, filterBooks, indexBookCatalog, isFavoriteBook} from './features/books/model.js?v=2026-10-04-known-language';
 
 export function createBookSearch({
          input,
@@ -454,7 +454,7 @@ export function createBookSearch({
     defaultFavoriteIds() { return [...defaultFavorites]; },
     resolveFavoriteId(id) { const book = favoriteBooks.get(id); return book ? favoriteId(book) : id; },
     getFavoriteResource(id) {
-      if (!/^book:(scholarvox|pret-bnf|eni|garnier|gale):[a-zA-Z0-9_-]+$/.test(id)) return null;
+      if (!/^book:(scholarvox|pret-bnf|eni|garnier|gale|alexanderstreet|openedition|rsc):[a-zA-Z0-9_-]+$/.test(id)) return null;
       const book = favoriteBooks.get(id);
       return { id, name: book?.title || "Livre indisponible dans le catalogue actuel", is_book: true, book,
         icon_url: book?.cover || null, icon_no_padding: true, fallback_label: "Livre", actions: [] };

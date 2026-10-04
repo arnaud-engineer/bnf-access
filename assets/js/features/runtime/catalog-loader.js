@@ -51,7 +51,7 @@ export function createCatalogLoader({
   }
 
   function isJsonFetchPending(url) {
-    return jsonFetchPromises.has(url);
+    return jsonFetchPromises.has(new URL(url, window.location.href).href);
   }
 
   async function initializeAssetManifest() {

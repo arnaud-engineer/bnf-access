@@ -17,7 +17,7 @@ export function createSearchHints(input, mirrors = []) {
   const betaLabel = input.getAttribute("aria-label");
   let alpha = false;
   let examples = searchExamples;
-  let totalSteps = examples.length * 2;
+  let pass = 0;
   let started = false;
   let stopped = false;
   let timer = null;
@@ -46,7 +46,7 @@ export function createSearchHints(input, mirrors = []) {
   }
 
   function currentText() {
-    return index < totalSteps ? examples[index % examples.length][compact.matches ? 1 : 0] : input.placeholder;
+    return index < examples.length ? examples[index][compact.matches ? 1 : 0] : input.placeholder;
   }
 
   function schedule(delay = 2700) {
@@ -75,21 +75,35 @@ export function createSearchHints(input, mirrors = []) {
 
   function advance() {
     if (stopped || input.value || document.activeElement === input) { stop(); return; }
-    index += 1;
-    const previous = layer.firstElementChild;
-    const next = line(currentText());
-    layer.append(next);
+    const rewind = index === examples.length - 1 && pass < 2;
+    const frames = [{ element: layer.firstElementChild, offset: 0 }];
+    if (rewind) {
+      // Keep every intermediate line on the same moving strip during the rewind.
+      for (let step = index - 1; step >= 0; step--) {
+        const element = line(examples[step][compact.matches ? 1 : 0]);
+        layer.append(element);
+        frames.push({ element, offset: step - index });
+      }
+      pass += 1;
+      index = 0;
+    } else {
+      index += 1;
+      const element = line(currentText());
+      layer.append(element);
+      frames.push({ element, offset: 1 });
+    }
+    const distance = rewind ? frames.length - 1 : -1;
     const version = revision;
-    animations = [
-      previous.animate([{ transform: "translateY(0)" }, { transform: "translateY(-100%)" }], { duration: 300, easing: "ease-in-out", fill: "forwards" }),
-      next.animate([{ transform: "translateY(100%)" }, { transform: "translateY(0)" }], { duration: 300, easing: "ease-in-out", fill: "forwards" }),
-    ];
+    animations = frames.map(({ element, offset }) => element.animate([
+      { transform: `translateY(${offset * 100}%)` },
+      { transform: `translateY(${(offset + distance) * 100}%)` },
+    ], { duration: rewind ? distance * 240 : 300, easing: rewind ? "linear" : "ease-in-out", fill: "forwards" }));
     Promise.all(animations.map(animation => animation.finished)).then(() => {
       if (stopped || version !== revision) return;
-      previous.remove();
+      layer.replaceChildren(frames[frames.length - 1].element);
       animations.forEach(animation => animation.cancel());
       animations = [];
-      if (index === totalSteps) stop();
+      if (index === examples.length) stop();
       else schedule();
     }).catch(() => { /* Interaction cancels the transition immediately. */ });
   }
@@ -116,7 +130,6 @@ export function createSearchHints(input, mirrors = []) {
       if (alpha === enabled) return;
       alpha = enabled;
       examples = enabled ? [...searchExamples, linkExample] : searchExamples;
-      totalSteps = examples.length * 2;
       syncPlaceholder();
       if (started && !stopped && !layer.hidden) {
         revision += 1;
@@ -124,6 +137,7 @@ export function createSearchHints(input, mirrors = []) {
         animations.forEach(animation => animation.cancel());
         animations = [];
         index = 0;
+        pass = 0;
         layer.replaceChildren(line(currentText()));
         schedule();
       }

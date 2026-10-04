@@ -40,7 +40,8 @@ export function filterBooks(books, {context, selection, favoriteIds, query, igno
   const result = [];
   for (const book of books ?? []) {
     if (!words.every((word) => (forSuggestions ? book.suggestionSearch : book.search).includes(word))) continue;
-    if (context.languages.size && book.languages.length && !book.languages.some((code) => context.languages.has(code))) continue;
+    // An unknown language is visible under All, never a match for a specific language.
+    if (context.languages.size && !book.languages.some((code) => context.languages.has(code))) continue;
     const availability = book.availability.filter((access) => context.canAccess(access.resource_id)
       && (["platform", "all"].includes(ignore) || !selection.platform || access.platform === selection.platform));
     if (!availability.length) continue;

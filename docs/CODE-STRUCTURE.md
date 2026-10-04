@@ -158,6 +158,32 @@ Stable helpers/configuration are imported by their controllers with optional
 test overrides. Mutable editor state, DOM bindings, persistence operations and
 cross-workspace actions remain explicit dependencies.
 
+## Data Processing Backend
+
+The deployed site is static: there is no production application server. The
+local processing tools are a separate backend responsibility, not browser
+controllers. Keep this boundary explicit when extending the catalogue editor.
+
+- Collection adapters retrieve source records and retain provenance. They do
+  not publish findings or turn uncertain matches into confirmed access.
+- Normalization and validation produce consistent records and reject invalid
+  editor changes. The browser and processing tools share domain schemas where
+  possible, rather than maintaining competing validation rules.
+- Guarded application checks the export against the current baseline before
+  changing canonical data. A draft or preview is not an applied change.
+- Builders project validated data into artifacts consumed by the static site.
+  Deployment is a separate, explicitly authorized operation.
+- Browser preferences, subscription sessions and credentials are not backend
+  inputs and must never appear in editor exports or generated catalogues.
+
+Current write guarantees differ between tools. Catalogue application has a
+transaction/rollback mechanism; book-rule application replaces its rules file
+atomically. Debridage profile application replaces source and projection
+sequentially, and the book catalogue builder writes its final output directly.
+Do not describe those latter operations as a multi-file transaction. Future
+hardening should stage outputs, protect concurrent application and retain a
+recoverable last valid generation before replacing live artifacts.
+
 ## Verification
 
 Structural tests check the module graph for missing files and import cycles,

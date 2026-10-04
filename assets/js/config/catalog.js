@@ -4,7 +4,10 @@ export const bookPlatformDefinitions = [
   ["scholarvox", "scholarvox-cyberlibris", "ScholarVox"],
   ["eni", "eni-bibliotheque-numerique", "ENI"],
   ["garnier", "classiques-garnier-livres-et-revues-numeriques", "Garnier"],
-  ["gale", "gale-general-research", "Gale eBooks"],
+  ["gale", "gale-general-research", "Gale"],
+  ["alexanderstreet", "twentieth-century-religious-thought-library-christianity", "Alexander Street"],
+  ["openedition", "openedition-books", "OpenEdition"],
+  ["rsc", "rsc-publishing", "RSC"],
 ];
 
 export const pressEntryTypes = {

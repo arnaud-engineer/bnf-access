@@ -29,8 +29,8 @@ import {createFavoritesRenderer} from './features/favorites/rendering.js';
 import {createSharingController} from './features/sharing/controller.js';
 import {createLinkConverterController} from './features/link-converter/controller.js';
 import {normalize, escapeHtml} from './shared/text.js';
-import {createBookSearch} from "./book-search.js?v=2026-10-01-unified-search";
-import {createSearchHints} from "./search-hints.js?v=2026-10-01-unified-search";
+import {createBookSearch} from "./book-search.js?v=2026-10-04-known-language";
+import {createSearchHints} from "./search-hints.js?v=2026-10-02-vertical-rewind";
 import {canonicalizeEditorialTaxonomy, categoryIndex} from "./editorial-taxonomy.js?v=2026-09-06";
 import {validateCatalog, mergeCatalogEntries, migratePreferences} from "./catalog-model.js";
 

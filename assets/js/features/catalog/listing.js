@@ -8,6 +8,7 @@ import {logoAppearanceAttributes} from '../../logo-appearance.js?v=2026-09-16-pr
 
 // Progressive lists own cancellation state so obsolete batches cannot append to a new view.
 export function createCatalogListing({
+  openPlatformDirectory,
   accessModeClasses = defaultAccessModeClasses,
   bookSearch,
   createCard,
@@ -211,6 +212,7 @@ export function createCatalogListing({
       section.innerHTML = `
         <div class="entry-section-heading press-platforms-heading">
           <h2 id="press-platforms-heading">Plateformes de presse</h2>
+          <button type="button" class="quick-launch-action neutral platform-directory-link" aria-label="Voir toutes les bases de presse dans Ressources">Voir tout</button>
         </div>
         <div class="press-platform-list">
           ${platforms.map((resource) => {
@@ -228,6 +230,7 @@ export function createCatalogListing({
           }).join("")}
         </div>
       `;
+      section.querySelector('.platform-directory-link').addEventListener('click', () => openPlatformDirectory('presse_et_medias'));
       grid.append(section);
     }
 

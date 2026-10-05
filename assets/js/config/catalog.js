@@ -8,6 +8,8 @@ export const bookPlatformDefinitions = [
   ["alexanderstreet", "twentieth-century-religious-thought-library-christianity", "Alexander Street"],
   ["openedition", "openedition-books", "OpenEdition"],
   ["rsc", "rsc-publishing", "RSC"],
+  ["eebo", "early-english-books-online-eebo", "Early English Books", false],
+  ["eeb", "early-european-books", "Early European Books", false],
 ];
 
 export const pressEntryTypes = {

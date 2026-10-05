@@ -1,7 +1,9 @@
 import {createBookPresentation} from './features/books/presentation.js';
+import {groupBookSeries} from './features/books/series.js';
 import {bookFavoriteId as favoriteId, filterBooks, indexBookCatalog, isFavoriteBook} from './features/books/model.js?v=2026-10-04-known-language';
 
 export function createBookSearch({
+         openPlatformDirectory,
          input,
          mirrors = [],
          suggestions,
@@ -77,7 +79,7 @@ export function createBookSearch({
     if (books) return books;
     if (pending) return pending;
     error = false;
-    pending = fetch(new URL("../../private/books/build/catalog.json", import.meta.url))
+    pending = fetch(new URL("../../private/books/build/catalog-ui.json", import.meta.url))
       .then((response) => {
         if (!response.ok) throw new Error("Book catalogue unavailable");
         return response.json();
@@ -321,8 +323,9 @@ export function createBookSearch({
     grid.replaceChildren(text("p", "Chargement des livres…", "book-search-status"));
     await load();
     if (version !== gridVersion || getContext().category !== "Livre") return;
-    const result = filtered().filter((book) => !selectedBookId || book.id === selectedBookId);
-    count.textContent = error ? "" : `${result.length.toLocaleString("fr")} livres`;
+    const matchingBooks = filtered().filter((book) => !selectedBookId || book.id === selectedBookId);
+    const result = groupBookSeries(matchingBooks);
+    count.textContent = error ? "" : `${matchingBooks.length.toLocaleString("fr")} livres`;
     grid.replaceChildren();
     if (error) {
       grid.append(text("p", "Le catalogue de livres n’a pas pu être chargé.", "empty"));
@@ -405,6 +408,7 @@ export function createBookSearch({
     platformSection,
     text
   } = createBookPresentation({
+    openPlatformDirectory,
     choose: (...args) => choose(...args),
     createPlatformLogo: (...args) => createPlatformLogo(...args),
     getContext: (...args) => getContext(...args),
@@ -426,8 +430,9 @@ export function createBookSearch({
       section.replaceChildren();
       const searching = Boolean((getContext().query ?? input.value).trim());
       const allResults = filtered("all");
-      const result = allResults.filter(book => searching || book.default_favorite).slice(0, searching ? 40 : undefined);
-      const hasMore = allResults.length > result.length;
+      const grouped = groupBookSeries(allResults.filter(book => searching || book.default_favorite));
+      const result = grouped.slice(0, searching ? 40 : undefined);
+      const hasMore = searching ? grouped.length > result.length : allResults.some(book => !book.default_favorite);
       if (!error && !result.length) { section.remove(); return; }
       const heading = text("div", "", "entry-section-heading");
       const more = text("button", "Voir tout", "filter-button");
@@ -454,7 +459,7 @@ export function createBookSearch({
     defaultFavoriteIds() { return [...defaultFavorites]; },
     resolveFavoriteId(id) { const book = favoriteBooks.get(id); return book ? favoriteId(book) : id; },
     getFavoriteResource(id) {
-      if (!/^book:(scholarvox|pret-bnf|eni|garnier|gale|alexanderstreet|openedition|rsc):[a-zA-Z0-9_-]+$/.test(id)) return null;
+      if (!/^book:(scholarvox|pret-bnf|eni|garnier|gale|alexanderstreet|openedition|rsc|eebo|eeb):[a-zA-Z0-9_-]+$/.test(id)) return null;
       const book = favoriteBooks.get(id);
       return { id, name: book?.title || "Livre indisponible dans le catalogue actuel", is_book: true, book,
         icon_url: book?.cover || null, icon_no_padding: true, fallback_label: "Livre", actions: [] };

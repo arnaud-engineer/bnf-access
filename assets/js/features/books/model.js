@@ -1,3 +1,5 @@
+import {searchableCredits} from './credits.js';
+
 // Books use accent folding without punctuation removal; keep it distinct from
 // catalogue normalization so ISBNs, quoted titles and existing queries still match.
 export const foldBookText = (value) => String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
@@ -12,9 +14,15 @@ export function isFavoriteBook(book, favoriteIds) {
 
 export function indexBookCatalog(data) {
   if (data.schema_version !== 1 || !Array.isArray(data.books)) throw new Error("Invalid book catalogue");
+  if (data.compact_variants === 1) {
+    data = {...data, books: data.books.map(book => ({...book, variants: book.variants.map(variant => ({
+      title: book.title, authors: book.authors, publisher: book.publisher, isbns: book.isbns,
+      languages: book.languages, cover: book.cover, ...variant
+    }))}))};
+  }
   const books = data.books.map((book) => ({ ...book,
-    suggestionSearch: foldBookText([book.title, ...(book.display_authors ?? book.authors), ...book.variants.map((variant) => variant.metadata.display_publisher || variant.publisher), ...book.isbns].join(" ")),
-    search: foldBookText([book.title, ...(book.display_authors ?? book.authors), ...book.variants.map((variant) => variant.metadata.display_publisher || variant.publisher), ...book.publishers, ...book.isbns].join(" ")),
+    suggestionSearch: foldBookText([book.title, ...searchableCredits(book), ...book.variants.map((variant) => variant.metadata.display_publisher || variant.publisher), ...book.isbns].join(" ")),
+    search: foldBookText([book.title, ...searchableCredits(book), ...book.variants.map((variant) => variant.metadata.display_publisher || variant.publisher), ...book.publishers, ...book.isbns].join(" ")),
     titleSearch: foldBookText(book.title),
   }));
   // Every source alias resolves to the same book, while the saved favorite uses

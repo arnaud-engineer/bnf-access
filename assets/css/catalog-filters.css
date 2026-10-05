@@ -233,6 +233,10 @@
   font-weight: 700;
 }
 
+.entry-section-heading.press-platforms-heading { flex-direction: row; align-items: center; }
+.press-platforms-heading h2 { min-width: 0; }
+.platform-directory-link { flex-shrink: 0; }
+
 .entry-section-heading p {
   margin: 0;
   color: var(--muted);

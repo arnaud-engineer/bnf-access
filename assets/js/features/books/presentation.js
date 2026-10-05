@@ -1,7 +1,10 @@
 import {bookFavoriteId as favoriteId} from './model.js';
+import {bookCredits, searchableCredits} from './credits.js';
+import {bookIdentifiers} from './identifiers.js';
 
 // Book cards, favorite tiles and platform links share the same presentation. Description overflow remains measured in the user viewport.
 export function createBookPresentation({
+  openPlatformDirectory,
   choose,
   createPlatformLogo,
   getContext,
@@ -13,6 +16,15 @@ export function createBookPresentation({
   toggleFavoriteBook
 }) {
   let summaryId = 0;
+  const selectedSeriesVolumes = new Map();
+  const platformNameObserver = new ResizeObserver((entries) => {
+    for (const {target} of entries) {
+      if (!target.isConnected) { platformNameObserver.unobserve(target); continue; }
+      const label = target.querySelector('.press-platform-label');
+      label.textContent = target.dataset.fullLabel;
+      if (label.scrollWidth > label.clientWidth) label.textContent = target.dataset.shortLabel;
+    }
+  });
 
   const summaryObserver = new ResizeObserver((entries) => {
     for (const { target } of entries) {
@@ -20,7 +32,7 @@ export function createBookPresentation({
       const paragraph = target.querySelector("p");
       const button = target.querySelector("button");
       const lineHeight = parseFloat(getComputedStyle(paragraph).lineHeight);
-      button.hidden = paragraph.scrollHeight <= lineHeight * 3 + 1;
+      button.hidden = paragraph.scrollHeight <= lineHeight * (target.classList.contains('book-credits') ? 2 : 3) + 1;
     }
   });
 
@@ -48,11 +60,27 @@ export function createBookPresentation({
   function description(book) {
     const content = document.createElement("span");
     content.className = "book-description";
-    content.append(text("strong", book.title),
-      text("span", (book.display_authors ?? book.authors).join(", ") || "Auteur non renseigné", "book-author"),
+    const credits = text('div', '', 'book-credits');
+    const names = text('p', bookCredits(book).text, 'book-author book-credit-text');
+    names.id = `book-credits-${book.id}-${++summaryId}`;
+    const toggle = text('button', '[+]', 'description-toggle book-credit-toggle');
+    toggle.type = 'button';
+    toggle.hidden = true;
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-controls', names.id);
+    toggle.setAttribute('aria-label', `Afficher tous les noms : ${book.title}`);
+    toggle.addEventListener('click', () => {
+      const expanded = credits.classList.toggle('is-expanded');
+      toggle.textContent = expanded ? '[-]' : '[+]';
+      toggle.setAttribute('aria-expanded', String(expanded));
+      toggle.setAttribute('aria-label', `${expanded ? 'Replier' : 'Afficher tous'} les noms : ${book.title}`);
+    });
+    credits.append(names, toggle);
+    requestAnimationFrame(() => { if (credits.isConnected) summaryObserver.observe(credits); });
+    content.append(text("strong", book.title), credits,
       text("span", book.publishers?.join(" · ") || book.publisher || "Éditeur non renseigné", "book-publisher"));
     content.querySelector(".book-publisher").title = `Libellés sources : ${[...new Set(book.variants.map((v) => v.publisher).filter(Boolean))].join(" · ")}`;
-    content.querySelector(".book-author").title = `Auteurs sources : ${[...new Set(book.variants.flatMap((v) => v.authors))].join(" · ")}`;
+    content.querySelector(".book-author").title = `Crédits sources : ${[...new Set(searchableCredits(book))].join(" · ")}`;
     return content;
   }
 
@@ -117,32 +145,54 @@ export function createBookPresentation({
     const title = text("h2", "Plateformes de livres");
     title.id = "book-platforms-heading";
     heading.append(title);
+    const seeAll = text('button', 'Voir tout', 'quick-launch-action neutral platform-directory-link');
+    seeAll.type = 'button';
+    seeAll.setAttribute('aria-label', 'Voir toutes les bases de livres dans Ressources');
+    seeAll.addEventListener('click', () => openPlatformDirectory('catalogues_et_bibliographies__livres'));
+    heading.append(seeAll);
     section.append(heading);
-    const list = document.createElement("div");
-    list.className = "press-platform-list book-platform-list";
-    for (const platform of getContext().platforms) {
-      const item = document.createElement("article");
-      item.className = `press-platform-item book-platform-item book-source-${platform.id}`;
-      const logo = createPlatformLogo(platform.resource);
-      const link = text("a", "Ouvrir", "resource-action variant");
-      link.href = platform.url;
-      link.target = "_blank";
-      link.rel = "noreferrer";
-      link.setAttribute("aria-label", `Ouvrir ${platform.label}`);
-      const name = text("strong", "");
-      name.title = platform.label;
-      const dot = text("span", "", "press-platform-dot");
-      dot.setAttribute("aria-hidden", "true");
-      name.append(dot, text("span", platform.label, "press-platform-label"));
-      item.append(logo, name,
-        text("span", platform.access, `press-platform-access ${platform.accessClass ?? ""}`), link);
-      list.append(item);
+    function platformList(platforms) {
+      const list = document.createElement("div");
+      list.className = "press-platform-list book-platform-list";
+      for (const platform of platforms) {
+        const item = document.createElement("article");
+        item.className = `press-platform-item book-platform-item book-source-${platform.id}`;
+        const logo = createPlatformLogo(platform.resource);
+        const link = text("a", "Ouvrir", "resource-action variant");
+        link.href = platform.url;
+        link.target = "_blank";
+        link.rel = "noreferrer";
+        link.setAttribute("aria-label", `Ouvrir ${platform.label}`);
+        const name = text("strong", "");
+        name.title = platform.label;
+        const dot = text("span", "", "press-platform-dot");
+        dot.setAttribute("aria-hidden", "true");
+        name.append(dot, text("span", platform.label, "press-platform-label"));
+        if (platform.indexed === false && ['eebo', 'eeb'].includes(platform.id)) {
+          name.classList.add('book-adaptive-platform-name');
+          name.dataset.fullLabel = platform.label;
+          name.dataset.shortLabel = platform.id === 'eebo' ? 'Early EN Books' : 'Early EU Books';
+          platformNameObserver.observe(name);
+        }
+        item.append(logo, name,
+          text("span", platform.access, `press-platform-access ${platform.accessClass ?? ""}`), link);
+        list.append(item);
+      }
+      return list;
     }
-    section.append(list);
+    const context = getContext();
+    section.append(platformList(context.platforms));
+    if (context.unindexedPlatforms?.length) {
+      const details = document.createElement("details");
+      details.className = "book-unindexed-platforms";
+      details.append(text("summary", "Plateformes non indexées"), platformList(context.unindexedPlatforms));
+      section.append(details);
+    }
     return section;
   }
 
-  function bookCard(book) {
+  function bookCard(book, { keepSelection = false } = {}) {
+    if (book.seriesVolumes) return seriesCard(book);
     const card = document.createElement("article");
     card.className = "book-result";
     card.dataset.bookId = book.id;
@@ -152,7 +202,7 @@ export function createBookPresentation({
     heading.tabIndex = -1;
     title.replaceWith(heading);
     const favorite = createFavoriteButton(book, () => {
-      if (getContext().category === "Livre" && readGridTarget()) renderGrid(readGridTarget().grid, readGridTarget().count);
+      if (!keepSelection && getContext().category === "Livre" && readGridTarget()) renderGrid(readGridTarget().grid, readGridTarget().count);
     }, content);
     const access = accessLinks(book);
     const tags = text("span", "", "book-platform-tags badge-row");
@@ -189,6 +239,16 @@ export function createBookPresentation({
       content.append(summary);
       requestAnimationFrame(() => { if (summary.isConnected) summaryObserver.observe(summary); });
     }
+    const identifiers = bookIdentifiers(book);
+    if (identifiers.length) {
+      const list = text('div', '', 'book-identifiers');
+      for (const {label, value} of identifiers) {
+        const line = text('div', '');
+        line.append(text('span', `${label} : `), text('span', value, 'book-identifier-value'));
+        list.append(line);
+      }
+      content.append(list);
+    }
     content.append(tags);
     if (book.categories.length) {
       const categories = text("span", "", "book-categories badge-row");
@@ -197,6 +257,41 @@ export function createBookPresentation({
       content.append(categories);
     }
     card.append(illustration(book), content, favorite, access);
+    return card;
+  }
+
+  function seriesCard(series) {
+    let card;
+    const seriesKey = series.seriesVolumes.map(({book}) => book.id).join('|');
+    function selectedCard(index) {
+      const next = bookCard(series.seriesVolumes[index].book, {keepSelection: true});
+      next.classList.add('book-series');
+      const control = text('label', '', 'book-volume-selector');
+      const supplements = series.seriesVolumes.some(item => item.kind?.includes('supplement'));
+      const volumes = series.seriesVolumes.some(item => item.kind === 'volume');
+      control.append(text('span', `${series.seriesVolumes.length} ${supplements ? (volumes ? 'volumes et suppléments' : 'suppléments') : 'volumes'}`));
+      const select = document.createElement('select');
+      select.setAttribute('aria-label', `${supplements && volumes ? 'Volume ou supplément' : series.seriesVolumes[0].label} : ${series.title}`);
+      series.seriesVolumes.forEach(({book, number, label}, position) => {
+        const option = text('option', `${label} ${number}`);
+        option.value = String(position);
+        option.title = book.title;
+        select.append(option);
+      });
+      select.value = String(index);
+      select.addEventListener('change', () => {
+        selectedSeriesVolumes.set(seriesKey, series.seriesVolumes[Number(select.value)].book.id);
+        const replacement = selectedCard(Number(select.value));
+        card.replaceWith(replacement);
+        card = replacement;
+        card.querySelector('select').focus({preventScroll: true});
+      });
+      control.append(select);
+      next.prepend(control);
+      return next;
+    }
+    const selectedIndex = series.seriesVolumes.findIndex(({book}) => book.id === selectedSeriesVolumes.get(seriesKey));
+    card = selectedCard(Math.max(0, selectedIndex));
     return card;
   }
 

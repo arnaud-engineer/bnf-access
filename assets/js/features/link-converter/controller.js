@@ -280,7 +280,8 @@ export function createLinkConverterController({
       });
     };
     renderShortcuts(linkConverterServices, getLinkConverterServices(), "link-converter-service");
-    renderShortcuts(bookPlatforms, bookPlatformDefinitions.map(([, resourceId, label]) => ({ resourceId, label })), "search-book-platform");
+    renderShortcuts(bookPlatforms, bookPlatformDefinitions.filter(([, , , indexed = true]) => indexed)
+      .map(([, resourceId, label]) => ({ resourceId, label })), "search-book-platform");
   }
 
   function searchConverterResource(resource) {

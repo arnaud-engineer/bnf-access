@@ -4,6 +4,7 @@ import {createReleaseMode} from './features/preferences/release-mode.js';
 import {readStoredValue} from './shared/storage.js';
 
 import {bookPlatformDefinitions, languageLabelOverrides, accessModeClasses} from './config/catalog.js';
+import {unindexedBookResources} from './features/books/platforms.js';
 import {bookDefaultFavoritesMigratedKey} from './config/storage-keys.js';
 import {listRefreshAnimationClass, themeValues} from './config/runtime.js';
 
@@ -129,6 +130,7 @@ const {
 const searchHints = createSearchHints(searchInput, [document.querySelector("#filterSearchInput")]);
 
 const bookSearch = createBookSearch({
+  openPlatformDirectory,
   input: searchInput,
   mirrors: [{ input: document.querySelector("#filterSearchInput"), clear: document.querySelector("#filterSearchClear") }],
   suggestions: document.querySelector("#bookSuggestions"),
@@ -140,10 +142,18 @@ const bookSearch = createBookSearch({
       const resource = byId.get(id);
       return Boolean(resource && matchesPassFilter(resource) && matchesRemoteFilter(getAccessMode(resource)));
     };
-    const platforms = bookPlatformDefinitions.filter(([, id]) => canAccess(id)).map(([id, resourceId, label]) => {
+    const platforms = bookPlatformDefinitions.filter(([, id]) => canAccess(id)).map(([id, resourceId, label, indexed = true]) => {
       const resource = byId.get(resourceId);
-      return { id, label, resource, access: getAccessModeLabel(resource), accessClass: accessModeClasses[getAccessMode(resource)] ?? "onsite", url: resource.actions?.[0]?.url };
+      return { id, label, indexed, resource, access: getAccessModeLabel(resource), accessClass: accessModeClasses[getAccessMode(resource)] ?? "onsite", url: resource.actions?.[0]?.url };
     });
+    const unindexedPlatforms = unindexedBookResources(state.resources, state.resourceTaxonomy, bookPlatformDefinitions)
+      .filter(resource => isCatalogVisible(resource) && canAccess(resource.id))
+      .map(resource => {
+        const definition = bookPlatformDefinitions.find(([, resourceId]) => resourceId === resource.id);
+        return {id: definition?.[0] ?? resource.id, label: definition?.[2] ?? resource.name,
+          indexed: false, resource, access: getAccessModeLabel(resource),
+          accessClass: accessModeClasses[getAccessMode(resource)] ?? 'onsite', url: resource.actions?.[0]?.url};
+      });
     return {
       category: state.category,
       query: state.query,
@@ -151,7 +161,8 @@ const bookSearch = createBookSearch({
       languages: state.languageFilter,
       languageTag: (code) => ({ text: formatLanguageBadgeText(code), title: formatLanguageTooltipItem(code) }),
       canAccess,
-      platforms,
+      platforms: platforms.filter(platform => platform.indexed),
+      unindexedPlatforms,
       platformUrl: (id) => byId.get(id)?.actions?.[0]?.url,
     };
   },
@@ -174,6 +185,21 @@ const bookSearch = createBookSearch({
   toggleFavoriteBook: (id) => toggleFavorite(id),
   onCatalogReady: () => { integrateBookFavorites(); render(); },
 });
+
+function openPlatformDirectory(category) {
+  state.category = category;
+  state.favoritesOnly = false;
+  state.query = '';
+  searchInput.value = '';
+  document.querySelector('#filterSearchInput').value = '';
+  for (const id of ['searchClear', 'filterSearchClear']) {
+    const button = document.getElementById(id);
+    if (button) button.hidden = true;
+  }
+  renderFilters();
+  render();
+  requestAnimationFrame(() => grid.scrollIntoView({behavior: 'smooth', block: 'start'}));
+}
 
 const linkConverterInput = searchInput;
 
@@ -986,6 +1012,7 @@ const {
   resumeProgressiveRendering,
   syncEntryGridColumns
 } = createCatalogListing({
+  openPlatformDirectory,
   bookSearch,
   createCard: (...args) => createCard(...args),
   createPressTitleFilters: (...args) => createPressTitleFilters(...args),

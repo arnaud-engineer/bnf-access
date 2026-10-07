@@ -10252,6 +10252,34 @@ export default {
         "https://www.journaldelevis.com/jdl/51/PME.html?id=45750",
         "https://www.journaldelevis.com/jdl/51/PME.html?id=46077"
       ]
+    },
+    {
+      "id": "profession-cgp-juridique-night",
+      "provider": "europresse",
+      "name": "Profession CGP",
+      "catalog_resource_id": "europresse-amu-p",
+      "hosts": [
+        "professioncgp.com",
+        "www.professioncgp.com"
+      ],
+      "path": "^/article/juridique-et-fiscal/[^/]+/[^/]+\\.html$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "title-only"
+      ],
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "message": "Recherche par mots du lien ; verifiez le titre et la publication. La date du magazine peut differer du site.",
+      "date_message": "",
+      "limitations": "Deux articles de fond de la rubrique juridique et fiscal ouvrent les bons AMU papier3439/1024mots, corps concordants avec differences OCR et encadres. Recherche toutes sources : aucune garantie d'unicite ni de disponibilite. Breves recentes non concluantes et liens editoriaux reutilises exclus du perimetre. Aucun Microlink ni metadonnee injectee.",
+      "evidence": [
+        "NUIT-V1-2026-10-07.md",
+        "https://www.professioncgp.com/article/juridique-et-fiscal/juridique-et-fiscal-transmission/du-vent-dans-les-branches-des-transmissions-familiales.html",
+        "https://www.professioncgp.com/article/juridique-et-fiscal/retraite/ce-que-le-budget-2026-a-reserve-au-per.html"
+      ]
     }
   ]
 };

@@ -10334,6 +10334,33 @@ export default {
       "evidence": [
         "POINTS-DE-VENTE-ENQUETE-2026-10-07.md"
       ]
+    },
+    {
+      "id": "tendances-restauration-night",
+      "provider": "europresse",
+      "name": "Tendances Restauration",
+      "catalog_resource_id": "europresse-amf-p",
+      "hosts": [
+        "tendances-restauration.com",
+        "www.tendances-restauration.com"
+      ],
+      "path": "^/[a-z0-9-]*[a-z][a-z0-9-]+/$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "title-only"
+      ],
+      "title_word_strategy": "balanced",
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "message": "Recherche par mots du lien ; verifiez le dossier papier ouvert.",
+      "date_message": "",
+      "limitations": "Deux dossiers URL seule ouvrent AMF papier du 1 octobre 2026, 2062 et 1766 mots, introductions et premiers paragraphes concordants. Dates web/papier et titres de rubrique differents, OCR et encadres ; aucune comparaison integrale du paywall. Les entretiens Veil/Valfort et l'actualite nuggets restent negatifs ou ouvrent des voisins ; l'entretien Tutti Pizza Panorama2021 reste zero meme avec trois premiers mots. Les suffixes editoriaux et noms dans les slugs peuvent polluer les mots. Toutes dates et sources, aucune garantie d'unicite ou de couverture generale. Aucun Microlink, date injectee ou verdict humain.",
+      "evidence": [
+        "TENDANCES-RESTAURATION-DOSSIERS-2026-10-07.md"
+      ]
     }
   ]
 };

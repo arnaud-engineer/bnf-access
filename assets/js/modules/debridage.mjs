@@ -1,8 +1,8 @@
-import defaults from "./debridage-profiles.mjs?v=profiles-pdv-enquete-v1";
+import defaults from "./debridage-profiles.mjs?v=profiles-tendances-dossiers-v1";
 import {buildEuropresseTitleQueryFromUrl, buildEuropresseKeywordQueryFromUrl, cleanEuropresseArticleSlug} from "../features/link-converter/article-query.js?v=short-article-paths-v2";
 import {arbitrateEuropresseUrlWords} from "./europresse-url-elisions.mjs?v=lautre-v1";
-import {matchDebridageProfile, validateDebridageProfiles} from "./debridage-schema.mjs?v=profiles-pdv-enquete-v1";
-import {prepareEuropresseAutomatic, prepareEuropresseTextSearch, prepareEuropresseTitleFallback, prepareEuropresseDateAlternatives, suggestEuropresseDate, europresseTitleWords} from "./europresse-auto.mjs?v=profiles-pdv-enquete-v1";
+import {matchDebridageProfile, validateDebridageProfiles} from "./debridage-schema.mjs?v=profiles-tendances-dossiers-v1";
+import {prepareEuropresseAutomatic, prepareEuropresseTextSearch, prepareEuropresseTitleFallback, prepareEuropresseDateAlternatives, suggestEuropresseDate, europresseTitleWords} from "./europresse-auto.mjs?v=profiles-tendances-dossiers-v1";
 
 export {validateDebridageProfiles};
 export const debridageProfiles = defaults;

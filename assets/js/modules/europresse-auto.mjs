@@ -1,6 +1,6 @@
 import { sha1 } from "../vendor/europresse-sha1.mjs";
-import profiles from "./debridage-profiles.mjs?v=profiles-pdv-enquete-v1";
-import {matchDebridageProfile, validateDebridageProfiles} from "./debridage-schema.mjs?v=profiles-pdv-enquete-v1";
+import profiles from "./debridage-profiles.mjs?v=profiles-tendances-dossiers-v1";
+import {matchDebridageProfile, validateDebridageProfiles} from "./debridage-schema.mjs?v=profiles-tendances-dossiers-v1";
 validateDebridageProfiles(profiles);
 
 // LANG codes from Europresse's 2024 machine-language guide, not generic ISO codes.

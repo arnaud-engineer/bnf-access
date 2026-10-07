@@ -1,7 +1,18 @@
 import { sha1 } from "../vendor/europresse-sha1.mjs";
-import profiles from "./debridage-profiles.mjs";
-import {matchDebridageProfile, validateDebridageProfiles} from "./debridage-schema.mjs";
+import profiles from "./debridage-profiles.mjs?v=profiles-caractere-v1";
+import {matchDebridageProfile, validateDebridageProfiles} from "./debridage-schema.mjs?v=profiles-caractere-v1";
 validateDebridageProfiles(profiles);
+
+// LANG codes from Europresse's 2024 machine-language guide, not generic ISO codes.
+// https://www.cision.fr/content/dam/cision-fr/espace-support/europresse---outils-de-formation/Guide_Europresse-Langage_machine2024.pdf
+export const europresseLanguages = [
+  ["fra", "Français"], ["eng", "Anglais"], ["de", "Allemand"],
+  ["es", "Espagnol"], ["it", "Italien"],
+  ["da", "Danois"], ["et", "Estonien"], ["fi", "Finnois"],
+  ["is", "Islandais"], ["lv", "Letton"], ["lt", "Lituanien"],
+  ["nl", "Néerlandais"], ["no", "Norvégien"], ["pt", "Portugais"],
+  ["sv", "Suédois"]
+];
 
 function publicationDate(value) {
   if (typeof value !== "string") return "";
@@ -79,16 +90,69 @@ export function europresseTitleWords(value) {
 // E154: this known reference minus itself is empty, even when the document exists.
 const textSearchCarrier = "news\u00b720260924\u00b7ERP\u00b7f2d528e562e847a5bbeb585bf9c603ce";
 
+// A terminal wildcard must remain unquoted. All other input stays literal.
+function titleSearchTerms(words) {
+  if (typeof words !== "string") return [];
+  if (words.includes("*")) {
+    const chunks = words.normalize("NFC").trim().split(/\s+/);
+    if (chunks.some(term => !/^[\p{L}\p{N}]{3,60}\*?$/u.test(term))) return [];
+    if (chunks.filter(term => term.endsWith("*")).length > 1) return [];
+    return [...new Map(chunks.map(term => [term.toLocaleLowerCase("fr"), term])).values()];
+  }
+  return europresseTitleWords(words);
+}
+
+const renderTitleTerms = terms => `TIT_HEAD=(${terms.map(term => term.endsWith("*") ? term : `"${term}"`).join(" et ")})`;
+
+export function europresseManualTitleQuery(words) {
+  const terms = titleSearchTerms(words);
+  return terms.length >= 2 && terms.length <= 8 && terms.every(term => term.length <= 60)
+    ? renderTitleTerms(terms) : "";
+}
+
 export function prepareEuropresseTextSearch(value, words, data = profiles) {
   const matched = matchDebridageProfile(value, data);
   if (!matched?.profile.enabled || (!matched.profile.methods.includes("title-only") && !matched.profile.title_fallback_without_reference)) return {state: "unsupported", message: "Ce format n'est pas qualifié pour la recherche textuelle sans référence."};
   const {profile, captures} = matched;
   if (profile.date.type !== "input" && profile.date.groups.length && !publicationDate(profile.date.groups.map(i => captures[i]).join("") + (profile.date.type === "month" ? "01" : ""))) return {state: "unsupported", message: "La date du lien est invalide."};
-  const terms = europresseTitleWords(words);
+  const seriesNumber = profile.title_number_group === undefined ? "" : captures[profile.title_number_group] || "";
+  if (seriesNumber && !/^[1-9][0-9]?$/.test(seriesNumber)) return {state: "needs-words", message: "Le numéro de volet du lien est invalide."};
+  const result = prepareTitleTextSearch(words, seriesNumber);
+  if (result.state !== "ready") return result;
+  const caution = profile.title_fallback_without_reference
+    ? "Sans date disponible, essai avec les mots du lien : vérifiez la publication dans Europresse."
+    : profile.message;
+  return {
+    ...result, profileId: profile.id,
+    message: `Recherche par titre, sans date ni référence de l'article, toutes dates et tous journaux. ${seriesNumber ? `Volet ${seriesNumber} extrait du lien. ` : ""}${caution} Europresse peut ouvrir un article voisin : vérifiez le titre, la publication et la date.`
+  };
+}
+
+// Independent rescue: renew the institutional entry before transmitting title words.
+export function prepareEuropresseKeywordSearch(words) {
+  const result = prepareTitleTextSearch(words);
+  if (result.state !== "ready") return result;
+  const target = new URL(new URL(result.url).searchParams.get("qurl"));
+  const entry = new URL("https://nouveau.europresse.com/access/ip/default.aspx");
+  entry.searchParams.set("un", "D000067U_1");
+  entry.searchParams.set("ReturnUrl", target.pathname);
+  const login = new URL("https://bnf.idm.oclc.org/login");
+  login.searchParams.set("qurl", entry.href);
+  return {...result, url: login.href,
+    message: "Recherche dans les titres, toutes dates et toutes sources. Europresse peut ouvrir le premier article : vérifiez le titre et le journal."};
+}
+
+function prepareTitleTextSearch(words, seriesNumber = "") {
+  const terms = titleSearchTerms(words);
+  // Only an opted-in, validated capture may add a short numeric title term.
+  if (seriesNumber && terms.length >= 2 && !terms.includes(seriesNumber)) terms.push(seriesNumber);
   if (terms.length < 2 || terms.length > 8 || terms.some(term => term.length > 60)) {
     return { state: "needs-words", message: "Choisissez de 2 à 8 mots distinctifs du titre." };
   }
-  const titleQuery = `TIT_HEAD=(${terms.map(term => `"${term}"`).join(" et ")})`;
+  if (terms.some(term => term.endsWith("*"))) return {
+    state: "needs-words", message: "Les jokers ne sont pas qualifiés dans le lien automatique Europresse. Utilisez le copier-coller de secours ou des mots entiers."
+  };
+  const titleQuery = renderTitleTerms(terms);
   const equation = `${textSearchCarrier} sans NODOC= ${textSearchCarrier} | ${titleQuery}`;
   // E158: leave a margin below the observed long-path rejection; never trim terms silently.
   if ((`/Link/D000067U_1/${equation}`).length > 240) {
@@ -96,12 +160,8 @@ export function prepareEuropresseTextSearch(value, words, data = profiles) {
   }
   const login = new URL("https://bnf.idm.oclc.org/login");
   login.searchParams.set("qurl", `https://nouveau.europresse.com/Link/D000067U_1/${encodeURIComponent(equation)}`);
-  const caution = profile.title_fallback_without_reference
-    ? "Ce domaine héberge plusieurs journaux : vérifiez la publication dans Europresse."
-    : profile.message;
   return {
-    state: "ready", method: "title-only", profileId: profile.id, url: login.href, terms, titleQuery,
-    message: `Recherche par titre, sans date ni référence de l'article, toutes dates et tous journaux. ${caution} Europresse peut ouvrir un article voisin : vérifiez le titre, la publication et la date.`
+    state: "ready", method: "title-only", url: login.href, terms, titleQuery
   };
 }
 
@@ -125,8 +185,8 @@ export function prepareEuropresseRefinedTextSearch(value, words, refinements = {
   if (name && (names.length < 1 || names.length > 4 || names.some(term => term.length > 40))) {
     return invalid("Gardez au maximum quatre mots du nom de l'auteur.");
   }
-  if (!["", "fra", "eng"].includes(language)) return invalid("Choisissez une langue proposée.");
-  if (!names.length && !language) return invalid("Renseignez un auteur personnel ou une langue pour cet essai.");
+  if (language && !europresseLanguages.some(([code]) => code === language)) return invalid("Choisissez une langue proposée.");
+  if (!names.length && !language) return invalid("Renseignez un auteur ou une langue pour cet essai.");
   const suffix = [
     names.length ? `AUT_BY=(${names.map(term => `"${term}"`).join(" et ")})` : "",
     language ? `LANG=${language}` : ""
@@ -151,10 +211,13 @@ export function prepareEuropresseTitleFallback(value, words, date = "", publicat
     if (profile.publications && !profile.publications.some(p => p.code === publication)) return {state: "unsupported", message: "Publication non reconnue."};
     return prepareEuropresseTextSearch(value, words, data);
   }
-  const terms = europresseTitleWords(words);
+  const terms = titleSearchTerms(words);
   if (terms.length < 2 || terms.length > 8 || terms.some(term => term.length > 60)) {
     return { state: "needs-words", message: "Choisissez de 2 à 8 mots distinctifs du titre." };
   }
+  if (terms.some(term => term.endsWith("*"))) return {
+    state: "needs-words", message: "Les jokers ne sont pas qualifiés dans le lien automatique Europresse. Utilisez le copier-coller de secours ou des mots entiers."
+  };
   const hint = suggestEuropresseDate(value, data);
   const candidateDate = date || hint?.date || "";
   const candidate = prepareEuropresseAutomatic(value, candidateDate, publication, data);
@@ -162,7 +225,7 @@ export function prepareEuropresseTitleFallback(value, words, date = "", publicat
     state: candidate.state,
     message: "Un candidat de référence qualifié est nécessaire pour cet essai par titre. " + candidate.message
   };
-  const titleQuery = `TIT_HEAD=(${terms.map(term => `"${term}"`).join(" et ")})`;
+  const titleQuery = renderTitleTerms(terms);
   const equation = `${candidate.key} | ${titleQuery}`;
   const login = new URL("https://bnf.idm.oclc.org/login");
   login.searchParams.set("qurl", `https://nouveau.europresse.com/Link/D000067U_1/${encodeURIComponent(equation)}`);

@@ -8,42 +8,74 @@
     <meta name="description" content="Préparation d'une recherche Europresse depuis un lien de presse.">
     <link rel="icon" href="../assets/icons/bnf-access-icon.svg" type="image/svg+xml">
     <script src="../assets/js/pages/theme-init.js"></script>
-    <link rel="stylesheet" href="../assets/css/styles.css?v=2026-10-02-optional-refinement">
+    <link rel="stylesheet" href="../assets/css/styles.css?v=2026-10-05-manual-rescue">
   </head>
-  <body class="transition-body europresse-search-body">
+  <body class="transition-body europresse-search-body" data-info-search="hidden">
+    <header class="topbar europresse-navigation">
+      <div>
+        <a class="brand-link brand-link--compact" href="../" aria-label="BnF Access, accueil">
+          <img src="../assets/icons/bnf-access-icon.svg" alt="" aria-hidden="true">
+          <span>BnF Access</span>
+        </a>
+      </div>
+      <nav class="topbar-links" aria-label="Navigation">
+        <a class="official-link secondary" href="../">Retour à BnF Access</a>
+      </nav>
+    </header>
     <main class="transition-shell" aria-labelledby="europresseSearchTitle">
       <div class="debridage-identity" aria-label="Plateforme et journal">
         <span class="quick-launch-tile debridage-logo icon-no-padding"><img src="../assets/logos/europresse.webp" alt="Europresse"></span>
         <span id="journalSeparator" class="debridage-separator" aria-hidden="true" hidden></span>
         <span id="journalLogo" class="quick-launch-tile debridage-logo" hidden></span>
       </div>
-      <a class="brand-link brand-link--compact" href="../" aria-label="BnF Access, accueil">
-        <img src="../assets/icons/bnf-access-icon.svg" alt="" aria-hidden="true">
-        <span>BnF Access</span>
-      </a>
       <h1 id="europresseSearchTitle">Recherche Europresse</h1>
       <p id="europresseSearchResource" class="transition-resource">Consulter via Europresse</p>
-      <p id="articleTitle" class="debridage-article" hidden></p>
-      <p id="europresseSearchStatus" class="transition-status" role="status" aria-live="polite">
-        Préparation de la recherche...
-      </p>
+      <div class="europresse-code-block">
+        <pre class="europresse-query-code" tabindex="0" aria-label="Recherche à copier"><code id="articleTitle"></code></pre>
+        <button id="copyDisplayedQuery" class="europresse-icon-button europresse-code-copy" type="button" title="Copier la recherche" aria-label="Copier la recherche"><span class="europresse-copy-icon" aria-hidden="true"></span></button>
+        <span id="displayedQueryCopyStatus" class="europresse-copy-feedback" role="status" aria-live="polite"></span>
+      </div>
+      <p id="europresseSearchStatus" class="transition-status" role="status" aria-live="polite" hidden></p>
       <section class="europresse-auto" aria-label="Recherche automatique expérimentale">
+        <div class="europresse-primary-actions">
         <button id="automaticSearch" class="resource-action europresse-search-submit" type="button">
-          Recherche automatique · V2 expérimentale
+          Recherche automatique
         </button>
-        <p id="automaticStatus" role="status" aria-live="polite"></p>
+        <button id="openSearchParameters" class="europresse-icon-button" type="button" title="Paramètres de recherche" aria-label="Paramètres de recherche" aria-haspopup="dialog" aria-controls="searchParameters">
+          <span class="europresse-settings-icon" aria-hidden="true"></span>
+        </button>
+        </div>
+        <p id="automaticRetryHelp" class="editorial-notice europresse-retry-help" role="status" hidden>Écran de connexion Europresse ? Le service est parfois capricieux : réessayez une fois la recherche automatique. Écran de connexion BnF ? Connectez-vous avec vos identifiants : ce passage par son portail est normal et nécessaire.</p>
+        <p id="automaticStatus" hidden></p>
+        <div class="europresse-secondary-actions">
+          <button id="textualSearch" class="resource-action secondary" type="button" aria-describedby="textualStatus">Recherche textuelle</button>
+          <button id="openManualSearch" class="resource-action secondary" type="button" aria-haspopup="dialog" aria-controls="manualSearch">Copier-coller de secours</button>
+        </div>
+        <div class="europresse-feedback">
+        <p id="textualStatus" class="transition-help" role="status" aria-live="polite"></p>
+        <p id="textualFirefoxHelp" class="transition-help" hidden>
+          Sur Firefox, Europresse peut ouvrir directement un article plutôt que la liste des résultats.
+          Pour consulter les autres résultats, utilisez la croix « Retour à la liste » en haut à droite de l’article.
+        </p>
         <p id="automaticConnectionHelp" class="transition-help" hidden>
           Si Europresse affiche un écran de connexion,
           <a id="restoreBnfAccess" target="_blank" rel="noopener noreferrer">rétablissez l’accès via la BnF</a>,
-          puis réessayez la recherche V2 depuis cette page.
+          puis relancez votre recherche depuis cette page.
         </p>
-        <details id="searchParameters" class="debridage-parameters">
-          <summary>Paramètres de recherche</summary>
+        </div>
+      </section>
+    </main>
+    <dialog id="searchParameters" class="europresse-dialog" aria-labelledby="searchParametersTitle">
+      <header class="europresse-dialog-header">
+        <h2 id="searchParametersTitle">Paramètres de recherche</h2>
+        <button class="europresse-help-button" type="button" data-search-help="automaticMethod parameterAccessHelp" data-help-title="Méthode de recherche" aria-label="Comprendre la méthode de recherche" aria-expanded="false" aria-controls="searchHelpNote">?</button>
+        <button class="europresse-icon-button" type="button" data-close-dialog title="Fermer" aria-label="Fermer les paramètres"><span class="europresse-close-icon" aria-hidden="true"></span></button>
+      </header>
         <div id="automaticDateBlock" hidden>
           <label for="automaticDate">Date de publication de l'article</label>
           <input id="automaticDate" type="date">
           <button id="automaticDateEstimate" class="resource-action secondary" type="button" hidden>Proposer une date estimée</button>
-          <label for="automaticAlternateDate">Autre date relevée (facultative)</label>
+          <label for="automaticAlternateDate">Autre date relevée <small class="europresse-optional">facultative</small></label>
           <input id="automaticAlternateDate" type="date">
         </div>
         <div id="automaticPublicationBlock" hidden>
@@ -54,87 +86,115 @@
             <option value="OCW">Le Courrier de l'Ouest</option>
           </select>
         </div>
-        <p id="automaticMethod" class="transition-help"></p>
+        <p id="automaticMethod" hidden></p>
         <div id="automaticDateAlternativesBlock" hidden>
           <button id="automaticDateAlternatives" class="resource-action secondary" type="button" aria-describedby="automaticDateAlternativesStatus">Essayer les deux dates</button>
           <p id="automaticDateAlternativesStatus" class="transition-help"></p>
         </div>
         <div id="automaticTitleBlock" hidden>
-          <label for="automaticTitleWords">Mots distinctifs du titre</label>
+          <div class="europresse-field-heading"><label for="automaticTitleWords">Mots-clés</label><button class="europresse-help-button" type="button" data-search-help="automaticTitleStatus" data-help-title="Mots-clés" aria-label="Aide sur les mots-clés" aria-expanded="false" aria-controls="searchHelpNote">?</button></div>
           <input id="automaticTitleWords" type="text" maxlength="500" autocomplete="off" aria-describedby="automaticTitleStatus">
           <button id="automaticTitleSearch" class="resource-action secondary" type="button" aria-describedby="automaticTitleStatus">Essayer par le titre</button>
           <p id="automaticTitleStatus" class="transition-help" role="status" aria-live="polite"></p>
         </div>
         <div id="automaticRefinementBlock" hidden>
-          <label for="automaticAuthor">Auteur personnel (facultatif)</label>
+          <details class="europresse-more-options">
+          <summary>Plus d’options</summary>
+          <div class="europresse-field-heading"><label for="automaticAuthor">Auteur <small class="europresse-optional">facultatif</small></label><button class="europresse-help-button" type="button" data-search-help="automaticRefinementHelp" data-help-title="Auteur" aria-label="Aide sur l’auteur" aria-expanded="false" aria-controls="searchHelpNote">?</button></div>
           <input id="automaticAuthor" type="text" maxlength="100" autocomplete="off" aria-describedby="automaticRefinementHelp automaticRefinementStatus">
-          <label for="automaticLanguage">Langue de l’article (facultative)</label>
+          <div class="europresse-field-heading"><label for="automaticLanguage">Langue de l’article <small class="europresse-optional">facultative</small></label><button class="europresse-help-button" type="button" data-search-help="automaticLanguageHelp" data-help-title="Langue de l’article" aria-label="Aide sur la langue" aria-expanded="false" aria-controls="searchHelpNote">?</button></div>
           <select id="automaticLanguage">
             <option value="">Toutes les langues</option>
-            <option value="fra">Français</option>
-            <option value="eng">Anglais</option>
           </select>
-          <p id="automaticRefinementHelp" class="transition-help">Indiquez le nom de la personne qui signe l’article, pas celui du journal. Ces critères peuvent masquer des résultats pertinents.</p>
-          <button id="automaticRefinedSearch" class="resource-action secondary" type="button" aria-describedby="automaticRefinementStatus" disabled>Essayer avec ces critères</button>
+          <p id="automaticRefinementHelp" hidden>Indiquez le nom de la personne qui signe l’article, pas celui du journal. Ces critères peuvent masquer des résultats pertinents.</p>
+          <p id="automaticLanguageHelp" hidden>Choisissez la langue de l’article. Laissez « Toutes les langues » pour ne pas limiter les résultats.</p>
+          </details>
+          <button id="automaticRefinedSearch" class="resource-action" type="button" aria-describedby="automaticRefinementStatus" disabled>Essayer avec ces critères</button>
           <p id="automaticRefinementStatus" class="transition-help" role="status" aria-live="polite"></p>
         </div>
-        </details>
-        <p class="transition-help">L'essai ouvre Europresse via la BnF, sans installation. La présence de l'article et vos droits d'accès ne sont pas garantis. Si aucun résultat ne s'ouvre, revenez ici pour utiliser le copier-coller.</p>
-      </section>
-      <details id="manualSearch" class="debridage-manual">
-        <summary>Recherche manuelle de secours</summary>
-      <p id="manualRecoveryNotice" class="transition-help" role="status" hidden>
-        Toujours pas d’article après deux essais V2 ? Essayez la recherche manuelle ci-dessous.
+        <p id="parameterAccessHelp" hidden>La présence de l'article et vos droits d'accès ne sont pas garantis. Si la recherche automatique ne donne pas l’article attendu, essayez la recherche textuelle ou le secours manuel.</p>
+        <aside id="searchHelpNote" class="press-popularity-note" aria-labelledby="searchHelpTitle" hidden>
+          <div class="press-popularity-note-content">
+            <h2 id="searchHelpTitle"></h2>
+            <div id="searchHelpDetails" class="press-popularity-note-details"></div>
+            <button id="closeSearchHelp" class="press-popularity-note-close" type="button" aria-label="Fermer l’aide" title="Fermer l’aide"><span class="europresse-close-icon" aria-hidden="true"></span></button>
+          </div>
+        </aside>
+    </dialog>
+    <dialog id="manualSearch" class="europresse-dialog" aria-labelledby="manualSearchTitle">
+      <header class="europresse-dialog-header">
+        <h2 id="manualSearchTitle">Copier-coller de secours</h2>
+        <button class="europresse-icon-button" type="button" data-close-dialog title="Fermer" aria-label="Fermer les instructions"><span class="europresse-close-icon" aria-hidden="true"></span></button>
+      </header>
+      <p id="manualRecoveryNotice" class="editorial-notice europresse-manual-notice" role="status" hidden>
+        Si la recherche n’a pas donné l’article attendu, essayez le copier-coller de secours en suivant ces étapes.
       </p>
+      <p id="manualNoResultNotice" class="editorial-notice europresse-manual-notice" hidden>Toujours aucun résultat ? L’article peut simplement être absent d’Europresse : même le secours manuel ne garantit pas de le retrouver.</p>
+      <div class="europresse-copy-choice">
+        <h3>Recherche à coller</h3>
+        <div class="europresse-code-block">
+          <pre class="europresse-query-code" tabindex="0" aria-label="Recherche à coller"><code id="europresseSearchMachineQuery"></code></pre>
+          <button id="copyManualQuery" class="europresse-icon-button europresse-code-copy" type="button" title="Copier la recherche" aria-label="Copier la recherche"><span class="europresse-copy-icon" aria-hidden="true"></span></button>
+          <span id="manualQueryCopyStatus" class="europresse-copy-feedback" role="status" aria-live="polite"></span>
+        </div>
+      </div>
+      <div class="europresse-copy-choice">
+        <h3>Mots-clés</h3>
+        <div class="europresse-code-block">
+          <pre class="europresse-query-code" tabindex="0" aria-label="Mots-clés à coller"><code id="europresseSearchQuery"></code></pre>
+          <button id="copyManualKeywords" class="europresse-icon-button europresse-code-copy" type="button" title="Copier les mots-clés" aria-label="Copier les mots-clés"><span class="europresse-copy-icon" aria-hidden="true"></span></button>
+          <span id="manualKeywordsCopyStatus" class="europresse-copy-feedback" role="status" aria-live="polite"></span>
+        </div>
+      </div>
+      <details id="manualSearchInfo" class="europresse-manual-info">
+        <summary>Afficher les informations de recherche</summary>
+        <dl class="europresse-manual-meta">
+          <div><dt>Source détectée</dt><dd id="europresseSearchSource"></dd></div>
+          <div id="europresseSearchCriteriaBlock"><dt>Filtre source conseillé</dt><dd id="europresseSearchCriteria">Aucun</dd></div>
+          <div><dt>Période conseillée</dt><dd>Dans toutes les archives</dd></div>
+        </dl>
+      </details>
+      <div class="transition-actions europresse-manual-actions">
+        <button id="submitSearch" class="resource-action europresse-search-submit" type="button">Copier la recherche et ouvrir Europresse</button>
+        <button id="submitKeywordSearch" class="resource-action secondary" type="button">Copier les mots-clés et ouvrir Europresse</button>
+        <div class="europresse-manual-secondary-actions">
+          <button id="copySearch" class="resource-action secondary" type="button">Copier la recherche seulement</button>
+          <button id="copyKeywordSearch" class="resource-action secondary" type="button">Copier les mots-clés seulement</button>
+          <button id="openEuropresseOnly" class="resource-action secondary" type="button">Ouvrir Europresse seulement</button>
+        </div>
+      </div>
+      <p id="manualCopyStatus" class="transition-help" role="status" aria-live="polite"></p>
+      <details id="manualGuide" class="europresse-manual-guide" open>
+      <summary>Masquer le mode d’emploi</summary>
       <ol class="debridage-manual-steps">
         <li>Cliquez sur <strong>Copier la recherche et ouvrir Europresse</strong> : la recherche est copiée et Europresse s’ouvre dans un nouvel onglet. Cette page reste disponible pour revenir aux instructions.</li>
         <li>Si une connexion est demandée, connectez-vous via la BnF. Si Europresse affiche son propre formulaire de connexion, revenez ici et cliquez sur <a id="manualRestoreBnfAccess" target="_blank" rel="noopener noreferrer">rétablir l’accès via la BnF</a>.</li>
-        <li>Dans Europresse, ouvrez la recherche si nécessaire, puis <strong>collez le texte dans le champ de recherche</strong>. Si la copie a échoué, copiez vous-même le texte « Recherche à coller » ci-dessous.</li>
+        <li>Dans Europresse, ouvrez la recherche si nécessaire, puis <strong>collez le texte dans le champ de recherche</strong>. Si la copie a échoué, sélectionnez et copiez le texte « Recherche à coller » ci-dessus.</li>
         <li>Dans le choix de période, remplacez <strong>Depuis 30 jours</strong> par <strong>Dans toutes les archives</strong>.</li>
         <li><strong>Lancez la recherche</strong>, puis ouvrez le résultat correspondant au titre et au journal recherchés.</li>
+        <li>Pas le résultat attendu ? Essayez <strong>Copier les mots-clés et ouvrir Europresse</strong>, puis collez-les et relancez la recherche. Vous pouvez aussi ajuster les termes et le filtre source directement dans Europresse.</li>
       </ol>
-      <dl class="conversion-details">
-        <div>
-          <dt>Recherche à coller</dt>
-          <dd id="europresseSearchMachineQuery"></dd>
-        </div>
-        <div>
-          <dt>Mots-clés</dt>
-          <dd id="europresseSearchQuery"></dd>
-        </div>
-        <div>
-          <dt>Source détectée</dt>
-          <dd id="europresseSearchSource"></dd>
-        </div>
-        <div id="europresseSearchCriteriaBlock" hidden>
-          <dt>Filtre source conseillé</dt>
-          <dd id="europresseSearchCriteria"></dd>
-        </div>
-        <div>
-          <dt>Période conseillée</dt>
-          <dd>Dans toutes les archives</dd>
-        </div>
-      </dl>
-      <div class="transition-actions">
-        <button id="submitSearch" class="resource-action europresse-search-submit" type="button">
-          Copier la recherche et ouvrir Europresse
-        </button>
-        <button id="copySearch" class="resource-action secondary" type="button">Copier seulement</button>
-      </div>
-      <p id="manualCopyStatus" class="transition-help" role="status" aria-live="polite"></p>
-      <section id="europresseSearchAlternative" class="europresse-search-alternative" hidden>
-        <h2>Essai mots-clés</h2>
-        <p id="europresseSearchAlternativeQuery"></p>
-        <button id="copyKeywordSearch" class="resource-action secondary" type="button">
-          Copier les mots-clés
-        </button>
-      </section>
-      <p class="transition-help">
-        Aucun résultat ? Essayez le bouton « Copier les mots-clés » s’il est proposé, ou quelques mots distinctifs du titre. Trop de résultats ? Ajoutez le filtre source conseillé ci-dessus. L’article peut aussi ne pas être disponible dans Europresse.
-      </p>
       </details>
-    </main>
+    </dialog>
 
-    <script src="../assets/js/pages/europresse-search.js?v=2026-10-02-optional-refinement" type="module"></script>
+    <footer id="siteFooter" class="site-footer">
+      <nav class="footer-links" aria-label="Informations du site">
+        <a href="./faq.html">FAQ</a>
+        <span aria-hidden="true">·</span>
+        <a href="./credits.html">Crédits</a>
+        <span aria-hidden="true">·</span>
+        <a href="./mentions-legales.html">Mentions légales</a>
+        <span aria-hidden="true">·</span>
+        <span class="footer-credit">Créé par <a class="footer-brand" href="https://arnaud.cool/" target="_blank" rel="noreferrer"><img class="footer-brand-logo" src="../assets/logos/arnaud-cool.svg" alt="" aria-hidden="true">arnaud.cool</a></span>
+        <span aria-hidden="true">·</span>
+        <a class="footer-support" href="https://ko-fi.com/arnaudcool" target="_blank" rel="noreferrer" aria-label="M’offrir un café sur Ko-fi">
+          <img class="footer-support-logo" src="../assets/logos/kofi.svg" alt="" aria-hidden="true">
+          M’offrir un café
+        </a>
+      </nav>
+    </footer>
+
+    <script src="../assets/js/pages/info-page.js?v=2026-10-05-transition-tools" defer></script>
+    <script src="../assets/js/pages/europresse-search.js?v=profiles-caractere-v1" type="module"></script>
   </body>
 </html>

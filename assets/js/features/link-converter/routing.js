@@ -15,8 +15,9 @@ import {
   buildEuropresseTitleQueryFromUrl,
   buildEuropresseKeywordQueryFromUrl,
   buildPressReaderQueryOptionsFromUrl
-} from './article-query.js';
+} from './article-query.js?v=elisions-v2';
 import {identifyDebridage} from '../../modules/debridage.mjs';
+import {indexpresseEntry} from '../../modules/indexpresse-search.mjs';
 
 // Provider recognition and transition URLs are separate from form, feedback and modal rendering.
 export function createConverterRouting({
@@ -251,17 +252,17 @@ export function createConverterRouting({
 
     const query = buildIndexPresseBusinessQueryFromUrl(url);
     const resource = findResourceForIndexPresseBusinessSource(source);
+    const preparation = new URL("./pages/indexpresse-search.html", window.location.href);
+    preparation.searchParams.set("from", url.href);
+    preparation.searchParams.set("q", query);
+    preparation.searchParams.set("publication", source.publicationCode);
 
     return {
       label: `Recherche IndexPresse Business - ${source.title}`,
       provider: "indexpresse_business",
       sourceLabel: source.title,
       iconUrl: source.iconUrl || resource?.icon_url || indexpresseBusinessSearchConverterRule.iconUrl,
-      url: buildIndexPresseBusinessSearchUrl({
-        query,
-        source,
-      }),
-      startUrl: getIndexPresseBusinessSessionStartUrl(),
+      url: preparation.href,
       searchText: query,
     };
   }
@@ -269,12 +270,12 @@ export function createConverterRouting({
   function buildSourceChoiceConversion({ originalUrl, indexpresseConversion, pressreaderConversion }) {
     const sourceLabel = getSharedSourceChoiceLabel(indexpresseConversion, pressreaderConversion);
     const launcherUrl = new URL("./pages/source-choice.html", window.location.href);
-    const indexpresseUrl = buildTransitionHref({
+    const indexpresseUrl = indexpresseConversion.startUrl ? buildTransitionHref({
       title: indexpresseConversion.label,
       action: "Recherche IndexPresse Business",
       start: indexpresseConversion.startUrl,
       target: indexpresseConversion.url,
-    });
+    }) : indexpresseConversion.url;
 
     launcherUrl.searchParams.set("title", sourceLabel);
     launcherUrl.searchParams.set("from", originalUrl);
@@ -444,29 +445,6 @@ export function createConverterRouting({
       url.href;
   }
 
-  function buildIndexPresseBusinessSearchUrl({ query, source }) {
-    const targetUrl = new URL("/results", "https://business.indexpresse.fr");
-
-    for (const [key, value] of Object.entries({
-      query,
-      publishedYearFrom: "",
-      publishedYearTo: "",
-      periodRange: "",
-      publication: source.publicationCode,
-      publicationMode: "AND",
-      company: "",
-      companyMode: "AND",
-      theme: "",
-      themeMode: "AND",
-      country: "",
-      countryMode: "OR",
-    })) {
-      targetUrl.searchParams.set(key, value);
-    }
-
-    return targetUrl.href;
-  }
-
   function buildEuropresseMachineQuery(value) {
     const cleanQuery = String(value ?? "").replace(/\s+/g, " ").trim();
     return cleanQuery ? `TIT_HEAD="${cleanQuery.replace(/"/g, " ")}"` : "";
@@ -480,7 +458,7 @@ export function createConverterRouting({
 
   function getIndexPresseBusinessSessionStartUrl() {
     const loginUrl = new URL(bnfProxyLoginUrl);
-    loginUrl.searchParams.set("url", "https://indexpresse.vercel.app/fr");
+    loginUrl.search = new URL(indexpresseEntry).search;
     return loginUrl.href;
   }
 

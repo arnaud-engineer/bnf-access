@@ -140,10 +140,11 @@ export function createLinkConverterController({
     }
 
     if (conversion.provider === "indexpresse_business") {
+      const isPreparation = Boolean(conversion.searchText);
       linkConverterFeedback.innerHTML = `
-        Recherche IndexPresse Business ouverte pour ${escapeHtml(conversion.sourceLabel || conversion.label)}.
+        ${isPreparation ? "Préparation" : "Lien"} IndexPresse Business ${isPreparation ? "ouverte" : "ouvert"} pour ${escapeHtml(conversion.sourceLabel || conversion.label)}.
         IndexPresse peut proposer une notice ou un texte intégral, mais son index n’est pas exhaustif.
-        ${openedWindow ? "" : `Si l’ouverture est bloquée par le navigateur, <a href="${escapeAttribute(targetUrl)}" target="_blank" rel="noreferrer">ouvrir la recherche IndexPresse</a>.`}
+        ${openedWindow ? "" : `Si l’ouverture est bloquée par le navigateur, <a href="${escapeAttribute(targetUrl)}" target="_blank" rel="noreferrer">ouvrir ${isPreparation ? "la préparation" : "le lien"} IndexPresse</a>.`}
       `;
       return;
     }

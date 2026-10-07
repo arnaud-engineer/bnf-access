@@ -35,6 +35,10 @@ document.body.insertAdjacentHTML("afterbegin", `
     </section>
   </div>`);
 
+if (document.body.dataset.infoSearch === "hidden") {
+  document.querySelector(".info-page-tools .jump-to-search").remove();
+}
+
 const modal = document.querySelector("#infoSettingsModal");
 const openButton = document.querySelector("#infoOpenSettings");
 const closeButton = document.querySelector("#infoCloseSettings");
@@ -86,3 +90,7 @@ document.querySelector("#infoClearLocalData").addEventListener("click", async ()
 });
 darkThemeQuery.addEventListener("change", () => { if (themeSelect.value === "auto") applyTheme("auto"); });
 window.addEventListener("scroll", updateDock, { passive: true }); window.addEventListener("resize", updateDock); updateDock();
+if (document.querySelector("#siteFooter")) {
+  new ResizeObserver(updateDock).observe(document.querySelector("#siteFooter"));
+  document.fonts.ready.then(updateDock);
+}

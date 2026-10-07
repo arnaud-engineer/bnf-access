@@ -2,8 +2,19 @@ const methods = new Set(["reference", "title-only", "reference-title", "date-alt
 const string = (value, max = 2000) => typeof value === "string" && value.length <= max && !/[\u0000-\u001f]/.test(value);
 const list = value => Array.isArray(value) && value.every(v => string(v) && v.trim());
 
+export function validateMetadataQueryIdentity(policy) {
+  if (!policy || !/^[a-z][a-z0-9_]{0,31}$/.test(policy.parameter || "") ||
+      !/^\/[a-zA-Z0-9_./-]{1,199}$/.test(policy.canonical_path || "") || policy.canonical_path.includes("..") ||
+      !Array.isArray(policy.canonical_extra_parameters) || policy.canonical_extra_parameters.length > 4 ||
+      policy.canonical_extra_parameters.some(p => !/^[a-z][a-z0-9_]{0,31}$/.test(p) || p === policy.parameter) ||
+      new Set(policy.canonical_extra_parameters).size !== policy.canonical_extra_parameters.length) {
+    throw new Error("Identite de metadonnees par parametre invalide.");
+  }
+  return policy;
+}
+
 export function validateDebridageProfiles(data) {
-  if (!data || data.schema_version !== 1 || !Array.isArray(data.profiles) || data.profiles.length > 300) throw new Error("Version des profils invalide.");
+  if (!data || data.schema_version !== 1 || !Array.isArray(data.profiles) || data.profiles.length > 600) throw new Error("Version des profils invalide.");
   const ids = new Set(), hosts = new Map();
   for (const p of data.profiles) {
     if (!p || !/^[a-z0-9-]+$/.test(p.id) || ids.has(p.id)) throw new Error("Identifiant de profil invalide ou dupliqué.");
@@ -12,6 +23,10 @@ export function validateDebridageProfiles(data) {
     if (!string(p.name, 120) || !p.name.trim() || !list(p.hosts) || !p.hosts.length) throw new Error("Nom ou domaines invalides.");
     if (p.path_prefix !== undefined && (!string(p.path_prefix, 200) || (p.path_prefix !== "/" && !/^\/(?:[a-z0-9-]+\/){1,6}$/.test(p.path_prefix)))) throw new Error("Préfixe de rubrique invalide.");
     if (p.requires_title_input !== undefined && typeof p.requires_title_input !== "boolean") throw new Error("Saisie du titre invalide.");
+    if (p.metadata_query_identity !== undefined) {
+      validateMetadataQueryIdentity(p.metadata_query_identity);
+      if (!p.requires_title_input || !p.methods?.includes("title-only")) throw new Error("Identite de metadonnees reservee aux liens sans titre.");
+    }
     if (p.excluded_paths !== undefined && (!list(p.excluded_paths) || p.excluded_paths.length > 100 || p.excluded_paths.some(v => !v.startsWith("/") || /[?#]/.test(v)))) throw new Error("Chemins exclus invalides.");
     if (new Set(p.hosts).size !== p.hosts.length) throw new Error("Domaine dupliqué dans le profil.");
     for (const host of p.hosts) {
@@ -32,7 +47,10 @@ export function validateDebridageProfiles(data) {
     if (!["reference", "title-only"].includes(p.methods[0])) throw new Error("La méthode principale doit être une référence ou une recherche par titre.");
     if (p.methods.includes("title-only") && p.methods.some(m => m !== "title-only")) throw new Error("La recherche sans référence doit avoir son propre profil.");
     if (p.title_fallback_without_reference !== undefined && (typeof p.title_fallback_without_reference !== "boolean" || (p.title_fallback_without_reference && !p.methods.includes("reference-title")))) throw new Error("Secours textuel sans référence invalide.");
-    if (p.title_word_strategy !== undefined && p.title_word_strategy !== "balanced") throw new Error("Sélection des mots du titre invalide.");
+    if (p.title_word_strategy !== undefined && !["balanced", "editorial", "concise", "first-four", "long-words", "long-anchors"].includes(p.title_word_strategy)) throw new Error("Sélection des mots du titre invalide.");
+    if (p.title_number_group !== undefined && (!Number.isInteger(p.title_number_group) || p.title_number_group < 1 || p.title_number_group > 9 || p.title_number_group > captureCount || !p.methods.includes("title-only"))) throw new Error("Groupe du numéro de volet invalide.");
+    if (p.title_url_unmatched_prefix_words !== undefined && (!Number.isInteger(p.title_url_unmatched_prefix_words) || p.title_url_unmatched_prefix_words < 0 || p.title_url_unmatched_prefix_words > 3)) throw new Error("Retrait de préfixe inconnu invalide.");
+    if (p.title_url_prefixes !== undefined && (!Array.isArray(p.title_url_prefixes) || p.title_url_prefixes.length > 1000 || JSON.stringify(p.title_url_prefixes).length > 50000 || p.title_url_prefixes.some(word => typeof word !== "string" || word.length > 100 || !/^[a-z0-9]{1,30}(?:-[a-z0-9]{1,30}){0,9}$/.test(word)) || new Set(p.title_url_prefixes).size !== p.title_url_prefixes.length)) throw new Error("Préfixes de rubrique invalides.");
     if (!p.date || !["input", "captures", "month"].includes(p.date.type)) throw new Error("Extraction de date invalide.");
     for (const [index, groups] of [p.date.groups, p.date.month_groups ?? []].entries()) {
       // Historical input recipes retain unused groups; only read groups must exist.

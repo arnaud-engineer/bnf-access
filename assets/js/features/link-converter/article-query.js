@@ -68,7 +68,15 @@ export function cleanFrenchArticleSearchText(value) {
 export function expandFrenchArticleElisions(value) {
   return String(value ?? "")
     .split(/\s+/)
-    .map(expandFrenchArticleElisionTerm)
+    .map((term, index, terms) => {
+      const plain = term.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+      // A known verb followed by a negative adverb is safer than splitting every n+vowel.
+      if (/^n((?:acced|arriv|exist|entr)(?:e|es|ent|ait|aient|era|eront)|obtient|obtiennent)$/.test(plain)
+          && /^(?:pas|plus|jamais)$/i.test(terms[index + 1] || "")) {
+        return `n'${term.slice(1)}`;
+      }
+      return expandFrenchArticleElisionTerm(term);
+    })
     .join(" ");
 }
 
@@ -136,8 +144,9 @@ export function buildEuropresseTitleQueryFromUrl(url) {
   return title || "";
 }
 
-export function buildEuropresseKeywordQueryFromUrl(url) {
-  const terms = getEuropresseArticleTerms(url);
+export function buildEuropresseKeywordQueryFromUrl(url, titleOverride) {
+  const title = titleOverride ?? getEuropresseArticleTitleFromUrl(url);
+  const terms = title ? tokenizeEuropressePathPart(title) : getEuropresseArticleTerms(url);
   const usefulTerms = [];
 
   for (const term of terms) {
@@ -166,10 +175,48 @@ export function getEuropresseArticleTitleFromUrl(url) {
     .split("/")
     .map((part) => part.trim())
     .filter(Boolean);
+  const shortFranceFootballTitle = /^(?:www\.)?francefootball\.fr$/i.test(url.hostname) &&
+    pathParts.length === 3 && pathParts[0].toLowerCase() === "news" &&
+    /^[0-9]{6,}$/.test(pathParts[2]);
+  // These publishers put a CMS identifier before the article title.
+  if (/^(?:www\.)?(?:gestiondefortune|decideurs-magazine)\.com$/i.test(url.hostname) && pathParts.length) {
+    const last = pathParts.length - 1;
+    pathParts[last] = pathParts[last].replace(/^\d{5,}-([a-z].*\.html)$/i, '$1');
+  }
+  if (/^(?:www\.)?investissementconseils\.com$/i.test(url.hostname) && pathParts.length === 3 &&
+      pathParts[0] === "patrimoine" && pathParts[1] === "dossiers") {
+    pathParts[2] = pathParts[2].replace(/^\d{5,}-([a-z].*\.html)$/i, "$1");
+  }
+  if (/^(?:www\.)?(?:lavoixacadienne|moniteuracadien)\.com$/i.test(url.hostname) && pathParts.length) {
+    const last = pathParts.length - 1;
+    pathParts[last] = pathParts[last].replace(/^\d{4,}-([a-z].*)$/i, '$1');
+  }
+  if (/^(?:www\.)?pointsdevente\.fr$/i.test(url.hostname) && pathParts[0] === "fil-info" && pathParts.length === 2) {
+    pathParts[1] = pathParts[1].replace(/^\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])-([a-z].*)$/i, "$1");
+  }
+  if (/^(?:www\.)?jdrestrie\.ca$/i.test(url.hostname) && pathParts.length === 4 &&
+      /^\d{4}$/.test(pathParts[0]) && /^(?:0[1-9]|1[0-2])$/.test(pathParts[1]) &&
+      /^(?:0[1-9]|[12]\d|3[01])$/.test(pathParts[2])) {
+    pathParts[3] = pathParts[3].replace(/(^|-)daide(?=-|$)/gi, "$1d-aide");
+  }
+  if (/^(?:www\.)?agefi\.fr$/i.test(url.hostname) && pathParts.length === 3 &&
+      pathParts[0] === "patrimoine" && pathParts[1] === "les-metiers") {
+    pathParts[2] = pathParts[2].replace(/(^|-)larc(?=-|$)/gi, "$1l-arc");
+  }
+  if (/^(?:www\.)?agefi\.fr$/i.test(url.hostname) && pathParts.length === 3 &&
+      pathParts[0] === "cash-risk" && pathParts[1] === "actualites") {
+    pathParts[2] = pathParts[2].replace(/(^|-)laffacturage(?=-|$)/gi, "$1l-affacturage");
+  }
+  if (/^(?:www\.)?sudinfo\.be$/i.test(url.hostname) && pathParts.length === 4 &&
+      /^id\d+$/.test(pathParts[0]) && pathParts[1] === "article" &&
+      /^\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])$/.test(pathParts[2])) {
+    pathParts[3] = pathParts[3].replace(/(^|-)lia(?=-|$)/gi, "$1l-ia")
+      .replace(/(^|-)sinstalle(?=-|$)/gi, "$1s-installe");
+  }
   const candidateParts = pathParts
     .slice()
     .reverse()
-    .map(cleanEuropresseArticleSlug)
+    .map(part => cleanEuropresseArticleSlug(stripOpaqueArticleSuffix(part)))
     .filter(Boolean);
 
   for (const candidate of candidateParts) {
@@ -181,7 +228,10 @@ export function getEuropresseArticleTitleFromUrl(url) {
       !europresseUrlPathNoise.has(term)
     ));
 
-    if (meaningfulTerms.length >= 3) {
+    const shortIdentifiedArticle = candidate === candidateParts[0] &&
+      (/-\d{4,}\.html?$/i.test(pathParts.at(-1) || "") ||
+        /^\/articles\/(?:[^/]+\/)?[^/]+\/?$/i.test(url.pathname));
+    if (meaningfulTerms.length >= (shortFranceFootballTitle || shortIdentifiedArticle ? 2 : 3)) {
       return candidate;
     }
   }
@@ -199,6 +249,15 @@ export function cleanEuropresseArticleSlug(value) {
     .trim();
 
   return normalizeFrenchArticleQuery(cleanSlug);
+}
+
+// Search words only: retain the original URL for publisher IDs and reference hashes.
+export function stripOpaqueArticleSuffix(value) {
+  const match = String(value).match(/^(.*)[.-]([A-Z0-9]{24,40}|[a-f0-9]{32}|[a-f0-9]{40})(?:\.html?)?$/);
+  if (!match || !/[0-9]/.test(match[2]) || !/[a-z]/i.test(match[2])) return value;
+  const words = tokenizeEuropressePathPart(match[1]).filter(word => word.length >= 3 &&
+    !/^\d+$/.test(word) && !europresseSearchStopWords.has(word) && !europresseUrlPathNoise.has(word));
+  return new Set(words).size >= 3 ? match[1] : value;
 }
 
 export function getEuropresseArticleTerms(url) {

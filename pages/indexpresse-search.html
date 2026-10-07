@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta id="themeColor" name="theme-color" content="#f7f7f4">
+    <title>Recherche IndexPresse - BnF Access</title>
+    <link rel="icon" href="../assets/icons/bnf-access-icon.svg" type="image/svg+xml">
+    <script src="../assets/js/pages/theme-init.js"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css?v=2026-10-05-indexpresse">
+  </head>
+  <body class="transition-body europresse-search-body" data-info-search="hidden">
+    <header class="topbar europresse-navigation">
+      <a class="brand-link brand-link--compact" href="../" aria-label="BnF Access, accueil"><img src="../assets/icons/bnf-access-icon.svg" alt="" aria-hidden="true"><span>BnF Access</span></a>
+      <nav class="topbar-links" aria-label="Navigation"><a class="official-link secondary" href="../">Retour à BnF Access</a></nav>
+    </header>
+    <main class="transition-shell" aria-labelledby="indexpresseTitle">
+      <div class="debridage-identity" aria-label="Plateforme et journal">
+        <span class="quick-launch-tile debridage-logo"><img src="../assets/logos/indexpresse-business.svg" alt="IndexPresse Business"></span>
+        <span id="journalSeparator" class="debridage-separator" aria-hidden="true" hidden></span>
+        <span id="journalLogo" class="quick-launch-tile debridage-logo" hidden></span>
+      </div>
+      <h1 id="indexpresseTitle">IndexPresse Business</h1>
+      <p class="transition-resource">Consulter via IndexPresse</p>
+      <div class="europresse-code-block">
+        <pre class="europresse-query-code" tabindex="0" aria-label="Mots-clés à copier"><code id="queryPreview"></code></pre>
+        <button id="copyQuery" class="europresse-icon-button europresse-code-copy" type="button" title="Copier les mots-clés" aria-label="Copier les mots-clés"><span class="europresse-copy-icon" aria-hidden="true"></span></button>
+        <span id="copyStatus" class="europresse-copy-feedback" role="status" aria-live="polite"></span>
+      </div>
+      <section class="europresse-auto" aria-label="Recherche IndexPresse">
+        <div class="europresse-primary-actions">
+          <button id="automaticSearch" class="resource-action" type="button" title="Ouvrir le lien vérifié, sinon rechercher dans le journal ciblé" disabled>Recherche automatique</button>
+          <button id="openSearchParameters" class="europresse-icon-button" type="button" title="Paramètres de recherche" aria-label="Paramètres de recherche" aria-haspopup="dialog"><span class="europresse-settings-icon" aria-hidden="true"></span></button>
+        </div>
+        <p id="automaticStatus" class="editorial-notice europresse-retry-help" role="status" hidden></p>
+        <div class="europresse-secondary-actions">
+          <button id="targetedSearch" class="resource-action secondary" type="button" title="Afficher les résultats pour ces mots-clés dans le journal ciblé" disabled>Rechercher dans IndexPresse</button>
+          <a id="openIndexpresse" class="resource-action secondary" href="https://bnf.idm.oclc.org/login?url=https://indexpresse.vercel.app/fr" target="_blank" rel="noopener noreferrer" title="Ouvrir la plateforme sans lancer de recherche">Ouvrir IndexPresse</a>
+        </div>
+        <div class="europresse-feedback">
+          <p id="searchStatus" class="transition-help" role="status" aria-live="polite"></p>
+          <p class="transition-help">Une connexion via la BnF est nécessaire. <a id="bnfEntry" target="_blank" rel="noopener noreferrer">Rétablir l’accès BnF</a>. Si le menu des ressources apparaît, choisissez IndexPresse Business.</p>
+        </div>
+      </section>
+    </main>
+    <dialog id="searchParameters" class="europresse-dialog" aria-labelledby="searchParametersTitle">
+      <header class="europresse-dialog-header"><h2 id="searchParametersTitle">Paramètres de recherche</h2><button id="closeSearchParameters" class="europresse-icon-button" type="button" aria-label="Fermer les paramètres" title="Fermer"><span class="europresse-close-icon" aria-hidden="true"></span></button></header>
+      <label for="queryWords">Mots-clés</label>
+      <input id="queryWords" type="text" maxlength="500" autocomplete="off">
+      <p id="sourceFilter" class="transition-help"></p>
+      <button id="applyQuery" class="resource-action" type="button">Appliquer</button>
+    </dialog>
+    <footer id="siteFooter" class="site-footer"><nav class="footer-links" aria-label="Informations du site">
+      <a href="./faq.html">FAQ</a><span aria-hidden="true">·</span><a href="./credits.html">Crédits</a><span aria-hidden="true">·</span><a href="./mentions-legales.html">Mentions légales</a><span aria-hidden="true">·</span>
+      <span class="footer-credit">Créé par <a class="footer-brand" href="https://arnaud.cool/" target="_blank" rel="noreferrer"><img class="footer-brand-logo" src="../assets/logos/arnaud-cool.svg" alt="" aria-hidden="true">arnaud.cool</a></span><span aria-hidden="true">·</span><a class="footer-support" href="https://ko-fi.com/arnaudcool" target="_blank" rel="noreferrer"><img class="footer-support-logo" src="../assets/logos/kofi.svg" alt="" aria-hidden="true">M’offrir un café</a>
+    </nav></footer>
+    <script src="../assets/js/pages/info-page.js?v=2026-10-05-transition-tools" defer></script>
+    <script src="../assets/js/pages/indexpresse-search.js" type="module"></script>
+  </body>
+</html>

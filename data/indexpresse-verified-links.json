@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "matches": [
+    {
+      "sourceUrl": "https://www.archimag.com/bibliotheque-edition/2026/03/09/intelligence-artificielle-nouveaux-defis-edition-scientifique",
+      "publication": "ARCH",
+      "documentRef": "01KSJ5BC8ABSNW1XP5Q4M3Q552",
+      "kind": "dossier",
+      "verified": true,
+      "verifiedOn": "2026-10-05",
+      "title": "IA : les nouveaux défis de l’édition scientifique",
+      "issue": "391",
+      "pages": "12-20"
+    },
+    {
+      "sourceUrl": "https://www.archimag.com/bibliotheque-edition/2026/07/22/bibliotheques-comment-survivre-face-aux-pressions",
+      "publication": "ARCH",
+      "documentRef": "01KZ5PKEJVPAM0WV9VYJYV4JAN",
+      "kind": "dossier",
+      "verified": true,
+      "verifiedOn": "2026-10-05",
+      "title": "Bibliothèques : comment survivre face aux pressions ?",
+      "issue": "395",
+      "pages": "11-21"
+    }
+  ]
+}

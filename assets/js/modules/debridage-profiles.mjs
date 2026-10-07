@@ -10361,6 +10361,33 @@ export default {
       "evidence": [
         "TENDANCES-RESTAURATION-DOSSIERS-2026-10-07.md"
       ]
+    },
+    {
+      "id": "stmichel-dated-night",
+      "provider": "europresse",
+      "name": "Journal de St-Michel",
+      "catalog_resource_id": "europresse-sk-p",
+      "hosts": [
+        "journaldestmichel.com",
+        "www.journaldestmichel.com"
+      ],
+      "path": "^/[0-9]{4}-[0-9]{2}-[a-z0-9-]+$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "title-only"
+      ],
+      "title_word_strategy": "balanced",
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "message": "Recherche par mots du lien ; verifiez le titre et le journal ouverts.",
+      "date_message": "",
+      "limitations": "Permaliens lexicaux YYYY-MM seulement. Deux URL seules ouvrent SK papier 646/214 mots, textes publics concordants avec differences de mise en page et attribution sur Entente. Pas de garantie generale : anciennes URL Racisme/Biennales negatives ; Benevoles sans noms du titre ; Lettre ouverte contient JFP absent du titre. Variante first-four rejetee : ouvre Midi Libre sans rapport. Toutes dates et sources, verifiez le document. Aucun Microlink, date injectee ou verdict humain.",
+      "evidence": [
+        "STMICHEL-DATED-2026-10-07.md"
+      ]
     }
   ]
 };

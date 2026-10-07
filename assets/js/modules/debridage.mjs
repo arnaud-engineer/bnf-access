@@ -1,8 +1,8 @@
-import defaults from "./debridage-profiles.mjs?v=profiles-caractere-v1";
+import defaults from "./debridage-profiles.mjs?v=profiles-levis-v1";
 import {buildEuropresseTitleQueryFromUrl, buildEuropresseKeywordQueryFromUrl, cleanEuropresseArticleSlug} from "../features/link-converter/article-query.js?v=short-article-paths-v2";
 import {arbitrateEuropresseUrlWords} from "./europresse-url-elisions.mjs?v=lautre-v1";
-import {matchDebridageProfile, validateDebridageProfiles} from "./debridage-schema.mjs?v=profiles-caractere-v1";
-import {prepareEuropresseAutomatic, prepareEuropresseTextSearch, prepareEuropresseTitleFallback, prepareEuropresseDateAlternatives, suggestEuropresseDate, europresseTitleWords} from "./europresse-auto.mjs?v=profiles-caractere-v1";
+import {matchDebridageProfile, validateDebridageProfiles} from "./debridage-schema.mjs?v=profiles-levis-v1";
+import {prepareEuropresseAutomatic, prepareEuropresseTextSearch, prepareEuropresseTitleFallback, prepareEuropresseDateAlternatives, suggestEuropresseDate, europresseTitleWords} from "./europresse-auto.mjs?v=profiles-levis-v1";
 
 export {validateDebridageProfiles};
 export const debridageProfiles = defaults;
@@ -66,8 +66,16 @@ export function debridageUrlOptions(value, data = defaults) {
   const sparseArticleSlug = !rawTitle && /\/[^/]*[\p{L}][^/]*-\d{4,}(?:\.html?)?\/?$/u.test(url.pathname);
   const keywords = (rawTitle && !title) || sparseArticleSlug ? "" : buildEuropresseKeywordQueryFromUrl(url, title);
   const opaqueOnlyPath = /\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\/?$/i.test(url.pathname);
+  // Some article URLs expose a category filename rather than their title.
+  let ignoredSlug = false;
+  if (profile?.title_url_ignored_slugs?.length) {
+    const terminalSlug = decodeURIComponent(url.pathname.split("/").filter(Boolean).at(-1) || "").replace(/\.html?$/i, "")
+      .normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    ignoredSlug = profile.title_url_ignored_slugs.includes(terminalSlug);
+  }
   // The prefix was already removed before stop words and token limits; never strip twice.
-  let words = profile?.requires_title_input || opaqueOnlyPath ? "" : suggestedDebridageWords(keywords || title, profile, {stripPrefix: false});
+  let words = profile?.requires_title_input || opaqueOnlyPath || ignoredSlug ? "" : suggestedDebridageWords(keywords || title, profile, {stripPrefix: false});
   const usesTitle = profile?.enabled && profile.methods.some(method => method === "title-only" || method === "reference-title");
   if (usesTitle) words = arbitrateEuropresseUrlWords(title, words).words;
   // Fit generated defaults only; manually edited criteria keep the explicit length guard.

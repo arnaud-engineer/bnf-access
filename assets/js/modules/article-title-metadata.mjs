@@ -1,6 +1,6 @@
-import {suggestedDebridageWords, identifyDebridage, debridageUrlOptions, prepareDebridage} from "./debridage.mjs?v=profiles-caractere-v1";
-import {prepareEuropresseKeywordSearch} from "./europresse-auto.mjs?v=profiles-caractere-v1";
-import {validateMetadataQueryIdentity} from "./debridage-schema.mjs?v=profiles-caractere-v1";
+import {suggestedDebridageWords, identifyDebridage, debridageUrlOptions, prepareDebridage} from "./debridage.mjs?v=profiles-levis-v1";
+import {prepareEuropresseKeywordSearch} from "./europresse-auto.mjs?v=profiles-levis-v1";
+import {validateMetadataQueryIdentity} from "./debridage-schema.mjs?v=profiles-levis-v1";
 
 const endpoint = "https://api.microlink.io/";
 const maximumBytes = 128 * 1024;

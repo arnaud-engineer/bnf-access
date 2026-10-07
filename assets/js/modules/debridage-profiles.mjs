@@ -10211,6 +10211,47 @@ export default {
       "evidence": [
         "pending-batch-2026-10-07/caractere-pending-integration.md"
       ]
+    },
+    {
+      "id": "levis-pme-night",
+      "provider": "europresse",
+      "name": "Le Journal de Levis : rubrique PME",
+      "catalog_resource_id": "europresse-hsm-p",
+      "hosts": [
+        "www.journaldelevis.com"
+      ],
+      "path_prefix": "/jdl/51/",
+      "path": "^/jdl/51/[^/]+\\.html$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "title-only"
+      ],
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "title_url_ignored_slugs": [
+        "pme"
+      ],
+      "metadata_query_identity": {
+        "parameter": "id",
+        "canonical_path": "/jdl/section.aspx",
+        "canonical_extra_parameters": [
+          "sortcode"
+        ]
+      },
+      "message": "Recherche par mots du lien, ou titre recupere si le lien ne contient que la rubrique PME. Verifiez le titre et la publication : une reprise peut etre ouverte.",
+      "date_message": "",
+      "limitations": "Limite a la rubrique /jdl/51/ observee. Les liens lexicaux evitent Microlink ; PME.html?id numerique exige une recuperation de titre, soumise au quota. Garneau ouvre JOLW162mots concordants. Armoires et Signaux ouvrent des reprises WQPB concordantes, pas deux autres temoins Levis. Pas de filtre source garanti ni de couverture des autres rubriques, de tous les articles ou de tout le domaine.",
+      "evidence": [
+        "NUIT-V1-2026-10-07.md",
+        "LEVIS-METADATA-2026-10-07.md",
+        "https://www.journaldelevis.com/jdl/51/PME.html?id=46758",
+        "https://www.journaldelevis.com/jdl/51/Le_service_du_Groupe_Garneau_Thanatologue_certifi%C3%A9.html?id=46758",
+        "https://www.journaldelevis.com/jdl/51/PME.html?id=45750",
+        "https://www.journaldelevis.com/jdl/51/PME.html?id=46077"
+      ]
     }
   ]
 };

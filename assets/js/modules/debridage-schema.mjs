@@ -23,9 +23,10 @@ export function validateDebridageProfiles(data) {
     if (!string(p.name, 120) || !p.name.trim() || !list(p.hosts) || !p.hosts.length) throw new Error("Nom ou domaines invalides.");
     if (p.path_prefix !== undefined && (!string(p.path_prefix, 200) || (p.path_prefix !== "/" && !/^\/(?:[a-z0-9-]+\/){1,6}$/.test(p.path_prefix)))) throw new Error("Préfixe de rubrique invalide.");
     if (p.requires_title_input !== undefined && typeof p.requires_title_input !== "boolean") throw new Error("Saisie du titre invalide.");
+    if (p.title_url_ignored_slugs !== undefined && (!Array.isArray(p.title_url_ignored_slugs) || !p.title_url_ignored_slugs.length || p.title_url_ignored_slugs.length > 100 || p.title_url_ignored_slugs.some(v => typeof v !== "string" || !/^[a-z0-9]{1,30}(?:-[a-z0-9]{1,30}){0,5}$/.test(v)) || new Set(p.title_url_ignored_slugs).size !== p.title_url_ignored_slugs.length || !p.methods?.includes("title-only"))) throw new Error("Rubriques sans titre invalides.");
     if (p.metadata_query_identity !== undefined) {
       validateMetadataQueryIdentity(p.metadata_query_identity);
-      if (!p.requires_title_input || !p.methods?.includes("title-only")) throw new Error("Identite de metadonnees reservee aux liens sans titre.");
+      if ((!p.requires_title_input && !p.title_url_ignored_slugs?.length) || !p.methods?.includes("title-only")) throw new Error("Identite de metadonnees reservee aux liens sans titre.");
     }
     if (p.excluded_paths !== undefined && (!list(p.excluded_paths) || p.excluded_paths.length > 100 || p.excluded_paths.some(v => !v.startsWith("/") || /[?#]/.test(v)))) throw new Error("Chemins exclus invalides.");
     if (new Set(p.hosts).size !== p.hosts.length) throw new Error("Domaine dupliqué dans le profil.");

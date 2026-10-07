@@ -93,6 +93,11 @@ const textSearchCarrier = "news\u00b720260924\u00b7ERP\u00b7f2d528e562e847a5bbeb
 // A terminal wildcard must remain unquoted. All other input stays literal.
 function titleSearchTerms(words) {
   if (typeof words !== "string") return [];
+  if (/[()|]/u.test(words)) {
+    const chunks = words.normalize("NFC").trim().split(/\s+/);
+    if (chunks.some(term => !/^(?:[\p{L}\p{N}]{3,60}|\([\p{L}\p{N}]{3,60}\|[\p{L}\p{N}]{3,60}\))$/u.test(term))) return [];
+    return [...new Map(chunks.map(term => [term.toLocaleLowerCase("fr"), term])).values()];
+  }
   if (words.includes("*")) {
     const chunks = words.normalize("NFC").trim().split(/\s+/);
     if (chunks.some(term => !/^[\p{L}\p{N}]{3,60}\*?$/u.test(term))) return [];
@@ -102,11 +107,19 @@ function titleSearchTerms(words) {
   return europresseTitleWords(words);
 }
 
-const renderTitleTerms = terms => `TIT_HEAD=(${terms.map(term => term.endsWith("*") ? term : `"${term}"`).join(" et ")})`;
+const validTitleTerm = term => term.startsWith("(")
+  ? term.slice(1, -1).split("|").every(part => part.length <= 60) : term.length <= 60;
+const renderTitleTerms = terms => `TIT_HEAD=(${terms.map(original => {
+  // Europresse indexes oe even when the displayed headline contains the ligature.
+  const term = original.replace(/œ/g, "oe").replace(/Œ/g, "OE");
+  return term.startsWith("(")
+  ? `(${term.slice(1, -1).split("|").map(part => `"${part}"`).join(" ou ")})`
+  : term.endsWith("*") ? term : `"${term}"`;
+}).join(" et ")})`;
 
 export function europresseManualTitleQuery(words) {
   const terms = titleSearchTerms(words);
-  return terms.length >= 2 && terms.length <= 8 && terms.every(term => term.length <= 60)
+  return terms.length >= 2 && terms.length <= 8 && terms.every(validTitleTerm)
     ? renderTitleTerms(terms) : "";
 }
 
@@ -151,7 +164,7 @@ function prepareTitleTextSearch(words, seriesNumber = "", queryMode = "") {
   const terms = phraseMode ? phrase.split(" ") : titleSearchTerms(words);
   // Only an opted-in, validated capture may add a short numeric title term.
   if (seriesNumber && terms.length >= 2 && !terms.includes(seriesNumber)) terms.push(seriesNumber);
-  if (terms.length < (phraseMode ? 3 : 2) || terms.length > (phraseMode ? 30 : 8) || terms.some(term => term.length > 60)) {
+  if (terms.length < (phraseMode ? 3 : 2) || terms.length > (phraseMode ? 30 : 8) || !terms.every(validTitleTerm)) {
     return { state: "needs-words", message: phraseMode ? "Renseignez une phrase du titre de 3 à 30 mots." : "Choisissez de 2 à 8 mots distinctifs du titre." };
   }
   if (terms.some(term => term.endsWith("*"))) return {
@@ -217,7 +230,7 @@ export function prepareEuropresseTitleFallback(value, words, date = "", publicat
     return prepareEuropresseTextSearch(value, words, data);
   }
   const terms = titleSearchTerms(words);
-  if (terms.length < 2 || terms.length > 8 || terms.some(term => term.length > 60)) {
+  if (terms.length < 2 || terms.length > 8 || !terms.every(validTitleTerm)) {
     return { state: "needs-words", message: "Choisissez de 2 à 8 mots distinctifs du titre." };
   }
   if (terms.some(term => term.endsWith("*"))) return {

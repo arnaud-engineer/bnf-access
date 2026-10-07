@@ -1,7 +1,8 @@
-import {identifyDebridage, prepareDebridage, debridageDateHint, debridageUrlOptions, debridageMethodLabel} from "../modules/debridage.mjs?v=profiles-sherbrooke-phrase-v1";
-import {prepareAutomaticArticleSearch, prepareMetadataSearch} from "../modules/article-title-metadata.mjs?v=profiles-sherbrooke-phrase-v1";
+import {identifyDebridage, prepareDebridage, debridageDateHint, debridageUrlOptions, debridageMethodLabel} from "../modules/debridage.mjs?v=guarded-elisions-ligatures-v1";
+import {prepareAutomaticArticleSearch, prepareMetadataSearch} from "../modules/article-title-metadata.mjs?v=guarded-elisions-ligatures-v1";
 import {applyLogoAppearance} from "../logo-appearance.js";
-import {europresseLanguages, europresseManualTitleQuery, prepareEuropresseRefinedTextSearch, prepareEuropresseKeywordSearch} from "../modules/europresse-auto.mjs?v=profiles-sherbrooke-phrase-v1";
+import {prepareEuropresseManualQuery} from "../modules/europresse-manual-query.mjs?v=1";
+import {europresseLanguages, europresseManualTitleQuery, prepareEuropresseRefinedTextSearch, prepareEuropresseKeywordSearch} from "../modules/europresse-auto.mjs?v=guarded-elisions-ligatures-v1";
 
 const params = new URLSearchParams(window.location.search);
 const originalUrl = params.get("from") || "";
@@ -39,6 +40,7 @@ function init() {
   initSearchHelp();
   initQueryCopy();
   initManualGuide();
+  initManualFragments();
   renderManualProgress();
   initAutomaticSearch();
   renderJournalIdentity();
@@ -76,6 +78,42 @@ function renderManualProgress() {
   document.querySelectorAll(".europresse-manual-actions .resource-action").forEach(button => {
     button.classList.toggle("secondary", button.id !== nextButton);
   });
+}
+
+function initManualFragments() {
+  const title = document.getElementById("manualTitleFragment");
+  const excerpt = document.getElementById("manualTextFragment");
+  const output = document.getElementById("manualFragmentQuery");
+  const copy = document.getElementById("copyFragmentQuery");
+  const open = document.getElementById("openFragmentSearch");
+  const notice = document.getElementById("fragmentOpenStatus");
+  let query = "";
+  function update() {
+    const prepared = prepareEuropresseManualQuery(title.value, excerpt.value);
+    query = prepared.query;
+    renderDisplayedQuery(query, output);
+    document.getElementById("manualFragmentPreview").hidden = !query;
+    document.getElementById("manualFragmentHint").textContent = prepared.message;
+    document.getElementById("fragmentCopyStatus").textContent = "";
+    notice.textContent = "";
+    copy.disabled = open.disabled = !query;
+  }
+  const copyQuery = async () => {
+    if (!query) return false;
+    const copied = await copyPreparedSearch(query, "Recherche personnalisée copiée. Collez-la dans Europresse.");
+    notice.textContent = copied ? "Recherche copiée. Collez-la dans le champ de recherche Europresse."
+      : "Copie impossible. Sélectionnez et copiez la recherche affichée ci-dessus.";
+    return copied;
+  };
+  initCopyFeedback(copy, document.getElementById("fragmentCopyStatus"), copyQuery);
+  open.addEventListener("click", async () => {
+    if (!query) return;
+    window.open(buildSearchHomeUrl(), "_blank", "noopener,noreferrer");
+    await copyQuery();
+  });
+  title.addEventListener("input", update);
+  excerpt.addEventListener("input", update);
+  update();
 }
 
 function initManualGuide() {
@@ -132,9 +170,9 @@ function initSearchHelp() {
 }
 
 function renderDisplayedQuery(value, field = document.querySelector("#articleTitle")) {
-  const fragments = value.split(/(TIT_HEAD|=|"[^"]*")/g);
+  const fragments = value.split(/(TIT_HEAD|TEXT|=|"[^"]*")/g);
   field.replaceChildren(...fragments.map(fragment => {
-    const tokenClass = fragment === "TIT_HEAD" ? "europresse-code-tag"
+    const tokenClass = fragment === "TIT_HEAD" || fragment === "TEXT" ? "europresse-code-tag"
       : fragment === "=" ? "europresse-code-operator"
       : fragment.startsWith('"') ? "europresse-code-string" : "";
     if (!tokenClass) return document.createTextNode(fragment);

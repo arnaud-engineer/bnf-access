@@ -8,7 +8,7 @@
     <meta name="description" content="Préparation d'une recherche Europresse depuis un lien de presse.">
     <link rel="icon" href="../assets/icons/bnf-access-icon.svg" type="image/svg+xml">
     <script src="../assets/js/pages/theme-init.js"></script>
-    <link rel="stylesheet" href="../assets/css/styles.css?v=2026-10-05-manual-rescue">
+    <link rel="stylesheet" href="../assets/css/styles.css?v=2026-10-07-manual-fragments">
   </head>
   <body class="transition-body europresse-search-body" data-info-search="hidden">
     <header class="topbar europresse-navigation">
@@ -146,6 +146,23 @@
           <span id="manualKeywordsCopyStatus" class="europresse-copy-feedback" role="status" aria-live="polite"></span>
         </div>
       </div>
+      <details class="europresse-fragment-builder" id="manualFragments">
+        <summary>Affiner avec un titre ou un extrait</summary>
+        <div class="europresse-fragment-fields">
+          <label for="manualTitleFragment">Fragment du titre <span class="europresse-optional">facultatif</span></label>
+          <textarea id="manualTitleFragment" rows="2" maxlength="2000" placeholder="Quelques mots du titre"></textarea>
+          <label for="manualTextFragment">Extrait de l’article <span class="europresse-optional">facultatif</span></label>
+          <textarea id="manualTextFragment" rows="3" maxlength="5000" placeholder="Une courte phrase du texte"></textarea>
+          <p id="manualFragmentHint" class="transition-help" aria-live="polite"></p>
+          <div class="europresse-code-block" id="manualFragmentPreview" hidden>
+            <pre class="europresse-query-code" tabindex="0" aria-label="Recherche à partir des fragments"><code id="manualFragmentQuery"></code></pre>
+            <button id="copyFragmentQuery" class="europresse-icon-button europresse-code-copy" type="button" title="Copier la recherche personnalisée" aria-label="Copier la recherche personnalisée" disabled><span class="europresse-copy-icon" aria-hidden="true"></span></button>
+            <span id="fragmentCopyStatus" class="europresse-copy-feedback" role="status" aria-live="polite"></span>
+          </div>
+          <button id="openFragmentSearch" class="resource-action secondary" type="button" disabled>Copier cette recherche et ouvrir Europresse</button>
+          <p id="fragmentOpenStatus" class="transition-help" role="status" aria-live="polite"></p>
+        </div>
+      </details>
       <details id="manualSearchInfo" class="europresse-manual-info">
         <summary>Afficher les informations de recherche</summary>
         <dl class="europresse-manual-meta">
@@ -195,6 +212,6 @@
     </footer>
 
     <script src="../assets/js/pages/info-page.js?v=2026-10-05-transition-tools" defer></script>
-    <script src="../assets/js/pages/europresse-search.js?v=profiles-sherbrooke-phrase-v1" type="module"></script>
+    <script src="../assets/js/pages/europresse-search.js?v=2026-10-07-guarded-elisions-ligatures" type="module"></script>
   </body>
 </html>

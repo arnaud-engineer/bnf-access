@@ -10415,6 +10415,31 @@ export default {
       "evidence": [
         "SHERBROOKE-PHRASE-2026-10-07.md"
       ]
+    },
+    {
+      "id": "trends-nl-legacy-night",
+      "provider": "europresse",
+      "name": "Trends neerlandophone",
+      "catalog_resource_id": "europresse-btc-p",
+      "hosts": [
+        "trends.knack.be"
+      ],
+      "path": "^/nieuws/[a-z0-9-]+/$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "title-only"
+      ],
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "message": "Recherche par mots du lien ; verifiez le titre et la publication ouverts.",
+      "date_message": "",
+      "limitations": "Ancien format editorial /nieuws/ seulement, pas Kanaal Z, DataNews, Beleggen ni tous les chemins recents. Deux Link URL seule ouvrent BTC papier 762 et 805 mots ; resumes officiels concordants, corps publics reserves non compares integralement. Toutes dates et tous journaux : des reprises restent possibles. Aucun titre ou date injectes, aucun Microlink ni verdict humain.",
+      "evidence": [
+        "TRENDS-NL-PISTES-2026-10-07.md"
+      ]
     }
   ]
 };

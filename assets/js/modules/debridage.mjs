@@ -1,8 +1,8 @@
-import defaults from "./debridage-profiles.mjs?v=profiles-sherbrooke-phrase-v1";
+import defaults from "./debridage-profiles.mjs?v=profiles-trends-nl-v1";
 import {buildEuropresseTitleQueryFromUrl, buildEuropresseKeywordQueryFromUrl, cleanEuropresseArticleSlug} from "../features/link-converter/article-query.js?v=short-article-paths-v2";
-import {arbitrateEuropresseUrlWords} from "./europresse-url-elisions.mjs?v=lautre-v1";
-import {matchDebridageProfile, validateDebridageProfiles} from "./debridage-schema.mjs?v=profiles-sherbrooke-phrase-v1";
-import {prepareEuropresseAutomatic, prepareEuropresseTextSearch, prepareEuropresseTitleFallback, prepareEuropresseDateAlternatives, suggestEuropresseDate, europresseTitleWords} from "./europresse-auto.mjs?v=profiles-sherbrooke-phrase-v1";
+import {arbitrateEuropresseUrlWords} from "./europresse-url-elisions.mjs?v=guarded-elisions-ligatures-v1";
+import {matchDebridageProfile, validateDebridageProfiles} from "./debridage-schema.mjs?v=targeted-elision-alternatives-v1";
+import {prepareEuropresseAutomatic, prepareEuropresseTextSearch, prepareEuropresseTitleFallback, prepareEuropresseDateAlternatives, suggestEuropresseDate, europresseTitleWords} from "./europresse-auto.mjs?v=guarded-elisions-ligatures-v1";
 
 export {validateDebridageProfiles};
 export const debridageProfiles = defaults;
@@ -80,7 +80,10 @@ export function debridageUrlOptions(value, data = defaults) {
   // An explicit phrase recipe keeps the lexical slug intact, including stop words.
   if (profile?.title_query_mode === "phrase") return {words: profile.requires_title_input || opaqueOnlyPath || ignoredSlug ? "" : title};
   const usesTitle = profile?.enabled && profile.methods.some(method => method === "title-only" || method === "reference-title");
-  if (usesTitle) words = arbitrateEuropresseUrlWords(title, words).words;
+  if (usesTitle) {
+    const terminalSlug = decodeURIComponent(url.pathname.split("/").filter(Boolean).at(-1) || "").replace(/[-_]+/g, " ");
+    words = arbitrateEuropresseUrlWords(terminalSlug, words, {allowUnknown: false}).words;
+  }
   // Fit generated defaults only; manually edited criteria keep the explicit length guard.
   if (usesTitle) {
     let prepared = prepareDebridage(value, {words}, data);
@@ -89,6 +92,14 @@ export function debridageUrlOptions(value, data = defaults) {
       terms.pop();
       words = terms.join(" ");
       prepared = prepareDebridage(value, {words}, data);
+    }
+    const terminalSlug = decodeURIComponent(url.pathname.split("/").filter(Boolean).at(-1) || "").replace(/[-_]+/g, " ");
+    const expanded = arbitrateEuropresseUrlWords(terminalSlug, words, {allowUnknown: true}).words;
+    if (expanded !== words) {
+      const candidate = prepareDebridage(value, {words: expanded}, data);
+      // Never drop another anchor to make room for an uncertain elision.
+      if (candidate.state === "ready" && candidate.url
+        && decodeURIComponent(new URL(new URL(candidate.url).searchParams.get("qurl")).pathname).length <= 240) words = expanded;
     }
   }
   return {words};

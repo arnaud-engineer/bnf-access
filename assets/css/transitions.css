@@ -288,6 +288,20 @@
   color: var(--muted);
 }
 .europresse-manual-info { margin: 24px 0 16px; text-align: left; color: var(--muted); }
+.europresse-fragment-builder { margin: 18px 0; text-align: left; border-top: 1px solid var(--line); padding-top: 12px; }
+.europresse-fragment-builder summary { color: var(--muted); font-size: .8rem; cursor: pointer; }
+.europresse-fragment-fields { display: grid; gap: 8px; padding-top: 14px; min-width: 0; }
+.europresse-fragment-fields label { font-size: .82rem; color: var(--ink); }
+.europresse-optional { color: var(--muted); font-size: .72rem; margin-left: 5px; }
+.europresse-fragment-fields textarea {
+  box-sizing: border-box; width: 100%; min-width: 0; resize: vertical;
+  background: var(--panel); color: var(--ink); border: 1px solid var(--line);
+  border-radius: 4px; padding: 9px 10px; font: inherit; font-size: .85rem; line-height: 1.5;
+}
+.europresse-fragment-fields textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.europresse-fragment-fields .transition-help { margin: 0; font-size: .78rem; text-align: left; }
+.europresse-fragment-fields .transition-help:empty { display: none; }
+.europresse-fragment-fields .resource-action { width: 100%; }
 .europresse-manual-guide summary,
 .europresse-manual-info summary {
   font-size: .78rem;

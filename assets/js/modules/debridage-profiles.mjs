@@ -10307,6 +10307,33 @@ export default {
       "evidence": [
         "MESURES-ENTRETIENS-2026-10-07.md"
       ]
+    },
+    {
+      "id": "pdv-enquete-night",
+      "provider": "europresse",
+      "name": "Points de Vente",
+      "catalog_resource_id": "europresse-pdv-p",
+      "hosts": [
+        "pointsdevente.fr",
+        "www.pointsdevente.fr"
+      ],
+      "path": "^/enquete/[a-z0-9-]+/$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "title-only"
+      ],
+      "title_word_strategy": "balanced",
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "message": "Recherche par mots du lien ; verifiez le titre dans le dossier papier ouvert.",
+      "date_message": "",
+      "limitations": "Rubrique Enquete seulement. Deux URL seules ouvrent PDV papier 6364/3074 mots, introductions concordantes avec les extraits publics. Dossiers pouvant regrouper plusieurs articles, OCR et dates papier/web differents ; pas de comparaison integrale du paywall. Energie reste negatif. Solutions/Monetique exclu : balanced zero et long-anchors ouvre des voisins avant la bonne copie. Toutes dates et sources, aucune garantie d'unicite. Aucun Microlink, date injectee ou verdict humain.",
+      "evidence": [
+        "POINTS-DE-VENTE-ENQUETE-2026-10-07.md"
+      ]
     }
   ]
 };

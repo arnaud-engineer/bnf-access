@@ -1,6 +1,6 @@
 import { sha1 } from "../vendor/europresse-sha1.mjs";
-import profiles from "./debridage-profiles.mjs?v=profiles-stmichel-dated-v1";
-import {matchDebridageProfile, validateDebridageProfiles} from "./debridage-schema.mjs?v=profiles-stmichel-dated-v1";
+import profiles from "./debridage-profiles.mjs?v=profiles-sherbrooke-phrase-v1";
+import {matchDebridageProfile, validateDebridageProfiles} from "./debridage-schema.mjs?v=profiles-sherbrooke-phrase-v1";
 validateDebridageProfiles(profiles);
 
 // LANG codes from Europresse's 2024 machine-language guide, not generic ISO codes.
@@ -117,7 +117,7 @@ export function prepareEuropresseTextSearch(value, words, data = profiles) {
   if (profile.date.type !== "input" && profile.date.groups.length && !publicationDate(profile.date.groups.map(i => captures[i]).join("") + (profile.date.type === "month" ? "01" : ""))) return {state: "unsupported", message: "La date du lien est invalide."};
   const seriesNumber = profile.title_number_group === undefined ? "" : captures[profile.title_number_group] || "";
   if (seriesNumber && !/^[1-9][0-9]?$/.test(seriesNumber)) return {state: "needs-words", message: "Le numéro de volet du lien est invalide."};
-  const result = prepareTitleTextSearch(words, seriesNumber);
+  const result = prepareTitleTextSearch(words, seriesNumber, profile.title_query_mode);
   if (result.state !== "ready") return result;
   const caution = profile.title_fallback_without_reference
     ? "Sans date disponible, essai avec les mots du lien : vérifiez la publication dans Europresse."
@@ -142,17 +142,22 @@ export function prepareEuropresseKeywordSearch(words) {
     message: "Recherche dans les titres, toutes dates et toutes sources. Europresse peut ouvrir le premier article : vérifiez le titre et le journal."};
 }
 
-function prepareTitleTextSearch(words, seriesNumber = "") {
-  const terms = titleSearchTerms(words);
+function prepareTitleTextSearch(words, seriesNumber = "", queryMode = "") {
+  const phraseMode = queryMode === "phrase";
+  const phrase = typeof words === "string" ? words.normalize("NFC").trim().replace(/\s+/g, " ") : "";
+  if (phraseMode && (!/^[\p{L}\p{N}]+(?: [\p{L}\p{N}]+)+$/u.test(phrase) || !/\p{L}/u.test(phrase))) {
+    return {state: "needs-words", message: "Renseignez une phrase du titre, sans opérateur ni joker."};
+  }
+  const terms = phraseMode ? phrase.split(" ") : titleSearchTerms(words);
   // Only an opted-in, validated capture may add a short numeric title term.
   if (seriesNumber && terms.length >= 2 && !terms.includes(seriesNumber)) terms.push(seriesNumber);
-  if (terms.length < 2 || terms.length > 8 || terms.some(term => term.length > 60)) {
-    return { state: "needs-words", message: "Choisissez de 2 à 8 mots distinctifs du titre." };
+  if (terms.length < (phraseMode ? 3 : 2) || terms.length > (phraseMode ? 30 : 8) || terms.some(term => term.length > 60)) {
+    return { state: "needs-words", message: phraseMode ? "Renseignez une phrase du titre de 3 à 30 mots." : "Choisissez de 2 à 8 mots distinctifs du titre." };
   }
   if (terms.some(term => term.endsWith("*"))) return {
     state: "needs-words", message: "Les jokers ne sont pas qualifiés dans le lien automatique Europresse. Utilisez le copier-coller de secours ou des mots entiers."
   };
-  const titleQuery = renderTitleTerms(terms);
+  const titleQuery = phraseMode ? `TIT_HEAD="${phrase}"` : renderTitleTerms(terms);
   const equation = `${textSearchCarrier} sans NODOC= ${textSearchCarrier} | ${titleQuery}`;
   // E158: leave a margin below the observed long-path rejection; never trim terms silently.
   if ((`/Link/D000067U_1/${equation}`).length > 240) {

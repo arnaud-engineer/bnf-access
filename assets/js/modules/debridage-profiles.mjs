@@ -10388,6 +10388,33 @@ export default {
       "evidence": [
         "STMICHEL-DATED-2026-10-07.md"
       ]
+    },
+    {
+      "id": "sherbrooke-phrase-night",
+      "provider": "europresse",
+      "name": "Sherbrooke.info",
+      "catalog_resource_id": "europresse-aal-p",
+      "hosts": [
+        "sherbrooke.info",
+        "www.sherbrooke.info"
+      ],
+      "path": "^/infolettre/[a-z0-9-]+/$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "title-only"
+      ],
+      "title_query_mode": "phrase",
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "message": "Recherche par phrase du lien ; verifiez le titre et le journal ouverts.",
+      "date_message": "",
+      "limitations": "Deux phrases lexicales URL seules ouvrent AAL papier 626/760 mots, textes publics concordants mais non identiques. Les mots isoles de Discorde ouvraient un autre journal. Retro 2024 et articles locaux 2026 restent incertains. Dates papier differentes du site. Pas de garantie generale ni filtre source transportable. Aucun Microlink, titre ou date injectes, aucun verdict humain.",
+      "evidence": [
+        "SHERBROOKE-PHRASE-2026-10-07.md"
+      ]
     }
   ]
 };

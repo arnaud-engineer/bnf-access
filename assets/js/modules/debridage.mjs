@@ -1,8 +1,8 @@
-import defaults from "./debridage-profiles.mjs?v=profiles-stmichel-dated-v1";
+import defaults from "./debridage-profiles.mjs?v=profiles-sherbrooke-phrase-v1";
 import {buildEuropresseTitleQueryFromUrl, buildEuropresseKeywordQueryFromUrl, cleanEuropresseArticleSlug} from "../features/link-converter/article-query.js?v=short-article-paths-v2";
 import {arbitrateEuropresseUrlWords} from "./europresse-url-elisions.mjs?v=lautre-v1";
-import {matchDebridageProfile, validateDebridageProfiles} from "./debridage-schema.mjs?v=profiles-stmichel-dated-v1";
-import {prepareEuropresseAutomatic, prepareEuropresseTextSearch, prepareEuropresseTitleFallback, prepareEuropresseDateAlternatives, suggestEuropresseDate, europresseTitleWords} from "./europresse-auto.mjs?v=profiles-stmichel-dated-v1";
+import {matchDebridageProfile, validateDebridageProfiles} from "./debridage-schema.mjs?v=profiles-sherbrooke-phrase-v1";
+import {prepareEuropresseAutomatic, prepareEuropresseTextSearch, prepareEuropresseTitleFallback, prepareEuropresseDateAlternatives, suggestEuropresseDate, europresseTitleWords} from "./europresse-auto.mjs?v=profiles-sherbrooke-phrase-v1";
 
 export {validateDebridageProfiles};
 export const debridageProfiles = defaults;
@@ -11,6 +11,7 @@ export function debridageMethodLabel(profile, method = profile?.methods?.[0]) {
   if (method === "reference") return profile?.reference?.type === "url-sha1"
     ? "Référence calculée depuis l’URL" : "Référence issue de l’identifiant du lien";
   if (method === "reference-title" && profile?.title_fallback_without_reference) return "Recherche par titre sans référence";
+  if (method === "title-only" && profile?.title_query_mode === "phrase") return "Recherche par phrase du lien";
   return {"title-only": "Recherche par titre", "reference-title": "Référence ou recherche par titre",
     "date-alternatives": "Références sur deux dates"}[method] || "Méthode non configurée";
 }
@@ -76,6 +77,8 @@ export function debridageUrlOptions(value, data = defaults) {
   }
   // The prefix was already removed before stop words and token limits; never strip twice.
   let words = profile?.requires_title_input || opaqueOnlyPath || ignoredSlug ? "" : suggestedDebridageWords(keywords || title, profile, {stripPrefix: false});
+  // An explicit phrase recipe keeps the lexical slug intact, including stop words.
+  if (profile?.title_query_mode === "phrase") return {words: profile.requires_title_input || opaqueOnlyPath || ignoredSlug ? "" : title};
   const usesTitle = profile?.enabled && profile.methods.some(method => method === "title-only" || method === "reference-title");
   if (usesTitle) words = arbitrateEuropresseUrlWords(title, words).words;
   // Fit generated defaults only; manually edited criteria keep the explicit length guard.

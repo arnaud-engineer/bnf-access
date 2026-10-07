@@ -10280,6 +10280,33 @@ export default {
         "https://www.professioncgp.com/article/juridique-et-fiscal/juridique-et-fiscal-transmission/du-vent-dans-les-branches-des-transmissions-familiales.html",
         "https://www.professioncgp.com/article/juridique-et-fiscal/retraite/ce-que-le-budget-2026-a-reserve-au-per.html"
       ]
+    },
+    {
+      "id": "mesures-entretiens-night",
+      "provider": "europresse",
+      "name": "Mesures",
+      "catalog_resource_id": "europresse-ezm-p",
+      "hosts": [
+        "mesures.com",
+        "www.mesures.com"
+      ],
+      "path": "^/archives/entretiens/[a-z0-9-]+/$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "title-only"
+      ],
+      "title_word_strategy": "balanced",
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "message": "Recherche par mots du lien ; verifiez le titre et la version papier ou web.",
+      "date_message": "",
+      "limitations": "Archives/entretiens uniquement. Deux URL seules ouvrent Mesures papier 919 (2531 mots) et Mesures web (1814 mots), avec reponses concordantes. La version web omet des questions presentes sur le site ; ne pas promettre une egalite textuelle integrale. Actualites recentes negatives conservees hors perimetre. Des slugs d'archives contiennent des mots coupes ou fusionnes non qualifies. Toutes dates et sources, aucune garantie d'unicite. Aucun Microlink, date injectee ou verdict humain.",
+      "evidence": [
+        "MESURES-ENTRETIENS-2026-10-07.md"
+      ]
     }
   ]
 };

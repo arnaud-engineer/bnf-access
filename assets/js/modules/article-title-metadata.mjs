@@ -1,6 +1,6 @@
-import {suggestedDebridageWords, identifyDebridage, debridageUrlOptions, prepareDebridage} from "./debridage.mjs?v=profiles-profession-cgp-v1";
-import {prepareEuropresseKeywordSearch} from "./europresse-auto.mjs?v=profiles-profession-cgp-v1";
-import {validateMetadataQueryIdentity} from "./debridage-schema.mjs?v=profiles-profession-cgp-v1";
+import {suggestedDebridageWords, identifyDebridage, debridageUrlOptions, prepareDebridage} from "./debridage.mjs?v=profiles-mesures-entretiens-v1";
+import {prepareEuropresseKeywordSearch} from "./europresse-auto.mjs?v=profiles-mesures-entretiens-v1";
+import {validateMetadataQueryIdentity} from "./debridage-schema.mjs?v=profiles-mesures-entretiens-v1";
 
 const endpoint = "https://api.microlink.io/";
 const maximumBytes = 128 * 1024;

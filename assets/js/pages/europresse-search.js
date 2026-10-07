@@ -1,7 +1,7 @@
-import {identifyDebridage, prepareDebridage, debridageDateHint, debridageUrlOptions, debridageMethodLabel} from "../modules/debridage.mjs?v=profiles-profession-cgp-v1";
-import {prepareAutomaticArticleSearch, prepareMetadataSearch} from "../modules/article-title-metadata.mjs?v=profiles-profession-cgp-v1";
+import {identifyDebridage, prepareDebridage, debridageDateHint, debridageUrlOptions, debridageMethodLabel} from "../modules/debridage.mjs?v=profiles-mesures-entretiens-v1";
+import {prepareAutomaticArticleSearch, prepareMetadataSearch} from "../modules/article-title-metadata.mjs?v=profiles-mesures-entretiens-v1";
 import {applyLogoAppearance} from "../logo-appearance.js";
-import {europresseLanguages, europresseManualTitleQuery, prepareEuropresseRefinedTextSearch, prepareEuropresseKeywordSearch} from "../modules/europresse-auto.mjs?v=profiles-profession-cgp-v1";
+import {europresseLanguages, europresseManualTitleQuery, prepareEuropresseRefinedTextSearch, prepareEuropresseKeywordSearch} from "../modules/europresse-auto.mjs?v=profiles-mesures-entretiens-v1";
 
 const params = new URLSearchParams(window.location.search);
 const originalUrl = params.get("from") || "";

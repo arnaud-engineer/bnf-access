@@ -1,6 +1,9 @@
 import {bookFavoriteId as favoriteId} from './model.js';
 import {bookCredits, searchableCredits} from './credits.js';
 import {bookIdentifiers} from './identifiers.js';
+import {bookEditorialCategoryPaths} from './taxonomy.js?v=2026-10-12-healthscience1';
+import {placeholderBrand} from './cover-placeholder.js?v=2026-10-12-healthscience1';
+import {reviewedOpenEditionDescription} from './openedition-descriptions.js?v=2026-10-15-oe1';
 
 // Book cards, favorite tiles and platform links share the same presentation. Description overflow remains measured in the user viewport.
 export function createBookPresentation({
@@ -51,10 +54,28 @@ export function createBookPresentation({
       image.src = book.cover;
       image.alt = "";
       image.loading = "lazy";
-      image.addEventListener("error", () => { image.remove(); frame.textContent = "Livre"; }, { once: true });
+      image.addEventListener("error", () => showPlaceholder(frame, book), { once: true });
       frame.append(image);
-    } else frame.textContent = "Livre";
+    } else showPlaceholder(frame, book);
     return frame;
+  }
+
+  function showPlaceholder(frame, book) {
+    const brand = placeholderBrand(book, getContext().platforms);
+    const cover = text('span', '', 'book-cover-placeholder');
+    cover.setAttribute('aria-hidden', 'true');
+    frame.title = brand ? `Couverture indisponible · Logo ${brand.kind === 'éditeur' ? 'de l’éditeur' : 'de la plateforme'} ${brand.label}` : 'Couverture indisponible';
+    if (brand) {
+      cover.classList.add(`book-source-${brand.id}`);
+      const background = brand.resource.icon_background;
+      cover.style.setProperty('--book-placeholder-background', /^#[0-9a-f]{6}$/i.test(background ?? '')
+        ? background : `var(--book-logo-${brand.id}, var(--book-solid, #656565))`);
+      const logo = createPlatformLogo({...brand.resource, icon_background_image: ''});
+      logo.classList.add('book-placeholder-logo');
+      cover.append(logo);
+    } else cover.append(text('span', 'Livre', 'book-placeholder-label'));
+    // Replace the whole frame, including any blurred favorite-cover clone.
+    frame.replaceChildren(cover);
   }
 
   function description(book) {
@@ -214,15 +235,17 @@ export function createBookPresentation({
       tags.append(tag);
     }
     appendLanguageTags(tags, book);
-    const source = book.variants.find(variant => {
+    const supplemented = book.variants.map(variant => ({variant,description:reviewedOpenEditionDescription(variant)}))
+      .find(item => item.description);
+    const source = supplemented?.variant || book.variants.find(variant => {
       const value = variant.metadata.description || variant.metadata.abstract;
       return typeof value === "string" && value.trim();
     });
     if (source) {
       const summary = text("div", "", "book-summary");
-      const paragraph = text("p", (source.metadata.description || source.metadata.abstract).trim(), "book-summary-text");
+      const paragraph = text("p", (supplemented?.description.text || source.metadata.description || source.metadata.abstract).trim(), "book-summary-text");
       paragraph.id = `book-summary-${book.id}-${++summaryId}`;
-      paragraph.title = `Description source : ${source.metadata.description_evidence?.provider || source.availability.label}`;
+      paragraph.title = `Description source : ${supplemented?.description.provider || source.metadata.description_evidence?.provider || source.availability.label}`;
       const toggle = text("button", "[+]", "description-toggle book-summary-toggle");
       toggle.type = "button";
       toggle.hidden = true;
@@ -252,7 +275,11 @@ export function createBookPresentation({
     content.append(tags);
     if (book.categories.length) {
       const categories = text("span", "", "book-categories badge-row");
-      for (const category of book.categories) categories.append(text("span", category, "badge editorial book-category-badge"));
+      for (const path of book.editorialCategories ?? bookEditorialCategoryPaths(book.variants, {title: book.title, trackNewEntries: true})) {
+        const badge = text("span", path.subcategory, "badge editorial book-category-badge");
+        badge.title = `${path.family} › ${path.subcategory}${path.details ? ` › ${path.details.join(' / ')}` : ''}`;
+        categories.append(badge);
+      }
       categories.title = `Catégories sources : ${[...new Set(book.variants.flatMap((v) => v.metadata.filter_categories || []))].join(" · ")}`;
       content.append(categories);
     }
@@ -296,6 +323,7 @@ export function createBookPresentation({
   }
 
   function decorateFavoriteCover(frame) {
+    if (frame.querySelector('.book-cover-placeholder')) return;
     const image = frame.querySelector("img");
     if (!image || frame.querySelector(".book-cover-backdrop")) return;
     image.classList.add("book-cover-foreground");

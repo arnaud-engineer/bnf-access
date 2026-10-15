@@ -8,6 +8,7 @@ export const bookPlatformDefinitions = [
   ["alexanderstreet", "twentieth-century-religious-thought-library-christianity", "Alexander Street"],
   ["openedition", "openedition-books", "OpenEdition"],
   ["rsc", "rsc-publishing", "RSC"],
+  ["peterlang", "peter-lang-livres-numeriques", "Peter Lang"],
   ["eebo", "early-english-books-online-eebo", "Early English Books", false],
   ["eeb", "early-european-books", "Early European Books", false],
 ];

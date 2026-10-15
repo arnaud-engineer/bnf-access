@@ -1,6 +1,7 @@
-import {createBookPresentation} from './features/books/presentation.js';
+import {createBookPresentation} from './features/books/presentation.js?v=2026-10-12-healthscience1';
 import {groupBookSeries} from './features/books/series.js';
-import {bookFavoriteId as favoriteId, filterBooks, indexBookCatalog, isFavoriteBook} from './features/books/model.js?v=2026-10-04-known-language';
+import {bookFavoriteId as favoriteId, filterBooks, indexBookCatalog, isFavoriteBook} from './features/books/model.js?v=2026-10-12-healthscience1';
+import {createBookCategoryFilters} from './features/books/category-filters.js?v=2026-10-12-healthscience1';
 
 export function createBookSearch({
          openPlatformDirectory,
@@ -73,7 +74,8 @@ export function createBookSearch({
     input.focus({ preventScroll: true });
     input.dispatchEvent(new Event("input", { bubbles: true }));
   });
-  const selection = { platform: "", publisher: "", category: "" };
+  const selection = { platform: "", publisher: "", family: "", category: "", detail: "" };
+  const expandedCategories = new Map();
 
   async function load() {
     if (books) return books;
@@ -240,6 +242,8 @@ export function createBookSearch({
 
   function changeFilter(key, value) {
     selection[key] = value;
+    if (key === 'family') selection.category = '';
+    if (key === 'family' || key === 'category') selection.detail = '';
     selectedBookId = null;
     limit = 40;
     if (gridTarget) renderGrid(gridTarget.grid, gridTarget.count);
@@ -278,11 +282,21 @@ export function createBookSearch({
     for (const platform of getContext().platforms) container.append(button(platform.label, platform.id, platformCounts.get(platform.id) ?? 0));
     row.append(container);
     panel.append(row);
+    panel.append(createBookCategoryFilters({books: filtered('family'), selection,
+      expanded: expandedCategories, expandedByDefault: window.matchMedia('(min-width: 981px)').matches,
+      onChange: (family, category, detail = '') => {
+        selection.family = family;
+        selection.category = category;
+        changeFilter('detail', detail);
+      }}));
     const fields = document.createElement("div");
     fields.className = "book-select-filters";
-    for (const [key, field, label, all] of [["publisher", "publishers", "Éditeur", "Tous les éditeurs"], ["category", "categories", "Thème / catégorie", "Toutes les catégories"]]) {
+    for (const [key, field, label, all] of [["publisher", "publishers", "Éditeur", "Tous les éditeurs"]]) {
       const counts = new Map();
-      for (const book of filtered(key)) for (const value of book[field]) counts.set(value, (counts.get(value) ?? 0) + 1);
+      for (const book of filtered(key)) {
+        const values = book[field];
+        for (const value of values) counts.set(value, (counts.get(value) ?? 0) + 1);
+      }
       const wrapper = document.createElement("label");
       const select = document.createElement("select");
       select.dataset.bookFilter = key;
@@ -304,7 +318,7 @@ export function createBookSearch({
     reset.type = "button";
     reset.disabled = !Object.values(selection).some(Boolean);
     reset.addEventListener("click", () => {
-      selection.platform = selection.publisher = selection.category = "";
+      selection.platform = selection.publisher = selection.family = selection.category = selection.detail = "";
       selectedBookId = null;
       limit = 40;
       renderGrid(gridTarget.grid, gridTarget.count);

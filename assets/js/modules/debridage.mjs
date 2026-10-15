@@ -1,13 +1,14 @@
-import defaults from "./debridage-profiles.mjs?v=profiles-trends-nl-v1";
-import {buildEuropresseTitleQueryFromUrl, buildEuropresseKeywordQueryFromUrl, cleanEuropresseArticleSlug} from "../features/link-converter/article-query.js?v=short-article-paths-v2";
+import defaults from "./debridage-profiles.mjs?v=public-date-v1";
+import {buildEuropresseTitleQueryFromUrl, buildEuropresseKeywordQueryFromUrl, cleanEuropresseArticleSlug} from "../features/link-converter/article-query.js?v=uuid-filenames-v1";
 import {arbitrateEuropresseUrlWords} from "./europresse-url-elisions.mjs?v=guarded-elisions-ligatures-v1";
-import {matchDebridageProfile, validateDebridageProfiles} from "./debridage-schema.mjs?v=targeted-elision-alternatives-v1";
-import {prepareEuropresseAutomatic, prepareEuropresseTextSearch, prepareEuropresseTitleFallback, prepareEuropresseDateAlternatives, suggestEuropresseDate, europresseTitleWords} from "./europresse-auto.mjs?v=guarded-elisions-ligatures-v1";
+import {matchDebridageProfile, validateDebridageProfiles} from "./debridage-schema.mjs?v=public-date-v1";
+import {prepareEuropresseAutomatic, prepareEuropresseTextSearch, prepareEuropresseTitleFallback, prepareEuropresseDateAlternatives, suggestEuropresseDate, europresseTitleWords} from "./europresse-auto.mjs?v=canonical-hash-host-v1";
 
 export {validateDebridageProfiles};
 export const debridageProfiles = defaults;
 
 export function debridageMethodLabel(profile, method = profile?.methods?.[0]) {
+  if (method === "reference" && profile?.public_date_metadata) return "Référence calculée depuis l’URL et la date publique";
   if (method === "reference") return profile?.reference?.type === "url-sha1"
     ? "Référence calculée depuis l’URL" : "Référence issue de l’identifiant du lien";
   if (method === "reference-title" && profile?.title_fallback_without_reference) return "Recherche par titre sans référence";

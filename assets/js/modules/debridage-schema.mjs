@@ -30,11 +30,14 @@ export function validateDebridageProfiles(data) {
     }
     if (p.excluded_paths !== undefined && (!list(p.excluded_paths) || p.excluded_paths.length > 100 || p.excluded_paths.some(v => !v.startsWith("/") || /[?#]/.test(v)))) throw new Error("Chemins exclus invalides.");
     if (new Set(p.hosts).size !== p.hosts.length) throw new Error("Domaine dupliqué dans le profil.");
+    if (p.path_slug_terms !== undefined && (!Array.isArray(p.path_slug_terms) || !p.path_slug_terms.length || p.path_slug_terms.length > 20 || p.path_slug_terms.some(term => typeof term !== "string" || !/^[a-z0-9]{2,30}$/.test(term)) || new Set(p.path_slug_terms).size !== p.path_slug_terms.length)) throw new Error("Termes de périmètre invalides.");
     for (const host of p.hosts) {
-      const scopes = hosts.get(host) || new Set();
+      const scopes = hosts.get(host) || [];
       const scope = p.path_prefix || "";
-      if (!/^[a-z0-9]+(?:[.-][a-z0-9]+)*\.[a-z]{2,}$/.test(host) || scopes.has(scope)) throw new Error("Domaine invalide ou partagé sans rubrique distincte.");
-      scopes.add(scope);
+      const terms = p.path_slug_terms || [];
+      const collision = scopes.some(old => old.prefix === scope && ((!terms.length && !old.terms.length) || terms.some(term => old.terms.includes(term))));
+      if (!/^[a-z0-9]+(?:[.-][a-z0-9]+)*\.[a-z]{2,}$/.test(host) || collision) throw new Error("Domaine invalide ou partagé sans rubrique distincte.");
+      scopes.push({prefix: scope, terms});
       hosts.set(host, scopes);
     }
     // Profiles are data, not executable regex programs: no assertions, backrefs or nested quantifiers.
@@ -61,11 +64,27 @@ export function validateDebridageProfiles(data) {
     }
     if (p.date.type !== "input" && !p.date.groups.length) throw new Error("Date sans groupe d'extraction.");
     if (p.date_hint !== undefined && p.date_hint !== "uuid-v1") throw new Error("Indice de date invalide.");
+    if (p.public_date_metadata !== undefined) {
+      const policy = p.public_date_metadata;
+      if (!policy || Object.keys(policy).some(key => !["host", "time_zone"].includes(key)) ||
+          !p.hosts.includes(policy.host) || !/^(?:[a-z0-9-]+\.)+[a-z]{2,63}$/.test(policy.host) ||
+          !string(policy.time_zone, 80) || p.reference?.type !== "url-sha1" ||
+          p.date.type !== "input" || p.methods[0] !== "reference" || !p.title_fallback_without_reference) {
+        throw new Error("Lecture de date publique non admissible.");
+      }
+      try { new Intl.DateTimeFormat("en", {timeZone: policy.time_zone}); }
+      catch { throw new Error("Fuseau de date publique invalide."); }
+    }
     if (p.manual_search_source !== undefined && (!p.manual_search_source || !string(p.manual_search_source.id, 12) || !/^\d{1,12}$/.test(p.manual_search_source.id) ||
       !string(p.manual_search_source.label, 120) || !p.manual_search_source.label.trim())) throw new Error("Source du secours manuel invalide.");
     if (p.publications !== undefined) {
       if (!Array.isArray(p.publications) || !p.publications.length || p.publications.some(v => !/^[A-Z0-9]{1,12}$/.test(v.code) || !string(v.label, 120))) throw new Error("Publications invalides.");
       if (new Set(p.publications.map(v => v.code)).size !== p.publications.length) throw new Error("Publications dupliquées.");
+    }
+    if (p.reference?.canonical_host !== undefined && (p.reference.type !== "url-sha1" ||
+        typeof p.reference.canonical_host !== "string" || p.reference.canonical_host.length > 253 ||
+        !/^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,63}$/.test(p.reference.canonical_host))) {
+      throw new Error("Domaine canonique de l'empreinte invalide.");
     }
     if (!p.methods.includes("title-only")) {
       if (p.reference?.type === "url-sha1") {
@@ -89,11 +108,22 @@ export function matchDebridageProfile(value, data) {
   if (url.protocol !== "https:" || url.username || url.password || url.port || url.pathname.length > 3000) return null;
   // A scoped magazine wins over its parent newspaper, independently of list order.
   const candidates = data.profiles.filter(p => p.hosts.includes(url.hostname) && (!p.path_prefix || url.pathname.startsWith(p.path_prefix)))
-    .sort((a, b) => (b.path_prefix?.length || 0) - (a.path_prefix?.length || 0));
+    .sort((a, b) => (b.path_prefix?.length || 0) - (a.path_prefix?.length || 0) || Number(!!b.path_slug_terms?.length) - Number(!!a.path_slug_terms?.length));
+  let slugTerms;
+  const matches = [];
   for (const profile of candidates) {
+    if (profile.path_slug_terms?.length) {
+      try {
+        slugTerms ||= decodeURIComponent(url.pathname.split("/").filter(Boolean).at(-1) || "").toLowerCase().replace(/\.[a-z0-9]+$/, "").split("-");
+      } catch { return null; }
+      if (!profile.path_slug_terms.some(term => slugTerms.includes(term))) continue;
+    }
     if (profile.excluded_paths?.some(p => p.replace(/\/$/, "") === url.pathname.replace(/\/$/, ""))) continue;
     const captures = url.pathname.match(new RegExp(profile.path));
-    if (captures) return {profile, url, captures};
+    if (captures) matches.push({profile, url, captures});
   }
-  return null;
+  const first = matches[0];
+  // Two lexical scopes can co-occur in one headline; never choose by list order.
+  if (first?.profile.path_slug_terms?.length && matches.slice(1).some(match => match.profile.path_slug_terms?.length && match.profile.path_prefix === first.profile.path_prefix)) return null;
+  return first || null;
 }

@@ -1,5 +1,5 @@
-import {identifyDebridage, prepareDebridage, debridageDateHint, debridageUrlOptions, debridageMethodLabel} from "../modules/debridage.mjs?v=guarded-elisions-ligatures-v1";
-import {prepareAutomaticArticleSearch, prepareMetadataSearch} from "../modules/article-title-metadata.mjs?v=guarded-elisions-ligatures-v1";
+import {identifyDebridage, prepareDebridage, debridageDateHint, debridageUrlOptions, debridageMethodLabel} from "../modules/debridage.mjs?v=public-date-v1";
+import {prepareAutomaticArticleSearch, prepareMetadataSearch, needsPublicArticleDate} from "../modules/article-title-metadata.mjs?v=public-date-v1";
 import {applyLogoAppearance} from "../logo-appearance.js";
 import {prepareEuropresseManualQuery} from "../modules/europresse-manual-query.mjs?v=1";
 import {europresseLanguages, europresseManualTitleQuery, prepareEuropresseRefinedTextSearch, prepareEuropresseKeywordSearch} from "../modules/europresse-auto.mjs?v=guarded-elisions-ligatures-v1";
@@ -414,13 +414,14 @@ function initAutomaticSearch() {
   button.addEventListener("click", async () => {
     let result = render();
     let destination;
-    if (result.state !== "ready" && profile?.enabled && !titleWords.value.trim() && !debridageUrlOptions(originalUrl).words) {
+    const publicDate = needsPublicArticleDate(profile, debridageUrlOptions(originalUrl), options());
+    if (publicDate || (result.state !== "ready" && profile?.enabled && !titleWords.value.trim() && !debridageUrlOptions(originalUrl).words)) {
       destination = window.open("about:blank", "_blank");
       if (!destination) { setPageStatus("Autorisez l’ouverture du nouvel onglet, puis réessayez."); return; }
       destination.opener = null;
       recoveringTitle = true;
       render();
-      setPageStatus("Récupération du titre via Microlink…");
+      setPageStatus(publicDate ? "Vérification de la date publique…" : "Récupération du titre via Microlink…");
       try {
         result = await prepareAutomaticArticleSearch(originalUrl, options());
         if (result.provenance === "microlink") {
@@ -428,7 +429,7 @@ function initAutomaticSearch() {
           titleWords.value = result.words;
           manualUsesTitleWords = true;
           setPageStatus("Titre récupéré via Microlink : " + result.metadata.title);
-        } else setPageStatus(result.message);
+        } else setPageStatus(result.provenance === "publisher-date" ? "Référence calculée depuis le lien et sa date publique." : result.message);
       } catch { setPageStatus("Titre non récupéré. Utilisez les paramètres ou le secours manuel."); }
       finally { recoveringTitle = false; render(); }
     }

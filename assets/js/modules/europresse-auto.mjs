@@ -1,6 +1,6 @@
 import { sha1 } from "../vendor/europresse-sha1.mjs";
-import profiles from "./debridage-profiles.mjs?v=profiles-sherbrooke-phrase-v1";
-import {matchDebridageProfile, validateDebridageProfiles} from "./debridage-schema.mjs?v=profiles-sherbrooke-phrase-v1";
+import profiles from "./debridage-profiles.mjs?v=canonical-hash-host-v1";
+import {matchDebridageProfile, validateDebridageProfiles} from "./debridage-schema.mjs?v=canonical-hash-host-v1";
 validateDebridageProfiles(profiles);
 
 // LANG codes from Europresse's 2024 machine-language guide, not generic ISO codes.
@@ -24,8 +24,9 @@ function publicationDate(value) {
     ? iso.replaceAll("-", "") : "";
 }
 
-function eddKey(source, day, code, prefix) {
-  const canonical = source.origin + source.pathname;
+function eddKey(source, day, code, prefix, canonicalHost) {
+  // Some shared publisher subdomains are indexed under a demonstrated main host.
+  const canonical = (canonicalHost ? `https://${canonicalHost}` : source.origin) + source.pathname;
   const digest = Array.from(sha1(new TextEncoder().encode(canonical)), byte =>
     byte.toString(16).padStart(2, "0")).join("");
   return `news\u00b7${day}\u00b7${code}\u00b7edd\u00d7c${prefix}\u00d7c${day}\u00d7c${digest}`;
@@ -274,7 +275,7 @@ export function prepareEuropresseAutomatic(value, date = "", publication = "OFW"
   if (!day) return {state: "unsupported", message: "La date du lien est invalide."};
   let key;
   if (profile.reference.type === "url-sha1") {
-    key = eddKey(source, day, profile.reference.source_code, profile.reference.prefix);
+    key = eddKey(source, day, profile.reference.source_code, profile.reference.prefix, profile.reference.canonical_host);
   } else {
     key = profile.reference.template.replace(/\{(day|publication|id[1-9])\}/g, (_, field) =>
       field === "day" ? day : field === "publication" ? choice.code : (captures[Number(field.slice(2))] || "").toLowerCase());

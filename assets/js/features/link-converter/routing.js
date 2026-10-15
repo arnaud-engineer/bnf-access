@@ -15,7 +15,7 @@ import {
   buildEuropresseTitleQueryFromUrl,
   buildEuropresseKeywordQueryFromUrl,
   buildPressReaderQueryOptionsFromUrl
-} from './article-query.js?v=elisions-v2';
+} from './article-query.js?v=uuid-filenames-v1';
 import {identifyDebridage} from '../../modules/debridage.mjs';
 import {indexpresseEntry} from '../../modules/indexpresse-search.mjs';
 

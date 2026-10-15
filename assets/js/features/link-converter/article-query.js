@@ -170,7 +170,16 @@ export function buildEuropresseKeywordQueryFromUrl(url, titleOverride) {
   return usefulTerms.join(" ");
 }
 
+function getZinioArticleSlug(url) {
+  if (url.protocol !== "https:" || !/^(?:www\.)?zinio\.com$/i.test(url.hostname)) return null;
+  const match = url.pathname.match(/^\/[a-z]{2}\/article\/[a-z0-9-]+\/[a-z0-9-]+-i\d+\/([a-z0-9-]+)-a\d+\/?$/);
+  return match ? match[1] : null;
+}
+
 export function getEuropresseArticleTitleFromUrl(url) {
+  // An identified article's short slug must not fall back to magazine/issue IDs.
+  const zinioSlug = getZinioArticleSlug(url);
+  if (zinioSlug !== null) return cleanEuropresseArticleSlug(zinioSlug);
   const pathParts = decodeURIComponent(url.pathname)
     .split("/")
     .map((part) => part.trim())
@@ -253,6 +262,8 @@ export function cleanEuropresseArticleSlug(value) {
 
 // Search words only: retain the original URL for publisher IDs and reference hashes.
 export function stripOpaqueArticleSuffix(value) {
+  // A standalone CMS UUID is not a headline; the preceding segment may be one.
+  if (/^(?:article[_-])?[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:\.html?)?$/i.test(String(value))) return "";
   const match = String(value).match(/^(.*)[.-]([A-Z0-9]{24,40}|[a-f0-9]{32}|[a-f0-9]{40})(?:\.html?)?$/);
   if (!match || !/[0-9]/.test(match[2]) || !/[a-z]/i.test(match[2])) return value;
   const words = tokenizeEuropressePathPart(match[1]).filter(word => word.length >= 3 &&
@@ -261,6 +272,8 @@ export function stripOpaqueArticleSuffix(value) {
 }
 
 export function getEuropresseArticleTerms(url) {
+  const zinioSlug = getZinioArticleSlug(url);
+  if (zinioSlug !== null) return tokenizeEuropressePathPart(zinioSlug);
   const pathParts = decodeURIComponent(url.pathname)
     .split("/")
     .map((part) => part.trim())
@@ -268,7 +281,7 @@ export function getEuropresseArticleTerms(url) {
   const candidateParts = pathParts
     .slice()
     .reverse()
-    .map((part) => part.replace(/\.[a-z0-9]{2,5}$/i, "").replace(/-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i, ""))
+    .map((part) => String(stripOpaqueArticleSuffix(part)).replace(/\.[a-z0-9]{2,5}$/i, "").replace(/-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i, ""))
     .filter((part) => part && !/^\d+$/.test(part));
 
   for (const candidate of candidateParts) {

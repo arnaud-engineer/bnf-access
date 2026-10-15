@@ -1,6 +1,7 @@
-import {suggestedDebridageWords, identifyDebridage, debridageUrlOptions, prepareDebridage} from "./debridage.mjs?v=guarded-elisions-ligatures-v1";
+import {suggestedDebridageWords, identifyDebridage, debridageUrlOptions, prepareDebridage} from "./debridage.mjs?v=public-date-v1";
 import {prepareEuropresseKeywordSearch} from "./europresse-auto.mjs?v=guarded-elisions-ligatures-v1";
 import {validateMetadataQueryIdentity} from "./debridage-schema.mjs?v=guarded-elisions-ligatures-v1";
+import {createPublicArticleDateResolver} from "./public-article-date.mjs?v=1";
 
 const endpoint = "https://api.microlink.io/";
 const maximumBytes = 128 * 1024;
@@ -118,6 +119,13 @@ export function createArticleTitleResolver(retrieve = retrieveArticleTitle) {
 }
 
 const resolveTitle = createArticleTitleResolver();
+const resolveDate = createPublicArticleDateResolver();
+
+export function needsPublicArticleDate(profile, derived, options = {}) {
+  return profile?.enabled === true && Boolean(profile.public_date_metadata) &&
+    !options.date && (!options.method || options.method === "reference") &&
+    (!options.words?.trim() || options.words.trim() === derived.words?.trim());
+}
 
 export function prepareMetadataSearch(value, metadata, data) {
   if (metadata?.state !== "ready") return null;
@@ -128,10 +136,20 @@ export function prepareMetadataSearch(value, metadata, data) {
   return {...prepareEuropresseKeywordSearch(words), words, metadata, profileId: profile.id, provenance: "microlink"};
 }
 
-export async function prepareAutomaticArticleSearch(value, options = {}, data, retrieve = resolveTitle) {
+export async function prepareAutomaticArticleSearch(value, options = {}, data, retrieve = resolveTitle, retrieveDate = resolveDate) {
   const profile = identifyDebridage(value, data);
   const derived = debridageUrlOptions(value, data);
   const initial = prepareDebridage(value, {...derived, ...options}, data);
+  if (needsPublicArticleDate(profile, derived, options)) {
+    let metadata;
+    try { metadata = await retrieveDate(value, profile.public_date_metadata); }
+    catch { metadata = {state: "unavailable"}; }
+    if (metadata?.state === "ready" && metadata.sourceUrl === new URL(value).href) {
+      const direct = prepareDebridage(value, {...derived, ...options, date: metadata.date, method: "reference"}, data);
+      if (direct.state === "ready") return {...direct, provenance: "publisher-date", publicDate: metadata.date};
+    }
+    return {...initial, publicDateUnavailable: true};
+  }
   // Existing references and explicit user criteria always take precedence.
   if (initial.state === "ready" || !needsArticleTitleMetadata(profile, derived) || options.words?.trim()) return initial;
   const metadata = await retrieve(value, {queryIdentity: profile.metadata_query_identity});

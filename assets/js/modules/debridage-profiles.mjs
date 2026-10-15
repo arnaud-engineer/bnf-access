@@ -3565,25 +3565,35 @@ export default {
       "hosts": [
         "lessorsavoyard.lemessager.fr"
       ],
-      "path": "^/[0-9]+/article/[0-9]{4}-[0-9]{2}-[0-9]{2}/[a-z0-9-]+$",
+      "path": "^/[0-9]+/article/([0-9]{4}-[0-9]{2}-[0-9]{2})/[a-z0-9-]+$",
       "enabled": true,
       "status": "experimental",
       "methods": [
-        "title-only"
+        "reference",
+        "reference-title"
       ],
       "date": {
-        "type": "input",
-        "groups": []
+        "type": "captures",
+        "groups": [
+          1
+        ]
       },
-      "message": "Essai par mots du titre ; vérifiez la publication et la version.",
+      "message": "Reference calculee depuis la date et le lien, sous le domaine canonique du Messager. Version web partagee ; verifiez la publication.",
       "date_message": "",
-      "limitations": "Sujet retrouvé dans Le Messager web et papier, pas une preuve d'édition Essor distincte. Vérifiez le titre et la publication.",
+      "limitations": "Sujet retrouvé dans Le Messager web et papier, pas une preuve d'édition Essor distincte. Vérifiez le titre et la publication. Empreinte canonique verifiee sur deux temoins de ce sous-site. Ne garantit pas les anciennes URL ou une edition papier distincte.",
       "catalog_resource_id": "europresse-vnj-p",
       "evidence": [
         "E096-essor-savoyard.md",
         "https://lessorsavoyard.lemessager.fr/649358399/article/2026-10-01/jo-2030-high-five-grand-bornand-la-nouvelle-vie-sportive-de-la-skieuse-tessa",
-        "E168-autres-titres.md"
-      ]
+        "E168-autres-titres.md",
+        "MESSAGER-DOMAINES-CANONIQUES-2026-10-08.md"
+      ],
+      "reference": {
+        "type": "url-sha1",
+        "source_code": "AJK",
+        "prefix": "hw27",
+        "canonical_host": "www.lemessager.fr"
+      }
     },
     {
       "id": "trends-levif-be",
@@ -7550,24 +7560,34 @@ export default {
         "lepaysgessien.fr",
         "www.lepaysgessien.fr"
       ],
-      "path": "^/[0-9]+/article/[0-9]{4}-[0-9]{2}-[0-9]{2}/[a-z0-9-]+$",
+      "path": "^/[0-9]+/article/([0-9]{4}-[0-9]{2}-[0-9]{2})/[a-z0-9-]+$",
       "enabled": true,
       "status": "experimental",
       "methods": [
-        "title-only"
+        "reference",
+        "reference-title"
       ],
       "date": {
-        "type": "input",
-        "groups": []
+        "type": "captures",
+        "groups": [
+          1
+        ]
       },
-      "message": "Recherche par mots du titre ; version web partagee avec Le Messager (Pays de Gex).",
+      "message": "Reference calculee depuis la date et le lien, sous le domaine canonique du Messager. Version web partagee ; verifiez la publication.",
       "date_message": "",
-      "limitations": "Deux articles locaux exacts retrouves sous Le Messager site web, Pays de Gex. Pas de preuve d'edition papier Pays Gessien distincte ni de tous les articles. Verifiez le titre et la version ouverts.",
+      "limitations": "Deux articles locaux exacts retrouves sous Le Messager site web, Pays de Gex. Pas de preuve d'edition papier Pays Gessien distincte ni de tous les articles. Verifiez le titre et la version ouverts. Empreinte canonique verifiee sur deux temoins de ce sous-site. Ne garantit pas les anciennes URL ou une edition papier distincte.",
       "evidence": [
         "NUIT-V1-2026-10-07.md",
         "https://lepaysgessien.lemessager.fr/649358306/article/2026-09-30/un-mort-et-4-blesses-graves-sur-la-route-leaz-ce-30-septembre-2026",
-        "https://lepaysgessien.lemessager.fr/649358539/article/2026-10-05/tunnel-du-vuache-fermeture-nocturne-en-octobre-pour-des-travaux-de-maintenance"
-      ]
+        "https://lepaysgessien.lemessager.fr/649358539/article/2026-10-05/tunnel-du-vuache-fermeture-nocturne-en-octobre-pour-des-travaux-de-maintenance",
+        "MESSAGER-DOMAINES-CANONIQUES-2026-10-08.md"
+      ],
+      "reference": {
+        "type": "url-sha1",
+        "source_code": "AJK",
+        "prefix": "hw27",
+        "canonical_host": "www.lemessager.fr"
+      }
     },
     {
       "id": "flair-fr-beaute",
@@ -10439,6 +10459,1165 @@ export default {
       "limitations": "Ancien format editorial /nieuws/ seulement, pas Kanaal Z, DataNews, Beleggen ni tous les chemins recents. Deux Link URL seule ouvrent BTC papier 762 et 805 mots ; resumes officiels concordants, corps publics reserves non compares integralement. Toutes dates et tous journaux : des reprises restent possibles. Aucun titre ou date injectes, aucun Microlink ni verdict humain.",
       "evidence": [
         "TRENDS-NL-PISTES-2026-10-07.md"
+      ]
+    },
+    {
+      "id": "jde-normandie-liseuse-night",
+      "provider": "europresse",
+      "name": "Le Journal des entreprises - Normandie",
+      "catalog_resource_id": "europresse-jfl-p",
+      "hosts": [
+        "www.lejournaldesentreprises.com",
+        "lejournaldesentreprises.com"
+      ],
+      "path_prefix": "/liseuse/normandie/",
+      "path": "^/liseuse/normandie/[a-z0-9-]+_[0-9]+/?$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "title-only"
+      ],
+      "title_word_strategy": "first-four",
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "date_message": "",
+      "message": "Recherche du sujet de couverture du mensuel Normandie. Verifiez le titre, la publication et le numero ouverts.",
+      "limitations": "Fiches de numero Normandie seulement, pas chaque article du sommaire ni les permaliens web partages. Deux Link URL seule ouvrent JFL papier 1470 et 1283 mots. Sofimari a necessite une relance et un delai de chargement. Des Briefs et versions courtes peuvent aussi ressortir ; aucun filtre source impose ou garantie generale. Pas de comparaison integrale web/papier depuis les fiches. Aucun Microlink ni verdict humain.",
+      "evidence": [
+        "JDE-NORMANDIE-2026-10-08.md"
+      ]
+    },
+    {
+      "id": "letemps-cyber-night",
+      "provider": "europresse",
+      "name": "Le Temps - anciens liens Cyber",
+      "catalog_resource_id": "europresse-te-p",
+      "hosts": [
+        "www.letemps.ch",
+        "letemps.ch"
+      ],
+      "path_prefix": "/cyber/",
+      "path": "^/cyber/[a-z0-9-]+/?$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "title-only"
+      ],
+      "title_word_strategy": "balanced",
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "date_message": "",
+      "message": "Recherche experimentale des anciens liens Cyber du Temps. Verifiez l'article et la publication ; utilisez les recherches de secours si necessaire.",
+      "limitations": "Deux ouvertures TE papier verifiees depuis URL seule : SwissCovid2021 et ChatGPT2022. Deux autres liens Cyber2023 restent sans resultat : Bard et EuropeIA. Pas de garantie generale, pas de filtre source impose. Autres rubriques et chemins Cyber imbriques exclus. Comparaison avec introductions publiques seulement, suites publiques reservees aux abonnes. Aucun Microlink ni verdict humain.",
+      "evidence": [
+        "LE-TEMPS-ANCIEN-2026-10-08.md"
+      ]
+    },
+    {
+      "id": "lavoix-moulins-societe-night",
+      "provider": "europresse",
+      "name": "La Voix - MRC des Moulins, Societe",
+      "catalog_resource_id": "europresse-asj-p",
+      "hosts": [
+        "journallavoix.com",
+        "www.journallavoix.com"
+      ],
+      "path_prefix": "/societe/",
+      "path": "^/societe/[a-z0-9-]+/?$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "title-only"
+      ],
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "date_message": "",
+      "message": "Recherche experimentale des articles Societe de La Voix, MRC des Moulins. Verifiez le titre et la publication ouverts.",
+      "limitations": "Deux Link URL seule avec selection standard six mots ouvrent ASJ papier695 et469mots, corps concordants. Balanced quatre mots ouvre un faux positif pour RichardMercier : recette non retenue. Rubrique Societe seulement ; Actualites et autres chemins non qualifies. Aucun filtre source impose, aucune garantie generale ni validation humaine. Aucun Microlink.",
+      "evidence": [
+        "LA-VOIX-MOULINS-2026-10-08.md"
+      ]
+    },
+    {
+      "id": "courrier-du-sud-root-night",
+      "provider": "europresse",
+      "name": "Le Courrier du Sud - Longueuil",
+      "catalog_resource_id": "europresse-qco-p",
+      "hosts": [
+        "lecourrierdusud.ca",
+        "www.lecourrierdusud.ca"
+      ],
+      "path": "^/[a-z0-9-]+/?$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "title-only"
+      ],
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "date_message": "",
+      "message": "Recherche experimentale par mots du titre ; verifiez le journal et le contenu ouverts.",
+      "limitations": "Deux URL seules ouvrent les corps concordants WQCO de juillet et novembre2025. Plusieurs captures peuvent avoir des dates differentes. Anciens essais recents negatifs conserves ; aucune garantie generale, aucun filtre source impose, aucun verdict humain. Ne pas confondre avec lecourriersud.com (OZ).",
+      "evidence": [
+        "COURRIER-DU-SUD-2026-10-08.md"
+      ]
+    },
+    {
+      "id": "electroniques-archive-night",
+      "provider": "europresse",
+      "name": "ElectroniqueS - archives revue",
+      "catalog_resource_id": "europresse-ezc-p",
+      "hosts": [
+        "electroniques.biz",
+        "www.electroniques.biz"
+      ],
+      "path": "^/archives/revue-electroniques/[a-z0-9-]+/?$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "title-only"
+      ],
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "date_message": "",
+      "message": "Recherche experimentale par mots du titre ; verifiez la publication et le contenu ouverts.",
+      "limitations": "Deux liens de revue de juillet2021 ouvrent les articles EZC concordants. Wintek2006 reste negatif. Les actualites modernes et les autres rubriques sont hors perimetre. Aucune garantie generale ni filtre source impose ; aucun verdict humain.",
+      "evidence": [
+        "ELECTRONIQUES-ARCHIVE-2026-10-08.md"
+      ]
+    },
+    {
+      "id": "jardins-zinio-night",
+      "provider": "europresse",
+      "name": "L'Ami des Jardins et de la Maison - Zinio",
+      "catalog_resource_id": "europresse-mam-p",
+      "hosts": [
+        "zinio.com",
+        "www.zinio.com"
+      ],
+      "path_prefix": "/fr/article/lami-des-jardins/",
+      "path": "^/fr/article/lami-des-jardins/[a-z0-9-]+-i[0-9]+/[a-z0-9-]+-a[0-9]+/?$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "title-only"
+      ],
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "date_message": "",
+      "message": "Recherche experimentale par mots du titre ; verifiez le journal et le contenu ouverts.",
+      "limitations": "Deux permaliens Zinio du numero1141 ouvrent les articles MAM concordants. Identifiant local Zinio retire automatiquement, sans date ni reference injectee. Deux autres articles du meme numero echouent ou donnent des voisins : aucune garantie generale. Pas de filtre source impose, pas de mapping du site officiel, des sommaires ou des autres magazines Zinio. Aucun verdict humain.",
+      "evidence": [
+        "JARDINS-ZINIO-2026-10-08.md"
+      ]
+    },
+    {
+      "id": "gulf-standard-night",
+      "provider": "europresse",
+      "name": "Gulf Islands Driftwood",
+      "catalog_resource_id": "europresse-pgw-p",
+      "hosts": [
+        "gulfislandsdriftwood.com",
+        "www.gulfislandsdriftwood.com"
+      ],
+      "path": "^/[a-z0-9-]+/?$",
+      "excluded_paths": [
+        "/about-us/",
+        "/meet-the-team/",
+        "/privacy-policy/",
+        "/terms-of-service/",
+        "/subscribe-to-the-gulf-islands-driftwood/",
+        "/contact/",
+        "/event/",
+        "/obituaries/"
+      ],
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "title-only"
+      ],
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "date_message": "",
+      "message": "Recherche experimentale par mots du lien ; verifiez le titre, le journal et le contenu ouverts.",
+      "limitations": "Deux URL propres ouvrent les corps PGW concordants (Botterell825mots et Batemans631mots). Selection standard sans date ni reference injectee ; papier parfois reformule et date differente du web. Deux autres URL, ElizabethMay et parade, donnent zero ; les trois mots finaux aveugles et TEXT global sont rejetes apres faux voisins. Pas garantie generale ni filtre publication impose. Categories, numeros entiers et pages de service exclus ; aucun verdict humain.",
+      "evidence": [
+        "GULF-STANDARD-2026-10-08.md"
+      ]
+    },
+    {
+      "id": "cote-est-zinio-night",
+      "provider": "europresse",
+      "name": "Maisons Cote Est - Zinio",
+      "catalog_resource_id": "europresse-exg-p",
+      "hosts": [
+        "zinio.com",
+        "www.zinio.com"
+      ],
+      "path_prefix": "/fr/article/cote-est/",
+      "path": "^/fr/article/cote-est/[a-z0-9-]+-i[0-9]+/[a-z0-9-]+-a[0-9]+/?$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "title-only"
+      ],
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "date_message": "",
+      "message": "Recherche experimentale par mots du lien ; verifiez le journal et le contenu ouverts.",
+      "limitations": "Deux articles du numero94 ouverts dans EXG avec auteur, chapeau et debut concordants. Apercus Zinio partiels : pas de comparaison integrale ni garantie generale. Aucun filtre source, date ou reference injectee. Pas de mapping du site cotemaison, des sommaires ou des autres magazines Zinio.",
+      "evidence": [
+        "COTE-EST-ZINIO-2026-10-08.md"
+      ]
+    },
+    {
+      "id": "cote-sud-zinio-night",
+      "provider": "europresse",
+      "name": "Maisons Cote Sud - Zinio",
+      "catalog_resource_id": "europresse-exi-p",
+      "hosts": [
+        "zinio.com",
+        "www.zinio.com"
+      ],
+      "path_prefix": "/fr/article/cote-sud/",
+      "path": "^/fr/article/cote-sud/[a-z0-9-]+-i[0-9]+/[a-z0-9-]+-a[0-9]+/?$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "title-only"
+      ],
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "date_message": "",
+      "message": "Recherche experimentale par mots du lien ; verifiez le journal et le contenu ouverts.",
+      "limitations": "Experimental : deux bons articles sur deux numeros (Nice et Aix), apercus partiels concordants. Titres courts ambigus : amphore signature ouvre un faux Figaro ; adresses marise monia donne zero en natif et erreur Link ; Bofill seul insuffisant. Verifier publication et contenu. Aucun filtre source/date/reference injecte. Pas de mapping cotemaison, sommaires ou autres magazines Zinio.",
+      "evidence": [
+        "COTE-SUD-ZINIO-2026-10-08.md"
+      ]
+    },
+    {
+      "id": "cote-paris-zinio-night",
+      "provider": "europresse",
+      "name": "Vivre Cote Paris - Zinio",
+      "catalog_resource_id": "europresse-exk-p",
+      "hosts": [
+        "zinio.com",
+        "www.zinio.com"
+      ],
+      "path_prefix": "/fr/article/cote-paris/",
+      "path": "^/fr/article/cote-paris/[a-z0-9-]+-i[0-9]+/[a-z0-9-]+-a[0-9]+/?$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "title-only"
+      ],
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "date_message": "",
+      "message": "Recherche experimentale par mots du lien ; verifiez le journal et le contenu ouverts.",
+      "limitations": "Deux articles de numeros distincts (60 et 78) ouverts par le vrai lien automatique dans EXK avec auteur, chapeau et debut concordants. Apercus publics partiels, pas de comparaison integrale ni garantie generale. Le premier temoin a un voisin Nouvelliste dans la recherche native. Aucun filtre source, date ou reference injectee. Pas de mapping global cotemaison, sommaire ou autres magazines Zinio.",
+      "evidence": [
+        "COTE-PARIS-ZINIO-2026-10-08.md"
+      ]
+    },
+    {
+      "id": "sudouest-lot-et-garonne-night",
+      "provider": "europresse",
+      "name": "Sud Ouest - Lot-et-Garonne",
+      "catalog_resource_id": "europresse-sol-p",
+      "hosts": [
+        "sudouest.fr",
+        "www.sudouest.fr"
+      ],
+      "path_prefix": "/lot-et-garonne/",
+      "path": "^/lot-et-garonne/[a-z0-9/-]+-[0-9]+\\.php$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "reference",
+        "reference-title"
+      ],
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "date_message": "Date publique lue automatiquement si disponible ; sinon recherche textuelle.",
+      "message": "Reference de la version web calculee depuis le lien et sa date publique. Secours textuel si la date est indisponible ; pas de garantie de version papier.",
+      "limitations": "Scope des articles /lot-et-garonne/ uniquement. Deux corps web concordent avec les versions SOL exposees par Europresse, dont les titres papier different. Aucun filtre source, date ou reference injectee. Pas de garantie de version papier, ni activation des autres editions ou des dossiers sommaires. Reference web SOE demontree sur deux liens du perimetre ; lecture anonyme CORS opt-in bornee, aucun Microlink. Domaine www exact seulement pour la date publique.",
+      "evidence": [
+        "SUD-OUEST-LOT-GARONNE-2026-10-08.md",
+        "REFERENCE-CONVERSION-SUD-OUEST-LOT-BASQUE-2026-10-09.md"
+      ],
+      "reference": {
+        "type": "url-sha1",
+        "source_code": "SOE",
+        "prefix": "sofr",
+        "canonical_host": "www.sudouest.fr"
+      },
+      "public_date_metadata": {
+        "host": "www.sudouest.fr",
+        "time_zone": "Europe/Paris"
+      },
+      "title_fallback_without_reference": true
+    },
+    {
+      "id": "sudouest-charente-maritime-night",
+      "provider": "europresse",
+      "name": "Sud Ouest - Charente-Maritime",
+      "catalog_resource_id": "europresse-soc-p",
+      "hosts": [
+        "sudouest.fr",
+        "www.sudouest.fr"
+      ],
+      "path_prefix": "/charente-maritime/",
+      "path": "^/charente-maritime/[a-z0-9/-]+-[0-9]+\\.php$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "reference",
+        "reference-title"
+      ],
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "date_message": "Date publique lue automatiquement si disponible ; sinon recherche textuelle.",
+      "message": "Reference de la version web calculee depuis le lien et sa date publique. Secours textuel si la date est indisponible ; pas de garantie de version papier.",
+      "limitations": "Articles lexicaux /charente-maritime/ uniquement. Deux temoins Oleron : un vrai Link ouvre SOC, l'autre SOE avec corps SOC concordant. Aucun filtre source, date ou reference injectee. Pas de garantie de version papier ou de couverture de toutes les communes. Les dossiers sommaires ne prouvent pas un article individuel. Reference web SOE demontree sur deux liens du perimetre ; lecture anonyme CORS opt-in bornee, aucun Microlink. Domaine www exact seulement pour la date publique.",
+      "evidence": [
+        "SUD-OUEST-CHARENTE-MARITIME-2026-10-08.md",
+        "REFERENCE-CONVERSION-SUD-OUEST-CHARENTE-2026-10-09.md"
+      ],
+      "reference": {
+        "type": "url-sha1",
+        "source_code": "SOE",
+        "prefix": "sofr",
+        "canonical_host": "www.sudouest.fr"
+      },
+      "public_date_metadata": {
+        "host": "www.sudouest.fr",
+        "time_zone": "Europe/Paris"
+      },
+      "title_fallback_without_reference": true
+    },
+    {
+      "id": "sudouest-pays-basque-hasparren-night",
+      "provider": "europresse",
+      "name": "Sud Ouest - Pays Basque (Hasparren)",
+      "catalog_resource_id": "europresse-sop-p",
+      "hosts": [
+        "sudouest.fr",
+        "www.sudouest.fr"
+      ],
+      "path_prefix": "/pyrenees-atlantiques/hasparren/",
+      "path": "^/pyrenees-atlantiques/hasparren/[a-z0-9-]+-[0-9]+\\.php$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "reference",
+        "reference-title"
+      ],
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "date_message": "Date publique lue automatiquement si disponible ; sinon recherche textuelle.",
+      "message": "Reference de la version web calculee depuis le lien et sa date publique. Secours textuel si la date est indisponible ; pas de garantie de version papier.",
+      "limitations": "Scope Hasparren uniquement, pas toutes les Pyrenees-Atlantiques ni toutes les communes basques. Deux corps SOE concordent avec les alternatives SOP exposees et ouvertes ; un troisieme corps web sans alternative SOP observee. Aucun filtre source/date/reference injectee, pas de garantie de version papier. Pas de validation des dossiers sommaires. Reference web SOE demontree sur deux liens du perimetre ; lecture anonyme CORS opt-in bornee, aucun Microlink. Domaine www exact seulement pour la date publique.",
+      "evidence": [
+        "SUD-OUEST-HASPARREN-2026-10-08.md",
+        "REFERENCE-CONVERSION-SUD-OUEST-LOT-BASQUE-2026-10-09.md"
+      ],
+      "reference": {
+        "type": "url-sha1",
+        "source_code": "SOE",
+        "prefix": "sofr",
+        "canonical_host": "www.sudouest.fr"
+      },
+      "public_date_metadata": {
+        "host": "www.sudouest.fr",
+        "time_zone": "Europe/Paris"
+      },
+      "title_fallback_without_reference": true
+    },
+    {
+      "id": "sudouest-dordogne-night",
+      "provider": "europresse",
+      "name": "Sud Ouest - Dordogne",
+      "catalog_resource_id": "europresse-sod-p",
+      "hosts": [
+        "sudouest.fr",
+        "www.sudouest.fr"
+      ],
+      "path_prefix": "/dordogne/",
+      "path": "^/dordogne/[a-z0-9/-]+-[0-9]+\\.php$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "reference",
+        "reference-title"
+      ],
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "date_message": "Date publique lue automatiquement si disponible ; sinon recherche textuelle.",
+      "message": "Reference de la version web calculee depuis le lien et sa date publique. Secours textuel si la date est indisponible ; pas de garantie de version papier.",
+      "limitations": "Articles lexicaux /dordogne/ seulement. Trois ouvertures automatiques web observees a Saint-Astier ; deux equivalents papier SOD, dont Coursac retrouve uniquement par diagnostic elargi. Deux liens sur cinq echouent avec les criteres initiaux. Aucun filtre source/date/reference injectee, aucune garantie de version papier ou de toutes les communes. Le diagnostic elargi n'est pas automatise. Reference web SOE demontree sur deux liens du perimetre ; lecture anonyme CORS opt-in bornee, aucun Microlink. Domaine www exact seulement pour la date publique.",
+      "evidence": [
+        "SUD-OUEST-DORDOGNE-2026-10-08.md",
+        "REFERENCE-CONVERSION-SUD-OUEST-DORDOGNE-2026-10-09.md"
+      ],
+      "reference": {
+        "type": "url-sha1",
+        "source_code": "SOE",
+        "prefix": "sofr",
+        "canonical_host": "www.sudouest.fr"
+      },
+      "public_date_metadata": {
+        "host": "www.sudouest.fr",
+        "time_zone": "Europe/Paris"
+      },
+      "title_fallback_without_reference": true
+    },
+    {
+      "id": "sudouest-bearn-pau-night",
+      "provider": "europresse",
+      "name": "Sud Ouest - Bearn et Soule (Pau et Bearn)",
+      "catalog_resource_id": "europresse-sob-p",
+      "hosts": [
+        "sudouest.fr",
+        "www.sudouest.fr"
+      ],
+      "path_prefix": "/pyrenees-atlantiques/pau/",
+      "path": "^/pyrenees-atlantiques/pau/[a-z0-9-]+-[0-9]+\\.php$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "reference",
+        "reference-title"
+      ],
+      "title_word_strategy": "balanced",
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "date_message": "Date publique lue automatiquement si disponible ; sinon recherche textuelle.",
+      "message": "Reference de la version web calculee depuis le lien et sa date publique. Secours textuel si la date est indisponible ; pas de garantie de version papier.",
+      "limitations": "Chemins Pau et Bearn uniquement, pas tout le departement ni preuve de couverture de la Soule. Trois bons corps web avec selection balanced, deux correspondances SOB exposees et ouvertes. Le salon du polar ouvrait un faux positif2020 avec les six premiers mots ; balanced retrouve2026. Un quatrieme lien culture/enfant echoue encore. Aucun filtre source/date/reference cible injectee ; pas de garantie de version papier. Reference web SOE demontree sur deux liens du perimetre ; lecture anonyme CORS opt-in bornee, aucun Microlink. Domaine www exact seulement pour la date publique.",
+      "evidence": [
+        "SUD-OUEST-BEARN-2026-10-08.md",
+        "REFERENCE-CONVERSION-SUD-OUEST-INTEGRATION-2026-10-09.md"
+      ],
+      "reference": {
+        "type": "url-sha1",
+        "source_code": "SOE",
+        "prefix": "sofr",
+        "canonical_host": "www.sudouest.fr"
+      },
+      "public_date_metadata": {
+        "host": "www.sudouest.fr",
+        "time_zone": "Europe/Paris"
+      },
+      "title_fallback_without_reference": true
+    },
+    {
+      "id": "sudouest-bearn-regional-night",
+      "provider": "europresse",
+      "name": "Sud Ouest - Bearn et Soule (Bearn)",
+      "catalog_resource_id": "europresse-sob-p",
+      "hosts": [
+        "sudouest.fr",
+        "www.sudouest.fr"
+      ],
+      "path_prefix": "/pyrenees-atlantiques/bearn/",
+      "path": "^/pyrenees-atlantiques/bearn/[a-z0-9-]+-[0-9]+\\.php$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "title-only"
+      ],
+      "title_word_strategy": "balanced",
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "date_message": "",
+      "message": "Recherche par mots du debut et de la fin du lien ; la version web peut etre ouverte plutot que l'edition papier Bearn et Soule. Verifiez le contenu.",
+      "limitations": "Chemins Pau et Bearn uniquement, pas tout le departement ni preuve de couverture de la Soule. Trois bons corps web avec selection balanced, deux correspondances SOB exposees et ouvertes. Le salon du polar ouvrait un faux positif2020 avec les six premiers mots ; balanced retrouve2026. Un quatrieme lien culture/enfant echoue encore. Aucun filtre source/date/reference cible injectee ; pas de garantie de version papier.",
+      "evidence": [
+        "SUD-OUEST-BEARN-2026-10-08.md"
+      ]
+    },
+    {
+      "id": "sudouest-landes-night",
+      "provider": "europresse",
+      "name": "Sud Ouest - Landes",
+      "catalog_resource_id": "europresse-soa-p",
+      "hosts": [
+        "sudouest.fr",
+        "www.sudouest.fr"
+      ],
+      "path_prefix": "/landes/",
+      "path": "^/landes/[a-z0-9/-]+-[0-9]+\\.php$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "reference",
+        "reference-title"
+      ],
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "date_message": "Date publique lue automatiquement si disponible ; sinon recherche textuelle.",
+      "message": "Reference de la version web calculee depuis le lien et sa date publique. Secours textuel si la date est indisponible ; pas de garantie de version papier.",
+      "limitations": "Articles lexicaux /landes/ seulement. Quatre ouvertures automatiques web observees ; deux correspondances papier SOA, dont Sopecal retrouve seulement par diagnostic manuel. Deux echecs automatiques conserves. Pas de garantie de papier, de toutes les communes ni de toutes les revisions. Aucun filtre source/date/reference cible injectee. Reference web SOE demontree sur deux liens du perimetre ; lecture anonyme CORS opt-in bornee, aucun Microlink. Domaine www exact seulement pour la date publique.",
+      "evidence": [
+        "SUD-OUEST-LANDES-2026-10-08.md",
+        "REFERENCE-CONVERSION-SUD-OUEST-LANDES-LIBOURNE-2026-10-09.md"
+      ],
+      "reference": {
+        "type": "url-sha1",
+        "source_code": "SOE",
+        "prefix": "sofr",
+        "canonical_host": "www.sudouest.fr"
+      },
+      "public_date_metadata": {
+        "host": "www.sudouest.fr",
+        "time_zone": "Europe/Paris"
+      },
+      "title_fallback_without_reference": true
+    },
+    {
+      "id": "sudouest-verdon-night",
+      "provider": "europresse",
+      "name": "Sud Ouest - Medoc (Le Verdon)",
+      "catalog_resource_id": "europresse-sor-p",
+      "hosts": [
+        "sudouest.fr",
+        "www.sudouest.fr"
+      ],
+      "path_prefix": "/gironde/le-verdon-sur-mer/",
+      "path": "^/gironde/le-verdon-sur-mer/[a-z0-9-]+-[0-9]+\\.php$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "reference",
+        "reference-title"
+      ],
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "date_message": "Date publique lue automatiquement si disponible ; sinon recherche textuelle.",
+      "message": "Reference de la version web calculee depuis le lien et sa date publique. Secours textuel si la date est indisponible ; pas de garantie de version papier.",
+      "limitations": "Articles lexicaux du Verdon-sur-Mer seulement. Trois vrais Link web observes ; une correspondance papier SOR inspectee par diagnostic manuel. Le second document papier reste non verifie (chargement bloque). Aucune garantie pour Arcachon, toute la Gironde ou le papier. Aucun filtre source/date/reference cible injectee. Reference web SOE demontree sur deux liens du perimetre ; lecture anonyme CORS opt-in bornee, aucun Microlink. Domaine www exact seulement pour la date publique.",
+      "evidence": [
+        "SUD-OUEST-MEDOC-2026-10-08.md",
+        "REFERENCE-CONVERSION-SUD-OUEST-INTEGRATION-2026-10-09.md"
+      ],
+      "reference": {
+        "type": "url-sha1",
+        "source_code": "SOE",
+        "prefix": "sofr",
+        "canonical_host": "www.sudouest.fr"
+      },
+      "public_date_metadata": {
+        "host": "www.sudouest.fr",
+        "time_zone": "Europe/Paris"
+      },
+      "title_fallback_without_reference": true
+    },
+    {
+      "id": "sudouest-bordeaux-night",
+      "provider": "europresse",
+      "name": "Sud Ouest - Bordeaux Agglo",
+      "catalog_resource_id": "europresse-so-p",
+      "hosts": [
+        "sudouest.fr",
+        "www.sudouest.fr"
+      ],
+      "path_prefix": "/gironde/bordeaux/",
+      "path": "^/gironde/bordeaux/[a-z0-9-]+-[0-9]+\\.php$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "reference",
+        "reference-title"
+      ],
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "date_message": "Date publique lue automatiquement si disponible ; sinon recherche textuelle.",
+      "message": "Reference de la version web calculee depuis le lien et sa date publique. Secours textuel si la date est indisponible ; pas de garantie de version papier.",
+      "limitations": "Articles lexicaux /gironde/bordeaux/ seulement. Deux vrais Link web observes et deux corps papier SO concordants ouverts par liens associes. Un article repris dans plusieurs editions, donc pas de publication exclusive. Titres et dates papier peuvent differer ; aucune garantie pour toutes les communes de l'agglomeration ou de la Gironde. Aucun filtre source/date/reference cible injectee. Reference web SOE demontree sur deux liens du perimetre ; lecture anonyme CORS opt-in bornee, aucun Microlink. Domaine www exact seulement pour la date publique.",
+      "evidence": [
+        "SUD-OUEST-BORDEAUX-2026-10-08.md",
+        "REFERENCE-CONVERSION-SUD-OUEST-BORDEAUX-2026-10-09.md"
+      ],
+      "reference": {
+        "type": "url-sha1",
+        "source_code": "SOE",
+        "prefix": "sofr",
+        "canonical_host": "www.sudouest.fr"
+      },
+      "public_date_metadata": {
+        "host": "www.sudouest.fr",
+        "time_zone": "Europe/Paris"
+      },
+      "title_fallback_without_reference": true
+    },
+    {
+      "id": "sudouest-libourne-night",
+      "provider": "europresse",
+      "name": "Sud Ouest - Libournais (Libourne)",
+      "catalog_resource_id": "europresse-soi-p",
+      "hosts": [
+        "sudouest.fr",
+        "www.sudouest.fr"
+      ],
+      "path_prefix": "/gironde/libourne/",
+      "path": "^/gironde/libourne/[a-z0-9-]+-[0-9]+\\.php$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "reference",
+        "reference-title"
+      ],
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "date_message": "Date publique lue automatiquement si disponible ; sinon recherche textuelle.",
+      "message": "Reference de la version web calculee depuis le lien et sa date publique. Secours textuel si la date est indisponible ; pas de garantie de version papier.",
+      "limitations": "Articles lexicaux /gironde/libourne/ seulement. Deux vrais Link web observes et deux corps papier SOI concordants, ouverts par lien associe ou diagnostic manuel TEXT. Pas de papier automatique, ni de garantie pour Blaye, toute la Gironde ou toutes les revisions. Aucun filtre source/date/reference cible injectee. Reference web SOE demontree sur deux liens du perimetre ; lecture anonyme CORS opt-in bornee, aucun Microlink. Domaine www exact seulement pour la date publique.",
+      "evidence": [
+        "SUD-OUEST-LIBOURNE-2026-10-08.md",
+        "REFERENCE-CONVERSION-SUD-OUEST-LANDES-LIBOURNE-2026-10-09.md"
+      ],
+      "reference": {
+        "type": "url-sha1",
+        "source_code": "SOE",
+        "prefix": "sofr",
+        "canonical_host": "www.sudouest.fr"
+      },
+      "public_date_metadata": {
+        "host": "www.sudouest.fr",
+        "time_zone": "Europe/Paris"
+      },
+      "title_fallback_without_reference": true
+    },
+    {
+      "id": "sudouest-langon-night",
+      "provider": "europresse",
+      "name": "Sud Ouest - Sud-Gironde (Langon)",
+      "catalog_resource_id": "europresse-sos-p",
+      "hosts": [
+        "sudouest.fr",
+        "www.sudouest.fr"
+      ],
+      "path_prefix": "/gironde/langon/",
+      "path": "^/gironde/langon/[a-z0-9-]+-[0-9]+\\.php$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "reference",
+        "reference-title"
+      ],
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "date_message": "Date publique lue automatiquement si disponible ; sinon recherche textuelle.",
+      "message": "Reference de la version web calculee depuis le lien et sa date publique. Secours textuel si la date est indisponible ; pas de garantie de version papier.",
+      "limitations": "Articles lexicaux /gironde/langon/ seulement. Deux vrais Link web observes, un corps papier SOS concordant ouvert par lien associe et un echec conserve. Le suivi papier du train est un autre article. Pas de garantie papier, ni pour Bazas ou tout le Sud-Gironde. Aucun filtre source/date/reference cible injectee. Reference web SOE demontree sur deux liens du perimetre ; lecture anonyme CORS opt-in bornee, aucun Microlink. Domaine www exact seulement pour la date publique.",
+      "evidence": [
+        "SUD-OUEST-SUD-GIRONDE-2026-10-08.md",
+        "REFERENCE-CONVERSION-SUD-OUEST-SUD-GIRONDE-2026-10-09.md"
+      ],
+      "reference": {
+        "type": "url-sha1",
+        "source_code": "SOE",
+        "prefix": "sofr",
+        "canonical_host": "www.sudouest.fr"
+      },
+      "public_date_metadata": {
+        "host": "www.sudouest.fr",
+        "time_zone": "Europe/Paris"
+      },
+      "title_fallback_without_reference": true
+    },
+    {
+      "id": "operations-legacy-shared-night",
+      "provider": "europresse",
+      "name": "Le Moniteur (site partage - articles historiques)",
+      "catalog_resource_id": "europresse-moi-p",
+      "hosts": [
+        "www.lemoniteur.fr",
+        "lemoniteur.fr"
+      ],
+      "path_prefix": "/article/",
+      "path": "^/article/[a-z0-9]+-[a-z0-9-]+\\.[0-9]+$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "title-only"
+      ],
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "date_message": "",
+      "message": "Site partage : ces liens peuvent provenir d'Operations Immobilieres ou d'une autre publication du Moniteur. Verifiez le titre et la publication du document ouvert.",
+      "limitations": "Deux vrais liens automatiques ouvrent les corps MOI171 de 1892 et 3441 mots. Format historique /article/slug.identifiant numerique seulement ; pas une attribution exclusive MOI ni une garantie pour tous les articles ou numeros. Aucun filtre source, date, reference cible, Microlink ou verdict humain injecte.",
+      "evidence": [
+        "OPERATIONS-ARCHIVE-SVD-REGULIER-2026-10-07.md"
+      ]
+    },
+    {
+      "id": "mirabel-shared-actualites-night",
+      "provider": "europresse",
+      "name": "Infos Mirabel / L'Eveil (actualites partagees)",
+      "catalog_resource_id": "europresse-jaa-p",
+      "hosts": [
+        "leveil.com",
+        "www.leveil.com"
+      ],
+      "path_prefix": "/actualites/",
+      "path": "^/actualites/[a-z0-9]+-[a-z0-9-]+$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "title-only"
+      ],
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "date_message": "",
+      "message": "Site partage avec L'Eveil : verifiez le titre et la publication du document ouvert. La rubrique Actualites ne garantit pas une publication dans Infos Mirabel.",
+      "limitations": "Deux vrais liens automatiques ouvrent les corps JAA du 19aout2026 (685 et 261 mots), concordants au public. Ponceaux5oct en erreur serveur meme apres actualisation. Pas de garantie pour tout le site ou toutes les editions. Route Culture existante preservee. Aucun filtre source/date/reference cible, Microlink ou verdict humain injecte.",
+      "evidence": [
+        "MIRABEL-ARCHIVES-TEMOIN-2026-10-07.md"
+      ]
+    },
+    {
+      "id": "recyclage-publi-night",
+      "provider": "europresse",
+      "name": "Recyclage Recuperation (publi-redactionnel)",
+      "catalog_resource_id": "europresse-vch-p",
+      "hosts": [
+        "www.recyclage-recuperation.fr",
+        "recyclage-recuperation.fr"
+      ],
+      "path_prefix": "/publi-redactionnel/",
+      "path": "^/publi-redactionnel/[a-z0-9]+-[a-z0-9-]+/$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "title-only"
+      ],
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "date_message": "",
+      "message": "Rubrique commerciale uniquement : verifiez le titre et la publication. Le texte Europresse peut contenir des erreurs ou des paragraphes voisins.",
+      "limitations": "Deux vrais liens URL seule ouvrent VCH1oct2025 : Bollegraaf422mots et SGM1015mots. Extraits publics concordants seulement, suite publique reservee. SGM mele ensuite du texte Revama/NGE : segmentation degradee, pas corps integralement concordant. Cyclevia reste en erreur apres actualisation. Autres rubriques et sites tiers exclus. Aucun Microlink, filtre date/source/reference cible ou verdict humain injecte.",
+      "evidence": [
+        "RECYCLAGE-PUBLI-URL-SEULE-2026-10-08.md"
+      ]
+    },
+    {
+      "id": "province-mons-quievrain-night",
+      "provider": "europresse",
+      "name": "La Province / Sudinfo (Mons et Quievrain)",
+      "catalog_resource_id": "europresse-bpr-p",
+      "hosts": [
+        "sudinfo.be",
+        "www.sudinfo.be"
+      ],
+      "path_prefix": "/",
+      "path": "^/id[0-9]+/article/[0-9]{4}-[0-9]{2}-[0-9]{2}/[a-z0-9-]+$",
+      "path_slug_terms": [
+        "mons",
+        "quievrain"
+      ],
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "title-only"
+      ],
+      "title_word_strategy": "concise",
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "date_message": "",
+      "message": "Portail Sudinfo partage, liens mentionnant Mons ou Quievrain uniquement. Verifiez le titre et la publication : la ville ne garantit pas une parution dans La Province.",
+      "limitations": "Deux vrais Link URL seule concise ouvrent BPR362 et192mots, corps concordants aux comparaisons publiques conservees. Six mots standard echouent sur medailles. Trois mots peuvent aussi retrouver des voisins : pas unicite generale ni garantie papier, source ou date. Autres villes et La Capitale exclus. Aucun Microlink, titre/date/reference cible ou verdict humain injecte.",
+      "evidence": [
+        "PROVINCE-TRANSPORT-URL-SEULE-2026-10-08.md"
+      ]
+    },
+    {
+      "id": "tournai-sudinfo-night",
+      "provider": "europresse",
+      "name": "Nord Eclair Tournai / Sudinfo web",
+      "catalog_resource_id": "europresse-bne-p",
+      "hosts": [
+        "sudinfo.be",
+        "www.sudinfo.be"
+      ],
+      "path_prefix": "/",
+      "path": "^/id[0-9]+/article/[0-9]{4}-[0-9]{2}-[0-9]{2}/[a-z0-9-]+$",
+      "path_slug_terms": [
+        "tournai"
+      ],
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "title-only"
+      ],
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "date_message": "",
+      "message": "Liens Sudinfo mentionnant Tournai : recherche de la copie web. Verifiez le titre et la publication ; la version papier Nord Eclair n'est pas garantie.",
+      "limitations": "Deux vrais liens automatiques URL seule ouvrent les corps Sudinfo web attendus (190 et 333 mots). Pas de garantie generale d'unicite ou de correspondance papier BNE. Comparaisons publiques conservees ; chapeau omis et Lire aussi ajoute dans la copie. Aucun titre, date, reference cible ou verdict humain injecte, aucun Microlink.",
+      "evidence": [
+        "TOURNAI-TRANSPORT-URL-SEULE-2026-10-08.md"
+      ]
+    },
+    {
+      "id": "meuse-liege-night",
+      "provider": "europresse",
+      "name": "La Meuse / Sudinfo (Liege)",
+      "catalog_resource_id": "europresse-bme-p",
+      "hosts": [
+        "sudinfo.be",
+        "www.sudinfo.be"
+      ],
+      "path_prefix": "/",
+      "path": "^/id[0-9]+/article/[0-9]{4}-[0-9]{2}-[0-9]{2}/[a-z0-9-]+$",
+      "path_slug_terms": [
+        "liege",
+        "liegeois"
+      ],
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "title-only"
+      ],
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "date_message": "",
+      "message": "Liens Sudinfo mentionnant Liege ou Liegeois : resultat papier La Meuse ou copie web Sudinfo. Verifiez le titre et la publication ; la version papier n'est pas garantie.",
+      "limitations": "Deux vrais Link URL seule ouvrent Concordia BSTW672web et Joy BME483papier p9. Extraits publics concordants, pas comparaison integrale du paywall. Concordia contient du code de mise en page et un Lire aussi voisin en fin de copie. Pas garantie generale d'unicite, de publication ou de disponibilite. Autres regions non qualifiees. Aucun titre/date/reference cible, Microlink ou verdict humain injecte.",
+      "evidence": [
+        "MEUSE-LIEGE-TRANSPORT-2026-10-08.md"
+      ]
+    },
+    {
+      "id": "gazette-charleroi-night",
+      "provider": "europresse",
+      "name": "La Nouvelle Gazette / Sudinfo (Charleroi)",
+      "catalog_resource_id": "europresse-bng-p",
+      "hosts": [
+        "sudinfo.be",
+        "www.sudinfo.be"
+      ],
+      "path_prefix": "/",
+      "path": "^/id[0-9]+/article/[0-9]{4}-[0-9]{2}-[0-9]{2}/[a-z0-9-]+$",
+      "path_slug_terms": [
+        "charleroi"
+      ],
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "title-only"
+      ],
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "date_message": "",
+      "message": "Liens Sudinfo mentionnant Charleroi : copie web Sudinfo possible. Verifiez le titre et la publication ; la version papier La Nouvelle Gazette n'est pas garantie.",
+      "limitations": "Deux vrais Link URL seule ouvrent les copies BSTW190 et278mots. Second corps concordant avec le public, premier titre/chapeau concordants seulement. Aucun papier BNG verifie. Centre/Sambre Meuse et autres marqueurs non qualifies. Pas garantie generale d'unicite ou de disponibilite. Aucun titre/date/reference cible, Microlink ou verdict humain injecte.",
+      "evidence": [
+        "NOUVELLE-GAZETTE-TRANSPORT-2026-10-08.md"
+      ]
+    },
+    {
+      "id": "nicematin-single-category-night",
+      "provider": "europresse",
+      "name": "Nice-Matin",
+      "hosts": [
+        "www.nicematin.com"
+      ],
+      "path": "^/[a-z0-9-]+/[a-z0-9-]+-\\d{1,9}$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "reference",
+        "reference-title",
+        "date-alternatives"
+      ],
+      "date": {
+        "type": "input",
+        "groups": [
+          1
+        ]
+      },
+      "reference": {
+        "type": "url-sha1",
+        "source_code": "ABAX",
+        "prefix": "nmfr"
+      },
+      "message": "Site commun Nice-Matin : recherche par mots du lien. Verifiez le titre et la version web ouverte.",
+      "date_message": "Nice-Matin : renseignez la date de publication de l'article pour essayer l'accès direct.",
+      "limitations": "Format lexical a une categorie uniquement. Le temoin Monaco ouvre ABAX avec URL originale exacte ; cela ne qualifie pas le fonds papier ASQ ni ASP. Aucun filtre de publication transporte. Sans date, recherche par titre deduit du lien.",
+      "catalog_resource_id": "europresse-aso-p",
+      "evidence": [
+        "NICE-MATIN-FORMAT-COURT-2026-10-08.md"
+      ],
+      "title_fallback_without_reference": true,
+      "path_prefix": "/"
+    },
+    {
+      "id": "jde-occitanie-liseuse-night",
+      "provider": "europresse",
+      "name": "Le Journal des entreprises - Occitanie",
+      "catalog_resource_id": "europresse-jfr-p",
+      "hosts": [
+        "www.lejournaldesentreprises.com"
+      ],
+      "path_prefix": "/liseuse/occitanie/",
+      "path": "^/liseuse/occitanie/[a-z0-9-]+_[0-9]+$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "title-only"
+      ],
+      "title_word_strategy": "balanced",
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "date_message": "",
+      "message": "Recherche du sujet de couverture Occitanie, pas de tous les articles du numero. Verifiez le titre, la publication et le numero : une autre edition du meme texte peut s'ouvrir.",
+      "limitations": "Deux transports URL seule : Ecocert ouvre JFR461,1193mots ; Bio-UV ouvre JFR458,1311mots au lieu du460. Les 34 paragraphes des copies Bio-UV avril/juin sont identiques (25 non vides,7554 caracteres joints). AdVini echoue avec la meme recette, equation native zero. Toutes dates et tous journaux ; pas de filtre source ou numero deduit du suffixe. Concordance avec les sommaires publics, pas comparaison integrale avec les fichiers payants. Aucun Microlink, titre/date/reference cible injecte ni verdict humain.",
+      "evidence": [
+        "JDE-OCCITANIE-2026-10-08.md"
+      ]
+    },
+    {
+      "id": "jde-region-sud-liseuse-night",
+      "provider": "europresse",
+      "name": "Le Journal des entreprises - Region Sud",
+      "catalog_resource_id": "europresse-jdt-p",
+      "hosts": [
+        "www.lejournaldesentreprises.com"
+      ],
+      "path_prefix": "/liseuse/region-sud/",
+      "path": "^/liseuse/region-sud/[a-z0-9-]+_[0-9]+$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "title-only"
+      ],
+      "title_word_strategy": "balanced",
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "date_message": "",
+      "message": "Recherche du sujet de couverture Region Sud, pas de tous les articles du numero. Verifiez le titre, la publication et le numero : une autre edition du meme texte peut s'ouvrir.",
+      "limitations": "Deux vrais transports URL seule : Olyos JDT461/1467mots ; Kizeo JDT458/1094mots au lieu du460. Les 45 paragraphes des copies Kizeo avril/juin sont identiques (31 non vides,6464 caracteres joints). Toutes dates et tous journaux ; Briefs et versions courtes possibles, pas de filtre de numero invente. Concordance avec couvertures, pas comparaison integrale avec fichiers payants. Aucun Microlink, parametre de temoin ou verdict humain.",
+      "evidence": [
+        "JDE-REGION-SUD-2026-10-08.md"
+      ]
+    },
+    {
+      "id": "jde-breve-title-night",
+      "provider": "europresse",
+      "name": "Le Journal des Entreprises",
+      "catalog_resource_id": "press-title-le-journal-des-entreprises",
+      "hosts": [
+        "www.lejournaldesentreprises.com"
+      ],
+      "path": "^/breve/[a-z0-9-]+$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "title-only"
+      ],
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "message": "Recherche par mots du titre ; verifiez le journal et la version ouverts.",
+      "date_message": "",
+      "limitations": "Format breve du site commun, sans ciblage de region ni de numero. Deux vrais transports URL seule ouvrent les textes concordants : Wolf dans JDL166mots et Diam dans JFQ179mots (publication publique Occitanie). Une edition voisine peut ouvrir le meme texte. Vivelys reste un negatif de la strategie standard; aucun enrichissement externe ou titre/date injecte.",
+      "evidence": [
+        "JDE-ARA-GRAND-EST-2026-10-08.md",
+        "JDE-OCCITANIE-2026-10-08.md"
+      ],
+      "path_prefix": "/breve/"
+    },
+    {
+      "id": "waterloo-record-lexical-uuid-night",
+      "provider": "europresse",
+      "name": "Waterloo Region Record",
+      "catalog_resource_id": "europresse-trk-p",
+      "hosts": [
+        "www.therecord.com"
+      ],
+      "path_prefix": "/news/",
+      "path": "^/news/[a-z0-9/-]+/article_[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\.html$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "title-only"
+      ],
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "date_message": "",
+      "message": "Recherche par mots du lien ; la version web du Record peut s'ouvrir plutot que le papier. Verifiez le titre et la version.",
+      "limitations": "Deux transports URL seule ouvrent TRKW898 et TRKW1014. Meme sujet, diversite limitee ; titres/sujets concordants, pas comparaison integrale publique. Aucun filtre de date/source ni contrat UUID. UUID de la seconde reference different du lien. Edition papier TRK non garantie, article voisin ou republication possible. Aucun Microlink ni verdict humain.",
+      "evidence": [
+        "WATERLOO-URL-2026-10-08.md"
+      ]
+    },
+    {
+      "id": "hamilton-spectator-lexical-uuid-night",
+      "provider": "europresse",
+      "name": "The Hamilton Spectator",
+      "catalog_resource_id": "europresse-ths-p",
+      "hosts": [
+        "www.thespec.com"
+      ],
+      "path_prefix": "/news/",
+      "path": "^/news/[a-z0-9/-]+/article_[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\.html$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "title-only"
+      ],
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "date_message": "",
+      "message": "Recherche par mots du lien ; la version web du Hamilton Spectator peut s'ouvrir plutot que le papier. Verifiez le titre et la version.",
+      "limitations": "Deux transports URL seule ouvrent THSW479 et THSW915, sujets distincts. Titre/lien original concordants, pas comparaison integrale publique. Edition papier THS non garantie. Toutes dates et tous journaux, pas de contrat UUID ni de filtre source invente. Premier autre lien recent sans succes ; article voisin ou republication possible. Aucun Microlink ni verdict humain.",
+      "evidence": [
+        "HAMILTON-UUID-2026-10-08.md"
+      ]
+    },
+    {
+      "id": "standard-news-lexical-uuid-night",
+      "provider": "europresse",
+      "name": "The Standard",
+      "catalog_resource_id": "europresse-tsc-p",
+      "hosts": [
+        "www.stcatharinesstandard.ca"
+      ],
+      "path_prefix": "/news/",
+      "path": "^/news/[a-z0-9/-]+/article_[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\.html$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "title-only"
+      ],
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "date_message": "",
+      "message": "Recherche par mots du lien. Une republication web dans Niagara Falls Review, The Standard ou Welland Tribune peut s'ouvrir. Verifiez le titre et la version ; papier non garanti.",
+      "limitations": "Deux recherches URL seule ouvrent TNIW893 et TWEW1437. Les trois versions web ont ete ouvertes explicitement et leur corps compare : identique sur chaque article. Ce ne sont pas six transports automatiques ni une garantie de la publication demandee. Liens lexicaux news seulement ; pas contrat UUID, filtre de source/date ou Microlink. Aucun verdict humain.",
+      "evidence": [
+        "NIAGARA-NETWORK-2026-10-08.md"
+      ]
+    },
+    {
+      "id": "niagara-news-lexical-uuid-night",
+      "provider": "europresse",
+      "name": "Niagara Falls Review",
+      "catalog_resource_id": "europresse-tni-p",
+      "hosts": [
+        "www.niagarafallsreview.ca"
+      ],
+      "path_prefix": "/news/",
+      "path": "^/news/[a-z0-9/-]+/article_[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\.html$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "title-only"
+      ],
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "date_message": "",
+      "message": "Recherche par mots du lien. Une republication web dans Niagara Falls Review, The Standard ou Welland Tribune peut s'ouvrir. Verifiez le titre et la version ; papier non garanti.",
+      "limitations": "Deux recherches URL seule ouvrent TNIW893 et TWEW1437. Les trois versions web ont ete ouvertes explicitement et leur corps compare : identique sur chaque article. Ce ne sont pas six transports automatiques ni une garantie de la publication demandee. Liens lexicaux news seulement ; pas contrat UUID, filtre de source/date ou Microlink. Aucun verdict humain.",
+      "evidence": [
+        "NIAGARA-NETWORK-2026-10-08.md"
+      ]
+    },
+    {
+      "id": "welland-news-lexical-uuid-night",
+      "provider": "europresse",
+      "name": "Welland Tribune",
+      "catalog_resource_id": "europresse-twe-p",
+      "hosts": [
+        "www.wellandtribune.ca"
+      ],
+      "path_prefix": "/news/",
+      "path": "^/news/[a-z0-9/-]+/article_[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\.html$",
+      "enabled": true,
+      "status": "experimental",
+      "methods": [
+        "title-only"
+      ],
+      "date": {
+        "type": "input",
+        "groups": []
+      },
+      "date_message": "",
+      "message": "Recherche par mots du lien. Une republication web dans Niagara Falls Review, The Standard ou Welland Tribune peut s'ouvrir. Verifiez le titre et la version ; papier non garanti.",
+      "limitations": "Deux recherches URL seule ouvrent TNIW893 et TWEW1437. Les trois versions web ont ete ouvertes explicitement et leur corps compare : identique sur chaque article. Ce ne sont pas six transports automatiques ni une garantie de la publication demandee. Liens lexicaux news seulement ; pas contrat UUID, filtre de source/date ou Microlink. Aucun verdict humain.",
+      "evidence": [
+        "NIAGARA-NETWORK-2026-10-08.md"
       ]
     }
   ]

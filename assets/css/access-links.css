@@ -1,0 +1,120 @@
+.access-links-dialog {
+  width: min(680px, calc(100% - 24px));
+  max-height: min(760px, calc(100dvh - 32px));
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--corner);
+  background: var(--panel);
+  color: var(--ink);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.access-links-dialog::backdrop { background: rgb(var(--ink-rgb) / 0.58); }
+.access-links-dialog .settings-dialog-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  align-items: start;
+  background: var(--panel);
+}
+.access-links-dialog h2 { font-size: 1.1rem; }
+.access-links-dialog h3 { margin: 0 0 8px; font-size: 1rem; }
+.access-link-provider { color: var(--muted); font-weight: 400; }
+.access-bookmark-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: min(190px, 100%);
+  margin: 0 auto;
+  color: inherit;
+  text-align: center;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  cursor: grab;
+  user-select: none;
+}
+.access-bookmark-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px 12px; margin: 22px 0 18px; }
+.access-bookmark-item { flex: 0 1 138px; min-width: 0; }
+.access-bookmark-item .access-link-provider { margin: 6px 0 0; text-align: center; font-size: .8rem; }
+.access-link-label { margin: 0 0 8px; font-weight: 600; }
+.access-links-content > .access-links-help { margin: 0 0 18px; }
+.access-bookmark-title { width: 100%; font-weight: 600; line-height: 1.35; }
+.access-bookmark-link:active { cursor: grabbing; }
+.access-bookmark-link.is-dragging { opacity: .45; }
+.access-bookmark-drag-preview {
+  position: fixed;
+  z-index: 2;
+  margin: 0;
+  pointer-events: none;
+}
+.access-links-dialog p { overflow-wrap: anywhere; }
+.access-links-content { padding: 0 18px 18px; }
+.access-link-entry { padding: 14px 0 0; }
+.access-link-separator { margin: 0; border: 0; border-top: 1px solid var(--line); }
+.access-link-entry > .access-link-provider { margin: 6px 0 0; text-align: center; }
+.access-link-entry > .access-links-help { margin: 14px 0 12px; }
+.access-link-entry > p { color: var(--muted); font-size: .9rem; }
+.access-link-url {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: 44px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  background: var(--control-bg);
+  color: var(--muted);
+  font: .85rem/1.5 monospace;
+}
+.access-link-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; align-items: center; }
+.access-link-actions { display: flex; flex-wrap: nowrap; gap: 8px; }
+.access-link-actions > * {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  white-space: nowrap;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--corner);
+  background: var(--control-bg);
+  color: var(--ink);
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+.access-link-actions > [hidden] { display: none; }
+.access-open-link { gap: 6px; }
+@media (max-width: 360px) {
+  .access-link-actions { gap: 6px; }
+  .access-link-actions > * { min-width: 44px; padding: 8px; }
+  .access-link-actions.has-share .access-open-text { display: none; }
+}
+.access-links-dialog :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.access-link-status { margin: 8px 0 0; }
+.access-link-status:empty { margin: 0; }
+.access-copy-icon {
+  width: 18px;
+  height: 18px;
+  background: currentColor;
+  mask: url('../icons/lucide-copy.svg') center / contain no-repeat;
+}
+.access-share-icon {
+  width: 18px;
+  height: 18px;
+  background: currentColor;
+  mask: url('../icons/lucide-share.svg') center / contain no-repeat;
+}
+.access-links-help { margin: 16px 0 0; color: var(--muted); font-size: .9rem; }
+.access-links-intro .access-links-help { font-size: .8rem; }
+.access-mobile-action-text, .access-single-label { display: none; }
+@media (max-width: 600px), (hover: none) and (pointer: coarse) {
+  .access-bookmark-list, .access-links-desktop-help, .access-links-intro, .access-link-separator { display: none; }
+  .access-links-content > .access-links-desktop-help { display: none; }
+  .access-single-label { display: block; }
+  .access-link-row { grid-template-columns: minmax(0, 1fr); }
+  .access-link-actions { display: flex; width: 100%; gap: 6px; }
+  .access-link-actions > * { flex: 1 1 0; min-width: 0; padding: 8px 4px; gap: 4px; font-size: .85rem; }
+  .access-copy-icon, .access-share-icon { width: 16px; height: 16px; flex-shrink: 0; }
+  .access-mobile-action-text, .access-link-actions.has-share .access-open-text { display: inline; }
+}

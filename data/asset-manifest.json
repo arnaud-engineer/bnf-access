@@ -1,6 +1,6 @@
 {
   "assets": {
-    "asset-index.json": "51129617b9e1169e83b65877fabaacd70bf74dd2cb83a633e792682dff7a2420",
+    "asset-index.json": "14bb175a57e56d9a59afda1bd0da168d5aa96a031db4c88b07e491d16d17db9a",
     "catalog-core.json": "269d6913ca911745035d562e6639a3ed42bae9392ece4fd38e8f15fddcfdef7a",
     "catalog-press.json": "f81adc071be8d816c2f798b5b2112677e02bdfc28f017ddcb13ea4008ac3da6a",
     "europresse-link-sources.json": "e41e96d6dc4677d1498a63043c4c03e1f78297eae6ae40cf0cb3cca712cd5124",
@@ -9,7 +9,7 @@
     "press-popularity.json": "1a3d1068af8a657f75efa493e50e3e13cf2a7ab137a36a2e9ca65d821246b7b4",
     "pressreader-link-sources.json": "1533a9bae29e97d925e51a303f4017e3a41653917744fb7eb7c9672012cd37e5"
   },
-  "catalog_version": "1b5621c51bdc710f7c0baa12f1f06a1bd891ad10b472dfd7de9168ddf8129c72",
-  "icon_version": "f05727a34d75fa8115f67354b533191c2c2b0103241dc060d51dc4e0bf5aae4f",
+  "catalog_version": "a940f50b417dff1e80f80cbec1c3fe93e878cc76c266b0d51feee8b65749dcd5",
+  "icon_version": "549f2f9db95426b6abf19fcd0190e6383e74b62953340ddae6012d6ab7d56b1f",
   "schema_version": 1
 }

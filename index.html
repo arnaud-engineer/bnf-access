@@ -45,7 +45,7 @@
         );
       } catch {}
     </script>
-    <link rel="stylesheet" href="./assets/css/styles.css?v=2026-09-22-qr-fullscreen">
+    <link rel="stylesheet" href="./assets/css/styles.css?v=2026-10-19-main-sharing">
   </head>
   <body class="is-loading">
     <div id="appLoader" class="app-loader" role="status" aria-live="polite">
@@ -291,8 +291,25 @@
           </button>
         </div>
         <div class="share-tabs" role="tablist" aria-label="Configuration">
-          <button id="shareExportTab" type="button" role="tab" aria-controls="shareExport" aria-selected="true">Partager</button>
-          <button id="shareImportTab" type="button" role="tab" aria-controls="shareImport" aria-selected="false">Importer</button>
+          <button id="shareExportTab" type="button" role="tab" aria-controls="shareExport" aria-selected="true">Lien / QR code</button>
+          <button id="shareImportTab" type="button" role="tab" aria-controls="shareImport" aria-selected="false">Importer dans BnF Access</button>
+          <button id="shareBrowserTab" type="button" role="tab" aria-controls="shareBrowser" aria-selected="false">Exporter vers le navigateur</button>
+        </div>
+        <div id="shareBrowser" class="share-content" hidden>
+          <p id="shareBrowserMobile" hidden>Cet export est disponible sur ordinateur. Ouvrez BnF Access sur un ordinateur pour ajouter vos favoris à votre navigateur. Pour transférer vos favoris BnF Access entre appareils, utilisez plutôt l’onglet « Lien / QR code ».</p>
+          <div id="shareBrowserDesktop" class="share-browser-desktop">
+          <p class="share-muted">Un fichier HTML regroupe les liens de tous vos favoris, dans leur ordre et leurs dossiers. Les différents accès d’une même ressource sont regroupés dans un sous-dossier à son nom.</p>
+          <button id="downloadBrowserBookmarks" class="settings-action" type="button">Télécharger les favoris (.html)</button>
+          <p id="shareBrowserStatus" class="share-status" role="status" aria-live="polite"></p>
+          <h3>Importer le fichier téléchargé</h3>
+          <div class="bookmark-import-choice">
+            <label for="bookmarkImportBrowser">Procédure pour</label>
+            <select id="bookmarkImportBrowser"><option value="firefox">Firefox</option><option value="chrome">Chrome</option><option value="safari">Safari sur Mac</option><option value="other">Autre navigateur</option></select>
+          </div>
+          <p id="bookmarkImportHelp" class="share-muted" hidden></p>
+          <div id="bookmarkImportGuide">Dans le gestionnaire de favoris de votre navigateur, choisissez l’import depuis un fichier HTML, puis sélectionnez le fichier téléchargé.</div>
+          <p class="share-muted">Cet export ne contient ni vos réglages BnF Access ni vos identifiants. Il ne synchronise pas les modifications ultérieures. Certains accès nécessitent une authentification BnF ; les accès avec initialisation conservent un lien d’initialisation distinct. L’affichage des icônes dépend du navigateur.</p>
+          </div>
         </div>
         <div id="shareExport" class="share-content">
           <fieldset class="share-options">
@@ -315,14 +332,15 @@
             <label class="share-link-label" for="shareImportLink">Lien de partage</label>
             <div class="share-link-row">
               <input id="shareImportLink" type="url" inputmode="url" autocomplete="off" spellcheck="false" placeholder="https://bnfaccess.fr/#share=…" required>
+              <button class="settings-action" type="submit">Lire le lien</button>
             </div>
             <div class="share-import-buttons">
               <button id="pasteShareLink" class="quick-launch-action" type="button">Coller</button>
-              <button class="settings-action" type="submit">Lire le lien</button>
             </div>
           </form>
+          <div class="share-import-or" aria-hidden="true"><span>OU</span></div>
           <div class="share-scan">
-            <button id="startShareScan" class="quick-launch-action" type="button">Scanner un QR code</button>
+            <button id="startShareScan" class="quick-launch-action" type="button"><svg class="share-camera-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z"/><circle cx="12" cy="13" r="3"/></svg>Scanner un QR code</button>
             <button id="chooseShareQrPhoto" class="quick-launch-action" type="button" hidden>Prendre une photo du QR code</button>
             <input id="shareQrPhoto" type="file" accept="image/*" capture="environment" hidden>
           </div>
@@ -424,6 +442,6 @@
       </nav>
     </footer>
 
-    <script src="./assets/js/app.js?v=2026-09-22-tablet-card-rows" type="module"></script>
+    <script src="./assets/js/app.js?v=2026-10-19-main-sharing" type="module"></script>
   </body>
 </html>

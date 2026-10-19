@@ -263,7 +263,7 @@
   display: grid;
   place-items: center;
   width: 32px;
-  height: 38px;
+  height: 32px;
   padding: 0;
   border: 1px solid var(--line);
   border-radius: var(--corner);
@@ -278,7 +278,16 @@
   background: currentColor;
   mask: url('../icons/lucide-link.svg') center / contain no-repeat;
 }
-.access-links-button:hover { color: var(--ink); }
+@media (hover: hover) {
+  .access-links-button:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .favorite-button:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+}
 .access-links-button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
 @media (pointer: coarse) {
   .access-links-button { width: 44px; height: 44px; }

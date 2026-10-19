@@ -26,22 +26,22 @@
 .access-link-url {
   display: block;
   width: 100%;
-  min-height: 76px;
+  min-width: 0;
+  height: 44px;
   padding: 10px;
-  resize: vertical;
   border: 1px solid var(--line);
   background: var(--control-bg);
   color: var(--ink);
   font: .85rem/1.5 monospace;
-  overflow-wrap: anywhere;
-  word-break: break-all;
 }
-.access-link-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.access-link-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; align-items: center; }
+.access-link-actions { display: flex; flex-wrap: nowrap; gap: 8px; }
 .access-link-actions > * {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 44px;
+  white-space: nowrap;
   padding: 8px 14px;
   border: 1px solid var(--line);
   border-radius: var(--corner);
@@ -52,7 +52,8 @@
   cursor: pointer;
 }
 .access-links-dialog :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.access-link-status { min-height: 1.5em; margin: 8px 0 0; }
+.access-link-status { margin: 8px 0 0; }
+.access-link-status:empty { margin: 0; }
 .access-copy-icon {
   width: 18px;
   height: 18px;

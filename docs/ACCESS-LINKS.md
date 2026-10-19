@@ -28,3 +28,10 @@ URL/many-link overflow. Authentication delivery is not tested by these checks.
 
 The private asset-index builder must recognize `lucide-link.svg` when rebuilding
 the tracked image index and manifest. The icon uses the existing Lucide license.
+
+Presentation amendment: use a read-only single-line input, Copy and Open in one
+non-wrapping row, including mobile. Card header actions are horizontal so the
+secondary icon does not add its own row above descriptions. Free/public access
+metadata suppresses the authentication notice; other authenticated accesses
+use affirmative wording. A normal website cannot invoke the browser's native
+bookmark-creation dialog; do not add a misleading bookmark button.

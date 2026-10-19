@@ -38,11 +38,13 @@ export function collectAccessLinks(resource, actions, baseUrl) {
       const label = [action.label || 'Accès', edition?.label, provider === 'Accès direct' ? '' : provider]
         .filter(Boolean).join(' · ');
       const mode = action.access_mode || resource.access_mode;
-      const requiresAuthentication = Boolean(sessionStartUrl || /\.oclc\.org\//i.test(url)
-        || (mode && !['free', 'onsite', 'onsite_extended'].includes(mode)));
+      const access = action.access ?? resource.access ?? [];
+      const freeAccess = mode === 'free' || access.includes('public');
+      const requiresAuthentication = !freeAccess && Boolean(sessionStartUrl || /\.oclc\.org\//i.test(url)
+        || ['remote', 'remote_conditional', 'mixed'].includes(mode));
       if (sessionStartUrl) append({
         label: `Initialiser l’accès · ${label}`, url: sessionStartUrl,
-        openUrl: sessionStartUrl, sessionStartUrl: '', requiresAuthentication: true,
+        openUrl: sessionStartUrl, sessionStartUrl: '', requiresAuthentication,
       });
       append({label, url, openUrl, sessionStartUrl, requiresAuthentication,
         description: sessionStartUrl ? 'Pour réutiliser ce lien, initialisez d’abord l’accès avec le lien précédent.' : ''});
@@ -63,7 +65,7 @@ export function createAccessLinksDialog() {
     dialog.setAttribute('aria-labelledby', 'accessLinksTitle');
     dialog.addEventListener('keydown', event => {
       if (event.key !== 'Tab') return;
-      const controls = [...dialog.querySelectorAll('button, a[href], textarea')];
+      const controls = [...dialog.querySelectorAll('button, a[href], input')];
       const first = controls[0];
       const last = controls.at(-1);
       if ((event.shiftKey && document.activeElement === first)
@@ -119,21 +121,23 @@ export function createAccessLinksDialog() {
           <section class="access-link-entry" aria-labelledby="accessLinkLabel${index}">
             <h3 id="accessLinkLabel${index}">${escapeHtml(link.label)}</h3>
             ${link.description ? `<p>${escapeHtml(link.description)}</p>` : ''}
-            <textarea class="access-link-url" aria-labelledby="accessLinkLabel${index}" readonly rows="3" spellcheck="false">${escapeHtml(link.url)}</textarea>
-            <div class="access-link-actions">
-              <button type="button" data-copy-link="${index}" title="Copier le lien" aria-label="Copier : ${escapeAttribute(link.label)}"><span class="access-copy-icon" aria-hidden="true"></span></button>
-              <a href="${escapeAttribute(link.openUrl)}" target="_blank" rel="noreferrer"${link.sessionStartUrl ? ` data-session-start="${escapeAttribute(link.sessionStartUrl)}" data-transition-href="${escapeAttribute(link.openUrl)}"` : ''} aria-label="Ouvrir : ${escapeAttribute(link.label)}">Ouvrir ↗</a>
+            <div class="access-link-row">
+              <input type="text" class="access-link-url" aria-labelledby="accessLinkLabel${index}" value="${escapeAttribute(link.url)}" readonly spellcheck="false">
+              <div class="access-link-actions">
+                <button type="button" data-copy-link="${index}" title="Copier le lien" aria-label="Copier : ${escapeAttribute(link.label)}"><span class="access-copy-icon" aria-hidden="true"></span></button>
+                <a href="${escapeAttribute(link.openUrl)}" target="_blank" rel="noreferrer"${link.sessionStartUrl ? ` data-session-start="${escapeAttribute(link.sessionStartUrl)}" data-transition-href="${escapeAttribute(link.openUrl)}"` : ''} aria-label="Ouvrir : ${escapeAttribute(link.label)}">Ouvrir ↗</a>
+              </div>
             </div>
             <p class="access-link-status" role="status" aria-live="polite"></p>
           </section>`).join('')}
         <p class="access-links-help">Vous pouvez conserver ces liens dans les favoris de votre navigateur et les réutiliser sans repasser par BnF Access.</p>
-        ${links.some(link => link.requiresAuthentication) ? '<p class="access-links-help">L’accès peut nécessiter une authentification BnF.</p>' : ''}
+        ${links.some(link => link.requiresAuthentication) ? `<p class="access-links-help">${links.every(link => link.requiresAuthentication) ? 'L’accès nécessite une authentification BnF.' : 'Les accès non libres nécessitent une authentification BnF.'}</p>` : ''}
       </div>`;
     dialog.querySelector('.settings-close').addEventListener('click', () => dialog.close());
     dialog.querySelectorAll('[data-copy-link]').forEach(button => {
       const link = links[Number(button.dataset.copyLink)];
       const entry = button.closest('.access-link-entry');
-      button.addEventListener('click', () => copyUrl(link.url, entry.querySelector('textarea'), entry.querySelector('[role="status"]')));
+      button.addEventListener('click', () => copyUrl(link.url, entry.querySelector('input'), entry.querySelector('[role="status"]')));
     });
     dialog.showModal();
   }

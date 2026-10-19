@@ -85,7 +85,7 @@
 
 .card-header {
   display: grid;
-  grid-template-columns: 58px minmax(0, 1fr) 38px;
+  grid-template-columns: 58px minmax(0, 1fr) auto;
   align-items: start;
   gap: 12px;
   min-height: 58px;
@@ -254,7 +254,7 @@
 
 .card-header-tools {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   gap: 4px;
 }

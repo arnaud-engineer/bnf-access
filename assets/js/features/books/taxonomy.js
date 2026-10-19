@@ -1,4 +1,7 @@
 import {reviewedUnclassifiedZeroPaths} from './unclassified-zero-review.js?v=2026-10-13-zero1';
+import {reviewAlexanderstreetPaths} from './alexanderstreet-review.js?v=2026-10-19-as1';
+import {reviewGarnierPaths} from './garnier-review.js?v=2026-10-19-garnier1';
+import {reviewEniPaths} from './eni-review.js?v=2026-10-19-eni1';
 import {reviewedUnclassifiedMilestonePaths} from './unclassified-milestone-review.js?v=2026-10-13-milestone1';
 import {computingCategoryPaths, eniComputingCategoryPaths, discoverComputingPaths} from './computing-taxonomy.js?v=2026-10-12-healthscience1';
 import {agricultureCategoryPath} from './agriculture-taxonomy.js?v=2026-10-12-healthscience1';
@@ -151,7 +154,8 @@ export function bookEditorialCategoryPaths(variants, options = {}) {
   const paths = comicNavigationPaths(reviewReliabilityPaths(reviewEssaysPaths(reviewEditorialSamplePaths(reviewChemistryPendingPaths(reviewNonchemicalPendingPaths(languageUsagePaths(reviewLanguageLearningPaths(reviewSmallBranchPaths(reviewArchitectureHistoryPaths(reviewGraphicDesignPaths(canonicalBookCategoryPaths(reviewCueBatchPaths(reviewTaxonomyCleanupPaths(
     classifyBookEditorialPaths(variants, options), variants, options.title), variants)), variants), variants), variants), variants)), variants), variants), variants), variants), variants), variants);
   const reviewed = reviewArtVisualPaths(reviewBuiltDetailPaths(reviewBuiltDomainPaths(reviewArchitectureSplitPaths(reviewCinemaPaths(addReviewedVideogamePaths(paths, variants), variants), variants), variants), variants), variants);
-  return reviewPrebnfVerificationPaths(reviewEconomicsPaths(reviewLawPaths(reviewTravelPaths(reviewPhotoStagePaths(reviewSoundPaths(reviewHeritagePaths(reviewMusicPaths(reviewLeisurePaths(reviewCuisinePaths(reviewArtZeroPaths(reviewed, variants), variants), variants), variants), variants), variants), variants), variants), variants), variants), variants);
+  const finalPaths = reviewPrebnfVerificationPaths(reviewEconomicsPaths(reviewLawPaths(reviewTravelPaths(reviewPhotoStagePaths(reviewSoundPaths(reviewHeritagePaths(reviewMusicPaths(reviewLeisurePaths(reviewCuisinePaths(reviewArtZeroPaths(reviewed, variants), variants), variants), variants), variants), variants), variants), variants), variants), variants), variants);
+  return reviewEniPaths(reviewGarnierPaths(reviewAlexanderstreetPaths(finalPaths, variants), variants), variants);
 }
 
 function classifyBookEditorialPaths(variants, {title = '', knownVariants = variants, trackNewEntries = false} = {}) {

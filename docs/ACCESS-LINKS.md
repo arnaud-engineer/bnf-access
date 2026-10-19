@@ -35,3 +35,10 @@ secondary icon does not add its own row above descriptions. Free/public access
 metadata suppresses the authentication notice; other authenticated accesses
 use affirmative wording. A normal website cannot invoke the browser's native
 bookmark-creation dialog; do not add a misleading bookmark button.
+
+Visual hierarchy: header Link precedes Favorite (star at the outer right),
+both vertically centered. Link glyph is 16px, with a smaller desktop control
+and a preserved 44px coarse-pointer target. URL and provider names use the
+theme's muted text token; access labels remain prominent. Provider metadata
+is structured separately from the full accessible label, never parsed out
+of a combined label string.

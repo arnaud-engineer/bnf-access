@@ -19,6 +19,7 @@
 }
 .access-links-dialog h2 { font-size: 1.1rem; }
 .access-links-dialog h3 { margin: 0 0 8px; font-size: 1rem; }
+.access-link-provider { color: var(--muted); font-weight: 400; }
 .access-links-dialog p { overflow-wrap: anywhere; }
 .access-links-content { padding: 0 18px 18px; }
 .access-link-entry { padding: 18px 0 8px; border-bottom: 1px solid var(--line); }
@@ -31,7 +32,7 @@
   padding: 10px;
   border: 1px solid var(--line);
   background: var(--control-bg);
-  color: var(--ink);
+  color: var(--muted);
   font: .85rem/1.5 monospace;
 }
 .access-link-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; align-items: center; }

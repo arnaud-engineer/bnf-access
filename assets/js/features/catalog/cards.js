@@ -194,6 +194,7 @@ export function createCatalogCards({
         </div>
         <h3>${escapeHtml(resource.name)}</h3>
         <div class="card-header-tools">
+        ${getAccessLinks(resource).length ? `<button class="access-links-button" type="button" title="Récupérer les liens d’accès" aria-label="Récupérer les liens d’accès" aria-haspopup="dialog"><span class="access-links-icon" aria-hidden="true"></span></button>` : ''}
         <button
           class="favorite-button"
           type="button"
@@ -204,7 +205,6 @@ export function createCatalogCards({
         >
           <span aria-hidden="true">${isFavorite ? "★" : "☆"}</span>
         </button>
-        ${getAccessLinks(resource).length ? `<button class="access-links-button" type="button" title="Récupérer les liens d’accès" aria-label="Récupérer les liens d’accès" aria-haspopup="dialog"><span class="access-links-icon" aria-hidden="true"></span></button>` : ''}
         </div>
       </div>
       <div class="card-copy">

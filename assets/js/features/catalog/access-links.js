@@ -35,8 +35,9 @@ export function collectAccessLinks(resource, actions, baseUrl) {
         : openUrl;
       if (!url) continue;
       const provider = actions.getActionProviderLabel(action);
-      const label = [action.label || 'Accès', edition?.label, provider === 'Accès direct' ? '' : provider]
-        .filter(Boolean).join(' · ');
+      const heading = [action.label || 'Accès', edition?.label].filter(Boolean).join(' · ');
+      const providerLabel = provider === 'Accès direct' ? '' : provider;
+      const label = [heading, providerLabel].filter(Boolean).join(' · ');
       const mode = action.access_mode || resource.access_mode;
       const access = action.access ?? resource.access ?? [];
       const freeAccess = mode === 'free' || access.includes('public');
@@ -44,9 +45,10 @@ export function collectAccessLinks(resource, actions, baseUrl) {
         || ['remote', 'remote_conditional', 'mixed'].includes(mode));
       if (sessionStartUrl) append({
         label: `Initialiser l’accès · ${label}`, url: sessionStartUrl,
+        heading: `Initialiser l’accès · ${heading}`, providerLabel,
         openUrl: sessionStartUrl, sessionStartUrl: '', requiresAuthentication,
       });
-      append({label, url, openUrl, sessionStartUrl, requiresAuthentication,
+      append({label, heading, providerLabel, url, openUrl, sessionStartUrl, requiresAuthentication,
         description: sessionStartUrl ? 'Pour réutiliser ce lien, initialisez d’abord l’accès avec le lien précédent.' : ''});
     }
   }
@@ -119,7 +121,7 @@ export function createAccessLinksDialog() {
       <div class="access-links-content">
         ${links.map((link, index) => `
           <section class="access-link-entry" aria-labelledby="accessLinkLabel${index}">
-            <h3 id="accessLinkLabel${index}">${escapeHtml(link.label)}</h3>
+            <h3 id="accessLinkLabel${index}">${escapeHtml(link.heading || link.label)}${link.providerLabel ? `<span class="access-link-provider"> · ${escapeHtml(link.providerLabel)}</span>` : ''}</h3>
             ${link.description ? `<p>${escapeHtml(link.description)}</p>` : ''}
             <div class="access-link-row">
               <input type="text" class="access-link-url" aria-labelledby="accessLinkLabel${index}" value="${escapeAttribute(link.url)}" readonly spellcheck="false">

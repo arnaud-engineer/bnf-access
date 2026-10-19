@@ -1,7 +1,8 @@
-import {createBookPresentation} from './features/books/presentation.js?v=2026-10-12-healthscience1';
+import {createBookPresentation} from './features/books/presentation.js?v=2026-10-16-languages1';
 import {groupBookSeries} from './features/books/series.js';
-import {bookFavoriteId as favoriteId, filterBooks, indexBookCatalog, isFavoriteBook} from './features/books/model.js?v=2026-10-12-healthscience1';
-import {createBookCategoryFilters} from './features/books/category-filters.js?v=2026-10-12-healthscience1';
+import {createBookLanguageGrouper} from './features/books/language-editions.js?v=2026-10-16-language-learning1';
+import {bookFavoriteId as favoriteId, filterBooks, indexBookCatalog, isFavoriteBook} from './features/books/model.js?v=2026-10-18-prebnf4';
+import {createBookCategoryFilters} from './features/books/category-filters.js?v=2026-10-18-prebnf4';
 
 export function createBookSearch({
          openPlatformDirectory,
@@ -25,6 +26,7 @@ export function createBookSearch({
     if (Array.isArray(saved)) legacyFavorites = new Set(saved.filter((value) => typeof value === "string"));
   } catch { /* Unavailable or malformed storage must not prevent browsing. */ }
   let books = null;
+  let groupLanguages = matches => matches;
   let defaultFavorites = [];
   const favoriteBooks = new Map();
 
@@ -88,6 +90,7 @@ export function createBookSearch({
       }).then((data) => {
         const indexed = indexBookCatalog(data);
         books = indexed.books;
+        groupLanguages = createBookLanguageGrouper(books);
         for (const [id, book] of indexed.favoriteBooks) favoriteBooks.set(id, book);
         defaultFavorites = indexed.defaultFavorites;
         onCatalogReady?.();
@@ -101,6 +104,10 @@ export function createBookSearch({
     const context = getContext();
     return filterBooks(books, {context, selection, favoriteIds: getFavoriteIds(),
       query: context.query ?? input.value, ignore, forSuggestions});
+  }
+
+  function languageGroups(matches) {
+    return groupLanguages(matches, {canAccess: getContext().canAccess});
   }
 
   function close() {
@@ -160,7 +167,7 @@ export function createBookSearch({
     await load();
     if (version !== suggestionVersion || suggestions.contains(document.activeElement)) return;
     if (dismissed || !shouldSuggest() || document.activeElement !== input || input.value.trim().length < 2) { close(); return; }
-    matches = filtered(getContext().category === "Tout" ? "all" : "", true).slice(0, 6);
+    matches = languageGroups(filtered(getContext().category === "Tout" ? "all" : "", true)).slice(0, 6);
     active = -1;
     input.removeAttribute("aria-activedescendant");
     suggestions.replaceChildren();
@@ -252,7 +259,7 @@ export function createBookSearch({
   function filterPanel() {
     const panel = document.createElement("div");
     panel.className = "book-filter-panel";
-    const platformCandidates = filtered("platform");
+    const platformCandidates = languageGroups(filtered("platform"));
     const platformCounts = new Map();
     for (const book of platformCandidates) {
       for (const id of new Set(book.availability.map((a) => a.platform))) platformCounts.set(id, (platformCounts.get(id) ?? 0) + 1);
@@ -282,7 +289,7 @@ export function createBookSearch({
     for (const platform of getContext().platforms) container.append(button(platform.label, platform.id, platformCounts.get(platform.id) ?? 0));
     row.append(container);
     panel.append(row);
-    panel.append(createBookCategoryFilters({books: filtered('family'), selection,
+    panel.append(createBookCategoryFilters({books: languageGroups(filtered('family')), selection,
       expanded: expandedCategories, expandedByDefault: window.matchMedia('(min-width: 981px)').matches,
       onChange: (family, category, detail = '') => {
         selection.family = family;
@@ -293,7 +300,7 @@ export function createBookSearch({
     fields.className = "book-select-filters";
     for (const [key, field, label, all] of [["publisher", "publishers", "Éditeur", "Tous les éditeurs"]]) {
       const counts = new Map();
-      for (const book of filtered(key)) {
+      for (const book of languageGroups(filtered(key))) {
         const values = book[field];
         for (const value of values) counts.set(value, (counts.get(value) ?? 0) + 1);
       }
@@ -338,8 +345,9 @@ export function createBookSearch({
     await load();
     if (version !== gridVersion || getContext().category !== "Livre") return;
     const matchingBooks = filtered().filter((book) => !selectedBookId || book.id === selectedBookId);
-    const result = groupBookSeries(matchingBooks);
-    count.textContent = error ? "" : `${matchingBooks.length.toLocaleString("fr")} livres`;
+    const languageResults = languageGroups(matchingBooks);
+    const result = groupBookSeries(languageResults);
+    count.textContent = error ? "" : `${languageResults.length.toLocaleString("fr")} ${languageResults.length === 1 ? 'livre' : 'livres'}`;
     grid.replaceChildren();
     if (error) {
       grid.append(text("p", "Le catalogue de livres n’a pas pu être chargé.", "empty"));
@@ -444,7 +452,7 @@ export function createBookSearch({
       section.replaceChildren();
       const searching = Boolean((getContext().query ?? input.value).trim());
       const allResults = filtered("all");
-      const grouped = groupBookSeries(allResults.filter(book => searching || book.default_favorite));
+      const grouped = groupBookSeries(languageGroups(allResults.filter(book => searching || book.default_favorite)));
       const result = grouped.slice(0, searching ? 40 : undefined);
       const hasMore = searching ? grouped.length > result.length : allResults.some(book => !book.default_favorite);
       if (!error && !result.length) { section.remove(); return; }

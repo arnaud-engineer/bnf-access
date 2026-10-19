@@ -30,7 +30,7 @@ import {createFavoritesRenderer} from './features/favorites/rendering.js';
 import {createSharingController} from './features/sharing/controller.js';
 import {createLinkConverterController} from './features/link-converter/controller.js';
 import {normalize, escapeHtml} from './shared/text.js';
-import {createBookSearch} from "./book-search.js?v=2026-10-12-healthscience1";
+import {createBookSearch} from "./book-search.js?v=2026-10-18-prebnf4";
 import {createSearchHints} from "./search-hints.js?v=2026-10-02-vertical-rewind";
 import {canonicalizeEditorialTaxonomy, categoryIndex} from "./editorial-taxonomy.js?v=2026-09-06";
 import {validateCatalog, mergeCatalogEntries, migratePreferences} from "./catalog-model.js";

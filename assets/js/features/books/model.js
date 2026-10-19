@@ -1,5 +1,5 @@
 import {searchableCredits} from './credits.js';
-import {bookEditorialCategoryPaths} from './taxonomy.js?v=2026-10-12-healthscience1';
+import {bookEditorialCategoryPaths} from './taxonomy.js?v=2026-10-18-prebnf4';
 
 // Indexed catalogue snapshots are immutable; each new index gets fresh caches.
 const editorialPathCaches = new WeakMap();

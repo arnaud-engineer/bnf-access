@@ -1,5 +1,14 @@
 import {bookCategoryPaths} from './taxonomy.js?v=2026-10-12-healthscience1';
 import {compareBookFamilies} from './new-entries.js?v=2026-10-12-healthscience1';
+import {comicCategoryOrder} from './comics-navigation.js?v=2026-10-16-comics7';
+
+const cinemaGroups = [
+  ['Œuvres', ['Cinématographie', 'Genres', 'Animation', 'Documentaire', 'Série / TV']],
+  ['Personnes', ['Cinéastes', 'Acteurs']],
+  ['Études', ['Analyses de films', 'Esthétique', 'Théorie', 'Cinéma et société']],
+  ['Création / Diffusion', ['Adaptation', 'Scénario', 'Réalisation', 'Jeu d’acteur',
+    'Image / Technique', 'Musique / Son', 'Économie', 'Patrimoine']],
+];
 
 export function bookCategoryCounts(books) {
   const families = new Map();
@@ -9,13 +18,13 @@ export function bookCategoryCounts(books) {
       if (!families.has(family)) families.set(family, {count: 0, children: new Map(), details: new Map()});
       const counts = families.get(family);
       counts.count++;
-      for (const path of paths.filter(path => path.family === family)) {
-        counts.children.set(path.subcategory, (counts.children.get(path.subcategory) ?? 0) + 1);
-        if (path.details) {
-          if (!counts.details.has(path.subcategory)) counts.details.set(path.subcategory, new Map());
-          const details = counts.details.get(path.subcategory);
-          for (const detail of new Set(path.details)) details.set(detail, (details.get(detail) ?? 0) + 1);
-        }
+      const familyPaths = paths.filter(path => path.family === family);
+      for (const subcategory of new Set(familyPaths.map(path => path.subcategory))) {
+        counts.children.set(subcategory, (counts.children.get(subcategory) ?? 0) + 1);
+        if (!counts.details.has(subcategory)) counts.details.set(subcategory, new Map());
+        const details = counts.details.get(subcategory);
+        const unique = new Set(familyPaths.filter(path => path.subcategory === subcategory).flatMap(path => path.details ?? []));
+        for (const detail of unique) details.set(detail, (details.get(detail) ?? 0) + 1);
       }
     }
   }
@@ -87,7 +96,20 @@ export function createBookCategoryFilters({books, selection, expanded, onChange,
       applyExpansion();
     });
     if (active && selection.category && !counts.children.has(selection.category)) counts.children.set(selection.category, 0);
-    for (const [category, count] of [...counts.children].sort((a, b) => a[0].localeCompare(b[0], 'fr'))) {
+    const orderedChildren = [...counts.children].sort((a, b) => family === 'Bande dessinée'
+      ? (comicCategoryOrder.indexOf(a[0]) < 0 ? 99 : comicCategoryOrder.indexOf(a[0]))
+        - (comicCategoryOrder.indexOf(b[0]) < 0 ? 99 : comicCategoryOrder.indexOf(b[0]))
+        || a[0].localeCompare(b[0], 'fr')
+      : a[0].localeCompare(b[0], 'fr'));
+    let hasComicSeparator = false;
+    for (const [category, count] of orderedChildren) {
+      if (family === 'Bande dessinée' && !hasComicSeparator
+        && category === 'Études sur la BD') {
+        const separator = text('span', '|', 'book-comic-category-separator');
+        separator.setAttribute('aria-hidden', 'true');
+        children.append(separator);
+        hasComicSeparator = true;
+      }
       const child = button(category, count, active && selection.category === category,
         'is-taxonomy-filter entry-type-child-filter', () => {
           expanded.set(family, true);
@@ -113,12 +135,37 @@ export function createBookCategoryFilters({books, selection, expanded, onChange,
           }
         }
         if (selected && selection.detail && !detailCounts.has(selection.detail)) detailCounts.set(selection.detail, 0);
-        for (const [detail, detailCount] of [...detailCounts].sort((a, b) => a[0].localeCompare(b[0], 'fr'))) {
+        const isCinema = family === 'Art / Culture' && category === 'Cinéma / Audiovisuel';
+        const appendDetail = (target, detail, detailCount) => {
           const detailButton = button(detail, detailCount, selected && selection.detail === detail,
             'is-taxonomy-filter entry-type-child-filter book-category-detail-filter',
             () => onChange(family, category, selection.detail === detail ? '' : detail));
           detailButton.dataset.depth = '2';
-          detailRow.append(detailButton);
+          target.append(detailButton);
+        };
+        if (isCinema) {
+          detailRow.classList.add('book-cinema-groups');
+          const remaining = new Map(detailCounts);
+          for (const [label, labels] of cinemaGroups) {
+            const present = labels.filter(detail => remaining.has(detail));
+            if (!present.length) continue;
+            const group = text('div', '', 'book-cinema-group');
+            group.setAttribute('role', 'group');
+            group.setAttribute('aria-label', label);
+            const heading = text('span', label, 'book-cinema-group-label');
+            const filters = text('div', '', 'book-cinema-group-filters');
+            for (const detail of present) {
+              appendDetail(filters, detail, remaining.get(detail));
+              remaining.delete(detail);
+            }
+            group.append(heading, filters);
+            detailRow.append(group);
+          }
+          // Keep future or previously selected details reachable before grouping them.
+          for (const [detail, count] of remaining) appendDetail(detailRow, detail, count);
+        } else {
+          for (const [detail, count] of [...detailCounts].sort((a, b) => a[0].localeCompare(b[0], 'fr')))
+            appendDetail(detailRow, detail, count);
         }
         row.append(child, detailRow);
         children.append(row);

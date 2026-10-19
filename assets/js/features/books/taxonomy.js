@@ -18,7 +18,35 @@ import {refineComicPaths} from './comics-taxonomy.js?v=2026-10-12-healthscience1
 import {reviewScienceHealthPaths} from './science-health-review.js?v=2026-10-12-healthscience1';
 import {reviewArtsLettersLanguagesPaths} from './arts-letters-languages-review.js?v=2026-10-13-review1';
 import {reviewRemainingPendingPaths} from './remaining-pending-review.js?v=2026-10-13-pending1';
-import {canonicalBookCategoryPaths} from './canonical-categories.js?v=2026-10-15-labels1';
+import {canonicalBookCategoryPaths} from './canonical-categories.js?v=2026-10-16-language-learning1';
+import {reviewGraphicDesignPaths} from './design-graphics-review.js?v=2026-10-16-language-learning1';
+import {reviewArchitectureHistoryPaths} from './architecture-history-review.js?v=2026-10-16-language-learning1';
+import {reviewSmallBranchPaths} from './small-branches-review.js?v=2026-10-16-language-learning1';
+import {reviewLanguageLearningPaths} from './language-learning-review.js?v=2026-10-16-language-learning1';
+import {languageUsagePaths} from './language-usage.js?v=2026-10-16-language-usage1';
+import {reviewNonchemicalPendingPaths} from './nonchemical-pending-review.js?v=2026-10-16-nonchemical1';
+import {reviewChemistryPendingPaths} from './chemistry-pending-review.js?v=2026-10-16-chemistry1';
+import {reviewEditorialSamplePaths} from './editorial-sample-review.js?v=2026-10-16-sample1';
+import {reviewEssaysPaths} from './essays-review.js?v=2026-10-16-essays1';
+import {reviewReliabilityPaths} from './reliability-review.js?v=2026-10-16-reliability2';
+import {comicNavigationPaths} from './comics-navigation.js?v=2026-10-16-comics7';
+import {addReviewedVideogamePaths} from './videogame-review.js?v=2026-10-16-games2';
+import {reviewCinemaPaths} from './cinema-review.js?v=2026-10-16-aesthetics1';
+import {reviewArchitectureSplitPaths} from './architecture-split-review.js?v=2026-10-16-architecture-split1';
+import {reviewBuiltDomainPaths} from './built-domains-review.js?v=2026-10-16-built-domains1';
+import {reviewBuiltDetailPaths} from './built-details-review.js?v=2026-10-16-built-details1';
+import {reviewArtVisualPaths} from './art-visual-review.js?v=2026-10-16-art-zero1';
+import {reviewArtZeroPaths} from './art-zero-review.js?v=2026-10-16-art-zero1';
+import {reviewCuisinePaths} from './cuisine-review.js?v=2026-10-16-cuisine1';
+import {reviewLeisurePaths} from './leisure-review.js?v=2026-10-16-leisure1';
+import {reviewMusicPaths} from './music-review.js?v=2026-10-16-music1';
+import {reviewHeritagePaths} from './heritage-review.js?v=2026-10-16-heritage1';
+import {reviewSoundPaths} from './sound-review.js?v=2026-10-16-sound1';
+import {reviewPhotoStagePaths} from './photo-stage-review.js?v=2026-10-16-photo-stage1';
+import {reviewTravelPaths} from './travel-review.js?v=2026-10-16-law1';
+import {reviewLawPaths} from './law-review.js?v=2026-10-16-law1';
+import {reviewEconomicsPaths} from './economics-review.js?v=2026-10-16-economics7';
+import {reviewPrebnfVerificationPaths} from './prebnf-verification.js?v=2026-10-18-prebnf4';
 import {reviewTaxonomyCleanupPaths} from './taxonomy-cleanup-review.js?v=2026-10-15-cleanup1';
 import {reviewCueBatchPaths} from './cue-review.js?v=2026-10-15-cues1';
 
@@ -120,8 +148,10 @@ export function bookCategoryPaths(categories, {platform = ''} = {}) {
 }
 
 export function bookEditorialCategoryPaths(variants, options = {}) {
-  return canonicalBookCategoryPaths(reviewCueBatchPaths(reviewTaxonomyCleanupPaths(
-    classifyBookEditorialPaths(variants, options), variants, options.title), variants));
+  const paths = comicNavigationPaths(reviewReliabilityPaths(reviewEssaysPaths(reviewEditorialSamplePaths(reviewChemistryPendingPaths(reviewNonchemicalPendingPaths(languageUsagePaths(reviewLanguageLearningPaths(reviewSmallBranchPaths(reviewArchitectureHistoryPaths(reviewGraphicDesignPaths(canonicalBookCategoryPaths(reviewCueBatchPaths(reviewTaxonomyCleanupPaths(
+    classifyBookEditorialPaths(variants, options), variants, options.title), variants)), variants), variants), variants), variants)), variants), variants), variants), variants), variants), variants);
+  const reviewed = reviewArtVisualPaths(reviewBuiltDetailPaths(reviewBuiltDomainPaths(reviewArchitectureSplitPaths(reviewCinemaPaths(addReviewedVideogamePaths(paths, variants), variants), variants), variants), variants), variants);
+  return reviewPrebnfVerificationPaths(reviewEconomicsPaths(reviewLawPaths(reviewTravelPaths(reviewPhotoStagePaths(reviewSoundPaths(reviewHeritagePaths(reviewMusicPaths(reviewLeisurePaths(reviewCuisinePaths(reviewArtZeroPaths(reviewed, variants), variants), variants), variants), variants), variants), variants), variants), variants), variants), variants);
 }
 
 function classifyBookEditorialPaths(variants, {title = '', knownVariants = variants, trackNewEntries = false} = {}) {

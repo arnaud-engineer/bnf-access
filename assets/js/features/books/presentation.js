@@ -20,6 +20,7 @@ export function createBookPresentation({
 }) {
   let summaryId = 0;
   const selectedSeriesVolumes = new Map();
+  const selectedLanguageEditions = new Map();
   const platformNameObserver = new ResizeObserver((entries) => {
     for (const {target} of entries) {
       if (!target.isConnected) { platformNameObserver.unobserve(target); continue; }
@@ -213,6 +214,7 @@ export function createBookPresentation({
   }
 
   function bookCard(book, { keepSelection = false } = {}) {
+    if (book.languageEditions?.length > 1) return languageCard(book);
     if (book.seriesVolumes) return seriesCard(book);
     const card = document.createElement("article");
     card.className = "book-result";
@@ -273,6 +275,24 @@ export function createBookPresentation({
       content.append(list);
     }
     content.append(tags);
+    if (book.relatedLanguageEditions?.length) {
+      const alternatives = text('div', '', 'book-language-alternatives');
+      for (const {book: alternative, language} of book.relatedLanguageEditions) {
+        const name = new Intl.DisplayNames(['fr'], {type: 'language'}).of(language);
+        for (const access of alternative.availability) {
+          const url = access.url || getContext().platformUrl(access.resource_id);
+          if (!url || !/^https?:\/\//.test(url)) continue;
+          const link = text('a', `Aussi disponible en ${name}`);
+          link.href = url;
+          link.target = '_blank';
+          link.rel = 'noreferrer';
+          link.title = `${alternative.title} · ${access.label}`;
+          link.setAttribute('aria-label', `${link.textContent} : ${alternative.title}`);
+          alternatives.append(link);
+        }
+      }
+      content.append(alternatives);
+    }
     if (book.categories.length) {
       const categories = text("span", "", "book-categories badge-row");
       for (const path of book.editorialCategories ?? bookEditorialCategoryPaths(book.variants, {title: book.title, trackNewEntries: true})) {
@@ -284,6 +304,41 @@ export function createBookPresentation({
       content.append(categories);
     }
     card.append(illustration(book), content, favorite, access);
+    return card;
+  }
+
+  function languageCard(group) {
+    let card;
+    function selectedCard(index) {
+      const edition = group.languageEditions[index];
+      const next = bookCard(edition.book, {keepSelection: true});
+      next.classList.add('book-language-group');
+      next.dataset.languageWorkId = group.languageWorkId;
+      const control = text('label', '', 'book-language-selector');
+      control.append(text('span', `${group.languageEditions.length} langues`));
+      const select = document.createElement('select');
+      select.setAttribute('aria-label', `Langue : ${group.title}`);
+      const names = new Intl.DisplayNames(['fr'], {type: 'language'});
+      group.languageEditions.forEach((member, position) => {
+        const option = text('option', names.of(member.language));
+        option.value = String(position);
+        option.title = member.book.title;
+        select.append(option);
+      });
+      select.value = String(index);
+      select.addEventListener('change', () => {
+        selectedLanguageEditions.set(group.languageWorkId, group.languageEditions[Number(select.value)].book.id);
+        const replacement = selectedCard(Number(select.value));
+        card.replaceWith(replacement);
+        card = replacement;
+        card.querySelector('.book-language-selector select').focus({preventScroll: true});
+      });
+      control.append(select);
+      next.insertBefore(control, next.querySelector('.book-access-links'));
+      return next;
+    }
+    const selected = group.languageEditions.findIndex(member => member.book.id === selectedLanguageEditions.get(group.languageWorkId));
+    card = selectedCard(Math.max(0, selected));
     return card;
   }
 

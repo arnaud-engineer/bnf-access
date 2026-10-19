@@ -44,3 +44,21 @@ is structured separately from the full accessible label, never parsed out
 of a combined label string.
 Hover colors stay within themed grays for links and gold/yellow for favorites,
 including the border and glyph; do not use the general red accent for hover.
+
+Bookmark/share follow-up: header tools gap is 6px. The named access heading is
+a native draggable HTTP(S) link to the canonical URL, not the session-transition
+helper. Keep the resource name in its visible text so a dragged bookmark has
+a meaningful title. Desktop help describes dragging to the browser toolbar;
+coarse-pointer/no-hover devices get long-press/copy/manual-bookmark guidance.
+Native toolbar drops depend on the browser chrome and are not proven by a DOM
+test of the link alone.
+
+The trailing Share icon is conditional on secure context, navigator.share,
+navigator.canShare accepting the exact title/URL and web-share Permissions
+Policy where inspectable. Detection never invokes the native pane. Only a
+direct click calls share with the canonical URL. Cancellation stays silent;
+other failures hide that action and retain Copy/Open. Available destinations
+cannot be enumerated in advance; an API-positive check is not a guarantee
+that the system pane will open. Tests mock the API: physical mobile share
+panels and actual creation of a browser bookmark still need manual validation.
+No extension or HTML export is part of this implementation.

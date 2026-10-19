@@ -20,6 +20,14 @@
 .access-links-dialog h2 { font-size: 1.1rem; }
 .access-links-dialog h3 { margin: 0 0 8px; font-size: 1rem; }
 .access-link-provider { color: var(--muted); font-weight: 400; }
+.access-bookmark-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--muted);
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+.access-bookmark-link:hover { text-decoration-color: currentColor; }
 .access-links-dialog p { overflow-wrap: anywhere; }
 .access-links-content { padding: 0 18px 18px; }
 .access-link-entry { padding: 18px 0 8px; border-bottom: 1px solid var(--line); }
@@ -52,6 +60,13 @@
   text-decoration: none;
   cursor: pointer;
 }
+.access-link-actions > [hidden] { display: none; }
+.access-open-link { gap: 6px; }
+@media (max-width: 360px) {
+  .access-link-actions { gap: 6px; }
+  .access-link-actions > * { min-width: 44px; padding: 8px; }
+  .access-link-actions.has-share .access-open-text { display: none; }
+}
 .access-links-dialog :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .access-link-status { margin: 8px 0 0; }
 .access-link-status:empty { margin: 0; }
@@ -61,4 +76,15 @@
   background: currentColor;
   mask: url('../icons/lucide-copy.svg') center / contain no-repeat;
 }
+.access-share-icon {
+  width: 18px;
+  height: 18px;
+  background: currentColor;
+  mask: url('../icons/lucide-share.svg') center / contain no-repeat;
+}
 .access-links-help { margin: 16px 0 0; color: var(--muted); font-size: .9rem; }
+.access-links-mobile-help { display: none; }
+@media (hover: none) and (pointer: coarse) {
+  .access-links-desktop-help { display: none; }
+  .access-links-mobile-help { display: block; }
+}

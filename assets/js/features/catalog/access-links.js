@@ -55,10 +55,24 @@ export function collectAccessLinks(resource, actions, baseUrl) {
   return links;
 }
 
+export function canShareAccessLink(data, environment = globalThis) {
+  const navigator = environment.navigator;
+  if (!environment.isSecureContext || typeof navigator?.share !== 'function'
+    || typeof navigator.canShare !== 'function') return false;
+  try {
+    const policy = environment.document?.permissionsPolicy ?? environment.document?.featurePolicy;
+    if (policy?.allowsFeature && !policy.allowsFeature('web-share')) return false;
+    return navigator.canShare(data);
+  } catch {
+    return false;
+  }
+}
+
 export function createAccessLinksDialog() {
   let dialog;
   let trigger;
   let generation = 0;
+  let sharePending = false;
 
   function ensureDialog() {
     if (dialog) return;
@@ -67,7 +81,8 @@ export function createAccessLinksDialog() {
     dialog.setAttribute('aria-labelledby', 'accessLinksTitle');
     dialog.addEventListener('keydown', event => {
       if (event.key !== 'Tab') return;
-      const controls = [...dialog.querySelectorAll('button, a[href], input')];
+      const controls = [...dialog.querySelectorAll('button, a[href], input')]
+        .filter(element => !element.disabled && !element.hidden && element.getClientRects().length);
       const first = controls[0];
       const last = controls.at(-1);
       if ((event.shiftKey && document.activeElement === first)
@@ -108,11 +123,34 @@ export function createAccessLinksDialog() {
     status.textContent = copied ? 'Lien copié !' : 'Copie impossible. Le lien est sélectionné : vous pouvez le copier manuellement.';
   }
 
+  async function shareLink(data, button, status) {
+    if (sharePending) return;
+    const currentGeneration = generation;
+    sharePending = true;
+    button.disabled = true;
+    status.textContent = '';
+    try {
+      await navigator.share(data);
+      if (currentGeneration === generation && dialog.open) status.textContent = 'Lien transmis.';
+    } catch (error) {
+      if (error.name !== 'AbortError' && currentGeneration === generation && dialog.open) {
+        status.textContent = 'Partage indisponible. Vous pouvez copier le lien.';
+        button.hidden = true;
+        button.closest('.access-link-entry').querySelector('input').focus();
+      }
+    } finally {
+      sharePending = false;
+      button.disabled = false;
+    }
+  }
+
   function open(name, links, sourceButton) {
     if (!links.length) return;
     ensureDialog();
     generation += 1;
     trigger = sourceButton;
+    const shareData = links.map(link => ({title: `${name} — ${link.label}`, url: link.url}));
+    const shareAvailable = shareData.map(data => canShareAccessLink(data));
     dialog.innerHTML = `
       <header class="settings-dialog-header">
         <div><h2 id="accessLinksTitle">Récupérer les liens d’accès</h2><p>${escapeHtml(name)}</p></div>
@@ -121,18 +159,21 @@ export function createAccessLinksDialog() {
       <div class="access-links-content">
         ${links.map((link, index) => `
           <section class="access-link-entry" aria-labelledby="accessLinkLabel${index}">
-            <h3 id="accessLinkLabel${index}">${escapeHtml(link.heading || link.label)}${link.providerLabel ? `<span class="access-link-provider"> · ${escapeHtml(link.providerLabel)}</span>` : ''}</h3>
+            <h3 id="accessLinkLabel${index}"><a class="access-bookmark-link" href="${escapeAttribute(link.url)}" target="_blank" rel="noreferrer" draggable="true" title="${escapeAttribute(`Lien à conserver : ${name} — ${link.label}`)}">${escapeHtml(name)} — ${escapeHtml(link.heading || link.label)}</a>${link.providerLabel ? `<span class="access-link-provider"> · ${escapeHtml(link.providerLabel)}</span>` : ''}</h3>
             ${link.description ? `<p>${escapeHtml(link.description)}</p>` : ''}
             <div class="access-link-row">
               <input type="text" class="access-link-url" aria-labelledby="accessLinkLabel${index}" value="${escapeAttribute(link.url)}" readonly spellcheck="false">
-              <div class="access-link-actions">
+              <div class="access-link-actions${shareAvailable[index] ? ' has-share' : ''}">
                 <button type="button" data-copy-link="${index}" title="Copier le lien" aria-label="Copier : ${escapeAttribute(link.label)}"><span class="access-copy-icon" aria-hidden="true"></span></button>
-                <a href="${escapeAttribute(link.openUrl)}" target="_blank" rel="noreferrer"${link.sessionStartUrl ? ` data-session-start="${escapeAttribute(link.sessionStartUrl)}" data-transition-href="${escapeAttribute(link.openUrl)}"` : ''} aria-label="Ouvrir : ${escapeAttribute(link.label)}">Ouvrir ↗</a>
+                <a class="access-open-link" href="${escapeAttribute(link.openUrl)}" target="_blank" rel="noreferrer"${link.sessionStartUrl ? ` data-session-start="${escapeAttribute(link.sessionStartUrl)}" data-transition-href="${escapeAttribute(link.openUrl)}"` : ''} title="Ouvrir le lien" aria-label="Ouvrir : ${escapeAttribute(link.label)}"><span class="access-open-text">Ouvrir</span><span aria-hidden="true">↗</span></a>
+                ${shareAvailable[index] ? `<button type="button" data-share-link="${index}" title="Partager le lien" aria-label="Partager : ${escapeAttribute(link.label)}"><span class="access-share-icon" aria-hidden="true"></span></button>` : ''}
               </div>
             </div>
             <p class="access-link-status" role="status" aria-live="polite"></p>
           </section>`).join('')}
         <p class="access-links-help">Vous pouvez conserver ces liens dans les favoris de votre navigateur et les réutiliser sans repasser par BnF Access.</p>
+        <p class="access-links-help access-links-desktop-help">Affichez la barre de favoris de votre navigateur, puis faites glisser le titre souligné de l’accès vers cette barre. Vous conservez ainsi le lien BnF d’origine, sans ouvrir la ressource.</p>
+        <p class="access-links-help access-links-mobile-help">Un appui long sur le titre souligné affiche les actions du navigateur. Partager, s’il est disponible, ouvre le panneau de partage. Pour conserver le lien exact, copiez-le, créez un favori depuis le menu du navigateur, puis modifiez son adresse pour y coller le lien.</p>
         ${links.some(link => link.requiresAuthentication) ? `<p class="access-links-help">${links.every(link => link.requiresAuthentication) ? 'L’accès nécessite une authentification BnF.' : 'Les accès non libres nécessitent une authentification BnF.'}</p>` : ''}
       </div>`;
     dialog.querySelector('.settings-close').addEventListener('click', () => dialog.close());
@@ -140,6 +181,10 @@ export function createAccessLinksDialog() {
       const link = links[Number(button.dataset.copyLink)];
       const entry = button.closest('.access-link-entry');
       button.addEventListener('click', () => copyUrl(link.url, entry.querySelector('input'), entry.querySelector('[role="status"]')));
+    });
+    dialog.querySelectorAll('[data-share-link]').forEach(button => {
+      button.addEventListener('click', () => shareLink(shareData[Number(button.dataset.shareLink)], button,
+        button.closest('.access-link-entry').querySelector('[role="status"]')));
     });
     dialog.showModal();
   }

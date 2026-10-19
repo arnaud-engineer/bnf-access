@@ -860,7 +860,9 @@ const getAccessLinks = resource => collectAccessLinks(resource, {
 
 const {createCard, getFallbackLabel, renderIcon} = createCatalogCards({
   getAccessLinks,
-  openAccessLinks: (resource, button) => accessLinksDialog.open(resource.name, getAccessLinks(resource), button),
+  openAccessLinks: (resource, button) => accessLinksDialog.open(resource.name, getAccessLinks(resource), button, {
+    iconElement: button.closest('.card')?.querySelector('.logo'),
+  }),
   grid,
   getAccessMode: (...args) => getAccessMode(...args),
   getAccessModeLabel: (...args) => getAccessModeLabel(...args),

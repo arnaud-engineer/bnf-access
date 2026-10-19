@@ -45,10 +45,18 @@ of a combined label string.
 Hover colors stay within themed grays for links and gold/yellow for favorites,
 including the border and glyph; do not use the general red accent for hover.
 
-Bookmark/share follow-up: header tools gap is 6px. The named access heading is
-a native draggable HTTP(S) link to the canonical URL, not the session-transition
-helper. Keep the resource name in its visible text so a dragged bookmark has
-a meaningful title. Desktop help describes dragging to the browser toolbar;
+Bookmark/share follow-up: header tools gap is 6px. Each access has an app-like
+64px icon with a caption underneath, linked to the canonical HTTP(S) URL, not
+the session-transition helper. The application supplies the existing card logo
+as presentation data; the common dialog clones it, with initials as fallback.
+For a single generic Open action the caption is just the resource name. Other
+routes retain the resource name plus access type. Native drag data preserves
+the URL and meaningful title (URI list, HTML and Firefox URL/title formats).
+A temporary top-layer preview is supplied to setDragImage; the source dims
+during dragging and dragend/close clean up state. Intro/authentication notices
+precede the access blocks. Each block places its tile, adaptive help, then
+URL/actions in that order, with horizontal rules only between blocks.
+Desktop help describes dragging the icon to the browser toolbar;
 coarse-pointer/no-hover devices get long-press/copy/manual-bookmark guidance.
 Native toolbar drops depend on the browser chrome and are not proven by a DOM
 test of the link alone.

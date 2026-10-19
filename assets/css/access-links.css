@@ -21,16 +21,46 @@
 .access-links-dialog h3 { margin: 0 0 8px; font-size: 1rem; }
 .access-link-provider { color: var(--muted); font-weight: 400; }
 .access-bookmark-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: min(190px, 100%);
+  margin: 0 auto;
   color: inherit;
-  text-decoration: underline;
-  text-decoration-color: var(--muted);
-  text-underline-offset: 3px;
+  text-align: center;
+  text-decoration: none;
   overflow-wrap: anywhere;
+  cursor: grab;
+  user-select: none;
 }
-.access-bookmark-link:hover { text-decoration-color: currentColor; }
+.access-bookmark-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+}
+.access-bookmark-icon img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.access-bookmark-title { width: 100%; font-weight: 600; line-height: 1.35; }
+.access-bookmark-link:hover .access-bookmark-icon { border-color: var(--muted); }
+.access-bookmark-link:active { cursor: grabbing; }
+.access-bookmark-link.is-dragging { opacity: .45; }
+.access-bookmark-drag-preview {
+  position: fixed;
+  z-index: 2;
+  margin: 0;
+  padding: 10px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgb(var(--ink-rgb) / .2);
+  pointer-events: none;
+}
 .access-links-dialog p { overflow-wrap: anywhere; }
 .access-links-content { padding: 0 18px 18px; }
-.access-link-entry { padding: 18px 0 8px; border-bottom: 1px solid var(--line); }
+.access-link-entry { padding: 20px 0; }
+.access-link-separator { margin: 0; border: 0; border-top: 1px solid var(--line); }
+.access-link-entry > .access-link-provider { margin: 6px 0 0; text-align: center; }
+.access-link-entry > .access-links-help { margin: 14px 0 12px; }
 .access-link-entry > p { color: var(--muted); font-size: .9rem; }
 .access-link-url {
   display: block;

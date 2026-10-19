@@ -265,7 +265,8 @@
   width: 32px;
   height: 38px;
   padding: 0;
-  border: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--corner);
   background: transparent;
   color: var(--muted);
   cursor: pointer;

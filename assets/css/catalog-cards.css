@@ -262,8 +262,8 @@
 .access-links-button {
   display: grid;
   place-items: center;
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   padding: 0;
   border: 1px solid var(--line);
   border-radius: var(--corner);
@@ -273,19 +273,19 @@
 }
 
 .access-links-icon {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   background: currentColor;
   mask: url('../icons/lucide-link.svg') center / contain no-repeat;
 }
 @media (hover: hover) {
   .access-links-button:hover {
-    border-color: var(--accent);
-    color: var(--accent);
+    border-color: var(--muted);
+    color: var(--ink);
   }
   .favorite-button:hover {
-    border-color: var(--accent);
-    color: var(--accent);
+    border-color: var(--favorite-ink);
+    color: color-mix(in srgb, var(--favorite-ink) 80%, var(--ink));
   }
 }
 .access-links-button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }

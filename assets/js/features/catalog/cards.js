@@ -13,6 +13,8 @@ export function createCatalogCards({
   accessLabels = defaultAccessLabels,
   accessModeClasses = defaultAccessModeClasses,
   getAccessMode,
+  getAccessLinks = () => [],
+  openAccessLinks,
   getAccessModeLabel,
   getAccessModeTitle,
   getPressTitleSourceFilterId,
@@ -191,6 +193,7 @@ export function createCatalogCards({
           ${logo}
         </div>
         <h3>${escapeHtml(resource.name)}</h3>
+        <div class="card-header-tools">
         <button
           class="favorite-button"
           type="button"
@@ -201,6 +204,8 @@ export function createCatalogCards({
         >
           <span aria-hidden="true">${isFavorite ? "★" : "☆"}</span>
         </button>
+        ${getAccessLinks(resource).length ? `<button class="access-links-button" type="button" title="Récupérer les liens d’accès" aria-label="Récupérer les liens d’accès" aria-haspopup="dialog"><span class="access-links-icon" aria-hidden="true"></span></button>` : ''}
+        </div>
       </div>
       <div class="card-copy">
         ${descriptionHtml}
@@ -216,6 +221,9 @@ export function createCatalogCards({
 
     card.querySelector(".favorite-button").addEventListener("click", () => {
       toggleFavorite(resource.id);
+    });
+    card.querySelector('.access-links-button')?.addEventListener('click', event => {
+      openAccessLinks(resource, event.currentTarget);
     });
 
     card.querySelectorAll(".taxonomy-badge-link").forEach((badge) => {

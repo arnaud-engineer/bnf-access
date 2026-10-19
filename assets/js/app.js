@@ -20,6 +20,7 @@ import {createAppearancePreferences} from './features/preferences/appearance.js'
 import {createCatalogOverview} from './features/catalog/overview.js';
 import {createCatalogSuggestions} from './features/catalog/suggestions.js';
 import {createCatalogCards} from './features/catalog/cards.js';
+import {collectAccessLinks, createAccessLinksDialog} from './features/catalog/access-links.js';
 import {createCatalogFilterControls} from './features/catalog/filter-controls.js';
 import {createCatalogSelection} from './features/catalog/selection.js';
 import {createCatalogContextNotes} from './features/catalog/context-notes.js';
@@ -733,6 +734,7 @@ const {
   renderActions,
   updateEditionSelection,
   resolveActionHref,
+  resolveActionUrl,
   getSessionStartUrl,
   isEuropressePdfAction,
   getActionProviderLabel,
@@ -851,7 +853,14 @@ const {
   syncProfileFilterState: (...args) => syncProfileFilterState(...args)
 });
 
+const accessLinksDialog = createAccessLinksDialog();
+const getAccessLinks = resource => collectAccessLinks(resource, {
+  getActions, resolveActionHref, resolveActionUrl, getSessionStartUrl, getActionProviderLabel,
+}, window.location.href);
+
 const {createCard, getFallbackLabel, renderIcon} = createCatalogCards({
+  getAccessLinks,
+  openAccessLinks: (resource, button) => accessLinksDialog.open(resource.name, getAccessLinks(resource), button),
   grid,
   getAccessMode: (...args) => getAccessMode(...args),
   getAccessModeLabel: (...args) => getAccessModeLabel(...args),

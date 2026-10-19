@@ -1,0 +1,62 @@
+.access-links-dialog {
+  width: min(680px, calc(100% - 24px));
+  max-height: min(760px, calc(100dvh - 32px));
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--corner);
+  background: var(--panel);
+  color: var(--ink);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.access-links-dialog::backdrop { background: rgb(var(--ink-rgb) / 0.58); }
+.access-links-dialog .settings-dialog-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  align-items: start;
+  background: var(--panel);
+}
+.access-links-dialog h2 { font-size: 1.1rem; }
+.access-links-dialog h3 { margin: 0 0 8px; font-size: 1rem; }
+.access-links-dialog p { overflow-wrap: anywhere; }
+.access-links-content { padding: 0 18px 18px; }
+.access-link-entry { padding: 18px 0 8px; border-bottom: 1px solid var(--line); }
+.access-link-entry > p { color: var(--muted); font-size: .9rem; }
+.access-link-url {
+  display: block;
+  width: 100%;
+  min-height: 76px;
+  padding: 10px;
+  resize: vertical;
+  border: 1px solid var(--line);
+  background: var(--control-bg);
+  color: var(--ink);
+  font: .85rem/1.5 monospace;
+  overflow-wrap: anywhere;
+  word-break: break-all;
+}
+.access-link-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.access-link-actions > * {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--corner);
+  background: var(--control-bg);
+  color: var(--ink);
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+.access-links-dialog :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.access-link-status { min-height: 1.5em; margin: 8px 0 0; }
+.access-copy-icon {
+  width: 18px;
+  height: 18px;
+  background: currentColor;
+  mask: url('../icons/lucide-copy.svg') center / contain no-repeat;
+}
+.access-links-help { margin: 16px 0 0; color: var(--muted); font-size: .9rem; }

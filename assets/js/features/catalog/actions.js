@@ -752,6 +752,7 @@ export function createResourceActions({
   return {
     setupEuropresseSessionHelpers,
     getVisibleActions,
+    resolveActionUrl,
     renderActionLink,
     renderActions,
     updateEditionSelection,

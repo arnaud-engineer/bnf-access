@@ -238,6 +238,9 @@
   place-items: center;
   width: 38px;
   height: 38px;
+  flex-shrink: 0;
+  aspect-ratio: 1;
+  padding: 0;
   border: 1px solid var(--line);
   border-radius: var(--corner);
   background: var(--control-bg);
@@ -264,6 +267,8 @@
   place-items: center;
   width: 28px;
   height: 28px;
+  flex-shrink: 0;
+  aspect-ratio: 1;
   padding: 0;
   border: 1px solid var(--line);
   border-radius: var(--corner);
@@ -289,9 +294,6 @@
   }
 }
 .access-links-button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
-@media (pointer: coarse) {
-  .access-links-button { width: 44px; height: 44px; }
-}
 
 .favorite-button:focus-visible,
 .resource-action:focus-visible,

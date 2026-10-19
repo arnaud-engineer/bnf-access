@@ -624,6 +624,15 @@ const {
   bookSearch,
   resolveCatalogResourceId: (...args) => resolveCatalogResourceId(...args),
   getResourceById: (...args) => getResourceById(...args),
+  getAccessLinks: resource => resource.is_book
+    ? (resource.book?.availability ?? []).flatMap(access => {
+      const platform = getResourceById(access.resource_id);
+      if (!platform && !access.url) return [];
+      const action = platform ? getActions(platform)[0] : {};
+      return getAccessLinks({...platform, name: resource.name, edition_options: [], actions: [
+        {...action, label: access.label || 'Ouvrir', url: access.url || action.url},
+      ]});
+    }) : getAccessLinks(resource),
   isCatalogVisible: (...args) => isCatalogVisible(...args),
   isValidEditionSelection: (...args) => isValidEditionSelection(...args),
   passFilter,

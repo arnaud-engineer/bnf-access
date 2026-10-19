@@ -1,3 +1,5 @@
+import {buildBrowserBookmarks} from './browser-bookmarks.js';
+import {detectBookmarkBrowser, getBookmarkImportGuide, getBookmarkImportSteps, isMobileBookmarkBrowser} from './browser-import-guide.js';
 import {
   converterResourcesAnimationMs as defaultConverterResourcesAnimationMs,
   siteAccessValues as defaultSiteAccessValues,
@@ -57,6 +59,7 @@ export function createSharingController({
   bookSearch,
   resolveCatalogResourceId,
   getResourceById,
+  getAccessLinks,
   isCatalogVisible,
   normalizeFavoriteLayout = defaultNormalizeFavoriteLayout,
   isValidEditionSelection,
@@ -121,13 +124,16 @@ export function createSharingController({
     if (mode === "import") setImportPreviewVisible(false);
     shareExport.hidden = mode !== "export";
     shareImport.hidden = mode !== "import";
+    document.querySelector('#shareBrowser').hidden = mode !== 'browser';
+    document.querySelector('#shareBrowserTab').setAttribute('aria-selected', String(mode === 'browser'));
     shareExportTab.setAttribute("aria-selected", String(mode === "export"));
     shareImportTab.setAttribute("aria-selected", String(mode === "import"));
     document.querySelector("#shareTitle").textContent = mode === "import"
-      ? "Importer une configuration" : "Partager ma configuration";
+      ? "Importer dans BnF Access" : mode === 'browser' ? "Exporter vers le navigateur" : "Partager ma configuration";
     document.querySelector("#shareIntro").textContent = mode === "import"
       ? "Collez un lien ou scannez son QR code. Vérifiez le contenu avant de remplacer vos réglages locaux."
-      : "Choisissez ce que le lien contiendra.";
+      : mode === 'browser' ? (isMobileBookmarkBrowser(navigator) ? "Une fonction à utiliser sur ordinateur." : "Transférez vos favoris BnF Access dans les marque-pages de votre navigateur.")
+      : "Créez un lien ou un QR code pour retrouver cette configuration dans BnF Access sur un autre appareil ou la transmettre à quelqu’un.";
   }
 
   function showShareModal(mode = "export") {
@@ -431,6 +437,49 @@ export function createSharingController({
   }
 
   function bindSharingEvents() {
+    const mobileBrowser = isMobileBookmarkBrowser(navigator);
+    document.querySelector('#shareBrowserDesktop').hidden = mobileBrowser;
+    document.querySelector('#shareBrowserMobile').hidden = !mobileBrowser;
+    const browserChoice = document.querySelector('#bookmarkImportBrowser');
+    browserChoice.value = detectBookmarkBrowser(navigator);
+    const updateImportGuide = () => {
+      const help = document.querySelector('#bookmarkImportHelp');
+      const sources = {
+        firefox: ['Firefox', 'https://support.mozilla.org/fr/kb/importer-marque-pages-fichier-html'],
+        chrome: ['Chrome', 'https://support.google.com/chrome/answer/96816?hl=fr'],
+        safari: ['Safari', 'https://support.apple.com/fr-fr/guide/safari/ibrw9ffa6d10/mac'],
+      };
+      const source = sources[browserChoice.value];
+      help.hidden = !source || mobileBrowser;
+      help.replaceChildren();
+      if (source) {
+        const link = document.createElement('a');
+        link.href = source[1];
+        link.textContent = `Aide officielle ${source[0]}`;
+        help.append(link);
+      }
+      const guide = document.querySelector('#bookmarkImportGuide');
+      const text = getBookmarkImportGuide(browserChoice.value, navigator);
+      const instructions = getBookmarkImportSteps(browserChoice.value, navigator);
+      guide.replaceChildren();
+      if (instructions.length) {
+        const steps = document.createElement('ol');
+        instructions.forEach((step, index) => {
+          const item = document.createElement('li');
+          if (browserChoice.value === 'firefox' && index === 1) {
+            const icon = document.createElement('span');
+            icon.className = 'bookmark-import-arrows';
+            icon.setAttribute('aria-hidden', 'true');
+            item.append(icon, ' ');
+          }
+          item.append(step);
+          steps.append(item);
+        });
+        guide.append(steps);
+      } else guide.textContent = text;
+    };
+    browserChoice.addEventListener('change', updateImportGuide);
+    updateImportGuide();
     openShareFromSettings.addEventListener("click", () => openShareExport(openShareFromSettings));
 
     shareExportTab.addEventListener("click", () => {
@@ -439,6 +488,35 @@ export function createSharingController({
     });
 
     shareImportTab.addEventListener("click", () => setShareMode("import"));
+    document.querySelector('#shareBrowserTab').addEventListener('click', () => setShareMode('browser'));
+    document.querySelector('#downloadBrowserBookmarks').addEventListener('click', async event => {
+      if (mobileBrowser) return;
+      const button = event.currentTarget;
+      const status = document.querySelector('#shareBrowserStatus');
+      button.disabled = true;
+      status.textContent = 'Préparation des favoris…';
+      try {
+        await loadPressCatalog();
+        if (state.pressLoadError) throw new Error('Le catalogue de presse est indisponible. Réessayez avant d’exporter.');
+        if (listFavoriteResourceIds(state.favoriteLayout).some(id => id.startsWith('book:'))) await bookSearch.load();
+        const result = buildBrowserBookmarks(state.favoriteLayout, id => getResourceById(resolveCatalogResourceId(id)), getAccessLinks);
+        if (!result.count) {
+          status.textContent = 'Aucun lien à exporter. Ajoutez des favoris dans BnF Access, puis réessayez.';
+          return;
+        }
+        const url = URL.createObjectURL(new Blob([result.html], {type: 'text/html;charset=utf-8'}));
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = `bnf-access-favoris-${new Date().toISOString().slice(0, 10)}.html`;
+        document.body.append(link);
+        link.click();
+        link.remove();
+        window.setTimeout(() => URL.revokeObjectURL(url), 60000);
+        status.textContent = `${result.count} lien${result.count > 1 ? 's' : ''} exporté${result.count > 1 ? 's' : ''}.${result.skipped ? ` ${result.skipped} favori(s) sans lien disponible ignoré(s).` : ''} Importez le fichier téléchargé dans votre navigateur.`;
+      } catch (error) {
+        status.textContent = error.message || 'Impossible de préparer le fichier. Réessayez.';
+      } finally { button.disabled = false; }
+    });
 
     const pasteShareLink = document.querySelector("#pasteShareLink");
 

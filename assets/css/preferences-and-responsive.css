@@ -394,7 +394,7 @@
 }
 
 .share-dialog {
-  width: min(620px, 100%);
+  width: min(820px, 100%);
 }
 
 .share-tabs {
@@ -404,6 +404,8 @@
 
 .share-tabs button {
   flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
   border: 0;
   border-bottom: 3px solid transparent;
   padding: 12px;
@@ -419,6 +421,10 @@
   color: var(--ink);
 }
 
+@media (min-width: 800px) {
+  .share-tabs button { flex: 1 0 auto; white-space: nowrap; }
+}
+
 .share-content {
   display: grid;
   gap: 14px;
@@ -427,6 +433,35 @@
 
 .share-content[hidden] {
   display: none;
+}
+.share-browser-desktop { display: grid; gap: 14px; }
+.share-browser-desktop[hidden], #shareBrowserMobile[hidden] { display: none; }
+.share-browser-desktop > h3 { margin: 6px 0 0; font-size: 1rem; }
+#shareBrowserStatus:empty { display: none; }
+.bookmark-import-choice { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; }
+.bookmark-import-choice label { flex-shrink: 0; }
+.bookmark-import-choice #bookmarkImportBrowser { width: auto; min-width: 180px; max-width: 100%; flex: 1 1 180px; }
+
+#bookmarkImportBrowser {
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--corner);
+  background: var(--control-bg);
+  color: var(--ink);
+  font: inherit;
+}
+
+#bookmarkImportGuide ol { margin: 0; padding-left: 24px; }
+#bookmarkImportGuide li + li { margin-top: 12px; }
+.bookmark-import-arrows {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+  background: currentColor;
+  mask: url('../icons/lucide-arrow-up-down.svg') center / contain no-repeat;
 }
 
 .share-content p {
@@ -494,6 +529,23 @@
   justify-content: flex-end;
   gap: 8px;
 }
+.share-import-buttons:has(#pasteShareLink[hidden]) { display: none; }
+.share-import-form { min-width: 0; align-content: start; }
+#shareImportForm .share-link-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; }
+#shareImportForm .share-link-row button { white-space: nowrap; }
+.share-import-or { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: .8rem; font-weight: 700; }
+.share-import-or::before, .share-import-or::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+.share-camera-icon { width: 20px; height: 20px; flex-shrink: 0; }
+#startShareScan { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+@media (min-width: 800px) {
+  #shareImport:not(.has-preview) { grid-template-columns: minmax(0, 1fr) 40px minmax(0, 1fr); column-gap: 18px; }
+  #shareImportForm { grid-column: 1; grid-row: 1; }
+  .share-import-or { grid-column: 2; grid-row: 1; flex-direction: column; align-self: stretch; }
+  .share-import-or::before, .share-import-or::after { width: 1px; height: auto; min-height: 12px; }
+  #shareImport > .share-scan { grid-column: 3; grid-row: 1; align-self: center; justify-items: center; }
+  #shareImport > .share-scan > button { justify-self: center; }
+  #shareImportStatus, #shareImportPreview { grid-column: 1 / -1; }
+}
 
 #pasteShareLink {
   margin-right: auto;
@@ -503,8 +555,14 @@
   display: none;
 }
 
+@media (min-width: 800px) and (min-height: 700px) {
+  #shareImport:not(.has-preview) { padding-block: 28px; row-gap: 20px; column-gap: 24px; }
+  #shareImport:not(.has-preview) > .share-import-form { min-height: 140px; align-content: center; gap: 14px; }
+}
+
 .share-content.has-preview > .share-import-form,
 .share-content.has-preview > .share-scan,
+.share-content.has-preview > .share-import-or,
 .share-content.has-preview > #shareImportStatus {
   display: none;
 }
@@ -582,7 +640,7 @@
 }
 
 .share-scan > button {
-  justify-self: start;
+  justify-self: center;
 }
 
 .share-qr {
@@ -601,6 +659,21 @@
 
 .share-qr:empty {
   display: none;
+}
+
+@media (min-width: 800px) {
+  #shareExport:has(#shareQr:not(:empty)) {
+    grid-template-columns: minmax(0, 1fr) 260px;
+    column-gap: 24px;
+    align-items: start;
+  }
+  #shareExport > :not(#shareQr) { grid-column: 1; min-width: 0; }
+  #shareExport > #shareQr {
+    grid-column: 2;
+    grid-row: 1 / span 6;
+    align-self: start;
+    width: 100%;
+  }
 }
 
 .share-status {

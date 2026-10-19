@@ -173,31 +173,38 @@ export function createAccessLinksDialog() {
       </header>
       <div class="access-links-content">
         <div class="access-links-intro">
-          <p class="access-links-help">Vous pouvez conserver ces liens dans les favoris de votre navigateur et les réutiliser sans repasser par BnF Access.</p>
-          ${links.some(link => link.requiresAuthentication) ? `<p class="access-links-help">${links.every(link => link.requiresAuthentication) ? 'L’accès nécessite une authentification BnF.' : 'Les accès non libres nécessitent une authentification BnF.'}</p>` : ''}
+          <p class="access-links-help">Vous pouvez conserver ces liens dans les favoris de votre navigateur et les réutiliser sans repasser par BnF Access.${links.some(link => link.requiresAuthentication) ? ` ${links.every(link => link.requiresAuthentication) ? 'L’accès nécessite une authentification BnF.' : 'Les accès non libres nécessitent une authentification BnF.'}` : ''}</p>
         </div>
-        ${links.map((link, index) => `${index ? '<hr class="access-link-separator">' : ''}
-          <section class="access-link-entry" aria-labelledby="accessLinkLabel${index}">
+        <div class="access-bookmark-list">
+        ${links.map((link, index) => `
+          <div class="access-bookmark-item">
             <a class="access-bookmark-link" href="${escapeAttribute(link.url)}" target="_blank" rel="noreferrer" draggable="true" title="${escapeAttribute(`Lien à conserver : ${titles[index]}`)}" aria-labelledby="accessLinkLabel${index}">
               <span class="logo access-bookmark-icon generated" aria-hidden="true">${escapeHtml(name.split(/\s+/).filter(Boolean).slice(0, 2).map(word => word[0]).join('').toUpperCase())}</span>
-              <span class="access-bookmark-title" id="accessLinkLabel${index}">${escapeHtml(titles[index])}</span>
+              <span class="access-bookmark-title" id="accessLinkLabel${index}">${escapeHtml(links.length > 1 ? link.heading || link.label : titles[index])}</span>
             </a>
             ${link.providerLabel ? `<p class="access-link-provider">${escapeHtml(link.providerLabel)}</p>` : ''}
-            <p class="access-links-help access-links-desktop-help">Affichez la barre de favoris de votre navigateur, puis faites glisser l’icône de l’accès vers cette barre. Vous conserverez ainsi le lien BnF d’origine.</p>
-            <p class="access-links-help access-links-mobile-help">Un appui long sur l’icône affiche les actions du navigateur. Partager, s’il est disponible, ouvre le panneau de partage. Pour conserver le lien exact, copiez-le, créez un favori depuis le menu du navigateur, puis modifiez son adresse pour y coller le lien.</p>
+          </div>`).join('')}
+        </div>
+            <p class="access-links-help access-links-desktop-help">Affichez la barre de favoris de votre navigateur, puis faites glisser l’icône de l’accès souhaité vers cette barre. Vous conserverez ainsi le lien BnF d’origine.</p>
+        <hr class="access-link-separator">
+        ${links.map((link, index) => `
+          <section class="access-link-entry" aria-labelledby="accessLinkRowLabel${index}">
+            <p class="access-link-label${links.length === 1 ? ' access-single-label' : ''}" id="accessLinkRowLabel${index}">${escapeHtml(links.length === 1 ? titles[index] : link.heading || link.label)}${link.providerLabel ? ` <span class="access-link-provider">· ${escapeHtml(link.providerLabel)}</span>` : ''}</p>
             ${link.description ? `<p>${escapeHtml(link.description)}</p>` : ''}
             <div class="access-link-row">
-              <input type="text" class="access-link-url" aria-labelledby="accessLinkLabel${index}" value="${escapeAttribute(link.url)}" readonly spellcheck="false">
+              <input type="text" class="access-link-url" aria-labelledby="accessLinkRowLabel${index}" value="${escapeAttribute(link.url)}" readonly spellcheck="false">
               <div class="access-link-actions${shareAvailable[index] ? ' has-share' : ''}">
-                <button type="button" data-copy-link="${index}" title="Copier le lien" aria-label="Copier : ${escapeAttribute(link.label)}"><span class="access-copy-icon" aria-hidden="true"></span></button>
+                <button type="button" data-copy-link="${index}" title="Copier le lien" aria-label="Copier : ${escapeAttribute(link.label)}"><span class="access-copy-icon" aria-hidden="true"></span><span class="access-mobile-action-text">Copier</span></button>
                 <a class="access-open-link" href="${escapeAttribute(link.openUrl)}" target="_blank" rel="noreferrer"${link.sessionStartUrl ? ` data-session-start="${escapeAttribute(link.sessionStartUrl)}" data-transition-href="${escapeAttribute(link.openUrl)}"` : ''} title="Ouvrir le lien" aria-label="Ouvrir : ${escapeAttribute(link.label)}"><span class="access-open-text">Ouvrir</span><span aria-hidden="true">↗</span></a>
-                ${shareAvailable[index] ? `<button type="button" data-share-link="${index}" title="Partager le lien" aria-label="Partager : ${escapeAttribute(link.label)}"><span class="access-share-icon" aria-hidden="true"></span></button>` : ''}
+                ${shareAvailable[index] ? `<button type="button" data-share-link="${index}" title="Partager le lien" aria-label="Partager : ${escapeAttribute(link.label)}"><span class="access-share-icon" aria-hidden="true"></span><span class="access-mobile-action-text">Partager</span></button>` : ''}
               </div>
             </div>
             <p class="access-link-status" role="status" aria-live="polite"></p>
           </section>`).join('')}
       </div>`;
     dialog.querySelectorAll('.access-bookmark-link').forEach((anchor, index) => {
+      anchor.addEventListener('click', event => event.preventDefault());
+      anchor.addEventListener('auxclick', event => event.preventDefault());
       if (iconElement) {
         const icon = iconElement.cloneNode(true);
         icon.classList.add('access-bookmark-icon');
@@ -215,18 +222,19 @@ export function createAccessLinksDialog() {
         event.dataTransfer.setData('text/html', `<a href="${escapeAttribute(url)}">${escapeHtml(titles[index])}</a>`);
         event.dataTransfer.setData('text/x-moz-url', `${url}\n${titles[index]}`);
         // Keep the preview in the dialog's top layer until the browser captures it.
-        dragPreview = anchor.cloneNode(true);
+        const sourceIcon = anchor.querySelector('.access-bookmark-icon');
+        dragPreview = sourceIcon.cloneNode(true);
         dragPreview.classList.add('access-bookmark-drag-preview');
         dragPreview.removeAttribute('href');
         dragPreview.draggable = false;
         dragPreview.removeAttribute('aria-labelledby');
         dragPreview.setAttribute('aria-hidden', 'true');
         dragPreview.querySelectorAll('[id]').forEach(element => element.removeAttribute('id'));
-        const rect = anchor.getBoundingClientRect();
+        const rect = sourceIcon.getBoundingClientRect();
         dragPreview.style.left = `${rect.left}px`;
         dragPreview.style.top = `${rect.top}px`;
         dialog.append(dragPreview);
-        event.dataTransfer.setDragImage(dragPreview, dragPreview.offsetWidth / 2, 32);
+        event.dataTransfer.setDragImage(dragPreview, dragPreview.offsetWidth / 2, dragPreview.offsetHeight / 2);
         const preview = dragPreview;
         requestAnimationFrame(() => preview.remove());
         anchor.classList.add('is-dragging');

@@ -4,6 +4,7 @@ import {reviewGarnierPaths} from './garnier-review.js?v=2026-10-19-garnier1';
 import {reviewEniPaths} from './eni-review.js?v=2026-10-19-eni1';
 import {reviewRscPaths} from './rsc-review.js?v=2026-10-19-rsc1';
 import {reviewPeterlangPaths} from './peterlang-review.js?v=2026-10-19-pl1';
+import {reviewGalePaths} from './gale-review.js?v=2026-10-22-gale-deep1';
 import {reviewedUnclassifiedMilestonePaths} from './unclassified-milestone-review.js?v=2026-10-13-milestone1';
 import {computingCategoryPaths, eniComputingCategoryPaths, discoverComputingPaths} from './computing-taxonomy.js?v=2026-10-12-healthscience1';
 import {agricultureCategoryPath} from './agriculture-taxonomy.js?v=2026-10-12-healthscience1';
@@ -157,7 +158,8 @@ export function bookEditorialCategoryPaths(variants, options = {}) {
     classifyBookEditorialPaths(variants, options), variants, options.title), variants)), variants), variants), variants), variants)), variants), variants), variants), variants), variants), variants);
   const reviewed = reviewArtVisualPaths(reviewBuiltDetailPaths(reviewBuiltDomainPaths(reviewArchitectureSplitPaths(reviewCinemaPaths(addReviewedVideogamePaths(paths, variants), variants), variants), variants), variants), variants);
   const finalPaths = reviewPrebnfVerificationPaths(reviewEconomicsPaths(reviewLawPaths(reviewTravelPaths(reviewPhotoStagePaths(reviewSoundPaths(reviewHeritagePaths(reviewMusicPaths(reviewLeisurePaths(reviewCuisinePaths(reviewArtZeroPaths(reviewed, variants), variants), variants), variants), variants), variants), variants), variants), variants), variants), variants);
-  return reviewPeterlangPaths(reviewRscPaths(reviewEniPaths(reviewGarnierPaths(reviewAlexanderstreetPaths(finalPaths, variants), variants), variants), variants), variants);
+  const reviewedPaths = reviewPeterlangPaths(reviewRscPaths(reviewEniPaths(reviewGarnierPaths(reviewAlexanderstreetPaths(finalPaths, variants), variants), variants), variants), variants);
+  return reviewGalePaths(reviewedPaths, variants);
 }
 
 function classifyBookEditorialPaths(variants, {title = '', knownVariants = variants, trackNewEntries = false} = {}) {
